@@ -1,0 +1,75 @@
+---
+permalink: protect-sce/concept_prepare_for_data_protection.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for Exchange Server 
+summary: Antes de ejecutar una operación de protección de datos, como un backup, un clon o una restauración, debe definir una estrategia y configurar el entorno. También debe configurar SnapCenter Server para que use las tecnologías SnapMirror y SnapVault. 
+---
+= Prepárese para la protección de datos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de ejecutar una operación de protección de datos, como un backup, un clon o una restauración, debe definir una estrategia y configurar el entorno. También debe configurar SnapCenter Server para que use las tecnologías SnapMirror y SnapVault.
+
+Para aprovechar las ventajas de las tecnologías SnapVault y SnapMirror, debe configurar e inicializar una relación de protección de datos entre el volumen de origen y el volumen de destino en el dispositivo de almacenamiento. Puede usar NetApp System Manager o la línea de comandos de la consola de almacenamiento para ejecutar estas tareas.
+
+*Más información*
+
+link:https://docs.netapp.com/us-en/ontap-automation/getting_started_with_the_rest_api.html["Primeros pasos con la API DE REST"]
+
+
+
+== Requisitos previos para usar el plugin de SnapCenter para Microsoft Exchange Server
+
+Para que se pueda usar el plugin para Exchange, el administrador de SnapCenter debe haber instalado y configurado el servidor SnapCenter y ejecutado las tareas de requisitos previos.
+
+* Instalar y configurar SnapCenter Server.
+* Inicie sesión en SnapCenter.
+* Configurar el entorno de SnapCenter añadiendo o asignando conexiones del sistema de almacenamiento y creando credenciales.
++
+
+NOTE: SnapCenter no admite varias SVM con el mismo nombre en clústeres diferentes. Cada SVM compatible con SnapCenter debe tener un nombre exclusivo.
+
+* Añadir hosts, instalar el plugin de SnapCenter para Microsoft Windows y SnapCenter el plugin para Microsoft Exchange Server, y detectar (actualizar) los recursos.
+* Ejecutar el aprovisionamiento de almacenamiento en el host mediante el plugin de SnapCenter para Microsoft Windows.
+* Si se usará SnapCenter Server para proteger bases de datos de Exchange que residen en un LUN de RDM de VMware, es necesario implementar el plugin de SnapCenter para VMware vSphere y registrar el plugin con SnapCenter. La documentación del plugin de SnapCenter para VMware vSphere tiene más información.
++
+
+NOTE: Los VMDK no son compatibles.
+
+* Mover una base de datos de Microsoft Exchange Server de un disco local a un almacenamiento compatible con las herramientas de Microsoft Exchange.
+* Configure las relaciones de SnapMirror y SnapVault si quiere realizar una replicación de backup.
+
+
+Para los usuarios de SnapCenter 4.1.1, la documentación del plugin de SnapCenter para VMware vSphere 4.1.1 tiene información sobre la protección de las bases de datos y los sistemas de archivos virtualizados. Para los usuarios de SnapCenter 4.2.x, la documentación de NetApp Data Broker 1.0 y 1.0.1 ofrece información sobre la protección de bases de datos y sistemas de archivos virtualizados mediante el plugin de SnapCenter para VMware vSphere que proporciona el dispositivo virtual de agente de datos de NetApp basado en Linux (formato de dispositivo virtual abierto). Para los usuarios de SnapCenter 4.3.x, la documentación del plugin de SnapCenter para VMware vSphere 4.3 tiene información sobre la protección de bases de datos y sistemas de archivos virtualizados mediante el dispositivo virtual del plugin de SnapCenter para VMware vSphere basado en Linux (formato de dispositivo virtual abierto).
+
+https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/["Documentación del plugin de SnapCenter para VMware vSphere"^]
+
+
+
+== Uso de recursos, grupos de recursos y políticas para proteger un servidor de Exchange
+
+Antes de usar SnapCenter, es necesariol comprender ciertos conceptos básicos vinculados con las operaciones de backup, restauración y propagación que desea ejecutar. El usuario interactúa con recursos, grupos de recursos y políticas para diferentes operaciones.
+
+* Los recursos suelen ser bases de datos de buzón o grupos de disponibilidad de bases de datos (DAG) de Microsoft Exchange cuyo backup se hace desde SnapCenter.
+* Un grupo de recursos de SnapCenter es un conjunto de recursos en un host o DAG de Exchange, que puede incluir un DAG completo o bases de datos individuales.
++
+Al realizar una operación con un grupo de recursos, esta se ejecuta en los recursos definidos en el grupo de acuerdo con la programación que se especificó para dicho grupo de recursos.
+
++
+Es posible realizar un backup bajo demanda de un solo recurso o de un grupo de recursos. También puede realizar backups programados para recursos individuales y para grupos de recursos.
+
++
+Los grupos de recursos antes se denominaban conjuntos de datos.
+
+* Las políticas especifican la frecuencia de backup, la retención de copias, los scripts y otras características de las operaciones de protección de datos.
++
+Cuando se crea un grupo de recursos, se seleccionan una o varias políticas para él. Es posible seleccionar una política o varias al ejecutar un backup bajo demanda de un solo recurso.
+
+
+
+Piense en un grupo de recursos como definir _qué_ desea proteger y cuándo desea protegerlo en términos de día y hora. Piense en una directiva como definir _how_ desea protegerla. Cuando se realiza un backup de todas las bases de datos de un host, por ejemplo, puede crearse un grupo de recursos que incluya todas las bases de datos del host. Luego, se pueden vincular dos políticas al grupo de recursos: Una diaria y una horaria. Cuando se crea el grupo de recursos y se vinculan las políticas, es posible configurar el grupo de recursos para que se ejecute un backup completo todos los días, y agregar una programación que ejecute un backup del registro por hora. En la siguiente imagen, se muestra la relación entre los recursos, los grupos de recursos y las políticas para las bases de datos:
+
+image::../media/sce_resourcegroup_policy.gif[política de sce resourcegroup]

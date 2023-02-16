@@ -1,0 +1,79 @@
+---
+permalink: admin/concept_manage_backups.html 
+sidebar: sidebar 
+keywords:  
+summary: Es posible cambiar el nombre de los backups y eliminarlos. También es posible eliminar varios backups simultáneamente. 
+---
+= Gestionar backups
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible cambiar el nombre de los backups y eliminarlos. También es posible eliminar varios backups simultáneamente.
+
+
+
+== Cambiar el nombre de los backups
+
+Es posible cambiar el nombre de los backups si se desea usar un nombre que facilite la búsqueda.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione el recurso o el grupo de recursos de la lista desplegable *View*.
+. Seleccione el recurso o el grupo de recursos de la lista.
++
+Se muestra la página con el resumen o grupo de recursos. Si el recurso o el grupo de recursos no está configurado para la protección de datos, se muestra el asistente Protect en lugar de la página Topology.
+
+. En la vista Manage Copies, seleccione *copias de seguridad* en los sistemas de almacenamiento principales.
++
+No puede cambiar el nombre de los backups que no están en el sistema de almacenamiento secundario.
+
++
+Si catalogó los backups de bases de datos de Oracle con Oracle Recovery Manager (RMAN), no puede cambiar el nombre de esos backups catalogados.
+
+. Seleccione el backup y, a continuación, haga clic en image:../media/rename_icon.gif["icono para cambiar de nombre"].
+. En el campo *Renombrar copia de seguridad como*, introduzca un nuevo nombre y haga clic en *Aceptar*.
+
+
+
+
+== Eliminar backups
+
+Es posible eliminar backups si ya no los requiere para otras operaciones de protección de datos.
+
+*Lo que necesitará*
+
+Debe haber eliminado los clones asociados antes de eliminar un backup.
+
+
+NOTE: Si un backup se asocia con un recurso clonado, ese backup no se puede eliminar.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione el recurso o el grupo de recursos de la lista desplegable *View*.
+. Seleccione el recurso o el grupo de recursos de la lista.
++
+Se muestra la página con el resumen o grupo de recursos.
+
+. En la vista Manage Copies, seleccione *copias de seguridad* en los sistemas de almacenamiento principales.
++
+No puede eliminar los backups que están en el sistema de almacenamiento secundario.
+
+. Seleccione el backup y, a continuación, haga clic en image:../media/delete_icon.gif[""].
++
+Si va a eliminar un backup de base de datos SAP HANA, los catálogos SAP HANA asociados del backup también se eliminan.
+
++
+
+NOTE: Si se elimina el último backup restante, no se pueden eliminar las entradas del catálogo HANA asociadas.
+
+. Haga clic en *Aceptar*.
++
+
+NOTE: Si tiene algunos backups obsoletos de bases de datos en SnapCenter que no corresponden a ningún backup en el sistema de almacenamiento, debe emplear el comando remove-smbackup para borrar dichas entradas de backup obsoletos. Si se catalogaron los backups obsoletos, se descatalogarán de la base de datos del catálogo de recuperación.
+
+

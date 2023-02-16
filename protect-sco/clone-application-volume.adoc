@@ -1,0 +1,97 @@
+---
+permalink: protect-sco/clone-application-volume.html 
+sidebar: sidebar 
+keywords: application volume, clone, split a clone 
+summary: Es posible usar SnapCenter para clonar los backups de volumen de aplicaciones, dividir el clon y eliminar el clon. 
+---
+= Clone el backup de volumen de la aplicación
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible utilizar SnapCenter para clonar los backups de volumen de aplicaciones.
+
+* Pasos*
+
+. En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione el complemento Oracle Database en la lista.
+. En la página Resources, seleccione *volumen de aplicación* en la lista *View*.
+. Seleccione el volumen de la aplicación en la vista de detalles del volumen de la aplicación o en la vista de detalles del grupo de recursos.
++
+Se muestra la página de topología del volumen de la aplicación.
+
+. En la vista Manage Copies, seleccione los backups desde local copies (primary), Mirror copies (secondary) o Vault copies (secondary).
+. Seleccione el backup en la tabla y haga clic en *image:../media/clone_icon.gif["el icono de clon"]*.
+. En la página Location, lleve a cabo las siguientes acciones:
++
+|===
+
+
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Host de plugin
+ a| 
+Seleccione el host donde desea crear el clon.
+
+
+
+ a| 
+Nombre del recurso de destino
+ a| 
+Especifique el nombre del recurso.
+
+|===
+. En la página Scripts, especifique los nombres de los scripts que se van a ejecutar antes de la clonación, comandos para montar un sistema de archivos y nombres de los scripts que se van a ejecutar después de la clonación.
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
++
+También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. Si desea adjuntar el informe de la operación de clonado realizada, seleccione *Adjuntar informe de trabajo*.
+
++
+
+NOTE: Para las notificaciones de correo electrónico, se deben haber especificado los detalles del servidor SMTP desde la interfaz gráfica de usuario o desde el comando de PowerShell Set-SmSmtpServer.
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+
+
+
+
+== Divida un clon de volumen de aplicación
+
+Es posible usar SnapCenter para dividir un recurso clonado de un recurso primario. El clon que se divide se independiza del recurso primario.
+
+* Pasos*
+
+. En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione el complemento Oracle Database en la lista.
+. En la página Resources, seleccione *volumen de aplicación* en la lista *View*.
+. Seleccione el recurso clonado y haga clic en image:../media/split_cone.gif[""].
+. Revise el tamaño estimado del clon que se va a dividir y el espacio necesario disponible en el agregado y, a continuación, haga clic en *Inicio*.
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+
+
+
+
+== Eliminar un clon de volumen de aplicaciones
+
+Puede eliminar clones si ya no le resultan necesarios. No puede eliminar clones que actúan como origen para otros clones.
+
+* Pasos*
+
+. En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione el complemento Oracle Database en la lista.
+. En la página Resources, seleccione *volumen de aplicación* en la lista *View*.
+. Seleccione el recurso o el grupo de recursos de la lista.
++
+Se muestra la página con el resumen o grupo de recursos.
+
+. En la vista Manage Copies (Administrar copias), seleccione *Clones* ya sea en los sistemas de almacenamiento principal o secundario (reflejado o replicado).
+. Seleccione el clon y, a continuación, haga clic en image:../media/delete_icon.gif[""].
+. En la página Delete Clone, lleve a cabo las acciones siguientes:
++
+.. En el campo *Pre clone delete*, introduzca los nombres de las secuencias de comandos que se van a ejecutar antes de eliminar el clon.
+.. En el campo *Unmount*, introduzca los comandos para desmontar el clon antes de eliminarlo.
+
+
+. Haga clic en *Aceptar*.
+

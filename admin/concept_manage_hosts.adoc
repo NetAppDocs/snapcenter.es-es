@@ -1,0 +1,298 @@
+---
+permalink: admin/concept_manage_hosts.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Es posible añadir hosts, instalar paquetes de plugins de SnapCenter, añadir un servidor de verificación, quitar hosts, migrar trabajos de backup y actualizar hosts para actualizar paquetes de plugins o añadir paquetes de plugins nuevos. Según el plugin que utilice, también puede aprovisionar discos, gestionar recursos compartidos SMB, gestionar grupos iniciadores \(iGroups\), gestionar sesiones iSCSI y migrar datos.' 
+---
+= Gestionar hosts
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible añadir hosts, instalar paquetes de plugins de SnapCenter, añadir un servidor de verificación, quitar hosts, migrar trabajos de backup y actualizar hosts para actualizar paquetes de plugins o añadir paquetes de plugins nuevos. Según el plugin que utilice, también puede aprovisionar discos, gestionar recursos compartidos SMB, gestionar grupos iniciadores (iGroups), gestionar sesiones iSCSI y migrar datos.
+
+|===
+| Puede ejecutar estas tareas... | Para Microsoft Exchange Server | Para Microsoft SQL Server | Para Microsoft Windows | Para bases de datos de Oracle | Para base de datos SAP HANA | Para plugins personalizados 
+
+
+ a| 
+Añada los hosts e instale el paquete de plugins
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Actualizar la información de ESXi para un host
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+Suspenda las programaciones y coloque los hosts en modo de mantenimiento
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Añadir, actualizar o quitar plugins para modificar hosts
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Quite hosts de SnapCenter
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Inicie servicios de plugin
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Aprovisione los discos
+ a| 
+No
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+Gestione los recursos compartidos de SMB
+ a| 
+No
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+Gestionar los iGroups
+ a| 
+No
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+Gestionar sesiones iSCSI
+ a| 
+No
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+ a| 
+
+|===
+
+
+== Actualizar la información de la máquina virtual
+
+Es conveniente actualizar la información de la máquina virtual cuando se reinicia el host del sistema de archivos o base de datos, se modifican las credenciales de VMware vCenter. Actualizar la información de la máquina virtual en SnapCenter inicia la comunicación con VMware vSphere vCenter y obtiene las credenciales de vCenter.
+
+
+NOTE: El plugin de SnapCenter para Microsoft Windows, que está instalado en el host de la base de datos, gestiona los discos basados en RDM. Para gestionar RDM, el plugin de SnapCenter para Microsoft Windows se comunica con el servidor de vCenter que gestiona el host de la base de datos.
+
+* Pasos*
+
+. En el panel de navegación izquierdo de SnapCenter, haga clic en *hosts*.
+. En la página hosts, haga clic en *Managed hosts*.
+. En la página Managed hosts, seleccione el host que desea actualizar.
+. Haga clic en *Actualizar VM*.
+
+
+
+
+== Modifique los hosts de plugins
+
+Después de instalar un plugin, puede modificar los detalles de los hosts del plugin, si es preciso. Puede modificar las credenciales, la ruta de instalación, los plugins, los detalles del directorio de registro del plugin de SnapCenter para Microsoft SQL Server, la cuenta de servicio gestionada por los grupos (GMSA) y el puerto del plugin.
+
+
+NOTE: Asegúrese de que la versión del plugin sea la misma que la de la versión de SnapCenter Server.
+
+*Acerca de esta tarea*
+
+* Solo puede modificar un puerto de plugin después de instalar el plugin.
++
+No puede modificar el puerto del plugin mientras haya operaciones de actualización en curso.
+
+* Al modificar el puerto de un plugin, debe tener en cuenta las siguientes posibles situaciones de reversión del puerto:
++
+** En una configuración independiente, si SnapCenter no logra cambiar el puerto de uno de los componentes, la operación genera un error y se conserva el puerto antiguo para todos los componentes.
++
+Si se ha cambiado el puerto para todos los componentes pero uno de los componentes sufre un error al arrancar con el puerto nuevo, se conserva el puerto antiguo para todos los componentes. Por ejemplo, si desea cambiar el puerto para dos plugins del host independiente y SnapCenter no logra aplicar el puerto nuevo a uno de los plugins, se produce un error en la operación (con el mensaje de error correspondiente) y se conserva el puerto antiguo para ambos plugins.
+
+** En una configuración de clúster, si SnapCenter no logra cambiar el puerto del plugin que está instalado en uno de los nodos, la operación genera un error y se conserva el puerto antiguo para todos los nodos.
++
+Por ejemplo, si el plugin se instala en cuatro nodos en una configuración de clúster y si el puerto no se cambia en uno de los nodos, se conserva el puerto antiguo para todos los nodos.
+
+
+
+
+
+Cuando los plug-ins se instalan con GMSA, puede modificar en las ventanas de *más opciones*. Cuando los complementos se instalan sin GMSA, puede especificar la cuenta de GMSA para utilizarla como cuenta de servicio de complementos.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *hosts*.
+. Compruebe que *Managed hosts* está seleccionado en la parte superior.
+. Seleccione el host para el que desea modificar y modificar cualquier campo.
++
+Sólo se puede modificar un campo a la vez.
+
+. Haga clic en *Enviar*.
+
+
+*Resultados*
+
+El host se valida y agrega al servidor SnapCenter.
+
+
+
+== Inicie o reinicie servicios de plugin
+
+Al iniciar los servicios de plugins de SnapCenter, es posible iniciar servicios si no están en ejecución o reiniciarlos si ya lo están. Se recomienda reiniciar los servicios después de realizar tareas de mantenimiento.
+
+Debe asegurarse de que no se están ejecutando trabajos al reiniciar los servicios.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *hosts*.
+. En la página hosts, haga clic en *Managed hosts*.
+. En la página Managed hosts, seleccione el host que desea iniciar.
+. Haga clic en image:../media/more_icon.gif[""] Y haga clic en *Iniciar servicio* o *Reiniciar servicio*.
++
+Puede iniciar o reiniciar el servicio de varios hosts al mismo tiempo.
+
+
+
+
+
+== Suspender programaciones del mantenimiento del host
+
+Si desea impedir que el host ejecute cualquier trabajo programado de SnapCenter, puede colocarlo en modo de mantenimiento. Debe hacerlo antes de actualizar los plugins o si va a realizar tareas de mantenimiento en los hosts.
+
+
+NOTE: No es posible suspender las programaciones en un host que está inactivo debido a que SnapCenter no se puede comunicar con ese host.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *hosts*.
+. En la página hosts, haga clic en *Managed hosts*.
+. En la página Managed hosts, seleccione el host que desea suspender.
+. Haga clic en la image:../media/more_icon.gif[""] Y, a continuación, haga clic en *Suspender programación* para colocar el host de este plugin en modo de mantenimiento.
++
+Puede suspender la programación de varios hosts al mismo tiempo.
+
++
+
+NOTE: No es necesario detener el servicio de plugin primero. El servicio de plugin puede estar en un estado en ejecución o detenido.
+
+
+
+*Resultados*
+
+Después de suspender las programaciones en el host, la página Managed hosts muestra *suspendido* en el campo de estado general del host.
+
+Después de completar el mantenimiento del host, puede sacar el host del modo de mantenimiento haciendo clic en *Activar programa*. Puede activar la programación de varios hosts al mismo tiempo.

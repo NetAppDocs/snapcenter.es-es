@@ -1,0 +1,62 @@
+---
+permalink: protect-hana/task_discover_the_databases_automatically.html 
+sidebar: sidebar 
+keywords: credentials 
+summary: Los recursos son bases de datos de SAP HANA y volumen de datos no data en el host Linux que gestiona SnapCenter. Puede añadir estos recursos a grupos de recursos para realizar operaciones de protección de datos después de detectar las bases de datos SAP HANA disponibles. 
+---
+= Detectar las bases de datos automáticamente
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Los recursos son bases de datos de SAP HANA y volumen de datos no data en el host Linux que gestiona SnapCenter. Puede añadir estos recursos a grupos de recursos para realizar operaciones de protección de datos después de detectar las bases de datos SAP HANA disponibles.
+
+*Lo que necesitará*
+
+* Debe haber completado ciertas tareas, como instalar el servidor SnapCenter, añadir una clave de almacenamiento de usuario HDB, añadir hosts y configurar las conexiones del sistema de almacenamiento.
+* Debe haber configurado la clave de almacenamiento de usuario seguro HDB y el usuario sistema operativo HDB SQL en el host Linux.
++
+** Debe configurar la clave de almacenamiento de usuario HDB con el usuario SID adm. Por ejemplo, para el sistema HANA con A22 como SID, la clave de almacenamiento de usuario HDB debe configurarse con a22adm.
+
+
+* El plugin de SnapCenter para base de datos SAP HANA no es compatible con la detección automática de los recursos que residen en entornos virtuales RDM/VMDK. Debe proporcionar la información de almacenamiento para entornos virtuales al mismo tiempo que añade las bases de datos de forma manual.
+
+
+*Acerca de esta tarea*
+
+Después de instalar el plugin, todos los recursos en ese host Linux se detectan de forma automática y se muestran en la página Resources.
+
+Los recursos de detección automática no se pueden modificar ni eliminar.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Resources* y seleccione el plugin para base de datos de SAP HANA en la lista.
+. En la página Resources, seleccione el tipo de recurso en la lista View.
+. (Opcional) haga clic en *image:../media/filter_icon.gif[""]* y, a continuación, seleccione el nombre de host.
++
+A continuación, puede hacer clic en *image:../media/filter_icon.gif[""]* para cerrar el panel de filtros.
+
+. Haga clic en *Actualizar recursos* para descubrir los recursos disponibles en el host.
++
+Los recursos se muestran junto con cierta información, como el tipo de recurso, el nombre del host, los grupos de recursos asociados, el tipo de backup, las políticas y el estado general.
+
++
+** Si la base de datos se encuentra en un almacenamiento de NetApp y no está protegida, se muestra Not protected en la columna Overall Status.
+** Si una base de datos se encuentra en un sistema de almacenamiento de NetApp y está protegida, y si no se ejecuta una operación de backup, se muestra Not run en la columna Overall Status. El estado cambiará de otro modo a Backup failed o Backup succeeded según el estado de la última copia de seguridad.
+
+
+
+
+
+NOTE: Si la base de datos SAP HANA no tiene una clave de almacenamiento de usuario seguro HDB configurada, aparece un icono de candado rojo junto al recurso. Si durante una operación de detección posterior, se encontró que la clave de almacenamiento de usuario seguro HDB configurada era incorrecta o no proveía acceso a la base de datos, entonces el icono de candado rojo volverá a aparecer.
+
+
+IMPORTANT: Es necesario actualizar los recursos si se cambia el nombre de las bases de datos fuera de SnapCenter.
+
+*Después de terminar*
+
+Es necesario configurar la clave de almacenamiento de usuario seguro HDB y el usuario del sistema operativo HDBSQL para proteger la base de datos o añadirla al grupo de recursos para realizar operaciones de protección de datos.
+
+link:task_configure_hdb_user_store_key_and_hdbsql_os_user_for_the_sap_hana_database.html["Configure la clave de almacenamiento de usuario HDB y el usuario del sistema operativo HDBSQL para la base de datos SAP HANA"]

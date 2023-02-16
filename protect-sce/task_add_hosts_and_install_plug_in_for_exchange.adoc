@@ -1,0 +1,190 @@
+---
+permalink: protect-sce/task_add_hosts_and_install_plug_in_for_exchange.html 
+sidebar: sidebar 
+keywords:  
+summary: Es posible usar la página Add SnapCenterHost para añadir hosts de Windows. El plugin para Exchange se instala automáticamente en el host especificado. Este es el método recomendado para la instalación de plugins. Puede añadir un host e instalar un plugin para un host individual o para un clúster. 
+---
+= Añada hosts e instale el plugin para Exchange
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede utilizar la página SnapCenter Add Host para añadir hosts de Windows. El plugin para Exchange se instala automáticamente en el host especificado. Este es el método recomendado para la instalación de plugins. Puede añadir un host e instalar un plugin para un host individual o para un clúster.
+
+*Lo que necesitará*
+
+* Debe ser un usuario al que se ha asignado una función que tiene permisos para instalar y desinstalar plugins, como el administrador de SnapCenter
+* Al instalar un plugin en un host de Windows, si especifica una credencial que no está incorporada o si el usuario pertenece a un usuario de grupo de trabajo local, debe deshabilitar UAC en el host.
+* El servicio de cola de mensajes debe estar en ejecución.
+* Si está utilizando la cuenta de servicio gestionado en grupo (GMSA), debe configurar GMSA con privilegios administrativos. Para obtener más información, consultelink:task_configure_gMSA_on_windows_server_2012_or_later.html["Configurar la cuenta de servicio administrado de grupo en Windows Server 2012 o posterior para Microsoft Exchange Server"^].
+
+
+*Acerca de esta tarea*
+
+* No es posible añadir un servidor SnapCenter como host de plugins a otro servidor SnapCenter.
+* Puede añadir un host e instalar paquetes de plugins para un host individual o para un clúster.
+* Si un nodo de Exchange forma parte de un DAG, no puede añadir solo un nodo al servidor SnapCenter.
+* Si instala plugins en un clúster (Exchange DAG), se instalarán en todos los nodos del clúster aunque algunos nodos no tengan base de datos en las LUN de NetApp.
+
+
+A partir de SnapCenter 4.6, SCE admite multi-tenancy y puede añadir un host con los siguientes métodos:
+
+|===
+| Añadir una operación de host | 4.5 y anteriores | 4.6 y posterior 
+
+
+| Agregar DAG sin IP en dominio cruzado o diferente | No admitido | Compatible 
+
+
+| Agregue múltiples DAG IP con nombres únicos que residen en el mismo dominio o en varios dominios | Compatible | Compatible 
+
+
+| Agregue múltiples DAG IP o sin IP que tengan los mismos nombres de host y/o nombre de base de datos en el dominio cruzado | No admitido | Compatible 
+
+
+| Agregue múltiples DAG sin IP/IP con el mismo nombre y dominio cruzado | No admitido | Compatible 
+
+
+| Agregue varios hosts independientes con el mismo nombre y entre dominios | No admitido | Compatible 
+|===
+El plugin para Exchange depende del paquete de plugins de SnapCenter para Windows, y las versiones deben ser las mismas. Durante la instalación del plugin para Exchange, el paquete de plugins de SnapCenter para Windows está seleccionado de forma predeterminada y se instala junto con el proveedor de hardware VSS.
+
+Si SnapManager para Microsoft Exchange Server y SnapDrive para Windows ya están instalados, Además, desea instalar el plugin para Exchange en el mismo servidor de Exchange, debe anular el registro del proveedor de hardware VSS que utiliza SnapDrive para Windows porque es incompatible con el proveedor de hardware de VSS instalado con el plugin para Exchange y el paquete de plugins de SnapCenter para Windows. Para obtener más información, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_manually_register_the_Data_ONTAP_VSS_Hardware_Provider["Cómo registrar manualmente el proveedor de hardware VSS de Data ONTAP"].
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *hosts*.
+. Compruebe que *Managed hosts* está seleccionado en la parte superior.
+. Haga clic en *Agregar*.
+. En la página hosts, realice lo siguiente:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Tipo de host
+ a| 
+Seleccione *Windows* como tipo de host.
+
+El servidor de SnapCenter añade el host y, después, instala en el host el plugin para Windows y el plugin para Exchange, si no están ya instalados.
+
+El plugin para Windows y el plugin para Exchange deben tener la misma versión. Si se instaló anteriormente otra versión del plugin para Windows, SnapCenter actualiza la versión como parte de la instalación.
+
+
+
+ a| 
+Nombre de host
+ a| 
+Introduzca el nombre de dominio completamente cualificado (FQDN) o la dirección IP del host.
+
+SnapCenter depende de una configuración adecuada del DNS. Por lo tanto, lo más recomendable es introducir el nombre de dominio completamente cualificado (FQDN).
+
+Una dirección IP es compatible para los hosts de dominio que no son de confianza solo si se resuelve en el FQDN.
+
+Si va a añadir un host mediante SnapCenter y forma parte de un subdominio, debe proporcionar el FQDN.
+
+Puede introducir las direcciones IP o el FQDN de uno de los siguientes:
+
+** Host independiente
+** DAG de Exchange
++
+Para un DAG de Exchange, puede:
+
++
+*** Añada un DAG proporcionando el nombre DAG, la dirección IP del DAG, el nombre de nodo o la dirección IP del nodo.
+*** Añada el clúster DAG sin IP mediante la dirección IP o el FQDN de uno de los nodos del clúster DAG.
+*** Añada el DAG IP sin que resida en el mismo dominio o en un dominio diferente. También puede agregar múltiples DAG IP/IP menos con el mismo nombre pero dominios diferentes.
+
+
+
+
+
+NOTE: Para un host independiente o un DAG de Exchange (entre dominios o mismo dominio), se recomienda proporcionar un FQDN o la dirección IP del host o DAG.
+
+
+
+ a| 
+Credenciales
+ a| 
+Seleccione el nombre de la credencial que ha creado o cree las credenciales nuevas.
+
+Las credenciales deben tener derechos de administrador en el host remoto. Para obtener más detalles, consulte los detalles de cómo crear una credencial.
+
+Puede ver los detalles sobre las credenciales colocando el cursor sobre el nombre de las credenciales que ha especificado.
+
+
+NOTE: El modo de autenticación de las credenciales se determina por el tipo de host que especifique en el asistente Add host.
+
+|===
+. En la sección Select Plug-ins to Install, seleccione los plugins que desea instalar.
++
+Si selecciona Plug-in for Exchange, el plugin de SnapCenter para Microsoft SQL Server se desactiva automáticamente. Microsoft recomienda no instalar en el mismo sistema el servidor SQL y el de Exchange debido al volumen de memoria necesario y al uso de otros recursos que requiere Exchange.
+
+. (Opcional) haga clic en *más opciones*.
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Puerto
+ a| 
+Conserve el número de puerto predeterminado o especifique el número de puerto.
+
+El número de puerto predeterminado es 8145. Si el servidor SnapCenter se instaló en un puerto personalizado, ese número de puerto se mostrará como el puerto predeterminado.
+
+
+NOTE: Si ha instalado plugins manualmente y ha especificado un puerto personalizado, debe especificar el mismo puerto. De lo contrario, la operación dará error.
+
+
+
+ a| 
+Ruta de instalación
+ a| 
+La ruta predeterminada es `C:\Program Files\NetApp\SnapCenter`.
+
+Opcionalmente, puede personalizar la ruta.
+
+
+
+ a| 
+Añada todos los hosts del DAG
+ a| 
+Seleccione esta casilla de comprobación cuando añada un DAG.
+
+
+
+ a| 
+Omitir comprobaciones previas a la instalación
+ a| 
+Seleccione esta casilla de comprobación si ya ha instalado los plugins manualmente y no desea validar si el host cumple con los requisitos para la instalación del plugin.
+
+
+
+ a| 
+Utilice Group Managed Service Account (GMSA) para ejecutar los servicios de plug-in
+ a| 
+Seleccione esta casilla de verificación si desea utilizar la cuenta de servicio gestionado de grupo (GMSA) para ejecutar los servicios de complemento.
+
+Proporcione el nombre de GMSA con el siguiente formato: _Domainname\accountName$_.
+
+
+NOTE: GMSA se utilizará como cuenta de servicio de inicio de sesión solo en el complemento SnapCenter para el servicio de Windows.
+
+|===
+. Haga clic en *Enviar*.
++
+Si no ha seleccionado la casilla de comprobación Skip prechecks, el host se valida para determinar si cumple los requisitos de instalación del plugin. Si no se satisfacen los requisitos mínimos, se muestran los mensajes de error o advertencia que correspondan.
+
++
+Si el error está relacionado con el espacio en disco o la RAM, puede actualizar el archivo web.config ubicado en `C:\Program Files\NetApp\SnapCenter` Webapp para modificar los valores predeterminados. Si el error está relacionado con otros parámetros, primero debe solucionar el problema.
+
++
+
+NOTE: En una configuración de alta disponibilidad, si actualiza el archivo web.config, debe actualizar el archivo en ambos nodos.
+
+. Supervise el progreso de la instalación.
+

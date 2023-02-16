@@ -1,0 +1,53 @@
+---
+permalink: protect-scsql/reference_sources_and_destinations_for_a_restore_operation.html 
+sidebar: sidebar 
+keywords:  
+summary: Es posible restaurar una base de datos de SQL Server desde una copia de backup en el almacenamiento primario o secundario. También es posible restaurar la base de datos a diferentes destinos además de su ubicación original, para poder elegir el destino que cumpla determinados requisitos. 
+---
+= Orígenes y destinos para una operación de restauración
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible restaurar una base de datos de SQL Server desde una copia de backup en el almacenamiento primario o secundario. También es posible restaurar la base de datos a diferentes destinos además de su ubicación original, para poder elegir el destino que cumpla determinados requisitos.
+
+
+
+== Orígenes para una operación de restauración
+
+Es posible restaurar bases de datos desde almacenamiento primario o secundario.
+
+
+
+== Destinos para una operación de restauración
+
+Es posible restaurar bases de datos a varios destinos:
+
+|===
+| Destino | Descripción 
+
+
+ a| 
+La ubicación original
+ a| 
+De forma predeterminada, SnapCenter restaura la base de datos a la misma ubicación y en la misma instancia de SQL Server.
+
+
+
+ a| 
+Otra ubicación
+ a| 
+Es posible restaurar la base de datos a otra ubicación en cualquier instancia de SQL Server dentro del mismo host.
+
+
+
+ a| 
+Ubicación original u otra ubicación con otro nombre de la base de datos
+ a| 
+Es posible restaurar la base de datos con otro nombre a cualquier instancia de SQL Server en el mismo host donde se creó el backup.
+
+|===
+
+NOTE: No se admite la restauración en un host alternativo entre servidores ESX para bases de datos de SQL en VMDK (NFS y almacenes de datos de VMFS).

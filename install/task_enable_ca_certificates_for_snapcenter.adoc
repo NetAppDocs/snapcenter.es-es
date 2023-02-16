@@ -1,0 +1,42 @@
+---
+permalink: install/task_enable_ca_certificates_for_snapcenter.html 
+sidebar: sidebar 
+keywords: SnapCenter, enable CA, certificate 
+summary: Debe configurar los certificados de CA y habilitar la validación de certificados de CA para el servidor SnapCenter. 
+---
+= Habilite los certificados de CA para SnapCenter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe configurar los certificados de CA y habilitar la validación de certificados de CA para el servidor SnapCenter.
+
+*Lo que necesitará*
+
+* Es posible habilitar o deshabilitar los certificados de CA con el cmdlet Set-SmCertificateSettings.
+* Puede mostrar el estado del certificado del servidor SnapCenter mediante el cmdlet de Get-SmCertificateSettings.
+
+
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].
+
+* Pasos*
+
+. En la página Configuración, vaya a *Configuración* > *Configuración global* > *Configuración del certificado CA*.
+. Seleccione *Activar validación de certificados*.
+. Haga clic en *aplicar*.
+
+
+*Después de terminar*
+
+El host de la pestaña Managed hosts muestra un candado y el color del candado indica el estado de la conexión entre SnapCenter Server y el host del plugin.
+
+* *image:../media/enable_ca_issues_icon.png[""]* Indica que no hay ningún certificado de CA habilitado o asignado al host del plugin.
+* *image:../media/enable_ca_good_icon.png[""]* Indica que el certificado de CA se ha validado correctamente.
+* *image:../media/enable_ca_failed_icon.png[""]* Indica que el certificado de CA no se ha podido validar.
+* *image:../media/enable_ca_undefined_icon.png[""]* indica que no se pudo recuperar la información de conexión.
+
+
+
+NOTE: Cuando el estado es amarillo o verde, las operaciones de protección de datos se completan correctamente.

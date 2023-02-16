@@ -1,0 +1,195 @@
+---
+permalink: protect-scsql/task_restore_sql_server_database_backups.html 
+sidebar: sidebar 
+keywords:  
+summary: Puede utilizar SnapCenter para restaurar bases de datos de SQL Server con backup. La restauración de bases de datos es un proceso multifásico que copia todos los datos y las páginas de registro de un backup de SQL Server en una base de datos especificada. 
+---
+= Restaurar backups de base de datos de SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede utilizar SnapCenter para restaurar bases de datos de SQL Server con backup. La restauración de bases de datos es un proceso multifásico que copia todos los datos y las páginas de registro de un backup de SQL Server en una base de datos especificada.
+
+*Acerca de esta tarea*
+
+* Puede restaurar las bases de datos de SQL Server con backup en una instancia diferente de SQL Server en el mismo host en que se creó el backup.
++
+Puede utilizar SnapCenter para restaurar las bases de datos de SQL Server con backup en una ruta alternativa para no sustituir una versión de producción.
+
+* SnapCenter puede restaurar bases de datos en un clúster de Windows sin que el grupo de clústeres de SQL Server quede sin conexión.
+* Si se produce un fallo de clúster (una operación de movimiento de grupos de clústeres) durante una operación de restauración (por ejemplo, si se desactiva el nodo al que pertenecen los recursos), debe volver a conectarse a la instancia de SQL Server y reiniciar la operación de restauración.
+* No puede restaurar la base de datos cuando los usuarios o los trabajos de SQL Server Agent acceden a la base de datos.
+* No puede restaurar bases de datos del sistema en una ruta alternativa.
+* LA RUTA_DE_SCRIPTS se define mediante la clave PredefinedWindowsScriptsDirectory ubicada en el archivo SMCoreServiceHost.exe.Config del host del plugin.
++
+Si es necesario, puede cambiar esta ruta y reiniciar el servicio SMcore. Se recomienda utilizar la ruta predeterminada para la seguridad.
+
++
+El valor de la tecla se puede mostrar desde swagger a través de la API: API /4.7/config settings
+
++
+Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGURACIÓN de API.
+
+* La mayoría de los campos del asistente Restore son claros y explicativos. Aquí se ofrece información sobre los campos que podrían presentar dificultades.
+
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione *Database* o *Resource Group* en la lista *View*.
+. Seleccione la base de datos o el grupo de recursos en la lista.
++
+Se muestra la página de topología.
+
+. En la vista Manage Copies, seleccione *copias de seguridad* en el sistema de almacenamiento.
+. Seleccione el backup en la tabla y haga clic en el image:../media/restore_icon.gif["icono de restauración"] .
++
+image::../media/restoring_resource.gif[restaurar recursos]
+
+. En la página Restore Scope, seleccione una de las siguientes opciones:
++
+|===
+| Opción | Descripción 
+
+
+ a| 
+Restaure la base de datos en el mismo host en el que se creó el backup
+ a| 
+Seleccione esta opción si desea restaurar la base de datos en la misma instancia de SQL Server donde se realizan los backups.
+
+
+
+ a| 
+Restaurar la base de datos en un host alternativo
+ a| 
+Seleccione esta opción si desea que la base de datos se restaure en un servidor SQL diferente en el mismo host o diferente donde se realizan los backups.
+
+Seleccione un nombre de host, proporcione un nombre de base de datos (opcional), seleccione una instancia y especifique las rutas de restauración.
+
+
+NOTE: La extensión de archivo proporcionada en la ruta alternativa debe ser la misma que la del archivo de base de datos original.
+
+Si la opción *Restaurar la base de datos a un host alternativo* no aparece en la página Restaurar ámbito, borre la memoria caché del explorador.
+
+
+
+ a| 
+Restaurar la base de datos con archivos de base de datos existentes
+ a| 
+Seleccione esta opción si desea que la base de datos se restaure en un SQL Server alternativo en el mismo host o en otro donde se realizan los backups.
+
+Los archivos de bases de datos ya deben estar presentes en las rutas de archivos existentes dadas. Seleccione un nombre de host, proporcione un nombre de base de datos (opcional), seleccione una instancia y especifique las rutas de restauración.
+
+|===
+. En la página Restore Scope, seleccione una de las siguientes opciones:
++
+|===
+| Opción | Descripción 
+
+
+ a| 
+Ninguno
+ a| 
+Seleccione *Ninguno* cuando necesite restaurar sólo la copia de seguridad completa sin ningún registro.
+
+
+
+ a| 
+Todos los backups de registros
+ a| 
+Seleccione *All log backups* up-to-the-minute backup restore operation para restaurar todas las copias de seguridad de registros disponibles después de la copia de seguridad completa.
+
+
+
+ a| 
+Mediante backups de registros hasta que
+ a| 
+Seleccione *by log backups* para realizar una operación de restauración a un momento específico, que restaura la base de datos en función de los registros de copia de seguridad hasta el registro de copia de seguridad con la fecha seleccionada.
+
+
+
+ a| 
+Por fecha específica hasta
+ a| 
+Seleccione *by specific date until* para especificar la fecha y la hora después de las cuales no se aplican registros de transacciones a la base de datos restaurada.
+
+Esta operación de restauración a un momento específico detiene la restauración de entradas de registro registradas después de la fecha y la hora especificadas.
+
+
+
+ a| 
+Utilizar directorio de registro personalizado
+ a| 
+Si ha seleccionado *todas las copias de seguridad de registro*, *por copias de seguridad de registro* o *por fecha específica hasta* y los registros se encuentran en una ubicación personalizada, seleccione *usar directorio de registro personalizado* y, a continuación, especifique la ubicación del registro.
+
+
+NOTE: El directorio de registro personalizado no se admite en la base de datos de grupos de disponibilidad.
+
+|===
+. En la página Pre OPS, realice los siguientes pasos:
++
+.. En la página Pre Restore Options, seleccione una de las siguientes opciones:
++
+*** Seleccione *Sobrescribir la base de datos con el mismo nombre durante la restauración* para restaurar la base de datos con el mismo nombre.
+*** Seleccione *mantener la configuración de replicación de bases de datos SQL* para restaurar la base de datos y mantener la configuración de replicación existente.
+*** Seleccione *Crear copia de seguridad del registro de transacciones antes de restaurar* para crear un registro de transacciones antes de que comience la operación de restauración.
+*** Seleccione *Quit restore if transaction log backup before restore fails* para anular la operación de restauración si falla la copia de seguridad del registro de transacciones.
+
+
+.. Especifique scripts opcionales que ejecutar antes de realizar un trabajo de restauración.
++
+Por ejemplo, es posible ejecutar un script para actualizar las capturas SNMP, automatizar alertas, enviar registros, etc.
+
++
+
+NOTE: La ruta scripts previos o posteriores no debe incluir unidades o recursos compartidos. La ruta debe ser relativa a LA RUTA DE ACCESO_SCRIPTS.
+
+
+
+. En la página Post OPS, realice los siguientes pasos:
++
+.. En la sección Choose database state after restore completes, seleccione una de las siguientes opciones:
++
+*** Seleccione *Operational, but unavailable for restoring additional transaction logs* si va a restaurar todas las copias de seguridad necesarias ahora.
++
+Este es el comportamiento predeterminado, que deja la base de datos preparada para su uso revirtiendo las transacciones no comprometidas. No podrá restaurar registros de transacciones adicionales hasta que cree un backup.
+
+*** Seleccione *no operativo, pero disponible para restaurar registros transaccionales adicionales* para dejar la base de datos no operativa sin revertir las transacciones no comprometidas.
++
+Pueden restaurarse registros de transacciones adicionales. No podrá utilizar la base de datos hasta que esta se recupere.
+
+*** Seleccione *modo de sólo lectura, disponible para restaurar registros transaccionales adicionales* para dejar la base de datos en modo de sólo lectura.
++
+Esta opción deshace las transacciones no comprometidas, pero guarda las acciones deshechas en un archivo en espera para que puedan revertirse los efectos de recuperación.
+
++
+Si se habilita la opción Undo directory, se restauran más registros de transacciones. Si la operación de restauración para el registro de transacciones no se realiza correctamente, pueden revertirse los cambios. La documentación de SQL Server contiene más información.
+
+
+
+.. Especifique scripts opcionales tras realizar un trabajo de restauración.
++
+Por ejemplo, es posible ejecutar un script para actualizar las capturas SNMP, automatizar alertas, enviar registros, etc.
+
++
+
+NOTE: La ruta scripts previos o posteriores no debe incluir unidades o recursos compartidos. La ruta debe ser relativa a LA RUTA DE ACCESO_SCRIPTS.
+
+
+
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
++
+También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo.
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Supervise el proceso de restauración mediante la página *Monitor* > *Jobs*.
+
+
+*Más información*
+
+link:task_restore_and_recover_resources_using_powershell_cmdlets_for_sql.html["Restaurar y recuperar recursos con cmdlets de PowerShell"]
+
+link:task_restore_a_sql_server_database_from_secondary_storage.html["Restaurar una base de datos de SQL Server a partir de almacenamiento secundario"]

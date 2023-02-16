@@ -1,0 +1,48 @@
+---
+permalink: protect-scsql/concept_requirements_for_restoring_a_database.html 
+sidebar: sidebar 
+keywords:  
+summary: Antes de restaurar una base de datos de SQL Server a partir de un backup del plugin de SnapCenter para Microsoft SQL Server, debe asegurarse de que se cumplan diversos requisitos. 
+---
+= Requisitos para restaurar una base de datos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de restaurar una base de datos de SQL Server a partir de un backup del plugin de SnapCenter para Microsoft SQL Server, debe asegurarse de que se cumplan diversos requisitos.
+
+* La instancia de SQL Server de destino debe estar en línea y en ejecución para poder restaurar una base de datos.
++
+Esto se aplica tanto a operaciones de restauración de bases de datos del usuario como a operaciones de restauración de bases de datos del sistema.
+
+* Deben deshabilitarse las operaciones de SnapCenter que están programadas para ejecutarse con los datos de SQL Server que se van a restaurar, lo que incluye cualquier trabajo programado en servidores de gestión remota o de verificación remota.
+* Si las bases de datos del sistema no son funcionales, debe reconstruir primero las bases de datos del sistema con una utilidad de SQL Server.
+* Si va a instalar el plugin, asegúrese de conceder permisos para que otros roles restauren los backups del grupo de disponibilidad (AG).
++
+La restauración de AG falla cuando se cumple alguna de las siguientes condiciones:
+
++
+** Si el plugin se instala mediante un usuario de RBAC y un administrador intenta restaurar un backup de AG
+** Si el plugin se instala mediante un administrador y un usuario de RBAC intenta restaurar un backup de AG
+
+
+* Si va a restaurar backups de directorio de registro personalizado en un host alternativo, SnapCenter Server y el host del plugin deben tener instalada la misma versión de SnapCenter.
+* Debe tener instalada la revisión KB2887595 de Microsoft. El sitio de asistencia técnica de Microsoft contiene más información acerca de KB2887595.
++
+https://support.microsoft.com/kb/2887595["Artículo de soporte de Microsoft 2887595: Paquete acumulativo de actualizaciones de Windows RT 8.1, Windows 8.1 y Windows Server 2012 R2: Noviembre de 2013"]
+
+* Debe tener un backup de los grupos de recursos o de las bases de datos.
+* Si va a replicar copias de Snapshot en un reflejo o almacén, el administrador de SnapCenter debe haberle asignado las máquinas virtuales de almacenamiento (SVM) para los volúmenes de origen y de destino.
++
+Para obtener información sobre cómo los administradores asignan recursos a los usuarios, consulte la información de instalación de SnapCenter.
+
+* Todos los trabajos de backup y clonado deben detenerse antes de restaurar la base de datos.
+* Se puede agotar el tiempo de espera de la operación de restauración si el tamaño de la base de datos está en terabytes (TB).
++
+Aumente el valor del parámetro RESTTimeout de SnapCenter Server a 20000000 ms. Para ello, ejecute el siguiente comando: Set-SmConfigSettings -Agent -configSettings @{"RESTTimeout" = "20000000"}. Según el tamaño de la base de datos, el valor del tiempo de espera puede cambiarse y el valor máximo que puede configurarse es de 86400000 ms.
+
+
+
+Si desea restaurar mientras las bases de datos están en línea, la opción de restauración en línea debe estar habilitada en la página Restore.

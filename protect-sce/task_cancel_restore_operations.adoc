@@ -1,0 +1,52 @@
+---
+permalink: protect-sce/task_cancel_restore_operations.html 
+sidebar: sidebar 
+keywords:  
+summary: Es posible cancelar los trabajos de restauración que se encuentran en cola. 
+---
+= Cancelar las operaciones de restauración para base de datos de Exchange
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible cancelar los trabajos de restauración que se encuentran en cola.
+
+Inició sesión como administrador de SnapCenter o propietario del trabajo para cancelar las operaciones de restauración.
+
+*Acerca de esta tarea*
+
+* Puede cancelar una operación de restauración en cola desde la página *Monitor* o desde el panel *actividad*.
+* No se puede cancelar una operación de restauración en ejecución.
+* Es posible usar la interfaz gráfica de usuario de SnapCenter, los cmdlets de PowerShell o los comandos de la CLI para cancelar las operaciones de restauración en cola.
+* El botón *Cancelar trabajo* está desactivado para operaciones de restauración que no se pueden cancelar.
+* Si seleccionó *todos los miembros de esta función pueden ver y operar en otros objetos de miembros* en la página usuarios\grupos mientras crea una función, puede cancelar las operaciones de restauración en cola de otros miembros mientras utiliza esa función.
+
+
+*Paso*
+
+Ejecute una de las siguientes acciones:
+
+|===
+| Del... | Acción 
+
+
+ a| 
+Página Monitor
+ a| 
+. En el panel de navegación izquierdo, haga clic en *Monitor* > *Jobs*.
+. Seleccione el trabajo y haga clic en *Cancelar trabajo*.
+
+
+
+
+ a| 
+Panel de actividades
+ a| 
+. Después de iniciar la operación de restauración, haga clic en image:../media/activity_pane_icon.gif[""] En el panel Activity para ver las cinco operaciones más recientes.
+. Seleccione la operación.
+. En la página Detalles del trabajo, haga clic en *Cancelar trabajo*.
+
+
+|===

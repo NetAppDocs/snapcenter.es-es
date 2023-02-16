@@ -1,0 +1,134 @@
+---
+permalink: protect-scc/task_create_policies_for_custom_plug_in_resources.html 
+sidebar: sidebar 
+keywords:  
+summary: Antes de usar SnapCenter para realizar un backup de recursos específicos de un plugin personalizado, debe crear una política de backup para el recurso o el grupo de recursos que incluirá en el backup. 
+---
+= Crear políticas para recursos de plugins personalizados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de usar SnapCenter para realizar un backup de recursos específicos de un plugin personalizado, debe crear una política de backup para el recurso o el grupo de recursos que incluirá en el backup.
+
+*Lo que necesitará*
+
+* Debe tener definida una estrategia de backup.
++
+Para obtener detalles, consulte la información sobre cómo definir una estrategia de protección de datos para plugins personalizados.
+
+* Debe tener preparada la protección de datos.
++
+La preparación de la protección de datos incluye instalar SnapCenter, añadir hosts, crear conexiones con el sistema de almacenamiento y añadir recursos.
+
+* Debe asignar las máquinas virtuales de almacenamiento (SVM) para operaciones de mirroring o almacén.
++
+El administrador de SnapCenter debe haberle asignado las instancias de SVM de los volúmenes de origen y de destino en caso de que replique copias de Snapshot en un reflejo o almacén.
+
+* Debe añadir manualmente los recursos que desee proteger.
+
+
+*Acerca de esta tarea*
+
+* Una política de backup es un conjunto de reglas que rigen cómo gestionar, programar y retener backups. De forma adicional, puede definir la configuración de replicación, script y aplicaciones.
+* Puede especificar opciones en la política para ahorrar tiempo cuando desee reutilizarla con otro grupo de recursos.
+
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Configuración*.
+. En la página Configuración, haga clic en *Directivas*.
+. Haga clic en *Nuevo*.
+. En la página Name, escriba el nombre de la política y una descripción.
+. En la página Settings, realice los siguientes pasos:
++
+** Especifique el tipo de programa seleccionando *a petición*, *hora*, *Diario*, *Semanal* o *Mensual*.
++
+
+NOTE: Puede especificar la programación (fecha de inicio, fecha de finalización y frecuencia) para la operación de backup mientras crea un grupo de recursos. De este modo, puede crear grupos de recursos que compartan la misma política y la misma frecuencia de backup, pero también asignar diferentes programaciones de backup a cada política.
+
++
+image::../media/backup_settings.gif[configuración de copia de seguridad]
+
++
+
+NOTE: Si ha programado para las 2:00 a.m., la programación no se activará durante el horario de verano.
+
+** En la sección Custom backup settings, proporcione los ajustes específicos de backup que deban pasarse al plugin en formato de clave-valor. Puede pasar varios pares de clave-valor al plugin.
+
+
+. En la página Retention, especifique la configuración de retención para el tipo de backup y el tipo de programación seleccionados en la página Backup Type:
++
+|===
+| Si desea... | Realice lo siguiente... 
+
+
+ a| 
+Conservar una cierta cantidad de copias de Snapshot
+ a| 
+Seleccione *total Snapshot copies to keep* y, a continuación, especifique el número de copias Snapshot que desea conservar.
+
+Si la cantidad de copias de Snapshot supera el número especificado, las copias se eliminan empezando por las más antiguas.
+
+
+NOTE: Debe establecer el número de retención en 2 o un valor más alto si tiene pensado habilitar la replicación de SnapVault. Si establece el número de retención en 1, la operación puede generar un error, ya que la primera copia de Snapshot es la de referencia para la relación de SnapVault hasta que se replica una nueva copia de Snapshot en el destino.
+
+
+NOTE: El valor de retención máximo es 1018 para recursos en ONTAP 9.4 o posterior, y 254 para recursos en ONTAP 9.3 o anterior. Se producirá un error en los backups si la retención se establece en un valor superior a la versión de ONTAP subyacente.
+
+
+
+ a| 
+Conserve las copias de Snapshot por una cierta cantidad de días
+ a| 
+Seleccione *mantener copias Snapshot para* y, a continuación, especifique el número de días durante los que desea conservar las copias Snapshot antes de eliminarlas.
+
+|===
+. En la página Replication, especifique la configuración de replicación:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+*Actualizar SnapMirror después de crear una copia Snapshot local*
+ a| 
+Seleccione este campo para crear copias reflejadas de los conjuntos de backup en otro volumen (replicación de SnapMirror).
+
+Si la relación en ONTAP es del tipo Mirror/Vault y solo se selecciona esta opción, la copia de Snapshot creada en el origen no se transferirá al destino, pero figurará en el destino. Si esta copia de Snapshot se selecciona del destino con el fin de realizar una operación de recuperación, aparece un mensaje de error indicando que la ubicación secundaria no está disponible para el backup reflejado/en almacenamiento.
+
+
+
+ a| 
+*Actualizar SnapVault después de crear una copia Snapshot local*
+ a| 
+Seleccione esta opción para realizar una replicación de backup disco a disco (backups de SnapVault).
+
+
+
+ a| 
+*Etiqueta de política secundaria*
+ a| 
+Seleccione una etiqueta de Snapshot.
+
+Según la etiqueta de copia de Snapshot que seleccione, ONTAP aplicará la política de retención de copias de Snapshot secundarias que corresponda a esa etiqueta.
+
+
+NOTE: Si ha seleccionado *Actualizar SnapMirror después de crear una copia Snapshot local*, puede especificar opcionalmente la etiqueta de la directiva secundaria. Sin embargo, si ha seleccionado *Actualizar SnapVault después de crear una copia Snapshot local*, debe especificar la etiqueta de la directiva secundaria.
+
+
+
+ a| 
+*Número de reintentos de error*
+ a| 
+Escriba el número máximo de intentos de replicación que se permitirán antes de que la operación se detenga.
+
+|===
++
+
+NOTE: Debe configurar la política de retención de SnapMirror en ONTAP para el almacenamiento secundario a fin de evitar alcanzar el límite máximo de copias de Snapshot en el almacenamiento secundario.
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+

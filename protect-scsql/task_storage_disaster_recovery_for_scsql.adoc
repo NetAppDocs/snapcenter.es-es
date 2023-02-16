@@ -1,0 +1,54 @@
+---
+permalink: protect-scsql/task_storage_disaster_recovery_for_scsql.html 
+sidebar: sidebar 
+keywords:  
+summary: Para recuperar el almacenamiento del plugin de SnapCenter para SQL Server, habilitar el modo DR para almacenamiento en la página Global Settings. 
+---
+= Recuperación ante desastres de almacenamiento (DR) para el plugin de SnapCenter para SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para recuperar el almacenamiento del plugin de SnapCenter para SQL Server, habilitar el modo DR para almacenamiento en la página Global Settings.
+
+*Lo que necesitará*
+
+* Compruebe que los plugins estén en modo de mantenimiento.
+* Rompa la relación de SnapMirror/SnapVault.link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-950/GUID-8A3F828F-CD3D-48E8-A171-393581FEB2ED.html["Romper las relaciones de SnapMirror"]
+* Conecte el LUN de secundario al equipo host con la misma letra de unidad.
+* Asegúrese de que todos los discos estén conectados utilizando las mismas letras de unidad que se usaron antes de la recuperación ante desastres.
+* Reinicie el servicio de servidor MSSQL.
+* Asegúrese de que los recursos SQL vuelven a estar en línea.
+
+
+*Acerca de esta tarea*
+
+No se admite la recuperación ante desastres en las configuraciones VMDK y RDM.
+
+* Pasos*
+
+. En la página Configuración, vaya a *Ajustes* > *Ajustes globales* > *recuperación ante desastres*.
+. Seleccione *Activar recuperación ante desastres*.
+. Haga clic en *aplicar*.
+. Compruebe si el trabajo DR está activado o no haciendo clic en *Monitor* > *trabajos*.
+
+
+*Después de terminar*
+
+* Si se crean bases de datos nuevas después de la conmutación al nodo de respaldo, las bases de datos se pondrán en modo sin recuperación ante desastres.
++
+Las nuevas bases de datos seguirán funcionando como lo hicieron antes del fallo.
+
+* Los backups nuevos que se crearon en modo de recuperación ante desastres se enumeran en SnapMirror o SnapVault (secundario) en la página Topology.
++
+Se muestra un icono "i" junto a los nuevos backups para indicar que estos backups se han creado durante el modo de recuperación ante desastres.
+
+* Puede eliminar los backups del plugin de SnapCenter para SQL Server que se crearon durante la conmutación por error usando la interfaz de usuario o el siguiente cmdlet de: `Remove-SmBackup`
+* Después de la conmutación por error, si desea que algunos de los recursos estén en modo no DR, use el cmdlet siguiente: `Remove-SmResourceDRMode`
++
+Para obtener más información, consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].
+
+* SnapCenter Server gestionará los recursos de almacenamiento individuales (bases de datos SQL) que están en modo DR o no DR, pero no el grupo de recursos con recursos de almacenamiento que se encuentran en modo DR o en modo no DR.
+

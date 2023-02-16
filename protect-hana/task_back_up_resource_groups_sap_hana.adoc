@@ -1,0 +1,44 @@
+---
+permalink: protect-hana/task_back_up_resource_groups_sap_hana.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for SAP HANA Database 
+summary: Un grupo de recursos es una agrupacion de recursos en un host. Se realiza una operación de backup del grupo de recursos con todos los recursos definidos en el grupo. 
+---
+= Realice un backup de los grupos de recursos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Un grupo de recursos es una agrupacion de recursos en un host. Se realiza una operación de backup del grupo de recursos con todos los recursos definidos en el grupo.
+
+*Lo que necesitará*
+
+* Debe tener creado un grupo de recursos con una política anexada.
+* Si desea realizar un backup de un recurso que tenga una relación de SnapMirror con un almacenamiento secundario, la función ONTAP asignada al usuario de almacenamiento debería incluir el privilegio «sinapmirror all». Sin embargo, si usted está utilizando el rol "'vsadmin'", entonces no se requiere el privilegio "nnapmirror all".
+
+
+*Acerca de esta tarea*
+
+Puede realizar un backup del grupo de recursos bajo demanda en la página Resources. Si un grupo de recursos tiene una política anexada y una programación configurada, los backups se realizan automáticamente según esa programación.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione *Resource Group* en la lista *View*.
++
+Se puede buscar el grupo de recursos ingresando su nombre en el cuadro de búsqueda o haciendo clic en image:../media/filter_icon.gif[""]y, a continuación, seleccione la etiqueta. A continuación, puede hacer clic en image:../media/filter_icon.gif[""] para cerrar el panel de filtros.
+
+. En la página Resource Groups, seleccione el grupo de recursos que desea incluir en un backup y, a continuación, haga clic en *Back up Now*.
+. En la página Backup, realice los siguientes pasos:
++
+.. Si asoció varias políticas al grupo de recursos, en la lista desplegable *Policy*, seleccione la política que desea usar para la copia de seguridad.
++
+Si la política seleccionada para el backup bajo demanda está asociada a una programación de backup, los backups bajo demanda se retendrán en función de la configuración de retención especificada para el tipo de programación.
+
+.. Haga clic en *copia de seguridad*.
+
+
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+

@@ -1,0 +1,198 @@
+---
+permalink: protect-scc/reference_minimum_ontap_privileges_required_for_custom_plug_in.html 
+sidebar: sidebar 
+keywords:  
+summary: Los privilegios mínimos requeridos de ONTAP varían en función de los plugins de SnapCenter que utilice para la protección de datos. 
+---
+= Privilegios mínimos de ONTAP requeridos para el plugin personalizado
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Los privilegios mínimos requeridos de ONTAP varían en función de los plugins de SnapCenter que utilice para la protección de datos.
+
+|===
+| Comandos de acceso total: Privilegios mínimos requeridos para ONTAP 8.3.0 y versiones posteriores 
+
+
+ a| 
+event generate-autosupport-log
+
+
+
+ a| 
+se muestra el historial del trabajo
+
+detención de trabajo
+
+
+
+ a| 
+se muestra el atributo de lun
+
+lun create
+
+eliminación de lun
+
+geometría de lun
+
+igroup de lun añadido
+
+crear lun igroup
+
+lun igroup eliminado
+
+cambio de nombre de lun igroup
+
+lun igroup show
+
+asignación de lun de nodos adicionales
+
+se crea la asignación de lun
+
+se elimina la asignación de lun
+
+asignación de lun quitar nodos de generación de informes
+
+se muestra el mapa de lun
+
+modificación de lun
+
+movimiento de lun en volumen
+
+lun desconectada
+
+lun conectada
+
+cambio de tamaño de lun
+
+serie de lun
+
+muestra de lun
+
+
+
+ a| 
+interfaz de red
+
+
+
+ a| 
+regla adicional de la política de snapmirror
+
+regla de modificación de la política de snapmirror
+
+regla de eliminación de la política de snapmirror
+
+la política de snapmirror
+
+restauración de snapmirror
+
+de snapmirror
+
+historial de snapmirror
+
+actualización de snapmirror
+
+conjunto de actualizaciones de snapmirror
+
+destinos de listas de snapmirror
+
+
+
+ a| 
+versión
+
+
+
+ a| 
+crear el clon de volumen
+
+show de clon de volumen
+
+inicio de división de clon de volumen
+
+detención de división de clon de volumen
+
+cree el volumen
+
+destrucción del volumen
+
+crear el archivo de volumen
+
+uso show-disk del archivo de volumen
+
+volumen sin conexión
+
+volumen en línea
+
+modificación del volumen
+
+crear el qtree de volúmenes
+
+eliminación de qtree de volumen
+
+modificación del qtree del volumen
+
+se muestra volume qtree
+
+restricción de volumen
+
+visualización de volumen
+
+crear snapshots de volumen
+
+eliminación de snapshots de volumen
+
+modificación de las copias de snapshot de volumen
+
+cambio de nombre de copias de snapshot de volumen
+
+restauración de copias snapshot de volumen
+
+archivo de restauración de snapshots de volumen
+
+visualización de copias de snapshot de volumen
+
+desmonte el volumen
+
+
+
+ a| 
+vserver cifs
+
+vserver cifs share create
+
+eliminación de vserver cifs share
+
+se muestra vserver shadowcopy
+
+visualización de vserver cifs share
+
+visualización de vserver cifs
+
+creación de política de exportación de vserver
+
+eliminación de la política de exportación de vserver
+
+creación de reglas de política de exportación de vserver
+
+aparece la regla de política de exportación de vserver
+
+visualización de la política de exportación de vserver
+
+se muestra la conexión iscsi del vserver
+
+se muestra vserver
+
+|===
+|===
+| Comandos de solo lectura: Privilegios mínimos requeridos para ONTAP 8.3.0 y versiones posteriores 
+
+
+ a| 
+interfaz de red
+
+|===

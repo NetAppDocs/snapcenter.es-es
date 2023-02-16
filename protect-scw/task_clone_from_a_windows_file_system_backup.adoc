@@ -1,0 +1,89 @@
+---
+permalink: protect-scw/task_clone_from_a_windows_file_system_backup.html 
+sidebar: sidebar 
+keywords: clone 
+summary: Puede utilizar SnapCenter para clonar un backup de sistema de archivos Windows. Si desea copiar un archivo que se eliminó o modificó por error, puede clonar un backup y acceder a dicho archivo en el clon. 
+---
+= Clonar desde un backup de sistema de archivos Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede utilizar SnapCenter para clonar un backup de sistema de archivos Windows. Si desea copiar un archivo que se eliminó o modificó por error, puede clonar un backup y acceder a dicho archivo en el clon.
+
+*Lo que necesitará*
+
+* Debe haberse preparado para la protección de datos completando ciertas tareas, como añadir hosts, identificar recursos y crear conexiones de máquina virtual de almacenamiento (SVM).
+* Debe tener un backup del sistema de archivos.
+* Debe asegurarse de que los agregados donde se alojan los volúmenes deben estar en la lista de agregados asignados de la máquina virtual de almacenamiento (SVM).
+* No puede clonar un grupo de recursos. Solo puede clonar backups individuales de sistema de archivos.
+* Si un backup reside en una máquina virtual con un disco VMDK, SnapCenter no puede clonar el backup en un servidor físico.
+* Si clona un clúster de Windows (por ejemplo, un LUN compartido o un LUN con volumen compartido de clúster (CSV), el clon se almacena como LUN dedicado en el host que especifique.
+* Para una operación de clonado, el directorio raíz del punto de montaje de volumen no puede ser un directorio compartido.
+* No puede crear un clon en un nodo que no sea el nodo de inicio para el agregado.
+* No puede programar operaciones de clon recurrentes (ciclo de vida de clon) para sistemas de archivos Windows. Solo puede clonar un backup bajo demanda.
+* Si se mueve un LUN que contiene un clon de un volumen nuevo, SnapCenter ya no puede admitir el clon. Por ejemplo, no se puede usar SnapCenter para eliminar ese clon.
+* No es posible clonar entre entornos. Por ejemplo, la clonación de un disco físico a un disco virtual o viceversa.
+
+
+*Acerca de esta tarea*
+
+* LA RUTA_DE_SCRIPTS se define mediante la clave PredefinedWindowsScriptsDirectory ubicada en el archivo SMCoreServiceHost.exe.Config del host del plugin.
++
+Si es necesario, puede cambiar esta ruta y reiniciar el servicio SMcore. Se recomienda utilizar la ruta predeterminada para la seguridad.
+
++
+El valor de la tecla se puede mostrar desde swagger a través de la API: API /4.7/config settings
+
++
+Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGURACIÓN de API.
+
+
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione *File Systems* en la lista.
+. Seleccione el host.
++
+La vista de topología se muestra automáticamente si el recurso está protegido.
+
+. Desde la lista de recursos, seleccione el backup que desea clonar y luego haga clic en el icono de clonar.
+. En la página Options, haga lo siguiente:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Clone el servidor
+ a| 
+Elija el host donde se debe crear el clon.
+
+
+
+ a| 
+«"punto de montaje auto assign» o «"asignar automáticamente punto de montaje de volumen en ruta"».
+ a| 
+Elija si asignar automáticamente un punto de montaje o un punto de montaje de volumen en una ruta.
+
+Auto assign volume Mount point under path: El punto de montaje en una ruta permite proporcionar un directorio específico donde se crearán los puntos de montaje. Antes de elegir esta opción debe comprobar que el directorio esté vacío. Si hay un backup en el directorio, el backup estará en estado no válido tras la operación de montaje.
+
+
+
+ a| 
+Ubicación del archivo
+ a| 
+Elija una ubicación de archivado si va a clonar un backup secundario.
+
+|===
+. En la página Script, especifique los scripts previos y posteriores que desea ejecutar.
++
+
+NOTE: La ruta scripts previos o posteriores no debe incluir unidades o recursos compartidos. La ruta debe ser relativa a LA RUTA DE ACCESO_SCRIPTS.
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+

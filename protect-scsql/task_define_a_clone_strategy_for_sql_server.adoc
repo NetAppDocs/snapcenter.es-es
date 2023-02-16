@@ -1,0 +1,46 @@
+---
+permalink: protect-scsql/task_define_a_clone_strategy_for_sql_server.html 
+sidebar: sidebar 
+keywords:  
+summary: Definir una estrategia de clonado permite clonar correctamente la base de datos. 
+---
+= Defina una estrategia de clonación para SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Definir una estrategia de clonado permite clonar correctamente la base de datos.
+
+. Revisar las limitaciones de las operaciones de clonado.
+. Decidir el tipo de clon que se necesita.
+
+
+
+
+== Limitaciones de las operaciones de clonado
+
+Antes de clonar las bases de datos, es necesario tener en cuenta las limitaciones de las operaciones de clonado.
+
+* Si utiliza una versión de Oracle de 11.2.0.4 a 12.1.0.1, la operación de clonado estará en estado colgado al ejecutar el comando _renamedg_ . Puede aplicar el parche de Oracle 19544733 para solucionar este problema.
+* No se admite la clonado de bases de datos de un LUN conectado directamente a un host (por ejemplo, usando el iniciador de iSCSI de Microsoft en un host de Windows) a un VMDK o un LUN de RDM en el mismo host de Windows, ni en otro host de Windows, o viceversa.
+* El directorio raíz del punto de montaje del volumen no puede ser un directorio compartido.
+* Si se mueve un LUN que contiene un clon de un volumen nuevo, no es posible eliminar el clon.
+
+
+
+
+== Tipos de operaciones de clonado
+
+Es posible utilizar SnapCenter para clonar un backup de una base de datos de SQL Server o una base de datos de producción.
+
+* Clonación de un backup de base de datos
++
+La base de datos clonada puede actuar como base de referencia para las aplicaciones y ayudar a aislar errores de la aplicación que se producen en el entorno de producción. La base de datos clonada también puede usarse para la recuperación de errores de la base de datos de software.
+
+* Ciclo de vida de clon
++
+Es posible utilizar SnapCenter para programar trabajos de clonado recurrentes que se producen cuando la base de datos de producción no está ocupada.
+
+

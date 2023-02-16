@@ -1,0 +1,129 @@
+= 
+:allow-uri-read: 
+
+
+SnapCenter es compatible con una gran variedad de tipos de almacenamiento, tanto en máquinas físicas como virtuales. Antes de instalar el paquete para el host, es necesario verificar que el tipo de almacenamiento sea compatible.
+
+Windows Server es compatible con el aprovisionamiento y la protección de datos de SnapCenter. Para obtener la información más reciente sobre las versiones compatibles, consulte  https://imt.netapp.com/matrix/imt.jsp?components=108395;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+
+|===
+| Máquina | Tipo de almacenamiento | Aprovisionamiento con | Notas de soporte 
+
+
+ a| 
+Servidor físico
+ a| 
+LUN conectados a FC
+ a| 
+Interfaz gráfica de usuario de SnapCenter o cmdlets de PowerShell
+ a| 
+
+
+
+ a| 
+Servidor físico
+ a| 
+LUN conectados a iSCSI
+ a| 
+Interfaz gráfica de usuario de SnapCenter o cmdlets de PowerShell
+ a| 
+
+
+
+ a| 
+Servidor físico
+ a| 
+Recursos compartidos de SMB3 (CIFS) que residen en una máquina virtual de almacenamiento (SVM)
+ a| 
+Interfaz gráfica de usuario de SnapCenter o cmdlets de PowerShell
+ a| 
+Compatibilidad solo para aprovisionamiento.
+
+No puede utilizar SnapCenter para realizar backup de datos o recursos compartidos mediante el protocolo SMB.
+
+
+
+ a| 
+Máquina virtual de VMware
+ a| 
+LUN de RDM conectados por un adaptador de bus de host FC o iSCSI
+ a| 
+Cmdlets de PowerShell
+ a| 
+
+
+
+ a| 
+Máquina virtual de VMware
+ a| 
+LUN iSCSI conectados directamente al sistema invitado por el iniciador de iSCSI
+ a| 
+Interfaz gráfica de usuario de SnapCenter o cmdlets de PowerShell
+ a| 
+
+
+
+ a| 
+Máquina virtual de VMware
+ a| 
+Sistemas de archivos de máquina virtual (VMFS) o almacenes de datos NFS
+ a| 
+VSphere de VMware
+ a| 
+
+
+
+ a| 
+Máquina virtual de VMware
+ a| 
+Un sistema invitado conectado a recursos compartidos de SMB3 que residen en una SVM
+ a| 
+Interfaz gráfica de usuario de SnapCenter o cmdlets de PowerShell
+ a| 
+Compatibilidad solo para aprovisionamiento.
+
+No puede utilizar SnapCenter para realizar backup de datos o recursos compartidos mediante el protocolo SMB.
+
+
+
+ a| 
+Máquina virtual Hyper-V.
+ a| 
+LUN de Virtual FC (VFC) conectados por un switch Fibre Channel virtual
+ a| 
+Interfaz gráfica de usuario de SnapCenter o cmdlets de PowerShell
+ a| 
+Para aprovisionar LUN de Virtual FC (VFC) conectados por un switch Fibre Channel virtual se debe usar Hyper-V Manager.
+
+
+NOTE: No se admiten los discos de acceso directo Hyper-V ni el backup de bases de datos en VHD(x) con aprovisionamiento en almacenamiento de NetApp.
+
+
+
+ a| 
+Máquina virtual Hyper-V.
+ a| 
+LUN iSCSI conectados directamente al sistema invitado por el iniciador de iSCSI
+ a| 
+Interfaz gráfica de usuario de SnapCenter o cmdlets de PowerShell
+ a| 
+
+NOTE: No se admiten los discos de acceso directo Hyper-V ni el backup de bases de datos en VHD(x) con aprovisionamiento en almacenamiento de NetApp.
+
+
+
+ a| 
+Máquina virtual Hyper-V.
+ a| 
+Un sistema invitado conectado a recursos compartidos de SMB3 que residen en una SVM
+ a| 
+Interfaz gráfica de usuario de SnapCenter o cmdlets de PowerShell
+ a| 
+Compatibilidad solo para aprovisionamiento.
+
+No puede utilizar SnapCenter para realizar backup de datos o recursos compartidos mediante el protocolo SMB.
+
+
+NOTE: No se admiten los discos de acceso directo Hyper-V ni el backup de bases de datos en VHD(x) con aprovisionamiento en almacenamiento de NetApp.
+
+|===

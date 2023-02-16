@@ -1,0 +1,177 @@
+---
+permalink: protect-sce/reference_prerequisites_to_add_hosts_and_install_snapcenter_plug_in_for_microsoft_exchange_server.html 
+sidebar: sidebar 
+keywords:  
+summary: Antes de añadir un host e instalar los paquetes de plugins, debe cumplir con todos los requisitos. 
+---
+= Requisitos previos para añadir hosts e instalar el plugin de SnapCenter para Microsoft Exchange Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de añadir un host e instalar los paquetes de plugins, debe cumplir con todos los requisitos.
+
+* Si utiliza iSCSI, el servicio iSCSI debe estar en ejecución.
+* Debe tener un usuario de dominio con privilegios de administrador local y permisos locales para iniciar sesión en el host remoto.
+* Debe usar Microsoft Exchange Server 2013, 2016 o 2019 para configuraciones independientes y de grupos de disponibilidad de base de datos.
+* Al instalar un plugin en un host de Windows, si especifica una credencial que no está integrada o si el usuario pertenece a un usuario de grupo de trabajo local, debe deshabilitar UAC en el host.
+* Si gestiona nodos de clúster en SnapCenter, debe tener un usuario con privilegios de administrador para todos los nodos del clúster.
+* Debe tener un usuario con permisos de administrador en Exchange Server.
+* Si SnapManager para Microsoft Exchange Server y SnapDrive para Windows ya se han instalado, debe anular el registro del proveedor de hardware VSS usado por SnapDrive para Windows antes de que instale el plugin para Exchange en el mismo Exchange Server para garantizar una protección de datos exitosa usando SnapCenter.
+* Si SnapManager para Microsoft Exchange Server y el plugin para Exchange están instalados en el mismo servidor, debe suspender o eliminar todas las programaciones del programador de Windows creadas por SnapManager para Microsoft Exchange Server.
+* El host debe poder resolverse con el nombre de dominio completo (FQDN) del servidor. Si el archivo hosts se modifica para que pueda resolverse y si se especifican tanto el nombre corto como el FQDN en el archivo hosts, cree una entrada en el archivo hosts SnapCenter con el siguiente formato: _<ip_address> <host_fqdn> <host_name>_.
+* Compruebe que los puertos siguientes no estén bloqueados en el firewall; de lo contrario, la operación de añadir host fallará. Para resolver este problema, debe configurar el intervalo de puertos dinámico. Para obtener más información, consulte https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/configure-rpc-dynamic-port-allocation-with-firewalls["Documentación de Microsoft"^].
++
+** Intervalo de puertos 50000 - 51000 para Windows 2016 y Exchange 2016
+** Intervalo de puertos 6000 - 6500 para Windows 2012 R2 y Exchange 2013
+** Intervalo de puertos 49152 - 65536 para Windows 2019
+
+
+
+
+[NOTE]
+====
+Para identificar el intervalo de puertos, ejecute los siguientes comandos:
+
+* netsh int ipv4 muestran dynamicport tcp
+* netsh int ipv4 muestran dynamicport udp
+* netsh int ipv6 muestra dynamicport tcp
+* netsh int ipv6 muestra dynamicport udp
+
+
+====
+
+
+== Requisitos del host para instalar el paquete de plugins de SnapCenter para Windows
+
+Antes de instalar el paquete de plugins de SnapCenter para Windows, debe estar familiarizado con algunos requisitos básicos de espacio y tamaño del sistema host.
+
+|===
+| Elemento | Requisitos 
+
+
+ a| 
+Sistemas operativos
+ a| 
+Microsoft Windows
+
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=108395;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+
+
+
+ a| 
+RAM mínima para el plugin de SnapCenter en el host
+ a| 
+1 GB
+
+
+
+ a| 
+Espacio de registro e instalación mínimo para el plugin de SnapCenter en el host
+ a| 
+5 GB
+
+
+NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de almacenamiento en la carpeta de registros. El espacio de registro necesario varía en función de la cantidad de entidades que se han de proteger y la frecuencia de las operaciones de protección de datos. Si no hay espacio en disco suficiente, no se crearán registros de las operaciones ejecutadas recientemente.
+
+
+
+ a| 
+Paquetes de software obligatorios
+ a| 
+* Microsoft .NET Framework 4.7.2 o posterior
+* Windows Management Framework (WMF) 4.0 o posterior
+* PowerShell 4.0 o posterior
+
+
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=108395;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+
+Para obtener información sobre la solución de problemas de .NET, consulte, link:..https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/SnapCenter_upgrade_or_install_fails_with_%22This_KB_is_not_related_to_the_OS%22["La actualización o instalación de SnapCenter falla en sistemas heredados que no tienen conexión a Internet."]
+
+|===
+
+
+== Privilegios de servidor de Exchange necesarios
+
+Para habilitar SnapCenter y añadir un servidor de Exchange o DAG, y para instalar el plugin de SnapCenter para Microsoft Exchange Server en un host o DAG, es necesario configurar SnapCenter con las credenciales para un usuario con un conjunto mínimo de privilegios y permisos.
+
+Se necesita un usuario de dominio con privilegios de administrador local y con permisos de inicio de sesión local en el host de Exchange remoto, además de permisos administrativos en todos los nodos del DAG. El usuario de dominio debe contar con los siguientes permisos mínimos:
+
+* Add-MailboxDatabaseCopy
+* Desmontar base de datos
+* Get-AdServerSettings
+* Get-DatabaseDisponabilityGroup
+* Get-ExchangeServer
+* Get-MailboxDatabase
+* Get-MailboxDatabaseCopyStatus
+* Get-MailboxServer
+* Get-MailboxStatistics
+* Get-PublicFolderDatabase
+* Move-ActiveMailboxDatabase
+* Move-DatabasePath -ConfigurationOnly:$true
+* Mount-Database
+* New-MailboxDatabase
+* New-PublicFolderDatabase
+* Remove-MailboxDatabase
+* Remove-MailboxDatabaseCopy
+* Remove-PublicFolderDatabase
+* Resume-MailboxDatabaseCopy
+* Set-AdServerSettings
+* Set-MailboxDatabase -allowfilerestore:$true
+* Set-MailboxDatabaseCopy
+* Set-PublicFolderDatabase
+* Suspend-MailboxDatabaseCopy
+* Update-MailboxDatabaseCopy
+
+
+
+
+== Configurar GMSA en Windows Server 2012 o posterior
+
+Antes de instalar el paquete de plugins de SnapCenter para Windows, debe estar familiarizado con algunos requisitos básicos de espacio y tamaño del sistema host.
+
+|===
+| Elemento | Requisitos 
+
+
+ a| 
+Sistemas operativos
+ a| 
+Microsoft Windows
+
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=108395;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+
+
+
+ a| 
+RAM mínima para el plugin de SnapCenter en el host
+ a| 
+1 GB
+
+
+
+ a| 
+Espacio de registro e instalación mínimo para el plugin de SnapCenter en el host
+ a| 
+5 GB
+
+
+NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de almacenamiento en la carpeta de registros. El espacio de registro necesario varía en función de la cantidad de entidades que se han de proteger y la frecuencia de las operaciones de protección de datos. Si no hay espacio en disco suficiente, no se crearán registros de las operaciones ejecutadas recientemente.
+
+
+
+ a| 
+Paquetes de software obligatorios
+ a| 
+* Microsoft .NET Framework 4.7.2 o posterior
+* Windows Management Framework (WMF) 4.0 o posterior
+* PowerShell 4.0 o posterior
+
+
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=108395;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+
+Para obtener información sobre la solución de problemas de .NET, consulte, link:..https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/SnapCenter_upgrade_or_install_fails_with_%22This_KB_is_not_related_to_the_OS%22["La actualización o instalación de SnapCenter falla en sistemas heredados que no tienen conexión a Internet."]
+
+|===

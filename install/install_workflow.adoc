@@ -1,0 +1,16 @@
+---
+permalink: install/install_workflow.html 
+sidebar: sidebar 
+keywords: install, snapcenter server, license, storage system, RBAC, provision storage, workflow 
+summary: La imagen del flujo de trabajo muestra los pasos necesarios para instalar y configurar SnapCenter Server. 
+---
+= Flujo de trabajo de instalación
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El flujo de trabajo muestra las distintas tareas necesarias para instalar y configurar el servidor SnapCenter.
+
+image::../media/install_snapcenter_server.png[Instale el servidor SnapCenter]

@@ -1,0 +1,101 @@
+---
+permalink: protect-sco/task_mount_and_unmount_databases_backups.html 
+sidebar: sidebar 
+keywords: mount, unmount, backup, ASM, asm_diskstring 
+summary: Si desea acceder a los archivos en el backup, puede montar uno o varios backups de solo datos y registros. Se puede montar el backup en el mismo host donde se creó el backup o en uno remoto con el mismo tipo de configuración de host y de Oracle. Si montó manualmente los backups, debe desmontarlos manualmente después de completar la operación. Puede montar el backup de la base de datos solo una vez en un host para una base de datos específica. Mientras realiza una operación, puede montar un solo backup. 
+---
+= Montar y desmontar backups de bases de datos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si desea acceder a los archivos en el backup, puede montar uno o varios backups de solo datos y registros. Se puede montar el backup en el mismo host donde se creó el backup o en uno remoto con el mismo tipo de configuración de host y de Oracle. Si montó manualmente los backups, debe desmontarlos manualmente después de completar la operación. En cualquier instancia determinada, se puede montar un backup de una base de datos en cualquier host. Mientras realiza una operación, puede montar un solo backup.
+
+
+NOTE: En una configuración de Flex ASM, no puede realizar la operación de montaje en los nodos Leaf si la cardinalidad es menor que el número de nodos del clúster RAC.
+
+
+
+== Montar un backup de base de datos
+
+Si desea acceder a los archivos en el backup, debe montar manualmente un backup de base de datos.
+
+*Lo que necesitará*
+
+* Si tiene una instancia de base de datos de Automatic Storage Management (ASM) en un entorno NFS y desea montar las copias de seguridad de ASM, debe haber agregado la ruta de acceso a los discos ASM _/var/opt/snapcenter/sco/backup_*/_*_/*_*_/*_ en la ruta de acceso existente definida en el parámetro asm_diskstring.
+* Si tiene una instancia de base de datos de ASM en un entorno NFS y desea montar los backups de registros de ASM como parte de una operación de recuperación, debe haber agregado la ruta de acceso al disco ASM _/var/opt/snapcenter/scu/clones/_*_/_*_*_ en la ruta de acceso existente definida en el parámetro asm_diskstring.
+* En el parámetro asm_diskstring, debe configurar _AFD:*_ si está utilizando ASMFD o configurar _ORCL:*_ si está utilizando ASMLIB.
+
+
+
+NOTE: Para obtener información sobre cómo editar el parámetro asm_diskstring, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Disk_paths_are_not_added_to_the_asm_diskstring_database_parameter["Cómo agregar las rutas de acceso al disco a asm_diskstring"^].
+
+* Deben configurar las credenciales de ASM y el puerto ASM si difiere del host de la base de datos de origen mientras se monta el backup.
+* Si desea montar en un host alternativo, debe verificar que este host cumpla los siguientes requisitos:
++
+** El mismo UID y GID que el host original
+** La misma versión de Oracle que el host original
+** La misma distribución de sistema operativo que el host original
+** En NVMe, se debe instalar NVMe util
+
+
+
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione *Database* o *Resource Group* en la lista *View*.
+. Seleccione la base de datos en la vista de detalles de la base de datos o en la vista de detalles del grupo de recursos.
++
+Se muestra la página de topología de la base de datos.
+
+. En la vista Manage Copies, seleccione *copias de seguridad* ya sea en el sistema de almacenamiento principal o secundario (reflejado o replicado).
+. Seleccione el backup en la tabla y haga clic en image:../media/mount_icon.gif["el icono de montaje"].
+. En la página Mount backups, seleccione el host en el que desea montar la copia de seguridad en la lista desplegable *Elija el host para montar la copia de seguridad*.
++
+Aparece la ruta de acceso de montaje _/var/opt/snapcenter/sco/backup_Mount/backup_name/database_name_.
+
++
+Si va a montar el backup de una base de datos de ASM, aparece la ruta de acceso de montaje +diskgroupname_SID_backupid.
+
+. Haga clic en *Mount*.
+
+
+*Después de terminar*
+
+* Es posible ejecutar el siguiente comando para recuperar la información relacionada con el backup montado:
++
+`./sccli Get-SmBackup -BackupName backup_name -ListMountInfo`
+
+* Si montó una base de datos de ASM, puede ejecutar el siguiente comando para recuperar la información relacionada con el backup montado:
++
+`./sccli Get-Smbackup -BackupNamediskgroupname_SID_backupid-listmountinfo`
+
+* Para recuperar el ID de backup, ejecute el siguiente comando:
++
+`./sccli Get-Smbackup-BackupNamebackup_name`
+
++
+La información relativa a los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando Get-Help _command_name_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885486["Guía de referencia de comandos del software SnapCenter"^].
+
+
+
+
+
+== Desmontar un backup de base de datos
+
+Es posible desmontar manualmente un backup de base de datos montado si ya no se desea acceder a los archivos en el backup.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione *Database* o *Resource Group* en la lista *View*.
+. Seleccione la base de datos en la vista de detalles de la base de datos o en la vista de detalles del grupo de recursos.
++
+Se muestra la página de topología de la base de datos.
+
+. Seleccione el backup que está montado y haga clic en image:../media/unmount_icon.gif["el icono de desmontaje"].
+. Haga clic en *Aceptar*.
+

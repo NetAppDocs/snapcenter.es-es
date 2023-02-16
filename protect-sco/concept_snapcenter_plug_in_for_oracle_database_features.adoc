@@ -1,0 +1,92 @@
+---
+permalink: protect-sco/concept_snapcenter_plug_in_for_oracle_database_features.html 
+sidebar: sidebar 
+keywords: plug-in for Oracle features 
+summary: El plugin para bases de datos de Oracle se integra con la base de datos de Oracle en el host Linux o AIX y con las tecnologías de NetApp en el sistema de almacenamiento. 
+---
+= Funciones del plugin para base de datos de Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El plugin para bases de datos de Oracle se integra con la base de datos de Oracle en el host Linux o AIX y con las tecnologías de NetApp en el sistema de almacenamiento.
+
+* Interfaz gráfica de usuario unificada
++
+La interfaz de SnapCenter ofrece estandarización y consistencia entre plugins y entornos. La interfaz de SnapCenter permite completar operaciones de backup, restauración, recuperación y clonado consistentes entre plugins, utilizar informes centralizados, utilizar visualizaciones de consola rápidas, configurar el RBAC y supervisar trabajos en todos los plugins.
+
+* Administración central automatizada
++
+Es posible programar operaciones de backup y clonado, configurar retención de backup basado en políticas y realizar operaciones de restauración. También es posible supervisar de manera proactiva el entorno configurando SnapCenter para que envíe alertas por correo electrónico.
+
+* Tecnología de copia de Snapshot de NetApp no disruptiva
++
+SnapCenter utiliza la tecnología de copia de Snapshot de NetApp con el plugin para bases de datos de Oracle y el plugin para UNIX con el fin de realizar backups de bases de datos. Las copias de Snapshot consumen un espacio de almacenamiento mínimo.
+
+
+
+El plugin para bases de datos de Oracle también ofrece los siguientes beneficios:
+
+* Compatibilidad con backup, restauración, clonado, montaje, desmontaje y flujos de trabajo de verificación
+* Detección automática de las bases de datos de Oracle configuradas en el host
+* Compatibilidad para catalogar y descatalogar con Oracle RMAN
+* Seguridad compatible con RBAC y delegación de roles centralizada
++
+También es posible configurar las credenciales para que los usuarios de SnapCenter autorizados tengan permisos en el nivel de las aplicaciones.
+
+* Compatibilidad con la gestión de registros de archivo (ALM) para operaciones de restauración y clonado
+* Creación de copias de bases de datos de producción con gestión eficiente del espacio y en un momento específico con fines de prueba o de extracción de datos con la tecnología FlexClone de NetApp
++
+Se requiere una licencia de FlexClone en el sistema de almacenamiento donde desea crear el clon.
+
+* Compatibilidad con la función del grupo de consistencia (CG) de ONTAP como parte de la creación de backups en entornos DE SAN y ASM
+* Verificación de backups no disruptiva y automatizada
+* Capacidad para ejecutar varios backups de forma simultánea entre varios hosts de bases de datos
++
+En una sola operación se consolidan copias de Snapshot cuando las bases de datos en un solo host comparten el mismo volumen.
+
+* Compatibilidad con infraestructuras físicas y virtualizadas
+* Compatibilidad con NFS, iSCSI, Fibre Channel (FC), RDM, VMDK sobre NFS y VMFS, y ASM sobre NFS, SAN, RDM y VMDK
+* Compatibilidad con la función de asignación de LUN selectiva (SLM) de ONTAP
++
+Habilitada de forma predeterminada, la función SLM detecta periódicamente los LUN que no poseen rutas optimizadas y los corrige. Puede configurar SLM mediante la modificación de los parámetros del archivo scu.properties ubicado en /var/opt/snapcenter/scu/etc.
+
++
+** Para deshabilitar esto, debe configurarse el valor del parámetro ENABLE_LUNPATH_MONITORING como false.
+** Es posible especificar la frecuencia en la cual se corrigen automáticamente las rutas de LUN mediante la asignación del valor (en horas) como el parámetro LUNPATH_MONITORING_INTERVAL. Para obtener más información sobre SLM, consulte http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sanag/home.html["Guía de administración de SAN de ONTAP 9"^].
+
+
+* Compatibilidad con memoria no volátil exprés (NVMe) en Linux
++
+** La utilidad NVMe debe estar instalada en el host.
++
+Debe instalar NVMe util para clonar o montar en un host alternativo.
+
+** Backup, restauración, clonado, montaje, desmontaje, Se admiten las operaciones de catalogación, descatalogación y verificación en el hardware de NVMe, excepto en los entornos virtualizados como VMDK y RDM.
++
+Las operaciones anteriores se admiten en dispositivos sin particiones o con una sola partición.
+
+
+
+
+
+
+NOTE: Puede configurar una solución multivía para dispositivos NVMe estableciendo la opción multivía nativa del kernel. No se admite la función multivía de Device Mapper (DM).
+
+* Admite cualquier usuario no predeterminado en lugar de oracle y Grid.
++
+Para admitir los usuarios no predeterminados, debe establecer los usuarios no predeterminados modificando los valores de los parámetros en el archivo *sco.properties* ubicado en _file /var/opt/snapcenter/sco/etc/_.
+
++
+Los valores predeterminados de los parámetros se definen como oracle y GRID.
+
++
+** DB_USER=oracle
+** DB_GROUP=oinstall
+** GI_USER=cuadrícula
+** GI_GROUP=oinstall
+
+
+

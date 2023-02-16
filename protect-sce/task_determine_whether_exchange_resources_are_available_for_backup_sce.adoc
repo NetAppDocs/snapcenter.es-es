@@ -1,0 +1,71 @@
+---
+permalink: protect-sce/task_determine_whether_exchange_resources_are_available_for_backup_sce.html 
+sidebar: sidebar 
+keywords: credentials 
+summary: Los recursos son las bases de datos y los grupos de disponibilidad de bases de datos de Exchange que se mantienen con los plugins instalados. Es posible añadir esos recursos a grupos de recursos para ejecutar tareas de protección de datos, pero primero es necesario identificar qué recursos están disponibles. Identificar los recursos disponibles también permite verificar que el plugin se haya instalado correctamente. 
+---
+= Determine si hay recursos de Exchange disponibles para backup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Los recursos son las bases de datos y los grupos de disponibilidad de bases de datos de Exchange que se mantienen con los plugins instalados. Es posible añadir esos recursos a grupos de recursos para ejecutar tareas de protección de datos, pero primero es necesario identificar qué recursos están disponibles. Identificar los recursos disponibles también permite verificar que el plugin se haya instalado correctamente.
+
+*Lo que necesitará*
+
+* Es necesario completar previamente algunas tareas, como instalar SnapCenter Server, añadir hosts, crear conexiones del sistema de almacenamiento, añadir credenciales e instalar el plugin para Exchange.
+* Para aprovechar las funciones del software Single Mailbox Recovery, debe haber localizado la base de datos activa en Exchange Server donde está instalado el software Single Mailbox Recovery.
+* Si las bases de datos residen en LUN de RDM de VMware, es necesario implementar el plugin de SnapCenter para VMware vSphere y registrar el plugin con SnapCenter. La https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_get_started_overview.html["Documentación del plugin de SnapCenter para VMware vSphere"] tiene más información.
+
+
+*Acerca de esta tarea*
+
+* No se puede realizar una copia de seguridad de las bases de datos si la opción *Estado general* de la página Detalles está establecida en no disponible para la copia de seguridad. La opción *Estado general* se establece en no disponible para copia de seguridad cuando se cumple alguna de las siguientes condiciones:
++
+** Las bases de datos no se encuentran en un LUN de NetApp.
+** Las bases de datos no están en estado normal.
++
+Las bases de datos no están en estado normal cuando están en estado pendiente de montaje, desmontaje, propagación o recuperación.
+
+
+
+* Si se posee un DAG, es posible realizar un backup de todas las bases de datos del grupo ejecutando el trabajo de backup desde el DAG.
+
+
+* Pasos*
+
+. En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione *Microsoft Exchange Server* en la lista desplegable de plugins ubicada en la esquina superior izquierda de la página Recursos.
+. En la página Resources, seleccione *Database*, *Database Availability Group* o *Resource Group* en la lista desplegable *View*.
++
+Todas las bases de datos y los DAG se muestran con sus nombres de DAG o host en formato FQDN, por lo que es posible distinguir entre varias bases de datos.
+
++
+Haga clic en image:../media/filter_icon.gif[""] Y seleccione el nombre de host y el servidor de Exchange para filtrar los recursos. A continuación, puede hacer clic en image:../media/filter_icon.gif[""] para cerrar el panel de filtros.
+
+. Haga clic en *Actualizar recursos*.
++
+Los recursos recién agregados, cuyo nombre se ha cambiado o eliminado se actualizan al inventario de SnapCenter Server.
+
++
+
+IMPORTANT: Es necesario actualizar los recursos si se cambia el nombre de las bases de datos fuera de SnapCenter.
+
++
+Se muestran los recursos, junto con información como el nombre del recurso, el nombre del grupo de disponibilidad de base de datos, el servidor en el que la base de datos está activa actualmente, el servidor con copias, la hora del último backup y el estado general.
+
++
+** Si la base de datos se encuentra en un almacenamiento de terceros, se muestra Not available for backup en la columna Overall Status.
++
+En un DAG, si la copia de la base de datos activa se encuentra en un almacenamiento de terceros y si al menos una copia de la base de datos pasiva se encuentra en el almacenamiento de NetApp, aparece Not protected en la columna *Overall Status*.
+
++
+No es posible realizar operaciones de protección de datos en una base de datos que se encuentra en un tipo de almacenamiento distinto de NetApp.
+
+** Si la base de datos se encuentra en el almacenamiento de NetApp y no está protegida, se muestra Not protected en la columna *Overall Status*.
+** Si una base de datos se encuentra en un sistema de almacenamiento de NetApp y está protegida, la interfaz de usuario muestra el mensaje Backup not run en la columna *Overall Status*.
+** Si una base de datos se encuentra en un sistema de almacenamiento de NetApp y está protegida, y se activa el backup para la bases de datos, la interfaz de usuario muestra el mensaje Backup succeeded en la columna *Overall Status*.
+
+
+

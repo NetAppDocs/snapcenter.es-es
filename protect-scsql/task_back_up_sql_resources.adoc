@@ -1,0 +1,158 @@
+---
+permalink: protect-scsql/task_back_up_sql_resources.html 
+sidebar: sidebar 
+keywords:  
+summary: Si un recurso aún no es parte de ningún grupo de recursos, es posible realizar backups del recurso desde la página Resources. 
+---
+= Realice backups de recursos de SQL
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si un recurso aún no es parte de ningún grupo de recursos, es posible realizar backups del recurso desde la página Resources.
+
+*Acerca de esta tarea*
+
+* Para la autenticación de credenciales de Windows, debe configurar la credencial antes de instalar los plugins.
+* Para la autenticación de la instancia de SQL Server, debe añadir la credencial después de instalar los plugins.
+* Para la autenticación GMSA, debe configurar GMSA mientras registra el host con SnapCenter en la página *Agregar host* o *Modificar host* para activar y utilizar el GMSA.
+* Si el host se agrega con GMSA y si el GMSA tiene privilegios de inicio de sesión y administrador del sistema, el GMSA se utilizará para conectarse a la instancia de SQL.
+
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione *Database* ,or *Instance*, o *Availability Group* en la lista desplegable *View*.
++
+.. Seleccione la base de datos, la instancia o el grupo de disponibilidad que desea incluir en un backup.
++
+Cuando se realiza el backup de una instancia, la información acerca del último estado de backup o sobre la fecha/hora de esa instancia no están disponibles en la página de recursos.
+
++
+En la vista de topología, no puede diferenciar si el estado del backup, la fecha/hora o el backup corresponden a una instancia o a una base de datos.
+
+
+
+. En la página Resources, active la casilla de verificación *formato de nombre personalizado para copia de Snapshot* y, a continuación, introduzca un formato de nombre personalizado que desee usar para el nombre de la copia de Snapshot.
++
+Por ejemplo, customtext_policy_hostname o resource_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+
+. En la página Policies, ejecute las siguientes tareas:
++
+.. En la sección Policies, seleccione una o más políticas de la lista desplegable.
++
+Puede crear una política haciendo clic en *image:../media/add_policy_from_resourcegroup.gif[""]* para iniciar el asistente de políticas.
+
++
+En la sección *Configurar horarios para directivas seleccionadas*, se muestran las directivas seleccionadas.
+
+.. Haga clic en *image:../media/add_policy_from_resourcegroup.gif[""]* En la columna Configurar programaciones de la directiva para la que desea configurar una programación.
+.. En la sección *Agregar horarios para la directiva* `policy_name` Configure la programación y, a continuación, haga clic en *Aceptar*.
++
+Aquí `policy_name` es el nombre de la política seleccionada.
+
++
+Los horarios configurados se enumeran en la columna *programas aplicados*.
+
+.. Seleccione *Use Microsoft SQL Server Scheduler* y, a continuación, seleccione la instancia del programador en la lista desplegable *Scheduler Instance* asociada con la directiva de programación.
+
+
+. En la página Verification, realice los siguientes pasos:
++
+.. Seleccione el servidor de verificación de la lista desplegable *servidor de verificación*.
++
+Puede seleccionar varios servidores de verificación (host local o remoto).
+
++
+
+NOTE: La versión del servidor de verificación debe ser igual o superior a la versión de la edición del servidor SQL que aloja la base de datos principal.
+
+.. Seleccione *cargar localizadores secundarios para verificar copias de seguridad en secundario* para verificar las copias de seguridad en el sistema de almacenamiento secundario.
+.. Seleccione la política para la que desea configurar la programación de verificación y haga clic en *image:../media/add_policy_from_resourcegroup.gif[""]*.
+.. En el cuadro de diálogo Add Verification Schedules _policy_name_, realice las siguientes acciones:
++
+|===
+| Si desea... | Realice lo siguiente... 
+
+
+ a| 
+Ejecutar la verificación después del backup
+ a| 
+Seleccione *Ejecutar verificación después de la copia de seguridad*.
+
+
+
+ a| 
+Programar una verificación
+ a| 
+Seleccione *Ejecutar verificación programada*.
+
+|===
++
+
+NOTE: Si el servidor de verificación no tiene una conexión de almacenamiento, la operación de verificación genera un error: No se pudo montar el disco.
+
+.. Haga clic en *Aceptar*.
++
+Las programaciones configuradas figuran en la columna Applied Schedules.
+
+
+
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
++
+También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. Si desea adjuntar el informe de la operación realizada en el grupo de recursos, seleccione *Adjuntar informe de trabajo*.
+
++
+
+NOTE: Para habilitar la notificación por correo electrónico, debe tener especificados los detalles del servidor SNMP ya sea mediante la GUI o el comando Set-SmSmtpServer de PowerShell.
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
++
+Se muestra la página de topología de la base de datos.
+
+. Haga clic en *copia de seguridad ahora*.
+. En la página Backup, realice los siguientes pasos:
++
+.. Si ha aplicado varias políticas al recurso, en la lista desplegable *Política*, seleccione la directiva que desea utilizar para la copia de seguridad.
++
+Si la política seleccionada para el backup bajo demanda está asociada a una programación de backup, los backups bajo demanda se retendrán en función de la configuración de retención especificada para el tipo de programación.
+
+.. Seleccione *verificar después de la copia de seguridad* para verificar la copia de seguridad.
+.. Haga clic en *copia de seguridad*.
++
+
+NOTE: No debe cambiar el nombre del trabajo de backup creado en el programador de Windows o el agente de SQL Server.
+
++
+Si la política seleccionada para el backup bajo demanda está asociada a una programación de backup, los backups bajo demanda se retendrán en función de la configuración de retención especificada para el tipo de programación.
+
++
+Se crea un grupo de recursos implícito. Para ver esto, seleccione el usuario o grupo correspondiente en la página acceso de usuario. El tipo de grupo de recursos implícito es "'recurso'".
+
+
+
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+
+
+*Después de terminar*
+
+* En las configuraciones de MetroCluster, es posible que SnapCenter no pueda detectar una relación de protección tras una conmutación por error.
++
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Unable_to_detect_SnapMirror_or_SnapVault_relationship_after_MetroCluster_failover["No es posible detectar la relación de SnapMirror o SnapVault tras un fallo en MetroCluster"]
+
+* Si va a realizar el backup de datos de aplicación en VMDK y el tamaño de pila de Java para el plugin de SnapCenter para VMware vSphere no es suficientemente grande, se puede producir un error en el backup. Para aumentar el tamaño de pila de Java, busque el archivo de script /opt/netapp/init_scripts/scvservice. En ese script, la `do_start method` Command inicia el servicio de plugin de VMware de SnapCenter. Actualice este comando a lo siguiente: `Java -jar -Xmx8192M -Xms4096M`.
+
+
+*Más información*
+
+link:task_create_backup_policies_for_sql_server_databases.html["Crear políticas de backup para bases de datos de SQL Server"]
+
+link:task_back_up_resources_using_powershell_cmdlets_for_sql.html["Realizar backup de recursos con cmdlets de PowerShell"]
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Clone_operation_might_fail_or_take_longer_time_to_complete_with_default_TCP_TIMEOUT_value["Se produce un error en las operaciones de backup con un error de conexión de MySQL debido a una demora en TCP_TIMEOUT"]
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Backup_fails_with_Windows_scheduler_error["Error de backup con programador de Windows"]
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Quiesce_or_grouping_resources_operations_fail["Error de operaciones de inactivación o agrupación de recursos"]

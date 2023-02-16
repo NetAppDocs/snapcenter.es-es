@@ -1,0 +1,207 @@
+---
+permalink: admin/concept_what_operations_can_be_performed_from_the_resource_page.html 
+sidebar: sidebar 
+keywords:  
+summary: Es posible detectar recursos y realizar operaciones de protección de datos desde la página Resources. Las operaciones que puede realizar difieren en función del plugin que utiliza para gestionar sus recursos. 
+---
+= Operaciones admitidas en la página Resources
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible detectar recursos y realizar operaciones de protección de datos desde la página Resources. Las operaciones que puede realizar difieren en función del plugin que utiliza para gestionar sus recursos.
+
+En la página Resources, es posible realizar las siguientes tareas:
+
+|===
+| Puede ejecutar estas tareas... | Para Microsoft Exchange Server | Para Microsoft SQL Server | Para Microsoft Windows | Para bases de datos de Oracle | Para base de datos SAP HANA | Para plugins personalizados 
+
+
+ a| 
+Determine si hay recursos disponibles para backup
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Llevar a cabo un backup bajo demanda de un recurso
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Restaurar desde backups
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Clonar backups
+ a| 
+No
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Gestionar backups
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Gestionar clones
+ a| 
+No
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Gestionar políticas
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Gestionar conexiones de almacenamiento
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Montar backups
+ a| 
+No
+ a| 
+No
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+Desmontar backups
+ a| 
+No
+ a| 
+No
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+Ver detalles
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+|===

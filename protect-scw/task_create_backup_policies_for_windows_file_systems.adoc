@@ -1,0 +1,169 @@
+---
+permalink: protect-scw/task_create_backup_policies_for_windows_file_systems.html 
+sidebar: sidebar 
+keywords:  
+summary: Puede crear una nueva política de backup para recursos antes de usar SnapCenter para realizar backups de sistemas de archivos Windows, o bien puede crear una nueva política de backup en el momento de crear un grupo de recursos o al realizar el backup de un recurso. 
+---
+= Crear políticas de backup para sistemas de archivos Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede crear una nueva política de backup para recursos antes de usar SnapCenter para realizar backups de sistemas de archivos Windows, o bien puede crear una nueva política de backup en el momento de crear un grupo de recursos o al realizar el backup de un recurso.
+
+*Lo que necesitará*
+
+* Debe tener definida una estrategia de backup. link:task_define_a_backup_strategy_for_windows_file_systems.html["Leer más"^]
+* Debe tener preparada la protección de datos.
++
+Para prepararse para la protección de datos, debe completar ciertas tareas, como instalar SnapCenter, añadir hosts, detectar recursos y crear conexiones de máquina virtual de almacenamiento (SVM).
+
+* Si desea replicar copias de Snapshot en un almacenamiento secundario con SnapMirror o SnapVault, el administrador de SnapCenter debe haberle asignado las SVM de los volúmenes de origen y de destino.
+* Si desea ejecutar los scripts de PowerShell en scripts previos y posteriores, debe establecer el valor del parámetro usePowershellProcessforScripts en TRUE en el archivo web.config.
++
+El valor predeterminado es FALSE
+
+
+
+*Acerca de esta tarea*
+
+* LA RUTA_DE_SCRIPTS se define mediante la clave PredefinedWindowsScriptsDirectory ubicada en el archivo SMCoreServiceHost.exe.Config del host del plugin.
++
+Si es necesario, puede cambiar esta ruta y reiniciar el servicio SMcore. Se recomienda utilizar la ruta predeterminada para la seguridad.
+
++
+El valor de la tecla se puede mostrar desde swagger a través de la API: API /4.7/config settings
+
++
+Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGURACIÓN de API.
+
+
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Configuración*.
+. En la página Configuración, haga clic en *Directivas*.
+. Para determinar si puede utilizar una directiva existente, seleccione el nombre de la directiva y, a continuación, haga clic en *Detalles*.
++
+Después de revisar las políticas existentes, puede realizar una de las siguientes acciones:
+
++
+** Usar una política existente.
+** Copiar una política existente y modificar su configuración.
+** Crear una nueva política.
+
+
+. Para crear una nueva directiva, haga clic en *Nuevo*.
+. En la página Name, introduzca el nombre de la política y una descripción.
+. En la página Backup Options, realice las siguientes tareas:
++
+.. Seleccione un valor para backup.
++
+|===
+| Opción | Descripción 
+
+
+ a| 
+Copia de seguridad consistente del sistema de archivos
+ a| 
+Elija esta opción si desea que SnapCenter ponga en modo inactivo la unidad de disco en la que reside el sistema de archivos antes de que comience la operación de backup y luego la reanude tras finalizar dicha operación.
+
+
+
+ a| 
+Copia de seguridad coherente con los fallos del sistema de archivos
+ a| 
+Elija esta opción si no desea que SnapCenter ponga en modo inactivo la unidad de disco en la que reside el sistema de archivos.
+
+|===
+.. Seleccione una frecuencia de programación (también llamada tipo de política).
++
+La política especifica solamente la frecuencia de backup. La programación de protección específica para realizar el backup se define en el grupo de recursos. Por lo tanto, dos o más grupos de recursos pueden compartir la misma política y frecuencia de backup y, a su vez, tener diferentes programaciones de backup.
+
++
+
+NOTE: Si ha programado para las 2:00 a.m., la programación no se activará durante el horario de verano.
+
+
+
+. En la página Retention, especifique la configuración de retención para backups bajo demanda y para cada frecuencia de programación que seleccionó.
++
+|===
+| Opción | Descripción 
+
+
+ a| 
+Total de copias de Snapshot que se conservan
+ a| 
+Elija esta opción si desea especificar el número de copias de Snapshot que almacena SnapCenter antes de eliminarlas automáticamente.
+
+
+
+ a| 
+Elimine las copias Snapshot con antigüedad superior a
+ a| 
+Elija esta opción si desea especificar el número de días que SnapCenter retiene una copia de backup antes de eliminarla.
+
+|===
++
+
+IMPORTANT: Debe establecer el número de retención en 2 o superior. El valor mínimo para el número de retención es 2.
+
++
+
+NOTE: El valor de retención máximo es 1018 para recursos en ONTAP 9.4 o posterior, y 254 para recursos en ONTAP 9.3 o anterior. Se producirá un error en los backups si la retención se establece en un valor superior a la versión de ONTAP subyacente.
+
+. En la página Replication, especifique la replicación en el sistema de almacenamiento secundario:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Actualizar SnapMirror tras crear una copia Snapshot local
+ a| 
+Seleccione esta opción para crear copias de SnapMirror de conjuntos de backups en otro volumen (SnapMirror).
+
+
+
+ a| 
+Actualizar SnapVault después de crear una copia Snapshot
+ a| 
+Seleccione esta opción para realizar una replicación de backup de disco a disco.
+
+
+
+ a| 
+Etiqueta de la política secundaria
+ a| 
+Seleccione una etiqueta de Snapshot.
+
+Según la etiqueta de copia de Snapshot que seleccione, ONTAP aplicará la política de retención de copias de Snapshot secundarias que corresponda a esa etiqueta.
+
+
+NOTE: Si ha seleccionado *Actualizar SnapMirror después de crear una copia Snapshot local*, puede especificar opcionalmente la etiqueta de la directiva secundaria. Sin embargo, si ha seleccionado *Actualizar SnapVault después de crear una copia Snapshot local*, debe especificar la etiqueta de la directiva secundaria.
+
+
+
+ a| 
+Número de reintentos con error
+ a| 
+Introduzca el número de intentos de replicación que deben producirse antes de que se interrumpa el proceso.
+
+|===
++
+
+NOTE: Debe configurar la política de retención de SnapMirror en ONTAP para el almacenamiento secundario a fin de evitar alcanzar el límite máximo de copias de Snapshot en el almacenamiento secundario.
+
+. En la página Script, introduzca la ruta del script previo o script posterior que desea que el servidor SnapCenter ejecute antes o después de la operación de backup respectivamente, y el límite de tiempo que SnapCenter espera para que se ejecute el script.
++
+Por ejemplo, se puede ejecutar un script para actualizar capturas SNMP, automatizar alertas y enviar registros.
+
++
+
+NOTE: La ruta scripts previos o posteriores no debe incluir unidades o recursos compartidos. La ruta debe ser relativa a LA RUTA DE ACCESO_SCRIPTS.
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+

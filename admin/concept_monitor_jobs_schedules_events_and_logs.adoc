@@ -1,0 +1,140 @@
+---
+permalink: admin/concept_monitor_jobs_schedules_events_and_logs.html 
+sidebar: sidebar 
+keywords:  
+summary: Es posible supervisar el progreso de los trabajos, obtener información sobre los trabajos programados, y revisar eventos y registros en la página Monitor. 
+---
+= Supervisar trabajos, programaciones, eventos y registros
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible supervisar el progreso de los trabajos, obtener información sobre los trabajos programados, y revisar eventos y registros en la página Monitor.
+
+
+
+== Supervisar trabajos
+
+Es posible ver información de los trabajos de backup, clonado, restauración y verificación de SnapCenter. Puede filtrar esta vista en función de la fecha de inicio y de finalización, el tipo de trabajo, el grupo de recursos, la política o el plugin de SnapCenter. También se pueden obtener más detalles y archivos de registro de los trabajos especificados.
+
+Asimismo, es posible supervisar los trabajos relacionados con operaciones de SnapMirror y SnapVault.
+
+
+NOTE: Puede supervisar únicamente los trabajos que creó y que son relevantes para su caso, a menos que tenga asignado el rol de administrador de SnapCenter u otro rol de superusuario.
+
+Puede ejecutar las siguientes tareas relacionadas con los trabajos de supervisión:
+
+* Supervisar las operaciones de backup, clonado, restauración y verificación.
+* Ver detalles del trabajo e informes.
+* Detener un trabajo programado.
+
+
+
+
+== Supervisar programaciones
+
+Es posible ver las programaciones actuales para determinar cuándo se iniciará la operación, cuándo se ejecutó por última vez y cuándo será la próxima ejecución. También se puede determinar el host donde se ejecutará la operación, junto con la información de la política y el grupo de recursos de la operación.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Monitor*.
+. En la página Monitor, haga clic en *programas*.
+. Seleccione el grupo de recursos y el tipo de programación.
+. Consulte la lista de operaciones programadas.
+
+
+
+
+== Supervisar eventos
+
+Es posible ver una lista de eventos de SnapCenter en el sistema, como cuando un usuario crea un grupo de recursos o cuando el sistema inicia actividades, por ejemplo, la creación de un backup programado. Los eventos pueden verse para determinar si una operación de backup o restauración está actualmente en curso.
+
+*Acerca de esta tarea*
+
+Toda la información sobre eventos se muestra en la página Events. Por ejemplo, cuando se inicia una tarea de copia de seguridad, aparece el evento «'backup start'». Cuando finalice el backup, se mostrará el evento «'backup completado».
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Monitor*.
+. En la página Monitor, haga clic en *Eventos*.
+. (Opcional) en el cuadro filtro, introduzca la fecha de inicio o finalización, la categoría del evento (copia de seguridad, grupo de recursos o política) y el nivel de gravedad, y haga clic en *aplicar*. Otra opción es escribir los caracteres en el recuadro Search.
+. Consulte la lista de eventos.
+
+
+
+
+== Supervisar registros
+
+Es posible ver y descargar registros del servidor de SnapCenter, registros del agente de host de SnapCenter y registros de plugins. Los registros pueden verse para facilitar la solución de problemas.
+
+*Acerca de esta tarea*
+
+Puede filtrar los registros para mostrar solamente un nivel de gravedad de un registro específico:
+
+* Depurar
+* Información
+* Advertir
+* Error
+* Fatal
+
+
+También puede obtener los registros del nivel del trabajo, por ejemplo, los registros que permiten resolver el motivo del error de un trabajo de backup. Para los registros de nivel de trabajo, utilice la opción *Monitor* > *trabajos*.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Monitor*.
+. En la página Jobs, seleccione un trabajo y haga clic en Download logs.
++
+La carpeta comprimida descargada contiene los registros de trabajos y los registros comunes. El nombre de la carpeta comprimida contiene el ID de trabajo y el tipo de trabajo seleccionados.
+
+. En la página Monitor, haga clic en *Logs*.
+. Seleccione el tipo de registro y la instancia.
++
+Si selecciona el tipo de registro como *plugin*, puede seleccionar un host o un complemento SnapCenter. No puede hacer esto si el tipo de registro es *Server*.
+
+. Para filtrar los registros por un origen, mensaje o nivel de registro en particular, haga clic en el icono de filtro ubicado arriba del título de la columna.
++
+Para mostrar todos los registros, seleccione *mayor o igual a* como `Debug` nivel.
+
+. Haga clic en *Actualizar*.
+. Consulte la lista de registros.
+. Haga clic en *Descargar* para descargar los registros.
++
+La carpeta comprimida descargada contiene los registros de trabajos y los registros comunes. El nombre de la carpeta comprimida contiene el ID de trabajo y el tipo de trabajo seleccionados.
+
+
+
+En configuraciones de gran tamaño para un rendimiento óptimo, debe establecer la configuración del registro para SnapCenter en el nivel mínimo mediante el cmdlet de PowerShell.
+
+`Set-SmLogSettings -LogLevel All -MaxFileSize 10MB -MaxSizeRollBackups 10 -JobLogsMaxFileSize 10MB -Server`
+
+
+NOTE: Para acceder a la información de estado o de configuración después de que finalice un trabajo de conmutación por error, ejecute el cmdlet `Get-SmRepositoryConfig`.
+
+
+
+== Quite los trabajos y los registros de SnapCenter
+
+Es posible quitar registros y trabajos de backup, restauración, clonado y verificación de SnapCenter. SnapCenter almacena los registros de los trabajos con errores y aquellos completados correctamente a menos que se los elimine. Puede quitarlos para reaprovisionar el almacenamiento.
+
+*Acerca de esta tarea*
+
+No debe haber trabajos actualmente en ejecución. Puede quitar un trabajo específico si proporciona un identificador del trabajo, o bien puede eliminar los trabajos dentro de un periodo determinado.
+
+No es necesario poner el host en modo de mantenimiento para quitar un trabajo.
+
+* Pasos*
+
+. Inicie PowerShell.
+. En el símbolo del sistema, introduzca: `Open-SMConnection`
+. En el símbolo del sistema, introduzca: `Remove-SmJobs`
+. En el panel de navegación de la izquierda, haga clic en *Monitor*.
+. En la página Monitor, haga clic en *Jobs*.
+. En la página Jobs, revise el estado del trabajo.
+
+
+*Más información*
+
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].

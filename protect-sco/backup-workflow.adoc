@@ -1,0 +1,26 @@
+---
+permalink: protect-sco/backup-workflow.html 
+sidebar: sidebar 
+keywords: backup, workflow 
+summary: 'Es posible crear un backup de un recurso (base de datos) o un grupo de recursos.' 
+---
+= Flujo de trabajo de backup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible crear un backup de un recurso (base de datos) o un grupo de recursos. El flujo de trabajo de backup incluye planificación, identificación de los recursos para el backup, creación de políticas de backup, creación de grupos de recursos y vinculación de políticas, creación de backups y supervisión de las operaciones.
+
+Los siguientes flujos de trabajo muestran la secuencia que debe seguirse para realizar la operación de backup:
+
+image::../media/sco_backup_workflow.png[Flujo de trabajo de backup para Oracle]
+
+Al crear un backup para bases de datos de Oracle, se crea un archivo de bloqueo operativo (_.sm_lock_dbsid_) en el host de la base de datos de Oracle, en el directorio _/var/opt/snapcenter/sco/lock_, para evitar que se ejecuten varias operaciones en la base de datos. Después de realizar el backup de la base de datos, se elimina automáticamente el archivo de bloqueo operativo.
+
+Sin embargo, si la copia de seguridad anterior se completó con una advertencia, es posible que el archivo de bloqueo operativo no se elimine y la próxima operación de copia de seguridad entra en la cola de espera. Es posible que finalmente se cancele si el archivo *.sm_lock_dbsid* no se elimina. En este caso, debe eliminar manualmente el archivo de bloqueo operativo siguiendo estos pasos:
+
+. Desde el símbolo del sistema, desplácese hasta _/var/opt/snapcenter/sco/lock_.
+. Elimine el bloqueo operativo:``rm -rf .sm_lock_dbsid.``
+

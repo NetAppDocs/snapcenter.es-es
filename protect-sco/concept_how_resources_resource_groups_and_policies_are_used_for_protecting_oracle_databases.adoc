@@ -1,0 +1,36 @@
+---
+permalink: protect-sco/concept_how_resources_resource_groups_and_policies_are_used_for_protecting_oracle_databases.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for Oracle Database 
+summary: Antes de usar SnapCenter, es necesariol comprender ciertos conceptos básicos vinculados con las operaciones de backup, clonado y restauración que se ejecutan. 
+---
+= Cómo se utilizan los recursos, los grupos de recursos y las políticas para proteger bases de datos de Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de usar SnapCenter, es necesariol comprender ciertos conceptos básicos vinculados con las operaciones de backup, clonado y restauración que se ejecutan.
+
+* Los recursos normalmente son bases de datos de Oracle en SnapCenter.
+* Un grupo de recursos de SnapCenter es una colección de recursos en un host o clúster.
++
+Al realizar una operación con un grupo de recursos, esta se ejecuta en los recursos definidos en el grupo.
+
++
+Los grupos de recursos antes se denominaban conjuntos de datos.
+
+* Las políticas especifican la frecuencia de backup, la retención de copias, la replicación, los scripts y otras características de las operaciones de protección de datos.
++
+Cuando se crea un grupo de recursos, se seleccionan una o varias políticas para él. Asimismo, puede seleccionar una política al realizar un backup bajo demanda para un recurso individual. También puede realizar backups programados para recursos individuales y para grupos de recursos.
+
+
+
+Piense en un grupo de recursos como definir _qué_ desea proteger y cuándo desea protegerlo en términos de día y hora. Piense en una directiva como definir _how_ desea protegerla.
+
+Cuando se realiza un backup de todas las bases de datos de un host, por ejemplo, puede crearse un grupo de recursos que incluya todas las bases de datos del host. Luego, se pueden vincular dos políticas al grupo de recursos: Una diaria y una horaria. Cuando se crea el grupo de recursos y se vinculan las políticas, es posible configurar el grupo de recursos para que se ejecute un backup completo todos los días, y agregar una programación que ejecute un backup del registro por hora.
+
+En la siguiente imagen, se muestra la relación entre los recursos, los grupos de recursos y las políticas para las bases de datos:
+
+image::../media/sco_resourcegroup_policy.gif[política de sco resourcegroup]

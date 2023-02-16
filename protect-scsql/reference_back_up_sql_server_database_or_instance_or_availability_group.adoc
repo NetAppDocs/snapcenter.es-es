@@ -1,0 +1,50 @@
+---
+permalink: protect-scsql/reference_back_up_sql_server_database_or_instance_or_availability_group.html 
+sidebar: sidebar 
+keywords:  
+summary: Al instalar el plugin de SnapCenter para Microsoft SQL Server en el entorno, puede utilizar SnapCenter para realizar backup de los recursos de SQL Server. 
+---
+= Flujo de trabajo de backup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Al instalar el plugin de SnapCenter para Microsoft SQL Server en el entorno, puede utilizar SnapCenter para realizar backup de los recursos de SQL Server.
+
+Es posible programar varios backups para que se realicen simultáneamente en diferentes servidores.
+
+No se pueden ejecutar en simultáneo operaciones de backup y restauración en el mismo recurso.
+
+El siguiente flujo de trabajo muestra la secuencia que debe seguirse para realizar la operación de backup:
+
+image::../media/scsql_backup_workflow.png[Flujo de trabajo de backup de SCSQL]
+
+
+NOTE: Las opciones Backup Now, Restore, Manage backups y Clone de la página Resources están deshabilitadas si selecciona un LUN que no pertenece a NetApp, una base de datos dañada o una base de datos que se está restaurando.
+
+También puede utilizar los cmdlets de PowerShell manualmente o en scripts para realizar operaciones de backup, restauración, recuperación, verificación y clonado. Para obtener información detallada sobre los cmdlets de PowerShell, use la ayuda de cmdlets de SnapCenter o consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"]
+
+
+
+== Cómo SnapCenter hace backups de base de datos
+
+SnapCenter utiliza tecnología de copia de Snapshot para realizar backup de las bases de datos de SQL Server que residen en LUN o VMDK. Para crear el backup, SnapCenter crea copias de Snapshot de las bases de datos.
+
+Cuando se selecciona una base de datos para un backup de base de datos completo en la página Resources, SnapCenter selecciona automáticamente todas las demás bases de datos que residen en el mismo volumen de almacenamiento. Si el LUN o el VMDK se almacenan en una sola base de datos, puede desactivar o volver a seleccionar la base de datos individualmente. Si el LUN o el VMDK alojan varias bases de datos, debe desactivar o volver a seleccionar las bases de datos como un grupo.
+
+Con las copias de Snapshot, se realiza un backup de todas las bases de datos que residen en un único volumen de forma simultánea. Si el número máximo de bases de datos de backup simultáneo es 35 y residen más de 35 bases de datos en un volumen de almacenamiento, el número total de copias de Snapshot que se crean es igual al número de bases de datos dividido por 35.
+
+
+NOTE: Puede configurar el número máximo de bases de datos para cada copia de Snapshot en la política de backups.
+
+Cuando SnapCenter crea una copia de Snapshot, se captura todo el volumen del sistema de almacenamiento en la copia de Snapshot. Sin embargo, el backup solo es válido para el servidor de host SQL para el cual se creó el backup.
+
+Si residen datos de otros servidores de host SQL en el mismo volumen, estos datos no puede restaurarse a partir de la copia de Snapshot.
+
+*Más información*
+
+link:task_back_up_resources_using_powershell_cmdlets_for_sql.html["Realizar backup de recursos con cmdlets de PowerShell"]
+
+link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Quiesce_or_grouping_resources_operations_fail["Error de operaciones de inactivación o agrupación de recursos"]

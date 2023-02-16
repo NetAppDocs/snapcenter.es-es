@@ -1,0 +1,110 @@
+---
+section: install
+title: Instalación del servidor SnapCenter
+entries:
+- title: Flujo de trabajo de instalación
+  url: "/install/install_workflow.html"
+- title: Prepare la instalación del servidor SnapCenter
+  entries:
+  - title: Requisitos de dominio y grupo de trabajo
+    url: "/install/reference_domain_and_workgroup_requirements.html"
+  - title: Requisitos de espacio y de tamaño
+    url: "/install/reference_space_and_sizing_requirements.html"
+  - title: Requisitos del host SAN
+    url: "/install/reference_san_host_requirements.html"
+  - title: Sistemas de almacenamiento y aplicaciones compatibles
+    url: "/install/reference_supported_storage_systems_and_applications.html"
+  - title: Exploradores compatibles
+    url: "/install/reference_supported_browsers.html"
+  - title: Requisitos de conexión y puerto
+    url: "/install/reference_connection_and_port_requirements.html"
+  - title: Licencias SnapCenter
+    url: "/install/concept_snapcenter_licenses.html"
+  - title: Métodos de autenticación para las credenciales
+    url: "/install/concept_authentication_methods_for_your_credentials.html"
+  - title: Conexiones y credenciales de la máquina virtual de almacenamiento
+    url: "/install/concept_svm_connections_and_credentials.html"
+  - title: Habilitar la autenticación multifactor (MFA)
+    url: "/install/enable_multifactor_authentication.html"
+- title: Instale el servidor SnapCenter
+  url: "/install/task_install_the_snapcenter_server_using_the_install_wizard.html"
+- title: Inicie sesión en SnapCenter
+  url: "/install/task_log_in_to_snapcenter.html"
+- title: Configurar certificado de CA
+  entries:
+  - title: Genere un archivo CSR de certificado de CA
+    url: "/install/reference_generate_CA_certificate_CSR_file.html"
+  - title: Importar certificados de CA
+    url: "/install/task_import_CA_certificates.html"
+  - title: Obtenga la huella digital del certificado de CA
+    url: "/install/task_get_the_CA_certificate_thumbprint.html"
+  - title: Configure el certificado de CA con servicios de plugins de host de Windows
+    url: "/install/task_configure_CA_certificate_with_Windows_host_plug-in_services.html"
+  - title: Configurar el certificado de CA con el sitio SnapCenter
+    url: "/install/task_configure_CA_certificate_with_snapcenter_site.html"
+  - title: Habilite los certificados de CA para el servidor SnapCenter
+    url: "/install/task_enable_ca_certificates_for_snapcenter.html"
+- title: Configure Active Directory, LDAP y LDAPS
+  entries:
+  - title: Registrar dominios de Active Directory que no son de confianza
+    url: "/install/task_register_untrusted_active_directory_domains.html"
+  - title: Configure el certificado de cliente de CA para LDAPS
+    url: "/install/task_configure_CA_client_certificate_for_LDAPS.html"
+- title: Configuración de la alta disponibilidad
+  entries:
+  - title: Configurar servidores SnapCenter para alta disponibilidad mediante F5
+    url: "/install/concept_configure_snapcenter_servers_for_high_availabiity_using_f5.html"
+  - title: Configure el balanceador de carga de red de Microsoft manualmente
+    url: "/install/concept_network_load_balanacing_and_application_request_routing_requirements.html"
+  - title: Cambie de NLB a F5 para ofrecer alta disponibilidad
+    url: "/install/task_switch_from_nlb_to_f5_for_high_availability.html"
+  - title: Alta disponibilidad del repositorio MySQL de SnapCenter
+    url: "/install/concept_high_availability_for_snapcenter_mysql_repository.html"
+  - title: Exportar certificados SnapCenter
+    url: "/install/task_export_snapcenter_certificates.html"
+- title: Configurar el control de acceso basado en roles (RBAC)
+  entries:
+  - title: Añada un usuario o grupo y asigne roles y activos
+    url: "/install/task_add_a_user_or_group_and_assign_role_and_assets.html"
+  - title: Crear un rol
+    url: "/install/task_create_a_role.html"
+  - title: Añadir un rol de RBAC de ONTAP mediante comandos de inicio de sesión de
+      seguridad
+    url: "/install/task_add_an_rbac_role_using_security_login_commands.html"
+  - title: Cree roles de SVM con privilegios mínimos
+    url: "/install/create-svm-roles-minimum-privileges.html"
+  - title: Cree roles de clúster ONTAP con privilegios mínimos
+    url: "/install/task_create_an_ontap_cluster_role_with_minimum_privileges.html"
+  - title: Configure los grupos de aplicaciones de IIS para habilitar los permisos
+      de lectura de Active Directory
+    url: "/install/task_configure_iis_application_pools_to_enable_active_directory_read_permissions.html"
+- title: Configure los ajustes del registro de auditoría
+  url: "/install/task_configure_audit_log_settings.html"
+- title: Añadir sistemas de almacenamiento
+  url: "/install/task_add_storage_systems.html"
+- title: Añada licencias estándar basadas en controladora de SnapCenter
+  url: "/install/concept_snapcenter_standard_controller_based_licenses.html"
+- title: Añada licencias basadas en capacidad estándar de SnapCenter
+  url: "/install/concept_snapcenter_standard_capacity_based_licenses.html"
+- title: Aprovisione su sistema de almacenamiento
+  entries:
+  - title: Aprovisionar almacenamiento en hosts Windows
+    entries:
+    - title: Configurar el almacenamiento de LUN
+      url: "/install/concept_configure_lun_storage.html"
+    - title: Cree y gestione grupos
+      url: "/install/concept_create_and_manage_igroups.html"
+    - title: Crear y gestionar discos
+      url: "/install/task_create_and_manage_disks.html"
+    - title: Cree y gestione recursos compartidos de SMB
+      url: "/install/concept_create_and_manage_smb_shares.html"
+    - title: Recupere espacio en el sistema de almacenamiento
+      url: "/install/task_reclaim_space_on_the_storage_system.html"
+    - title: Aprovisionar el almacenamiento mediante cmdlets de PowerShell
+      url: "/install/reference_provision_storage_using_powershell_cmdlets.html"
+  - title: Aprovisione almacenamiento en entornos VMware
+    url: "/install/concept_provision_storage_in_vmware_environments.html"
+- title: Configure las conexiones MySQL protegidas con SnapCenter Server
+  url: "/install/concept_configure_secured_mysql_connections_with_snapcenter_server.html"
+- title: Funciones habilitadas en su host de Windows durante la instalación
+  url: "/install/reference_features_enabled_on_your_windows_host_during_installation.html"

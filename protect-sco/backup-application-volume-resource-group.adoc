@@ -1,0 +1,44 @@
+---
+permalink: protect-sco/backup-application-volume-resource-group.html 
+sidebar: sidebar 
+keywords: application volume, resource group, back up, database 
+summary: Es posible realizar un backup del grupo de recursos que solo contenga volúmenes de aplicación o una combinación de volúmenes de aplicaciones y bases de datos. 
+---
+= Realice un backup del grupo de recursos de volúmenes de aplicaciones
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible realizar un backup del grupo de recursos que solo contenga volúmenes de aplicación o una combinación de volúmenes de aplicaciones y bases de datos. Se realiza una operación de backup del grupo de recursos con todos los recursos definidos en el grupo.
+
+Si el grupo de recursos tiene varios volúmenes de aplicaciones, todos los volúmenes de aplicaciones deben tener una política de replicación de SnapMirror o SnapVault.
+
+*Acerca de esta tarea*
+
+De manera predeterminada, se crean backups de grupo de consistencia (CG). Si desea crear copias de seguridad basadas en volúmenes, debe establecer el valor de *EnableOracleNdvVolumeBasedBackup* en true en el archivo _web.config_.
+
+* Pasos*
+
+. En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione el complemento Oracle Database en la lista.
+. En la página Resources, seleccione *Resource Group* en la lista *View*.
++
+Puede buscar el grupo de recursos escribiendo el nombre en el cuadro de búsqueda o haciendo clic en *image:../media/filter_icon.gif[""]* y, a continuación, seleccionar la etiqueta. A continuación, puede hacer clic en *image:../media/filter_icon.gif[""]* para cerrar el panel de filtros.
+
+. En la página Resource Groups, seleccione el grupo de recursos que desea incluir en un backup y, a continuación, haga clic en *Back up Now*.
+. En la página Backup, realice los siguientes pasos:
++
+.. Si asoció varias políticas al grupo de recursos, en la lista desplegable *Policy*, seleccione la política que desea usar para la copia de seguridad.
++
+Si la política seleccionada para el backup bajo demanda está asociada a una programación de backup, los backups bajo demanda se retendrán en función de la configuración de retención especificada para el tipo de programación.
+
+.. Haga clic en *copia de seguridad*.
+
+
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
++
+
+NOTE: Se realizará la operación de verificación solo para las bases de datos y no para los volúmenes de aplicaciones.
+
+

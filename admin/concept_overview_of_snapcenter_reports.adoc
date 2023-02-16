@@ -1,0 +1,143 @@
+---
+permalink: admin/concept_overview_of_snapcenter_reports.html 
+sidebar: sidebar 
+keywords:  
+summary: SnapCenter ofrece distintas opciones de generación de informes que permiten supervisar y gestionar el estado y el éxito operativo del sistema. 
+---
+= Información general sobre las funcionalidades de generación de informes de SnapCenter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapCenter ofrece distintas opciones de generación de informes que permiten supervisar y gestionar el estado y el éxito operativo del sistema.
+
+|===
+| Tipo de informe | Descripción 
+
+
+ a| 
+Informe de copia de seguridad
+ a| 
+Backup Report ofrece datos generales sobre las tendencias de backup en el entorno de SnapCenter, la tasa de éxito de backups y detalles sobre cada uno de los backups realizados durante el periodo específico. Si se elimina un backup, el informe no muestra ninguna información de estado del backup eliminado. Backup Detail Report ofrece información detallada sobre un trabajo de backup especificado y muestra los recursos respaldados correctamente, además de todos los que generaron errores.
+
+
+
+ a| 
+Clonar informe
+ a| 
+Clone Report ofrece datos generales sobre las tendencias de clonado en el entorno de SnapCenter, la tasa de éxito de clones y detalles sobre cada uno de los clones realizados durante el periodo específico. Si se elimina un clon, el informe no muestra ninguna información de estado del clon eliminado. Clone Detail Report ofrece detalles sobre el estado de la tarea de clonado, el host del clon y el trabajo de clonado especificados. Si no se puede completar una tarea, Clone Detail Report muestra información sobre el error.
+
+
+
+ a| 
+Restaurar informe
+ a| 
+Restore Report ofrece información general sobre los trabajos de restauración. Restore Detail Report ofrece detalles sobre un trabajo de restauración específico, incluidos el nombre de host, el nombre de backup, el inicio y la duración del trabajo, y el estado de las tareas de trabajos individuales. Si no se puede completar una tarea, Restore Detail Report muestra información sobre el error.
+
+
+
+ a| 
+Informe de protección
+ a| 
+Estos informes ofrecen detalles de protección para los recursos gestionados por todas las instancias del plugin de SnapCenter. Este informe ofrece detalles de protección para los recursos gestionados por todas las instancias del plugin. Puede ver información general, detalles de recursos no protegidos, recursos que no se han realizado backups cuando se genera el informe, recursos de un grupo de recursos para el cual las operaciones de backup han generado errores, y el estado de SnapVault.
+
+
+
+ a| 
+Informe programado
+ a| 
+Estos informes se programan para que se ejecuten periódicamente, como diariamente, semanalmente o mensualmente. Los informes se generan automáticamente en la fecha y hora especificadas y el informe se envía a las respectivas personas por correo electrónico Es posible habilitar, deshabilitar, modificar o eliminar las programaciones. La programación activada se puede ejecutar a petición haciendo clic en el botón *Ejecutar ahora*. El administrador puede ejecutar cualquier programación, pero el informe generado contendrá datos basados en el permiso proporcionado por el usuario que creó la programación.
+
+Cualquier otro usuario que no sea el Administrador podrá ver o modificar la planificación según su permiso. Si todos los miembros de esta función pueden ver los objetos de otros miembros están seleccionados en la página Agregar función, otros miembros de la función podrán ver y modificar.
+
+|===
+
+
+== Acceder a informes
+
+Puede usar la consola de SnapCenter para obtener una descripción rápida del estado del sistema. Desde la consola, podrá obtener información detallada. También puede acceder a los informes detallados directamente.
+
+Puede acceder a los informes mediante uno de los siguientes métodos:
+
+* En el panel de navegación izquierdo, haga clic en *Panel* y, a continuación, haga clic en el gráfico circular *último resumen de protección* para ver más detalles en la página Informes.
+* En el panel de navegación de la izquierda, haga clic en *Informes*.
+
+
+
+
+== Filtre su informe
+
+Se recomienda filtrar los datos del informe de acuerdo con un rango de parámetros, según el nivel de detalles y el intervalo de tiempo de la información que se necesita.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Informes*.
+. Si no se muestra la vista Parameter, haga clic en el icono *Toggle Parameters Area* en la barra de herramientas de informes.
+. Especifique el rango de tiempo sobre el que desea ejecutar el informe. + Si omite la fecha de finalización, recuperará toda la información disponible.
+. Filtre la información de los informes en función de alguno de los siguientes criterios:
++
+** Grupo de recursos
+** Host
+** Política
+** Recurso
+** Estado
+** Nombre de complemento
+
+
+. Haga clic en *aplicar*.
+
+
+
+
+== Exportar o imprimir informes
+
+La exportación de los informes de SnapCenter permite ver los informes en diversos formatos alternativos. También es posible imprimir los informes.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Informes*.
+. Desde la barra de herramientas de informes, realice una de las siguientes acciones:
++
+** Haga clic en el icono *Toggle Print Preview* para obtener una vista previa de un informe imprimible.
+** Seleccione un formato de la lista desplegable del icono *Exportar* para exportar un informe a un formato alternativo.
+
+
+. Para imprimir un informe, haga clic en el icono *Imprimir*.
+. Para ver un resumen de un informe específico, desplácese a la sección apropiada del informe.
+
+
+
+
+== Establezca el servidor SMTP para las notificaciones por correo electrónico
+
+Es posible especificar el servidor SMTP que se utilizará para enviar informes de trabajos de protección de datos a usted mismo o a terceros. También es posible enviar un mensaje de correo electrónico para comprobar la configuración. Los ajustes se aplican globalmente en cualquier trabajo de SnapCenter para el que configure las notificaciones por correo electrónico.
+
+Esta opción configura el servidor SMTP para enviar todos los informes de trabajos de protección de datos. Sin embargo, si desea enviar actualizaciones de trabajos de protección de datos de SnapCenter regulares relacionadas con un recurso particular a usted mismo o a terceros, para poder supervisar esas actualizaciones, puede configurar la opción para enviar por correo electrónico los informes de SnapCenter cuando crea un grupo de recursos.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Configuración*.
+. En la página Configuración, haga clic en *Configuración global*.
+. Introduzca el servidor SMTP y haga clic en *Guardar*.
+. Para enviar un mensaje de correo electrónico de prueba, introduzca la dirección de correo electrónico desde y hacia la que enviará el mensaje, introduzca el asunto y haga clic en *Enviar*.
+
+
+
+
+== Configure la opción para enviar informes por correo electrónico
+
+Si desea enviar actualizaciones de trabajos de protección de datos de SnapCenter regulares a usted mismo o a terceros para poder supervisar esas actualizaciones, puede configurar la opción para enviar por correo electrónico los informes de SnapCenter cuando crea un grupo de recursos.
+
+*Lo que necesitará*
+
+Configuró el servidor SMTP en la página Global Settings, en Settings.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. Seleccione el tipo de recurso que desea ver y haga clic en *Nuevo grupo de recursos*, o seleccione un grupo de recursos existente y haga clic en *Modificar* para configurar informes por correo electrónico para un grupo de recursos existente.
+. En el panel Notification del asistente New Resource Group, seleccione en las opciones del menú desplegable si desea recibir informes siempre, en caso de error, o en caso de error o advertencia.
+. Introduzca la dirección del remitente, la dirección del destinatario y el asunto del correo electrónico.
+

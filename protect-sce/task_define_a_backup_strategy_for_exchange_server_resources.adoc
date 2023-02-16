@@ -1,0 +1,132 @@
+---
+permalink: protect-sce/task_define_a_backup_strategy_for_exchange_server_resources.html 
+sidebar: sidebar 
+keywords:  
+summary: Definir una estrategia de backup antes de crear las tareas de backup ayuda a garantizar que se cuente con todos los backups necesarios para restaurar correctamente las bases de datos. La estrategia de backup queda determinada principalmente por el SLA, el RTO y el RPO. 
+---
+= Defina una estrategia de backup para recursos de servidor de Exchange
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Definir una estrategia de backup antes de crear las tareas de backup ayuda a garantizar que se cuente con todos los backups necesarios para restaurar correctamente las bases de datos. La estrategia de backup queda determinada principalmente por el SLA, el RTO y el RPO.
+
+Un acuerdo de nivel de servicio define el nivel de servicio que se espera y aborda varios problemas vinculados con el servicio, como su disponibilidad y rendimiento. El objetivo de tiempo de recuperación es el plazo de recuperación después de una interrupción del servicio. El RPO define la estrategia respecto de la antigüedad de los archivos que se deben recuperar del almacenamiento de backup para reanudar las operaciones regulares después de un fallo. El acuerdo de nivel de servicio, el objetivo de tiempo de recuperación y el objetivo de punto de recuperación contribuyen a la estrategia de backup.
+
+
+
+== Tipos de backups compatibles con la base de datos de Exchange
+
+Los backups de buzones de correo de Exchange que usan SnapCenter requieren elegir el tipo de recurso, como bases de datos y DAG. Se aprovecha la tecnología de copia de Snapshot para crear copias en línea y de solo lectura de los volúmenes donde residen los recursos.
+
+|===
+| Tipo de backup | Descripción 
+
+
+ a| 
+Backup completo y de registros
+ a| 
+Realiza un backup de las bases de datos y de todos los registros de transacciones, incluidos los registros acortados.
+
+Una vez completado un backup completo, Exchange Server acorta los registros de transacciones que ya están confirmados en la base de datos.
+
+En términos generales, debe elegir esta opción. Sin embargo, si el tiempo de backup es corto, puede optar por no ejecutar un backup del registro de transacciones junto con el backup completo.
+
+
+
+ a| 
+Backup completo
+ a| 
+Realiza un backup de las bases de datos y los registros de transacciones.
+
+No se realiza un backup de los registros de transacciones acortados.
+
+
+
+ a| 
+Backup de registros
+ a| 
+Realiza un backup de todos los registros de transacciones.
+
+Los registros acortados que ya están confirmados en la base de datos no se respaldan. Si programa backups del registro de transacciones frecuentes entre backups completos de la base de datos, puede elegir puntos de recuperación granulares.
+
+|===
+
+
+== Programaciones de backups para plugins de bases de datos
+
+La frecuencia de los backups (tipo de programación) se especifica en las políticas; la programación de los backups se especifica en la configuración del grupo de recursos. El factor más crítico para determinar la frecuencia o la programación de los backups es la tasa de cambio del recurso y la importancia de los datos. Puede ser recomendable realizar el backup de un recurso muy utilizado una vez por hora, mientras que, en el caso de un recurso de poco uso, es suficiente hacerlo una vez por día. Otros factores son la importancia del recurso para la organización, el SLA y el RPO.
+
+Un acuerdo de nivel de servicio define el nivel de servicio que se espera y aborda varios problemas vinculados con el servicio, como su disponibilidad y rendimiento. El RPO define la estrategia respecto de la antigüedad de los archivos que se deben recuperar del almacenamiento de backup para reanudar las operaciones regulares después de un fallo. El SLA y el RPO contribuyen a la estrategia de protección de datos.
+
+Incluso en el caso de un recurso utilizado intensivamente, no existe el requisito de ejecutar un backup completo más de una o dos veces al día. Por ejemplo, es posible que sea suficiente realizar backups regulares de registros de transacciones para garantizar los backups necesarios Cuanto mayor sea la frecuencia con que realiza backups de las bases de datos, menos registros de transacciones deberá utilizar SnapCenter en el momento de la restauración, lo que puede dar como resultado operaciones más rápidas.
+
+Las programaciones de backup están compuestas por dos partes:
+
+* Frecuencia de backup
++
+La frecuencia de los backups (cada cuánto tiempo deben realizarse los backups), denominada _schedule type_ para algunos plugins, forma parte de la configuración de una política. Se puede seleccionar una frecuencia de backups por hora, por día, por semana o por mes para la política. Si no selecciona ninguna de estas frecuencias, la política creada es de sólo bajo demanda. Puede acceder a las directivas haciendo clic en *Configuración* > *Directivas*.
+
+* Programaciones de backup
++
+Las programaciones de los backups (el momento exacto en que se realizan los backups) forman parte de una configuración de grupo de recursos. Por ejemplo, si tiene un grupo de recursos que posee una política configurada para backups semanales, quizás sea conveniente configurar la programación para que realice backups todos los jueves a las 00:10. Puede acceder a los programas de grupos de recursos haciendo clic en *Recursos* > *grupos de recursos*.
+
+
+
+
+
+== Cantidad de tareas de backup necesarias para bases de datos
+
+Algunos factores que determinan la cantidad de trabajos de backup que se necesitan son el tamaño del recurso, la cantidad de volúmenes que se usan, la tasa de cambio del recurso y el acuerdo de nivel de servicio.
+
+
+
+== Convenciones de nomenclatura de backups
+
+Es posible usar la convención de nomenclatura de copia Snapshot predeterminada o usar una convención de nomenclatura personalizada. La convención de nomenclatura de backups predeterminada añade la fecha/hora a los nombres de las copias de Snapshot, lo cual ayuda a identificar cuándo se crearon las copias.
+
+La copia Snapshot usa la siguiente convención de nomenclatura predeterminada:
+
+`resourcegroupname_hostname_timestamp`
+
+Es necesario asignar un nombre a los grupos de recursos de backup de forma lógica, como en el ejemplo siguiente:
+
+[listing]
+----
+dts1_mach1x88_03-12-2015_23.17.26
+----
+En este ejemplo, los elementos de la sintaxis tienen los siguientes significados:
+
+* _dts1_ es el nombre del grupo de recursos.
+* _mach1x88_ es el nombre de host.
+* _03-12-2015_23.17.26_ es la fecha y la marca de hora.
+
+
+Como alternativa, puede especificar el formato de nombre de la copia Snapshot mientras protege los recursos o grupos de recursos seleccionando *usar formato de nombre personalizado para copia Snapshot*. Por ejemplo, customtext_resourcegroup_policy_hostname o resourcegroup_hostname. De forma predeterminada, se añade el sufijo de fecha y hora al nombre de la copia de Snapshot.
+
+
+
+== Opciones de retención de backups
+
+Es posible elegir la cantidad de días durante los cuales se retendrán las copias de backup o especificar la cantidad de copias de backup que se desean retener, con un máximo de 255 copias en ONTAP. Por ejemplo, una organización puede necesitar retener 10 días de copias de backup o 130 copias de backup.
+
+Al crear una política, es posible especificar las opciones de retención para cada tipo y programación de backup.
+
+Si se configura la replicación de SnapMirror, la política de retención se refleja en el volumen de destino.
+
+SnapCenter elimina los backups previos que tengan etiquetas de retención que coincidan con el tipo de programación. Si se modifica el tipo de programación para el recurso o el grupo de recursos, los backups con la etiqueta del tipo de programación anterior podrían conservarse en el sistema.
+
+
+NOTE: Para la retención a largo plazo de copias de backup, es conveniente usar el backup de SnapVault.
+
+
+
+== Cuánto tiempo se retienen los backups de registros de transacciones en el volumen de almacenamiento de origen para Exchange Server
+
+El plugin de SnapCenter para Microsoft Exchange Server necesita backups de registros de transacciones para ejecutar operaciones de restauración de último minuto, que restauran la base de datos a un momento entre dos backups completos.
+
+Por ejemplo, si el plugin para Exchange hizo un backup completo de los registros de transacciones más a las 8:00 y otro backup completo de los registros de transacciones a las 8:00 p. m., se puede usar el último backup de registros de transacciones para restaurar la base de datos a cualquier momento entre las 5:00 y las 5:00 Si no se cuenta con registros de transacciones, el plugin para Exchange solamente puede ejecutar operaciones de restauración a un momento específico, que restaura una base de datos en el momento en que el plugin para Exchange finalizó un backup completo.
+
+En general, se requieren operaciones de restauración de último minuto únicamente durante un día o dos. De forma predeterminada, SnapCenter conserva un mínimo de dos días.

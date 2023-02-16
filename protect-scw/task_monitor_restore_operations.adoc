@@ -1,0 +1,52 @@
+---
+permalink: protect-scw/task_monitor_restore_operations.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for Exchange Server 
+summary: Es posible supervisar el progreso de diferentes operaciones de restauración de SnapCenter mediante la página Jobs. El progreso de una operación puede revisarse para determinar cuándo está completa o si hay un problema. 
+---
+= Supervisar operaciones de restauración
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible supervisar el progreso de diferentes operaciones de restauración de SnapCenter mediante la página Jobs. El progreso de una operación puede revisarse para determinar cuándo está completa o si hay un problema.
+
+*Acerca de esta tarea*
+
+los estados posteriores a la restauración describen las condiciones del recurso una vez ejecutada la operación de restauración, así como otras acciones de restauración que pueden realizarse.
+
+Los siguientes iconos aparecen en la página Jobs e indican el estado de la operación:
+
+* image:../media/progress_icon.gif["Icono de estado en curso"] En curso
+* image:../media/success_icon.gif["Icono de estado completado"] Completado correctamente
+* image:../media/failed_icon.gif["Icono de error"] Error
+* image:../media/warning_icon.gif["Icono de estado completado con advertencias"] Completado con advertencias o no pudo iniciarse debido a advertencias
+* image:../media/verification_job_in_queue.gif["El trabajo de verificación se ha puesto en cola"] En cola
+* image:../media/cancel_icon.gif[""] Cancelada
+
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Monitor*.
+. En la página Monitor, haga clic en *Jobs*.
+. En la página Jobs, realice los siguientes pasos:
++
+.. Haga clic en image:../media/filter_icon.gif[""] para filtrar la lista de modo que solo figuren las operaciones de restauración.
+.. Especifique las fechas de inicio y finalización.
+.. En la lista desplegable *Tipo*, seleccione *Restaurar*.
+.. En la lista desplegable *Estado*, seleccione el estado de restauración.
+.. Haga clic en *aplicar* para ver las operaciones que se han completado correctamente.
+
+
+. Seleccione el trabajo de restauración y, a continuación, haga clic en *Detalles* para ver los detalles del trabajo.
+. En la página Detalles del trabajo, haga clic en *Ver registros*.
++
+El botón *Ver registros* muestra los registros detallados para la operación seleccionada.
+
++
+
+IMPORTANT: Tras la operación de restauración basada en volumen, los metadatos del backup se eliminan del repositorio de SnapCenter, pero las entradas de catálogo de backup permanecen en el catálogo SAP HANA. Aunque el estado del trabajo de restauración indique image:../media/success_icon.gif["Icono de estado completado"], debe hacer clic en los detalles del trabajo para ver el signo de advertencia de algunas de las tareas secundarias. Haga clic en el signo de advertencia y elimine las entradas del catálogo de backup indicadas.
+
+

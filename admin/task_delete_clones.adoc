@@ -1,0 +1,50 @@
+---
+permalink: admin/task_delete_clones.html 
+sidebar: sidebar 
+keywords:  
+summary: Puede eliminar clones si ya no le resultan necesarios. 
+---
+= Eliminar clones
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede eliminar clones si ya no le resultan necesarios.
+
+*Acerca de esta tarea*
+
+No puede eliminar clones que actúan como origen para otros clones.
+
+Por ejemplo, si la base de datos de producción es db1, el clon 1 de la base de datos se clona desde el backup de db1 y, después, se protege el clon 1. La base de datos que clona el clon 2 se clona a partir del backup del clon 1. Si decide eliminar el clon 1, primero debe eliminar el clon 2 y luego eliminar el clon 1.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione el recurso o el grupo de recursos de la lista desplegable *View*.
+. Seleccione el recurso o el grupo de recursos de la lista.
++
+Se muestra la página con el resumen o grupo de recursos.
+
+. En la vista Manage Copies (Administrar copias), seleccione *Clones* ya sea en los sistemas de almacenamiento principal o secundario (reflejado o replicado).
+. Seleccione el clon y, a continuación, haga clic en image:../media/delete_icon.gif[""].
++
+Si elimina clones de bases de datos SAP HANA, en la página Delete Clone, lleve a cabo las acciones siguientes:
+
++
+.. En el campo *Pre clone delete*, introduzca los comandos que se deben ejecutar antes de eliminar el clon.
+.. En el campo *Unmount*, introduzca el comando para desmontar el clon antes de eliminarlo.
+
+
+. Haga clic en *Aceptar*.
+
+
+*Después de terminar*
+
+A veces los sistemas de archivos no se eliminan. Debe aumentar el valor del parámetro CLONE_DELETE_DELAY ejecutando el siguiente comando:``./sccli Set-SmConfigSettings``
+
+
+NOTE: El parámetro CLONE_DELETE_DELAY especifica la cantidad de segundos que debe esperarse luego de completar la eliminación del clon de la aplicación para comenzar la eliminación del sistema de archivos.
+
+Después de modificar el valor del parámetro, reinicie SnapCenter el servicio del SPL.

@@ -1,0 +1,210 @@
+---
+permalink: protect-scw/reference_installation_requirements_for_snapcenter_plug_in_for_microsoft_windows.html 
+sidebar: sidebar 
+keywords: requirements 
+summary: Debe estar al tanto de determinados requisitos de instalación antes de instalar el plugin para Windows. 
+---
+= Requisitos de instalación del plugin de SnapCenter para Microsoft Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe estar al tanto de determinados requisitos de instalación antes de instalar el plugin para Windows.
+
+Antes de empezar a utilizar el plugin para Windows, el administrador de SnapCenter debe instalar y configurar SnapCenter Server y realizar las tareas de requisitos previos.
+
+* Debe tener privilegios de administrador de SnapCenter para instalar el plugin para Windows.
++
+La función de administrador de SnapCenter debe tener privilegios de administración.
+
+* Debe haber instalado y configurado el servidor SnapCenter.
+* Al instalar un plugin en un host de Windows, si especifica una credencial que no está integrada o si el usuario pertenece a un usuario de grupo de trabajo local, debe deshabilitar UAC en el host.
+* Debe configurar SnapMirror y SnapVault si desea una replicación de backup.
+
+
+
+
+== Requisitos del host para instalar el paquete de plugins de SnapCenter para Windows
+
+Antes de instalar el paquete de plugins de SnapCenter para Windows, debe estar familiarizado con algunos requisitos básicos de espacio y tamaño del sistema host.
+
+|===
+| Elemento | Requisitos 
+
+
+ a| 
+Sistemas operativos
+ a| 
+Microsoft Windows
+
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=108395;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+
+
+
+ a| 
+RAM mínima para el plugin de SnapCenter en el host
+ a| 
+1 GB
+
+
+
+ a| 
+Espacio de registro e instalación mínimo para el plugin de SnapCenter en el host
+ a| 
+5 GB
+
+
+NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de almacenamiento en la carpeta de registros. El espacio de registro necesario varía en función de la cantidad de entidades que se han de proteger y la frecuencia de las operaciones de protección de datos. Si no hay espacio en disco suficiente, no se crearán registros de las operaciones ejecutadas recientemente.
+
+
+
+ a| 
+Paquetes de software obligatorios
+ a| 
+* Microsoft .NET Framework 4.7.2 o posterior
+* Windows Management Framework (WMF) 4.0 o posterior
+* PowerShell 4.0 o posterior
+
+
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=108395;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+
+Para obtener información sobre la solución de problemas de .NET, consulte, link:..https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/SnapCenter_upgrade_or_install_fails_with_%22This_KB_is_not_related_to_the_OS%22["La actualización o instalación de SnapCenter falla en sistemas heredados que no tienen conexión a Internet."]
+
+|===
+
+
+== Configure sus credenciales para el plugin para Windows
+
+SnapCenter utiliza credenciales para autenticar usuarios para las operaciones de SnapCenter. Debe crear credenciales para instalar los plugins de SnapCenter, y credenciales adicionales para realizar operaciones de protección de datos en sistemas de archivos Windows.
+
+*Lo que necesitará*
+
+* Debe configurar credenciales de Windows antes de instalar plugins.
+* Debe configurar las credenciales con privilegios de administrador, incluidos los derechos de administrador, en el host remoto.
+* Si se configuran credenciales para grupos de recursos individuales y el usuario no tiene privilegios de administrador completos, debe asignar al menos los privilegios de grupo de recursos y backup al usuario.
+
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Configuración*.
+. En la página Settings, haga clic en *Credential*.
+. Haga clic en *Nuevo*.
+. En la página Credential, haga lo siguiente:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Nombre de credencial
+ a| 
+Introduzca un nombre para las credenciales.
+
+
+
+ a| 
+Nombre de usuario/Contraseña
+ a| 
+Introduzca el nombre de usuario y la contraseña para la autenticación.
+
+** Administrador de dominio o cualquier miembro del grupo de administradores
++
+Especifique el administrador de dominio o cualquier miembro del grupo de administrador en el sistema en el que va a instalar el plugin de SnapCenter. Los formatos válidos para el campo Username son los siguientes:
+
++
+*** `NetBIOS\UserName`
+*** `Domain FQDN\UserName`
+*** `UserName@upn`
+
+
+** Administrador local (sólo para grupos de trabajo)
++
+Para los sistemas que pertenecen a un grupo de trabajo, especifique el administrador local integrado en el sistema en el que va a instalar el plugin de SnapCenter. Puede especificar una cuenta de usuario local que pertenezca al grupo de administradores local si la cuenta de usuario tiene privilegios elevados o si la función de control de acceso de usuario está desactivada en el sistema host. El formato válido para el campo Username es el siguiente: `UserName`
+
++
+No utilice comillas dobles (") ni marcas de retroceso (') en las contraseñas. No debe usar el signo menos de (<) y el signo de exclamación (!) los símbolos juntos en las contraseñas. Por ejemplo, arrendhan<!10, les10<!, backtick'12.
+
+
+
+
+
+ a| 
+Contraseña
+ a| 
+Introduzca la contraseña usada para autenticación.
+
+|===
+. Haga clic en *Aceptar*.
++
+Después de terminar de configurar las credenciales, es posible que desee asignar mantenimiento de credenciales a un usuario o un grupo de usuarios en la página User and Access.
+
+
+
+
+
+== Configurar GMSA en Windows Server 2012 o posterior
+
+Windows Server 2012 o posterior le permite crear una cuenta de servicio administrado de grupo (GMSA) que proporciona gestión automatizada de contraseñas de cuenta de servicio desde una cuenta de dominio administrado.
+
+*Lo que necesitará*
+
+* Debe tener un controlador de dominio de Windows Server 2012 o posterior.
+* Debe tener un host de Windows Server 2012 o posterior, que es miembro del dominio.
+
+
+* Pasos*
+
+. Cree una clave raíz KDS para generar contraseñas únicas para cada objeto de su GMSA.
+. Para cada dominio, ejecute el siguiente comando desde el controlador de dominio de Windows: Add-KDSRootKey -EffectiveImmediately
+. Crear y configurar su GMSA:
++
+.. Cree una cuenta de grupo de usuarios con el siguiente formato:
++
+ domainName\accountName$
+.. Agregar objetos de equipo al grupo.
+.. Utilice el grupo de usuarios que acaba de crear para crear el GMSA.
++
+Por ejemplo:
+
++
+ New-ADServiceAccount -name <ServiceAccountName> -DNSHostName <fqdn> -PrincipalsAllowedToRetrieveManagedPassword <group> -ServicePrincipalNames <SPN1,SPN2,…>
+.. Ejecución `Get-ADServiceAccount` comando para verificar la cuenta de servicio.
+
+
+. Configure el GMSA en sus hosts:
++
+.. Active el módulo de Active Directory para Windows PowerShell en el host en el que desea utilizar la cuenta de GMSA.
++
+Para ello, ejecute el siguiente comando desde PowerShell:
+
++
+[listing]
+----
+PS C:\> Get-WindowsFeature AD-Domain-Services
+
+Display Name                           Name                Install State
+------------                           ----                -------------
+[ ] Active Directory Domain Services   AD-Domain-Services  Available
+
+
+PS C:\> Install-WindowsFeature AD-DOMAIN-SERVICES
+
+Success Restart Needed Exit Code      Feature Result
+------- -------------- ---------      --------------
+True    No             Success        {Active Directory Domain Services, Active ...
+WARNING: Windows automatic updating is not enabled. To ensure that your newly-installed role or feature is
+automatically updated, turn on Windows Update.
+----
+.. Reinicie el host.
+.. Instale el GMSA en su host ejecutando el siguiente comando desde el símbolo del sistema de PowerShell: `Install-AdServiceAccount <gMSA>`
+.. Verifique su cuenta de GMSA ejecutando el siguiente comando: `Test-AdServiceAccount <gMSA>`
+
+
+. Asigne los privilegios administrativos al GMSA configurado en el host.
+. Agregue el host de Windows especificando la cuenta GMSA configurada en el servidor SnapCenter.
++
+El servidor SnapCenter instalará los plugins seleccionados en el host y el GMSA especificado se utilizará como cuenta de registro de servicio durante la instalación del plugin.
+
+

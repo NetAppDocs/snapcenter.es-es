@@ -1,0 +1,91 @@
+---
+permalink: admin/concept_manage_policies.html 
+sidebar: sidebar 
+keywords:  
+summary: Es posible desvincular políticas de un recurso o grupo de recursos, y modificar, eliminar, ver y copiar. 
+---
+= Gestionar políticas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible desvincular políticas de un recurso o grupo de recursos, y modificar, eliminar, ver y copiar.
+
+
+
+== Modificar políticas
+
+Puede modificar las opciones de replicación, la configuración de retención de copias de Snapshot, el número de reintentos o la información de scripts mientras se asocia una política a un recurso o grupo de recursos. Puede modificar el tipo de programación (frecuencia) solo después de desvincular una política.
+
+*Acerca de esta tarea*
+
+Para modificar el tipo de programación de una política se requieren otros pasos, ya que el servidor de SnapCenter registra el tipo de programación únicamente en el momento en que la política se vincula al recurso o al grupo de recursos.
+
+|===
+| Si desea... | Realice lo siguiente... 
+
+
+ a| 
+Añada un tipo de programación adicional
+ a| 
+Cree una nueva política y vincúlela a los recursos o grupos de recursos necesarios.
+
+Por ejemplo, si la política de un grupo de recursos especifica solo backups por hora y usted también quiere añadir backups diarios, puede crear una política con un tipo de programación diaria y añadirla al grupo de recursos. El grupo de recursos tendrá, entonces, dos políticas de programación: Por hora y diaria.
+
+
+
+ a| 
+Quite o cambie un tipo de programación
+ a| 
+Realice lo siguiente:
+
+. Desvincule la política de cada recurso o grupo de recursos que use dicha política.
+. Modifique el tipo de programación.
+. Asocie la política otra vez a todos los recursos y grupos de recursos.
+
+
+Por ejemplo, si una política especifica backups por hora y quiere cambiarla a backups diarios, primero debe desvincular la política.
+
+|===
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Configuración*.
+. En la página Configuración, haga clic en *Directivas*.
+. Seleccione la directiva y, a continuación, haga clic en *Modificar*.
+. Modifique la información y, a continuación, haga clic en *Finalizar*.
+
+
+
+
+== Desvincular políticas
+
+Es posible desvincular en cualquier momento políticas que ya no quiera que rijan la protección de datos de un recurso o de un grupo de recursos. Debe desvincular la política para poder eliminarla o para poder modificar el tipo de programación.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione *Resource Group* en la lista *View*.
+. Seleccione el grupo de recursos y, a continuación, haga clic en *Modificar grupo de recursos*.
+. En la página Policies del asistente Modify Resource Group, en la lista desplegable, borre la selección junto a las políticas que desee desvincular.
+. Haga las modificaciones adicionales que necesite el grupo de recursos en el resto del asistente y haga clic en *Finalizar*.
+
+
+
+
+== Eliminar políticas
+
+Si ya no se requieren políticas, es posible eliminarlas.
+
+*Lo que necesitará*
+
+Debe desvincular la política de los recursos o grupos de recursos si la política está asociada con cualquier recurso o grupo de recursos.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Configuración*.
+. En la página Configuración, haga clic en *Directivas*.
+. Seleccione la directiva y, a continuación, haga clic en *Eliminar*.
+. Haga clic en *Sí*.
+

@@ -1,0 +1,88 @@
+---
+permalink: protect-scw/task_restore_windows_file_system_backups.html 
+sidebar: sidebar 
+keywords: restore 
+summary: Puede utilizar SnapCenter para restaurar backups de sistemas de archivos. La restauración de sistema de archivos es un proceso multifase que copia todos los datos de un backup especificado en la ubicación original del sistema de archivos. 
+---
+= Restaurar backups de sistemas de archivos Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede utilizar SnapCenter para restaurar backups de sistemas de archivos. La restauración de sistema de archivos es un proceso multifase que copia todos los datos de un backup especificado en la ubicación original del sistema de archivos.
+
+*Lo que necesitará*
+
+* Debe tener un backup del sistema de archivos.
+* Si existe una operación programada, como una operación de backup, en curso para un sistema de archivos, debe cancelarse esa operación antes de poder iniciar una operación de restauración.
+* Solo puede restaurar un backup de sistema de archivos a la ubicación original, no a una ruta alternativa.
++
+No puede restaurar un solo archivo desde un backup porque el sistema de archivos restaurado sobrescribe los datos en la ubicación original del sistema de archivos. Para restaurar un solo archivo desde un backup del sistema de archivos, debe clonar el backup y acceder al archivo en el clon.
+
+* No puede restaurar un sistema o volumen de arranque.
+* SnapCenter puede restaurar los sistemas de archivos de un clúster de Windows sin que el grupo de clústeres esté sin conexión.
+
+
+*Acerca de esta tarea*
+
+* LA RUTA_DE_SCRIPTS se define mediante la clave PredefinedWindowsScriptsDirectory ubicada en el archivo SMCoreServiceHost.exe.Config del host del plugin.
++
+Si es necesario, puede cambiar esta ruta y reiniciar el servicio SMcore. Se recomienda utilizar la ruta predeterminada para la seguridad.
+
++
+El valor de la tecla se puede mostrar desde swagger a través de la API: API /4.7/config settings
+
++
+Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGURACIÓN de API.
+
+
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. Para filtrar la lista de recursos, seleccione las opciones File System y Resource Group.
+. Seleccione un grupo de recursos de la lista y, a continuación, haga clic en *Restaurar*.
+. En la página backups, seleccione si desea restaurar desde los sistemas de almacenamiento principal o secundario y luego seleccione un backup para restaurar.
+. Seleccione sus opciones en el asistente Restore.
+. Puede introducir la ruta y los argumentos del script previo o script posterior que desea que SnapCenter ejecute antes o después de la operación de restauración, respectivamente.
++
+Por ejemplo, es posible ejecutar un script para actualizar las capturas SNMP, automatizar alertas, enviar registros, etc.
+
++
+
+NOTE: La ruta scripts previos o posteriores no debe incluir unidades o recursos compartidos. La ruta debe ser relativa a LA RUTA DE ACCESO_SCRIPTS.
+
+. En la página Notification, seleccione una de las siguientes opciones:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Registre los eventos del servidor SnapCenter en el syslog del sistema de almacenamiento
+ a| 
+Seleccione esta opción para registrar los eventos de servidor de SnapCenter en el syslog del sistema de almacenamiento.
+
+
+
+ a| 
+Envíe una notificación de AutoSupport sobre las operaciones con errores al sistema de almacenamiento
+ a| 
+Seleccione esta opción para enviar información sobre las operaciones con errores a NetApp mediante AutoSupport.
+
+
+
+ a| 
+Preferencia de correo electrónico
+ a| 
+Seleccione *Always*, *On Failure* o *On failure or warning* para enviar mensajes de correo electrónico a los destinatarios después de restaurar las copias de seguridad. Introduzca el servidor SMTP, la línea de asunto predeterminada del correo electrónico y las direcciones de correo electrónico del remitente y destinatario.
+
+|===
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+
+
+
+IMPORTANT: Si el sistema de archivos restaurado contiene una base de datos, debe también restaurar la base de datos. Si no restaura la base de datos, la base de datos puede quedar en estado no válido. Para obtener información sobre cómo restaurar bases de datos, consulte la guía de protección de datos de esa base de datos.

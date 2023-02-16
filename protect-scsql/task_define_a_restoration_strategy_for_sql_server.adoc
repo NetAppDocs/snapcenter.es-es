@@ -1,0 +1,14 @@
+---
+permalink: protect-scsql/task_define_a_restoration_strategy_for_sql_server.html 
+sidebar: sidebar 
+keywords:  
+summary: Definir una estrategia de restauración para SQL Server permite restaurar correctamente la base de datos. 
+---
+= Defina una estrategia de restauración para SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Definir una estrategia de restauración para SQL Server permite restaurar correctamente la base de datos.

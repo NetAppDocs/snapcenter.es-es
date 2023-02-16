@@ -1,0 +1,42 @@
+---
+permalink: protect-scsql/concept_what_you_can_do_with_the_snapcenter_plug_in_for_microsoft_sql_server.html 
+sidebar: sidebar 
+keywords:  
+summary: Cuando el plugin de SnapCenter para Microsoft SQL Server está instalado en el entorno, es posible usar SnapCenter para realizar backup, restaurar y clonar bases de datos de SQL Server. 
+---
+= Tareas que pueden llevarse a cabo con el plugin de SnapCenter para Microsoft SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cuando el plugin de SnapCenter para Microsoft SQL Server está instalado en el entorno, es posible usar SnapCenter para realizar backup, restaurar y clonar bases de datos de SQL Server.
+
+Es posible ejecutar las siguientes tareas complementarias a las operaciones de backup, de restauración y de clonado de las bases de datos de SQL Server y sus recursos:
+
+* Realizar backup de bases de datos de SQL Server y los registros de transacciones asociados
++
+No es posible crear un backup de registros para las bases de datos maestra y msdb. Sin embargo, puede crear backups de registros para la base de datos modelo del sistema.
+
+* Restaurar recursos de bases de datos
++
+** Se pueden restaurar bases de datos de sistema maestras, msdb y modelo.
+** No es posible restaurar varias bases de datos, instancias y grupos de disponibilidad.
+** No puede restaurar la base de datos del sistema en una ruta alternativa.
+
+
+* Crear clones de un momento específico para las bases de datos de producción
++
+No es posible ejecutar operaciones de backup, restauración, clonado o ciclo de vida en las bases de datos del sistema tempdb.
+
+* Verifique las operaciones de backup de inmediato o aplace la verificación hasta más adelante
++
+No se admite la verificación de la base de datos del sistema SQL Server. SnapCenter clona las bases de datos para realizar una operación de verificación. SnapCenter no puede clonar bases de datos del sistema SQL Server y, por lo tanto, no se admite la verificación de estas bases de datos.
+
+* Programar operaciones de backup y de clonado
+* Supervisar operaciones de backup, de restauración y de clonado
+
+
+
+NOTE: El plugin para SQL Server no es compatible con el backup y la recuperación de las bases de datos de SQL Server en los recursos compartidos SMB.

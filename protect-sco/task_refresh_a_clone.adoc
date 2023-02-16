@@ -1,0 +1,64 @@
+---
+permalink: protect-sco/task_refresh_a_clone.html 
+sidebar: sidebar 
+keywords: refresh clone, clone 
+summary: Puede actualizar el clon ejecutando el comando “Refresh-SmClone”. Este comando crea un backup de la base de datos, elimina el clon existente y crea un clon con el mismo nombre. 
+---
+= Actualizar un clon
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para actualizar el clon, puede ejecutar el comando _Refresh-SmClone_. Este comando crea un backup de la base de datos, elimina el clon existente y crea un clon con el mismo nombre.
+
+
+NOTE: No se puede actualizar un clon de una PDB.
+
+*Lo que necesitará*
+
+* Cree un backup completo en línea o una política de backup de datos sin conexión sin conexión sin backups programados habilitados.
+* Configure la notificación por correo electrónico en la directiva sólo para los fallos de copia de seguridad.
+* Defina el número de retención de los backups bajo demanda correctamente para garantizar que no haya backups no deseados.
+* Asegúrese de que solo exista asociada una política de backup completo en línea o de backup de datos sin conexión a un grupo de recursos identificado para la operación de actualización de clonado.
+* Cree un grupo de recursos con solo una base de datos.
+* Si se crea un trabajo de cron para el comando clone Refresh, asegúrese de que las programaciones de SnapCenter y de cron no se superpongan para el grupo de recursos de la base de datos.
++
+Para un trabajo de cron creado para el comando clone Refresh, asegúrese de ejecutar Open-SmConnection cada 24 horas.
+
+* Asegúrese de que el SID del clon sea único para un host.
++
+Si diversas operaciones de clonado de actualización utilizan el mismo archivo de especificación de clon o utilizan el archivo de especificación de clon con el mismo SID de clon, se eliminará el clon existente con el SID del host y, a continuación, se creará el clon.
+
+* Asegúrese de que la política de backup esté habilitada con protección secundaria y que el archivo de especificación del clon se cree con "'-IncludeSecondaryDetails" para crear los clones con backups secundarios.
++
+** Si se especifica el archivo de especificación del clon principal pero la política tiene seleccionada la opción de actualización secundaria, se creará el backup y la actualización se transferirá al secundario. Sin embargo, el clon se creará a partir del backup primario.
+** Si se especifica el archivo de especificación del clon principal y la política no tiene seleccionada la opción de actualización secundaria, se creará el backup en la ubicación principal y se creará el clon a partir de la ubicación principal.
+
+
+
+
+* Pasos*
+
+. Inicie una sesión de conexión con el servidor SnapCenter para el usuario especificado: _Open-SmConnection_
+. Cree una especificación de clon de base de datos de Oracle a partir de una copia de seguridad especificada: _New-SmOracleCloneSpecification_
++
+
+NOTE: Si la política de protección de datos secundaria es mirror-vault unificado, especifique solo -IncludeSecondaryDetails. No es necesario especificar -SecondaryStorageType.
+
++
+Este comando crea automáticamente un archivo de especificación de clon de base de datos de Oracle para la base de datos de origen especificada y su backup. Además debe proporcionar un SID de base de datos del clon para que el archivo de especificación creado tenga los valores generados automáticamente para la base de datos del clon que creará.
+
++
+
+NOTE: El archivo de especificación del clon se crea en _/var/opt/snapcenter/sco/clone_specs_.
+
+. Ejecute _Refresh-SmClone_.
++
+Si la operación falla con los mensajes de error "PL-SCO-20032: CanExecute operación falló con el error: PL-SCO-30031: Redo log file +SC_2959770772_clmdb/clmdb/redolog/redo01_01.log exists", especifique un valor superior para _-WaitToTriggerClone_.
+
++
+Para obtener información detallada sobre comandos UNIX, consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP2885486["Guía de referencia de comandos del software SnapCenter"^].
+
+

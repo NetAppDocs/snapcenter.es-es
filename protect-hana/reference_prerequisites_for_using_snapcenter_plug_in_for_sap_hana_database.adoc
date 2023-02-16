@@ -1,0 +1,36 @@
+---
+permalink: protect-hana/reference_prerequisites_for_using_snapcenter_plug_in_for_sap_hana_database.html 
+sidebar: sidebar 
+keywords: Credentials,SnapCenter Plug-in for SAP HANA Database 
+summary: Antes de utilizar el plugin de SnapCenter para base de datos SAP HANA, el administrador de SnapCenter debe instalar y configurar SnapCenter Server y realizar las tareas de requisitos previos. 
+---
+= Requisitos previos para usar el plugin de SnapCenter para base de datos SAP HANA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de utilizar el plugin de SnapCenter para base de datos SAP HANA, el administrador de SnapCenter debe instalar y configurar SnapCenter Server y realizar las tareas de requisitos previos.
+
+* Instalar y configurar SnapCenter Server.
+* Inicie sesión en el servidor SnapCenter.
+* Configure el entorno de SnapCenter añadiendo conexiones con el sistema de almacenamiento y creando credenciales, si es necesario.
+* Instale Java 1.7 o Java 1.8 en su host Linux o Windows.
++
+Debe configurar la ruta de Java en la variable de rutas del entorno del equipo host.
+
+* Configure SnapMirror y SnapVault si quiere realizar una replicación de backup.
+* Instale el cliente HDBSQL en el host donde va a instalar el plugin para base de datos SAP HANA.
++
+Configure las claves de almacenamiento de usuario para los nodos SAP HANA que va a gestionar a través de este host.
+
+* En el caso de la base de datos SAP HANA 2.0SPS05, si va a utilizar una cuenta de usuario de base de datos SAP HANA, asegúrese de tener los siguientes permisos para realizar operaciones de backup, restauración y clonado en SnapCenter Server:
++
+** Administrador de backups
+** Catálogo leído
+** Administrador de backup de bases de datos
+** Operador de recuperación de bases de datos
+
+
+

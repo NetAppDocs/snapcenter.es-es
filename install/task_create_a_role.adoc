@@ -1,0 +1,38 @@
+---
+permalink: install/task_create_a_role.html 
+sidebar: sidebar 
+keywords: role, create, permission 
+summary: Además de usar los roles de SnapCenter existentes, es posible crear roles propios y personalizar los permisos. 
+---
+= Crear un rol
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Además de usar los roles de SnapCenter existentes, es posible crear roles propios y personalizar los permisos.
+
+Inició sesión con el rol de administrador de SnapCenter.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Configuración*.
+. En la página Configuración, haga clic en *roles*.
+. Haga clic en image:../media/add_icon_configure_database.gif["el icono de añadir de la pantalla de configuración de la base de datos"].
+. En la página Add Role, especifique un nombre y una descripción para el nuevo rol.
++
+
+NOTE: Desde SnapCenter 4.5, sólo puede incluir los siguientes caracteres especiales en nombres de usuario y nombres de grupos: Espacio ( ), guión (-), guión bajo (_) y dos puntos (:). Si desea utilizar una función que ha creado en una versión anterior de SnapCenter con estos caracteres especiales, puede deshabilitar la validación del nombre de la función cambiando el valor del parámetro 'DisableSQLInjtionValidation' a TRUE en el archivo web.config ubicado en el que está instalado SnapCenter WebApp. Después de modificar el valor, no es necesario reiniciar el servicio.
+
+. Seleccione *todos los miembros de esta función pueden ver los objetos de otros miembros* para permitir que otros miembros de la función vean recursos como volúmenes y hosts después de actualizar la lista de recursos.
++
+Debe anular la selección de esta opción si no desea que los miembros del rol vean los objetos a los que se asignaron otros miembros.
+
++
+
+NOTE: Cuando se habilita esta opción, no es necesario asignar a los usuarios acceso a los objetos o recursos si los usuarios pertenecen al mismo rol que el usuario que creó los objetos o recursos.
+
+. En la página permisos, seleccione los permisos que desea asignar a la función o haga clic en *Seleccionar todo* para conceder todos los permisos a la función.
+. Haga clic en *Enviar*.
+

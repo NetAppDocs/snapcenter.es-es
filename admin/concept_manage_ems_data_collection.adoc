@@ -1,0 +1,74 @@
+---
+permalink: admin/concept_manage_ems_data_collection.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Es posible programar y gestionar la recogida de datos de Event Management System (EMS) mediante cmdlets de PowerShell. La recogida de datos de EMS implica recopilar datos sobre SnapCenter Server, los paquetes de plugins de SnapCenter instalados, los hosts y datos similares y, posteriormente, enviarlos a una máquina virtual de almacenamiento ONTAP específica \(SVM\).' 
+---
+= Gestione la recogida de datos de EMS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible programar y gestionar la recogida de datos de Event Management System (EMS) mediante cmdlets de PowerShell. La recogida de datos de EMS implica recopilar datos sobre SnapCenter Server, los paquetes de plugins de SnapCenter instalados, los hosts y datos similares y, posteriormente, enviarlos a una máquina virtual de almacenamiento (SVM) específica de ONTAP.
+
+
+NOTE: La utilización de la CPU del sistema es alta cuando la tarea de recopilación de datos está en curso. El uso de la CPU sigue siendo elevado siempre que la operación se haga avanzar con independencia del tamaño de los datos.
+
+
+
+== Detenga la recogida de datos de EMS
+
+La recogida de datos de EMS se encuentra habilitada de forma predeterminada, y se ejecuta cada siete días después de la fecha de instalación. Es posible deshabilitar la recogida de datos en cualquier momento con el cmdlet de PowerShell _Disable-SmDataCollectionEMS_.
+
+* Pasos*
+
+. Desde una línea de comandos de PowerShell, establezca una sesión con SnapCenter introduciendo _Open-SmConnection_.
+. Deshabilite la recogida de datos de EMS. Para ello, introduzca _Disable-SmDataCollectionEms_.
+
+
+
+
+== Inicie la recogida de datos de EMS
+
+De forma predeterminada, la recogida de datos de EMS se encuentra habilitada y programada para ejecutarse cada siete días desde la fecha de instalación. Si la deshabilitó, puede iniciar nuevamente la recogida de datos de EMS con el cmdlet _Enable-SmDataCollectionEMS_.
+
+Se otorgó el permiso event generate-autosupport-log de Data ONTAP al usuario de la máquina virtual de almacenamiento (SVM).
+
+* Pasos*
+
+. Desde una línea de comandos de PowerShell, establezca una sesión con SnapCenter introduciendo _Open-SmConnection_.
+. Habilite la recogida de datos de EMS. Para ello, introduzca _Enable-SmDataCollectionEMS_.
+
+
+
+
+== Cambie la programación de recogida de datos de EMS y SVM de destino
+
+Es posible utilizar cmdlets de PowerShell para cambiar la programación de recogida de datos de EMS o las máquinas virtuales de almacenamiento (SVM) de destino.
+
+* Pasos*
+
+. Desde una línea de comandos de PowerShell, para establecer una sesión con SnapCenter, introduzca el cmdlet _Open-SmConnection_.
+. Para cambiar el destino de recogida de datos de EMS, introduzca el cmdlet _Set-SmDataCollectionEmsTarget_.
+. Para cambiar la programación de recogida de datos de EMS, introduzca el cmdlet _Set-SmDataCollectionEmsSchedule_.
+
+
+
+
+== Supervise el estado de recogida de datos de EMS
+
+Es posible supervisar el estado de la recogida de datos de EMS mediante varios cmdlets de PowerShell. Se puede obtener información sobre la programación, la SVM, el destino y el estado.
+
+* Pasos*
+
+. Desde una línea de comandos de PowerShell, establezca una sesión con SnapCenter introduciendo _Open-SmConnection_.
+. Recupere información sobre la programación de recogida de datos de EMS. Para ello, introduzca _Get-SmDataCollectionEmsSchedule_.
+. Recupere información sobre el estado de la recogida de datos de EMS. Para ello, introduzca _Get-SmDataCollectionEmsStatus_.
+. Recupere información acerca del destino de recogida de datos de EMS. Para ello, introduzca _Get-SmDataCollectionEmsTarget_.
+
+
+*Más información*
+
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].

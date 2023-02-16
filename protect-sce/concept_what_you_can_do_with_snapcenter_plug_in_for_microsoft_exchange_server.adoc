@@ -1,0 +1,22 @@
+---
+permalink: protect-sce/concept_what_you_can_do_with_snapcenter_plug_in_for_microsoft_exchange_server.html 
+sidebar: sidebar 
+keywords:  
+summary: Es posible usar el plugin para Exchange a fin de realizar backup y restaurar bases de datos de Exchange Server. 
+---
+= Tareas que pueden llevarse a cabo con el plugin de SnapCenter para Microsoft Exchange Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible usar el plugin para Exchange a fin de realizar backup y restaurar bases de datos de Exchange Server.
+
+* Ver y gestionar un inventario activo de DAG, bases de datos y conjuntos de réplicas de Exchange
+* Definir políticas que ofrezcan opciones de protección para automatización de backup
+* Asigne políticas a grupos de recursos
+* Proteger grupos de disponibilidad de base de datos y bases de datos individuales
+* Realizar backup de bases de datos de buzón de Exchange primarias y secundarias
+* Restaurar bases de datos de backups primarios y secundarios
+

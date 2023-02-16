@@ -1,0 +1,83 @@
+---
+permalink: admin/concept_manage_resources_of_untrusted_domains.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Además de administrar hosts en dominios de confianza de Active Directory \(AD\), SnapCenter también administra hosts de varios dominios de AD que no son de confianza. Los dominios AD que no son de confianza deben registrarse en el servidor SnapCenter. SnapCenter admite usuarios y grupos de varios dominios AD que no son de confianza.' 
+---
+= Gestione recursos de dominios que no son de confianza
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Además de gestionar hosts en dominios de confianza de Active Directory (AD), SnapCenter también gestiona hosts en varios dominios de AD que no son de confianza. Los dominios AD que no son de confianza deben registrarse en el servidor SnapCenter. SnapCenter admite usuarios y grupos de varios dominios AD que no son de confianza.
+
+Puede instalar el servidor SnapCenter en un equipo que esté en un dominio o grupo de trabajo. Para instalar SnapCenter Server, debe especificar las credenciales de dominio si el equipo está en un dominio o las credenciales de administrador local si el equipo está en un grupo de trabajo.
+
+No se admiten los grupos de Active Directory (AD) que pertenecen a dominios no registrados en el servidor de SnapCenter. Aunque es posible crear roles de SnapCenter con estos grupos de AD, se produce un error al iniciar sesión en SnapCenter Server con el siguiente mensaje de error: El usuario que intenta iniciar sesión no pertenece a ningún rol. Póngase en contacto con el administrador.
+
+
+
+== Modificar dominios que no son de confianza
+
+Puede modificar un dominio que no es de confianza cuando desea actualizar las direcciones IP del controlador de dominio o el nombre de dominio completo (FQDN).
+
+*Acerca de esta tarea*
+
+Después de modificar el FQDN, los activos asociados (hosts, usuarios y grupos) pueden no funcionar como se espera.
+
+Para modificar un dominio que no es de confianza, puede utilizar la interfaz de usuario de SnapCenter o cmdlets de PowerShell.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Configuración*.
+. En la página Configuración, haga clic en *Configuración global*.
+. En la página Global Settings (Configuración global), haga clic en *Configuración de dominio*.
+. Haga clic en image:../media/edit_icon.gif["Icono Editar"]y, a continuación, proporcione los siguientes detalles:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Dominio FQDN
+ a| 
+Especifique el FQDN y haga clic en *resolver*.
+
+
+
+ a| 
+Direcciones IP del controlador de dominio
+ a| 
+Si el dominio FQDN no es resoluble, especifique una o más direcciones IP de controlador de dominio.
+
+|===
+. Haga clic en *Aceptar*.
+
+
+
+
+== Cancele el registro de dominios de Active Directory que no son de confianza
+
+Puede cancelar el registro de un dominio de Active Directory que no sea de confianza si no desea utilizar los activos asociados a ese dominio.
+
+*Lo que necesitará*
+
+Debe haber quitado los hosts, los usuarios, los grupos y las credenciales que están asociados con el dominio de no confianza.
+
+*Acerca de esta tarea*
+
+* Una vez que se cancela el registro del dominio en el servidor SnapCenter, los usuarios de ese dominio no pueden tener acceso a SnapCenter Server.
+* Si existen activos asociados (hosts, usuarios y grupos), después de cancelar el registro del dominio, los activos no estarán operativos.
+* Para cancelar el registro de un dominio que no es de confianza, puede utilizar la interfaz de usuario de SnapCenter o cmdlets de PowerShell.
+
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Configuración*.
+. En la página Configuración, haga clic en *Configuración global*.
+. En la página Global Settings (Configuración global), haga clic en *Configuración de dominio*.
+. En la lista de dominios, seleccione el dominio al que desea cancelar el registro.
+. Haga clic en image:../media/delete_icon.gif[""]Y, a continuación, haga clic en *Aceptar*.
+

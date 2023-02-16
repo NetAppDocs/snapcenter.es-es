@@ -1,0 +1,32 @@
+---
+permalink: protect-scsql/task_disaster_recovery_scsql.html 
+sidebar: sidebar 
+keywords:  
+summary: Cuando el plugin de SnapCenter para SQL Server está inactivo, la recuperación se puede realizar mediante unos pasos manuales. 
+---
+= Recuperación ante desastres del plugin de SnapCenter para SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cuando el plugin de SnapCenter para SQL Server está inactivo, cambie a un host SQL diferente y recupere los datos mediante unos pasos.
+
+*Lo que necesitará*
+
+* El host secundario debe tener el mismo sistema operativo, aplicación y nombre de host que el host primario.
+* Inserte el complemento SnapCenter para SQL Server en un host alternativo utilizando la página *Agregar host* o *Modificar host*.
++
+link:https://docs.netapp.com/us-en/snapcenter/admin/concept_manage_hosts.html["Gestionar hosts"]
+
+
+
+* Pasos*
+
+. Seleccione el host en la página *hosts* para modificar e instalar el plugin de SnapCenter para SQL Server.
+. (Opcional) reemplace los archivos de configuración del plugin de SnapCenter para SQL Server desde un backup de recuperación ante desastres (DR) a la máquina nueva.
+. Importe las programaciones de Windows y SQL desde la carpeta del plugin de SnapCenter para SQL Server desde el backup de recuperación ante desastres.
+
+
+Para obtener más información, consulte https://www.youtube.com/watch?v=Nbr_wm9Cnd4&list=PLdXI3bZJEw7nofM6lN44eOe4aOSoryckg["API de recuperación ante desastres"^] vídeo.

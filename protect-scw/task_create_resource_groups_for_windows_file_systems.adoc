@@ -1,0 +1,131 @@
+---
+permalink: protect-scw/task_create_resource_groups_for_windows_file_systems.html 
+sidebar: sidebar 
+keywords: resource groups 
+summary: Un grupo de recursos es el contenedor donde puede añadir varios sistemas de archivos que desea proteger. También deben añadir una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar y, a continuación, especificar la programación de backups. 
+---
+= Crear grupos de recursos para sistemas de archivos Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Un grupo de recursos es el contenedor donde puede añadir varios sistemas de archivos que desea proteger. También deben añadir una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar y, a continuación, especificar la programación de backups.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione *File Systems* en la lista.
++
+
+NOTE: Si recientemente ha agregado un sistema de archivos a SnapCenter, haga clic en *Actualizar recursos* para ver el recurso recién añadido.
+
+. Haga clic en *Nuevo grupo de recursos*.
+. En la página Name del asistente, haga lo siguiente:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Nombre
+ a| 
+Escriba el nombre del grupo de recursos.
+
+
+NOTE: El nombre del grupo de recursos no debe superar los 250 caracteres.
+
+
+
+ a| 
+Utilice un formato de nombre personalizado para la copia de Snapshot
+ a| 
+Opcional: Escriba un nombre de copia de Snapshot personalizado y su formato.
+
+Por ejemplo, customtext_resourcegroup_policy_hostname o resourcegroup_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+
+
+
+ a| 
+Etiquetar
+ a| 
+Introduzca una etiqueta descriptiva que ayude a encontrar el grupo de recursos.
+
+|===
+. En la página Resources, realice las siguientes tareas:
++
+.. Seleccione el host para filtrar la lista de recursos.
++
+Si agregó recursos recientemente, aparecerán en la lista de recursos disponibles únicamente después de actualizar la lista de recursos.
+
+.. En la sección Available Resources, haga clic en los sistemas de archivos de los que desea realizar backup y, a continuación, haga clic en la flecha derecha para moverlos a la sección Added.
++
+Si selecciona la opción *Autoselect all resources on same Storage volume*, se seleccionan todos los recursos del mismo volumen. Cuando los mueve a la sección Added, todos los recursos de ese volumen se mueven juntos.
+
++
+Para añadir un único sistema de archivos, borre la opción *Autoselect all resources on same Storage volume* y seleccione los sistemas de archivos que desea mover a la sección Added.
+
+
+
+. En la página Policies, ejecute las siguientes tareas:
++
+.. Seleccione una o varias políticas de la lista desplegable.
++
+Puede seleccionar cualquier directiva existente y hacer clic en *Detalles* para determinar si puede utilizar esa directiva.
+
++
+Si ninguna política cumple con sus requisitos, puede crear una nueva haciendo clic en *image:../media/add_policy_from_resourcegroup.gif[""]* para iniciar el asistente de políticas.
+
++
+Las políticas seleccionadas se enumeran en la columna Policy en la sección Configure schedules for selected policies.
+
+.. En la sección Configure schedules for selected policies, haga clic en *image:../media/add_policy_from_resourcegroup.gif[""]* En la columna Configure Schedules correspondiente a la directiva para la que desea configurar la programación.
+.. Si la política está asociada con varios tipos de programación (frecuencias), seleccione la frecuencia que desea configurar.
+.. En el cuadro de diálogo Add schedules for policy _policy_name_, configure la programación especificando la fecha de inicio, la fecha de caducidad y la frecuencia y, a continuación, haga clic en *Finish*.
++
+Las programaciones configuradas aparecen en la columna Applied Schedules en la sección Configure schedules for selected policies.
+
+
+
++
+No se admiten programas de backup de terceros cuando se solapan con los programas de backup de SnapCenter. No debe modificar las programaciones desde el programador de tareas de Windows y el agente de SQL Server.
+
+. En la página Notification, proporcione información de notificación de la siguiente manera:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Preferencia de correo electrónico
+ a| 
+Seleccione *Always*, *On Failure* o *On failure or warning*, para enviar correos electrónicos a destinatarios después de crear grupos de recursos de copia de seguridad, adjuntar políticas y configurar horarios. Introduzca el servidor SMTP, la línea de asunto predeterminada del correo electrónico y las direcciones de correo electrónico del remitente y destinatario.
+
+
+
+ a| 
+De
+ a| 
+Dirección de correo electrónico
+
+
+
+ a| 
+Para
+ a| 
+Dirección de correo electrónico del destinatario
+
+
+
+ a| 
+Asunto
+ a| 
+Línea de asunto predeterminada del correo electrónico
+
+|===
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
++
+Es posible realizar un backup bajo demanda o esperar a que se produzca el backup programado.
+
+

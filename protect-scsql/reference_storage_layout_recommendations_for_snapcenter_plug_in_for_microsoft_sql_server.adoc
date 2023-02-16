@@ -1,0 +1,55 @@
+---
+permalink: protect-scsql/reference_storage_layout_recommendations_for_snapcenter_plug_in_for_microsoft_sql_server.html 
+sidebar: sidebar 
+keywords:  
+summary: Una buena distribución de almacenamiento permite que SnapCenter Server realice backups de bases de datos para que pueda cumplir sus objetivos de recuperación. Se deben tener en cuenta diferentes factores al definir la distribución de almacenamiento, como el tamaño de la base de datos, la tasa de cambio de la base de datos y la frecuencia con la que se realizan backups. 
+---
+= Recomendaciones sobre distribución de almacenamiento para el plugin de SnapCenter para Microsoft SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Una buena distribución de almacenamiento permite que SnapCenter Server realice backups de bases de datos para que pueda cumplir sus objetivos de recuperación. Se deben tener en cuenta diferentes factores al definir la distribución de almacenamiento, como el tamaño de la base de datos, la tasa de cambio de la base de datos y la frecuencia con la que se realizan backups.
+
+Las siguientes secciones definen las recomendaciones y restricciones de distribución de almacenamiento para LUN y discos de máquina virtual (VMDK) con el plugin de SnapCenter para Microsoft SQL Server instalado en el entorno.
+
+En este caso, los LUN pueden incluir discos VMware RDM y LUN iSCSI de conexión directa asignados al invitado de the guest.
+
+
+
+== Requisitos de LUN y VMDK
+
+Opcionalmente, puede utilizar LUN o VMDK específicos para optimizar el rendimiento y la gestión de las siguientes bases de datos:
+
+* Bases de datos maestra y de sistema modelo
+* Tempdb
+* Archivos de bases de datos del usuario (.mdf y .ndf)
+* Archivos de registro de transacciones de bases de datos (.ldf)
+* Directorio de registro
+
+
+Para restaurar grandes bases de datos, la práctica recomendada es utilizar LUN o VMDK específicos El tiempo que se necesita para restaurar un LUN o un VMDK completos es inferior al que se requiere para restaurar los archivos individuales almacenados en el LUN o el VMDK
+
+Para el directorio de registro, deber crear un LUN o un VMDK por separado para que haya espacio libre suficiente en los discos de archivos de registro o archivos de datos
+
+
+
+== Ejemplos de distribución de LUN y VMDK
+
+El gráfico siguiente muestra cómo puede configurar la distribución almacenamiento para bases de datos grandes en LUN:
+
+image::../media/smsql_storage_layout_mult_vols_snapcenter.gif[Diagrama de varios LUN]
+
+El gráfico siguiente muestra cómo puede configurar la distribución de almacenamiento para bases de datos medianas o pequeñas en LUN:
+
+image::../media/smsql_storage_layout_mult_dbs_luns_snapcenter.gif[Diagrama de varias bases de datos por LUN]
+
+El gráfico siguiente muestra cómo puede configurar la distribución almacenamiento para bases de datos grandes en VMDK:
+
+image::../media/smsql_storage_layout_large_dbs_vmdk.gif[Distribución de almacenamiento para bases de datos grandes en VMDK]
+
+El gráfico siguiente muestra cómo puede configurar la distribución de almacenamiento para bases de datos medianas o pequeñas en VMDK:
+
+image::../media/smsql_storage_layout_med_small_dbs_vmdk.gif[Distribución de almacenamiento para bases de datos medianas o pequeñas en VMDK]

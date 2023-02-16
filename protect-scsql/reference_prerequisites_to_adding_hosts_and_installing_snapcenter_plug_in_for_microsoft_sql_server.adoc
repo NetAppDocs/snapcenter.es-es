@@ -1,0 +1,35 @@
+---
+permalink: protect-scsql/reference_prerequisites_to_adding_hosts_and_installing_snapcenter_plug_in_for_microsoft_sql_server.html 
+sidebar: sidebar 
+keywords: credentials 
+summary: Antes de añadir un host e instalar los paquetes de plugins, debe satisfacer todos los requisitos. 
+---
+= Requisitos previos para añadir hosts e instalar el plugin de SnapCenter para Microsoft SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de añadir un host e instalar los paquetes de plugins, debe satisfacer todos los requisitos.
+
+* Si utiliza iSCSI, el servicio iSCSI debe estar en ejecución.
+* Debe tener un usuario con privilegios de administrador local y permisos locales para iniciar sesión en el host remoto.
+* Si gestiona nodos de clúster en SnapCenter, debe tener un usuario con privilegios de administrador para todos los nodos del clúster.
+* Debe tener un usuario con permisos de administrador del sistema en SQL Server.
++
+El plugin de SnapCenter para Microsoft SQL Server utiliza Microsoft VDI Framework, para lo que se requiere acceso de sysadmin.
+
++
+http://support.microsoft.com/kb/2926557/["Artículo de soporte de Microsoft 2926557: Las operaciones de backup y restauración de VDI de SQL Server requieren privilegios de administrador del sistema"]
+
+* Al instalar un plugin en un host de Windows, si especifica una credencial que no está integrada o si el usuario pertenece a un usuario de grupo de trabajo local, debe deshabilitar UAC en el host.
+* Si está instalado SnapManager para Microsoft SQL Server, debe haber detenido o deshabilitado el servicio y las programaciones.
++
+Si prevé importar tareas de backup o clonado a SnapCenter, no desinstale SnapManager para Microsoft SQL Server.
+
+* El host debe poder resolverse con el nombre de dominio completo (FQDN) del servidor.
++
+Si el archivo hosts se modifica para que pueda resolverse y si se especifican tanto el nombre corto como el FQDN en el archivo hosts, cree una entrada en el archivo hosts SnapCenter con el siguiente formato: <ip_address> <host_fqdn> <host_name>
+
+

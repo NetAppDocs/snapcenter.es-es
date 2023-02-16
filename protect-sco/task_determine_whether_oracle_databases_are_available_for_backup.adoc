@@ -1,0 +1,106 @@
+---
+permalink: protect-sco/task_determine_whether_oracle_databases_are_available_for_backup.html 
+sidebar: sidebar 
+keywords: credentials,SnapCenter Plug-in for Oracle Databases, non-database entries, oratab 
+summary: Los recursos son bases de datos de Oracle en el host gestionado por SnapCenter. Es posible añadir estas bases de datos a grupos de recursos para realizar operaciones de protección de datos después de detectar las bases de datos disponibles. 
+---
+= Determinar si las bases de datos de Oracle están disponibles para backup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Los recursos son bases de datos de Oracle en el host gestionado por SnapCenter. Es posible añadir estas bases de datos a grupos de recursos para realizar operaciones de protección de datos después de detectar las bases de datos disponibles.
+
+*Lo que necesitará*
+
+* Debe haber completado ciertas tareas, como instalar el servidor SnapCenter, añadir hosts, crear conexiones con el sistema de almacenamiento y añadir credenciales.
+* Si las bases de datos residen en un disco de máquina virtual (VMDK) o una asignación de dispositivo sin formato (RDM), es necesario implementar el plugin de SnapCenter para VMware vSphere y registrar el plugin con SnapCenter.
++
+Para obtener más información, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_deploy_snapcenter_plug-in_for_vmware_vsphere.html["Ponga en marcha el plugin de SnapCenter para VMware vSphere"^].
+
+* Si las bases de datos residen en un sistema de archivos VMDK, debe haber iniciado sesión en vCenter y navegado hasta *VM options* > *Advanced* > *Edit Configuration* para configurar el valor de _disk.enableUUID_ en true para la máquina virtual.
+* Debe haber revisado el proceso que sigue SnapCenter para detectar diferentes tipos y versiones de las bases de datos de Oracle.
+
+
+*Acerca de esta tarea*
+
+Después de instalar el plugin, todas las bases de datos en ese host se detectan de forma automática y se muestran en la página Resources.
+
+Las bases de datos deben estar en estado montado o superior para que la detección de la base de datos sea exitosa. En un entorno Oracle RAC, la instancia de la base de datos de RAC en el host donde se realiza la detección, debe estar en estado montado o superior para que la detección de la instancia de la base de datos sea exitosa. Solo las bases de datos que se detecten exitosamente pueden añadirse a los grupos de recursos.
+
+Si eliminó una base de datos de Oracle en el host, el servidor de SnapCenter no tendrá conocimiento y enumerará la base de datos eliminada. Debe actualizar manualmente los recursos para actualizar la lista de recursos de SnapCenter.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione *Database* en la lista *View*.
++
+Haga clic en image:../media/filter_icon.gif[""]y, a continuación, seleccione el nombre de host y el tipo de base de datos para filtrar los recursos. A continuación, haga clic en el image:../media/filter_icon.gif[""] para cerrar el panel de filtros.
+
+. Haga clic en *Actualizar recursos*.
++
+En un escenario de RAC One Node, la base de datos se detecta como la base de datos de RAC en el nodo en el que está alojado actualmente.
+
+
+
+*Resultados*
+
+Las bases de datos se muestran junto con información como el tipo de base de datos, el nombre del clúster o host, las políticas y los grupos de recursos asociados, y el estado.
+
+
+IMPORTANT: Es necesario actualizar los recursos si se cambia el nombre de las bases de datos fuera de SnapCenter.
+
+* Si la base de datos está en un sistema de almacenamiento de terceros, la interfaz de usuario muestra el mensaje Not available for backup en la columna Overall Status.
++
+No es posible realizar operaciones de protección de datos en una base de datos que está en un sistema de almacenamiento de terceros.
+
+* Si la base de datos está en un sistema de almacenamiento de NetApp y no está protegida, la interfaz de usuario muestra un mensaje Not protected en la columna Overall Status.
+* Si la base de datos está en un sistema de almacenamiento de NetApp y está protegida, la interfaz de usuario muestra un mensaje Available for backup en la columna Overall Status.
+
+
+
+NOTE: Si habilitó una autenticación de base de datos de Oracle, se muestra un icono de candado rojo en la vista de recursos. Es necesario configurar las credenciales de la base de datos para poder proteger la base de datos, o bien añadirla al grupo de recursos para realizar operaciones de protección de datos.
+
+
+
+== Cómo evitar que SnapCenter descubra entradas que no pertenecen a la base de datos
+
+Es posible evitar que SnapCenter descubra entradas que no forman parte de una base de datos añadidas en el archivo oratab.
+
+* Pasos*
+
+. Después de instalar el plugin para Oracle, el usuario raíz debe crear el archivo *sc_oratab.config* en el directorio _/var/opt/snapcenter/sco/etc/_.
++
+Conceda el permiso de escritura al propietario y grupo binario de Oracle para que el archivo pueda mantenerse en el futuro.
+
+. El administrador de la base de datos debe añadir las entradas que no pertenecen a la base de datos en el archivo *sc_oratab.config*.
++
+Se recomienda mantener el mismo formato definido para las entradas que no son de base de datos en el archivo _/etc/oratab_ o el usuario puede añadir la cadena de entidad que no pertenece a la base de datos.
+
++
+
+NOTE: La cadena distingue mayúsculas de minúsculas. Cualquier texto con # en el principio se trata como un comentario. El comentario se puede agregar después del nombre que no sea de la base de datos.
+
++
+....
+For example:
+--------------------------------------------
+# Sample entries
+# Each line can have only one non-database name
+# These are non-database name
+oratar  # Added by the admin group -1
+#Added by the script team
+NEWSPT
+DBAGNT:/ora01/app/oracle/product/agent:N
+-----------------------------------------------
+....
+. Detectar los recursos.
++
+Las entradas que no sean de base de datos añadidas en *sc_oratab.config* no se mostrarán en la página Resources.
+
+
+
+
+IMPORTANT: Siempre se recomienda realizar un backup del archivo sc_oratab.config antes de actualizar el plugin de SnapCenter.

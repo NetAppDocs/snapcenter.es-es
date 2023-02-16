@@ -1,0 +1,37 @@
+---
+permalink: protect-sco/concept_what_you_can_do_with_the_snapcenter_plug_in_for_oracle_database.html 
+sidebar: sidebar 
+keywords: backup, restore, clone, oracle database 
+summary: 'Se puede usar el plugin para base de datos de Oracle para realizar backup, verificar, restaurar, recuperar, montar Desmontar y clonar bases de datos de Oracle y sus recursos. También es posible catalogar o descatalogar los backups de bases de datos con Oracle Recovery Manager (RMAN).' 
+---
+= Qué puede hacer con el plugin para base de datos de Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El plugin de SnapCenter para bases de datos de Oracle es un compenente de NetApp SnapCenter Software que se instala en los hosts de Oracle que permite la gestión de protección de datos para aplicaciones de bases de datos de Oracle.
+
+El plugin para bases de datos de Oracle automatiza las operaciones de backup, catalogación y descatalogación con Oracle Recovery Manager (RMAN), verificación, montaje, desmontaje, restauración, Recuperación y clonado de bases de datos de Oracle en el entorno de SnapCenter. El plugin para bases de datos de Oracle instala el plugin de SnapCenter para UNIX para realizar todas las operaciones de protección de datos.
+
+Es posible utilizar el plugin para bases de datos de Oracle para gestionar backups de bases de datos de Oracle que ejecutan aplicaciones SAP. Sin embargo, no se admite la integración con BR*Tools de SAP.
+
+* Realizar backup de archivos de datos, archivos de control y archivos de registro de archivo.
++
+El backup solo puede usarse en el nivel de la base de datos del contenedor (CDB).
+
+* Restaurar y recuperar bases de datos, bases de datos de contenedor y bases de datos conectables (PDB).
++
+No se admite la recuperación incompleta de bases de datos conectables.
+
+* Crear clones de bases de datos de producción hasta un momento específico.
++
+La clonado solo puede usarse en el nivel de la base de datos de contenedor.
+
+* Verificar backups de inmediato.
+* Montaje y desmontaje de datos y backups de registro para la operación de recuperación.
+* Programar operaciones de backup y verificación.
+* Supervisar todas las operaciones.
+* Ver informes para operaciones de backup, restauración y clonado.
+

@@ -1,0 +1,93 @@
+---
+sidebar: sidebar 
+permalink: sc-automation/concept_basic_operational_characteristics.html 
+keywords: request and response, object identifiers, synchronous, asynchronous 
+summary: Mientras QUE REST establece un conjunto común de tecnologías y prácticas recomendadas, los detalles de cada API pueden variar en función de las opciones de diseño. 
+---
+= Características operativas básicas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mientras QUE REST establece un conjunto común de tecnologías y prácticas recomendadas, los detalles de cada API pueden variar en función de las opciones de diseño.
+
+
+
+== Transacción de API de solicitud y respuesta
+
+Cada llamada de API REST se realiza como una solicitud HTTP al sistema de SnapCenter Server, lo que genera una respuesta asociada al cliente. Este par de solicitudes y respuestas se considera una transacción de API.
+
+Antes de utilizar la API, debería estar familiarizado con las variables de entrada disponibles para controlar una solicitud y el contenido de la salida de la respuesta.
+
+
+
+== Compatibilidad con operaciones CRUD
+
+Se accede a cada uno de los recursos disponibles a través de la API REST de SnapCenter en función del modelo CRUD:
+
+* Cree
+* Lea
+* Actualizar
+* Eliminar
+
+
+Para algunos de los recursos, solo se admite un subconjunto de las operaciones.
+
+
+
+== Identificadores de objeto
+
+A cada instancia u objeto de recurso se le asigna un identificador único cuando se crea. En la mayoría de los casos, el identificador es un UUID de 128 bits. Estos identificadores son globalmente únicos dentro de un servidor SnapCenter específico.
+
+Después de emitir una llamada API que crea una nueva instancia de objeto, se devuelve una dirección URL con el identificador asociado al llamante en la cabecera de ubicación de la respuesta HTTP. Puede extraer el identificador y utilizarlo en llamadas posteriores cuando haga referencia a la instancia del recurso.
+
+
+IMPORTANT: El contenido y la estructura interna de los identificadores de objeto pueden cambiar en cualquier momento. Solo se deben usar los identificadores en las llamadas API aplicables según sea necesario cuando se hacen referencia a los objetos asociados.
+
+
+
+== Instancias y colecciones de objetos
+
+Dependiendo de la ruta de recursos y del método HTTP, una llamada API puede aplicarse a una instancia de objeto específica o a una colección de objetos.
+
+
+
+== Operaciones síncronas y asíncronas
+
+SnapCenter realiza una solicitud HTTP recibida de un cliente de forma síncrona o asíncrona.
+
+
+
+=== Procesamiento sincrónico
+
+SnapCenter realiza la solicitud inmediatamente y responde con un código de estado HTTP de 200 o 201 si se realiza correctamente.
+
+Cada solicitud que utilice EL método GET se realiza siempre de forma síncrona. Además, las solicitudes que utilizan POST están diseñadas para ejecutarse de forma síncrona si se espera que se completen en menos de dos segundos.
+
+
+
+=== Procesamiento asíncrono
+
+Si una solicitud asíncrona es válida, SnapCenter crea una tarea en segundo plano para procesar la solicitud y un objeto de trabajo para anclar la tarea. El código de estado HTTP 202 se devuelve al autor de la llamada junto con el objeto de trabajo. Debe recuperar el estado del trabajo para determinar si el trabajo es correcto o fallido.
+
+Las solicitudes que utilizan los métodos POST y DELETE están diseñadas para ejecutarse asincrónicamente si se espera que tarden más de dos segundos en completarse.
+
+
+
+== Seguridad
+
+La seguridad proporcionada con la API DE REST se basa principalmente en las funciones de seguridad existentes disponibles con SnapCenter. La API utiliza la siguiente seguridad:
+
+
+
+=== Seguridad de la capa de transporte
+
+Todo el tráfico enviado por la red entre el servidor SnapCenter y el cliente suele cifrarse con TLS, según las opciones de configuración de SnapCenter.
+
+
+
+=== Autenticación HTTP
+
+En un nivel HTTP, se utiliza la autenticación básica para las transacciones de API. A cada solicitud se agrega un encabezado HTTP con el nombre de usuario y la contraseña en una cadena base64.

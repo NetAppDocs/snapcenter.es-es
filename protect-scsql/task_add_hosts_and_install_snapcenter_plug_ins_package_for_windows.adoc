@@ -1,0 +1,160 @@
+---
+permalink: protect-scsql/task_add_hosts_and_install_snapcenter_plug_ins_package_for_windows.html 
+sidebar: sidebar 
+keywords: credentials 
+summary: Es necesario usar la página SnapCenterAdd Host para añadir hosts e instalar los paquetes de plugins. Los plugins se instalan automáticamente en hosts remotos. 
+---
+= Añada hosts e instale el paquete de plugins de SnapCenter para Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe utilizar la página SnapCenter *Add Host* para añadir hosts e instalar el paquete de plugins. Los plugins se instalan automáticamente en hosts remotos.
+
+*Lo que necesitará*
+
+* Debe ser un usuario al que se ha asignado una función que tenga permisos de instalación y desinstalación de plugins, como el rol de administrador de SnapCenter.
+* Al instalar un plugin en un host de Windows, si especifica una credencial que no está incorporada, deberá deshabilitar UAC en el host.
+* Debe asegurarse de que el servicio de cola de mensajes esté en estado en ejecución.
+* Si está utilizando la cuenta de servicio gestionado en grupo (GMSA), debe configurar GMSA con privilegios administrativos.
++
+link:task_configure_gMSA_on_windows_server_2012_or_later.html["Configurar la cuenta de servicio administrado de grupo en Windows Server 2012 o posterior para SQL"^]
+
+
+
+*Acerca de esta tarea*
+
+No es posible añadir un servidor SnapCenter como host de plugins a otro servidor SnapCenter.
+
+Puede añadir un host e instalar los paquetes de los plugins para un host individual o para un clúster. Si está instalando los plugins en un clúster o clustering de conmutación al nodo de respaldo de Windows Server (WSFC), los plugins se instalan en todos los nodos del clúster.
+
+Para obtener información sobre la gestión de los hosts, consulte link:../admin/concept_manage_hosts.html["Gestionar hosts"^].
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *hosts*.
+. Compruebe que la ficha *Managed hosts* está seleccionada en la parte superior.
+. Haga clic en *Agregar*.
+. En la página hosts, haga lo siguiente:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Tipo de host
+ a| 
+Seleccione Windows como tipo de host. El servidor de SnapCenter añade el host e instala el plugin para Windows si el plugin todavía no está instalado en el host.
+
+Si selecciona la opción de Microsoft SQL Server en la página Plug-ins, SnapCenter Server instala el plugin para SQL Server.
+
+
+
+ a| 
+Nombre de host
+ a| 
+Introduzca el nombre de dominio completamente cualificado (FQDN) o la dirección IP del host. La dirección IP es compatible con hosts de dominio que no son de confianza solo si se resuelve en el FQDN.
+
+SnapCenter depende de una configuración adecuada del DNS. Por lo tanto, lo más recomendable es introducir el FQDN.
+
+Puede introducir las direcciones IP o el FQDN de uno de los siguientes:
+
+** Host independiente
+** WSFC Si va a añadir un host mediante SnapCenter y el host forma parte de un subdominio, debe proporcionar el FQDN.
+
+
+
+
+ a| 
+Credenciales
+ a| 
+Seleccione el nombre de credencial que ha creado o cree nuevas credenciales. Las credenciales deben tener derechos de administrador en el host remoto. Para obtener más detalles, consulte la información acerca de crear credenciales.
+
+Puede ver los detalles sobre las credenciales colocando el cursor sobre el nombre de las credenciales que ha especificado.
+
+
+NOTE: El modo de autenticación de las credenciales se determina por el tipo de host que especifique en el asistente Add host.
+
+|===
+. En la sección *Seleccione Plug-ins to Install*, seleccione los plugins que desee instalar.
+. Haga clic en *más opciones*.
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Puerto
+ a| 
+Conserve el número de puerto predeterminado o especifique el número de puerto. El número de puerto predeterminado es 8145. Si el servidor SnapCenter se instaló en un puerto personalizado, ese número de puerto se mostrará como el puerto predeterminado.
+
+
+NOTE: Si ha instalado plugins manualmente y ha especificado un puerto personalizado, debe especificar el mismo puerto. De lo contrario, la operación dará error.
+
+
+
+ a| 
+Ruta de instalación
+ a| 
+La ruta predeterminada es C:\Program Files\NetApp\SnapCenter. Opcionalmente, puede personalizar la ruta.
+
+
+
+ a| 
+Añada todos los hosts del clúster
+ a| 
+Seleccione esta casilla de comprobación para añadir todos los nodos del clúster en un WSFC o un Availability Group de SQL. Debe añadir todos los nodos del clúster seleccionando la casilla de comprobación correspondiente del clúster en la GUI si desea gestionar e identificar varios grupos de disponibilidad SQL disponibles en un clúster.
+
+
+
+ a| 
+Omitir comprobaciones previas a la instalación
+ a| 
+Seleccione esta casilla de comprobación si ya ha instalado los plugins manualmente y no desea validar si el host cumple con los requisitos para la instalación del plugin.
+
+
+
+ a| 
+Utilice Group Managed Service Account (GMSA) para ejecutar los servicios de plug-in
+ a| 
+Seleccione esta casilla de verificación si desea utilizar la cuenta de servicio gestionado de grupo (GMSA) para ejecutar los servicios de complemento.
+
+Proporcione el nombre de GMSA con el siguiente formato: Nombre_de_dominio\accountName$.
+
+
+NOTE: Si el host se agrega con GMSA y si el GMSA tiene privilegios de inicio de sesión y administrador de sistema, el GMSA se utilizará para conectarse a la instancia de SQL.
+
+|===
+. Haga clic en *Enviar*.
+. Para el plugin de SQL, seleccione el host para configurar el directorio de registro.
++
+.. Haga clic en *Configurar directorio de registro* y, en la página Configurar directorio de registro de host, haga clic en *examinar* y complete los siguientes pasos:
++
+Tan solo se enumeran las unidades NetApp LUN como disponibles para su selección. SnapCenter realiza un backup y replica el directorio de registro del host como parte de la operación de backup.
+
++
+image::../media/host_managed_hosts_configureplugin.gif[Configure la página de plugins]
+
++
+... Seleccione la letra de la unidad o el punto de montaje del host donde se almacenará el registro del host.
+... Si es necesario, elija un subdirectorio.
+... Haga clic en *Guardar*.
+
+
+
+
+. Haga clic en *Enviar*.
++
+Si no ha seleccionado la casilla de comprobación *Skip prechecks*, el host se valida para comprobar si cumple con los requisitos para la instalación del plugin. El espacio en disco, RAM, versión de PowerShell, versión de .NET, ubicación (para plugins de Windows) y versión de Java (para plugins de Linux) se validan frente a los requisitos mínimos. Si no se satisfacen los requisitos mínimos, se muestran los mensajes de error o advertencia correspondientes.
+
++
+Si el error está relacionado con el espacio en disco o RAM, es posible actualizar el archivo web.config ubicado en C:\Program Files\NetApp\SnapCenter WebApp para modificar los valores predeterminados. Si el error está relacionado con otros parámetros, primero debe solucionar el problema.
+
++
+
+NOTE: En una configuración de alta disponibilidad, si actualiza el archivo web.config, debe actualizar el archivo en ambos nodos.
+
+. Supervise el progreso de la instalación.
+

@@ -1,0 +1,315 @@
+---
+permalink: install/concept_configure_secured_mysql_connections_with_snapcenter_server.html 
+sidebar: sidebar 
+keywords: Secure Sockets Layer, secure MYSQL connections, standalone configuration, HA configuration, SSL 
+summary: 'Es posible generar certificados de capa de sockets seguros (SSL) y archivos de claves para proteger la comunicación entre SnapCenter Server y MySQL Server en configuraciones independientes o configuraciones de balanceo de carga de red \(NLB\).' 
+---
+= Configure las conexiones MySQL protegidas con SnapCenter Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible generar certificados de capa de sockets seguros (SSL) y archivos de claves para proteger la comunicación entre SnapCenter Server y MySQL Server en configuraciones independientes o configuraciones de balanceo de carga de red (NLB).
+
+
+
+== Configure conexiones MySQL protegidas para configuraciones de servidor SnapCenter independientes
+
+Es posible generar certificados de capa de sockets seguros (SSL) y archivos de claves para proteger la comunicación entre SnapCenter Server y MySQL Server. Los certificados y los archivos de claves se deben configurar en MySQL Server y SnapCenter Server.
+
+Se generan los siguientes certificados:
+
+* Certificado de CA
+* Archivo de claves privadas y certificado público de servidor
+* Archivo de claves privadas y certificado público de cliente
+
+
+* Pasos*
+
+. Para configurar los certificados de SSL y los archivos de claves para servidores y clientes MySQL en Windows, utilice el comando openssl.
++
+Para obtener más información, consulte https://dev.mysql.com/doc/refman/5.7/en/creating-ssl-files-using-openssl.html["MySQL versión 5.7: Creación de claves y certificados SSL mediante openssl"^]
+
++
+
+NOTE: El valor de nombre común que se usa para el certificado de servidor, el certificado de cliente y los archivos de claves debe ser distinto del valor de nombre común que se utiliza para el certificado de CA. Si los valores de nombre común son los mismos, el certificado y los archivos de claves producen errores en los servidores compilados con OpenSSL.
+
++
+|===
+
+
+| *Mejor práctica:* debe utilizar el nombre de dominio completo (FQDN) del servidor como nombre común para el certificado de servidor. 
+|===
+. Copie los certificados de SSL y los archivos de claves en la carpeta MySQL Data.
++
+La ruta predeterminada de la carpeta MySQL Data es `C:\ProgramData\NetApp\SnapCenter\MySQL Data\Data\`.
+
+. Actualice las rutas del certificado de CA, del certificado público de servidor, del certificado público de cliente, de la clave privada de servidor y de la clave privada de cliente en el archivo de configuración del servidor MySQL (my.ini).
++
+La ruta predeterminada del archivo de configuración del servidor MySQL (my.ini) es `C:\ProgramData\NetApp\SnapCenter\MySQL Data\my.ini`.
+
++
+
+NOTE: Debe especificar las rutas del certificado de CA, del certificado público de servidor y de la clave privada de servidor en la sección [mysqld] del archivo de configuración del servidor MySQL (my.ini).
+
++
+Debe especificar las rutas del certificado de CA, del certificado público de cliente y de la clave privada de cliente en la sección [client] del archivo de configuración del servidor MySQL (my.ini).
+
++
+En el siguiente ejemplo, se muestran los certificados y los archivos de claves copiados en la sección [mysqld] del archivo my.ini en la carpeta predeterminada `C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data`.
+
++
+[listing]
+----
+ssl-ca="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/ca.pem"
+----
++
+[listing]
+----
+ssl-cert="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/server-cert.pem"
+----
++
+[listing]
+----
+ssl-key="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/server-key.pem"
+----
++
+En el siguiente ejemplo, se muestran las rutas actualizadas en la sección [client] del archivo my.iniI.
+
++
+[listing]
+----
+ssl-ca="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/ca.pem"
+----
++
+[listing]
+----
+ssl-cert="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/client-cert.pem"
+----
++
+[listing]
+----
+ssl-key="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/client-key.pem"
+----
+. Detenga la aplicación web del servidor SnapCenter en el servidor de información de Internet (IIS).
+. Reinicie el servicio MySQL.
+. Actualice el valor de la clave MySQLProtocol en el archivo web.config.
++
+En el siguiente ejemplo, se muestra el valor de la clave MySQLProtocol actualizada en el archivo web.config.
+
++
+[listing]
+----
+<add key="MySQLProtocol" value="SSL" />
+----
+. Actualice el archivo web.config con las rutas proporcionadas en la sección [client] del archivo my.iniI.
++
+En el siguiente ejemplo, se muestran las rutas actualizadas en la sección [client] del archivo my.iniI.
+
++
+[listing]
+----
+<add key="ssl-client-cert" value="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/client-cert.pem" />
+----
++
+[listing]
+----
+<add key="ssl-client-key" value="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/client-key.pem" />
+----
++
+[listing]
+----
+<add key="ssl-ca" value="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/ca.pem" />
+----
+. Inicie la aplicación web del servidor SnapCenter en IIS.
+
+
+
+
+== Configure conexiones MySQL protegidas para configuraciones de alta disponibilidad
+
+Es posible generar certificados de capa de sockets seguros (SSL) y archivos de claves para los dos nodos de alta disponibilidad (ha) a fin de proteger la comunicación entre SnapCenter Server y los servidores MySQL. Los certificados y los archivos de claves se deben configurar en las instancias de MySQL Server y en los nodos ha.
+
+Se generan los siguientes certificados:
+
+* Certificado de CA
++
+Se genera un certificado de CA en uno de los nodos ha, y este certificado de CA se copia en el otro nodo ha.
+
+* Certificado público de servidor y archivos de claves privadas de servidor en los dos nodos de alta disponibilidad
+* Certificado público de cliente y archivos de claves privadas de cliente en los dos nodos de alta disponibilidad
+
+
+* Pasos*
+
+. Para el primer nodo ha, configure los certificados de SSL y los archivos de claves para servidores y clientes MySQL en Windows con el comando openssl.
++
+Para obtener más información, consulte https://dev.mysql.com/doc/refman/5.7/en/creating-ssl-files-using-openssl.html["MySQL versión 5.7: Creación de claves y certificados SSL mediante openssl"^]
+
++
+
+NOTE: El valor de nombre común que se usa para el certificado de servidor, el certificado de cliente y los archivos de claves debe ser distinto del valor de nombre común que se utiliza para el certificado de CA. Si los valores de nombre común son los mismos, el certificado y los archivos de claves producen errores en los servidores compilados con OpenSSL.
+
++
+|===
+
+
+| *Mejor práctica:* debe utilizar el nombre de dominio completo (FQDN) del servidor como nombre común para el certificado de servidor. 
+|===
+. Copie los certificados de SSL y los archivos de claves en la carpeta MySQL Data.
++
+La ruta predeterminada de la carpeta MySQL Data es C:\ProgramData\NetApp\SnapCenter\MySQL Data\Data\.
+
+. Actualice las rutas del certificado de CA, del certificado público de servidor, del certificado público de cliente, de la clave privada de servidor y de la clave privada de cliente en el archivo de configuración del servidor MySQL (my.ini).
++
+La ruta predeterminada del archivo de configuración del servidor MySQL (my.ini) es C:\ProgramData\NetApp\SnapCenter\MySQL Data\my.inI.
+
++
+
+NOTE: Debe especificar las rutas del certificado de CA, del certificado público de servidor y de la clave privada de servidor en la sección [mysqld] del archivo de configuración del servidor MySQL (my.ini).
+
++
+Debe especificar las rutas del certificado de CA, del certificado público de cliente y de la clave privada de cliente en la sección [client] el archivo de configuración del servidor MySQL (my.ini).
+
++
+En el siguiente ejemplo, se muestran los certificados y los archivos de claves copiados en la sección [mysqld] del archivo my.ini en la carpeta predeterminada C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data.
+
++
+[listing]
+----
+ssl-ca="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/ca.pem"
+----
++
+[listing]
+----
+ssl-cert="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/server-cert.pem"
+----
++
+[listing]
+----
+ssl-key="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/server-key.pem"
+----
++
+En el siguiente ejemplo, se muestran las rutas actualizadas en la sección [client] del archivo my.iniI.
+
++
+[listing]
+----
+ssl-ca="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/ca.pem"
+----
++
+[listing]
+----
+ssl-cert="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/client-cert.pem"
+----
++
+[listing]
+----
+ssl-key="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/client-key.pem"
+----
+. Para el segundo nodo ha, copie el certificado de CA y genere un certificado público de servidor, archivos de claves privadas de servidor, un certificado público de cliente y archivos de claves privadas de cliente. siga estos pasos:
++
+.. En la carpeta MySQL Data del segundo nodo NLB, copie el certificado de CA generado en el primer nodo de alta disponibilidad.
++
+La ruta predeterminada de la carpeta MySQL Data es C:\ProgramData\NetApp\SnapCenter\MySQL Data\Data\.
+
++
+
+NOTE: No debe volver a crear un certificado de CA. Debe crear únicamente el certificado público de servidor, el certificado público de cliente, el archivo de claves privadas de servidor y el archivo de claves privadas de cliente.
+
+.. Para el primer nodo ha, configure los certificados de SSL y los archivos de claves para servidores y clientes MySQL en Windows con el comando openssl.
++
+https://dev.mysql.com/doc/refman/5.7/en/creating-ssl-files-using-openssl.html["MySQL versión 5.7: Creación de claves y certificados SSL mediante openssl"]
+
++
+
+NOTE: El valor de nombre común que se usa para el certificado de servidor, el certificado de cliente y los archivos de claves debe ser distinto del valor de nombre común que se utiliza para el certificado de CA. Si los valores de nombre común son los mismos, el certificado y los archivos de claves producen errores en los servidores compilados con OpenSSL.
+
++
+Se recomienda usar el nombre de dominio completo del servidor como nombre común para el certificado del servidor.
+
+.. Copie los certificados de SSL y los archivos de claves en la carpeta MySQL Data.
+.. Actualice las rutas del certificado de CA, del certificado público de servidor, del certificado público de cliente, de la clave privada de servidor y de la clave privada de cliente en el archivo de configuración del servidor MySQL (my.ini).
++
+
+NOTE: Debe especificar las rutas del certificado de CA, del certificado público de servidor y de la clave privada de servidor en la sección [mysqld] del archivo de configuración del servidor MySQL (my.ini).
+
++
+Debe especificar las rutas del certificado de CA, del certificado público de cliente y de la clave privada de cliente en la sección [client] del archivo de configuración del servidor MySQL (my.ini).
+
++
+En el siguiente ejemplo, se muestran los certificados y los archivos de claves copiados en la sección [mysqld] del archivo my.ini en la carpeta predeterminada C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data.
+
++
+[listing]
+----
+ssl-ca="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/ca.pem"
+----
++
+[listing]
+----
+ssl-cert="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/server-cert.pem"
+----
++
+[listing]
+----
+ssl-key="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/server-key.pem"
+----
++
+En el siguiente ejemplo, se muestran las rutas actualizadas en la sección [client] del archivo my.iniI.
+
++
+[listing]
+----
+ssl-ca="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/ca.pem"
+----
++
+[listing]
+----
+ssl-cert="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/server-cert.pem"
+----
++
+[listing]
+----
+ssl-key="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/server-key.pem"
+----
+
+
+. Detenga la aplicación web del servidor SnapCenter en el servidor de información de Internet (IIS) en los dos nodos ha.
+. Reinicie el servicio MySQL en los dos nodos ha.
+. Actualice el valor de la clave MySQLProtocol del archivo web.config en los dos nodos de alta disponibilidad.
++
+En el siguiente ejemplo, se muestra el valor de la clave MySQLProtocol actualizada en el archivo web.config.
+
++
+[listing]
+----
+<add key="MySQLProtocol" value="SSL" />
+----
+. Actualice el archivo web.config con las rutas especificadas en la sección [client] del archivo my.ini en los dos nodos de alta disponibilidad.
++
+En el siguiente ejemplo, se muestran las rutas actualizadas en la sección [client] de los archivos my.iniI.
+
++
+[listing]
+----
+<add key="ssl-client-cert" value="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/client-cert.pem" />
+----
++
+[listing]
+----
+<add key="ssl-client-key" value="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/client-key.pem" />
+----
++
+[listing]
+----
+<add key="ssl-ca" value="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/ca.pem" />
+----
+. Inicie la aplicación web servidor SnapCenter en IIS en los dos nodos ha.
+. Use el cmdlet Set-SmRepositoryConfig -RebuildSlave -Force de PowerShell con la opción -Force en uno de los nodos de alta disponibilidad para establecer la replicación de MySQL protegida en los dos nodos de alta disponibilidad.
++
+Aunque el estado de la replicación sea correcto, la opción -Force permite reconstruir el repositorio esclavo.
+
+

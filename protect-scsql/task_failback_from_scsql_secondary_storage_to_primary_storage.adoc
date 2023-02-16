@@ -1,0 +1,45 @@
+---
+permalink: protect-scsql/task_failback_from_scsql_secondary_storage_to_primary_storage.html 
+sidebar: sidebar 
+keywords:  
+summary: Una vez que el almacenamiento primario del plugin de SnapCenter para SQL Server vuelve a estar en línea, debe recuperar el almacenamiento principal. 
+---
+= Conmutación tras recuperación del plugin de SnapCenter para almacenamiento secundario de SQL Server al almacenamiento principal
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Una vez que el almacenamiento primario del plugin de SnapCenter para SQL Server vuelve a estar en línea, debe recuperar el almacenamiento principal.
+
+*Lo que necesitará*
+
+* Coloque el plugin de SnapCenter para SQL Server en el modo *Mantenimiento* de la página Managed hosts.
+* Desconecte el almacenamiento secundario del host y conéctelo del almacenamiento primario.
+* Para volver a realizar la conmutación tras recuperación al almacenamiento principal, asegúrese de que la dirección de la relación sigue siendo la misma que antes de la conmutación por error realizando la operación de resincronización inversa.
++
+Para conservar las funciones de almacenamiento primario y secundario después de la operación de resincronización inversa, realice de nuevo la operación de resincronización inversa.
+
++
+Para obtener más información, consulte link:https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/task_reverse_resynchronizing_snapmirror_relationships.html["Volver a sincronizar las relaciones de reflejos"]
+
+* Reinicie el servicio de servidor MSSQL.
+* Asegúrese de que los recursos SQL vuelven a estar en línea.
+
+
+
+NOTE: Durante la conmutación por error o la conmutación tras recuperación del plugin, el estado general del plugin no se actualiza de forma inmediata. El estado general del host y el plugin se actualiza durante la operación de actualización del host posterior.
+
+* Pasos*
+
+. En la página Configuración, vaya a *Ajustes* > *Ajustes globales* > *recuperación ante desastres*.
+. Deseleccione *Activar recuperación ante desastres*.
+. Haga clic en *aplicar*.
+. Compruebe si el trabajo DR está activado o no haciendo clic en *Monitor* > *trabajos*.
+
+
+*Después de terminar*
+
+* Puede eliminar los backups del plugin de SnapCenter para SQL Server que se crearon durante la conmutación por error usando la interfaz de usuario o el siguiente cmdlet de: `Remove-SmDRFailoverBackups`
+

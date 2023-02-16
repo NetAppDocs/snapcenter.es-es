@@ -1,0 +1,51 @@
+---
+permalink: protect-hana/concept_auto_discovery_of_resources_on_linux_host.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for SAP HANA Database 
+summary: Los recursos son bases de datos de SAP HANA y volumen de datos no data en el host Linux que gestiona SnapCenter. Después de instalar el plugin de SnapCenter para el plugin de base de datos SAP HANA, las bases de datos SAP HANA en ese host Linux se detectan automáticamente y se muestran en la página Resources. 
+---
+= Detección automática de recursos en el host Linux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Los recursos son bases de datos de SAP HANA y volumen de datos no data en el host Linux que gestiona SnapCenter. Después de instalar el plugin de SnapCenter para el plugin de base de datos SAP HANA, las bases de datos SAP HANA en ese host Linux se detectan automáticamente y se muestran en la página Resources.
+
+La detección automática es compatible con los siguientes recursos de SAP HANA:
+
+* Contenedores individuales
++
+Después de instalar o actualizar el plugin, los recursos de contenedor único ubicados en un plugin de host centralizado continuarán siendo recursos añadidos manualmente.
+
++
+Después de instalar o actualizar el plugin, las bases de datos SAP HANA se detectan de forma automática solo en los hosts SAP HANA Linux, que se registran directamente en SnapCenter.
+
+* Contenedor de base de datos multitenant (MDC)
++
+Después de instalar o actualizar el plugin, los recursos de MDC ubicados en un plugin de host centralizado continuarán siendo un recurso añadido manualmente.
+
++
+Debe continuar añadiendo manualmente los recursos del MDC en el plugin del host centralizado después de actualizar a SnapCenter 4.3.
+
++
+Para los hosts SAP HANA Linux registrados directamente en SnapCenter, instalar o actualizar el plugin provocará una detección automática de los recursos del host. Después de actualizar el plugin, para cada recurso MDC ubicado en el host del plugin, se descubre automáticamente otro recurso MDC con un formato GUID diferente y se registra en SnapCenter. El nuevo recurso estará bloqueado.
+
++
+Por ejemplo, en SnapCenter 4.2, si el recurso de E90 MDC se encuentra en el host del plugin y se registró manualmente, después de actualizar a SnapCenter 4.3, se detecta otro recurso de E90 MDC con un GUID diferente y se registra en SnapCenter.
+
+
+
+La detección automática no es compatible con las siguientes configuraciones:
+
+* Distribución con RDM y VMDK
++
+
+NOTE: Si se detectan los recursos anteriores, las operaciones de protección de datos no son compatibles con estos recursos.
+
+* Configuración de varios hosts DE HANA
+* Varias instancias en el mismo host
+* Escalado horizontal de varios niveles replicación de sistemas HANA
+* Entorno de replicación en cascada en modo de replicación de sistemas
+

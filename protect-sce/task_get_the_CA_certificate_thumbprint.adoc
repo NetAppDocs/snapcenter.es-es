@@ -1,0 +1,39 @@
+---
+permalink: protect-sce/task_get_the_CA_certificate_thumbprint.html 
+sidebar: sidebar 
+keywords: SnapCenter 
+summary: Obtenga la huella digital del certificado de CA. 
+---
+= Obtenga la huella digital del certificado de CA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Una huella digital de certificado es una cadena hexadecimal que identifica un certificado. La huella digital se calcula a partir del contenido del certificado mediante un algoritmo de huella digital.
+
+* Pasos*
+
+. Realice lo siguiente en la interfaz gráfica de usuario:
++
+.. Haga doble clic en el certificado.
+.. En el cuadro de diálogo Certificado, haga clic en la ficha *Detalles*.
+.. Desplácese por la lista de campos y haga clic en *Thumbprint*.
+.. Copie los caracteres hexadecimales del cuadro.
+.. Quite los espacios entre los números hexadecimales.
++
+Por ejemplo, si la huella digital es: "a9 09 50 2d 2a e4 e4 14 33 f8 38 86 b0 0d 42 77 a3 2a 7b", después de quitar los espacios, será: "a90d8 2dd82a41433e6f83886b00d4277a32a7b".
+
+
+
+. Realice lo siguiente desde PowerShell:
++
+.. Ejecute el siguiente comando para enumerar la huella digital del certificado instalado e identificar el certificado instalado recientemente por el nombre del sujeto.
++
+_Get-ChildItem -Path Cert:\LocalMachine\My_
+
+.. Copie la huella digital.
+
+
+

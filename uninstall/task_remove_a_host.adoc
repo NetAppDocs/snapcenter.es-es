@@ -1,0 +1,42 @@
+---
+permalink: uninstall/task_remove_a_host.html 
+sidebar: sidebar 
+keywords: uninstall, remove, remove host 
+summary: Cuando SnapCenter Server quita un host, primero elimina los backups, clones, trabajos de clonado, grupos de recursos y recursos que figuran para ese host en la página SnapCenter Resources. A continuación, desinstala los paquetes de plugins del host. 
+---
+= Quitar un host
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cuando SnapCenter Server quita un host, primero elimina los backups, clones, trabajos de clonado, grupos de recursos y recursos que figuran para ese host en la página SnapCenter Resources. A continuación, desinstala los paquetes de plugins del host.
+
+*Acerca de esta tarea*
+
+* Si elimina un host, los backups, clones y grupos de recursos asociados con el host también se eliminan.
+* Al quitar los grupos de recursos, se eliminan también todas las programaciones asociadas.
+* Si se elimina un host que tiene un grupo de recursos compartido con otro host, también se elimina el grupo de recursos.
+* Debe utilizar el cmdlet _Remove-SmHost_ para quitar los hosts de plugin que se decomisionan o no se pueden acceder a ellos.
++
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^]
+
+* El tiempo requerido para quitar un host depende de la cantidad de backups y de la configuración de retención. Esto es debido a que las copias de Snapshot se eliminan de cada una de las controladoras y se borran los metadatos.
+
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *hosts*.
+. En la página hosts, haga clic en *Managed hosts*.
+. Seleccione el host que desea eliminar y, a continuación, haga clic en *Quitar*.
+. En el caso de clústeres RAC Oracle, para eliminar el software SnapCenter de todos los hosts del clúster, seleccione *incluir todos los hosts del cluster*.
++
+También puede quitar un nodo de un clúster y, de esa manera, quitar todos los nodos uno por uno.
+
+. Haga clic en *Aceptar*.
++
+
+NOTE: Cuando desinstala y vuelve a instalar los plugins de host en un clúster, los recursos del clúster no se detectan de forma automática. Seleccione el nombre de host del clúster y, a continuación, haga clic en *Actualizar recursos* para detectar automáticamente los recursos del clúster.
+
+

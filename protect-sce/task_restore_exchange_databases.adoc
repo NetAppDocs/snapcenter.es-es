@@ -1,0 +1,135 @@
+---
+permalink: protect-sce/task_restore_exchange_databases.html 
+sidebar: sidebar 
+keywords:  
+summary: Es posible usar SnapCenter para restaurar bases de datos de Exchange incluidas en backups. 
+---
+= Restaurar bases de datos de Exchange
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible usar SnapCenter para restaurar bases de datos de Exchange incluidas en backups.
+
+*Lo que necesitará*
+
+* Es necesario tener en cuenta el backup de los grupos de recursos, la base de datos o los DAG.
+* Cuando la base de datos de Exchange se migra a otra ubicación, la operación de restauración no funciona con backups antiguos.
+* Si va a replicar copias de Snapshot en un reflejo o almacén, el administrador de SnapCenter debe haberle asignado las SVM correspondientes a los volúmenes de origen y destino.
+* En un DAG, si una copia de la base de datos activa se encuentra en un almacenamiento de terceros y desea restaurar desde el backup de copia de base de datos pasiva que se encuentra en un almacenamiento de NetApp, hacer que la copia pasiva (almacenamiento de NetApp) sea una copia activa, actualizar los recursos y realizar la operación de restauración.
++
+Ejecute el `Move-ActiveMailboxDatabase` comando para realizar la copia pasiva de la base de datos como copia activa de la base de datos.
+
++
+La https://docs.microsoft.com/en-us/powershell/module/exchange/move-activemailboxdatabase?view=exchange-ps["Documentación de Microsoft"^] contiene información acerca de este comando.
+
+
+
+*Acerca de esta tarea*
+
+* Cuando se realiza una operación de restauración en una base de datos, la base de datos se monta de nuevo en el mismo host y no se crea ningún volumen nuevo.
+* Los backups DE DAG deben restaurarse desde bases de datos individuales.
+* No se admite la restauración de disco completo si hay otros archivos además del archivo de base de datos de Exchange (.edb).
++
+El plugin para Exchange no realiza una restauración completa en un disco si el disco contiene archivos de Exchange como los que se utilizan para la replicación. Cuando una restauración completa puede afectar la funcionalidad de Exchange, el plugin para Exchange realiza una sola operación de restauración de archivos.
+
+* El plugin para Exchange no puede restaurar unidades cifradas BitLocker.
+* LA RUTA_DE_SCRIPTS se define mediante la clave PredefinedWindowsScriptsDirectory ubicada en el archivo SMCoreServiceHost.exe.Config del host del plugin.
++
+Si es necesario, puede cambiar esta ruta y reiniciar el servicio SMcore. Se recomienda utilizar la ruta predeterminada para la seguridad.
+
++
+El valor de la tecla se puede mostrar desde swagger a través de la API: API /4.7/config settings
+
++
+Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGURACIÓN de API.
+
+
+
+* Pasos*
+
+. En el panel de navegación izquierdo, haga clic en *Recursos* en la esquina superior izquierda de la página Recursos.
+. Seleccione el plugin para servidor de Exchange de la lista desplegable.
+. En la página Resources, seleccione *Database* en la lista View.
+. Seleccione la base de datos de la lista.
+. En la vista Manage Copies, seleccione *copias de seguridad*, en la tabla Primary backups y, a continuación, haga clic en *image:../media/restore_icon.gif["icono de restauración"]*.
+. En la página Options, se debe seleccionar una de las siguientes opciones de backup:
++
+|===
+| Opción | Descripción 
+
+
+ a| 
+Todos los backups de registros
+ a| 
+Seleccione *todas las copias de seguridad de registros* para ejecutar la operación de restauración de copia de seguridad de último minuto para restaurar todas las copias de seguridad de registros disponibles después de la copia de seguridad completa.
+
+
+
+ a| 
+Mediante backups de registros hasta que
+ a| 
+Seleccione *by log backups until* para realizar una operación de restauración a un momento específico, que restaura la base de datos en función de las copias de seguridad de registros hasta el registro seleccionado.
+
+
+NOTE: El número de registros que se muestran en la lista desplegable se basa en UTM. Por ejemplo, si la retención de backup completo es 5 y la retención UTM es 3, la cantidad de backups de registros disponibles es 5, pero en la lista desplegable solo 3 registros se mostrarán para realizar la operación de restauración.
+
+
+
+ a| 
+Por fecha específica hasta
+ a| 
+Seleccione *por fecha específica hasta* para especificar la fecha y hora hasta la que se aplican los registros de transacciones a la base de datos restaurada. Esta operación de restauración a un momento específico restaura las entradas del registro de transacciones que se registraron hasta el último backup en la fecha y hora especificadas.
+
+
+
+ a| 
+Ninguno
+ a| 
+Elija *Ninguno* cuando necesite restaurar sólo la copia de seguridad completa sin ninguna copia de seguridad de registro.
+
+|===
++
+Es posible realizar una de las siguientes acciones:
+
++
+** *Recover and Mount database after restore* - esta opción está seleccionada de forma predeterminada.
+** *No verifique la integridad de los registros de transacciones en la copia de seguridad antes de la restauración* - de forma predeterminada, SnapCenter verifica la integridad de los registros de transacciones en una copia de seguridad antes de realizar una operación de restauración.
++
+|===
+
+
+| *Mejor práctica:* no debe seleccionar esta opción. 
+|===
+
+
+. En la página Script, se deben introducir la ruta y los argumentos del script previo o posterior que se ejecutará antes o después de la operación de restauración.
++
+Los argumentos de script previo de restauración incluyen $Database y $ServerInstance.
+
++
+Los argumentos de postscript de restauración incluyen $Database, $ServerInstance, $BackupName, $LogDirectory y $TargetServerInstance.
+
++
+Es posible ejecutar un script para actualizar las capturas SNMP, automatizar alertas, enviar registros, etc.
+
++
+
+NOTE: La ruta scripts previos o posteriores no debe incluir unidades o recursos compartidos. La ruta debe ser relativa a LA RUTA DE ACCESO_SCRIPTS.
+
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
++
+También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo.
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Para ver el estado de la tarea de restauración, se debe expandir el panel Activity en la parte inferior de la página.
++
+Debe supervisar el proceso de restauración mediante la página *Monitor* > *Jobs*.
+
+
+
+Cuando se restaura una base de datos activa desde un backup, la base de datos pasiva puede entrar en estado de suspensión o error si hay un desfase entre la réplica y la base de datos activa.
+
+El cambio de estado puede ocurrir cuando la cadena de registros de la base de datos activa se divide y comienza una nueva línea, lo cual interrumpe la replicación. El servidor de Exchange intenta reparar la réplica, pero si no puede hacerlo, después de la restauración, debe crear un backup nuevo y luego reinicializar la réplica.

@@ -1,0 +1,12 @@
+---
+section: upgrade
+title: Actualice el servidor de SnapCenter y los plugins
+entries:
+- title: Configure SnapCenter para la búsqueda de actualizaciones disponibles
+  url: "/upgrade/task_configure_snapcenter_to_check_for_available_updates.html"
+- title: Actualizar el flujo de trabajo
+  url: "/upgrade/upgrade_workflow.html"
+- title: Actualice el servidor SnapCenter
+  url: "/upgrade/task_upgrade_snapcenter.html"
+- title: Actualice los paquetes de plugins
+  url: "/upgrade/task_upgrade_your_plug_in_packages.html"

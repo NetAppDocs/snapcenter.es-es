@@ -1,0 +1,73 @@
+---
+permalink: admin/task_manage_resource_groups.html 
+sidebar: sidebar 
+keywords:  
+summary: Es posible realizar varias operaciones en grupos de recursos. 
+---
+= Gestione grupos de recursos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible realizar varias operaciones en grupos de recursos.
+
+Es posible ejecutar las siguientes tareas relacionadas con los grupos de recursos:
+
+* Modificar un grupo de recursos seleccionando el grupo de recursos y haciendo clic en *Modificar grupo de recursos* para editar la información suministrada al crear el grupo de recursos.
++
+
+NOTE: Se puede cambiar la programación al modificar el grupo de recursos. Sin embargo, para cambiar el tipo de programación es necesario modificar la política.
+
++
+
+NOTE: Si se quitan recursos de un grupo de recursos, la configuración de retención de backup definida en las políticas vinculadas al grupo de recursos seguirá aplicándose a los recursos quitados.
+
+* Crear un backup de un grupo de recursos.
+* Crear el clon de un backup.
++
+Puede clonar desde los backups existentes de SQL, Oracle, sistemas de archivos Windows, aplicaciones personalizadas y recursos de bases de datos SAP HANA o grupos de recursos.
+
+* Crear el clon de un grupo de recursos.
++
+Esta operación solo es compatible para grupos de recursos SQL (que solo contienen bases de datos). Puede configurar una programación para clonar un grupo de recursos (ciclo de vida de clon).
+
+* Impedir que se inicien operaciones programadas en grupos de recursos.
+* Eliminar un grupo de recursos.
+
+
+
+
+== Detenga y reanude operaciones en grupos de recursos
+
+Es posible deshabilitar temporalmente el inicio de las operaciones programadas en un grupo de recursos. Más tarde, si se desea, se pueden habilitar las operaciones.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione *Resource Group* en la lista *View*.
+. Seleccione el grupo de recursos y haga clic en *Mantenimiento*.
+. Haga clic en *Aceptar*.
+
+
+Si desea reanudar las operaciones en el grupo de recursos que ha puesto en modo de mantenimiento, seleccione el grupo de recursos y haga clic en *producción*.
+
+
+
+== Eliminar grupos de recursos
+
+Es posible eliminar un grupo de recursos si ya no es necesario proteger los recursos del grupo. Debe asegurarse de que los grupos de recursos se eliminen antes de poder quitar los plugins de SnapCenter.
+
+*Acerca de esta tarea*
+
+Debe eliminar manualmente todos los clones creados para los recursos del grupo de recursos. Otra opción es forzar la eliminación de todos los backups, los metadatos, las políticas y las copias de Snapshot que estén asociados con el grupo de recursos.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione *Resource Group* en la lista *View*.
+. Seleccione el grupo de recursos y haga clic en *Eliminar*.
+. Opcional: Marque la casilla de comprobación *Delete backups and detach policies associated with this Resource Group* para quitar todos los backups, los metadatos, las políticas y las copias de Snapshot que estén asociados con el grupo de recursos.
+. Haga clic en *Aceptar*.
+

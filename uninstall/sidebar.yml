@@ -1,0 +1,20 @@
+---
+section: uninstall
+title: Desinstale SnapCenter Server y los plugins
+entries:
+- title: Desinstale los paquetes de plugins de SnapCenter
+  entries:
+  - title: Requisitos previos para quitar un host
+    url: "/uninstall/reference_prerequisites_for_removing_a_host.html"
+  - title: Quitar un host
+    url: "/uninstall/task_remove_a_host.html"
+  - title: Desinstale plugins mediante la interfaz gráfica de usuario de SnapCenter
+    url: "/uninstall/task_uninstall_plug_ins_from_a_host_using_the_snapcenter_gui.html"
+  - title: Desinstale los plugins de Windows mediante el cmdlet de PowerShell
+    url: "/uninstall/task_uninstalling_windows_plug_ins_using_the_command_line_interface_on_the_snapcenter_server_host.html"
+  - title: Desinstale los plugins localmente en un host
+    url: "/uninstall/task_uninstall_plug_ins_locally_on_a_host.html"
+  - title: Desinstale el paquete de plugins para Linux o AIX mediante la CLI
+    url: "/uninstall/task_uninstall_snapcenter_plug_ins_package_for_linux_or_aix_using_command_line_interface.html"
+- title: Desinstale el servidor SnapCenter
+  url: "/uninstall/task_uninstalling_the_snapcenter_server.html"

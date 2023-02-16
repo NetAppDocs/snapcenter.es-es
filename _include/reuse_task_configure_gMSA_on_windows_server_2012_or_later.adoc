@@ -1,0 +1,66 @@
+= 
+:allow-uri-read: 
+
+
+Windows Server 2012 o posterior le permite crear una cuenta de servicio administrado de grupo (GMSA) que proporciona gestión automatizada de contraseñas de cuenta de servicio desde una cuenta de dominio administrado.
+
+*Lo que necesitará*
+
+* Debe tener un controlador de dominio de Windows Server 2012 o posterior.
+* Debe tener un host de Windows Server 2012 o posterior, que es miembro del dominio.
+
+
+* Pasos*
+
+. Cree una clave raíz KDS para generar contraseñas únicas para cada objeto de su GMSA.
+. Para cada dominio, ejecute el siguiente comando desde el controlador de dominio de Windows: Add-KDSRootKey -EffectiveImmediately
+. Crear y configurar su GMSA:
++
+.. Cree una cuenta de grupo de usuarios con el siguiente formato:
++
+ domainName\accountName$
+.. Agregar objetos de equipo al grupo.
+.. Utilice el grupo de usuarios que acaba de crear para crear el GMSA.
++
+Por ejemplo:
+
++
+ New-ADServiceAccount -name <ServiceAccountName> -DNSHostName <fqdn> -PrincipalsAllowedToRetrieveManagedPassword <group> -ServicePrincipalNames <SPN1,SPN2,…>
+.. Ejecución `Get-ADServiceAccount` comando para verificar la cuenta de servicio.
+
+
+. Configure el GMSA en sus hosts:
++
+.. Active el módulo de Active Directory para Windows PowerShell en el host en el que desea utilizar la cuenta de GMSA.
++
+Para ello, ejecute el siguiente comando desde PowerShell:
+
++
+[listing]
+----
+PS C:\> Get-WindowsFeature AD-Domain-Services
+
+Display Name                           Name                Install State
+------------                           ----                -------------
+[ ] Active Directory Domain Services   AD-Domain-Services  Available
+
+
+PS C:\> Install-WindowsFeature AD-DOMAIN-SERVICES
+
+Success Restart Needed Exit Code      Feature Result
+------- -------------- ---------      --------------
+True    No             Success        {Active Directory Domain Services, Active ...
+WARNING: Windows automatic updating is not enabled. To ensure that your newly-installed role or feature is
+automatically updated, turn on Windows Update.
+----
+.. Reinicie el host.
+.. Instale el GMSA en su host ejecutando el siguiente comando desde el símbolo del sistema de PowerShell: `Install-AdServiceAccount <gMSA>`
+.. Verifique su cuenta de GMSA ejecutando el siguiente comando: `Test-AdServiceAccount <gMSA>`
+
+
+. Asigne los privilegios administrativos al GMSA configurado en el host.
+. Agregue el host de Windows especificando la cuenta GMSA configurada en el servidor SnapCenter.
++
+El servidor SnapCenter instalará los plugins seleccionados en el host y el GMSA especificado se utilizará como cuenta de registro de servicio durante la instalación del plugin.
+
+

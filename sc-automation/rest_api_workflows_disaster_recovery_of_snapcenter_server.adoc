@@ -1,0 +1,105 @@
+---
+permalink: sc-automation/rest_api_workflows_disaster_recovery_of_snapcenter_server.html 
+sidebar: sidebar 
+keywords:  
+summary: La funcionalidad de recuperación ante desastres de SnapCenter usa API DE REST para hacer backups de SnapCenter Server. 
+---
+= API DE REST compatible con la recuperación ante desastres de SnapCenter Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La funcionalidad de recuperación ante desastres de SnapCenter usa API REST para hacer backups de SnapCenter Server. Con las API DE REST, es posible realizar las siguientes operaciones en la página de API de REST de Swagger. Para obtener información sobre cómo acceder a la página de Swagger, consulte link:https://docs.netapp.com/us-en/snapcenter/sc-automation/task_how%20to_access_rest_apis_using_the_swagger_api_web_page.html["Cómo acceder a las API de REST con la página web de la API swagger"].
+
+*Lo que necesitará*
+
+* Debe iniciar sesión como usuario administrador de SnapCenter.
+* El servidor SnapCenter debe estar activo y en funcionamiento para ejecutar la API de restauración de recuperación ante desastres.
+
+
+*Acerca de esta tarea*
+
+SnapCenter Server DR es compatible con todos los plugins.
+
+[cols="10,40,50,10"]
+|===
+| Paso | Descripción | API REST | Método HTTP 
+
+
+ a| 
+1
+ a| 
+Recuperar los backups de recuperación ante desastres de servidores de SnapCenter existentes
+
+
+NOTE: Debe proporcionar la ruta de destino donde estén almacenados los backups de recuperación ante desastres.
+ a| 
+`/4.5/disasterrecovery/server/backup?targetpath={path}`
+ a| 
+OBTENGA
+
+
+
+ a| 
+2
+ a| 
+Crear una nueva copia de seguridad de recuperación ante desastres del servidor.
+ a| 
+`/4.5/disasterrecovery/server/backup`
+ a| 
+PUBLICAR
+
+
+
+ a| 
+3
+ a| 
+Restaura un servidor SnapCenter desde un backup DR de servidor específico.
+
+*Requisitos previos*
+
+* El nombre de host del servidor alternativo debe ser el mismo que el del servidor primario, pero la dirección IP puede ser diferente.
+* La versión del servidor debe ser la misma que la del servidor principal.
+* Asegúrese de que los archivos de backup de recuperación ante desastres se copien al nuevo servidor SnapCenter mediante el comando siguiente:
++
+`xcopy <Ssource_Path> \\<Destination_Server_IP>\<Folder_Path> /O /X /E /H /K  {ex : xcopy C:\DRBackup \\10.225.81.114\c$\DRBackup /O /X /E /H /K}`
+
+
+
+Si el complemento no puede resolver el nombre de host del servidor, inicie sesión en cada host del plugin y añada la entrada etc/host para la nueva IP con el formato:
+`<New IP>	SC_Server_Name`
+
+Por ejemplo, 10.225.81.35 SCServer1
+
+No se restaurará el archivo de servidor etc/host. Puede restaurarlo manualmente desde la carpeta de backup de recuperación ante desastres.
+ a| 
+`/4.5/disasterrecovery/server/restore`
+ a| 
+PUBLICAR
+
+
+
+ a| 
+4
+ a| 
+Elimine el backup de recuperación ante desastres del servidor según el nombre de la copia de seguridad.
+ a| 
+``/4.5/disasterrecovery/server/backup``
+ a| 
+ELIMINAR
+
+
+
+ a| 
+5
+ a| 
+Habilite o deshabilite la recuperación ante desastres de almacenamiento
+ a| 
+`/4.5/disasterrecovery/storage`
+ a| 
+PUBLICAR
+
+|===
+Para obtener más información, consulte https://www.youtube.com/watch?v=Nbr_wm9Cnd4&list=PLdXI3bZJEw7nofM6lN44eOe4aOSoryckg["API de recuperación ante desastres"^] vídeo.

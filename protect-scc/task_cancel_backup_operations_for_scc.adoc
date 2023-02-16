@@ -1,0 +1,54 @@
+---
+permalink: protect-scc/task_cancel_backup_operations_for_scc.html 
+sidebar: sidebar 
+keywords:  
+summary: Es posible cancelar las operaciones de backup que se encuentran en cola. 
+---
+= Cancelar las operaciones de backup para plugins personalizados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible cancelar las operaciones de backup que se encuentran en cola.
+
+*Lo que necesitará*
+
+* Debe iniciar sesión como administrador de SnapCenter o propietario del trabajo para cancelar las operaciones.
+* Puede cancelar una operación de copia de seguridad desde la página *Monitor* o el panel *Activity*.
+* No es posible cancelar una operación de backup en ejecución.
+* Es posible utilizar la interfaz gráfica de usuario de SnapCenter, los cmdlets de PowerShell o los comandos de la CLI para cancelar las operaciones de backup.
+* El botón *Cancelar trabajo* está desactivado para operaciones que no se pueden cancelar.
+* Si seleccionó *todos los miembros de esta función pueden ver y operar en otros objetos de miembros* en la página usuarios\grupos mientras crea una función, puede cancelar las operaciones de copia de seguridad en cola de otros miembros mientras utiliza esa función.
+
+
+* Pasos*
+
+. Ejecute una de las siguientes acciones:
++
+|===
+| Del... | Acción 
+
+
+ a| 
+Página Monitor
+ a| 
+.. En el panel de navegación izquierdo, haga clic en *Monitor* > *Jobs*.
+.. Seleccione la operación y, a continuación, haga clic en *Cancelar trabajo*.
+
+
+
+
+ a| 
+Panel de actividades
+ a| 
+.. Tras iniciar la operación de backup, haga clic en *image:../media/activity_pane_icon.gif[""]* En el panel Activity para ver las cinco operaciones más recientes.
+.. Seleccione la operación.
+.. En la página Detalles del trabajo, haga clic en *Cancelar trabajo*.
+
+
+|===
+
+
+Se cancela la operación y el recurso se revierte al estado anterior.

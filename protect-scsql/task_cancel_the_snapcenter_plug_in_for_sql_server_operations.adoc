@@ -1,0 +1,58 @@
+---
+permalink: protect-scsql/task_cancel_the_snapcenter_plug_in_for_sql_server_operations.html 
+sidebar: sidebar 
+keywords:  
+summary: Es posible cancelar las operaciones de backup que se ejecutan, se encuentran en cola o no responden. Cuando se cancela una operación de backup, el servidor de SnapCenter detiene la operación y quita todas las copias de Snapshot del almacenamiento si el backup creado no se registra en SnapCenter Server. Si el backup ya está registrado en el servidor SnapCenter, no retrocederá la copia de Snapshot ya creada incluso después de que se active la cancelación. 
+---
+= Cancelar las operaciones de backup del plugin de SnapCenter para Microsoft SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible cancelar las operaciones de backup que se ejecutan, se encuentran en cola o no responden. Cuando se cancela una operación de backup, el servidor de SnapCenter detiene la operación y quita todas las copias de Snapshot del almacenamiento si el backup creado no se registra en SnapCenter Server. Si el backup ya está registrado en el servidor SnapCenter, no retrocederá la copia de Snapshot ya creada incluso después de que se active la cancelación.
+
+*Lo que necesitará*
+
+* Inició sesión como administrador de SnapCenter o propietario del trabajo para cancelar las operaciones de restauración.
+* Solo es posible cancelar las operaciones de registro o backup completo que se encuentran en cola o en ejecución.
+* No se puede cancelar la operación una vez iniciada la verificación.
++
+Si cancela la operación antes de verificarlo, se cancelará la operación y no realizará la operación de verificación.
+
+* Es posible cancelar una operación de backup desde la página Monitor o el panel Activity.
+* Además de usar la interfaz gráfica de usuario de SnapCenter, es posible usar los cmdlets de PowerShell para cancelar las operaciones.
+* El botón *Cancelar trabajo* está desactivado para operaciones que no se pueden cancelar.
+* Si seleccionó *todos los miembros de esta función pueden ver y operar en otros objetos de miembros* en la página usuarios\grupos mientras crea una función, puede cancelar las operaciones de copia de seguridad en cola de otros miembros mientras utiliza esa función.
+
+
+*Paso*
+
+Ejecute una de las siguientes acciones:
+
+|===
+| Del... | Acción 
+
+
+ a| 
+Página Monitor
+ a| 
+. En el panel de navegación izquierdo, haga clic en *Monitor* > *Jobs*.
+. Seleccione el trabajo y haga clic en *Cancelar trabajo* .
+
+
+
+
+ a| 
+Panel de actividades
+ a| 
+. Después de iniciar el trabajo de backup, haga clic en image:../media/activity_pane_icon.gif[""] En el panel Activity para ver las cinco operaciones más recientes.
+. Seleccione la operación.
+. En la página Detalles del trabajo, haga clic en *Cancelar trabajo*.
+
+
+|===
+*resultado*
+
+Se cancela la operación y el recurso se revierte al estado anterior. Si la operación que canceló no responde en el estado cancelando o ejecutando, debe ejecutar la `Cancel-SmJob -JobID <int> -Force` cmdlet para detener forzar la operación de backup.

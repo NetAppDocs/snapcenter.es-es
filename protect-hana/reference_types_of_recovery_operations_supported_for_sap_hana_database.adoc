@@ -1,0 +1,24 @@
+---
+permalink: protect-hana/reference_types_of_recovery_operations_supported_for_sap_hana_database.html 
+sidebar: sidebar 
+keywords:  
+summary: SnapCenter le permite realizar diferentes tipos de operaciones de recuperación para las bases de datos SAP HANA. 
+---
+= Tipos de operaciones de recuperación compatibles con las bases de datos SAP HANA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapCenter le permite realizar diferentes tipos de operaciones de recuperación para las bases de datos SAP HANA.
+
+* Recupere la base de datos hasta el estado más reciente
+* Recupere la base de datos hasta un momento específico
++
+Debe especificar la fecha y la hora de la recuperación.
+
+* Recuperar la base de datos hasta un backup de datos específico
+
+
+SnapCenter también proporciona la opción no recovery para las bases de datos SAP HANA.

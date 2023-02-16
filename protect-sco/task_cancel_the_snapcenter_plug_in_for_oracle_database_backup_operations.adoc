@@ -1,0 +1,64 @@
+---
+permalink: protect-sco/task_cancel_the_snapcenter_plug_in_for_oracle_database_backup_operations.html 
+sidebar: sidebar 
+keywords:  
+summary: Es posible cancelar las operaciones de backup que se estén ejecutando, en cola o no respondan. 
+---
+= Cancelar las operaciones de backup de las bases de datos de Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible cancelar las operaciones de backup que se estén ejecutando, en cola o no respondan.
+
+Debe iniciar sesión como administrador de SnapCenter o propietario del trabajo para cancelar las operaciones de backup.
+
+*Acerca de esta tarea*
+
+Cuando se cancela una operación de backup, el servidor de SnapCenter detiene la operación y quita todas las copias de Snapshot del almacenamiento si el backup creado no se registra en SnapCenter Server. Si el backup ya está registrado en el servidor SnapCenter, no retrocederá la copia de Snapshot ya creada incluso después de que se active la cancelación.
+
+* Solo es posible cancelar la operación de registro o backup completo que se encuentra en cola o en ejecución.
+* No se puede cancelar la operación una vez iniciada la verificación.
++
+Si cancela la operación antes de verificarlo, se cancelará la operación y no realizará la operación de verificación.
+
+* No se puede cancelar la operación de backup una vez que se iniciaron las operaciones de catálogo.
+* Es posible cancelar una operación de backup desde la página Monitor o el panel Activity.
+* Además de usar la interfaz gráfica de usuario de SnapCenter, es posible usar los comandos de la CLI para cancelar las operaciones.
+* El botón *Cancelar trabajo* está desactivado para operaciones que no se pueden cancelar.
+* Si seleccionó *todos los miembros de esta función pueden ver y operar en otros objetos de miembros* en la página usuarios\grupos mientras crea una función, puede cancelar las operaciones de copia de seguridad en cola de otros miembros mientras utiliza esa función.
+
+
+*Paso*
+
+Ejecute una de las siguientes acciones:
+
+|===
+| Del... | Acción 
+
+
+ a| 
+Página Monitor
+ a| 
+. En el panel de navegación izquierdo, haga clic en *Monitor* > *Jobs*.
+. Seleccione la operación y haga clic en *Cancelar trabajo*.
+
+
+
+
+ a| 
+Panel de actividades
+ a| 
+. Después de iniciar el trabajo de backup, haga clic en image:../media/activity_pane_icon.gif[""] En el panel Activity para ver las cinco operaciones más recientes.
+. Seleccione la operación.
+. En la página Detalles del trabajo, haga clic en *Cancelar trabajo*.
+
+
+|===
+*Resultados*
+
+La operación se cancela y el recurso se revierte a su estado original.
+
+Si la operación que canceló no responde en el estado de cancelación o ejecución, debe ejecutar la operación Cancel-SmJob -JobID <int> -Force para detener la operación de backup enérgicamente.

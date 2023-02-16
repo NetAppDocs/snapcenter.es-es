@@ -1,0 +1,34 @@
+---
+permalink: protect-sco/reference_requirements_for_restoring_an_oracle_database.html 
+sidebar: sidebar 
+keywords:  
+summary: Antes de restaurar una base de datos de Oracle, debe asegurarse de que se hayan completado los requisitos previos. 
+---
+= Requisitos para restaurar una base de datos de Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de restaurar una base de datos de Oracle, debe asegurarse de que se hayan completado los requisitos previos.
+
+* Definió la estrategia de restauración y recuperación.
+* El administrador de SnapCenter asignó SVM para los volúmenes de origen y los volúmenes de destino si va a replicar copias de Snapshot a un reflejo o un almacén.
+* Si se reducen los archivos de registro como parte del backup, debe haber montado manualmente los backups de los archivos de registro requeridos.
+* Si desea restaurar bases de datos de Oracle que residen en un VMDK, debe asegurarse de que la máquina invitada tenga la cantidad requerida de ranuras libres para asignar los VMDK clonados.
+* Se aseguró de que todos los volúmenes de datos y los volúmenes de registros de archivos que pertenecen a la base de datos estén protegidos si la protección secundaria está habilitada para esa base de datos.
+* Debe asegurarse de que la base de datos RAC One Node se encuentra en estado "nomount" para realizar una restauración completa de archivos de control o de bases de datos.
+* Si tiene una instancia de base de datos de ASM en el entorno NFS, debe añadir la ruta de acceso al disco de ASM _/var/opt/snapcenter/scu/clones/*/*_ a la ruta de acceso existente definida en el parámetro asm_diskstring de modo que pueda montar correctamente los backups de registro de ASM como parte de la operación de recuperación.
+* En el parámetro asm_diskstring, debe configurar _AFD:*_ si está utilizando ASMFD o configurar _ORCL:*_ si está utilizando ASMLIB.
++
+
+NOTE: Para obtener información sobre cómo editar el parámetro asm_diskstring, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Disk_paths_are_not_added_to_the_asm_diskstring_database_parameter["Cómo agregar las rutas de acceso al disco a asm_diskstring"^]
+
+* Debe configurar el listener estático en el archivo *listener.ora* disponible en _$ORACLE_HOME/network/admin_ para bases de datos que no son de ASM y _$GRID_HOME/network/admin_ para bases de datos de ASM si ha deshabilitado la autenticación del sistema operativo y ha habilitado la autenticación de base de datos de Oracle para una base de datos de Oracle, y desea restaurar los archivos de datos y archivos de control de esa base de datos.
+* Debe aumentar el valor del parámetro SCORestoreTimeout. Para hacerlo, ejecute el comando Set- SmConfigSettings si el tamaño de la base de datos está en terabytes (TB).
+* Asegúrese de que todas las licencias requeridas para vCenter estén instaladas y actualizadas.
++
+Si las licencias no están instaladas o actualizadas, aparecerá un mensaje de advertencia. Si ignora la advertencia y continúa, se produce un error en la restauración desde RDM.
+
+

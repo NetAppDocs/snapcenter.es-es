@@ -1,0 +1,132 @@
+---
+permalink: protect-sce/task_create_resource_groups_and_attach_policies_for_exchange_servers.html 
+sidebar: sidebar 
+keywords: resource group 
+summary: Un grupo de recursos es necesario para cualquier trabajo de protección de datos. También deben añadir una o varias políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que se quiere realizar y la programación de protección. 
+---
+= Crear grupos de recursos y añadir políticas para Exchange Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Un grupo de recursos es necesario para cualquier trabajo de protección de datos. También deben añadir una o varias políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que se quiere realizar y la programación de protección.
+
+*Acerca de esta tarea*
+
+* LA RUTA_DE_SCRIPTS se define mediante la clave PredefinedWindowsScriptsDirectory ubicada en el archivo SMCoreServiceHost.exe.Config del host del plugin.
++
+Si es necesario, puede cambiar esta ruta y reiniciar el servicio SMcore. Se recomienda utilizar la ruta predeterminada para la seguridad.
+
++
+El valor de la tecla se puede mostrar desde swagger a través de la API: API /4.7/config settings
+
++
+Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGURACIÓN de API.
+
+
+
+* Pasos*
+
+. En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione el complemento de Microsoft Exchange Server en la lista.
+. En la página Resources, seleccione *Database* en la lista *View*.
++
+
+NOTE: Si recientemente ha agregado un recurso a SnapCenter, haga clic en *Actualizar recursos* para ver el recurso recién añadido.
+
+. Haga clic en *Nuevo grupo de recursos*.
+. En la página Name, realice los siguientes pasos:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Nombre
+ a| 
+Escriba el nombre del grupo de recursos.
+
+
+NOTE: El nombre del grupo de recursos no debe superar los 250 caracteres.
+
+
+
+ a| 
+Etiquetas
+ a| 
+Escriba una o más etiquetas que más adelante le permitirán buscar el grupo de recursos.
+
+Por ejemplo, si añadió HR como etiqueta a varios grupos de recursos, más adelante encontrará todos los grupos de recursos asociados usando esa etiqueta.
+
+
+
+ a| 
+Utilice un formato de nombre personalizado para la copia de Snapshot
+ a| 
+Opcional: Escriba un nombre de copia de Snapshot personalizado y su formato.
+
+Por ejemplo, _customtext_resourcegroup_policy_hostname_ o _resourcegroup_hostname_. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+
+|===
+. En la página Resources, realice los siguientes pasos:
++
+.. Seleccione el tipo de recurso y el DAG en las listas desplegables para filtrar la lista de recursos disponibles.
++
+
+NOTE: Si recientemente añadió recursos, aparecerán en la lista Available Resources solo después de actualizar la lista de recursos.
+
+
+
++
+En las secciones Available Resources y Selected Resources, el nombre de la base de datos se muestra con el FQDN del host. Este FQDN solo indica que la base de datos está activa en ese host específico y que puede no realizar un backup en este host. Debe seleccionar uno o más servidores de copia de seguridad de la opción de selección del servidor, donde desea realizar la copia de seguridad en caso de que haya seleccionado la opción *copia de seguridad de copias en servidores para seleccionar en el tiempo de creación del trabajo de copia de seguridad* de la directiva.
+
++
+.. Escriba el nombre del recurso en el cuadro de texto de búsqueda o desplácese para ubicar un recurso.
+.. Para mover los recursos de la sección Available Resources a la sección Selected Resources, realice uno de los siguientes pasos:
++
+*** Seleccione *Autoselect all resources on same Storage volume* para mover todos los recursos del mismo volumen a la sección Selected Resources.
+*** Seleccione los recursos de la sección Available Resources y, a continuación, haga clic en la flecha derecha para mover estos elementos a la sección Selected Resources.
++
+Los grupos de recursos de SnapCenter para Microsoft Exchange Server no pueden tener más de 30 bases de datos por copia de Snapshot. Si hay más de 30 bases de datos en un grupo de recursos, se crea una segunda copia de Snapshot para las bases de datos adicionales. Por lo tanto, se crean 2 subtrabajos en la tarea de copia de seguridad principal. Para los backups que tienen replicación secundaria, mientras que la actualización de SnapMirror o SnapVault está en curso, es posible que haya escenarios en los que la actualización de ambos subtrabajos se superponga. La tarea de backup principal se mantiene en ejecución permanente incluso si los registros indican que la tarea se ha completado.
+
+
+
+
+
+. En la página Policies, realice los siguientes pasos:
++
+.. Seleccione una o varias políticas de la lista desplegable.
++
+
+NOTE: También puede crear una directiva haciendo clic en *image:../media/add_policy_from_resourcegroup.gif[""]*.
+
++
+
+NOTE: Si una directiva contiene la opción *copia de seguridad de copias en los servidores que se van a seleccionar en tiempo de creación de trabajos de copia de seguridad*, se muestra una opción de selección de servidor para seleccionar uno o más servidores. La opción de selección del servidor incluirá únicamente el servidor donde la base de datos seleccionada esté en el almacenamiento de NetApp.
+
++
+En la sección Configure schedules for selected policies, se muestran las políticas seleccionadas.
+
+.. En la sección Configure schedules for selected policies, haga clic en *image:../media/add_policy_from_resourcegroup.gif[""]* En la columna *Configurar horarios* de la directiva para la que desea configurar la programación.
+.. En el cuadro de diálogo Add schedules for policy _policy_name_, configure la programación especificando la fecha de inicio, la fecha de caducidad y la frecuencia y, a continuación, haga clic en *Aceptar*.
++
+Debe hacerlo con cada frecuencia que figure en la política. Los horarios configurados se enumeran en la columna *programas aplicados* de la sección Configurar programaciones para directivas seleccionadas.
+
++
+No se admiten programas de backup de terceros cuando se solapan con los programas de backup de SnapCenter.
+
+
+
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
++
+También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. Si desea adjuntar el informe de la operación realizada en el grupo de recursos, seleccione *Adjuntar informe de trabajo*.
+
++
+Para habilitar la notificación por correo electrónico, debe tener especificados los detalles del servidor SNMP ya sea mediante la GUI o el comando de PowerShell `Set-SmSmtpServer`.
+
++
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+

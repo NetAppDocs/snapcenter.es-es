@@ -1,0 +1,121 @@
+---
+permalink: protect-sce/task_back_up_exchange_resources_using_powershell_cmdlets.html 
+sidebar: sidebar 
+keywords: backup 
+summary: La operación de backup de una base de datos de servidor de Exchange implica establecer una conexión con SnapCenter Server, detectar la base de datos de servidor de Exchange, añadir una política, crear un grupo de recursos de backup, realizar el backup y ver el estado del backup. 
+---
+= Realizar backup de recursos de Exchange con cmdlets de PowerShell
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La operación de backup de una base de datos de servidor de Exchange implica establecer una conexión con SnapCenter Server, detectar la base de datos de servidor de Exchange, añadir una política, crear un grupo de recursos de backup, realizar el backup y ver el estado del backup.
+
+*Lo que necesitará*
+
+* Debe haber preparado el entorno de PowerShell para ejecutar los cmdlets de PowerShell.
+* Debe añadir la conexión con el sistema de almacenamiento y crear una credencial.
+* Es necesario haber añadido los hosts y detectado los recursos.
+
+
+
+NOTE: El plugin para Exchange no es compatible con operaciones de clonado; por lo tanto, el parámetro CloneType para el cmdlet Add-SmPolicy no es compatible con el plugin para Exchange
+
+* Pasos*
+
+. Inicie una sesión de conexión con el servidor de SnapCenter para el usuario especificado mediante el cmdlet de Open-SmConnection.
++
+[listing]
+----
+Open-smconnection  -SMSbaseurl  https://snapctr.demo.netapp.com:8146/
+----
++
+Se muestra una solicitud de nombre de usuario y contraseña.
+
+. Cree una política de backup mediante el cmdlet Add-SmPolicy.
++
+Este ejemplo crea una nueva política de backup con un backup completo y un backup de registros de Exchange:
+
++
+[listing]
+----
+C:\PS> Add-SmPolicy -PolicyName SCE_w2k12_Full_Log_bkp_Policy -PolicyType Backup -PluginPolicytype SCE -SceBackupType FullBackupAndLogBackup -BackupActiveCopies
+----
++
+Este ejemplo crea una nueva política de backup con un backup completo cada hora y un backup de registros de Exchange:
+
++
+[listing]
+----
+C:\PS> Add-SmPolicy -PolicyName SCE_w2k12_Hourly_Full_Log_bkp_Policy -PolicyType Backup -PluginPolicytype SCE -SceBackupType FullBackupAndLogBackup -BackupActiveCopies -ScheduleType Hourly -RetentionSettings @{'BackupType'='DATA';'ScheduleType'='Hourly';'RetentionCount'='10'}
+----
++
+Este ejemplo crea una nueva política de backup para incluir solo los registros de Exchange:
+
++
+[listing]
+----
+Add-SmPolicy -PolicyName SCE_w2k12_Log_bkp_Policy -PolicyType Backup -PluginPolicytype SCE -SceBackupType LogBackup -BackupActiveCopies
+----
+. Para detectar recursos de host se usa el cmdlet Get-SmResources.
++
+Este ejemplo detecta los recursos del plugin para Microsoft Exchange Server en el host especificado:
+
++
+[listing]
+----
+C:\PS> Get-SmResources -HostName vise-f6.sddev.mycompany.com -PluginCode SCE
+----
+. Añada un nuevo grupo de recursos a SnapCenter mediante el cmdlet Add-SmResourceGroup.
++
+Este ejemplo crea un nuevo grupo de recursos de backup de base de datos de servidor de Exchange con la política y los recursos especificados:
+
++
+[listing]
+----
+C:\PS> Add-SmResourceGroup -ResourceGroupName SCE_w2k12_bkp_RG -Description 'Backup ResourceGroup with Full and Log backup policy' -PluginCode SCE -Policies SCE_w2k12_Full_bkp_Policy,SCE_w2k12_Full_Log_bkp_Policy,SCE_w2k12_Log_bkp_Policy -Resources @{'Host'='sce-w2k12-exch';'Type'='Exchange Database';'Names'='sce-w2k12-exch.sceqa.com\sce-w2k12-exch_DB_1,sce-w2k12-exch.sceqa.com\sce-w2k12-exch_DB_2'}
+----
++
+Este ejemplo crea un nuevo grupo de recursos de backup de DAG de Exchange con la política y los recursos especificados:
+
++
+[listing]
+----
+Add-SmResourceGroup -ResourceGroupName SCE_w2k12_bkp_RG -Description 'Backup ResourceGroup with Full and Log backup policy' -PluginCode SCE -Policies SCE_w2k12_Full_bkp_Policy,SCE_w2k12_Full_Log_bkp_Policy,SCE_w2k12_Log_bkp_Policy -Resources @{"Host"="DAGSCE0102";"Type"="Database Availability Group";"Names"="DAGSCE0102"}
+----
+. Para iniciar una tarea de backup se usa el cmdlet New-SmBackup.
++
+[listing]
+----
+C:\PS> New-SmBackup -ResourceGroupName SCE_w2k12_bkp_RG -Policy SCE_w2k12_Full_Log_bkp_Policy
+----
++
+En este ejemplo, se crea un nuevo backup en el almacenamiento secundario:
+
++
+[listing]
+----
+New-SMBackup -DatasetName ResourceGroup1 -Policy Secondary_Backup_Policy4
+----
+. Consulte el estado del trabajo de backup mediante el cmdlet Get-SmBackupReport.
++
+Este ejemplo muestra un informe con un resumen de todos los trabajos realizados en la fecha especificada:
+
++
+[listing]
+----
+C:\PS> Get-SmJobSummaryReport -Date ?1/27/2018?
+----
++
+Este ejemplo muestra un informe de resumen de tarea para un ID de tarea:
+
++
+[listing]
+----
+C:\PS> Get-SmJobSummaryReport -JobId 168
+----
+
+
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].

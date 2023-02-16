@@ -1,0 +1,16 @@
+---
+permalink: protect-scsql/concept_when_to_schedule_verification_jobs.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Si bien SnapCenter puede verificar los backups de inmediato después de crearlos, esta tarea puede aumentar significativamente el tiempo necesario para finalizar la tarea de backup y consume muchos recursos. Por lo tanto, casi siempre es conveniente programar la verificación en una tarea independiente más tarde. Por ejemplo, si se realiza el backup de una base de datos a las 5:00 todos los días, se puede programar la verificación una hora después, a las 6:00' 
+---
+= Cuándo programar tareas de verificación
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si bien SnapCenter puede verificar los backups de inmediato después de crearlos, esta tarea puede aumentar significativamente el tiempo necesario para finalizar la tarea de backup y consume muchos recursos. Por lo tanto, casi siempre es conveniente programar la verificación en una tarea independiente más tarde. Por ejemplo, si se realiza el backup de una base de datos a las 5:00 todos los días, se puede programar la verificación una hora después, a las 6:00
+
+Por el mismo motivo, generalmente no es necesario ejecutar una verificación de backup cada vez que se realiza un backup. Ejecutar la verificación regularmente aunque con un intervalo menos frecuente suele ser suficiente para garantizar la integridad del backup. Una misma tarea de verificación puede verificar varios backups a la vez.

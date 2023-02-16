@@ -1,0 +1,79 @@
+---
+permalink: protect-sco/reference_storage_types_supported_by_snapcenter_plug_in_for_oracle_database.html 
+sidebar: sidebar 
+keywords: storage types, iSCSI, NFS, RDM, VMDK, NFS, LVM, ASM, SAN filesystem 
+summary: SnapCenter admite una amplia variedad de tipos de almacenamiento en máquinas físicas y virtuales. Debe comprobar la compatibilidad de su tipo de almacenamiento antes de instalar el paquete de plugins de SnapCenter para Linux o el paquete de plugins de SnapCenter para AIX. 
+---
+= Tipos de almacenamiento compatibles con el plugin para bases de datos de Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapCenter admite una amplia variedad de tipos de almacenamiento en máquinas físicas y virtuales. Debe comprobar la compatibilidad de su tipo de almacenamiento antes de instalar el paquete de plugins de SnapCenter para Linux o el paquete de plugins de SnapCenter para AIX.
+
+SnapCenter no es compatible con el aprovisionamiento de almacenamiento para Linux y AIX.
+
+
+
+== Tipos de almacenamiento compatibles con Linux
+
+En la siguiente tabla, se enumeran los tipos de almacenamiento admitidos en Linux.
+
+|===
+| Máquina | Tipo de almacenamiento 
+
+
+ a| 
+Servidor físico
+ a| 
+* LUN conectados a FC
+* LUN conectados a iSCSI
+* Volúmenes conectados en NFS
+
+
+
+
+ a| 
+VMware ESXi
+ a| 
+* Los LUN de RDM conectados por un HBAScanning de adaptadores de bus de host (HBA) FC o iSCSI pueden tardar mucho en completarse debido a que SnapCenter analiza todos los adaptadores de bus de host presentes en el host.
++
+Puede editar el archivo *LinuxConfig.pm* ubicado en _/opt/NetApp/snapcenter/spl/plugins/scu/scucore/modules/SCU/Config_ para establecer el valor del parámetro *SCSI_HOSTS_OPTIMIZED_RESCAN* en 1 para volver a analizar sólo los HBA que aparecen en HBA_DRIVER_NAMES.
+
+* LUN iSCSI conectados directamente al sistema invitado por el iniciador de iSCSI
+* VMDK en almacenes de datos VMFS o NFS
+* Volúmenes NFS conectados directamente con el Guest VM
+
+
+|===
+
+
+== Tipos de almacenamiento compatibles con AIX
+
+En la siguiente tabla se enumeran los tipos de almacenamiento admitidos en AIX.
+
+|===
+| Máquina | Tipo de almacenamiento 
+
+
+ a| 
+Servidor físico
+ a| 
+* LUN conectados a FC e iSCSI.
++
+En un entorno SAN, se admiten los sistemas de archivos ASM, LVM y SAN.
+
++
+
+NOTE: No se admite NFS en AIX y sistema de archivos.
+
+* Sistema de archivos con diario mejorado (JFS2)
++
+Admite el registro en línea en sistemas DE archivos SAN y el diseño de LVM.
+
+
+
+|===
+La https://imt.netapp.com/matrix/imt.jsp?components=108392;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"] contiene la información más reciente sobre las versiones compatibles.

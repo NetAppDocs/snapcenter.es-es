@@ -1,0 +1,64 @@
+---
+permalink: protect-sce/task_view_exchange_backups_in_the_topology_page.html 
+sidebar: sidebar 
+keywords:  
+summary: Al preparar el backup de un recurso, puede ser útil ver una representación gráfica de todos los backups del almacenamiento principal y secundario. 
+---
+= Consulte los backups de Exchange en la página Topology
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Al preparar el backup de un recurso, puede ser útil ver una representación gráfica de todos los backups del almacenamiento principal y secundario.
+
+*Acerca de esta tarea*
+
+En la página Topology, es posible ver todos los backups disponibles para el recurso o el grupo de recursos seleccionado. Es posible ver los detalles de esos backups y, luego, seleccionarlos para ejecutar operaciones de protección de datos.
+
+Puede revisar el siguiente icono en la vista gestionar copias para determinar si los backups están disponibles en el almacenamiento principal y secundario (copias reflejadas o en almacén).
+
+* image:../media/topology_primary_storage.gif["icono de almacenamiento principal"] muestra la cantidad de backups disponibles en el almacenamiento principal.
+* image:../media/topology_mirror_secondary_storage.gif["Icono de reflejo de almacenamiento secundario"] Muestra la cantidad de backups que estan copiados en el almacenamiento secundario mediante SnapMirror.
+* image:../media/topology_vault_secondary_storage.gif["icono de almacén secundario"] Muestra la cantidad de backups que se replican en el almacenamiento secundario mediante la tecnología SnapVault.
++
+** La cantidad de backups que se muestra incluye los backups eliminados del almacenamiento secundario.
++
+Por ejemplo, si creó 6 backups con una política para retener solamente 4 backups, se muestran 6 backups.
+
+
+
++
+|===
+
+
+| *Mejor práctica:* para asegurarse de que se muestra el número correcto de copias de seguridad replicadas, le recomendamos que actualice la topología. 
+|===
+
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione la base de datos, el recurso o el grupo de recursos en la lista desplegable *View*.
+. Se debe seleccionar el recurso desde la vista de detalles de la base de datos o desde la vista de detalles del grupo de recursos.
++
+Si el recurso está protegido, se muestra la página Topology del recurso seleccionado.
+
+. En la sección Summary Card, se muestra un resumen de la cantidad de backups disponibles en el almacenamiento principal y secundario.
++
+En la sección Summary Card, se muestra la cantidad total de backups y de backups de registros.
+
++
+Al hacer clic en el botón *Actualizar* se inicia una consulta del almacenamiento para mostrar un recuento preciso.
+
+. En la vista Administrar copias, haga clic en *copias de seguridad* en el almacenamiento principal o secundario para ver los detalles de una copia de seguridad.
++
+Estos detalles se muestran en forma de tabla.
+
+. Seleccione el backup en la tabla y haga clic en los iconos de protección de datos para realizar operaciones de restauración, cambio de nombre y eliminación.
++
+
+NOTE: Los backups que figuran en el almacenamiento secundario no pueden eliminarse ni cambiar de nombre. La configuración de retención de ONTAP gestiona la eliminación de copias Snapshot.
+
+

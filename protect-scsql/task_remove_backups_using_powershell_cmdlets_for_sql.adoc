@@ -1,0 +1,40 @@
+---
+permalink: protect-scsql/task_remove_backups_using_powershell_cmdlets_for_sql.html 
+sidebar: sidebar 
+keywords: backups 
+summary: Puede utilizar el cmdlet Remove-SmBackup para eliminar backups si ya no los necesita para otras operaciones de protección de datos. 
+---
+= Quitar los backups con el cmdlet de PowerShell
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede utilizar el cmdlet Remove-SmBackup para eliminar backups si ya no los necesita para otras operaciones de protección de datos.
+
+Debe haber preparado el entorno de PowerShell para ejecutar los cmdlets de PowerShell.
+
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].
+
+* Pasos*
+
+. Inicie una sesión de conexión con el servidor de SnapCenter para el usuario especificado mediante el cmdlet de Open-SmConnection.
++
+[listing]
+----
+Open-SmConnection  -SMSbaseurl  https:\\snapctr.demo.netapp.com:8146/
+----
+. Elimine uno o varios backups con el cmdlet Remove-SmBackup.
++
+Este ejemplo elimina dos backups según sus ID de backup:
+
++
+[listing]
+----
+Remove-SmBackup -BackupIds 3,4
+Remove-SmBackup
+Are you sure want to remove the backup(s).
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
+----
+

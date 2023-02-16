@@ -1,0 +1,824 @@
+---
+permalink: concept/reference_pre_defined_snapcenter_roles_and_permissions.html 
+sidebar: sidebar 
+keywords: RBAC, role, permission, pre-defined role 
+summary: 'SnapCenter incluye de forma predeterminada varios roles predefinidos, cada uno con un conjunto de permisos ya habilitados. Al configurar y administrar el control de acceso basado en roles \(RBAC\), se pueden usar estos roles predefinidos o crear roles nuevos.' 
+---
+= Roles y permisos predefinidos de SnapCenter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapCenter incluye de forma predeterminada varios roles predefinidos, cada uno con un conjunto de permisos ya habilitados. Al configurar y administrar el control de acceso basado en roles, se pueden usar estos roles predefinidos o crear roles nuevos.
+
+SnapCenter incluye los siguientes roles predefinidos:
+
+* SnapCenter Admin
+* App Backup and Clone Admin
+* Backup and Clone Viewer
+* Infrastructure Admin
+
+
+Cuando se agrega un usuario a un rol, se le debe asignar el permiso StorageConnection para permitir la comunicación con Storage Virtual Machine (SVM) o asignarle una SVM al usuario para habilitar su uso. El permiso Storage Connection permite que los usuarios creen conexiones de SVM.
+
+Por ejemplo, un usuario con el rol SnapCenter Admin puede crear conexiones de SVM y asignarlas a un usuario con el rol App Backup and Clone Admin, cuyos permisos predeterminados no incluyen la creación o edición de SVM. Si no hay una conexión de SVM, los usuarios no pueden ejecutar ninguna operación de backup, clonado o restauración.
+
+
+
+== SnapCenter Admin
+
+El rol SnapCenter Admin tiene todos los permisos habilitados. No es posible modificar los permisos de este rol. Se pueden agregar usuarios y grupos al rol o quitarlos.
+
+
+
+== App Backup and Clone Admin
+
+El rol App Backup and Clone Admin tiene los permisos necesarios para ejecutar acciones administrativas para tareas vinculadas con el backup y la clonado de aplicaciones. Este rol no tiene permisos para gestión de hosts, aprovisionamiento, gestión de conexiones de almacenamiento o instalación remota.
+
+|===
+| Permisos | Activado | Cree | Lea | Actualizar | Eliminar 
+
+
+ a| 
+Grupo de recursos
+ a| 
+No aplicable
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Política
+ a| 
+No aplicable
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Backup
+ a| 
+No aplicable
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Host
+ a| 
+No aplicable
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Conexión de almacenamiento
+ a| 
+No aplicable
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+Clonar
+ a| 
+No aplicable
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Provisionamiento
+ a| 
+No aplicable
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+Consola
+ a| 
+Sí
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Leídos
+ a| 
+Sí
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Restaurar
+ a| 
+Sí
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Recurso
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Instalar/desinstalar plugins
+ a| 
+No
+ a| 
+No aplicable
+ a| 
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Migración
+ a| 
+No
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Montaje
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Desmontar
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Restaurar volumen completo
+ a| 
+No
+ a| 
+No
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Monitor de trabajos
+ a| 
+Sí
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+|===
+
+
+== Backup and Clone Viewer
+
+El rol Backup and Clone Viewer tiene una vista de solo lectura de todos los permisos. Este rol también tiene permisos habilitados para detección, generación de informes y acceso a la consola.
+
+|===
+| Permisos | Activado | Cree | Lea | Actualizar | Eliminar 
+
+
+ a| 
+Grupo de recursos
+ a| 
+No aplicable
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+Política
+ a| 
+No aplicable
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+Backup
+ a| 
+No aplicable
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+Host
+ a| 
+No aplicable
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+Conexión de almacenamiento
+ a| 
+No aplicable
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+Clonar
+ a| 
+No aplicable
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+Provisionamiento
+ a| 
+No aplicable
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+Consola
+ a| 
+Sí
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Leídos
+ a| 
+Sí
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Restaurar
+ a| 
+No
+ a| 
+No
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Recurso
+ a| 
+No
+ a| 
+No
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+No
+
+
+
+ a| 
+Instalar/desinstalar plugins
+ a| 
+No
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Migración
+ a| 
+No
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Montaje
+ a| 
+Sí
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Desmontar
+ a| 
+Sí
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Restaurar volumen completo
+ a| 
+No
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Monitor de trabajos
+ a| 
+Sí
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+|===
+
+
+== Infrastructure Admin
+
+El rol Infrastructure Admin tiene permisos habilitados para gestión de hosts, administración del almacenamiento, aprovisionamiento, grupos de recursos, informes de instalación remota, Y acceso a la consola.
+
+|===
+| Permisos | Activado | Cree | Lea | Actualizar | Eliminar 
+
+
+ a| 
+Grupo de recursos
+ a| 
+No aplicable
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Política
+ a| 
+No aplicable
+ a| 
+No
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Backup
+ a| 
+No aplicable
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Host
+ a| 
+No aplicable
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Conexión de almacenamiento
+ a| 
+No aplicable
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Clonar
+ a| 
+No aplicable
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+ a| 
+Provisionamiento
+ a| 
+No aplicable
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Consola
+ a| 
+Sí
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Leídos
+ a| 
+Sí
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Restaurar
+ a| 
+Sí
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Recurso
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+ a| 
+Instalar/desinstalar plugins
+ a| 
+Sí
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Migración
+ a| 
+No
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Montaje
+ a| 
+No
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Desmontar
+ a| 
+No
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Restaurar volumen completo
+ a| 
+No
+ a| 
+No
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Monitor de trabajos
+ a| 
+Sí
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+|===

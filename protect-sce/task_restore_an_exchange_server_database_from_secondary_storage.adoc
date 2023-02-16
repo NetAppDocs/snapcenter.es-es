@@ -1,0 +1,30 @@
+---
+permalink: protect-sce/task_restore_an_exchange_server_database_from_secondary_storage.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Es posible restaurar una base de datos de Exchange Server con backup a partir de un almacenamiento secundario (reflejo o almacén).' 
+---
+= Restaurar una base de datos de servidor de Exchange desde un almacenamiento secundario
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible restaurar una base de datos de Exchange Server con backup a partir de un almacenamiento secundario (reflejo o almacén).
+
+Debe haber replicado las copias de Snapshot a desde el almacenamiento principal hasta un almacenamiento secundario.
+
+* Pasos*
+
+. En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione *plug-in de Microsoft Exchange Server* en la lista.
+. En la página Resources, seleccione *Database* o *Resource Group* en la lista desplegable *View*.
+. Seleccione la base de datos o el grupo de recursos.
++
+Se muestra la página de topología de la base de datos o el grupo de recursos.
+
+. En la sección Manage Copies, seleccione *copias de seguridad* en el sistema de almacenamiento secundario (mirror o vault).
+. Seleccione el backup en la lista y haga clic en image:../media/restore_icon.gif["icono de restauración"].
+. En la página Location, elija el volumen de destino para restaurar el recurso seleccionado.
+. Complete el asistente Restaurar, revise el resumen y, a continuación, haga clic en *Finalizar*.
+

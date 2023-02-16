@@ -1,0 +1,45 @@
+---
+permalink: protect-scw/concept_snapcenter_plug_in_for_windows_features.html 
+sidebar: sidebar 
+keywords:  
+summary: El plugin para Windows se integra con la tecnología de copia de Snapshot de NetApp en el sistema de almacenamiento. Para trabajar con el plugin para Windows, se utiliza la interfaz de SnapCenter. 
+---
+= Funciones del plugin de SnapCenter para Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El plugin para Windows se integra con la tecnología de copia de Snapshot de NetApp en el sistema de almacenamiento. Para trabajar con el plugin para Windows, se utiliza la interfaz de SnapCenter.
+
+El plugin para Windows incluye estas características principales:
+
+* *Interfaz gráfica de usuario unificada con tecnología SnapCenter*
++
+La interfaz de SnapCenter ofrece estandarización y consistencia entre plugins y entornos. La interfaz de SnapCenter permite completar procesos de backup y restauración consistentes entre plugins, utilizar informes centralizados, utilizar informes centralizados, utilizar visualizaciones de consola rápidas, configurar el RBAC y supervisar trabajos en todos los plugins. SnapCenter además ofrece gestión de políticas y programación centralizada para admitir operaciones de backup y clonado.
+
+* *Administración central automatizada*
++
+Es posible programar backups del sistema de archivos rutinarios, configurar retención de backups basada en políticas y configurar operaciones de restauración. Si desea supervisar de manera proactiva el entorno del sistema de archivos, configure SnapCenter para que envíe alertas por correo electrónico.
+
+* *Tecnología de copia snapshot de NetApp* no disruptiva
++
+El plugin para Windows utiliza la tecnología de copia de Snapshot de NetApp. Esto permite realizar backups de sistemas de archivos en cuestión de segundos y restaurarlos rápidamente sin necesidad de dejar sin conexión el host. Las copias de Snapshot consumen un espacio de almacenamiento mínimo.
+
+
+
+Además de estas funciones principales, el plugin para Windows ofrece los siguientes beneficios:
+
+* Compatibilidad con flujos de trabajo de backup, restauración y clonado
+* Seguridad compatible con RBAC y delegación de roles centralizada
+* Creación de copias de sistemas de archivos de producción con gestión eficiente del espacio para realizar pruebas o extraer datos con la tecnología FlexClone de NetApp
++
+Para obtener información sobre la licencia de FlexClone, consulte link:../install/concept_snapcenter_licenses.html["Licencias SnapCenter"^].
+
+* Capacidad para ejecutar varios backups al mismo tiempo entre varios servidores
+* Cmdlets de PowerShell para crear scripts de operaciones de backup, restauración y clonado
+* Compatibilidad con backup de sistemas de archivos y VMDK
+* Compatibilidad con infraestructuras físicas y virtualizadas
+* Compatibilidad con iSCSI, Fibre Channel, FCoE, RDM, ALM, VMDK sobre NFS y VMFS, y FC virtual
+

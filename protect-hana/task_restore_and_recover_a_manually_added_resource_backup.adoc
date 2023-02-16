@@ -1,0 +1,97 @@
+---
+permalink: protect-hana/task_restore_and_recover_a_manually_added_resource_backup.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for SAP HANA Database 
+summary: Puede utilizar SnapCenter para restaurar y recuperar datos de uno o varios backups. 
+---
+= Restaurar y recuperar un backup de recurso añadido manualmente
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede utilizar SnapCenter para restaurar y recuperar datos de uno o varios backups.
+
+*Lo que necesitará*
+
+* Debe tener un backup de los recursos o del grupo de recursos.
+* Cancele la operación de backup que se encuentra en curso y que corresponde al recurso o grupo de recursos que desea restaurar.
+* Para los comandos previos a la restauración, después de la restauración, el montaje y el desmontaje, debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin desde las rutas siguientes:
++
+Para Windows: _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc\allowed_Commands_list.txt_
+
++
+Para Linux: _/var/opt/snapcenter/scc/allowed_Commands_list.txt_
+
++
+
+NOTE: Si no hay comandos en la lista de comandos, se producirá un error en la operación.
+
+
+
+*Acerca de esta tarea*
+
+* Las copias de backup basadas de archivos no se pueden restaurar desde SnapCenter.
+* Después de actualizar a SnapCenter 4.3, se pueden restaurar los backups realizados en SnapCenter 4.2, pero no se pueden recuperar. Para recuperar los backups realizados en SnapCenter 4.2, debe usar el estudio HANA o secuencias de comandos de recuperación HANA externas a SnapCenter.
+
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, filtre los recursos de la lista desplegable *View* en función del tipo de recurso.
++
+Los recursos se muestran junto con el tipo, el host, las políticas y los grupos de recursos asociados, y el estado.
+
++
+
+NOTE: Aunque se puede realizar un backup del grupo de recursos, al restaurar, debe seleccionar los recursos individuales que restaurará.
+
++
+Si el recurso no está protegido, se muestra "'no protegido'" en la columna Estado general. Esto significa que el recurso no está protegido o que otro usuario hizo el backup de este recurso.
+
+. Seleccione el recurso o seleccione un grupo de recursos y, a continuación, seleccione un recurso de ese grupo.
++
+Se muestra la página con el resumen.
+
+. En la vista Manage Copies, seleccione *copias de seguridad* ya sea en los sistemas de almacenamiento primario o secundario (reflejado o en almacén).
+. En la tabla de backups primarios, seleccione el backup desde el cual quiere restaurar y, a continuación, haga clic en *image:../media/restore_icon.gif["icono de restauración"]*.
++
+image::../media/restoring_resource.gif[restaurar recursos]
+
+. En la página Restore Scope, seleccione *Complete Resource* o *File Level*.
++
+.. Si selecciona *Complete Resource*, se restauran todos los volúmenes de datos configurados de la base de datos SAP HANA.
++
+Si el recurso contiene volúmenes o qtrees, se eliminan las copias de Snapshot realizadas después de la copia de Snapshot seleccionada para restaurar en tales volúmenes o qtrees y no pueden recuperarse. Además, si hay algún otro recurso alojado en los mismos volúmenes o qtrees, también se lo elimina.
+
+.. Si selecciona *nivel de archivo*, puede seleccionar *todo* o seleccionar los volúmenes o qtrees específicos y, a continuación, introducir la ruta relacionada con esos volúmenes o qtrees, separados por comas
++
+*** Puede seleccionar varios volúmenes y qtrees.
+*** Si el tipo de recurso es LUN, se restaura todo el LUN.
++
+Puede seleccionar varios LUN.
+
+
+
+
+
++
+
+NOTE: Si selecciona *todo*, se restauran todos los archivos de los volúmenes, qtrees o LUN.
+
+. En la página Pre OPS, escriba los comandos previos a la restauración y los comandos de desmontaje que se ejecutarán antes de realizar un trabajo de restauración.
++
+Los comandos de desmontaje no están disponibles para los recursos de detección automática.
+
+. En la página Post OPS, escriba los comandos de montaje y los comandos posteriores a la restauración que se ejecutarán después de realizar un trabajo de restauración.
++
+Los comandos de montaje no están disponibles para los recursos detectados automáticamente.
+
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
++
+También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. SMTP también debe configurarse en la página *Ajustes* > *Ajustes globales*.
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+

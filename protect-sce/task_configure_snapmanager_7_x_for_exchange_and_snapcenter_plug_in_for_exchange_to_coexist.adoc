@@ -1,0 +1,78 @@
+---
+permalink: protect-sce/task_configure_snapmanager_7_x_for_exchange_and_snapcenter_plug_in_for_exchange_to_coexist.html 
+sidebar: sidebar 
+keywords:  
+summary: Para habilitar el plugin de SnapCenter para Microsoft Exchange Server y coexistir con SnapManager para Microsoft Exchange Server, debe instalar el plugin de SnapCenter para Microsoft Exchange Server en el mismo servidor de Exchange en el que esté instalado SnapManager para Microsoft Exchange Server, deshabilitar las programaciones de SnapManager para Exchange, Y configurar programaciones y backups nuevos con el plugin de SnapCenter para Microsoft Exchange Server. 
+---
+= Configure SnapManager 7.x para Exchange y SnapCenter para que coexistan
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para habilitar el plugin de SnapCenter para Microsoft Exchange Server y coexistir con SnapManager para Microsoft Exchange Server, debe instalar el plugin de SnapCenter para Microsoft Exchange Server en el mismo servidor de Exchange en el que esté instalado SnapManager para Microsoft Exchange Server, deshabilitar las programaciones de SnapManager para Exchange, Y configurar programaciones y backups nuevos con el plugin de SnapCenter para Microsoft Exchange Server.
+
+*Lo que necesitará*
+
+* SnapManager para Microsoft Exchange Server y SnapDrive para Windows ya se han instalado, y los backups de SnapManager para Microsoft Exchange Server se encuentran en el sistema y en el directorio SnapInfo.
+* Debe haber eliminado o recuperado los backups tomados por SnapManager para Microsoft Exchange Server que ya no necesita.
+* Debe haber suspendido o eliminado todas las programaciones creadas por SnapManager para Microsoft Exchange Server del programador de Windows.
+* El plugin de SnapCenter para Microsoft Exchange Server y SnapManager para Microsoft Exchange Server pueden coexistir en el mismo Exchange Server, pero no es posible actualizar las instalaciones existentes de SnapManager para Microsoft Exchange Server a SnapCenter.
++
+SnapCenter no ofrece opciones para la actualización.
+
+* SnapCenter no admite la restauración de las bases de datos de Exchange desde un backup de SnapManager para Microsoft Exchange Server.
++
+Si no desinstala SnapManager para Microsoft Exchange Server tras la instalación del plugin de SnapCenter para Microsoft Exchange Server y, más adelante, quiere restaurar un backup de SnapManager para Microsoft Exchange Server, tendrá que seguir otros pasos.
+
+
+
+* Pasos*
+
+. Empleando PowerShell en todos los nodos DAG, determine si se ha registrado VSS hardware Provider de SnapDrive para Windows: _Vssadmin list providers_
++
+[listing]
+----
+C:\Program Files\NetApp\SnapDrive>vssadmin list providers
+vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool
+(C) Copyright 2001-2013 Microsoft Corp.
+
+Provider name: 'Data ONTAP VSS Hardware Provider'
+   Provider type: Hardware
+   Provider Id: {ddd3d232-a96f-4ac5-8f7b-250fd91fd102}
+   Version: 7. 1. 4. 6845
+----
+. En el directorio SnapDrive, anule el registro de VSS hardware Provider de SnapDrive para Windows: _navssprv.exe -r service –u_
+. Compruebe que se ha eliminado VSS hardware Provider: _Vssadmin list providers_
+. Añada el host de Exchange a SnapCenter y, a continuación, instale el plugin de SnapCenter para Microsoft Windows y el plugin de SnapCenter para Microsoft Exchange Server.
+. En el directorio del plugin de SnapCenter para Microsoft Windows en todos los nodos DAG, compruebe que VSS hardware Provider esté registrado: _Vssadmin list providers_
++
+[listing]
+----
+[PS] C:\Windows\system32>vssadmin list providers
+vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool
+(C) Copyright 2001-2013 Microsoft Corp.
+
+Provider name: 'Data ONTAP VSS Hardware Provider'
+   Provider type: Hardware
+   Provider Id: {31fca584-72be-45b6-9419-53a3277301d1}
+   Version: 7. 0. 0. 5561
+----
+. Detenga las programaciones de backup de SnapManager para Microsoft Exchange Server.
+. Utilizando la interfaz gráfica de usuario de SnapCenter, configure backups a petición, configure los backups programados y la configuración de retención.
+. Desinstale SnapManager para Microsoft Exchange Server.
++
+Si no desinstala SnapManager para Microsoft Exchange Server ahora y, más adelante, desea restaurar un backup de SnapManager para Microsoft Exchange Server:
+
++
+.. Anule el registro del plugin de SnapCenter para Microsoft Exchange Server de todos los nodos DAG: _navssprv.exe -r service -u_
++
+[listing]
+----
+C:\Program Files\NetApp\SnapCenter\SnapCenter Plug-in for Microsoft Windows>navssprv.exe -r service -u
+----
+.. En el directorio _C:\Program Files\NetApp\SnapDrive\_, registre SnapDrive para Windows en todos los nodos DAG: _navssprv.exe -r service -a hostname\\username -p password_
+
+
+

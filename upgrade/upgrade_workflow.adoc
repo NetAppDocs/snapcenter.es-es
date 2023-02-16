@@ -1,0 +1,68 @@
+---
+permalink: upgrade/upgrade_workflow.html 
+sidebar: sidebar 
+keywords: upgrade, snapcenter server, plug-ins, workflow, upgrade path 
+summary: Describe cómo actualizar SnapCenter Server y los plugins, y cuáles son las rutas de actualización admitidas 
+---
+= Actualizar el flujo de trabajo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cada versión de SnapCenter contiene un servidor SnapCenter y un paquete de plugins actualizados. Las actualizaciones del paquete de plugins se distribuyen con el instalador de SnapCenter. Puede configurar SnapCenter para comprobar si hay actualizaciones disponibles.
+
+El flujo de trabajo muestra las diferentes tareas necesarias para actualizar SnapCenter Server y los paquetes de plugins.
+
+image::../media/upgrade_workflow.png[actualizar el flujo de trabajo]
+
+
+
+== Rutas de actualización admitidas
+
+|===
+| Si se encuentra en la versión de SnapCenter Server... | Puede actualizar directamente el servidor de SnapCenter a... | Versiones de plugins compatibles 
+
+
+.2+| 4.4.x. | 4.5.x.  a| 
+* 4.4.x.
+* 4.5.x.
+
+
+
+
+| 4.6.x.  a| 
+* 4.6.x.
+
+
+
+
+.2+| 4.5.x. | 4.6.x.  a| 
+* 4.5.x.
+* 4.6.x.
+
+
+
+
+| 4.7  a| 
+* 4.7
+
+
+
+
+ a| 
+4.6.x.
+ a| 
+4.7
+ a| 
+* 4.6.x.
+* 4.7
+
+
+|===
+
+IMPORTANT: Por ejemplo, si utiliza SnapCenter versión 4.4.x y desea actualizar a 4.7, primero debe actualizar a la versión 4.6.x y, a continuación, realizar una actualización a la versión 4.7.
+
+
+NOTE: Para obtener información sobre cómo actualizar el plugin de SnapCenter para VMware vSphere, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_upgrade.html["Actualice el plugin de SnapCenter para VMware vSphere"^].

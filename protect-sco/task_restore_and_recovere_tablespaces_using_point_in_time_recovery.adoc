@@ -1,0 +1,87 @@
+---
+permalink: protect-sco/task_restore_and_recovere_tablespaces_using_point_in_time_recovery.html 
+sidebar: sidebar 
+keywords: restore, PITR, point-in-time recovery, RMAN, tablespaces 
+summary: 'Se puede restaurar un subconjunto de espacios de tablas que se han dañado o eliminado sin afectar a los otros espacios de tablas de la base de datos. SnapCenter utiliza RMAN para realizar una recuperación puntual \(PITR\) de los tablespaces.' 
+---
+= Restauración y recuperación de espacios de tablas mediante la recuperación de un momento específico
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se puede restaurar un subconjunto de espacios de tablas que se han dañado o eliminado sin afectar a los otros espacios de tablas de la base de datos. SnapCenter utiliza RMAN para realizar una recuperación puntual (PITR) de los tablespaces.
+
+*Lo que necesitará*
+
+Los backups necesarios para ejecutar PITR de espacios de tablas deben catalogarse y montarse.
+
+*Acerca de esta tarea*
+
+Durante la operación PITR, RMAN crea una instancia auxiliar en el destino auxiliar especificado. El destino auxiliar puede ser un punto de montaje o un grupo de discos ASM. Si hay suficiente espacio en la ubicación montada, puede reutilizar una de las ubicaciones montadas en lugar de un punto de montaje dedicado.
+
+Debe especificar la fecha y hora o SCN y el espacio de tabla se restaurará en la base de datos de origen.
+
+Se pueden seleccionar y restaurar varios espacios de tablas que residen en entornos ASM, NFS y SAN. Por ejemplo, si los espacios de tablas TS2 y TS3 residen en NFS y TS4 en SAN, puede realizar una única operación PITR para restaurar todos los espacios de tablas.
+
+
+NOTE: En una configuración de RAC, puede realizar PITR de tablespaces desde cualquier nodo del RAC.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione *Database* o *Resource Group* en la lista *View*.
+. Seleccione la base de datos del tipo de instancia única (Multitenant) ya sea en la vista de detalles de la base de datos o en la vista de detalles del grupo de recursos.
++
+Se muestra la página de topología de la base de datos.
+
+. En la vista Manage Copies, seleccione *copias de seguridad* en los sistemas de almacenamiento principal o secundario (reflejado o replicado).
++
+Si la copia de seguridad no está catalogada, debe seleccionar la copia de seguridad y hacer clic en *Catálogo*.
+
+. Seleccione el backup catalogado y haga clic en *image:../media/restore_icon.gif["icono de restauración"]*.
+. En la página Restore Scope, realice las siguientes tareas:
++
+.. Si seleccionó un backup de una base de datos en un entorno RAC, seleccione el nodo de RAC.
+.. Seleccione *Tablespaces* y, a continuación, especifique los tablespaces que desea restaurar.
++
+
+NOTE: No puede realizar PITR en tablespaces SYSAUX, SYSTEM y UNDO.
+
+.. Seleccione *Cambiar el estado de la base de datos si es necesario para restaurar y recuperar* para cambiar el estado de la base de datos al estado requerido para realizar operaciones de restauración y recuperación.
+
+
+. En la página Recovery Scope, realice una de las siguientes acciones:
++
+** Si desea recuperar un número de cambio de sistema (SCN) específico, seleccione *hasta SCN* y especifique el SCN y el destino auxiliar.
+** Si desea recuperar una fecha y hora específicas, seleccione *Fecha y hora* y especifique la fecha y hora y el destino auxiliar.
++
+SnapCenter identifica y, a continuación, monta y cataloga la cantidad óptima de backups de datos y registros necesarios para realizar PITR según el SCN especificado o la fecha y hora seleccionadas.
+
+
+
+. En la página PreOps, introduzca la ruta de acceso y los argumentos del script previo que desea ejecutar antes de la operación de restauración.
++
+Debe almacenar los scripts previos en la ruta de acceso /var/opt/snapcenter/spl/scripts o en cualquier carpeta dentro de ella. De forma predeterminada, se completa la ruta de acceso /var/opt/snapcenter/spl/scripts. Si creó cualquier carpeta dentro de esta ruta de acceso para almacenar los scripts, debe especificar esas carpetas en la ruta.
+
++
+También puede especificar el valor de tiempo de espera del script. El valor predeterminado es 60 segundos.
+
++
+SnapCenter permite usar las variables de entorno predefinidas al ejecutar el script previo y script posterior. link:../protect-sco/predefined-environment-variables-prescript-postscript-restore.html["Leer más"^]
+
+. En la página PostOps, siga estos pasos:
++
+.. Introduzca la ruta de acceso y los argumentos del script posterior que desea ejecutar después de la operación de restauración.
++
+
+NOTE: Si se produce un error en la operación de restauración, los scripts posteriores no se ejecutarán y las actividades de limpieza se desencadenarán directamente.
+
+.. Seleccione la casilla de comprobación si desea abrir la base de datos después de la recuperación.
+
+
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar las notificaciones por correo electrónico.
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+

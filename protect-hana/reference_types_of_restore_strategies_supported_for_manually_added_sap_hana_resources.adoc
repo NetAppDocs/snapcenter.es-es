@@ -1,0 +1,35 @@
+---
+permalink: protect-hana/reference_types_of_restore_strategies_supported_for_manually_added_sap_hana_resources.html 
+sidebar: sidebar 
+keywords: SnapCenter 
+summary: Para poder ejecutar correctamente las operaciones de restauración, es necesario definir una estrategia mediante SnapCenter. Existen dos tipos de estrategias de restauración para los recursos de SAP HANA que se añaden manualmente. No puede recuperar los recursos de SAP HANA añadidos manualmente. 
+---
+= Tipos de estrategias de restauración compatibles con los recursos de SAP HANA añadidos manualmente
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para poder ejecutar correctamente las operaciones de restauración, es necesario definir una estrategia mediante SnapCenter. Existen dos tipos de estrategias de restauración para los recursos de SAP HANA que se añaden manualmente. No puede recuperar los recursos de SAP HANA añadidos manualmente.
+
+
+NOTE: No puede recuperar los recursos de SAP HANA añadidos manualmente.
+
+
+
+== Restauración de recursos completa
+
+* Restaura todos los volúmenes, qtrees y LUN de un recurso
+
+
+
+NOTE: Si el recurso contiene volúmenes o qtrees, se eliminan las copias de Snapshot realizadas después de la copia de Snapshot seleccionada para restaurar en tales volúmenes o qtrees y no pueden recuperarse. Además, si hay algún otro recurso alojado en los mismos volúmenes o qtrees, también se lo elimina.
+
+
+
+== Restauración de nivel de archivos
+
+* Restaura los archivos de volúmenes, qtrees o directorios
+* Restaura solo los LUN seleccionados
+

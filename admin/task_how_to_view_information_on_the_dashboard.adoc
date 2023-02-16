@@ -1,0 +1,23 @@
+---
+permalink: admin/task_how_to_view_information_on_the_dashboard.html 
+sidebar: sidebar 
+keywords:  
+summary: 'En el panel de navegación de la izquierda de SnapCenter, es posible ver varios iconos de la consola o mostrar, junto con los detalles del sistema asociados. El número de pantallas disponibles en el Panel es fijo y no se puede modificar. El contenido proporcionado en cada visualización depende del control de acceso basado en roles \(RBAC\).' 
+---
+= Cómo ver información en el panel
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+En el panel de navegación de la izquierda de SnapCenter, es posible ver varios iconos de la consola o mostrar, junto con los detalles del sistema asociados. El número de pantallas disponibles en el Panel es fijo y no se puede modificar. El contenido proporcionado en cada visualización depende del control de acceso basado en roles (RBAC).
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Panel*.
+. Haga clic en las áreas activas de cada pantalla para obtener información adicional.
++
+Por ejemplo, al hacer clic en un gráfico de donut en *Jobs*, le redirige a la página Monitor para obtener más información sobre su selección. Al hacer clic en un gráfico de donut en *Resumen de protección*, le redirige a la página Informes, que puede proporcionar más información sobre su selección.
+
+

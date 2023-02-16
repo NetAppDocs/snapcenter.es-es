@@ -1,0 +1,211 @@
+---
+permalink: protect-sco/task_create_backup_policies_for_oracle_database.html 
+sidebar: sidebar 
+keywords: backup policies, policies 
+summary: Antes de usar SnapCenter para realizar backups de recursos de base de datos de Oracle, debe crear una política de backup para el recurso o el grupo de recursos que se respaltendrá. Una política de backup es un conjunto de reglas que rigen cómo gestionar, programar y retener backups. También puede especificar la configuración de replicación, script y tipo de backup. Crear una política permite ahorrar tiempo cuando se desea volver a utilizar esa política en otro recurso o grupo de recursos. 
+---
+= Crear políticas de backup para bases de datos de Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de usar SnapCenter para realizar backups de recursos de base de datos de Oracle, debe crear una política de backup para el recurso o el grupo de recursos que se respaltendrá. Una política de backup es un conjunto de reglas que rigen cómo gestionar, programar y retener backups. También puede especificar la configuración de replicación, script y tipo de backup. Crear una política permite ahorrar tiempo cuando se desea volver a utilizar esa política en otro recurso o grupo de recursos.
+
+*Lo que necesitará*
+
+* Debe tener definida una estrategia de backup.
+* En el marco de los preparativos para la protección de datos, completó tareas como instalar SnapCenter, añadir hosts, detectar bases de datos y crear conexiones del sistema de almacenamiento.
+* Si desea replicar copias de Snapshot en un almacenamiento secundario con SnapMirror o SnapVault, el administrador de SnapCenter debe haberle asignado las SVM de los volúmenes de origen y de destino.
+
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Configuración*.
+. En la página Configuración, haga clic en *Directivas*.
+. Seleccione *Oracle Database* en la lista desplegable.
+. Haga clic en *Nuevo*.
+. En la página Name, escriba el nombre de la política y una descripción.
+. En la página Backup Type, realice los siguientes pasos:
++
+** Si desea *crear una copia de seguridad en línea*, seleccione *copia de seguridad en línea*.
++
+Debe especificar si desea realizar un backup de todos los archivos de datos, los archivos de control y los archivos de registro de archivos, solo de los archivos de datos y los archivos de control, o solo de los archivos de registro de archivos.
+
+** Si desea *crear una copia de seguridad sin conexión*, seleccione *copia de seguridad sin conexión* y, a continuación, seleccione una de las siguientes opciones:
++
+*** Si desea crear una copia de seguridad sin conexión cuando la base de datos está en estado montado, seleccione *Mount*.
+*** Si desea crear una copia de seguridad de apagado sin conexión cambiando el estado de la base de datos a apagado, seleccione *Apagar*.
++
+Si tiene bases de datos conectables (PDB) y desea guardar el estado de las PDB antes de crear el backup, debe seleccionar *Guardar estado de PDB*. Esto permite que las PDB regresen a su estado original después de la creación del backup.
+
+
+
+** Especifique la frecuencia de programación seleccionando *a petición*, *hora*, *Diario*, *Semanal* o *Mensual*.
++
+
+NOTE: Es posible especificar la programación (fecha de inicio y fecha de finalización) para la operación de backup mientras se crea un grupo de recursos. De este modo, puede crear grupos de recursos que compartan la misma política y la misma frecuencia de backup, pero también asignar diferentes programaciones de backup a cada política.
+
++
+
+NOTE: Si ha programado para las 2:00 a.m., la programación no se activará durante el horario de verano.
+
+** Si desea catalogar la copia de seguridad con Oracle Recovery Manager (RMAN), seleccione *Catalog backup with Oracle Recovery Manager (RMAN)*.
++
+Puede realizar una catalogación diferida de un backup a la vez con la interfaz gráfica de usuario o con el comando Catalog-SmBackupWithOracleRMAN de la CLI de SnapCenter.
+
++
+
+NOTE: Si desea catalogar backups de una base de datos de RAC, asegúrese de que no exista otro trabajo en ejecución para esa base de datos. Si existe otro trabajo en ejecución, la operación de catalogación genera un error se interrumpe tras generar un error y no se colocar en cola.
+
+** Si desea reducir los registros de archivos después de la copia de seguridad, seleccione *Prune archive logs after backup*.
++
+
+NOTE: Se omitirá la eliminación de registros de archivo desde el destino del registro de archivos que no esté configurado en la base de datos.
+
++
+
+IMPORTANT: Si está utilizando Oracle Standard Edition, puede utilizar los parámetros LOG_ARCHIVE_DEST y LOG_ARCHIVE_DUPLEX_DEST al realizar una copia de seguridad del registro de archivos.
+
+** Puede eliminar los registros de archivos únicamente si seleccionó los archivos de registro de archivos como parte del backup.
++
+
+NOTE: Debe asegurarse de que todos los nodos en el entorno RAC puedan acceder a todas las ubicaciones del registro de archivos para que la operación de eliminación se complete correctamente.
+
++
+|===
+| Si desea... | Realice lo siguiente... 
+
+
+ a| 
+Elimine todos los registros de archivos
+ a| 
+Seleccione *Eliminar todos los registros de archivo*.
+
+
+
+ a| 
+Elimine los registros de archivos antiguos
+ a| 
+Seleccione *Eliminar registros de archivo de más de* y, a continuación, especifique la antigüedad de los registros de archivo que se eliminarán en días y horas.
+
+
+
+ a| 
+Elimine los registros de archivos en todos los destinos
+ a| 
+Seleccione *Eliminar registros de archivo de todos los destinos*.
+
+
+
+ a| 
+Eliminar los registros de archivos de los destinos de registro que forman parte del backup
+ a| 
+Seleccione *Eliminar registros de archivo de los destinos que forman parte de copia de seguridad*.
+
+|===
++
+image:../media/sco_backuppolicy_prunning.gif[""]
+
+
+
+. En la página Retention, especifique la configuración de retención para el tipo de backup y el tipo de programación seleccionados en la página Backup Type:
++
+|===
+
+
+| Si desea... | Realice lo siguiente... 
+
+
+ a| 
+Conservar una cierta cantidad de copias de Snapshot
+ a| 
+Seleccione *total Snapshot copies to keep* y, a continuación, especifique el número de copias Snapshot que desea conservar.
+
+Si la cantidad de copias de Snapshot supera el número especificado, las copias se eliminan empezando por las más antiguas.
+
+
+NOTE: El valor de retención máximo es 1018 para recursos en ONTAP 9.4 o posterior, y 254 para recursos en ONTAP 9.3 o anterior. Se producirá un error en los backups si la retención se establece en un valor superior a la versión de ONTAP subyacente.
+
+
+IMPORTANT: Debe establecer el número de retención en 2 o un valor más alto si tiene pensado habilitar la replicación de SnapVault. Si establece el número de retención en 1, la operación puede generar un error, ya que la primera copia de Snapshot es la de referencia para la relación de SnapVault hasta que se replica una nueva copia de Snapshot en el destino.
+
+
+
+ a| 
+Conserve las copias de Snapshot por una cierta cantidad de días
+ a| 
+Seleccione *mantener copias Snapshot para* y, a continuación, especifique el número de días durante los que desea conservar las copias Snapshot antes de eliminarlas.
+
+|===
++
+
+NOTE: Puede retener los backups de registros de archivos únicamente si seleccionó los archivos de registro de archivos como parte del backup.
+
+. En la página Replication, especifique la configuración de replicación:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Actualizar SnapMirror tras crear una copia Snapshot local
+ a| 
+Seleccione este campo para crear copias reflejadas de los conjuntos de backup en otro volumen (replicación de SnapMirror).
+
+
+
+ a| 
+Actualizar SnapVault después de crear una copia Snapshot local
+ a| 
+Seleccione esta opción para realizar una replicación de backup disco a disco (backups de SnapVault).
+
+
+
+ a| 
+Etiqueta de la política secundaria
+ a| 
+Seleccione una etiqueta de Snapshot.
+
+Según la etiqueta de copia de Snapshot que seleccione, ONTAP aplicará la política de retención de copias de Snapshot secundarias que corresponda a esa etiqueta.
+
+
+NOTE: Si ha seleccionado *Actualizar SnapMirror después de crear una copia Snapshot local*, puede especificar opcionalmente la etiqueta de la directiva secundaria. Sin embargo, si ha seleccionado *Actualizar SnapVault después de crear una copia Snapshot local*, debe especificar la etiqueta de la directiva secundaria.
+
+
+
+ a| 
+Número de reintentos con error
+ a| 
+Escriba el número máximo de intentos de replicación que se permitirán antes de que la operación se detenga.
+
+|===
++
+
+NOTE: Debe configurar la política de retención de SnapMirror en ONTAP para el almacenamiento secundario a fin de evitar alcanzar el límite máximo de copias de Snapshot en el almacenamiento secundario.
+
+. En la página Script, introduzca la ruta y los argumentos del script previo o script posterior que desea ejecutar antes o después de la operación de backup, según corresponda.
++
+Debe almacenar los scripts previos y los scripts posteriores en _/var/opt/snapcenter/spl/scripts_ o en cualquier carpeta dentro de esta ruta de acceso. De forma predeterminada, se completa la ruta de acceso _/var/opt/snapcenter/spl/scripts_. Si creó cualquier carpeta dentro de esta ruta de acceso para almacenar los scripts, debe especificar esas carpetas en la ruta.
+
++
+También puede especificar el valor de tiempo de espera del script. El valor predeterminado es 60 segundos.
+
++
+SnapCenter permite usar las variables de entorno predefinidas al ejecutar el script previo y script posterior. link:../protect-sco/predefined-environment-variables-prescript-postscript-backup.html["Leer más"^]
+
+. En la página Verification, realice los siguientes pasos:
++
+.. Seleccione la programación de backups donde desea realizar la operación de verificación.
+.. En la sección Verification script, introduzca la ruta de acceso y los argumentos del script previo o el script posterior que desea ejecutar antes o después de la operación de verificación, respectivamente.
++
+Debe almacenar los scripts previos y los scripts posteriores en _/var/opt/snapcenter/spl/scripts_ o en cualquier carpeta dentro de esta ruta de acceso. De forma predeterminada, se completa la ruta de acceso _/var/opt/snapcenter/spl/scripts_. Si creó cualquier carpeta dentro de esta ruta de acceso para almacenar los scripts, debe especificar esas carpetas en la ruta.
+
++
+También puede especificar el valor de tiempo de espera del script. El valor predeterminado es 60 segundos.
+
+
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+

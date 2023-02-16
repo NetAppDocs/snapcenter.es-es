@@ -1,0 +1,16 @@
+---
+permalink: protect-scsql/concept_number_of_backup_jobs_needed_for_databases.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Algunos factores que determinan la cantidad de tareas de backup que se necesitan son el tamaño de la base de datos, la cantidad de volúmenes que se usan, la tasa de cambio de la base de datos y el acuerdo de nivel de servicio \(SLA\).' 
+---
+= Cantidad de tareas de backup necesarias para bases de datos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Algunos factores que determinan la cantidad de tareas de backup que se necesitan son el tamaño de la base de datos, la cantidad de volúmenes que se usan, la tasa de cambio de la base de datos y el acuerdo de nivel de servicio.
+
+Para los backups de bases de datos, la cantidad de trabajos de backup que se selecciona depende de la cantidad de volúmenes en los que se colocaron las bases de datos. Por ejemplo, si se colocó un grupo de bases de datos pequeñas en un volumen y una base de datos grande en otro volumen, puede ser necesario crear un trabajo de backup para las bases de datos pequeñas y otro trabajo para la base de datos grande.

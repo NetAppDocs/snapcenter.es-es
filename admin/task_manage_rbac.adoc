@@ -1,0 +1,63 @@
+---
+permalink: admin/task_manage_rbac.html 
+sidebar: sidebar 
+keywords: modify RBAC, role, users, groups 
+summary: SnapCenter permite modificar roles, usuarios y grupos. 
+---
+= Gestione RBAC
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapCenter permite modificar roles, usuarios y grupos.
+
+
+
+== Modificar un rol
+
+Es posible modificar un rol de SnapCenter para quitar usuarios o grupos y cambiar los permisos asociados con el rol. Sobre todo es útil para modificar roles cuando se desean cambiar o eliminar los permisos usados por todo un rol.
+
+*Lo que necesitará*
+
+Inició sesión con el rol de administrador de SnapCenter.
+
+
+NOTE: No es posible modificar ni quitar permisos del rol de administrador de SnapCenter.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Configuración*.
+. En la página Configuración, haga clic en *roles*.
+. En el campo de nombre Role, haga clic en el rol que desea modificar.
+. En la página Role Details, modifique los permisos o anule la asignación de los miembros según sea necesario.
+. Seleccione *todos los miembros de esta función pueden ver los objetos de otros miembros* para permitir que otros miembros de la función vean recursos como volúmenes y hosts después de actualizar la lista de recursos.
++
+Anule la selección de esta opción si no desea que los miembros del rol vean los objetos a los que se asignaron otros miembros.
+
++
+
+NOTE: Cuando se habilita esta opción, no es necesario asignar a los usuarios acceso a los objetos o recursos si los usuarios pertenecen al mismo rol que el usuario que creó los objetos o recursos.
+
+. Haga clic en *Enviar*.
+
+
+
+
+== Modificar usuarios y grupos
+
+Es posible modificar usuarios o grupos de SnapCenter para modificar sus roles y activos.
+
+*Lo que necesitará*
+
+Debe iniciar sesión como administrador de SnapCenter.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Configuración*.
+. En la página Configuración, haga clic en *usuarios y acceso*.
+. En la lista Nombre de usuario o de grupo, haga clic en el usuario o grupo que desea modificar.
+. En la página de detalles Usuario o Grupo, modifique roles y activos.
+. Haga clic en *Enviar*.
+

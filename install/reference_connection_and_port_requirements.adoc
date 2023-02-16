@@ -1,0 +1,149 @@
+---
+permalink: install/reference_connection_and_port_requirements.html 
+sidebar: sidebar 
+keywords: ports, port requirements 
+summary: Debe asegurarse de que se cumplan los requisitos de conexiones y puertos antes de instalar SnapCenter Server y los plugins de aplicación o base de datos. 
+---
+= Requisitos de conexión y puerto
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe asegurarse de que se cumplan los requisitos de conexiones y puertos antes de instalar SnapCenter Server y los plugins de aplicación o base de datos.
+
+* Las aplicaciones no pueden compartir los puertos.
++
+Cada puerto debe ser dedicado a la aplicación adecuada.
+
+* En el caso de los puertos personalizables, puede seleccionar un puerto personalizado durante la instalación si no quiere usar el predeterminado.
++
+Puede cambiar un puerto de plugin después de la instalación usando el asistente Modify host.
+
+* En el caso de los puertos fijos, tiene que aceptar el número de puerto predeterminado.
+* Servidores de seguridad
++
+** Firewalls, proxies u otros dispositivos de red no deben interferir con las conexiones.
+** Si especifica un puerto personalizado al instalar SnapCenter, tendrá que añadir un regla de firewall en el host del plugin para dicho puerto en el cargador del plugin de SnapCenter.
+
+
+
+
+En la tabla siguiente se enumeran los distintos puertos y sus valores predeterminados.
+
+|===
+| Tipo de puerto | Puerto predeterminado 
+
+
+ a| 
+Puerto SnapCenter
+ a| 
+8146 (HTTPS), bidireccional, personalizable, como en la URL _\https://server:8146_
+
+Se usa para la comunicación entre el cliente SnapCenter (el usuario de SnapCenter) y el servidor SnapCenter. También se utiliza para establecer la comunicación de los hosts del plugin con SnapCenter Server.
+
+
+
+ a| 
+Puerto de comunicación SMCore de SnapCenter
+ a| 
+8145 (HTTPS), bidireccional, personalizable
+
+El puerto se utiliza para establecer la comunicación entre SnapCenter Server y los hosts en los que se han instalado los plugins de SnapCenter.
+
+
+
+ a| 
+Puerto MySQL
+ a| 
+3306 (HTTPS), bidireccional
+
+El puerto se utiliza para establecer la comunicación entre SnapCenter y la base de datos del repositorio MySQL.
+
+Puede crear conexiones seguras desde el servidor SnapCenter al servidor MySQL. link:../install/concept_configure_secured_mysql_connections_with_snapcenter_server.html["Leer más"]
+
+
+
+ a| 
+Hosts de plugins de Windows
+ a| 
+135 DE FEBRERO DE 445 (TCP)
+
+Además de los puertos 135 y 445, el intervalo de puertos dinámico especificado por Microsoft también debería estar abierto. Operaciones de instalación remota Utilice el servicio Instrumental de administración de Windows (WMI), que busca dinámicamente este intervalo de puertos.
+
+Para obtener información sobre el intervalo de puertos dinámicos admitido, consulte https://support.microsoft.com/kb/832017["Descripción general del servicio y requisitos de puertos de red para Windows"^]
+
+Los puertos se utilizan para establecer la comunicación entre SnapCenter Server y el host en el que se está instalando el plugin. Para insertar los archivos binarios de paquetes de plugins en los hosts de plugin de Windows, los puertos deben abrirse con cuidado en el host del plugin y se pueden cerrar después de su instalación.
+
+
+
+ a| 
+Hosts de plugins de Linux o AIX
+ a| 
+22 (SSH)
+
+Los puertos se utilizan para establecer la comunicación entre SnapCenter Server y el host en el que se está instalando el plugin. Los puertos los utiliza SnapCenter para copiar archivos binarios de paquetes de plugin en los hosts de plugin de Linux o AIX y se deben abrir o ejecutar desde el firewall o las iptables.
+
+
+
+ a| 
+Paquete de plugins de SnapCenter para Windows, paquete de plugins de SnapCenter para Linux o paquete de plugins de SnapCenter para AIX
+ a| 
+8145 (HTTPS), bidireccional, personalizable
+
+El puerto se utiliza para establecer la comunicación entre SMCore y los hosts en los que se ha instalado el paquete de plugins.
+
+La ruta de comunicación también debe estar abierta entre el LIF de gestión de SVM y el servidor SnapCenter.
+
+
+
+ a| 
+Plugin de SnapCenter para base de datos de Oracle
+ a| 
+27216, personalizable
+
+El puerto de JDBC predeterminado, lo utiliza el plugin para Oracle para conectarse a la base de datos de Oracle.
+
+
+
+ a| 
+Plugins personalizados para SnapCenter
+ a| 
+9090 (HTTPS), fija
+
+Se trata de un puerto interno que se usa solo en el host del plugin personalizado; no son obligatorias las excepciones de firewall.
+
+La comunicación entre SnapCenter Server y los plugins personalizados pasa a través del puerto 8145.
+
+
+
+ a| 
+Puerto de comunicación del clúster de ONTAP o de SVM
+ a| 
+443 (HTTPS), bidirectional80 (HTTP), bidireccional
+
+El puerto se utiliza en SAL (capa de abstracción del almacenamiento) para establecer la comunicación entre el host que ejecuta SnapCenter Server y SVM. Actualmente, el puerto también se utiliza en SAL en SnapCenter para los hosts del plugin de Windows para establecer la comunicación entre el host del plugin de SnapCenter y SVM.
+
+
+
+ a| 
+Plugin de SnapCenter para base de datos SAP HANA vCode Spell Checkports
+ a| 
+3instance_number13 o 3instance_number15, HTTP o HTTPS, bidireccional y personalizable
+
+Para un tenant único de un contenedor de base de datos multitenant (MDC), el número del puerto termina en 13; para los que no son MDC, el número de puerto termina en 15.
+
+Por ejemplo, 32013 es el número de puerto para la instancia 20 y 31015 es el número de puerto para la instancia 10.
+
+
+
+ a| 
+Puerto de comunicación del controlador de dominio
+ a| 
+Consulte la documentación de Microsoft para identificar los puertos que se deben abrir en el firewall de un controlador de dominio para que la autenticación funcione correctamente.
+
+Es necesario abrir los puertos requeridos por Microsoft en el controlador de dominio para que SnapCenter Server, los hosts del plugin u otro cliente de Windows puedan autenticar los usuarios.
+
+|===
+Para modificar los detalles del puerto, consulte link:../admin/concept_manage_hosts.html#modify-plug-in-hosts["Modifique los hosts de plugins"].

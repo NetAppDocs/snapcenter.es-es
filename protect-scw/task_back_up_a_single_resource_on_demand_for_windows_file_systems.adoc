@@ -1,0 +1,110 @@
+---
+permalink: protect-scw/task_back_up_a_single_resource_on_demand_for_windows_file_systems.html 
+sidebar: sidebar 
+keywords: backing up 
+summary: Si un recurso no está en un grupo de recursos, puede realizar el backup bajo demanda desde la página Resources. 
+---
+= Realice el backup de un solo recurso bajo demanda para sistemas de archivos Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si un recurso no está en un grupo de recursos, puede realizar el backup bajo demanda desde la página Resources.
+
+*Acerca de esta tarea*
+
+Si desea realizar un backup de un recurso que tenga una relación de SnapMirror con almacenamiento secundario, el rol asignado al usuario de almacenamiento debería incluir el privilegio «incluir toda la copia reflejada». Sin embargo, si usted está utilizando el rol "'vsadmin'", entonces no se requiere el privilegio "nnapmirror all".
+
+
+NOTE: Al realizar el backup de un sistema de archivos, SnapCenter no hace backups de los LUN montados en un punto de montaje de volumen (VMP) en el sistema de archivos del que se está haciendo backup.
+
+
+IMPORTANT: Si va a trabajar en un contexto de sistema de archivos de Windows, no realice backup de archivos de la base de datos. Si lo hace, se crea un backup incoherente y una posible pérdida de datos al restaurar. Para proteger los archivos de la base de datos, debe usar el plugin de SnapCenter adecuado para la base de datos (por ejemplo, plugin de SnapCenter para Microsoft SQL Server, plugin de SnapCenter para Microsoft Exchange Server o un plugin personalizado para archivos de base de datos).
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione el tipo de recurso File System y, a continuación, seleccione el recurso del que desea realizar backup.
+. Si el asistente File System - Protect no se inicia automáticamente, haga clic en *Protect* para iniciar el asistente.
++
+Especifique la configuración de protección, según se describe en las tareas para crear grupos de recursos.
+
+. Opcional: En la página Resource del asistente, introduzca un formato de nombre personalizado para la copia de Snapshot.
++
+Por ejemplo, customtext_resourcegroup_policy_hostname o resourcegroup_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+
+. En la página Policies, ejecute las siguientes tareas:
++
+.. Seleccione una o varias políticas de la lista desplegable.
++
+Puede seleccionar cualquier directiva existente y, a continuación, hacer clic en *Detalles* para determinar si puede utilizar esa política.
+
++
+Si ninguna política existente se ajusta a sus requisitos, puede copiar una política existente y modificarla, o bien crear una nueva política haciendo clic en image:../media/add_policy_from_resourcegroup.gif[""] para iniciar el asistente de políticas.
+
++
+Las políticas seleccionadas se enumeran en la columna Policy en la sección Configure schedules for selected policies.
+
+.. En la sección Configure schedules for selected policies, haga clic en image:../media/add_policy_from_resourcegroup.gif[""] En la columna Configure Schedules correspondiente a la política para la cual se desea configurar la programación.
+.. En el cuadro de diálogo Add schedules for policy _policy_name_, configure la programación especificando la fecha de inicio, la fecha de caducidad y la frecuencia y, a continuación, haga clic en *Finish*.
++
+Las programaciones configuradas aparecen en la columna Applied Schedules en la sección Configure schedules for selected policies.
+
++
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Scheduled_data_protection_operations_fail_if_the_number_of_operations_running_reaches_maximum_limit["Es posible que se produzca un error en las operaciones programadas"]
+
+
+
+. En la página Notification, realice las siguientes tareas:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Preferencia de correo electrónico
+ a| 
+Seleccione *Always*, o *On Failure*, o *On failure or warning*, para enviar correos electrónicos a destinatarios después de crear grupos de recursos de copia de seguridad, adjuntar directivas y configurar horarios.
+
+Introduzca la información del servidor SMTP, la línea de asunto predeterminada del correo electrónico y las direcciones de correo electrónico «'a'» y «'de'».
+
+
+
+ a| 
+De
+ a| 
+Dirección de correo electrónico
+
+
+
+ a| 
+Para
+ a| 
+Dirección de correo electrónico del destinatario
+
+
+
+ a| 
+Asunto
+ a| 
+Línea de asunto predeterminada del correo electrónico
+
+|===
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
++
+Se muestra la página de topología de la base de datos.
+
+. Haga clic en *copia de seguridad ahora*.
+. En la página Backup, realice los siguientes pasos:
++
+.. Si aplicó varias políticas al recurso, en la lista desplegable Policy seleccione la política que desea usar para el backup.
++
+Si la política seleccionada para el backup bajo demanda está asociada a una programación de backup, los backups bajo demanda se retendrán en función de la configuración de retención especificada para el tipo de programación.
+
+.. Haga clic en *copia de seguridad*.
+
+
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+

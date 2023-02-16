@@ -1,0 +1,173 @@
+---
+permalink: protect-scsql/task_clone_from_a_sql_server_database_backup.html 
+sidebar: sidebar 
+keywords:  
+summary: Puede utilizar SnapCenter para clonar un backup de base de datos de SQL Server. Si desea acceder a o restaurar una versión anterior de los datos, puede clonar backups de base de datos bajo demanda. 
+---
+= Clonar a partir de un backup de base de datos de SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede utilizar SnapCenter para clonar un backup de base de datos de SQL Server. Si desea acceder a o restaurar una versión anterior de los datos, puede clonar backups de base de datos bajo demanda.
+
+*Lo que necesitará*
+
+* Debe haberse preparado para la protección de datos completando ciertas tareas, como añadir hosts, identificar recursos y crear conexiones de sistema de almacenamiento.
+* Debe tener un backup de las bases de datos o de los grupos de recursos.
+* El tipo de protección, como reflejo, almacén o reflejo-almacén para el LUN de datos y el LUN de registro, debe ser el mismo para detectar localizadores secundarios durante la clonado en un host alternativo mediante backups de registros.
+* Si no se puede encontrar la unidad de clonado montada durante una operación de clonado de SnapCenter, debe cambiar el parámetro CloneRetryTimeout de SnapCenter Server a 300.
+* Debe asegurarse de que los agregados donde se alojan los volúmenes deben estar en la lista de agregados asignados de la máquina virtual de almacenamiento (SVM).
+
+
+*Acerca de esta tarea*
+
+* Mientras se clona en una instancia de base de datos independiente, asegúrese de que exista la ruta de acceso del punto de montaje y sea un disco dedicado.
+* Al realizar la clonación en una instancia de clúster de conmutación por error (FCI, Failover Cluster Instance), asegúrese de que los puntos de montaje existen, son un disco compartido y la ruta de acceso y el FCI deben pertenecer al mismo grupo de recursos SQL.
+* Asegúrese de que solo hay un iniciador VFC o FC conectado a cada host. Esto se debe a que, SnapCenter solo admite un iniciador por host.
+* Si la base de datos de origen o la instancia de destino se encuentran en un volumen compartido de clúster (csv), la base de datos clonada se realizará en csv.
+* LA RUTA_DE_SCRIPTS se define mediante la clave PredefinedWindowsScriptsDirectory ubicada en el archivo SMCoreServiceHost.exe.Config del host del plugin.
++
+Si es necesario, puede cambiar esta ruta y reiniciar el servicio SMcore. Se recomienda utilizar la ruta predeterminada para la seguridad.
+
++
+El valor de la tecla se puede mostrar desde swagger a través de la API: API /4.7/config settings
+
++
+Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGURACIÓN de API.
+
+
+
+
+NOTE: Para los entornos virtuales (VMDK/RDM), asegúrese de que el punto de montaje es un disco dedicado.
+
+* Pasos*
+
+. En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione *complemento SnapCenter para SQL Server* en la lista.
+. En la página Resources, seleccione *Database* o *Resource Group* en la lista *View*.
++
+
+NOTE: No se admite la clonado del backup de una instancia.
+
+
+
+* Pasos*
+
+. Seleccione la base de datos o el grupo de recursos.
+. En la página Manage Copies view, seleccione el backup de un sistema de almacenamiento principal o secundario (reflejado o en almacén).
+. Seleccione el backup y, a continuación, haga clic en *image:../media/clone_icon.gif[""]*.
+. En la página Clone Options, realice las siguientes acciones:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Clone el servidor
+ a| 
+Elija el host donde se debe crear el clon.
+
+
+
+ a| 
+Instancia de clon
+ a| 
+Seleccione la instancia de clonado en la que desea que se clone el backup de base de datos.
+
+Esta instancia de SQL debe estar ubicada en el servidor de clones especificado.
+
+
+
+ a| 
+Sufijo de clon
+ a| 
+Introduzca el sufijo que se incorporará al nombre de archivo del clon para identificar que la base de datos es un clon.
+
+Por ejemplo, _db1_clone_. Si clona en la misma ubicación que la de la base de datos original, debe proporcionar un sufijo para diferenciar la base de datos clonada de la original. De lo contrario, la operación dará error.
+
+
+
+ a| 
+Auto assign Mount point o Auto assign volume Mount point under path
+ a| 
+Elija si asignar automáticamente un punto de montaje o un punto de montaje de volumen en una ruta.
+
+Auto assign volume Mount point under path: El punto de montaje en una ruta permite proporcionar un directorio específico. Los puntos de montaje se crearán dentro de ese directorio. Antes de seleccionar esta opción, debe asegurarse de que el directorio esté vacío. Si hay una base de datos en ese directorio, la base de datos presentará un estado no válido después de la operación de montaje.
+
+|===
+. En la página Logs, seleccione una de las siguientes opciones:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Ninguno
+ a| 
+Seleccione esta opción si solo desea clonar el backup completo sin ningún registro.
+
+
+
+ a| 
+Todos los backups de registros
+ a| 
+Seleccione esta opción para clonar todos los backups de registro disponibles con fecha posterior al backup completo.
+
+
+
+ a| 
+Mediante backups de registros hasta que
+ a| 
+Seleccione esta opción para clonar la base de datos según los registros de backup que se crearon hasta el registro de backup con la fecha seleccionada.
+
+
+
+ a| 
+Por fecha específica hasta
+ a| 
+Indique la fecha y la hora después de las cuales los registros de transacciones no se aplican a la base de datos clonada.
+
+Esta clonado de momento específico detiene la clonado de las entradas del registro de transacciones que se registraron después de la fecha y la hora especificadas.
+
+|===
+. En la página Script, introduzca el tiempo de espera de script, la ruta y los argumentos del script previo o posterior que deben ejecutarse antes o después de la operación de clonado, según corresponda.
++
+Por ejemplo, es posible ejecutar un script para actualizar las capturas SNMP, automatizar alertas, enviar registros, etc.
+
++
+
+NOTE: La ruta scripts previos o posteriores no debe incluir unidades o recursos compartidos. La ruta debe ser relativa a LA RUTA DE ACCESO_SCRIPTS.
+
++
+El tiempo de espera predeterminado del script es 60 segundos.
+
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
++
+También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. Si desea adjuntar el informe de la operación de clonado realizada, seleccione *Adjuntar informe de trabajo*.
+
++
+
+NOTE: Para las notificaciones de correo electrónico, se deben haber especificado los detalles del servidor SMTP desde la interfaz gráfica de usuario o desde el comando de PowerShell Set-SmSmtpServer.
+
++
+Para EMS, consulte https://docs.netapp.com/us-en/snapcenter/admin/concept_manage_ems_data_collection.html["Gestione la recogida de datos de EMS"]
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+
+
+*Después de terminar*
+
+Después de crear el clon, no debe cambiar nunca el nombre.
+
+*Más información*
+
+link:reference_back_up_sql_server_database_or_instance_or_availability_group.html["Realizar backup de base de datos de SQL Server, instancia o grupo de disponibilidad"]
+
+link:task_clone_backups_using_powershell_cmdlets_for_sql.html["Clonar backups mediante cmdlets de PowerShell"]
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Clone_operation_might_fail_or_take_longer_time_to_complete_with_default_TCP_TIMEOUT_value["Es posible que la operación de clonado produzca errores o tarde más tiempo en finalizar con el valor TCP_TIMEOUT predeterminado"]
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/The_failover_cluster_instance_database_clone_fails["Se produce un error en el clon de la base de datos de la instancia de clúster"]

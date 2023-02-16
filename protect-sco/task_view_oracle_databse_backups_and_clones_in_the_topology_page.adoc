@@ -1,0 +1,69 @@
+---
+permalink: protect-sco/task_view_oracle_databse_backups_and_clones_in_the_topology_page.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for Oracle Databases 
+summary: Al prepararse para clonar un recurso o incluirlo en un backup, puede resultar útil ver una representación gráfica de todos los backups y clones del almacenamiento principal y secundario. 
+---
+= Consulte los backups y los clones de las bases de datos de Oracle en la página Topology
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Al prepararse para clonar un recurso o incluirlo en un backup, puede resultar útil ver una representación gráfica de todos los backups y clones del almacenamiento principal y secundario.
+
+*Acerca de esta tarea*
+
+En la página Topology, es posible ver todos los backups y clones que están disponibles para el recurso o el grupo de recursos seleccionado. Pueden verse los detalles de estos backups y clones, y luego seleccionarlos para realizar operaciones de protección de datos.
+
+Puede consultar los siguientes iconos de la vista gestionar copias para determinar si los backups o clones están disponibles en el almacenamiento principal y secundario (copias reflejadas o en almacén).
+
+* image:../media/topology_primary_storage.gif["icono de almacenamiento principal"] muestra la cantidad de backups y clones que están disponibles en el almacenamiento principal.
+* image:../media/topology_mirror_secondary_storage.gif["Icono de reflejo de almacenamiento secundario"] Muestra la cantidad de backups y clones que estan copiados en el almacenamiento secundario mediante SnapMirror.
+* image:../media/topology_vault_secondary_storage.gif["icono de almacén secundario"] Muestra la cantidad de backups y clones que se replican en el almacenamiento secundario mediante la tecnología SnapVault.
++
+La cantidad de backups que se muestra incluye los backups eliminados del almacenamiento secundario. Por ejemplo, si creó 6 backups con una política para retener solamente 4 backups, se muestran 6 backups.
+
+
+
+
+NOTE: Los clones de un backup de un reflejo con versión flexible en un volumen de tipo reflejo-almacén se muestran en la vista de topología, pero el número de backups de reflejo no incluye el backup con versión flexible.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione el recurso o el grupo de recursos de la lista desplegable *View*.
+. Seleccione el recurso desde la vista de detalles del recurso o desde la vista de detalles del grupo de recursos.
++
+Si el recurso está protegido, se muestra la página Topology del recurso seleccionado.
+
+. Consulte Summary Card para ver un resumen de la cantidad de backups y clones disponibles en el almacenamiento principal y secundario.
++
+La sección Summary Card muestra la cantidad total de backups y clones, y la cantidad total de backups de registros.
+
++
+Al hacer clic en el botón *Actualizar* se inicia una consulta del almacenamiento para mostrar un recuento preciso.
+
+. En la vista Administrar copias, haga clic en *copias de seguridad* o *clones* en el almacenamiento principal o secundario para ver los detalles de una copia de seguridad o un clon.
++
+Estos detalles se muestran en forma de tabla.
+
+. Seleccione el backup en la tabla y haga clic en los iconos de protección de datos para realizar restauración, clonado, montaje, desmontaje, cambio de nombre, operaciones de catalogación, descatalogación y eliminación.
++
+
+NOTE: Los backups que figuran en el almacenamiento secundario no pueden eliminarse ni cambiar de nombre.
+
++
+** Si seleccionó un backup de registros, solo es posible realizar un cambio de nombre, montaje, desmontaje, catálogo, descatalogar, y eliminar operaciones.
+** Si catalogó el backup con Oracle RMAN, no puede cambiar el nombre de esos backups catalogados.
+
+
+. Si desea eliminar un clon, selecciónelo de la tabla y, a continuación, haga clic en image:../media/delete_icon.gif[""].
+
+
+Si el valor asignado a SnapmirrorStatusUpdateWaitTime es menor, las copias de backup de reflejo y almacén no se enumeran en la página de topología aunque los volúmenes de registros y datos estén protegidos correctamente. Debe aumentar el valor asignado a SnapmirrorStatusUpdateWaitTime con el cmdlet _Set-SmConfigSettings_ PowerShell.
+
+La información relativa a los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando Get-Help _command_name_.
+
+Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885486["Guía de referencia de comandos del software SnapCenter"^] o. https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].

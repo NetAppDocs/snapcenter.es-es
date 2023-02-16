@@ -1,0 +1,35 @@
+---
+permalink: admin/task_request_reports_of_the_protection_status_from_the_dashboard.html 
+sidebar: sidebar 
+keywords:  
+summary: Es posible solicitar detalles de protección para los recursos gestionados por plugins específicos mediante la consola. 
+---
+= Solicite informes sobre el estado de protección desde el panel de control
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible solicitar detalles de protección para los recursos gestionados por plugins específicos mediante la consola. Sólo se consideran los backups de datos para resumen de protección de datos.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Panel*.
+. Busque el icono Resumen de protección más reciente en la consola y utilice el menú desplegable para seleccionar un plugin.
++
+La consola muestra un gráfico de donut para los recursos que se han realizado backups en el almacenamiento principal y, si corresponde al plugin, un gráfico de donut para recursos respaldados en el almacenamiento secundario.
+
++
+
+NOTE: Los informes de protección de datos solo están disponibles para tipos de plugins específicos. No se admite la especificación de *todos los plugins*.
+
+. Haga clic en el corte de donut que representa el estado para el que desea obtener un informe.
++
+Al hacer clic en el gráfico de donut, se le redirigirá de la página Dashboard a Reports y, finalmente, a la página Plug-in. El informe muestra únicamente el estado del plugin seleccionado. Puede revisar el informe o descargarlo en su sistema local.
+
++
+
+NOTE: No se admite la redirección a la página Reports para el gráfico donut de SnapMirror y el backup de SAP HANA basado en archivos.
+
+

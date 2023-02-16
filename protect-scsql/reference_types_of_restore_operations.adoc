@@ -1,0 +1,87 @@
+---
+permalink: protect-scsql/reference_types_of_restore_operations.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for SQL Server 
+summary: Es posible usar SnapCenter para ejecutar diferentes tipos de operaciones de restauración de los recursos de SQL Server. 
+---
+= Tipos de operaciones de restauración
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible usar SnapCenter para ejecutar diferentes tipos de operaciones de restauración de los recursos de SQL Server.
+
+* Restauración de último minuto
+* Restauración a un momento específico
+
+
+Es posible hacer una restauración de último minuto o a un momento específico previo en las siguientes situaciones:
+
+* Restauración desde un almacenamiento secundario de SnapMirror o SnapVault
+* Restauración en una ruta (ubicación) alternativa
+
+
+
+NOTE: SnapCenter no es compatible con SnapRestore basado en volúmenes.
+
+
+
+== Restauración de último minuto
+
+En una operación de restauración de último minuto (seleccionada de forma predeterminada), se recuperan las bases de datos hasta el punto de error. SnapCenter usa la siguiente secuencia para este proceso:
+
+. Realiza el backup del último registro de transacciones activo antes de restaurar la base de datos.
+. Restaura las bases de datos desde el backup completo de la base de datos que se seleccione.
+. Aplica todos los registros de transacciones que no estaban comprometidos con las bases de datos (incluidos los registros de transacciones de los backups desde el momento en que se creó el backup hasta el punto más reciente).
++
+Se mueven los registros de transacciones y se aplican a las bases de datos seleccionadas.
+
+
+
+Una operación de restauración de último minuto requiere un conjunto de registros de transacciones contiguos.
+
+Debido a que SnapCenter no puede restaurar registros de transacciones de bases de datos de SQL Server a partir de archivos de backup de envío de registros (el envío de registros permite enviar automáticamente backups de registros de transacciones desde una base de datos principal en una instancia de servidor principal a una o varias bases de datos secundarias en instancias de servidor secundarias independientes), no se puede ejecutar una operación de restauración de último minuto desde los backups de registros de transacciones. Por este motivo, es conveniente usar SnapCenter para realizar el backup de los archivos de registros de transacciones de bases de datos de SQL Server.
+
+Si no se necesita la funcionalidad de restauración de último minuto para todos los backups, es posible configurar la retención de backup de los registros de transacciones del sistema mediante las políticas de backup.
+
+
+
+== Ejemplo de una operación de restauración de último minuto
+
+Supongamos que se ejecuta un backup de SQL Server todos los días al mediodía, y un miércoles a las 4:00 es necesario hacer una restauración desde un backup. Por algún motivo, el backup del miércoles al mediodía no pasó la verificación, por lo que se decide restaurar desde el backup del martes al mediodía. Después de eso, si se restaura el backup, todos los registros de transacciones se mueven hacia adelante y se aplican a las bases de datos restauradas, a partir de las que no se confirmaron al crear el backup del martes y continuar con el último registro de transacciones escrito el miércoles a las 4:00 (si se realizó el backup de los registros de transacciones).
+
+
+
+== Restauración a un momento específico
+
+En una operación de restauración a un momento específico, las bases de datos se restauran únicamente a un punto específico. Esta operación se ejecuta en las siguientes situaciones:
+
+* La base de datos se restaura a un punto específico en un registro de transacciones incluido en un backup.
+* Se restaura la base de datos, y solo se aplica un subconjunto de los registros de transacciones del backup.
+
+
+
+NOTE: Cuando se restaura una base de datos a un momento específico, se crea una nueva ruta de recuperación.
+
+En la siguiente imagen, se ilustran los problemas cuando se ejecuta una operación de restauración a un momento específico:
+
+image::../media/point_in_time_recovery_path.gif[Restauración a un momento específico anterior]
+
+En la imagen, la ruta de recuperación 1 consta de un backup completo seguido por varios backups de registros de transacciones. Se restaura la base de datos a un momento específico. Se crean nuevos backups de registros de transacciones después de la operación de restauración a un momento específico, lo cual da lugar a la ruta de recuperación 2. Se crean nuevos backups de registros de transacciones sin crear un backup completo nuevo. Debido a que hay datos dañados u otros problemas, no es posible restaurar la base de datos actual hasta que se cree un nuevo backup completo. Tampoco es posible aplicar los registros de transacciones creados en la ruta de recuperación 2 al backup completo que pertenece a la ruta de recuperación 1.
+
+Si se aplican backups de registros de transacciones, también es posible especificar una fecha y hora particulares en las que se detendrá la aplicación de las transacciones del backup. Para esto, se especifica una fecha y hora dentro del intervalo disponible, y SnapCenter quita las transacciones que no estuvieran comprometidas antes de ese momento específico. Este método permite restaurar bases de datos a un momento específico antes de que se dañara, o recuperar contenido tras la eliminación accidental de una base de datos o una tabla.
+
+
+
+== Ejemplo de una operación de restauración a un momento específico
+
+Supongamos que se realiza un backup completo de las bases de datos a la medianoche y un backup de los registros de transacciones cada hora. La base de datos falla a las 9:45, pero igual se realiza el backup de los registros de transacciones de la base de datos con errores. Es posible elegir entre las siguientes situaciones de restauración a un momento específico:
+
+* Restaurar el backup completo de las bases de datos de la medianoche y aceptar la pérdida de los cambios hechos posteriormente. (Opción: None).
+* Restaurar el backup completo de las bases de datos y aplicar todos los backups de registros de transacciones hasta las 9:45 (Opción: Log until).
+* Restaurar el backup completo de las bases de datos y aplicar los backups de registros de transacciones especificando un intervalo de transacciones que se restaurarán del último conjunto de backups de registros de transacciones. (Opción: By specific time).
+
+
+En este caso, es necesario calcular la fecha y hora en que se informó el error. Las transacciones que no estuvieran comprometidas antes de la fecha y hora especificada se quitan.

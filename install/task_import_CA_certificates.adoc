@@ -1,0 +1,61 @@
+---
+permalink: install/task_import_CA_certificates.html 
+sidebar: sidebar 
+keywords: SnapCenter, import, import ca certificate, mmc, microsoft management console 
+summary: 'Debe importar los certificados de CA a SnapCenter Server y a los plugins de host de Windows mediante la consola de gestión de Microsoft (MMC).' 
+---
+= Importar certificados de CA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe importar los certificados de CA a SnapCenter Server y a los plugins de host de Windows mediante la consola de gestión de Microsoft (MMC).
+
+* Pasos*
+
+. Vaya a la consola de administración de Microsoft (MMC) y, a continuación, haga clic en *Archivo* > *Agregar o quitar Snapin*.
+. En la ventana Agregar o quitar complementos, seleccione *certificados* y, a continuación, haga clic en *Agregar*.
+. En la ventana del complemento certificados, seleccione la opción *cuenta de equipo* y, a continuación, haga clic en *Finalizar*.
+. Haga clic en *raíz de consola* > *certificados – Equipo local* > *entidades de certificación raíz de confianza* > *certificados*.
+. Haga clic con el botón secundario en la carpeta “entidades de certificación raíz de confianza” y, a continuación, seleccione *todas las tareas* > *Importar* para iniciar el asistente de importación.
+. Complete el asistente de la siguiente manera:
++
+|===
+| En esta ventana del asistente... | Haga lo siguiente... 
+
+
+ a| 
+Importar clave privada
+ a| 
+Seleccione la opción *Sí*, importe la clave privada y, a continuación, haga clic en *Siguiente*.
+
+
+
+ a| 
+Importar formato de archivo
+ a| 
+No realice cambios; haga clic en *Siguiente*.
+
+
+
+ a| 
+Seguridad
+ a| 
+Especifique la nueva contraseña que se utilizará para el certificado exportado y, a continuación, haga clic en *Siguiente*.
+
+
+
+ a| 
+Finalización del Asistente para importación de certificados
+ a| 
+Revise el resumen y, a continuación, haga clic en *Finalizar* para iniciar la importación.
+
+|===
++
+
+NOTE: El certificado de importación se debe empaquetar con la clave privada (los formatos admitidos son: *.pfx, *.p12 y *.p7b).
+
+. Repita el paso 5 para la carpeta “personal”.
+

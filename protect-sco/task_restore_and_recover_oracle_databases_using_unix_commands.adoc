@@ -1,0 +1,31 @@
+---
+permalink: protect-sco/task_restore_and_recover_oracle_databases_using_unix_commands.html 
+sidebar: sidebar 
+keywords: restore, recover, CLI 
+summary: El flujo de trabajo de restauración y recuperación incluye la planificación, la realización de operaciones de restauración y recuperación, y la supervisión de las operaciones. 
+---
+= Restaure y recupere bases de datos de Oracle con comandos de UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El flujo de trabajo de restauración y recuperación incluye la planificación, la realización de operaciones de restauración y recuperación, y la supervisión de las operaciones.
+
+*Acerca de esta tarea*
+
+Debe ejecutar los siguientes comandos para establecer la conexión con SnapCenter Server, enumerar los backups y recuperar su información, y restaurar el backup.
+
+La información relativa a los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando Get-Help _command_name_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885486["Guía de referencia de comandos del software SnapCenter"^].
+
+* Pasos*
+
+. Inicie una sesión de conexión con el servidor SnapCenter para el usuario especificado: _Open-SmConnection_
+. Recupere la información sobre los backups que desea restaurar: _Get-SmBackup_
+. Recupere la información detallada acerca del backup especificado: _Get-SmBackupDetails_
++
+Este comando recupera la información detallada sobre el backup de un recurso especificado con un determinado ID de backup. La información incluye nombre de la base de datos, versión, inicio, SCN de inicio y de finalización, espacios de tabla, bases de datos conectables y sus espacios de tabla.
+
+. Restaure los datos del backup: _Restore-SmBackup_
+

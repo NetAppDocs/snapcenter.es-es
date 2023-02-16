@@ -1,0 +1,84 @@
+---
+permalink: protect-scsql/task_determine_whether_resources_are_available_for_backup.html 
+sidebar: sidebar 
+keywords: credentials 
+summary: Los recursos son las bases de datos, las instancias de aplicaciones, los grupos de disponibilidad y los componentes similares que se mantienen mediante los plugins instalados. Es posible añadir esos recursos a grupos de recursos para ejecutar tareas de protección de datos, pero primero es necesario identificar qué recursos están disponibles. Identificar los recursos disponibles también permite verificar que el plugin se haya instalado correctamente. 
+---
+= Determine si hay recursos disponibles para backup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Los recursos son las bases de datos, las instancias de aplicaciones, los grupos de disponibilidad y los componentes similares que se mantienen mediante los plugins instalados. Es posible añadir esos recursos a grupos de recursos para ejecutar tareas de protección de datos, pero primero es necesario identificar qué recursos están disponibles. Identificar los recursos disponibles también permite verificar que el plugin se haya instalado correctamente.
+
+*Lo que necesitará*
+
+* Debe haber completado ciertas tareas, como instalar SnapCenter Server, añadir hosts, crear conexiones de sistema de almacenamiento y añadir credenciales.
+* Para detectar las bases de datos de Microsoft SQL, se debe cumplir una de las siguientes condiciones.
++
+** El usuario que se utilizó para añadir el host del plugin a SnapCenter Server debe tener los permisos requeridos (sysadmin) en Microsoft SQL Server.
+** Si no se cumple la condición anterior, en el servidor SnapCenter debe configurar el usuario que tiene los permisos necesarios (sysadmin) en Microsoft SQL Server. El usuario debe configurarse en el nivel de instancia de Microsoft SQL Server y el usuario puede ser un usuario de SQL o Windows.
+
+
+* Para detectar las bases de datos de Microsoft SQL en un clúster de Windows, debe desbloquear el puerto TCP/IP de la instancia de clúster de conmutación por error (FCI).
+* Si las bases de datos residen en LUN o VMDK de VMware, debe implementar el plugin de SnapCenter para VMware vSphere y registrar el plugin en SnapCenter.
++
+Para obtener más información, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_deploy_snapcenter_plug-in_for_vmware_vsphere.html["Ponga en marcha el plugin de SnapCenter para VMware vSphere"^]
+
+* Si el host se agrega con GMSA y si el GMSA tiene privilegios de inicio de sesión y administrador del sistema, el GMSA se utilizará para conectarse a la instancia de SQL.
+
+
+*Acerca de esta tarea*
+
+No se puede realizar una copia de seguridad de las bases de datos si la opción *Estado general* de la página Detalles está establecida en no disponible para la copia de seguridad. La opción *Estado general* se establece en no disponible para copia de seguridad cuando se cumple alguna de las siguientes condiciones:
+
+* Las bases de datos no se encuentran en un LUN de NetApp.
+* Las bases de datos no están en estado normal.
++
+Las bases de datos no se encuentran en el estado normal cuando están sin conexión, en restauración, pendientes de recuperación, suspendidas, etc.
+
+* Las bases de datos tienen privilegios insuficientes.
++
+Por ejemplo, si un usuario solo tiene acceso para ver la base de datos, no será posible identificar los archivos y las propiedades de la base de datos, por lo que no se podrá realizar un backup.
+
+
+
+
+NOTE: SnapCenter sólo puede realizar una copia de seguridad de la base de datos primaria si tiene una configuración de grupo de disponibilidad en SQL Server Standard Edition.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione *Database*, *Instance* o *Availability Group* en la lista desplegable *View*.
++
+Haga clic en image:../media/filter_icon.gif[""] Y seleccione el nombre del host y la instancia de SQL Server para filtrar los recursos. A continuación, puede hacer clic en image:../media/filter_icon.gif[""] para cerrar el panel de filtros.
+
+. Haga clic en *Actualizar recursos*.
++
+Los recursos recién agregados, cuyo nombre se ha cambiado o eliminado se actualizan al inventario de SnapCenter Server.
+
++
+
+IMPORTANT: Es necesario actualizar los recursos si se cambia el nombre de las bases de datos fuera de SnapCenter.
+
++
+Los recursos se muestran junto con cierta información, como el tipo de recurso, el host o el nombre del clúster, los grupos de recursos asociados, el tipo de backup, las políticas y el estado general.
+
++
+** Si la base de datos se encuentra en un almacenamiento de terceros, `Not available for backup` Aparece en la columna *Estado general*.
++
+No es posible ejecutar operaciones de protección de datos en una base de datos que se encuentra en un almacenamiento de terceros.
+
+** Si la base de datos se encuentra en un almacenamiento de NetApp y no está protegida, `Not protected` Aparece en la columna *Estado general*.
+** Si una base de datos se encuentra en un sistema de almacenamiento de NetApp y está protegida, se muestra la interfaz de usuario `Backup not run` Mensaje en la columna *Estado general*.
+** Si una base de datos se encuentra en un sistema de almacenamiento de NetApp y está protegida, y se activa el backup para la base de datos, aparece la interfaz de usuario de `Backup succeeded` Mensaje en la columna *Estado general*.
+
+
+
+
+
+NOTE: Si ha habilitado una autenticación SQL al configurar las credenciales, la instancia o base de datos detectadas se mostrarán con un icono de candado rojo. Si aparece el icono de candado, debe especificar las credenciales de la instancia o la base de datos para añadir correctamente la instancia o la base de datos al grupo de recursos.
+
+Después de que el administrador de SnapCenter asigne los recursos a un usuario de RBAC, el usuario de RBAC debe iniciar sesión y hacer clic en *Actualizar recursos* para ver la última *Estado general* de los recursos.

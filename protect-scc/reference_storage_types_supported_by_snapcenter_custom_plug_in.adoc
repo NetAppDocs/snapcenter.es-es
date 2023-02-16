@@ -1,0 +1,39 @@
+---
+permalink: protect-scc/reference_storage_types_supported_by_snapcenter_custom_plug_in.html 
+sidebar: sidebar 
+keywords:  
+summary: SnapCenter admite una amplia variedad de tipos de almacenamiento en máquinas físicas y virtuales. Debe comprobar la compatibilidad de su tipo de almacenamiento antes de instalar los plugins personalizados de SnapCenter. 
+---
+= Tipos de almacenamiento compatibles con los plugins personalizados de SnapCenter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapCenter admite una amplia variedad de tipos de almacenamiento en máquinas físicas y virtuales. Debe comprobar la compatibilidad de su tipo de almacenamiento antes de instalar los plugins personalizados de SnapCenter.
+
+|===
+| Máquina | Tipo de almacenamiento 
+
+
+ a| 
+Servidores físicos y virtuales (los VMDK y LUN de RDM no son compatibles)
+ a| 
+LUN conectados a FC
+
+
+
+ a| 
+Servidores físicos y virtuales (los VMDK y LUN de RDM no son compatibles)
+ a| 
+LUN conectados a iSCSI
+
+
+
+ a| 
+Servidores físicos y virtuales (los VMDK y LUN de RDM no son compatibles)
+ a| 
+Volúmenes conectados en NFS
+
+|===

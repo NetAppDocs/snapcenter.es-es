@@ -1,0 +1,73 @@
+---
+permalink: protect-sce/task_define_a_restore_strategy_for_exchange_databases.html 
+sidebar: sidebar 
+keywords:  
+summary: Definir una estrategia de restauración para servidor de Exchange permite restaurar correctamente la base de datos. 
+---
+= Definir una estrategia de restauración para bases de datos de Exchange
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Definir una estrategia de restauración para servidor de Exchange permite restaurar correctamente la base de datos.
+
+
+
+== Orígenes para una operación de restauración en Exchange Server
+
+Es posible restaurar una base de datos de Exchange Server desde una copia de backup en el almacenamiento primario.
+
+Es posible restaurar bases de datos solo desde el almacenamiento primario.
+
+
+
+== Tipos de operaciones de restauración compatibles con Exchange Server
+
+Es posible usar SnapCenter para ejecutar diferentes tipos de operaciones de restauración de los recursos de Exchange.
+
+* Restauración de último minuto
+* Restauración a un momento específico
+
+
+
+
+=== Restauración de último minuto
+
+En una operación de restauración de último minuto, se recuperan las bases de datos hasta el punto de error. SnapCenter usa la siguiente secuencia para este proceso:
+
+. Restaura las bases de datos desde el backup completo de la base de datos que se seleccione.
+. Aplica todos los registros de transacciones incluidos en el backup, así como los nuevos registros que se hayan creado desde el backup más reciente.
++
+Se mueven los registros de transacciones y se aplican a las bases de datos seleccionadas.
+
++
+Exchange crea una nueva cadena de registro una vez que finaliza la restauración.
+
++
+|===
+
+
+| *Mejor práctica:* se recomienda realizar una nueva copia de seguridad completa y de registro una vez finalizada la restauración. 
+|===
++
+Una operación de restauración de último minuto requiere un conjunto de registros de transacciones contiguos.
+
++
+Una vez finalizada una restauración de último minuto, el backup usado para la restauración solo está disponible para las operaciones de restauración a un momento específico.
+
++
+Si no se necesita la funcionalidad de restauración de último minuto para todos los backups, es posible configurar la retención de backup de los registros de transacciones del sistema mediante las políticas de backup.
+
+
+
+
+
+=== Restauración a un momento específico
+
+En una operación de restauración a un momento específico, las bases de datos se restauran únicamente a un punto específico. Esta operación se ejecuta en las siguientes situaciones:
+
+* La base de datos se restaura a un punto específico en un registro de transacciones incluido en un backup.
+* Se restaura la base de datos, y solo se aplica un subconjunto de los registros de transacciones del backup.
+

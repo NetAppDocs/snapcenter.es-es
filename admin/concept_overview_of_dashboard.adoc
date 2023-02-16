@@ -1,0 +1,298 @@
+---
+permalink: admin/concept_overview_of_dashboard.html 
+sidebar: sidebar 
+keywords:  
+summary: 'En el panel de navegación de la izquierda de SnapCenter, Dashboard ofrece un primer vistazo sobre el estado del sistema, incluida la actividad de trabajos recientes, las alertas, el resumen de la protección, la eficiencia y el uso del almacenamiento, el estado de los trabajos de SnapCenter \(backup, clonado, restauración\), el estado de configuración de los hosts independientes y de clústeres de Windows, Número de máquinas virtuales de almacenamiento \(SVM\) gestionadas por SnapCenter y capacidad de licencia.' 
+---
+= Información general de la consola
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+En el panel de navegación de la izquierda de SnapCenter, Dashboard ofrece un primer vistazo sobre el estado del sistema, incluidas la actividad de trabajos recientes, las alertas, el resumen de la protección, la eficiencia y el uso del almacenamiento, el estado de los trabajos de SnapCenter (backup, clonado, restauración), el estado de configuración para los hosts independientes y de clústeres de Windows, Número de máquinas virtuales de almacenamiento (SVM) gestionadas por SnapCenter y capacidad de licencia.
+
+La información que se muestra en la vista de consola varía según el rol asignado al usuario que ha iniciado sesión actualmente en SnapCenter. Es posible que no se muestre parte del contenido si el usuario no tiene permiso para ver dicha información.
+
+En muchos casos, puede ver más información sobre una pantalla si pasa el ratón por *i*. En algunos casos, la información que se muestra en la consola está vinculada a información de origen detallada en páginas de la interfaz gráfica de usuario de SnapCenter, como Recursos, Monitor e informes.
+
+
+
+== Actividades laborales recientes
+
+El icono Recent Job Activities muestra la actividad de trabajos más reciente en cualquier trabajo de backup, restauración y clonado al que tenga acceso. Los trabajos en esta pantalla tienen uno de los siguientes estados: Completed, Warning, Failed, Running, Queued, Y cancelada.
+
+Pasar el ratón por encima de un trabajo proporciona más información. Puede ver información adicional del trabajo haciendo clic en un número de trabajo específico, que le redirige a la página Monitor. Desde ahí, puede obtener detalles del trabajo o información de registro, y generar un informe específico para ese trabajo.
+
+Haga clic en *Ver todos* para ver un historial de todos los trabajos de SnapCenter.
+
+
+
+== Alertas
+
+El icono Alertas muestra las alertas críticas y de advertencia más recientes sin resolver para los hosts y el servidor SnapCenter.
+
+En la parte superior de la pantalla se muestra el número total de alertas críticas y de categoría Advertencia. Al hacer clic en los totales crítico o de advertencia, se le redirige a la página Alertas con el filtro específico aplicado en la página Alertas.
+
+Al hacer clic en una alerta específica, se le redirigirá a la página Alertas para obtener más información sobre dicha alerta. Al hacer clic en *Ver todo* en la parte inferior de la pantalla, se le redirige a la página Alertas para ver una lista de todas las alertas.
+
+
+
+== Último resumen sobre protección
+
+El icono Resumen de protección más reciente brinda el estado de protección de todas las entidades a las que se tiene acceso. De forma predeterminada, la pantalla se establece para proporcionar el estado de todos los plugins. La información de estado se proporciona para los recursos cuyo backup se realiza en un almacenamiento primario como copias de Snapshot y en un almacenamiento secundario mediante tecnologías de SnapMirror y SnapVault. La información sobre el estado de protección para el almacenamiento secundario se basa en el tipo de plugin seleccionado.
+
+
+NOTE: Si utiliza una política de protección de reflejo-almacén, los contadores para el resumen de protección se muestran en el gráfico resumido SnapVault y no en el gráfico de SnapMirror.
+
+El estado de protección para plugins individuales es disponible si selecciona un plugin en el menú desplegable. Un gráfico de donut muestra el porcentaje de recursos protegidos para el plugin seleccionado. Al hacer clic en un segmento de donut, se le redirige a la página *Informes* > *Plug-in*, que proporciona un informe detallado de toda la actividad de almacenamiento principal y secundario del plugin especificado.
+
+
+IMPORTANT: Los informes sobre almacenamiento secundario se aplican solo a SnapVault; los informes de SnapMirror no se admiten.
+
+
+NOTE: SAP HANA proporciona información sobre el estado de protección para almacenamiento primario y secundario para copias de Snapshot. Solo el estado de protección del almacenamiento principal está disponible para backups basados en archivos.
+
+|===
+| Estado de protección | Almacenamiento primario | Almacenamiento secundario 
+
+
+ a| 
+Error
+ a| 
+Número de entidades que forman parte de un grupo de recursos, donde el grupo de recursos ha ejecutado un backup, pero ocurrió un error en el backup.
+ a| 
+Número de entidades con backups que no se pudieron transferir a un destino secundario.
+
+
+
+ a| 
+Exitoso
+ a| 
+Número de entidades en un grupo de recursos, donde se realizó correctamente el backup del grupo de recursos.
+ a| 
+Número de entidades con copias de seguridad que se transfirieron correctamente a un destino secundario.
+
+
+
+ a| 
+No configurado
+ a| 
+Número de entidades que no forman parte de ningún grupo de recursos y que no se han realizado backups.
+ a| 
+Número de entidades que forman parte de uno o varios grupos de recursos que no se han configurado para que las copias de seguridad se transfieran a un destino secundario.
+
+
+
+ a| 
+No iniciada
+ a| 
+Número de entidades que forman parte de un grupo de recursos, pero no se ha ejecutado ningún backup.
+ a| 
+No aplicable
+
+|===
+
+NOTE: Si se utiliza SnapCenter Server 4.2 y una versión anterior del plugin (anterior a 4.2) para crear backups, el icono *Resumen de protección más reciente* no muestra el estado de protección de SnapMirror de estos backups.
+
+
+
+== Trabajos
+
+El icono Jobs brinda un resumen de los trabajos de backup, restauración y clonado a los que se puede acceder. Puede personalizar el lapso de tiempo para cualquier informe mediante el menú desplegable. Las opciones de lapso se corrigen en las últimas 24 horas, en los últimos 7 días y en los últimos 30 días. El informe predeterminado muestra los trabajos de protección de datos ejecutados en los últimos 7 días.
+
+La información de trabajos de backup, restauración y clonado se muestra en los gráficos de donut. Al hacer clic en un segmento de donut, se le redirige a la página Monitor con filtros de trabajo previamente aplicados a la selección.
+
+|===
+| Estado del trabajo | Descripción 
+
+
+ a| 
+Error
+ a| 
+Número de trabajos que no se pudieron completar.
+
+
+
+ a| 
+Advertencia
+ a| 
+Número de trabajos en los que se produjo un error.
+
+
+
+ a| 
+Exitoso
+ a| 
+Número de trabajos completados correctamente.
+
+
+
+ a| 
+Ejecutando
+ a| 
+Recuento de trabajos que se están ejecutando actualmente.
+
+|===
+
+
+== Reducida
+
+El icono almacenamiento muestra el almacenamiento primario y secundario que consumen los trabajos de protección en un periodo de 90 días, muestra gráficamente las tendencias de consumo y calcula el ahorro en almacenamiento primario. La información de almacenamiento se actualiza una vez cada 24 horas a las 12:00 a.m.
+
+El total de consumo del día, que comprende el número total de backups disponibles en SnapCenter y el tamaño ocupado por estos backups, se mostrará en la parte superior de la pantalla. Un respaldo podría tener varias copias Snapshot asociadas y el número reflejará la misma. Esto se puede aplicar tanto a copias de Snapshot primarias como secundarias. Por ejemplo, ha creado 10 backups, de los cuales 2 se eliminan debido a la retención de backup basado en políticas y 1 backup se elimina explícitamente por usted. Por lo tanto, se mostrará el recuento de 7 backups junto con el tamaño ocupado por estos 7 backups.
+
+El factor de ahorro en almacenamiento del almacenamiento primario es la proporción de la capacidad lógica (ahorros en copias Snapshot y clones, además del almacenamiento consumido) con la capacidad física del almacenamiento primario. Un gráfico de barras ilustra el ahorro en almacenamiento.
+
+El gráfico de líneas traza por separado el consumo de almacenamiento primario y secundario día a día durante un período de 90 días rotativas. Pasar el puntero por los gráficos ofrece resultados detallados día a día.
+
+
+NOTE: Si se utiliza SnapCenter Server 4.2 y una versión anterior del plugin (anterior a 4.2) para crear backups, el icono *almacenamiento* no muestra la cantidad de backups, el almacenamiento consumido por estos backups, el ahorro de Snapshot, el ahorro de clonado y el tamaño de la snapshot.
+
+
+
+== Configuración
+
+El icono Configuración proporciona información de estado consolidada para todos los hosts activos independientes y de clústeres de Windows que SnapCenter gestiona, y a los que tiene acceso. Esto incluye la información de estado del plugin asociado con esos hosts.
+
+Al hacer clic en el número adyacente a los hosts, se le redirige a la sección Managed hosts de la página hosts. Desde allí, es posible obtener información detallada de un host seleccionado.
+
+Además, esta pantalla muestra la suma de las SVM independientes de ONTAP y de ONTAP de clúster que gestiona SnapCenter y a las que tiene acceso. Al hacer clic en el número adyacente a la SVM, se le redirigirá a la página sistemas de almacenamiento. A partir de ese punto, se puede obtener información detallada de una SVM seleccionada.
+
+El estado de configuración del host se presenta como rojo (crítico), amarillo (advertencia) y verde (activo), junto con el número de hosts en cada estado. Los mensajes de estado se proporcionan para cada estado.
+
+|===
+| Estado de configuración | Descripción 
+
+
+ a| 
+Actualización obligatoria
+ a| 
+Número de hosts que ejecutan plugins no compatibles y necesitan una actualización. Esta versión de SnapCenter no admite un plugin no compatible.
+
+
+
+ a| 
+Migración obligatoria
+ a| 
+Número de hosts que ejecutan plugins no compatibles y necesitan migración. Esta versión de SnapCenter no admite un plugin no compatible.
+
+
+
+ a| 
+No hay plugins instalados
+ a| 
+El número de hosts que se añaden correctamente, pero es necesario instalar los plugins o se ha producido un error en la instalación de los plugins.
+
+
+
+ a| 
+Suspendida
+ a| 
+El número de hosts cuyas programaciones están suspendidas y están bajo mantenimiento.
+
+
+
+ a| 
+Detenido
+ a| 
+El número de hosts que están activos, pero los servicios de plugins no están en ejecución.
+
+
+
+ a| 
+Host inactivo
+ a| 
+Número de hosts inactivos o no accesibles.
+
+
+
+ a| 
+Actualización disponible (opcional)
+ a| 
+Cuente con los hosts en los que hay disponible una versión más reciente del paquete de plugins para su actualización.
+
+
+
+ a| 
+Migración disponible (opcional)
+ a| 
+Cuente con hosts en los que hay disponible una versión más reciente del plugin para la migración.
+
+
+
+ a| 
+Configure el directorio de registro
+ a| 
+Número de hosts donde debe configurarse el directorio de registro para que SCSQL realizar backup de registros de transacciones.
+
+
+
+ a| 
+Configure los plugins de VMware
+ a| 
+El número de hosts donde debe añadirse el plugin de SnapCenter para VMware vSphere.
+
+
+
+ a| 
+Desconocido
+ a| 
+Número de hosts que se han registrado pero la instalación aún no se ha activado.
+
+
+
+ a| 
+Ejecutando
+ a| 
+El número de hosts que están activos y plugins en ejecución. Y en el caso de los plugins de SCSQL, se configuran el directorio de registro y el hipervisor.
+
+
+
+ a| 
+Instalando\desinstalando plugins
+ a| 
+Número de hosts en los que se está realizando la instalación o la desinstalación de plugins.
+
+|===
+
+
+== Capacidad con licencia
+
+El icono de capacidad con licencia muestra información sobre la capacidad total con licencia, la capacidad utilizada, las alertas de umbral de capacidad y las alertas de caducidad de licencias para licencias basadas en capacidad estándar de SnapCenter.
+
+
+NOTE: Esta pantalla solo aparece si se utilizan licencias basadas en capacidad estándar de SnapCenter en plataformas Cloud Volumes ONTAP o ONTAP Select. En el caso de las plataformas FAS o AFF, la licencia de SnapCenter se basa en controladoras y tiene licencias para ofrecer una capacidad ilimitada y no se necesita ninguna licencia por capacidad.
+
+|===
+| Estado de la licencia | Descripción 
+
+
+ a| 
+En uso
+ a| 
+Cantidad de capacidad actualmente en uso.
+
+
+
+ a| 
+Notificar
+ a| 
+Umbral de capacidad en el que se muestran notificaciones en la consola y, si se configuró esta opción, el momento en que se envían notificaciones.
+
+
+
+ a| 
+Con licencia
+ a| 
+Cantidad de capacidad que otorga la licencia.
+
+
+
+ a| 
+Una vez
+ a| 
+La cantidad de capacidad que ha superado la capacidad con licencia.
+
+|===

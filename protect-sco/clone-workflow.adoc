@@ -1,0 +1,25 @@
+---
+permalink: protect-sco/clone-workflow.html 
+sidebar: sidebar 
+keywords: clone operation, clone, workflow 
+summary: El flujo de trabajo de clonado incluye planificar, realizar la operación de clonado y supervisar la operación. 
+---
+= Flujo de trabajo de clonado
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El flujo de trabajo de clonado incluye planificar, realizar la operación de clonado y supervisar la operación.
+
+Pueden clonarse bases de datos por los siguientes motivos:
+
+* Para poner a prueba una funcionalidad que debe implementarse con la estructura y el contenido de la base de datos actual durante ciclos de desarrollo de aplicaciones.
+* Para completar almacenes de datos con herramientas de extracción y manipulación de datos.
+* Para recuperar datos que se eliminaron o se modificaron por error.
+
+
+Los siguientes flujos de trabajo muestran la secuencia que debe seguirse para realizar la operación de clonado:
+
+image::../media/sco_scc_wfs_clone_workflow.png[flujo de trabajo de clonado]

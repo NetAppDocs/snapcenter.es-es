@@ -1,0 +1,148 @@
+---
+permalink: protect-scsql/task_create_resource_groups_and_attach_policies_for_sql_server.html 
+sidebar: sidebar 
+keywords: run as 
+summary: Un grupo de recursos es un contenedor al cual se añaden recursos que se quieren incluir en un backup y proteger en su conjunto. Un grupo de recursos permite realizar un backup en simultáneo de todos los datos que están asociados con una determinada aplicación. Un grupo de recursos es necesario para cualquier trabajo de protección de datos. También debe añadir una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar. 
+---
+= Crear grupos de recursos y asociar políticas para SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Un grupo de recursos es un contenedor al cual se añaden recursos que se quieren incluir en un backup y proteger en su conjunto. Un grupo de recursos permite realizar un backup en simultáneo de todos los datos que están asociados con una determinada aplicación. Un grupo de recursos es necesario para cualquier trabajo de protección de datos. También debe añadir una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar.
+
+Puede proteger los recursos individualmente sin crear un grupo de recursos nuevo. Puede realizar backups del recurso protegido.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione *Database* en la lista *View*.
++
+
+NOTE: Si recientemente ha agregado un recurso a SnapCenter, haga clic en *Actualizar recursos* para ver el recurso recién añadido.
+
+. Haga clic en *Nuevo grupo de recursos*.
+. En la página Name, realice los siguientes pasos:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Nombre
+ a| 
+Escriba el nombre del grupo de recursos.
+
+
+NOTE: El nombre del grupo de recursos no debe superar los 250 caracteres.
+
+
+
+ a| 
+Etiquetas
+ a| 
+Escriba una o más etiquetas que más adelante le permitirán buscar el grupo de recursos. Por ejemplo, si añadió HR como etiqueta a varios grupos de recursos, más adelante encontrará todos los grupos de recursos asociados usando esa etiqueta.
+
+
+
+ a| 
+Utilice un formato de nombre personalizado para la copia de Snapshot
+ a| 
+Opcional: Escriba un nombre de copia de Snapshot personalizado y su formato. Por ejemplo, customtext_resourcegroup_policy_hostname o resourcegroup_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+
+|===
+. En la página Resources, realice los siguientes pasos:
++
+.. Seleccione el nombre del host, el tipo de recurso y la instancia de SQL Server en las listas desplegables para filtrar la lista de recursos.
++
+
+NOTE: Si recientemente añadió recursos, aparecerán en la lista Available Resources solo después de actualizar la lista de recursos.
+
+.. Para mover recursos de la sección *Recursos disponibles* a la sección Recursos seleccionados, realice uno de los siguientes pasos:
++
+*** Seleccione *Autoselect all resources on same Storage volume* para mover todos los recursos del mismo volumen a la sección Selected Resources.
+*** Seleccione los recursos de la sección *Recursos disponibles* y, a continuación, haga clic en la flecha derecha para moverlos a la sección *Recursos seleccionados*.
+
+
+
+
+. En la página Policies, realice los siguientes pasos:
++
+.. Seleccione una o varias políticas de la lista desplegable.
++
+
+NOTE: También puede crear una directiva haciendo clic en *image:../media/add_policy_from_resourcegroup.gif[""]*.
+
++
+En la sección Configure schedules for selected policies, se muestran las políticas seleccionadas.
+
+.. En la sección Configure schedules for selected policies, haga clic en *image:../media/add_policy_from_resourcegroup.gif[""]* En la columna Configure Schedules correspondiente a la directiva para la que desea configurar la programación.
+.. En el cuadro de diálogo Add schedules for policy _policy_name_, configure la programación especificando la fecha de inicio, la fecha de caducidad y la frecuencia y, a continuación, haga clic en *Aceptar*.
++
+Debe hacerlo con cada frecuencia que figure en la política. Los horarios configurados se enumeran en la columna Applied Schedules en la sección *Configure schedules for selected policies*.
+
+.. Seleccione Microsoft SQL Server Scheduler.
++
+También debe seleccionar una instancia de programador para asociar con la política de programación.
+
++
+Si no selecciona Microsoft SQL Server Scheduler, el valor predeterminado es Microsoft Windows Scheduler.
+
+
+
++
+No se admiten programas de backup de terceros cuando se solapan con los programas de backup de SnapCenter. No debe modificar las programaciones y cambiar el nombre del trabajo de backup creado en el programador de Windows o el agente de SQL Server.
+
+. En la página Verification, realice los siguientes pasos:
++
+.. Seleccione el servidor de verificación de la lista desplegable *servidor de verificación*.
++
+La lista incluye todos los servidores SQL agregados en SnapCenter. Puede seleccionar varios servidores de verificación (host local o remoto).
+
++
+
+NOTE: La versión del servidor de verificación debe coincidir con la versión y edición del servidor SQL que aloja la base de datos principal.
+
+.. Haga clic en *Load locators* para cargar los volúmenes de SnapMirror y SnapVault y realizar la verificación en el almacenamiento secundario.
+.. Seleccione la política para la que desea configurar la programación de verificación y haga clic en *image:../media/add_policy_from_resourcegroup.gif[""]*.
+.. En el cuadro de diálogo Add Verification Schedules policy_name, realice las siguientes acciones:
++
+|===
+| Si desea... | Realice lo siguiente... 
+
+
+ a| 
+Ejecutar la verificación después del backup
+ a| 
+Seleccione *Ejecutar verificación después de la copia de seguridad*.
+
+
+
+ a| 
+Programar una verificación
+ a| 
+Seleccione *Ejecutar verificación programada*.
+
+|===
+.. Haga clic en *Aceptar*.
++
+Las programaciones configuradas figuran en la columna Applied Schedules. Puede revisar y editar haciendo clic en *image:../media/edit_icon.gif["icono para editar programaciones configuradas"]* o eliminar haciendo clic en *image:../media/delete_icon_for_configuringschedule.gif["icono de eliminar"]*.
+
+
+
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
++
+También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. Si desea adjuntar el informe de la operación realizada en el grupo de recursos, seleccione *Adjuntar informe de trabajo*.
+
++
+
+NOTE: Para habilitar la notificación por correo electrónico, debe tener especificados los detalles del servidor SNMP ya sea mediante la GUI o el comando Set-SmSmtpServer de PowerShell.
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+
+
+*Más información*
+
+link:task_create_backup_policies_for_sql_server_databases.html["Crear políticas de backup para bases de datos de SQL Server"]

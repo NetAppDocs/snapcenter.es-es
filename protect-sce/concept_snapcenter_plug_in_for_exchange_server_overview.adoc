@@ -1,0 +1,18 @@
+---
+permalink: protect-sce/concept_snapcenter_plug_in_for_exchange_server_overview.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for Exchange Server 
+summary: El plugin de SnapCenter para Microsoft Exchange Server es un componente en el lado del host de NetApp SnapCenter Software que permite la gestión de protección de datos para aplicaciones de bases de datos de Exchange. El plugin para Exchange automatiza el backup y la restauración de bases de datos de Exchange en el entorno de SnapCenter. 
+---
+= Información general sobre el plugin de SnapCenter para Microsoft Exchange Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El plugin de SnapCenter para Microsoft Exchange Server es un componente en el lado del host de NetApp SnapCenter Software que permite la gestión de protección de datos para aplicaciones de bases de datos de Exchange. El plugin para Exchange automatiza el backup y la restauración de bases de datos de Exchange en el entorno de SnapCenter.
+
+Cuando se instala el plugin para Exchange, es posible utilizar SnapCenter con la tecnología SnapMirror de NetApp para crear copias de reflejo de conjuntos de backups en otro volumen, y también con la tecnología SnapVault de NetApp para realizar replicaciones de backup disco a disco para cumplimiento de normativas o fines de archivado.
+
+Si desea restaurar y recuperar correos electrónicos o buzones en lugar de completar base de datos de Exchange, puede utilizar el software Single Mailbox Recovery (SMBR).

@@ -1,0 +1,66 @@
+---
+permalink: protect-sce/task_reseed_a_passive_exchange_node_replica.html 
+sidebar: sidebar 
+keywords:  
+summary: Si necesita realimentar una copia de réplica, por ejemplo, cuando una copia está dañada, puede realimentar el backup más reciente con la función de propagación en SnapCenter. 
+---
+= Propagación de una réplica pasiva del nodo de Exchange
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si necesita realimentar una copia de réplica, por ejemplo, cuando una copia está dañada, puede realimentar el backup más reciente con la función de propagación en SnapCenter.
+
+*Lo que necesitará*
+
+* Debe utilizar SnapCenter Server 4.1 o una versión posterior, y el plugin para Exchange 4.1 o una versión posterior.
++
+Las versiones de SnapCenter anteriores a 4.1 no admiten volver a insertar una réplica.
+
+* Debe haber creado un backup de la base de datos que desea realimentar.
+
+
+|===
+
+
+| *Práctica recomendada:* para evitar el retraso entre nodos, recomendamos crear una nueva copia de seguridad antes de realizar una operación de propagación o elegir el host con la última copia de seguridad. 
+|===
+* Pasos*
+
+. En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione *plug-in de Microsoft Exchange Server* en la lista.
+. En la página Resources, seleccione la opción correspondiente en la lista View:
++
+|===
+| Opción | Descripción 
+
+
+ a| 
+Para realimentar una sola base de datos
+ a| 
+Seleccione *base de datos* en la lista View.
+
+
+
+ a| 
+Para realimentar bases de datos en un DAG
+ a| 
+Seleccione *Grupo de disponibilidad de base de datos* en la lista View.
+
+|===
+. Seleccione el recurso que desea propagar.
+. En la página Administrar copias, haga clic en *propagación*.
+. En la lista de copias de bases de datos que no son saludables del asistente de propagación, seleccione la que desea propagar y haga clic en *Siguiente*.
+. En la ventana Host, seleccione el host con el backup del que desea reinicializar y haga clic en *Siguiente*.
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
++
+También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo.
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Para ver el estado de la tarea, se debe expandir el panel Activity en la parte inferior de la página.
++
+
+NOTE: La operación de propagación no es compatible si la copia de base de datos pasiva reside en un almacenamiento de terceros.
+
+
