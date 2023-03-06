@@ -9,7 +9,7 @@ entries:
 - title: Base de servicios web DE REST
   url: "/sc-automation/concept_rest_web_services_foundation.html"
 - title: Características operativas básicas
-  url: "/sc-automation/concept_basic_operational_characterstics.html"
+  url: "/sc-automation/concept_basic_operational_characteristics.html"
 - title: Variables de entrada que controlan una solicitud API
   url: "/sc-automation/concept_input_variables_controlling_an_api_request.html"
 - title: Interpretación de una respuesta API
