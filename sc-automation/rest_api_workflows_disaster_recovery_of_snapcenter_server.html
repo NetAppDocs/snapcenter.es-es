@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
   <head class="at-element-marker">
-  <title>API DE REST compatible con la recuperación ante desastres de SnapCenter Server</title>
+  <title>API DE REST de recuperación ante desastres (DR)</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="API DE REST compatible con la recuperación ante desastres de SnapCenter Server" />
+  <meta property="og:title" content="API DE REST de recuperación ante desastres (DR)" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/es-es/snapcenter/sc-automation/rest_api_workflows_disaster_recovery_of_snapcenter_server.html" />
 	<meta property="og:description" content="La funcionalidad de recuperación ante desastres de SnapCenter usa API DE REST para hacer backups de SnapCenter Server." />
@@ -204,7 +204,7 @@
     </li>
     
   </ul>
-</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/snapcenter/issues/new?body=Page%3A%20[API DE REST compatible con la recuperación ante desastres de SnapCenter Server](https://docs.netapp.com/es-es/snapcenter/sc-automation/rest_api_workflows_disaster_recovery_of_snapcenter_server.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/es-es/snapcenter/images/discuss-sm.svg" alt="" class="github-icon" />Solicitar cambios en el documento</a><a target="_blank" href="https://github.com/NetAppDocs/snapcenter/blob/main/sc-automation/rest_api_workflows_disaster_recovery_of_snapcenter_server.adoc" class="page-nav-contribute-link" role="button"><img src="/es-es/snapcenter/images/edit-sm.svg" alt="" class="github-icon" />Editar en GitHub</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/es-es/snapcenter/images/article-sm.svg" alt="" class="github-icon" />Guía del colaborador</a></div>
+</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/snapcenter/issues/new?body=Page%3A%20[API DE REST de recuperación ante desastres (DR)](https://docs.netapp.com/es-es/snapcenter/sc-automation/rest_api_workflows_disaster_recovery_of_snapcenter_server.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/es-es/snapcenter/images/discuss-sm.svg" alt="" class="github-icon" />Solicitar cambios en el documento</a><a target="_blank" href="https://github.com/NetAppDocs/snapcenter/blob/main/sc-automation/rest_api_workflows_disaster_recovery_of_snapcenter_server.adoc" class="page-nav-contribute-link" role="button"><img src="/es-es/snapcenter/images/edit-sm.svg" alt="" class="github-icon" />Editar en GitHub</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/es-es/snapcenter/images/article-sm.svg" alt="" class="github-icon" />Guía del colaborador</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">EN ESTA PÁGINA</div>
@@ -6777,14 +6777,14 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">API DE REST compatible con la recuperación ante desastres de SnapCenter Server</h1>
+  <h1 class="n-doc__component-detail-heading">API DE REST de recuperación ante desastres (DR)</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2023-02-20 21:25:10 +0000">02/20/2023</time>
+    <time datetime="2023-03-08 03:21:17 +0000">03/08/2023</time>
     
   
 
@@ -6794,8 +6794,121 @@
 
 </p>
 
-<div class="paragraph lead">
-<p>La funcionalidad de recuperación ante desastres de SnapCenter usa API REST para hacer backups de SnapCenter Server. Con las API DE REST, es posible realizar las siguientes operaciones en la página de API de REST de Swagger. Para obtener información sobre cómo acceder a la página de Swagger, consulte <a href="https://docs.netapp.com/us-en/snapcenter/sc-automation/task_how%20to_access_rest_apis_using_the_swagger_api_web_page.html">"Cómo acceder a las API de REST con la página web de la API swagger"</a>.</p>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>La funcionalidad de recuperación ante desastres de SnapCenter usa API REST para hacer backups de SnapCenter Server. Realice los pasos siguientes antes de usar las API DE REST de DR.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pasos*</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Cree un nuevo backup de recuperación ante desastres de servidor, que restaura un servidor SnapCenter desde un backup de recuperación ante desastres de servidor específico mediante la API DE REST de backup de recuperación ante desastres: <code>/4.5/disasterrecovery/server/backup</code></p>
+</li>
+<li>
+<p>Traer la máquina del servidor secundario, pero antes de instalar el servidor SnapCenter en el servidor secundario debe completar los requisitos previos.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>El nombre de host/FQDN de host del servidor alternativo debe ser el mismo que el nombre de host del servidor primario, pero la dirección IP puede ser diferente.</p>
+</li>
+<li>
+<p>La versión del servidor secundario debe ser la misma que la del servidor primario.</p>
+</li>
+<li>
+<p>El SnapCenter secundario debe instalarse en la misma ubicación y en el mismo puerto que el primario.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Antes de activar la operación de restauración de recuperación ante desastres de servidor, debe obtener la ruta de destino o la ruta en la que se almacenan los backups de DR después del desastre.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Asegúrese de que los archivos de backup de recuperación ante desastres se copien al nuevo servidor SnapCenter mediante el comando siguiente:
+<code>xcopy &lt;Ssource_Path&gt; \\&lt;Destination_Server_IP&gt;\&lt;Folder_Path&gt; /O /X /E /H /K {ex : xcopy C:\DRBackup \\10.225.81.114\c$\DRBackup /O /X /E /H /K}</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Instalar el servidor SnapCenter en la máquina secundaria.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Al realizar la operación de restauración de recuperación ante desastres, debe asegurarse de que no exista ningún trabajo en ejecución relacionado con el servidor SnapCenter.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Instale el servidor SnapCenter secundario en la misma ubicación y en el mismo puerto que el servidor primario.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Realizar la operación de restauración de recuperación ante desastres del servidor mediante la API de restauración de recuperación ante desastres:  <code>/4.5/disasterrecovery/server/restore</code></p>
+<div class="paragraph">
+<p>Si el plugin no puede resolver el nombre de host del servidor, inicie sesión en cada host del plugin y añada la entrada etc/host para la nueva IP en el formato &lt;New IP&gt; SC_Server_Name. Por ejemplo: <code>10.225.81.35 SCServer1</code></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Las entradas del servidor etc/host no se restaurarán. Puede restaurarlo manualmente desde la carpeta de backup de recuperación ante desastres.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/snapcenter/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+Para una configuración de F5, la operación de restauración se realiza como independiente, debe ejecutar un conjunto de comandos para volver a crear la F5. Consulte el enlace: <a href="https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_Migrate_SnapCenter_migrate_to_another_Server" target="_blank" rel="noopener">"Cómo migrar SnapCenter a otro servidor"</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/snapcenter/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+Después de la restauración de recuperación ante desastres, se añadirá el host, pero debe instalar el plugin manualmente.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/snapcenter/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+La programación de backup del repositorio se restaurará únicamente si instala el plugin de SnapCenter para Windows y asocia LUN de NetApp a la máquina servidor.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="api-de-rest-compatible-con-la-recuperación-ante-desastres-de-snapcenter-server">API DE REST compatible con la recuperación ante desastres de SnapCenter Server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Con las API DE REST, es posible realizar las siguientes operaciones en la página de API de REST de Swagger. Para obtener información sobre cómo acceder a la página de Swagger, consulte <a href="https://docs.netapp.com/us-en/snapcenter/sc-automation/task_how%20to_access_rest_apis_using_the_swagger_api_web_page.html">"Cómo acceder a las API de REST con la página web de la API swagger"</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Lo que necesitará</strong></p>
@@ -6818,14 +6931,12 @@
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 9.0909%;">
-<col style="width: 36.3636%;">
-<col style="width: 45.4545%;">
-<col style="width: 9.091%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Paso</th>
 <th class="tableblock halign-left valign-top">Descripción</th>
 <th class="tableblock halign-left valign-top">API REST</th>
 <th class="tableblock halign-left valign-top">Método HTTP</th>
@@ -6833,9 +6944,6 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1</p>
-</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Recuperar los backups de recuperación ante desastres de servidores de SnapCenter existentes</p>
 </div>
@@ -6860,9 +6968,6 @@ Debe proporcionar la ruta de destino donde estén almacenados los backups de rec
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Crear una nueva copia de seguridad de recuperación ante desastres del servidor.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -6874,39 +6979,7 @@ Debe proporcionar la ruta de destino donde estén almacenados los backups de rec
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>3</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Restaura un servidor SnapCenter desde un backup DR de servidor específico.</p>
-</div>
-<div class="paragraph">
-<p><strong>Requisitos previos</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>El nombre de host del servidor alternativo debe ser el mismo que el del servidor primario, pero la dirección IP puede ser diferente.</p>
-</li>
-<li>
-<p>La versión del servidor debe ser la misma que la del servidor principal.</p>
-</li>
-<li>
-<p>Asegúrese de que los archivos de backup de recuperación ante desastres se copien al nuevo servidor SnapCenter mediante el comando siguiente:</p>
-<div class="paragraph">
-<p><code>xcopy &lt;Ssource_Path&gt; \\&lt;Destination_Server_IP&gt;\&lt;Folder_Path&gt; /O /X /E /H /K  {ex : xcopy C:\DRBackup \\10.225.81.114\c$\DRBackup /O /X /E /H /K}</code></p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Si el complemento no puede resolver el nombre de host del servidor, inicie sesión en cada host del plugin y añada la entrada etc/host para la nueva IP con el formato:
-<code>&lt;New IP&gt;	SC_Server_Name</code></p>
-</div>
-<div class="paragraph">
-<p>Por ejemplo, 10.225.81.35 SCServer1</p>
-</div>
-<div class="paragraph">
-<p>No se restaurará el archivo de servidor etc/host. Puede restaurarlo manualmente desde la carpeta de backup de recuperación ante desastres.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>/4.5/disasterrecovery/server/restore</code></p>
@@ -6916,9 +6989,6 @@ Debe proporcionar la ruta de destino donde estén almacenados los backups de rec
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>4</p>
-</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Elimine el backup de recuperación ante desastres del servidor según el nombre de la copia de seguridad.</p>
 </div></div></td>
@@ -6930,9 +7000,6 @@ Debe proporcionar la ruta de destino donde estén almacenados los backups de rec
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>5</p>
-</div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Habilite o deshabilite la recuperación ante desastres de almacenamiento</p>
 </div></div></td>
@@ -6947,6 +7014,8 @@ Debe proporcionar la ruta de destino donde estén almacenados los backups de rec
 </table>
 <div class="paragraph">
 <p>Para obtener más información, consulte <a href="https://www.youtube.com/watch?v=Nbr_wm9Cnd4&amp;list=PLdXI3bZJEw7nofM6lN44eOe4aOSoryckg" target="_blank" rel="noopener">"API de recuperación ante desastres"</a> vídeo.</p>
+</div>
+</div>
 </div>
 
     </article>
