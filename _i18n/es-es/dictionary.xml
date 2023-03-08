@@ -994,11 +994,9 @@
   <block id="d88f90a93bba2698d4e7ca23f96f027d" category="paragraph">Puede acceder a la API DE REST de SnapCenter directamente desde cualquier lenguaje de programación que admita un cliente REST. Entre las opciones de idiomas populares se incluyen Python, PowerShell y Java.</block>
   <block id="78a063ff38d2b793d6d796023bf46a0c" category="doc">API DE REST compatible con la recuperación ante desastres de SnapCenter Server</block>
   <block id="0e8b55402d6627c0f8102010e3494744" category="inline-link-macro">Cómo acceder a las API de REST con la página web de la API swagger</block>
-  <block id="91ab0f2c983023d0027fbe07aa0f3fe7" category="paragraph">La funcionalidad de recuperación ante desastres de SnapCenter usa API REST para hacer backups de SnapCenter Server. Con las API DE REST, es posible realizar las siguientes operaciones en la página de API de REST de Swagger. Para obtener información sobre cómo acceder a la página de Swagger, consulte <block ref="2025c045f65fe4c2f57ea8e2f34bc22a" category="inline-link-macro-rx"></block>.</block>
   <block id="7497c6eb5b40c317a0e3ac59d973ce6b" category="list-text">Debe iniciar sesión como usuario administrador de SnapCenter.</block>
   <block id="c3801e49df2e57ee5488d512e1cf02b0" category="list-text">El servidor SnapCenter debe estar activo y en funcionamiento para ejecutar la API de restauración de recuperación ante desastres.</block>
   <block id="a58600f18618dccbf582ceb82520f1ae" category="paragraph">SnapCenter Server DR es compatible con todos los plugins.</block>
-  <block id="48c7c41b72e1d678923ce3571aa65b2d" category="cell">Paso</block>
   <block id="aba3d4b49c454e1974970e7b5514b001" category="cell">API REST</block>
   <block id="3ded167f4ad4afb85c6ace5862e27ba0" category="cell">Método HTTP</block>
   <block id="c4ca4238a0b923820dcc509a6f75849b" category="paragraph">1</block>
@@ -1006,26 +1004,14 @@
   <block id="c3117c33abd012814d4b2d7b924c1f8d" category="admonition">Debe proporcionar la ruta de destino donde estén almacenados los backups de recuperación ante desastres.</block>
   <block id="5683cd95d1258c1198131ee3fde12f8f" category="paragraph"><block ref="8165860b05af4f9b66e6a4ce08f04ef6" prefix="" category="inline-code"></block></block>
   <block id="7528035a93ee69cedb1dbddb2f0bfcc8" category="paragraph">OBTENGA</block>
-  <block id="c81e728d9d4c2f636f067f89cc14862c" category="paragraph">2</block>
   <block id="2012ae142f225323da2a6e6b42372bd8" category="paragraph">Crear una nueva copia de seguridad de recuperación ante desastres del servidor.</block>
   <block id="4d5710dee895c5f98e2a36bdeef9d63c" category="paragraph"><block ref="fe172164c0bbfbb71439d4e0d42883f5" prefix="" category="inline-code"></block></block>
   <block id="a02439ec229d8be0e74b0c1602392310" category="paragraph">PUBLICAR</block>
-  <block id="eccbc87e4b5ce2fe28308fd9f2a7baf3" category="paragraph">3</block>
   <block id="3d53caca8e9b880190a77914260432ef" category="paragraph">Restaura un servidor SnapCenter desde un backup DR de servidor específico.</block>
-  <block id="fc01add8dc5e609f9be29c977daabdb7" category="paragraph">*Requisitos previos*</block>
-  <block id="119b209f3bca82380d31e9ec34d4997b" category="list-text">El nombre de host del servidor alternativo debe ser el mismo que el del servidor primario, pero la dirección IP puede ser diferente.</block>
-  <block id="f052ac36f43bc8a21796f6c4fc5a79e2" category="list-text">La versión del servidor debe ser la misma que la del servidor principal.</block>
-  <block id="58d4bb8d9e64a51c8e256edf1012afef" category="list-text">Asegúrese de que los archivos de backup de recuperación ante desastres se copien al nuevo servidor SnapCenter mediante el comando siguiente:</block>
-  <block id="9d50f2e9dcf6f8828b93d76e4e348c5c" category="paragraph"><block ref="63645834ffd285c7ed3da7338fcb6d8b" prefix="" category="inline-code"></block></block>
-  <block id="6318bc3cec87bcdb03cab32f9670f6dc" category="paragraph">Si el complemento no puede resolver el nombre de host del servidor, inicie sesión en cada host del plugin y añada la entrada etc/host para la nueva IP con el formato:<block ref="6e5eb9ff6139cd7586b3cc2aa0497f7f" prefix=" " category="inline-code"></block></block>
-  <block id="a09638d3ee7f516207640b2340404009" category="paragraph">Por ejemplo, 10.225.81.35 SCServer1</block>
-  <block id="6d4bea151109003c5e0920bae84073a0" category="paragraph">No se restaurará el archivo de servidor etc/host. Puede restaurarlo manualmente desde la carpeta de backup de recuperación ante desastres.</block>
   <block id="4be41a636618a9946610f44cdfd45adf" category="paragraph"><block ref="60709718d7a794a4b06a075a7df6ad86" prefix="" category="inline-code"></block></block>
-  <block id="a87ff679a2f3e71d9181a67b7542122c" category="paragraph">4</block>
   <block id="de7c2595c4bced19b8869303d92cef7d" category="paragraph">Elimine el backup de recuperación ante desastres del servidor según el nombre de la copia de seguridad.</block>
   <block id="13914c16a90c0b0c44e99f78ba2183b2" category="paragraph"><block ref="fe172164c0bbfbb71439d4e0d42883f5" prefix="" category="inline-code"></block></block>
   <block id="32f68a60cef40faedbc6af20298c1a1e" category="paragraph">ELIMINAR</block>
-  <block id="e4da3b7fbbce2345d7772b0674a318d5" category="paragraph">5</block>
   <block id="9aa96933bdaa05ec27830a1517e54f9a" category="paragraph">Habilite o deshabilite la recuperación ante desastres de almacenamiento</block>
   <block id="9bb6ced642f1be37b6ad58e85292fffa" category="paragraph"><block ref="d1ce3cd66a1844665a722875b7dc8311" prefix="" category="inline-code"></block></block>
   <block id="27e7993c4841ae5fd670cdd945ccb96d" category="inline-link">API de recuperación ante desastres</block>
@@ -7956,4 +7942,28 @@
   <block id="d03427303a92403b89bef9b602954bc0" category="sidebar">Descubra recursos y prepare contenedores de bases de datos multitenant para la protección de datos</block>
   <block id="d6dd28fb84b3a677cdf709e3bd31e79d" category="sidebar">Restaure bases de datos de SAP HANA</block>
   <block id="f3eb4fe52170db8d54a5cec466e841cf" category="sidebar">Clonar backups de recursos SAP HANA</block>
+  <block id="3f02fb62bfeb289d4be1d20d610004f0" category="doc">API DE REST de recuperación ante desastres (DR)</block>
+  <block id="d32779bdd599ffb81c5a1d466000d56e" category="paragraph">La funcionalidad de recuperación ante desastres de SnapCenter usa API REST para hacer backups de SnapCenter Server. Realice los pasos siguientes antes de usar las API DE REST de DR.</block>
+  <block id="c78f6c96db76c1f69e91b5487e704f43" category="list-text">Cree un nuevo backup de recuperación ante desastres de servidor, que restaura un servidor SnapCenter desde un backup de recuperación ante desastres de servidor específico mediante la API DE REST de backup de recuperación ante desastres:<block ref="fe172164c0bbfbb71439d4e0d42883f5" prefix=" " category="inline-code"></block></block>
+  <block id="f72771614abb57fc7a16f6aa264da665" category="list-text">Traer la máquina del servidor secundario, pero antes de instalar el servidor SnapCenter en el servidor secundario debe completar los requisitos previos.</block>
+  <block id="494f2693f3776d355700eeab7dd75821" category="list-text">El nombre de host/FQDN de host del servidor alternativo debe ser el mismo que el nombre de host del servidor primario, pero la dirección IP puede ser diferente.</block>
+  <block id="31f27d6daa5ab50a1011f7c910c6e5d3" category="list-text">La versión del servidor secundario debe ser la misma que la del servidor primario.</block>
+  <block id="7aafedae29efa6e49e3abbb250243837" category="list-text">El SnapCenter secundario debe instalarse en la misma ubicación y en el mismo puerto que el primario.</block>
+  <block id="8490b635a4e468a237b8b257d031011c" category="list-text">Antes de activar la operación de restauración de recuperación ante desastres de servidor, debe obtener la ruta de destino o la ruta en la que se almacenan los backups de DR después del desastre.</block>
+  <block id="8972c05484753254a6f948a4962b6811" category="list-text">Asegúrese de que los archivos de backup de recuperación ante desastres se copien al nuevo servidor SnapCenter mediante el comando siguiente:<block ref="f9683fa16c9d437a04d3664577ef2872" prefix=" " category="inline-code"></block></block>
+  <block id="4939134c976f3894f29e1ce445b76428" category="list-text">Instalar el servidor SnapCenter en la máquina secundaria.</block>
+  <block id="dc75347cc15e78823bdaadb0ea654097" category="list-text">Al realizar la operación de restauración de recuperación ante desastres, debe asegurarse de que no exista ningún trabajo en ejecución relacionado con el servidor SnapCenter.</block>
+  <block id="9a4130dee8443d03bcdf62bae505136e" category="list-text">Instale el servidor SnapCenter secundario en la misma ubicación y en el mismo puerto que el servidor primario.</block>
+  <block id="5753398a53564a3efa071ab4a2a25e75" category="list-text">Realizar la operación de restauración de recuperación ante desastres del servidor mediante la API de restauración de recuperación ante desastres: <block ref="60709718d7a794a4b06a075a7df6ad86" prefix=" " category="inline-code"></block></block>
+  <block id="e729f7885b63addbf250ef2f33329efb" category="paragraph">Si el plugin no puede resolver el nombre de host del servidor, inicie sesión en cada host del plugin y añada la entrada etc/host para la nueva IP en el formato &lt;New IP&gt; SC_Server_Name. Por ejemplo:<block ref="787ca03a3d14e5cce46cedf0bba7ac2b" prefix=" " category="inline-code"></block></block>
+  <block id="421f836e09d607d08dad463276b0c52e" category="paragraph">Las entradas del servidor etc/host no se restaurarán. Puede restaurarlo manualmente desde la carpeta de backup de recuperación ante desastres.</block>
+  <block id="cf6d86307a7decebf79e2175ef2bc96f" category="inline-link">Cómo migrar SnapCenter a otro servidor</block>
+  <block id="40b06602d6310e9f595ec07f57b84775" category="admonition">Para una configuración de F5, la operación de restauración se realiza como independiente, debe ejecutar un conjunto de comandos para volver a crear la F5. Consulte el enlace:<block ref="fb5c34144d693d79610d99e63e5e4e12" category="inline-link-rx"></block></block>
+  <block id="d51a9a84121a4ca319f6f0b5d481f073" category="admonition">Después de la restauración de recuperación ante desastres, se añadirá el host, pero debe instalar el plugin manualmente.</block>
+  <block id="2dce035ff36be1c01663c842167acf77" category="admonition">La programación de backup del repositorio se restaurará únicamente si instala el plugin de SnapCenter para Windows y asocia LUN de NetApp a la máquina servidor.</block>
+  <block id="d894da67863cc5e9abfa9afc40b47771" category="paragraph">Con las API DE REST, es posible realizar las siguientes operaciones en la página de API de REST de Swagger. Para obtener información sobre cómo acceder a la página de Swagger, consulte <block ref="2025c045f65fe4c2f57ea8e2f34bc22a" category="inline-link-macro-rx"></block>.</block>
+  <block id="04f76259e3406e39f106d09b85354906" category="inline-link">Los backups de SnapCenter para Exchange solo conservan la mitad de las copias Snapshot en el volumen de registro de destino del almacén</block>
+  <block id="67e1d332319e6fe55fd35967c2ec989e" category="admonition">Cree políticas de almacén independientes para registros y bases de datos cuando se trate de volúmenes de Exchange (LUN) y establezca la opción Keep (retención) para la política de registros en el doble de número para cada etiqueta que la política de base de datos, usando las mismas etiquetas. Para obtener más información, consulte:<block ref="069d987d34ba2a5b3f4862b42bb7f849" category="inline-link-rx"></block></block>
+  <block id="b885eb831c1b0ea66dc957240ef0bacd" category="admonition">Al restaurar los archivos de control, asegúrese de que la estructura de directorio existe o se debe crear con las propiedades de usuario y grupo correctas, si las hay, para permitir que los archivos se copien a la ubicación de destino mediante el proceso de restauración. Si no existe el directorio, se producirá un error en el trabajo de restauración.</block>
+  <block id="3a6eb59ee064b09b020c1a87c5de4988" category="admonition">IBM Java no es compatible.</block>
 </blocks>

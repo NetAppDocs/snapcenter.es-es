@@ -77,6 +77,9 @@ Archivos de control
 Seleccione *Archivos de control*.
 
 
+NOTE: Al restaurar los archivos de control, asegúrese de que la estructura de directorio existe o se debe crear con las propiedades de usuario y grupo correctas, si las hay, para permitir que los archivos se copien a la ubicación de destino mediante el proceso de restauración. Si no existe el directorio, se producirá un error en el trabajo de restauración.
+
+
 
  a| 
 Archivos de registro de recuperación

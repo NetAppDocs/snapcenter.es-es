@@ -108,6 +108,10 @@ Se realiza un backup de todas las bases de datos y todos los registros y no hay 
 
 NOTE: Se debe definir el espacio requerido para los backups de registros en función de la retención de backup completo y no en la retención de último minuto (UTM).
 
++
+
+NOTE: Cree políticas de almacén independientes para registros y bases de datos cuando se trate de volúmenes de Exchange (LUN) y establezca la opción Keep (retención) para la política de registros en el doble de número para cada etiqueta que la política de base de datos, usando las mismas etiquetas. Para obtener más información, consulte: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/SnapCenter_for_Exchange_Backups_only_keep_half_the_Snapshots_on_the_Vault_destination_log_volume["Los backups de SnapCenter para Exchange solo conservan la mitad de las copias Snapshot en el volumen de registro de destino del almacén"^]
+
 .. En la sección Database Availability Group Settings, seleccione una acción:
 +
 |===

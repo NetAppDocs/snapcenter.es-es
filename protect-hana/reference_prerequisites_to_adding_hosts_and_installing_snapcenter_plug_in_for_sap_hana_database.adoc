@@ -14,6 +14,10 @@ summary: Antes de añadir un host e instalar los paquetes de plugins, debe cumpl
 Antes de añadir un host e instalar los paquetes de plugins, debe cumplir con todos los requisitos. Plugin SnapCenter para base de datos SAP HANA está disponible en entornos Windows y Linux.
 
 * Debe haber instalado Java 1.8 64 bit en su host.
++
+
+NOTE: IBM Java no es compatible.
+
 * Debe haber instalado el terminal interactivo de base de datos SAP HANA (cliente HDBSQL) en el host.
 * Para Windows, el plugin Creator Service debe ejecutarse con el usuario de Windows "'LocalSystem'", que es el comportamiento predeterminado cuando el plugin para base de datos SAP HANA se instala como administrador de dominio.
 * Para Windows, se deben crear claves de almacenamiento como usuario SYSTEM.
