@@ -196,13 +196,13 @@ Debe tener un usuario con privilegios de administrador local y permisos locales 
 
 Debe tener un usuario con permisos de administrador del sistema en SQL Server. El plugin utiliza Microsoft VDI Framework, para lo que se requiere acceso de sysadmin.
 
-Si utilizaba SnapManager para Microsoft SQL Server y desea importar datos de SnapManager para Microsoft SQL Server a SnapCenter, consulte link:../protect-scsql/concept_import_archived_backups_from_snapmanager_for_sql_to_snapcenter.html["Importación de backups archivados"^]
-
 
 
 == Instale el servidor SnapCenter
 
-*Descargue e instale el servidor SnapCenter*
+
+
+=== Descargue e instale el servidor SnapCenter
 
 * Pasos*
 
@@ -221,7 +221,9 @@ NOTE: El carácter especial “%” no se admite en la ruta personalizada para l
 . Haga clic en *instalar ahora*.
 
 
-*Iniciar sesión en SnapCenter*
+
+
+=== Inicie sesión en SnapCenter
 
 * Pasos*
 
@@ -236,7 +238,9 @@ Para un formato de nombre de usuario de administrador local integrado, utilice _
 . Haga clic en *Iniciar sesión*.
 
 
-*Agregar una licencia estándar basada en controlador SnapCenter*
+
+
+=== Añada una licencia estándar basada en controladora de SnapCenter
 
 * Pasos*
 
@@ -250,7 +254,9 @@ Para un formato de nombre de usuario de administrador local integrado, utilice _
 
 
 
-*Agregar una licencia basada en capacidad de SnapCenter*
+
+
+=== Añada una licencia basada en capacidad de SnapCenter
 
 * Pasos*
 
@@ -265,7 +271,9 @@ Para un formato de nombre de usuario de administrador local integrado, utilice _
 . Haga clic en *Finalizar*.
 
 
-*Configurar las conexiones del sistema de almacenamiento*
+
+
+=== Configure las conexiones al sistema de almacenamiento
 
 * Pasos*
 
@@ -285,7 +293,9 @@ Para un formato de nombre de usuario de administrador local integrado, utilice _
 
 == Instale el plugin para Microsoft SQL Server
 
-*Configurar credenciales Run as para instalar el Plug-in para Microsoft SQL Server*
+
+
+=== Configure credenciales Run As para instalar el plugin para Microsoft SQL Server
 
 * Pasos*
 
@@ -299,7 +309,9 @@ Para un formato de nombre de usuario de administrador local integrado, utilice _
 
 
 
-*Agregue un host e instale el plugin para Microsoft SQL Server*
+
+
+=== Añada un host e instale el plugin para Microsoft SQL Server
 
 * Pasos*
 

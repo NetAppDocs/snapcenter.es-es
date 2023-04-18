@@ -73,7 +73,7 @@ Paquetes de software obligatorios
 * PowerShell 4.0 o posterior
 
 
-Para obtener información sobre la solución de problemas de .NET, consulte, link:..https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/SnapCenter_upgrade_or_install_fails_with_%22This_KB_is_not_related_to_the_OS%22["La actualización o instalación de SnapCenter falla en sistemas heredados que no tienen conexión a Internet."]
+Para obtener información específica sobre la solución de problemas de .NET, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/SnapCenter_upgrade_or_install_fails_with_%22This_KB_is_not_related_to_the_OS%22["La actualización o instalación de SnapCenter falla para sistemas heredados que no tienen conectividad a Internet"^].
 
 Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=108380;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
 

@@ -30,13 +30,6 @@ Para obtener información sobre cómo ejecutar el cmdlet, consulte https://libra
 https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/["Documentación del plugin de SnapCenter para VMware vSphere"]
 
 * Ejecutar el aprovisionamiento de almacenamiento en el host mediante el plugin de SnapCenter para Microsoft Windows.
-* Mueva las bases de datos existentes al almacenamiento de NetApp.
-+
-Para ver más detalles, consulte la información de importación de SnapCenter.
-
-+
-link:concept_import_archived_backups_from_snapmanager_for_sql_to_snapcenter.html["Importe los backups archivados de SnapManager para Microsoft SQL Server a SnapCenter"]
-
 * Configure las relaciones de SnapMirror y SnapVault si quiere realizar una replicación de backup.
 
 
