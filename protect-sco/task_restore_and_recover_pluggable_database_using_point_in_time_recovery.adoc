@@ -13,15 +13,12 @@ summary: 'Puede restaurar y recuperar una base de datos conectables (PDB) que se
 [role="lead"]
 Puede restaurar y recuperar una base de datos conectables (PDB) que se dañó o se borró sin afectar a las otras PDB de la base de datos de contenedores (CDB). SnapCenter utiliza RMAN para realizar una recuperación de un momento específico (PITR) de la PDB.
 
-*Antes de empezar*
+*Lo que necesitará*
 
-* Los backups necesarios para ejecutar PITR de una PDB deben catalogarse y montarse.
-+
+Los backups necesarios para ejecutar PITR de una PDB deben catalogarse y montarse.
+
 
 NOTE: En una configuración de RAC, debe cerrar manualmente la PDB (cambiando el estado a MONTADO) en todos los nodos de la configuración de RAC.
-
-* Si instaló el plugin como usuario no raíz, debe asignar manualmente los permisos de ejecución a los directorios de scripts previos y posteriores.
-
 
 *Acerca de esta tarea*
 
