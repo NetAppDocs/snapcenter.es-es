@@ -13,7 +13,7 @@ summary: 'Es posible configurar el balanceo de carga de red de Microsoft (NLB) p
 [role="lead"]
 Es posible configurar el balanceo de carga de red de Microsoft (NLB) para configurar la función de alta disponibilidad de SnapCenter. En SnapCenter 4.2, debe configurar manualmente NLB fuera de la instalación de SnapCenter para obtener alta disponibilidad.
 
-Para obtener más información acerca de cómo configurar el balanceo de carga de red (NLB) con SnapCenter, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_configure_NLB_and_ARR_with_SnapCenter["Cómo configurar NLB con SnapCenter"^].
+Para obtener más información acerca de cómo configurar el balanceo de carga de red (NLB) con SnapCenter, consulte https://["Cómo configurar NLB con SnapCenter"^].
 
 
 NOTE: SnapCenter 4.1.1 o una configuración compatible con una versión anterior de balanceo de carga de red (NLB) al instalar SnapCenter.

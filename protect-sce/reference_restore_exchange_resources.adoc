@@ -17,4 +17,4 @@ En el siguiente flujo de trabajo, se muestra la secuencia que debe seguirse para
 
 image:../media/all_plug_ins_restore_workflow.png[""]
 
-También es posible usar los cmdlets de PowerShell manualmente o en scripts para ejecutar las operaciones de backup y restauración. Para obtener información detallada sobre los cmdlets de PowerShell, use la ayuda de cmdlets de SnapCenter o consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].
+También es posible usar los cmdlets de PowerShell manualmente o en scripts para ejecutar las operaciones de backup y restauración. Para obtener información detallada sobre los cmdlets de PowerShell, use la ayuda de cmdlets de SnapCenter o consulte https://["Guía de referencia de cmdlets de SnapCenter Software"^].

@@ -23,7 +23,7 @@ Una relación de protección de datos replica los datos en el almacenamiento pri
 
 NOTE: SnapCenter no admite relaciones en cascada entre volúmenes de SnapMirror y SnapVault (*Primary* > *Mirror* > *Vault*). Debe utilizar las relaciones con fanout.
 
-SnapCenter permite la gestión de relaciones de SnapMirror de versión flexible. Si quiere información detallada sobre las relaciones de SnapMirror con versión flexible y sobre cómo configurarlas, consulte http://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.ic-base%2Fresources%2Fhome.html["Documentación de ONTAP"^].
+SnapCenter permite la gestión de relaciones de SnapMirror de versión flexible. Si quiere información detallada sobre las relaciones de SnapMirror con versión flexible y sobre cómo configurarlas, consulte http://["Documentación de ONTAP"^].
 
 
 NOTE: SnapCenter no admite replicación *SYNC_mirror*.

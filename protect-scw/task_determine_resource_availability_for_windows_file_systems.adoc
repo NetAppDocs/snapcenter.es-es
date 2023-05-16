@@ -16,7 +16,7 @@ Los recursos son los LUN y componentes similares del sistema de archivos que se 
 *Lo que necesitará*
 
 * Ya debe haber completado ciertas tareas, como instalar SnapCenter Server, añadir hosts, crear conexiones de máquina virtual de almacenamiento (SVM) y añadir credenciales.
-* Si los archivos residen en LUN o VMDK de VMware, debe implementar el plugin de SnapCenter para VMware vSphere y registrar el plugin en SnapCenter. Para obtener más información, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/["Documentación del plugin de SnapCenter para VMware vSphere"^].
+* Si los archivos residen en LUN o VMDK de VMware, debe implementar el plugin de SnapCenter para VMware vSphere y registrar el plugin en SnapCenter. Para obtener más información, consulte https://["Documentación del plugin de SnapCenter para VMware vSphere"^].
 
 
 * Pasos*

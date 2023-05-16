@@ -17,7 +17,7 @@ El siguiente flujo de trabajo muestra la secuencia en la que debe realizar las o
 
 image::../media/all_plug_ins_restore_workflow.png[flujo de trabajo_all_plug-ins_restore_workflow]
 
-También puede utilizar los cmdlets de PowerShell manualmente o en scripts para realizar operaciones de backup, restauración, recuperación, verificación y clonado. Para obtener información detallada sobre los cmdlets de PowerShell, use la ayuda de cmdlets de SnapCenter o consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP2874310["Guía de referencia de cmdlet de SnapCenter Software 4.4"]
+También puede utilizar los cmdlets de PowerShell manualmente o en scripts para realizar operaciones de backup, restauración, recuperación, verificación y clonado. Para obtener información detallada sobre los cmdlets de PowerShell, use la ayuda de cmdlets de SnapCenter o consulte https://["Guía de referencia de cmdlet de SnapCenter Software 4.4"]
 
 *Más información*
 

@@ -49,7 +49,7 @@ SnapCenter forma parte de la instalación de plugins personalizados en el host.
 +
 .. Se ha generado el hash SHA512 del archivo zip del plug-in.
 +
-Puede utilizar herramientas en línea como https://emn178.github.io/online-tools/sha512_file_hash.html["Hash SHA512"^].
+Puede utilizar herramientas en línea como https://["Hash SHA512"^].
 
 .. Se ha agregado el hash SHA512 generado al archivo custom_plugin_checksum_list en una línea nueva.
 +
@@ -85,10 +85,10 @@ A continuación se muestra un ejemplo de una entrada de hash SHA512 en el archiv
 Si utiliza Windows Server 2019 o Windows Server 2016 para el host de SnapCenter Server, debe instalar Java 1.8 o Java 11 (de 64 bits). La herramienta de matriz de interoperabilidad (IMT) contiene la información más actualizada sobre requisitos.
 
 +
-http://www.java.com/en/download/manual.jsp["Descargas de Java para todos los sistemas operativos"]
+http://["Descargas de Java para todos los sistemas operativos"]
 
 +
-https://imt.netapp.com/matrix/imt.jsp?components=108393;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"]
+https://["Herramienta de matriz de interoperabilidad de NetApp"]
 
 * Tiene que configurar los privilegios sudo para el usuario que no sea raíz con el fin de ofrecer acceso a varias rutas. Añada las siguientes líneas al archivo /etc/sudoers mediante la función visudo de Linux.
 +

@@ -24,7 +24,7 @@ NOTE: No se admite la instalación silenciosa del servidor SnapCenter desde la l
 * Debe haberse asegurado de que no está instalado MySQL Server en el host en el que planea instalar SnapCenter Server.
 * Debe haber habilitado la depuración del instalador de Windows.
 +
-Consulte el sitio Web de Microsoft para obtener información acerca de cómo habilitar https://support.microsoft.com/kb/223300["Registro del instalador de Windows"^].
+Consulte el sitio Web de Microsoft para obtener información acerca de cómo habilitar https://["Registro del instalador de Windows"^].
 
 +
 
@@ -34,7 +34,7 @@ NOTE: No debe instalar el servidor SnapCenter en un host que tenga servidores Mi
 
 * Pasos*
 
-. Descargue el paquete de instalación del servidor SnapCenter desde https://mysupport.netapp.com/site/products/all/details/snapcenter/downloads-tab["Sitio de soporte de NetApp"^].
+. Descargue el paquete de instalación del servidor SnapCenter desde https://["Sitio de soporte de NetApp"^].
 . Inicie la instalación del servidor SnapCenter haciendo doble clic en el archivo .exe descargado.
 +
 Tras iniciar la instalación, se realizan todas las comprobaciones previas y si los requisitos mínimos no son los correctos, se muestran mensajes de error o de advertencia.

@@ -23,11 +23,11 @@ NOTE: SnapCenter no admite varias SVM con el mismo nombre en clústeres diferent
 * Añada hosts, instale los plugins, detecte (actualice) los recursos y configure los plugins.
 * Mueva una base de datos de Microsoft SQL Server existente desde un disco local hacia un LUN de NetApp o viceversa ejecutando Invoke-SmConfigureResources.
 +
-Para obtener información sobre cómo ejecutar el cmdlet, consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"]
+Para obtener información sobre cómo ejecutar el cmdlet, consulte https://["Guía de referencia de cmdlets de SnapCenter Software"]
 
 * Si va a utilizar SnapCenter Server para proteger las bases de datos de SQL que residen en LUN o VMDK de VMware RDM, debe implementar el plugin de SnapCenter para VMware vSphere y registrar el plugin con SnapCenter. La documentación del plugin de SnapCenter para VMware vSphere tiene más información.
 +
-https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/["Documentación del plugin de SnapCenter para VMware vSphere"]
+https://["Documentación del plugin de SnapCenter para VMware vSphere"]
 
 * Ejecutar el aprovisionamiento de almacenamiento en el host mediante el plugin de SnapCenter para Microsoft Windows.
 * Configure las relaciones de SnapMirror y SnapVault si quiere realizar una replicación de backup.
@@ -37,4 +37,4 @@ Para ver más detalles, consulte la información de SnapCenter.
 
 Para los usuarios de SnapCenter 4.1.1, la documentación del plugin de SnapCenter para VMware vSphere 4.1.1 tiene información sobre la protección de las bases de datos y los sistemas de archivos virtualizados. Para los usuarios de SnapCenter 4.2.x, la documentación de NetApp Data Broker 1.0 y 1.0.1 ofrece información sobre la protección de bases de datos y sistemas de archivos virtualizados mediante el plugin de SnapCenter para VMware vSphere que proporciona el dispositivo virtual de agente de datos de NetApp basado en Linux (formato de dispositivo virtual abierto). Para los usuarios de SnapCenter 4.3.x, la documentación del plugin de SnapCenter para VMware vSphere 4.3 tiene información sobre la protección de bases de datos y sistemas de archivos virtualizados mediante el dispositivo virtual del plugin de SnapCenter para VMware vSphere basado en Linux (formato de dispositivo virtual abierto).
 
-https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/["Documentación del plugin de SnapCenter para VMware vSphere"]
+https://["Documentación del plugin de SnapCenter para VMware vSphere"]

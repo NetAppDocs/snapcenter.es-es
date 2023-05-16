@@ -13,9 +13,11 @@ summary: 'Se puede restaurar un subconjunto de espacios de tablas que se han da�
 [role="lead"]
 Se puede restaurar un subconjunto de espacios de tablas que se han dañado o eliminado sin afectar a los otros espacios de tablas de la base de datos. SnapCenter utiliza RMAN para realizar una recuperación puntual (PITR) de los tablespaces.
 
-*Lo que necesitará*
+*Antes de empezar*
 
-Los backups necesarios para ejecutar PITR de espacios de tablas deben catalogarse y montarse.
+* Los backups necesarios para ejecutar PITR de espacios de tablas deben catalogarse y montarse.
+* Si instaló el plugin como usuario no raíz, debe asignar manualmente los permisos de ejecución a los directorios de scripts previos y posteriores.
+
 
 *Acerca de esta tarea*
 

@@ -13,6 +13,10 @@ summary: En caso de pérdida de datos, es posible usar SnapCenter para restaurar
 [role="lead"]
 En caso de pérdida de datos, es posible usar SnapCenter para restaurar datos desde uno o más backups en el sistema de archivos activo para luego recuperar la base de datos.
 
+*Antes de empezar*
+
+Si instaló el plugin como usuario no raíz, debe asignar manualmente los permisos de ejecución a los directorios de scripts previos y posteriores.
+
 *Acerca de esta tarea*
 
 La recuperación se lleva a cabo con los registros de archivos disponibles en la ubicación del registro de archivos configurado. Si la base de datos se está ejecutando en modo ARCHIVELOG, Oracle Database guarda los grupos rellenados de archivos redo log en uno o más destinos sin conexión, conocidos conjuntamente como redo log archivado. SnapCenter identifica y monta la cantidad óptima de backups de registros según el SCN especificado, la fecha y la hora seleccionadas o la opción All logs. Si los registros de archivos requeridos para la recuperación no están disponibles en la ubicación configurada, debe montar la copia Snapshot que contiene los registros y especificar la ruta como registros de archivo externos.
@@ -166,8 +170,8 @@ Si se reducen los registros de archivos como parte del backup y se montaron manu
 
 NOTE: Debe verificar la ruta y el contenido de la ruta de montaje antes de enumerarla como ubicación de registro externo.
 
-** http://www.netapp.com/us/media/tr-4591.pdf["Informe técnico de NetApp 4591: Protección de bases de datos: Backup, recuperación, replicación y DR"^]
-** https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/ORA-00308%3A_cannot_open_archived_log_ORA_LOG_arch1_123_456789012.arc["Se produce un error en el funcionamiento con ORA-00308"^]
+** http://["Informe técnico de NetApp 4591: Protección de bases de datos: Backup, recuperación, replicación y DR"^]
+** https://["Se produce un error en el funcionamiento con ORA-00308"^]
 
 
 |===
@@ -228,8 +232,8 @@ NOTE: Para la notificación por correo electrónico, debe haber especificado los
 
 *Para más información*
 
-* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Oracle_RAC_One_Node_database_is_skipped_for_performing_SnapCenter_operations["Se omite la base de datos de Oracle RAC One Node para ejecutar operaciones de SnapCenter"^]
-* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Failed_to_restore_from_a_secondary_SnapMirror_or_SnapVault_location["Error al restaurar desde una ubicación de SnapMirror o SnapVault secundaria"^]
-* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Failed_to_restore_when_a_backup_of_an_orphan_incarnation_is_selected["Se ha producido un error al restaurar desde un backup de una encarnación huérfana"^]
-* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/What_are_the_customizable_parameters_for_backup_restore_and_clone_operations_on_AIX_systems["Parámetros personalizables para operaciones de backup, restauración y clonado en sistemas AIX"^]
+* https://["Se omite la base de datos de Oracle RAC One Node para ejecutar operaciones de SnapCenter"^]
+* https://["Error al restaurar desde una ubicación de SnapMirror o SnapVault secundaria"^]
+* https://["Se ha producido un error al restaurar desde un backup de una encarnación huérfana"^]
+* https://["Parámetros personalizables para operaciones de backup, restauración y clonado en sistemas AIX"^]
 

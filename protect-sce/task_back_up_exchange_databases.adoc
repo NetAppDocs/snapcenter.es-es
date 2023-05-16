@@ -108,7 +108,7 @@ Si la política seleccionada para el backup bajo demanda está asociada a una pr
 +
 ** En las configuraciones de MetroCluster, es posible que SnapCenter no pueda detectar una relación de protección tras una conmutación por error.
 +
-Para obtener más información, consulte: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Unable_to_detect_SnapMirror_or_SnapVault_relationship_after_MetroCluster_failover["No es posible detectar la relación de SnapMirror o SnapVault tras un fallo en MetroCluster"^]
+Para obtener más información, consulte: https://["No es posible detectar la relación de SnapMirror o SnapVault tras un fallo en MetroCluster"^]
 
 ** Si va a realizar el backup de datos de aplicación en VMDK y el tamaño de pila de Java para el plugin de SnapCenter para VMware vSphere no es suficientemente grande, se puede producir un error en el backup.
 +

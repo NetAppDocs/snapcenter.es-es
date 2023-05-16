@@ -18,7 +18,7 @@ Los recursos son bases de datos de Oracle en el host gestionado por SnapCenter. 
 * Debe haber completado ciertas tareas, como instalar el servidor SnapCenter, añadir hosts, crear conexiones con el sistema de almacenamiento y añadir credenciales.
 * Si las bases de datos residen en un disco de máquina virtual (VMDK) o una asignación de dispositivo sin formato (RDM), es necesario implementar el plugin de SnapCenter para VMware vSphere y registrar el plugin con SnapCenter.
 +
-Para obtener más información, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_deploy_snapcenter_plug-in_for_vmware_vsphere.html["Ponga en marcha el plugin de SnapCenter para VMware vSphere"^].
+Para obtener más información, consulte https://["Ponga en marcha el plugin de SnapCenter para VMware vSphere"^].
 
 * Si las bases de datos residen en un sistema de archivos VMDK, debe haber iniciado sesión en vCenter y navegado hasta *VM options* > *Advanced* > *Edit Configuration* para configurar el valor de _disk.enableUUID_ en true para la máquina virtual.
 * Debe haber revisado el proceso que sigue SnapCenter para detectar diferentes tipos y versiones de las bases de datos de Oracle.

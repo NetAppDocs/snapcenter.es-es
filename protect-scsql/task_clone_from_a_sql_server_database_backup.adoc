@@ -152,7 +152,7 @@ También debe especificar las direcciones de correo electrónico del remitente y
 NOTE: Para las notificaciones de correo electrónico, se deben haber especificado los detalles del servidor SMTP desde la interfaz gráfica de usuario o desde el comando de PowerShell Set-SmSmtpServer.
 
 +
-Para EMS, consulte https://docs.netapp.com/us-en/snapcenter/admin/concept_manage_ems_data_collection.html["Gestione la recogida de datos de EMS"]
+Para EMS, consulte https://["Gestione la recogida de datos de EMS"]
 
 . Revise el resumen y, a continuación, haga clic en *Finalizar*.
 . Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
@@ -168,6 +168,6 @@ link:reference_back_up_sql_server_database_or_instance_or_availability_group.htm
 
 link:task_clone_backups_using_powershell_cmdlets_for_sql.html["Clonar backups mediante cmdlets de PowerShell"]
 
-https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Clone_operation_might_fail_or_take_longer_time_to_complete_with_default_TCP_TIMEOUT_value["Es posible que la operación de clonado produzca errores o tarde más tiempo en finalizar con el valor TCP_TIMEOUT predeterminado"]
+https://["Es posible que la operación de clonado produzca errores o tarde más tiempo en finalizar con el valor TCP_TIMEOUT predeterminado"]
 
-https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/The_failover_cluster_instance_database_clone_fails["Se produce un error en el clon de la base de datos de la instancia de clúster"]
+https://["Se produce un error en el clon de la base de datos de la instancia de clúster"]

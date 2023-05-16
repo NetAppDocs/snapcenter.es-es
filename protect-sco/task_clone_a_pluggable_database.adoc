@@ -13,6 +13,10 @@ summary: 'Es posible clonar una base de datos conectables \(PDB\) en una base de
 [role="lead"]
 Es posible clonar una base de datos conectables (PDB) en una base de datos diferente o la misma CDB objetivo en el mismo host o alternativo. También es posible recuperar la PDB clonada en un SCN o la fecha y la hora que desee.
 
+*Antes de empezar*
+
+Si instaló el plugin como usuario no raíz, debe asignar manualmente los permisos de ejecución a los directorios de scripts previos y posteriores.
+
 * Pasos*
 
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
@@ -202,6 +206,6 @@ En una configuración de RAC, el almacenamiento para la PDB clonada solo se asoc
 
 *Más información*
 
-* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/ORA-00308%3A_cannot_open_archived_log_ORA_LOG_arch1_123_456789012.arc["La restauración o el clonado producen errores con el mensaje de error ORA-00308"^]
-* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/What_are_the_customizable_parameters_for_backup_restore_and_clone_operations_on_AIX_systems["Parámetros personalizables para operaciones de backup, restauración y clonado en sistemas AIX"^]
+* https://["La restauración o el clonado producen errores con el mensaje de error ORA-00308"^]
+* https://["Parámetros personalizables para operaciones de backup, restauración y clonado en sistemas AIX"^]
 

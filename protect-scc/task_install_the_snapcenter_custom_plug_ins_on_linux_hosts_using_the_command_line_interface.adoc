@@ -36,7 +36,7 @@ Puede acceder a esta ruta desde el host en el que está instalado el servidor Sn
 ----
 . Añada el host al servidor de SnapCenter con el cmdlet Add-Smhost y los parámetros requeridos.
 +
-La información relativa a los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].
+La información relativa a los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://["Guía de referencia de cmdlets de SnapCenter Software"^].
 
 . Inicie sesión en SnapCenter y cargue el plugin personalizado desde la interfaz de usuario o mediante cmdlets de PowerShell.
 +
@@ -46,6 +46,6 @@ Para cargar el plugin personalizado desde la interfaz de usuario, consulte link:
 La ayuda sobre cmdlet de SnapCenter y la información de referencia sobre cmdlet contienen más información acerca de cmdlets de PowerShell.
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].
+https://["Guía de referencia de cmdlets de SnapCenter Software"^].
 
 

@@ -72,7 +72,7 @@ Hosts de plugins de Windows
 
 Además de los puertos 135 y 445, el intervalo de puertos dinámico especificado por Microsoft también debería estar abierto. Operaciones de instalación remota Utilice el servicio Instrumental de administración de Windows (WMI), que busca dinámicamente este intervalo de puertos.
 
-Para obtener información sobre el intervalo de puertos dinámicos admitido, consulte https://support.microsoft.com/kb/832017["Descripción general del servicio y requisitos de puertos de red para Windows"^]
+Para obtener información sobre el intervalo de puertos dinámicos admitido, consulte https://["Descripción general del servicio y requisitos de puertos de red para Windows"^]
 
 Los puertos se utilizan para establecer la comunicación entre SnapCenter Server y el host en el que se está instalando el plugin. Para insertar los archivos binarios de paquetes de plugins en los hosts de plugin de Windows, los puertos deben abrirse con cuidado en el host del plugin y se pueden cerrar después de su instalación.
 

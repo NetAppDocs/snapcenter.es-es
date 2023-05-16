@@ -19,7 +19,7 @@ Debe instalar el plugin para Exchange desde la interfaz de usuario de SnapCenter
 * Debe haber instalado los paquetes de plugins de SnapCenter.
 * Debe eliminar la versión anterior del plugin de SnapCenter para Microsoft SQL Server antes de instalar.
 +
-Para obtener más información, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_Install_a_SnapCenter_Plug-In_manually_and_directly_from_thePlug-In_Host["Cómo instalar un plugin de SnapCenter de forma manual y directa desde el host del plugin"^].
+Para obtener más información, consulte https://["Cómo instalar un plugin de SnapCenter de forma manual y directa desde el host del plugin"^].
 
 
 

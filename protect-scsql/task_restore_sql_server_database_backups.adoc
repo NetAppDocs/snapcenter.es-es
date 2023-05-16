@@ -125,6 +125,8 @@ Utilizar directorio de registro personalizado
  a| 
 Si ha seleccionado *todas las copias de seguridad de registro*, *por copias de seguridad de registro* o *por fecha específica hasta* y los registros se encuentran en una ubicación personalizada, seleccione *usar directorio de registro personalizado* y, a continuación, especifique la ubicación del registro.
 
+La opción *Usar directorio de registro personalizado* solo está disponible si ha seleccionado *Restaurar la base de datos a un host alternativo* o *Restaurar la base de datos utilizando archivos de base de datos existentes*. También puede utilizar la ruta de acceso compartida, pero asegúrese de que el usuario de SQL puede acceder a la ruta de acceso.
+
 
 NOTE: El directorio de registro personalizado no se admite en la base de datos de grupos de disponibilidad.
 

@@ -25,7 +25,7 @@ link:concept_develop_a_plug_in_for_your_application.html["Desarrolle un compleme
 
 *Acerca de esta tarea*
 
-También puede añadir recursos para MySQL y aplicaciones DB2. Estos plugins pueden descargarse del https://automationstore.netapp.com/home.shtml["Almacén de automatización del almacenamiento de NetApp"].
+También puede añadir recursos para MySQL y aplicaciones DB2. Estos plugins pueden descargarse del https://["Almacén de automatización del almacenamiento de NetApp"].
 
 * Pasos*
 

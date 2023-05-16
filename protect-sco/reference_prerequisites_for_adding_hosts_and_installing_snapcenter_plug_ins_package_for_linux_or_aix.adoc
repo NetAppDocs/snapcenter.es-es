@@ -32,8 +32,8 @@ NOTE: Asegúrese de haber instalado únicamente la edición certificada de JAVA 
 Para obtener información sobre CÓMO descargar JAVA, consulte:
 
 +
-** http://www.java.com/en/download/manual.jsp["Descargas de Java para todos los sistemas operativos"^]
-** https://www.ibm.com/support/pages/java-sdk-aix["IBM Java para AIX"^]
+** http://["Descargas de Java para todos los sistemas operativos"^]
+** https://["IBM Java para AIX"^]
 
 
 * Para bases de datos Oracle que se ejecuten en un host Linux o AIX, debe instalar tanto el plugin de SnapCenter para base de datos Oracle como el plugin de SnapCenter para UNIX.
@@ -46,6 +46,9 @@ NOTE: También es posible utilizar el plugin para bases de datos de Oracle para 
 
 
 NOTE: SnapCenter no admite la asignación de UUID en el archivo /etc/fstab.
+
+* Debe tener *bash* como shell por defecto para la instalación del plug-in.
+
 
 
 
@@ -101,7 +104,7 @@ NOTE: Asegúrese de haber instalado únicamente la edición certificada de JAVA 
 Si ha actualizado JAVA a la versión más reciente, debe asegurarse de que la opción JAVA_HOME ubicada en /var/opt/snapcenter/spl/etc/spl.properties esté configurada en la versión DE JAVA correcta y en la ruta de acceso correcta.
 
 |===
-Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=108392;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 
 
@@ -225,7 +228,7 @@ Paquetes de software obligatorios
 Si ha actualizado JAVA a la versión más reciente, debe asegurarse de que la opción JAVA_HOME ubicada en /var/opt/snapcenter/spl/etc/spl.properties esté configurada en la versión DE JAVA correcta y en la ruta de acceso correcta.
 
 |===
-Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=108392;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 
 

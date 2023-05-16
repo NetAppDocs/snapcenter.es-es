@@ -76,4 +76,4 @@ Admite el registro en línea en sistemas DE archivos SAN y el diseño de LVM.
 
 
 |===
-La https://imt.netapp.com/matrix/imt.jsp?components=108392;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"] contiene la información más reciente sobre las versiones compatibles.
+La https://["Herramienta de matriz de interoperabilidad de NetApp"] contiene la información más reciente sobre las versiones compatibles.

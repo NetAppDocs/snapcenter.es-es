@@ -13,6 +13,10 @@ summary: Es posible utilizar SnapCenter para clonar una base de datos de Oracle 
 [role="lead"]
 Es posible utilizar SnapCenter para clonar una base de datos de Oracle con el backup de esa base de datos.
 
+*Antes de empezar*
+
+Si instaló el plugin como usuario no raíz, debe asignar manualmente los permisos de ejecución a los directorios de scripts previos y posteriores.
+
 *Acerca de esta tarea*
 
 La operación de clonado crea una copia de los archivos de datos de la base de datos y, luego, crea nuevos archivos de registro de recuperación en línea y archivos de control. La base de datos puede recuperarse opcionalmente a una hora específica, según las opciones de recuperación especificadas.
@@ -341,7 +345,7 @@ El bloqueo o cambio de nombre de dispositivos no afectará a la operación de el
 
 *Más información*
 
-* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/ORA-00308%3A_cannot_open_archived_log_ORA_LOG_arch1_123_456789012.arc["La restauración o el clonado producen errores con el mensaje de error ORA-00308"^]
-* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Failed_to_recover_a_cloned_database["Error al recuperar una base de datos clonada"^]
-* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/What_are_the_customizable_parameters_for_backup_restore_and_clone_operations_on_AIX_systems["Parámetros personalizables para operaciones de backup, restauración y clonado en sistemas AIX"^]
+* https://["La restauración o el clonado producen errores con el mensaje de error ORA-00308"^]
+* https://["Error al recuperar una base de datos clonada"^]
+* https://["Parámetros personalizables para operaciones de backup, restauración y clonado en sistemas AIX"^]
 

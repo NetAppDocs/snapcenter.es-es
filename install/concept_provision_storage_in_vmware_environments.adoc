@@ -31,7 +31,7 @@ Admite controladoras SCSI paravirtual de VMware. Los discos RDM pueden admitir 2
 
 
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=108380;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 
 
@@ -136,4 +136,4 @@ Los iniciadores deben ser FC o Microsoft iSCSI, pero no ambos.
 
 Para poder utilizar LUN de RDM FC a fin de compartir almacenamiento entre los nodos de un clúster de Microsoft, primero es necesario crear el disco de quórum compartido y el disco de almacenamiento compartido, y añadirlos a las dos máquinas virtuales en el clúster.
 
-El disco compartido no se crea mediante el plugin para Windows. Debe crear y luego agregar el LUN compartido a cada máquina virtual del clúster. Para obtener más información, consulte https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.mscs.doc/GUID-1A2476C0-CA66-4B80-B6F9-8421B6983808.html["Equipos virtuales en clúster entre hosts físicos"^].
+El disco compartido no se crea mediante el plugin para Windows. Debe crear y luego agregar el LUN compartido a cada máquina virtual del clúster. Para obtener más información, consulte https://["Equipos virtuales en clúster entre hosts físicos"^].

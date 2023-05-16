@@ -20,7 +20,7 @@ Cuando SnapCenter Server quita un host, primero elimina los backups, clones, tra
 * Si se elimina un host que tiene un grupo de recursos compartido con otro host, también se elimina el grupo de recursos.
 * Debe utilizar el cmdlet _Remove-SmHost_ para quitar los hosts de plugin que se decomisionan o no se pueden acceder a ellos.
 +
-La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^]
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://["Guía de referencia de cmdlets de SnapCenter Software"^]
 
 * El tiempo requerido para quitar un host depende de la cantidad de backups y de la configuración de retención. Esto es debido a que las copias de Snapshot se eliminan de cada una de las controladoras y se borran los metadatos.
 

@@ -65,4 +65,4 @@ image::../media/upgrade_workflow.png[actualizar el flujo de trabajo]
 IMPORTANT: Por ejemplo, si utiliza SnapCenter versión 4.4.x y desea actualizar a 4.7, primero debe actualizar a la versión 4.6.x y, a continuación, realizar una actualización a la versión 4.7.
 
 
-NOTE: Para obtener información sobre cómo actualizar el plugin de SnapCenter para VMware vSphere, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_upgrade.html["Actualice el plugin de SnapCenter para VMware vSphere"^].
+NOTE: Para obtener información sobre cómo actualizar el plugin de SnapCenter para VMware vSphere, consulte https://["Actualice el plugin de SnapCenter para VMware vSphere"^].

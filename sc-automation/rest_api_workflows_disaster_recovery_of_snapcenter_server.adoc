@@ -51,7 +51,7 @@ Las entradas del servidor etc/host no se restaurarán. Puede restaurarlo manualm
 
 
 
-NOTE: Para una configuración de F5, la operación de restauración se realiza como independiente, debe ejecutar un conjunto de comandos para volver a crear la F5. Consulte el enlace: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_Migrate_SnapCenter_migrate_to_another_Server["Cómo migrar SnapCenter a otro servidor"^]
+NOTE: Para una configuración de F5, la operación de restauración se realiza como independiente, debe ejecutar un conjunto de comandos para volver a crear la F5. Consulte el enlace: https://["Cómo migrar SnapCenter a otro servidor"^]
 
 
 NOTE: Después de la restauración de recuperación ante desastres, se añadirá el host, pero debe instalar el plugin manualmente.
@@ -126,4 +126,4 @@ Habilite o deshabilite la recuperación ante desastres de almacenamiento
 PUBLICAR
 
 |===
-Para obtener más información, consulte https://www.youtube.com/watch?v=Nbr_wm9Cnd4&list=PLdXI3bZJEw7nofM6lN44eOe4aOSoryckg["API de recuperación ante desastres"^] vídeo.
+Para obtener más información, consulte https://["API de recuperación ante desastres"^] vídeo.

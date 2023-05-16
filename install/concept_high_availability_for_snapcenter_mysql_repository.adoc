@@ -19,7 +19,7 @@ Si desea usar la función de alta disponibilidad de MySQL, debe configurar Netwo
 
 SnapCenter proporciona los cmdlets de _Get-SmRepositoryConfig_ y _Set-SmRepositoryConfig_ PowerShell para gestionar la replicación de MySQL.
 
-La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://["Guía de referencia de cmdlets de SnapCenter Software"^].
 
 Debe tener en cuenta las limitaciones relacionadas con la función de alta disponibilidad de MySQL:
 
@@ -35,4 +35,4 @@ Si se produce una conmutación por error debida a que MySQL Server o SnapCenter 
 
 
 
-Para obtener información acerca de cómo configurar la alta disponibilidad, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_configure_NLB_and_ARR_with_SnapCenter["Cómo configurar NLB y ARR con SnapCenter"^].
+Para obtener información acerca de cómo configurar la alta disponibilidad, consulte https://["Cómo configurar NLB y ARR con SnapCenter"^].

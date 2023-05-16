@@ -24,7 +24,7 @@ Sistemas operativos
 * SUSE Linux Enterprise Server (SLES)
 
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=108380;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"].
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://["Herramienta de matriz de interoperabilidad de NetApp"].
 
 
 
@@ -52,6 +52,6 @@ Tipos Java 1.8.x (64 bits)Oracle Java y OpenJDK
 
 Si ha actualizado JAVA a la versión más reciente, debe asegurarse de que la opción JAVA_HOME ubicada en /var/opt/snapcenter/spl/etc/spl.properties esté configurada en la versión DE JAVA correcta y en la ruta de acceso correcta.
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=108380;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"].
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://["Herramienta de matriz de interoperabilidad de NetApp"].
 
 |===

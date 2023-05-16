@@ -23,7 +23,7 @@ Es posible usar SnapCenter para restaurar bases de datos de Exchange incluidas e
 Ejecute el `Move-ActiveMailboxDatabase` comando para realizar la copia pasiva de la base de datos como copia activa de la base de datos.
 
 +
-La https://docs.microsoft.com/en-us/powershell/module/exchange/move-activemailboxdatabase?view=exchange-ps["Documentación de Microsoft"^] contiene información acerca de este comando.
+La https://["Documentación de Microsoft"^] contiene información acerca de este comando.
 
 
 
