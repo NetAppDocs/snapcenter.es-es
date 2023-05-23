@@ -17,7 +17,9 @@ Ofrece un conjunto condensado de instrucciones de instalación para instalar Sna
 
 == Preparación de la instalación
 
-*Requisitos de dominio y grupo de trabajo*
+
+
+=== Requisitos de dominio y grupo de trabajo
 
 SnapCenter Server se puede instalar en sistemas que estén en un dominio o en un grupo de trabajo.
 
@@ -25,10 +27,13 @@ Si utiliza un dominio de Active Directory, debe utilizar un usuario de dominio c
 
 Si utiliza grupos de trabajo, debe utilizar una cuenta local con derechos de administrador locales.
 
-*Requisitos de licencia*
+
+
+=== Requisitos de licencia
 
 El tipo de licencia que instale dependerá del entorno.
 
+[cols="1,3"]
 |===
 | Licencia | Donde se la requiere 
 
@@ -76,10 +81,13 @@ Destinos secundarios
 NOTE: Se recomienda, pero no es obligatorio, añadir licencias estándar de SnapCenter a destinos secundarios. Si las licencias estándar de SnapCenter están deshabilitadas en destinos secundarios, no puede usar SnapCenter para realizar un backup de los recursos en el destino secundario después de realizar una operación de conmutación al nodo de respaldo. Sin embargo, se requiere una licencia de FlexClone en destinos secundarios para realizar operaciones de clonado y verificación.
 
 |===
-*Requisitos adicionales*
 
-Para ver los requisitos mínimos del ONTAP y el complemento de la aplicación, consulte https://imt.netapp.com/matrix/imt.jsp?components=108408;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad"^]
 
+=== Requisitos del host y puerto
+
+Para ver los requisitos mínimos del ONTAP y el complemento de la aplicación, consulte https://imt.netapp.com/matrix/imt.jsp?components=105961;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad"^].
+
+[cols="1,3"]
 |===
 | Hosts | Requisitos mínimos 
 
@@ -139,6 +147,7 @@ Exploradores
 Chrome, Internet Explorer y Microsoft Edge
 
 |===
+[cols="1,3"]
 |===
 | Tipo de puerto | Puerto predeterminado 
 
@@ -190,7 +199,9 @@ Puerto de comunicación del clúster de ONTAP o de SVM
 El puerto se utiliza para establecer la comunicación entre el host del servidor de SnapCenter, el host del plugin y SVM o el clúster de ONTAP.
 
 |===
-*Requisitos del complemento SnapCenter para Microsoft SQL Server*
+
+
+=== Requisitos del plugin de SnapCenter para Microsoft SQL Server
 
 Debe tener un usuario con privilegios de administrador local y permisos locales para iniciar sesión en el host remoto. Si gestiona nodos de clúster, necesita un usuario con privilegios de administrador para todos los nodos del clúster.
 
@@ -202,9 +213,7 @@ Debe tener un usuario con permisos de administrador del sistema en SQL Server. E
 
 
 
-=== Descargue e instale el servidor SnapCenter
-
-* Pasos*
+=== Paso 1: Descargue e instale el servidor SnapCenter
 
 . Descargue el paquete de instalación del servidor SnapCenter desde el https://mysupport.netapp.com/site/products/all/details/snapcenter/downloads-tab["Sitio de soporte de NetApp"^] y, a continuación, haga doble clic en el archivo exe.
 +
@@ -223,9 +232,7 @@ NOTE: El carácter especial “%” no se admite en la ruta personalizada para l
 
 
 
-=== Inicie sesión en SnapCenter
-
-* Pasos*
+=== Paso 2: Inicie sesión en SnapCenter
 
 . Inicie SnapCenter desde un acceso directo en el escritorio del host o desde la dirección URL proporcionada por la instalación (_\https://server:8146_ para el puerto predeterminado 8146 donde está instalado SnapCenter Server).
 . Introduzca las credenciales.
@@ -240,9 +247,7 @@ Para un formato de nombre de usuario de administrador local integrado, utilice _
 
 
 
-=== Añada una licencia estándar basada en controladora de SnapCenter
-
-* Pasos*
+=== Paso 3: Añada una licencia estándar basada en controladora de SnapCenter
 
 . Inicie sesión en la controladora con la línea de comandos de ONTAP e introduzca lo siguiente:
 +
@@ -256,9 +261,7 @@ Para un formato de nombre de usuario de administrador local integrado, utilice _
 
 
 
-=== Añada una licencia basada en capacidad de SnapCenter
-
-* Pasos*
+=== Paso 4: Añadir una licencia basada en capacidad de SnapCenter
 
 . En el panel izquierdo de la GUI de SnapCenter, haga clic en *Configuración > Software* y, a continuación, en la sección Licencia, haga clic en *+*.
 . Seleccione uno de los dos métodos para obtener la licencia:
@@ -273,9 +276,7 @@ Para un formato de nombre de usuario de administrador local integrado, utilice _
 
 
 
-=== Configure las conexiones al sistema de almacenamiento
-
-* Pasos*
+=== Paso 5: Configure las conexiones al sistema de almacenamiento
 
 . En el panel izquierdo, haga clic en *sistemas de almacenamiento > Nuevo*.
 . En la página Add Storage System, realice lo siguiente:
@@ -295,9 +296,7 @@ Para un formato de nombre de usuario de administrador local integrado, utilice _
 
 
 
-=== Configure credenciales Run As para instalar el plugin para Microsoft SQL Server
-
-* Pasos*
+=== Paso 1: Configure credenciales Run As para instalar el plugin para Microsoft SQL Server
 
 . En el panel izquierdo, haga clic en *Configuración > credenciales > Nuevo*.
 . Introduzca las credenciales.
@@ -311,9 +310,7 @@ Para un formato de nombre de usuario de administrador local integrado, utilice _
 
 
 
-=== Añada un host e instale el plugin para Microsoft SQL Server
-
-* Pasos*
+=== Paso 2: Añada un host e instale el plugin para Microsoft SQL Server
 
 . En el panel izquierdo de la interfaz gráfica de usuario de SnapCenter, haga clic en *hosts > Managed hosts > Add*.
 . En la página hosts del asistente, realice lo que sigue:

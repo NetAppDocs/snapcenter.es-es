@@ -4,19 +4,17 @@ sidebar: sidebar
 keywords:  
 summary: Un grupo de recursos es el contenedor al que debe añadir los recursos que desea proteger e incluir en un backup. 
 ---
-= Crear grupos de recursos y añadir políticas
+= Cree grupos de recursos y asocie políticas en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
-[role="lead"]
-Un grupo de recursos es el contenedor al que debe añadir los recursos que desea proteger e incluir en un backup. Permite realizar un backup en simultáneo con todos los datos que están asociados con una determinada aplicación. Un grupo de recursos es necesario para cualquier trabajo de protección de datos. También debe añadir una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar.
+Un grupo de recursos es el contenedor al que debe añadir los recursos que desea proteger e incluir en un backup. Permite realizar un backup simultáneo de todos los datos que están asociados con una aplicación determinada, y son necesarios para cualquier trabajo de protección de datos. También debe añadir una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar.
 
-* Pasos*
-
-. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
-. En la página Resources, haga clic en New Resource Group.
+.Pasos
+. En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
+. En la página Resources, seleccione New Resource Group.
 . En la página Name, realice los siguientes pasos:
 +
 |===
@@ -28,8 +26,7 @@ Nombre
  a| 
 Escriba un nombre para el grupo de recursos.
 
-
-NOTE: El nombre del grupo de recursos no debe superar los 250 caracteres.
+Nota: El nombre del grupo de recursos no debe superar los 250 caracteres.
 
 
 
@@ -54,10 +51,10 @@ Por ejemplo, _customtext_resource group_policy_hostname o resource group_hostnam
 +
 Esto permite filtrar información en la pantalla.
 
-. Seleccione los recursos de la sección *Recursos disponibles* y, a continuación, haga clic en la flecha derecha para moverlos a la sección *Recursos seleccionados*.
+. Seleccione los recursos de la sección *Recursos disponibles* y, a continuación, seleccione la flecha derecha para moverlos a la sección *Recursos seleccionados*.
 . Opcional: En la página Application Settings, realice lo siguiente:
 +
-.. Haga clic en la flecha backups para establecer las opciones de backup adicionales.
+.. Seleccione la flecha Backups para establecer las opciones de backup adicionales.
 +
 Habilite el backup del grupo de consistencia y realice las siguientes tareas:
 
@@ -82,10 +79,10 @@ Seleccione este campo para evitar forzar un punto de coherencia de WAFL.
 
 |===
 +
-image:../media/application_settings.gif[""]
+image:../media/application_settings.gif["Una captura de pantalla de las opciones para backup de grupo de consistencia: Urgente, medio o relajado."]
 
-.. Haga clic en la flecha Scripts y escriba los comandos previos y posteriores para el modo de inactividad, copia de Snapshot y la reanudación de la copia. También puede escribir los comandos previos para que se ejecuten antes de salir en caso de un fallo.
-.. Haga clic en la flecha Custom Configurations y utilice este recurso para escribir los pares personalizados clave-valor requeridos en todas las operaciones de protección de datos.
+.. Seleccione la flecha Scripts y escriba los comandos previos y posteriores para el modo de inactividad, copia de Snapshot y la reanudación de la copia. También puede escribir los comandos previos para que se ejecuten antes de salir en caso de un fallo.
+.. Seleccione la flecha Custom Configurations y utilice este recurso para escribir los pares personalizados clave-valor requeridos en todas las operaciones de protección de datos.
 +
 |===
 | Parámetro | Ajuste | Descripción 
@@ -141,7 +138,7 @@ Permite la gestión de registros de ficheros en subdirectorios.
 Debe utilizar este parámetro si los registros de archivo se encuentran en subdirectorios.
 
 |===
-.. Haga clic en la flecha *Snapshot Copy Tool* para seleccionar la herramienta que permite crear copias Snapshot:
+.. Seleccione la flecha *Snapshot Copy Tool* para seleccionar la herramienta para crear copias snapshot:
 +
 |===
 | Si desea que... | Realice lo siguiente... 
@@ -176,24 +173,24 @@ Seleccione Other y escriba el comando que se ejecutará en el host a fin de crea
 .. Seleccione una o varias políticas de la lista desplegable.
 +
 
-NOTE: También puede crear una directiva haciendo clic en *image:../media/add_policy_from_resourcegroup.gif[""]*.
+NOTE: También puede crear una política seleccionando *image:../media/add_policy_from_resourcegroup.gif["Un icono más"]*.
 
 +
 Las directivas se enumeran en la sección *Configurar horarios para directivas seleccionadas*.
 
-.. En la columna *Configurar horarios*, haga clic en *image:../media/add_policy_from_resourcegroup.gif[""]* para la directiva que desea configurar.
-.. En el cuadro de diálogo Add schedules for policy _policy_name_, configure la programación y haga clic en OK.
+.. En la columna *Configure Schedules*, seleccione *image:../media/add_policy_from_resourcegroup.gif["Un icono más"]* para la directiva que desea configurar.
+.. En el cuadro de diálogo Add schedules for policy _policy_name_, configure la programación y seleccione OK.
 +
-Policy_name es el nombre de la política seleccionada.
+Donde policy_name es el nombre de la política seleccionada.
 
 +
 Las programaciones configuradas figuran en la columna Applied Schedules. No se admiten programas de backup de terceros cuando se solapan con los programas de backup de SnapCenter.
 
 
 
-. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
+. En la lista desplegable *Preferencias de correo electrónico* de la página Notificación, seleccione los escenarios en los que desea enviar los correos electrónicos.
 +
 También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. El servidor SMTP debe configurarse en *Ajustes* > *Ajustes globales*.
 
-. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Revisa el resumen y luego selecciona *Finalizar*.
 

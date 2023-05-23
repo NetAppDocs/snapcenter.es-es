@@ -13,24 +13,18 @@ summary: Debe añadir los recursos que desee incluir en un backup o clonar. En f
 [role="lead"]
 Debe añadir los recursos que desee incluir en un backup o clonar. En función de su entorno, los recursos pueden ser instancias de una base de datos o recopilaciones que desee clonar o incluir en un backup.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe haber completado ciertas tareas, como instalar el servidor SnapCenter, añadir hosts, crear conexiones con el sistema de almacenamiento y añadir credenciales.
-* Debe haber creado un plugin personalizado.
-+
-link:concept_develop_a_plug_in_for_your_application.html["Desarrolle un complemento para la aplicación"]
-
+* Debe tener link:concept_develop_a_plug_in_for_your_application.html["se ha creado un plugin personalizado para la aplicación"].
 * Debe haber cargado los plugins en SnapCenter Server.
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 También puede añadir recursos para MySQL y aplicaciones DB2. Estos plugins pueden descargarse del https://automationstore.netapp.com/home.shtml["Almacén de automatización del almacenamiento de NetApp"].
 
-* Pasos*
-
-. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
-. En la página Resources, haga clic en *Add Resource*.
+.Pasos
+. En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
+. En la página Recursos, selecciona *Agregar recurso*.
 . En la página Provide Resource Details, realice las siguientes acciones:
 +
 |===
@@ -73,9 +67,9 @@ Monte las rutas
 Escriba las rutas de montaje en el punto donde se monta el recurso. Solo corresponde a un host Windows.
 
 |===
-. En la página Provide Storage Footprint, seleccione un sistema de almacenamiento y elija uno o más volúmenes, LUN y qtrees; a continuación, haga clic en *Save*.
+. En la página Provide Storage Footprint, seleccione un sistema de almacenamiento y elija uno o más volúmenes, LUN y qtrees y, a continuación, seleccione *Save*.
 +
-Opcional: Haga clic en el image:../media/add_policy_from_resourcegroup.gif[""] Icono para añadir más volúmenes, LUN y qtrees desde otros sistemas de almacenamiento.
+Opcional: Seleccione la image:../media/add_policy_from_resourcegroup.gif["Icono más"] Icono para añadir más volúmenes, LUN y qtrees desde otros sistemas de almacenamiento.
 
 +
 
@@ -95,18 +89,16 @@ NOTE: Asegúrese de que las palabras HOST y PUERTO estén en mayúsculas.
 +
 image::../media/resource_settings.gif[configuración de recursos]
 
-. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Revisa el resumen y luego selecciona *Finalizar*.
 
 
-*resultado*
-
+.Resultado
 Los recursos se muestran junto con cierta información, como el tipo, el host o el nombre de clúster, las políticas y los grupos de recursos asociados, y el estado general.
 
 
 IMPORTANT: Es necesario actualizar los recursos si se cambia el nombre de las bases de datos fuera de SnapCenter.
 
-*Después de terminar*
-
+.Después de terminar
 Si desea proporcionar acceso a los activos a otros usuarios, el administrador de SnapCenter debe realizar la asignación. De este modo, los usuarios pueden realizar las acciones para las cuales tienen permisos sobre los activos que les asignaron.
 
 Después de añadir los recursos, puede modificar sus detalles. Si un recurso de plugin personalizado tiene backups asociados, no se pueden modificar los siguientes campos: Nombre del recurso, tipo de recurso y nombre de host.

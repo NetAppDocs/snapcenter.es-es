@@ -13,8 +13,7 @@ summary: Los recursos son las bases de datos, las instancias de aplicaciones, lo
 [role="lead"]
 Los recursos son las bases de datos, las instancias de aplicaciones, los grupos de disponibilidad y los componentes similares que se mantienen mediante los plugins instalados. Es posible añadir esos recursos a grupos de recursos para ejecutar tareas de protección de datos, pero primero es necesario identificar qué recursos están disponibles. Identificar los recursos disponibles también permite verificar que el plugin se haya instalado correctamente.
 
-*Lo que necesitará*
-
+.Lo que necesitará
 * Debe haber completado ciertas tareas, como instalar SnapCenter Server, añadir hosts, crear conexiones de sistema de almacenamiento y añadir credenciales.
 * Para detectar las bases de datos de Microsoft SQL, se debe cumplir una de las siguientes condiciones.
 +
@@ -30,8 +29,7 @@ Para obtener más información, consulte https://docs.netapp.com/us-en/sc-plugin
 * Si el host se agrega con GMSA y si el GMSA tiene privilegios de inicio de sesión y administrador del sistema, el GMSA se utilizará para conectarse a la instancia de SQL.
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 No se puede realizar una copia de seguridad de las bases de datos si la opción *Estado general* de la página Detalles está establecida en no disponible para la copia de seguridad. La opción *Estado general* se establece en no disponible para copia de seguridad cuando se cumple alguna de las siguientes condiciones:
 
 * Las bases de datos no se encuentran en un LUN de NetApp.
@@ -48,8 +46,7 @@ Por ejemplo, si un usuario solo tiene acceso para ver la base de datos, no será
 
 NOTE: SnapCenter sólo puede realizar una copia de seguridad de la base de datos primaria si tiene una configuración de grupo de disponibilidad en SQL Server Standard Edition.
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, seleccione *Database*, *Instance* o *Availability Group* en la lista desplegable *View*.
 +
@@ -81,4 +78,5 @@ No es posible ejecutar operaciones de protección de datos en una base de datos 
 
 NOTE: Si ha habilitado una autenticación SQL al configurar las credenciales, la instancia o base de datos detectadas se mostrarán con un icono de candado rojo. Si aparece el icono de candado, debe especificar las credenciales de la instancia o la base de datos para añadir correctamente la instancia o la base de datos al grupo de recursos.
 
-Después de que el administrador de SnapCenter asigne los recursos a un usuario de RBAC, el usuario de RBAC debe iniciar sesión y hacer clic en *Actualizar recursos* para ver la última *Estado general* de los recursos.
+. Después de que el administrador de SnapCenter asigne los recursos a un usuario de RBAC, el usuario de RBAC debe iniciar sesión y hacer clic en *Actualizar recursos* para ver la última *Estado general* de los recursos.
+

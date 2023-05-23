@@ -13,8 +13,7 @@ summary: Es posible crear una política de backup para el recurso o el grupo de 
 [role="lead"]
 Es posible crear una política de backup para el recurso o el grupo de recursos antes de usar SnapCenter con el fin de realizar un backup de los recursos de SQL Server. También es posible crear una política de backup en el momento de crear un grupo de recursos o realizar un backup de un único recurso.
 
-*Lo que necesitará*
-
+.Lo que necesitará
 * Debe estar definida la estrategia de protección de datos.
 * Debe haberse preparado para la protección de datos completando ciertas tareas, como instalar SnapCenter, añadir hosts, identificar recursos y crear conexiones con el sistema de almacenamiento.
 * Debe haber configurado el directorio de registro del host para backup de registro.
@@ -25,116 +24,109 @@ Para obtener información sobre cómo los administradores asignan recursos a los
 
 * Si desea ejecutar los scripts de PowerShell en scripts previos y posteriores, debe establecer el valor del parámetro usePowershellProcessforScripts en TRUE en el archivo web.config.
 +
-El valor predeterminado es FALSE
+El valor predeterminado es FALSE.
 
 
 
-*Acerca de esta tarea*
+.Acerca de esta tarea
+Una política de backup es un conjunto de reglas que rigen cómo gestionar y conservar backups, y con qué frecuencia se realizará un backup del recurso o del grupo de recursos. De forma adicional, se puede especificar la configuración de replicación y script. Puede especificar opciones en la política para ahorrar tiempo cuando desee reutilizarla con otro grupo de recursos.
 
-* Una política de backup es un conjunto de reglas que rigen cómo gestionar y conservar backups, y con qué frecuencia se realizará un backup del recurso o del grupo de recursos. De forma adicional, se puede especificar la configuración de replicación y script. Puede especificar opciones en la política para ahorrar tiempo cuando desee reutilizarla con otro grupo de recursos.
-* LA RUTA_DE_SCRIPTS se define mediante la clave PredefinedWindowsScriptsDirectory ubicada en el archivo SMCoreServiceHost.exe.Config del host del plugin.
-+
+LA RUTA_DE_SCRIPTS se define mediante la clave PredefinedWindowsScriptsDirectory ubicada en el archivo SMCoreServiceHost.exe.Config del host del plugin.
+
 Si es necesario, puede cambiar esta ruta y reiniciar el servicio SMcore. Se recomienda utilizar la ruta predeterminada para la seguridad.
 
-+
 El valor de la tecla se puede mostrar desde swagger a través de la API: API /4.7/config settings
 
-+
 Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGURACIÓN de API.
 
-* La mayoría de los campos en estas páginas del asistente son claros y explicativos. La siguiente información describe algunos de los campos que pueden requerir explicación.
 
 
-* Pasos*
+== Paso 1: Crear nombre de política
 
 . En el panel de navegación de la izquierda, haga clic en *Configuración*.
 . En la página Configuración, haga clic en *Directivas*.
 . Haga clic en *Nuevo*.
 . En la página Name, escriba el nombre de la política y una descripción.
-. En la página Backup Type, realice los siguientes pasos:
-+
-.. Elija el tipo de backup:
-+
-|===
-| Si desea... | Realice lo siguiente... 
-
-
- a| 
-Realizar un backup de los archivos de la base de datos y los registros de transacciones, y truncar los registros de transacciones
- a| 
-... Seleccione *copia de seguridad completa y copia de seguridad de registro*.
-... Introduzca el número máximo de bases de datos que se deben incluir en un backup para cada copia de Snapshot.
-+
-
-NOTE: Debe aumentar dicho valor si desea ejecutar varias operaciones de backup en forma simultánea.
 
 
 
 
+== Paso 2: Configure las opciones de copia de seguridad
 
- a| 
-Realice un backup de los archivos de la base de datos
- a| 
-... Seleccione *copia de seguridad completa*.
-... Introduzca el número máximo de bases de datos que se deben incluir en un backup para cada copia de Snapshot. El valor predeterminado es 100
+. Seleccione el tipo de backup
+
+
+[role="tabbed-block"]
+====
+.Backup completo y backup de registros
+--
+Realizar un backup de los archivos de la base de datos y los registros de transacciones y para truncar los registros de transacciones.
+
+. Seleccione *copia de seguridad completa y copia de seguridad de registro*.
+. Introduzca el número máximo de bases de datos que se deben incluir en un backup para cada copia de Snapshot.
 +
 
 NOTE: Debe aumentar dicho valor si desea ejecutar varias operaciones de backup en forma simultánea.
 
 
 
+--
+.Backup completo
+--
+Realice un backup de los archivos de la base de datos.
 
-
- a| 
-Realice un backup de los registros de transacciones
- a| 
-Seleccione *copia de seguridad de registro*.
-
-|===
-.. Si va a realizar una copia de seguridad de los recursos mediante otra aplicación de copia de seguridad, seleccione *copia sólo copia de seguridad*.
+. Seleccione *copia de seguridad completa*.
+. Introduzca el número máximo de bases de datos que se deben incluir en un backup para cada copia de Snapshot. El valor predeterminado es 100
 +
+
+NOTE: Debe aumentar dicho valor si desea ejecutar varias operaciones de backup en forma simultánea.
+
+
+
+--
+.Backup de registros
+--
+Realice un backup de los registros de transacciones. . Seleccione *copia de seguridad de registro*.
+
+--
+.Copiar solo backup
+--
+. Si va a realizar una copia de seguridad de los recursos mediante otra aplicación de copia de seguridad, seleccione *copia sólo copia de seguridad*.
+
+
 Mantener los registros de transacciones intactos permite a cualquier aplicación de backup restaurar la base de datos. Por lo general, no debe utilizar la opción de solo copiar en ningún otro caso.
 
-+
 
 NOTE: Microsoft SQL no es compatible con la opción *copia de seguridad sólo* junto con la opción *copia de seguridad completa y copia de seguridad de registro* para almacenamiento secundario.
 
-.. En la sección Availability Group Settings, realice las siguientes acciones:
+--
+====
+. En la sección Availability Group Settings, realice las siguientes acciones:
 +
-|===
-| Para este campo... | Realice lo siguiente... 
-
-
- a| 
-Backup solo en réplica de backup preferida
- a| 
+.. Backup únicamente en la réplica de backup preferida.
++
 Seleccione esta opción para realizar un backup solo en la réplica de backup preferida. La réplica de backup preferida se decide mediante las preferencias de backup configuradas para el AG en SQL Server.
 
-
-
- a| 
-Seleccione réplicas para backup
- a| 
+.. Seleccione replicas for backup.
++
 Seleccione la réplica principal o secundaria del AG para el backup.
 
-
-
- a| 
-Prioridad de backup (prioridad mínima y máxima de backup)
- a| 
+.. Seleccionar prioridad de backup (prioridad de backup mínima y máxima)
++
 Indique un número mínimo y un número máximo de prioridad de backup mediante los cuales se determine la réplica de AG para backup. Por ejemplo, puede tener una prioridad mínima de 10 y una prioridad máxima de 50. En este caso, se tendrán en cuenta para el backup todas las réplicas de AG que tengan una prioridad superior a 10 e inferior a 50.
 
++
+De forma predeterminada, la prioridad mínima es 1 y la máxima es 100.
 
-NOTE: De forma predeterminada, la prioridad mínima es 1 y la máxima es 100.
 
-|===
+
 +
 
 NOTE: En las configuraciones de clúster, los backups se conservan en cada nodo del clúster según la configuración de retención establecida en la política. Si cambia el nodo propietario del AG, las copias de seguridad se realizan según la configuración de retención y se conservarán las copias de seguridad del nodo propietario anterior. La retención de AG solo se aplica a nivel de nodo.
 
-.. Si desea programar la copia de seguridad que desea crear con esta directiva, especifique el tipo de programa seleccionando *a petición*, *hora*, *Diario*, *Semanal* o *Mensual*.
+. Programe la frecuencia de backup para esta política. Especifique el tipo de horario seleccionando *On Demand*, *Hourly*, *Daily*, *Weekly* o *Monthly*.
 +
-Puede seleccionar un tipo de programación por política.
+Solo puede seleccionar un tipo de programación por política.
 
 +
 image::../media/backup_settings.gif[configuración de copia de seguridad]
@@ -149,130 +141,139 @@ NOTE: Si ha programado para las 2:00 a.m., la programación no se activará dura
 
 
 
-. En la página Retention, según el tipo de backup seleccionado en la página de tipo de backup, realice una o más de las siguientes acciones:
+
+
+== Paso 3: Configure los ajustes de retención
+
+En la página Retention, según el tipo de backup seleccionado en la página de tipo de backup, realice una o más de las siguientes acciones:
+
+. En la sección Retention settings para la operación de restauración de último minuto, realice una de las siguientes acciones:
+
+
+[role="tabbed-block"]
+====
+.Número específico de copias
+--
+Retener únicamente una cantidad específica de copias de Snapshot.
+
+. Seleccione la opción *Keep log backups aplicable a Last <number> Days* y especifique el número de días que se conservarán. Si se acerca a ese límite, tal vez deba eliminar copias más antiguas.
+
+
+--
+.Número específico de días
+--
+Retener las copias de backup por una cantidad determinada de días.
+
+. Seleccione la opción *Keep log backups applicable to last <number> days of full backups* y especifique el número de días que se conservarán las copias de seguridad de registros.
+
+
+--
+====
+. En la sección *Configuración de copias de seguridad completas* para la configuración de retención a petición, realice las siguientes acciones:
 +
-.. En la sección Retention settings para la operación de restauración de último minuto, realice una de las siguientes acciones:
+.. Especifique el número total de copias de Snapshot que se van a conservar
 +
-|===
-| Si desea... | Realice lo siguiente... 
-
-
- a| 
-Retener únicamente una cantidad específica de copias de Snapshot
- a| 
-Seleccione la opción *Keep log backups aplicable a Last <number> Days* y especifique el número de días que se conservarán. Si se acerca a ese límite, tal vez deba eliminar copias más antiguas.
+... Para especificar el número de copias snapshot que se deben conservar, seleccione *Total de copias snapshot que se deben conservar*.
+... Si la cantidad de copias de Snapshot supera el número especificado, las copias se eliminan empezando por las más antiguas.
 
 
 
- a| 
-Retener las copias de backup por una cantidad determinada de días
- a| 
-Seleccione la opción *Keep log backups applicable to last <number> days of full backups* y especifique el número de días que se conservarán las copias de seguridad de registros.
-
-|===
-.. En la sección *Configuración de copias de seguridad completas* para la configuración de retención a petición, realice las siguientes acciones:
-+
-|===
-| Para este campo... | Realice lo siguiente... 
 
 
- a| 
-Copias de Snapshot totales que se deben conservar
- a| 
-Si desea especificar el número de copias snapshot que desea conservar, seleccione *total Snapshot copies to keep*.
-
-Si la cantidad de copias de Snapshot supera el número especificado, las copias se eliminan empezando por las más antiguas.
-
-
-NOTE: El valor de retención máximo es 1018 para recursos en ONTAP 9.4 o posterior, y 254 para recursos en ONTAP 9.3 o anterior. Se producirá un error en los backups si la retención se establece en un valor superior a la versión de ONTAP subyacente.
 
 
 IMPORTANT: De forma predeterminada, el valor del número de retención se establece en 2. Si establece el número de retención en 1, la operación puede generar un error, ya que la primera copia de Snapshot es la de referencia para la relación de SnapVault hasta que se replica una nueva copia de Snapshot en el destino.
 
 
+NOTE: El valor de retención máximo es 1018 para recursos en ONTAP 9.4 o posterior, y 254 para recursos en ONTAP 9.3 o anterior. Se producirá un error en los backups si la retención se establece en un valor superior a la versión de ONTAP subyacente.
 
- a| 
-Conserve copias Snapshot para
- a| 
-Si desea especificar el número de días durante los que desea conservar las copias Snapshot antes de eliminarlas, seleccione *mantener copias Snapshot para*.
-
-|===
-.. En la sección *Configuración de copias de seguridad completas* para la configuración de retención por hora, por día, por semana y por mes, especifique la configuración de retención para el tipo de programación seleccionado en la página Tipo de copia de seguridad.
+. Tiempo que se conservan las copias de Snapshot
 +
-|===
-| Para este campo... | Realice lo siguiente... 
+.. Si desea especificar el número de días durante los que desea conservar las copias Snapshot antes de eliminarlas, seleccione *mantener copias Snapshot para*.
 
 
- a| 
-Copias de Snapshot totales que se deben conservar
- a| 
-Si desea especificar el número de copias snapshot que desea conservar, seleccione *total Snapshot copies to keep*. Si la cantidad de copias de Snapshot supera el número especificado, las copias se eliminan empezando por las más antiguas.
+
+
+. En la sección *Configuración de copias de seguridad completas* para la configuración de retención por hora, por día, por semana y por mes, especifique la configuración de retención para el tipo de programación seleccionado en la página Tipo de copia de seguridad.
++
+.. Especifique el número total de copias de Snapshot que se van a conservar
++
+... Para especificar el número de copias snapshot que se deben conservar, seleccione *Total de copias snapshot que se deben conservar*. Si la cantidad de copias de Snapshot supera el número especificado, las copias se eliminan empezando por las más antiguas.
+
+
+
+
+
 
 
 IMPORTANT: Debe establecer el número de retención en 2 o un valor más alto si tiene pensado habilitar la replicación de SnapVault. Si establece el número de retención en 1, la operación puede generar un error, ya que la primera copia de Snapshot es la de referencia para la relación de SnapVault hasta que se replica una nueva copia de Snapshot en el destino.
 
-
-
- a| 
-Conserve copias Snapshot para
- a| 
-Si desea especificar el número de días durante los que desea conservar las copias Snapshot antes de eliminarlas, seleccione *mantener copias Snapshot para*.
-
-|===
+. Tiempo que se conservan las copias de Snapshot
 +
+.. Para especificar el número de días durante los cuales desea conservar las copias snapshot antes de eliminarlas, seleccione *Mantener copias snapshot para*.
+
+
+
+
 De forma predeterminada, la retención de copias de Snapshot de registro se establece en 7 días. Use el cmdlet Set-SmPolicy para cambiar la retención de la copia de Snapshot de registro.
 
-+
 En este ejemplo se establece la retención de la copia Snapshot del registro en 2:
 
-+
-[listing]
-----
-Set-SmPolicy -PolicyName 'newpol' -PolicyType 'Backup' -PluginPolicyType 'SCSQL' -sqlbackuptype 'FullBackupAndLogBackup' -RetentionSettings @{BackupType='DATA';ScheduleType='Hourly';RetentionCount=2},@{BackupType='LOG_SNAPSHOT';ScheduleType='None';RetentionCount=2},@{BackupType='LOG';ScheduleType='Hourly';RetentionCount=2} -scheduletype 'Hourly'
-----
-+
+.Muestra el ejemplo
+[]
+====
+Set-SmPolicy -PolicyName 'newpol' -PolicyType 'Backup' -PluginPolicyType 'SCSQL' -sqlbackuptype 'FullBackupAndLogBackup' -RetentionSettings @{BackupType='DATA';ScheduleType='Hourly';RetentionCount=2},@{BackupType='LOG_SNAPSHOT';ScheduleType='None'=HoRetentionCount='Hourly';RetentionType='2';RetentionType='Hourly';RetentionCount=2}
+
+====
 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/SnapCenter_retains_Snapshot_copies_of_the_database["SnapCenter conserva copias Snapshot de la base de datos"]
 
 
 
+== Paso 4: Configure los ajustes de replicación
+
 . En la página Replication, especifique la replicación en el sistema de almacenamiento secundario:
-+
-|===
-| Para este campo... | Realice lo siguiente... 
 
 
- a| 
-Actualizar SnapMirror tras crear una copia Snapshot local
- a| 
-Seleccione esta opción para crear copias de SnapMirror de conjuntos de backups en otro volumen (SnapMirror).
+[role="tabbed-block"]
+====
+.Actualice SnapMirror
+--
+Actualice SnapMirror después de crear una copia snapshot local.
+
+. Seleccione esta opción para crear copias de SnapMirror de conjuntos de backups en otro volumen (SnapMirror).
 
 
+--
+.Actualizar SnapVault
+--
+Actualice SnapVault después de crear una copia snapshot.
 
- a| 
-Actualizar SnapVault después de crear una copia Snapshot
- a| 
-Seleccione esta opción para realizar una replicación de backup de disco a disco.
+. Seleccione esta opción para realizar una replicación de backup de disco a disco.
 
 
+--
+.Etiqueta de política secundaria
+--
+. Seleccione una etiqueta de Snapshot.
 
- a| 
-Etiqueta de la política secundaria
- a| 
-Seleccione una etiqueta de Snapshot.
 
 Según la etiqueta de copia de Snapshot que seleccione, ONTAP aplicará la política de retención de copias de Snapshot secundarias que corresponda a esa etiqueta.
 
 
 NOTE: Si ha seleccionado *Actualizar SnapMirror después de crear una copia Snapshot local*, puede especificar opcionalmente la etiqueta de la directiva secundaria. Sin embargo, si ha seleccionado *Actualizar SnapVault después de crear una copia Snapshot local*, debe especificar la etiqueta de la directiva secundaria.
 
+--
+.Recuento de reintentos de error
+--
+. Introduzca el número de intentos de replicación que deben producirse antes de que se interrumpa el proceso.
 
 
- a| 
-Número de reintentos con error
- a| 
-Introduzca el número de intentos de replicación que deben producirse antes de que se interrumpa el proceso.
+--
+====
 
-|===
+
+== Paso 5: Configurar los ajustes de script
+
 . En la página Script, introduzca la ruta y los argumentos del script previo o script posterior que se deben ejecutar antes o después de la operación de backup, según corresponda.
 +
 Por ejemplo, se puede ejecutar un script para actualizar capturas SNMP, automatizar alertas y enviar registros.
@@ -285,56 +286,55 @@ NOTE: La ruta scripts previos o posteriores no debe incluir unidades o recursos 
 
 NOTE: Debe configurar la política de retención de SnapMirror en ONTAP para que el almacenamiento secundario no alcance el límite máximo de copias de Snapshot.
 
-. En la página Verification, realice los siguientes pasos:
+
+
+
+
+== Paso 6: Configure los ajustes de verificación
+
+En la página Verification, realice los siguientes pasos:
+
+. En la sección Run verification for following backup schedules, seleccione la frecuencia de backup.
+. En la sección Database consistency check options, realice las siguientes acciones:
 +
-.. En la sección Run verification for following backup schedules, seleccione la frecuencia de backup.
-.. En la sección Database consistency check options, realice las siguientes acciones:
+.. Limitar la estructura de integridad a la estructura física de la base de datos (PHYSICAL_ONLY)
 +
-|===
-| Para este campo... | Realice lo siguiente... 
+... Seleccione *limitar la estructura de integridad a la estructura física de la base de datos (PHYSICAL_ONLY)* para limitar la comprobación de integridad a la estructura física de la base de datos y detectar páginas dañadas, errores de sumas de comprobación y errores de hardware habituales que afecten a la base de datos.
 
 
- a| 
-Limitar la estructura de integridad a la estructura física de la base de datos (PHYSICAL_ONLY)
- a| 
-Seleccione *limitar la estructura de integridad a la estructura física de la base de datos (PHYSICAL_ONLY)* para limitar la comprobación de integridad a la estructura física de la base de datos y detectar páginas dañadas, errores de sumas de comprobación y errores de hardware habituales que afecten a la base de datos.
+.. Suprimir todos los mensajes de información (NO INFOMSGS)
++
+... Seleccione *Supress all information messages (NO INFOMSGS)* para suprimir todos los mensajes informativos. Seleccionado de forma predeterminada.
 
 
-
- a| 
-Supress all information messages (NO INFOMSGS)
- a| 
-Seleccione *Supress all information messages (NO INFOMSGS)* para suprimir todos los mensajes informativos. Seleccionado de forma predeterminada.
+.. Visualizar todos los mensajes de error notificados por objeto (ALL_ERRORMSGS)
++
+... Seleccione *Display all reported error messages per object (ALL_ERRORMSGS)* para visualizar todos los errores notificados por objeto.
 
 
-
- a| 
-Visualizar todos los mensajes de error notificados por objeto (ALL_ERRORMSGS)
- a| 
-Seleccione *Display all reported error messages per object (ALL_ERRORMSGS)* para visualizar todos los errores notificados por objeto.
+.. No comprobar los índices no almacenados en clúster (NOINDEX)
++
+... Seleccione *no comprobar los índices no almacenados en clúster (NOINDEX)* si no desea comprobar los índices no almacenados en clúster. La base de datos de SQL Server utiliza la comprobación de la consistencia de base de datos de Microsoft SQL Server para comprobar la integridad lógica y física de los objetos de la base de datos.
 
 
-
- a| 
-No comprobar los índices no almacenados en clúster (NOINDEX)
- a| 
-Seleccione *no comprobar los índices no almacenados en clúster (NOINDEX)* si no desea comprobar los índices no almacenados en clúster. La base de datos de SQL Server utiliza la comprobación de la consistencia de base de datos de Microsoft SQL Server para comprobar la integridad lógica y física de los objetos de la base de datos.
+.. Limitar las comprobaciones y obtener los bloqueos en lugar de utilizar una copia de Snapshot de la base de datos interna (TABLOCK)
++
+... Seleccione *Limite las comprobaciones y obtenga los bloqueos en lugar de utilizar una copia de Snapshot de la base de datos interna (TABLOCK)* para limitar las comprobaciones y obtener bloqueos en lugar de utilizar una copia de Snapshot interna de la base de datos.
 
 
 
- a| 
-Limitar las comprobaciones y obtener los bloqueos en lugar de utilizar una copia de Snapshot de la base de datos interna (TABLOCK)
- a| 
-Seleccione *Limite las comprobaciones y obtenga los bloqueos en lugar de utilizar una copia de Snapshot de la base de datos interna (TABLOCK)* para limitar las comprobaciones y obtener bloqueos en lugar de utilizar una copia de Snapshot interna de la base de datos.
 
-|===
-.. En la sección *Backup de registro*, seleccione *verificar copia de seguridad de registro al finalizar* para verificar la copia de seguridad de registro al finalizar.
-.. En la sección *Verification script settings*, introduzca la ruta de acceso y los argumentos del script previo o posterior que deben ejecutarse antes o después de la operación de verificación, respectivamente.
+. En la sección *Backup de registro*, seleccione *verificar copia de seguridad de registro al finalizar* para verificar la copia de seguridad de registro al finalizar.
+. En la sección *Verification script settings*, introduzca la ruta de acceso y los argumentos del script previo o posterior que deben ejecutarse antes o después de la operación de verificación, respectivamente.
 +
 
 NOTE: La ruta scripts previos o posteriores no debe incluir unidades o recursos compartidos. La ruta debe ser relativa a LA RUTA DE ACCESO_SCRIPTS.
 
 
+
+
+
+== Paso 7: Resumen de la revisión
 
 . Revise el resumen y, a continuación, haga clic en *Finalizar*.
 

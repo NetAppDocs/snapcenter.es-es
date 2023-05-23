@@ -1,0 +1,52 @@
+---
+permalink: protect-scsql/task-install-snapcenter-plug-in-for-sql-server.html 
+sidebar: sidebar 
+keywords: credentials 
+summary: Proporciona instrucciones para instalar el plugin de SnapCenter para Microsoft SQL Server. 
+---
+= Instale el plugin de SnapCenter para Microsoft SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Proporciona un conjunto condensado de instrucciones de instalación para el plugin de SnapCenter para Microsoft SQL Server.
+
+
+
+== Paso 1: Configure credenciales Run As para instalar el plugin para Microsoft SQL Server
+
+. En el panel izquierdo, haga clic en *Configuración > credenciales > Nuevo*.
+. Introduzca las credenciales.
++
+Para un formato de nombre de usuario de administrador de dominio integrado, utilice: _NetBIOS\<username>_ o _<username>@<domain>_ o _<DomainFQDN>\<username>_.
+
++
+Para un formato de nombre de usuario de administrador local integrado, utilice _<username>_.
+
+
+
+
+
+== Paso 2: Añada un host e instale el plugin para Microsoft SQL Server
+
+. En el panel izquierdo de la interfaz gráfica de usuario de SnapCenter, haga clic en *hosts > Managed hosts > Add*.
+. En la página hosts del asistente, realice lo que sigue:
++
+.. Host Type: Seleccione el tipo de host Windows.
+.. Nombre de host: Utilice el host SQL o especifique el FQDN de un host Windows dedicado.
+.. Credenciales: Seleccione el nombre de credencial válido del host que creó o cree nuevas credenciales.
+
+
+. En la sección Select Plug-ins to Install, seleccione *Microsoft SQL Server*.
+. Haga clic en *más opciones* para especificar los siguientes detalles:
++
+.. Puerto: Conserve el número de puerto predeterminado o especifique el número de puerto.
+.. Ruta de instalación: La ruta predeterminada es _C:\Program Files\NetApp\SnapCenter_. Opcionalmente, puede personalizar la ruta.
+.. Añadir todos los hosts del clúster: Seleccione esta casilla de comprobación si está usando SQL en WSFC.
+.. Skip preinstall checks: Seleccione esta casilla de comprobación si ya ha instalado los plugins manualmente o no desea validar si el host cumple los requisitos para instalar el plugin.
+
+
+. Haga clic en *Enviar*.
+
