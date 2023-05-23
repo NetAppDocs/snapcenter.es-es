@@ -13,6 +13,10 @@ summary: Es posible usar SnapCenter para clonar los backups de volumen de aplica
 [role="lead"]
 Es posible utilizar SnapCenter para clonar los backups de volumen de aplicaciones.
 
+*Antes de empezar*
+
+Si instaló el plugin como usuario no raíz, debe asignar manualmente los permisos de ejecución a los directorios de scripts previos y posteriores.
+
 * Pasos*
 
 . En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione el complemento Oracle Database en la lista.

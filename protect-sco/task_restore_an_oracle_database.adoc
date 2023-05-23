@@ -13,6 +13,10 @@ summary: En caso de pérdida de datos, es posible usar SnapCenter para restaurar
 [role="lead"]
 En caso de pérdida de datos, es posible usar SnapCenter para restaurar datos desde uno o más backups en el sistema de archivos activo para luego recuperar la base de datos.
 
+*Antes de empezar*
+
+Si instaló el plugin como usuario no raíz, debe asignar manualmente los permisos de ejecución a los directorios de scripts previos y posteriores.
+
 *Acerca de esta tarea*
 
 La recuperación se lleva a cabo con los registros de archivos disponibles en la ubicación del registro de archivos configurado. Si la base de datos se está ejecutando en modo ARCHIVELOG, Oracle Database guarda los grupos rellenados de archivos redo log en uno o más destinos sin conexión, conocidos conjuntamente como redo log archivado. SnapCenter identifica y monta la cantidad óptima de backups de registros según el SCN especificado, la fecha y la hora seleccionadas o la opción All logs. Si los registros de archivos requeridos para la recuperación no están disponibles en la ubicación configurada, debe montar la copia Snapshot que contiene los registros y especificar la ruta como registros de archivo externos.

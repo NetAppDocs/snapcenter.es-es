@@ -13,6 +13,10 @@ summary: 'Es posible clonar una base de datos conectables \(PDB\) en una base de
 [role="lead"]
 Es posible clonar una base de datos conectables (PDB) en una base de datos diferente o la misma CDB objetivo en el mismo host o alternativo. También es posible recuperar la PDB clonada en un SCN o la fecha y la hora que desee.
 
+*Antes de empezar*
+
+Si instaló el plugin como usuario no raíz, debe asignar manualmente los permisos de ejecución a los directorios de scripts previos y posteriores.
+
 * Pasos*
 
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
