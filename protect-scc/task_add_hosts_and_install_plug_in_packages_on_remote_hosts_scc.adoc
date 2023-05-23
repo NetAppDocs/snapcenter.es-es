@@ -131,7 +131,7 @@ El archivo .xml del descriptor en la carpeta del plugin personalizado comprimida
 Aparece la lista de los plugins personalizados que se cargan en el servidor de SnapCenter.
 
 +
-Si desea gestionar aplicaciones de MySQL o DB2, puede utilizar los plugins personalizados de MySQL y DB2 proporcionados por NetApp. Los plugins personalizados de MySQL y DB2 están disponibles en la https://["Automation Store de NetApp"]
+Si desea gestionar aplicaciones de MySQL o DB2, puede utilizar los plugins personalizados de MySQL y DB2 proporcionados por NetApp. Los plugins personalizados de MySQL y DB2 están disponibles en la https://automationstore.netapp.com/home.shtml["Automation Store de NetApp"]
 
 
 

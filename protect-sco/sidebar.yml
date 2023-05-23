@@ -43,34 +43,52 @@ entries:
   url: "/protect-sco/concept_prepare_for_protecting_oracle_databases.html"
 - title: Realice backups de bases de datos de Oracle
   entries:
-  - title: Flujo de trabajo de backup
+  - title: Información general sobre backup
     url: "/protect-sco/backup-workflow.html"
-  - title: Definir una estrategia de backup para bases de datos de Oracle
+  - title: Información de configuración de backup
+    entries:
+    - title: Configuraciones de backup admitidas
+      url: "/protect-sco/supported_backup_configs.html"
+    - title: Tipos de backup
+      url: "/protect-sco/backup_types.html"
+    - title: Cómo detecta SnapCenter las bases de datos de Oracle
+      url: "/protect-sco/discover-oracle-database.html"
+    - title: Nodos preferidos para usar
+      url: "/protect-sco/preferred-nodes.html"
+    - title: Backups en catálogo
+      url: "/protect-sco/catalog-backups.html"
+    - title: Variables de entorno predefinidas
+      url: "/protect-sco/predefined-environment-variables-prescript-postscript-backup.html"
+    - title: Retención de backups
+      url: "/protect-sco/retention-backups.html"
+    - title: Programaciones de backup
+      url: "/protect-sco/schedule-backups.html"
+    - title: Convenciones de nomenclatura
+      url: "/protect-sco/naming-backups.html"
+  - title: Defina la estrategia de backup
     url: "/protect-sco/task_define_a_backup_strategy_for_oracle_databases.html"
-  - title: Variables de entorno predefinidas para scripts previos y posteriores específicos
-      para backup
-    url: "/protect-sco/predefined-environment-variables-prescript-postscript-backup.html"
-  - title: Determinar si las bases de datos de Oracle están disponibles para backup
-    url: "/protect-sco/task_determine_whether_oracle_databases_are_available_for_backup.html"
-  - title: Crear políticas de backup para bases de datos de Oracle
-    url: "/protect-sco/task_create_backup_policies_for_oracle_database.html"
-  - title: Crear grupos de recursos y vincular políticas para bases de datos de Oracle
-    url: "/protect-sco/task_create_resource_groups_and_attaching_policies_for_oracle_databases.html"
-  - title: Requisitos para realizar backups de una base de datos de Oracle
+  - title: Revise los requisitos de backup
     url: "/protect-sco/reference_requirements_for_backing_up_an_oracle_database.html"
+  - title: Detectar Oracle Database
+    url: "/protect-sco/task_determine_whether_oracle_databases_are_available_for_backup.html"
+  - title: Cree políticas de backup
+    url: "/protect-sco/task_create_backup_policies_for_oracle_database.html"
+  - title: Crear grupos de recursos (opcional)
+    url: "/protect-sco/task_create_resource_groups_and_attach_policies_for_oracle_databases.html"
   - title: Realice backup de recursos de Oracle
     url: "/protect-sco/task_back_up_oracle_resources.html"
-  - title: Realice backups de grupos de recursos de bases de datos de Oracle
+  - title: Realice un backup de los grupos de recursos
     url: "/protect-sco/task_back_up_oracle_database_resource_groups.html"
-  - title: Backups de bases de datos de Oracle con comandos de UNIX
-    url: "/protect-sco/task_back_up_oracle_databases_using_unix_commands.html"
-  - title: Supervisar las operaciones de backup de bases de datos de Oracle
+  - title: Supervise el progreso de la copia de seguridad
     url: "/protect-sco/task_monitor_oracle_database_backup_operations.html"
-  - title: Cancelar las operaciones de backup de las bases de datos de Oracle
-    url: "/protect-sco/task_cancel_the_snapcenter_plug_in_for_oracle_database_backup_operations.html"
-  - title: Consulte los backups y los clones de las bases de datos de Oracle en la
-      página Topology
-    url: "/protect-sco/task_view_oracle_databse_backups_and_clones_in_the_topology_page.html"
+  - title: Otras operaciones de backup
+    entries:
+    - title: Realizar una copia de seguridad mediante comandos UNIX
+      url: "/protect-sco/task_back_up_oracle_databases_using_unix_commands.html"
+    - title: Cancele las operaciones de backup
+      url: "/protect-sco/task_cancel_the_snapcenter_plug_in_for_oracle_database_backup_operations.html"
+    - title: Ver backups
+      url: "/protect-sco/task_view_oracle_databse_backups_and_clones_in_the_topology_page.html"
 - title: Montar y desmontar backups de bases de datos
   url: "/protect-sco/task_mount_and_unmount_databases_backups.html"
 - title: Restaurar y recuperar bases de datos de Oracle

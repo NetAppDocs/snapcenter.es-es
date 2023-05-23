@@ -80,7 +80,7 @@ Debe tener credenciales de inicio de sesión válidas en el sitio de soporte de 
 
 * Pasos*
 
-. Inicie sesión en el sitio de soporte de NetApp en http://["mysupport.netapp.com"^].
+. Inicie sesión en el sitio de soporte de NetApp en http://mysupport.netapp.com/["mysupport.netapp.com"^].
 . Vaya a *sistemas* > *licencias de software*.
 . En el área criterios de selección, elija *SC_STANDARD* en el menú desplegable Mostrar todos: Números de serie y licencias.
 +
@@ -108,7 +108,7 @@ Si prefiere no especificar las credenciales del sitio de soporte de NetApp y el 
 
 * Pasos*
 
-. Desplácese hasta la https://["Generador de archivos de licencia de NetApp"^].
+. Desplácese hasta la https://register.netapp.com/register/eclg.xwic["Generador de archivos de licencia de NetApp"^].
 . Especifique la información obligatoria.
 . En el campo línea de productos, seleccione *Estándar SnapCenter (basado en la capacidad)* en el menú desplegable.
 . En el campo Product Serial Number, especifique el número de serie de la licencia de SnapCenter

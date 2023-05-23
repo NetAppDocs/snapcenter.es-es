@@ -15,11 +15,11 @@ Es posible cambiar la configuración de alta disponibilidad de SnapCenter de bal
 
 * Pasos*
 
-. Configurar servidores SnapCenter para obtener alta disponibilidad mediante F5. https://["Leer más"^].
+. Configurar servidores SnapCenter para obtener alta disponibilidad mediante F5. https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_configure_SnapCenter_Servers_for_high_availability_using_F5_Load_Balancer["Leer más"^].
 . En el host de SnapCenter Server, inicie PowerShell.
 . Inicie una sesión con el cmdlet Open-SmConnection y, a continuación, introduzca sus credenciales.
 . Actualice el servidor SnapCenter para que apunte a la dirección IP del clúster F5 mediante el cmdlet Update-SmServerCluster.
 +
-La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://["Guía de referencia de cmdlets de SnapCenter Software"^].
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].
 
 

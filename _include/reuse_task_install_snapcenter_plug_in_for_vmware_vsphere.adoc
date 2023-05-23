@@ -4,13 +4,13 @@
 
 Si la base de datos está almacenada en máquinas virtuales (VM) o si desea proteger máquinas virtuales y almacenes de datos, debe implementar el dispositivo virtual del plugin de SnapCenter para VMware vSphere.
 
-Para obtener información sobre la implementación, consulte https://["Visión General de la implementación"^].
+Para obtener información sobre la implementación, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_get_started_overview.html["Visión General de la implementación"^].
 
 
 
 == Implemente el certificado de CA
 
-Para configurar el certificado de CA con el plugin de SnapCenter para VMware vSphere, consulte https://["Crear o importar certificado SSL"^].
+Para configurar el certificado de CA con el plugin de SnapCenter para VMware vSphere, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_create_and_or_import_an_SSL_certificate_to_SnapCenter_Plug-in_for_VMware_vSphere_(SCV)["Crear o importar certificado SSL"^].
 
 
 

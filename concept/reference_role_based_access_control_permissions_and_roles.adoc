@@ -40,7 +40,7 @@ Para gestionar la protección de datos coherente con las máquinas virtuales de 
 * Restauración de archivos invitados de SCV
 
 
-Para obtener más información, consulte https://["Tipos de RBAC para usuarios del plugin de SnapCenter para VMware vSphere"^]
+Para obtener más información, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_types_of_rbac_for_snapcenter_users.html["Tipos de RBAC para usuarios del plugin de SnapCenter para VMware vSphere"^]
 
 |===
 

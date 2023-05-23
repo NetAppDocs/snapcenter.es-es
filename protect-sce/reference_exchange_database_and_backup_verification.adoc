@@ -20,4 +20,4 @@ La herramienta Eseutil de Microsoft Exchange es una utilidad de línea de comand
 
 | *Mejor práctica:* no es necesario realizar comprobaciones de consistencia en bases de datos que forman parte de una configuración DAG con al menos dos réplicas. 
 |===
-Para obtener más información, consulte https://["Documentación de Microsoft Exchange Server"^].
+Para obtener más información, consulte https://docs.microsoft.com/en-us/exchange/exchange-server?view=exchserver-2019["Documentación de Microsoft Exchange Server"^].

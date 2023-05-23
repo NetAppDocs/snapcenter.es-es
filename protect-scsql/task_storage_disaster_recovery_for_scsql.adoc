@@ -48,7 +48,7 @@ Se muestra un icono "i" junto a los nuevos backups para indicar que estos backup
 * Puede eliminar los backups del plugin de SnapCenter para SQL Server que se crearon durante la conmutación por error usando la interfaz de usuario o el siguiente cmdlet de: `Remove-SmBackup`
 * Después de la conmutación por error, si desea que algunos de los recursos estén en modo no DR, use el cmdlet siguiente: `Remove-SmResourceDRMode`
 +
-Para obtener más información, consulte https://["Guía de referencia de cmdlets de SnapCenter Software"^].
+Para obtener más información, consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].
 
 * SnapCenter Server gestionará los recursos de almacenamiento individuales (bases de datos SQL) que están en modo DR o no DR, pero no el grupo de recursos con recursos de almacenamiento que se encuentran en modo DR o en modo no DR.
 

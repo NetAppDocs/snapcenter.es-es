@@ -1,0 +1,47 @@
+---
+permalink: protect-sco/supported_backup_configs.html 
+sidebar: sidebar 
+keywords: backup type, preferred nodes, catalog backups, schedules, backup name format, retention, verification 
+summary: SnapCenter admite el backup de diferentes configuraciones de bases de datos de Oracle. 
+---
+= Configuraciones de bases de datos de Oracle para backups admitidas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapCenter admite el backup de diferentes configuraciones de bases de datos de Oracle.
+
+* Oracle independiente
+* Real Application Clusters (RAC) de Oracle
+* Oracle Standalone Legacy
+* Base de datos de contenedores independiente de Oracle (CDB)
+* Oracle Data Guard en espera
++
+Solo se pueden crear backups sin conexión montados de bases de datos en espera de Data Guard. No se admiten el backup sin conexión apagado, el backup de solo registro de archivos y el backup completo.
+
+* Oracle Active Data Guard en espera
++
+Solo pueden crearse backups en línea de bases de datos en espera de Active Data Guard. No se admiten el backup solo de registro de archivo y el backup completo.
+
++
+Antes de crear un backup de una base de datos en espera de Data Guard o Active Data Guard, se detiene el proceso de recuperación gestionado (MRP) y, una vez que se crea el backup, se inicia MRP.
+
+* Gestión automática del almacenamiento (ASM)
++
+** ASM independiente y ASM RAC en disco de máquina virtual (VMDK)
++
+Entre todos los métodos de restauración compatibles con las bases de datos de Oracle, solo se puede ejecutar la restauración por conexión y copia de bases de datos de ASM RAC en VMDK.
+
+** ASM independiente y ASM RAC en asignación de dispositivos sin formato (RDM) + Es posible realizar operaciones de backup, restauración y clonado en bases de datos de Oracle en ASM, con o sin ASMLib.
+** Controlador de filtro de Oracle ASM (ASMFD)
++
+No se admiten las operaciones de migración de PDB y clonado de PDB.
+
+** Oracle Flex ASM
+
+
+
+
+Para obtener la información más reciente sobre las versiones de Oracle admitidas, consulte https://imt.netapp.com/matrix/imt.jsp?components=105283;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].

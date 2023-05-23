@@ -22,7 +22,7 @@ Antes de añadir un host e instalar los paquetes de plugins, debe cumplir con to
 * Si SnapManager para Microsoft Exchange Server y SnapDrive para Windows ya se han instalado, debe anular el registro del proveedor de hardware VSS usado por SnapDrive para Windows antes de que instale el plugin para Exchange en el mismo Exchange Server para garantizar una protección de datos exitosa usando SnapCenter.
 * Si SnapManager para Microsoft Exchange Server y el plugin para Exchange están instalados en el mismo servidor, debe suspender o eliminar todas las programaciones del programador de Windows creadas por SnapManager para Microsoft Exchange Server.
 * El host debe poder resolverse con el nombre de dominio completo (FQDN) del servidor. Si el archivo hosts se modifica para que pueda resolverse y si se especifican tanto el nombre corto como el FQDN en el archivo hosts, cree una entrada en el archivo hosts SnapCenter con el siguiente formato: _<ip_address> <host_fqdn> <host_name>_.
-* Compruebe que los puertos siguientes no estén bloqueados en el firewall; de lo contrario, la operación de añadir host fallará. Para resolver este problema, debe configurar el intervalo de puertos dinámico. Para obtener más información, consulte https://["Documentación de Microsoft"^].
+* Compruebe que los puertos siguientes no estén bloqueados en el firewall; de lo contrario, la operación de añadir host fallará. Para resolver este problema, debe configurar el intervalo de puertos dinámico. Para obtener más información, consulte https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/configure-rpc-dynamic-port-allocation-with-firewalls["Documentación de Microsoft"^].
 +
 ** Intervalo de puertos 50000 - 51000 para Windows 2016 y Exchange 2016
 ** Intervalo de puertos 6000 - 6500 para Windows 2012 R2 y Exchange 2013
@@ -57,7 +57,7 @@ Sistemas operativos
  a| 
 Microsoft Windows
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte https://["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=108395;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 
 
@@ -86,9 +86,9 @@ Paquetes de software obligatorios
 * PowerShell 4.0 o posterior
 
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte https://["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=108395;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
 
-Para obtener información específica sobre la solución de problemas de .NET, consulte https://["La actualización o instalación de SnapCenter falla en sistemas heredados que no tienen conexión a Internet."]
+Para obtener información específica sobre la solución de problemas de .NET, consulte https://kb.netapp.com/mgmt/SnapCenter/SnapCenter_upgrade_or_install_fails_with_This_KB_is_not_related_to_the_OS["La actualización o instalación de SnapCenter falla en sistemas heredados que no tienen conexión a Internet."]
 
 |===
 
@@ -141,7 +141,7 @@ Sistemas operativos
  a| 
 Microsoft Windows
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte https://["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=108395;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 
 
@@ -170,8 +170,8 @@ Paquetes de software obligatorios
 * PowerShell 4.0 o posterior
 
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte https://["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=108395;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
 
-Para obtener información específica sobre la solución de problemas de .NET, consulte https://["La actualización o instalación de SnapCenter falla en sistemas heredados que no tienen conexión a Internet."]
+Para obtener información específica sobre la solución de problemas de .NET, consulte https://kb.netapp.com/mgmt/SnapCenter/SnapCenter_upgrade_or_install_fails_with_This_KB_is_not_related_to_the_OS["La actualización o instalación de SnapCenter falla en sistemas heredados que no tienen conexión a Internet."]
 
 |===

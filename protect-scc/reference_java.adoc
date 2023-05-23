@@ -334,7 +334,7 @@ Lista vacía
 Esta lista contiene todos los mensajes que un plug-in desea volver al servidor. El servidor SnapCenter muestra esos mensajes en la CLI o en la GUI.
 
 |===
-El agente de SnapCenter proporciona constructores (https://["Patrón de creación"]) para todos sus tipos de resultados. Esto hace que su uso sea muy sencillo:
+El agente de SnapCenter proporciona constructores (https://en.wikipedia.org/wiki/Builder_pattern["Patrón de creación"]) para todos sus tipos de resultados. Esto hace que su uso sea muy sencillo:
 
 ....
 Result result = Result.builder()

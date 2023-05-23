@@ -1,8 +1,8 @@
 ---
-permalink: protect-sco/task_create_resource_groups_and_attaching_policies_for_oracle_databases.html 
+permalink: protect-sco/task_create_resource_groups_and_attach_policies_for_oracle_databases.html 
 sidebar: sidebar 
 keywords: run as 
-summary: Un grupo de recursos es el contenedor al que debe añadir los recursos que desea proteger e incluir en un backup. Permite realizar un backup en simultáneo con todos los datos que están asociados con una determinada aplicación. 
+summary: Un grupo de recursos es un contenedor donde se añaden recursos que se quieren proteger e incluir en un backup. Permite realizar un backup en simultáneo con todos los datos que están asociados con una determinada aplicación. 
 ---
 = Crear grupos de recursos y vincular políticas para bases de datos de Oracle
 :allow-uri-read: 
@@ -11,62 +11,38 @@ summary: Un grupo de recursos es el contenedor al que debe añadir los recursos 
 
 
 [role="lead"]
-Un grupo de recursos es el contenedor al que debe añadir los recursos que desea proteger e incluir en un backup. Permite realizar un backup en simultáneo con todos los datos que están asociados con una determinada aplicación.
+Un grupo de recursos es un contenedor donde se añaden recursos que se quieren proteger e incluir en un backup. Permite realizar un backup en simultáneo con todos los datos que están asociados con una determinada aplicación.
 
-*Acerca de esta tarea*
+.Acerca de esta tarea
+Una base de datos con archivos en grupos de discos de ASM debe tener el estado «MOUNT» o «OPEN» para verificar sus backups mediante la utilidad Oracle DBVERIFY.
 
-Debe asegurarse de que la base de datos que tiene archivos en los grupos de discos ASM debe estar en estado "MOUNT" o "OPEN" para verificar sus copias de seguridad con la utilidad Oracle DBVERIFY.
-
-Debe añadir una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar.
+Añada una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar.
 
 En la siguiente imagen, se muestra la relación entre los recursos, los grupos de recursos y las políticas para las bases de datos:
 
 image::../media/sco_resourcegroup_policy.gif[política de sco resourcegroup]
 
-* Pasos*
-
-. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+.Pasos
+. En el panel de navegación de la izquierda, seleccione *Recursos* y el plug-in apropiado de la lista.
 . En la página Resources, haga clic en *New Resource Group*.
 . En la página Name, realice los siguientes pasos:
 +
-|===
-| Para este campo... | Realice lo siguiente... 
-
-
- a| 
-Nombre
- a| 
-Escriba un nombre para el grupo de recursos.
-
+.. Escriba un nombre para el grupo de recursos en el campo Name.
++
 
 NOTE: El nombre del grupo de recursos no debe superar los 250 caracteres.
 
-
-
- a| 
-Etiquetas
- a| 
-Escriba una o más etiquetas que más adelante le permitirán buscar el grupo de recursos.
-
+.. Escriba una o más etiquetas en el campo Etiqueta para que le ayude a buscar el grupo de recursos más adelante.
++
 Por ejemplo, si añadió HR como etiqueta a varios grupos de recursos, más adelante encontrará todos los grupos de recursos asociados usando esa etiqueta.
 
-
-
- a| 
-Utilice un formato de nombre personalizado para la copia de Snapshot
- a| 
-Marque esta casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de la copia de Snapshot.
-
+.. Marque esta casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de la copia de Snapshot.
++
 Por ejemplo, customtext_resource group_policy_hostname o resource group_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
 
+.. Especifique los destinos de los archivos de registro de archivos que no desea incluir en el backup.
 
 
- a| 
-Excluir destinos de registro de archivos de la copia de seguridad
- a| 
-Especifique los destinos de los archivos de registro de archivos que no desea incluir en el backup.
-
-|===
 . En la página Resources, seleccione un nombre de host de la base de datos Oracle en la lista desplegable *Host*.
 +
 
@@ -82,12 +58,12 @@ NOTE: Puede agregar bases de datos desde hosts Linux y AIX en un solo grupo de r
 .. Seleccione una o varias políticas de la lista desplegable.
 +
 
-NOTE: También puede crear una política haciendo clic en image:../media/add_policy_from_resourcegroup.gif[""].
+NOTE: También puede crear una política haciendo clic en image:../media/add_policy_from_resourcegroup.gif["agregar símbolo"].
 
 +
 En la sección Configure schedules for selected policies, se muestran las políticas seleccionadas.
 
-.. Haga clic en *image:../media/add_policy_from_resourcegroup.gif[""]* En la columna Configurar programaciones de la directiva para la que desea configurar una programación.
+.. Haga clic en image:../media/add_policy_from_resourcegroup.gif["agregar símbolo"] En la columna Configure Schedules correspondiente a la política para la cual se desea configurar una programación.
 .. En la ventana Add schedules for policy _policy_name_, configure la programación y haga clic en *OK*.
 +
 Donde, _policy_name_ es el nombre de la directiva seleccionada.
@@ -103,7 +79,7 @@ No se admiten programas de backup de terceros cuando se solapan con los programa
 . En la página Verification, realice los siguientes pasos:
 +
 .. Haga clic en *Load locators* para cargar los volúmenes de SnapMirror o SnapVault y realizar la verificación en el almacenamiento secundario.
-.. Haga clic en *image:../media/add_policy_from_resourcegroup.gif[""]* En la columna Configure Schedules para configurar la programación de verificación de todos los tipos de programación de la política.
+.. Haga clic en image:../media/add_policy_from_resourcegroup.gif["agregar símbolo"] En la columna Configure Schedules para configurar la programación de verificación de todos los tipos de programación de la política.
 .. En el cuadro de diálogo Add Verification Schedules policy_name, realice las siguientes acciones:
 +
 |===

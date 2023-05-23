@@ -2,7 +2,7 @@
 permalink: protect-sco/task_define_a_backup_strategy_for_oracle_databases.html 
 sidebar: sidebar 
 keywords: backup type, preferred nodes, catalog backups, schedules, backup name format, retention, verification 
-summary: Definir una estrategia de backup antes de crear las tareas de backup garantiza que se cuente con todos los backups necesarios para restaurar o clonar correctamente las bases de datos. La estrategia de backup queda determinada principalmente por el SLA, el RTO y el RPO. 
+summary: Definir una estrategia de backup garantiza que se cuente con los medios para restaurar o clonar correctamente las bases de datos. 
 ---
 = Definir una estrategia de backup para bases de datos de Oracle
 :allow-uri-read: 
@@ -11,9 +11,14 @@ summary: Definir una estrategia de backup antes de crear las tareas de backup ga
 
 
 [role="lead"]
-Definir una estrategia de backup antes de crear las tareas de backup garantiza que se cuente con todos los backups necesarios para restaurar o clonar correctamente las bases de datos. La estrategia de backup queda determinada principalmente por el SLA, el RTO y el RPO.
+Defina una estrategia de backup para asegurarse de contar con los medios para restaurar o clonar correctamente las bases de datos.
 
-Un acuerdo de nivel de servicio define el nivel de servicio que se espera y aborda varios problemas vinculados con el servicio, como su disponibilidad y rendimiento. El objetivo de tiempo de recuperación es el plazo de recuperación después de una interrupción del servicio. El RPO define la estrategia respecto de la antigüedad de los archivos que se deben recuperar del almacenamiento de backup para reanudar las operaciones regulares después de un fallo. El acuerdo de nivel de servicio, el objetivo de tiempo de recuperación y el RPO ayudan a establecer una estrategia de protección de datos.
+La estrategia de backup queda determinada principalmente por el SLA, el RTO y el RPO.
+
+* El SLA define el nivel de servicio que se espera y aborda los problemas vinculados con el servicio, como su disponibilidad y rendimiento.
+* El objetivo de tiempo de recuperación define el tiempo que debe restaurarse un proceso comercial después de una interrupción del servicio.
+* El RPO define la antigüedad de los archivos que se deben recuperar del almacenamiento de backup para reanudar las operaciones regulares después de un fallo.
+
 
 
 
@@ -55,7 +60,7 @@ NOTE: No se admiten las operaciones de migración de PDB y clonado de PDB.
 
 
 
-Para obtener la información más reciente sobre las versiones de Oracle admitidas, consulte https://["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener la información más reciente sobre las versiones de Oracle admitidas, consulte https://imt.netapp.com/matrix/imt.jsp?components=108392;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 
 
@@ -224,7 +229,7 @@ Después de modificar el valor del parámetro, reinicie SnapCenter el servicio d
 
 `/opt/NetApp/snapcenter/spl/bin/spl restart`
 
-La información relativa a los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando Get-Help nombre_comando. Como alternativa, también puede consultar la https://["Guía de referencia de comandos del software SnapCenter"^].
+La información relativa a los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando Get-Help nombre_comando. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885486["Guía de referencia de comandos del software SnapCenter"^].
 
 
 

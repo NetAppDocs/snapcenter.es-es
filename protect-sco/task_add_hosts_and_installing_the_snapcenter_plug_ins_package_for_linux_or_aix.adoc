@@ -153,7 +153,7 @@ Los archivos de registro específicos de la instalación están en _/custom_loca
 
 
 
-*Después de terminar*
+*resultado*
 
 Todas las bases de datos en el host se detectan automáticamente y se muestran en la página Resources. Si no aparece nada, haga clic en *Actualizar recursos*.
 

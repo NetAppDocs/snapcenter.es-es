@@ -1,0 +1,65 @@
+---
+permalink: protect-sco/discover-oracle-database.html 
+sidebar: sidebar 
+keywords: oracle databases discover 
+summary: Cómo SnapCenter descubre las bases de datos de Oracle. 
+---
+= Cómo detecta SnapCenter las bases de datos de Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Los recursos son bases de datos de Oracle en el host que mantiene SnapCenter. Es posible añadir estas bases de datos a grupos de recursos para realizar operaciones de protección de datos después de detectar las bases de datos disponibles.
+
+En las siguientes secciones se describe el proceso que utiliza SnapCenter para detectar diferentes tipos y versiones de bases de datos Oracle.
+
+
+
+== Para las versiones de Oracle 11__g__ a 12__c__R1
+
+.Base de datos RAC
+Las bases de datos RAC solo se detectan sobre la base de /etc/oratab`entries. Deben tener las entradas de la base de datos en el archivo /etc/oratab.
+
+.Independiente
+Las bases de datos autónomas se detectan sólo sobre la base de las entradas /etc/oratab.
+
+.ASM
+La entrada de instancia de ASM debe estar disponible en el archivo /etc/oratab.
+
+.RAC One Node
+Las bases de datos RAC One Node sólo se detectan en función de las entradas /etc/oratab. Las bases de datos deben estar en estado nomount, mount o OPEN. Deben tener las entradas de la base de datos en el archivo /etc/oratab.
+
+El estado de la base de datos de RAC One Node se marcará como cambiado de nombre o se eliminará si la base de datos ya se detecta y los backups se asocian a la base de datos.
+
+Si se reubica la base de datos, debe realizar los siguientes pasos:
+
+. Añada manualmente la entrada de la base de datos reubicada en el archivo /etc/oratab en el nodo RAC con error.
+. Actualice manualmente los recursos.
+. Seleccione la base de datos RAC One Node en la página de recursos y, a continuación, haga clic en Database Settings.
+. Configure la base de datos para establecer los nodos de clúster preferidos en el nodo de RAC que aloja actualmente la base de datos.
+. Ejecute las operaciones de SnapCenter.
+. Si ha reubicado una base de datos de un nodo a otro y no se ha suprimido la entrada oratab del nodo anterior, suprima manualmente la entrada oratab para evitar que se muestre la misma base de datos dos veces.
+
+
+
+
+== Para las versiones de Oracle 12cR2 a 18c
+
+.Base de datos RAC
+Las bases de datos de RAC se detectan mediante el comando srvctl config. Deben tener las entradas de la base de datos en el archivo /etc/oratab.
+
+.Independiente
+Las bases de datos independientes se detectan según las entradas en el archivo /etc/oratab y la salida del comando srvctl config.
+
+.ASM
+La entrada de la instancia de ASM no debe estar en el archivo /etc/oratab.
+
+.RAC One Node
+Las bases de datos RAC One Node se detectan únicamente mediante el comando srvctl config. Las bases de datos deben estar en estado nomount, mount o OPEN. El estado de la base de datos de RAC One Node se marcará como cambiado de nombre o se eliminará si la base de datos ya se detecta y los backups se asocian a la base de datos.
+
+Debe realizar los siguientes pasos si se reubica la base de datos: . Actualice manualmente los recursos. . Seleccione la base de datos RAC One Node en la página de recursos y, a continuación, haga clic en Database Settings. . Configure la base de datos para establecer los nodos de clúster preferidos en el nodo de RAC que aloja actualmente la base de datos. . Ejecute las operaciones de SnapCenter.
+
+
+NOTE: Si hay alguna entrada de base de datos de Oracle 12__c__R2 y 18__c__ en el archivo /etc/oratab y la misma base de datos se registra con el comando srvctl config, SnapCenter eliminará las entradas de base de datos duplicadas. Si hay entradas obsoletas de la base de datos, la base de datos se descubrirá, pero no se podrá acceder a la base de datos y el estado será sin conexión.

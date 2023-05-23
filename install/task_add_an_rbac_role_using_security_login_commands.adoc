@@ -45,7 +45,7 @@ Esta herramienta se encarga automáticamente de configurar los privilegios de ON
 
 NOTE: Si posteriormente actualiza SnapCenter u ONTAP, debe volver a ejecutar la herramienta RBAC User Creator for Data ONTAP para actualizar los roles de usuario que ha creado previamente. Los roles de usuario creados para una versión anterior de SnapCenter o ONTAP no funcionan correctamente con las versiones actualizadas. Cuando vuelva a ejecutar la herramienta, automáticamente se encarga de la actualización. No es necesario que vuelva a recrear los roles.
 
-Más información sobre la configuración de roles de RBAC de ONTAP, consulte http://["Guía completa de autenticación de administrador y RBAC de ONTAP 9"^].
+Más información sobre la configuración de roles de RBAC de ONTAP, consulte http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-adm-auth-rbac/home.html["Guía completa de autenticación de administrador y RBAC de ONTAP 9"^].
 
 
 NOTE: Para salvaguardar la consistencia, la documentación de SnapCenter se refiere a los roles como funciones que usan privilegios. La GUI del Administrador del sistema de OnCommand utiliza el término _Attribute_ en lugar de _Privilege_. Al configurar roles de RBAC de ONTAP, ambos términos significan lo mismo.

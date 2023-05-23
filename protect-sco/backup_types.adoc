@@ -1,0 +1,43 @@
+---
+permalink: protect-sco/backup_types.html 
+sidebar: sidebar 
+keywords: backup type, preferred nodes, catalog backups, schedules, backup name format, retention, verification 
+summary: Tipos de backup compatibles con las bases de datos de Oracle. 
+---
+= Tipos de backup compatibles con las bases de datos de Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El tipo de backup especifica el tipo de backup que desea crear. SnapCenter admite los tipos backup en línea y sin conexión para bases de datos de Oracle.
+
+
+
+== Backup en línea
+
+Un backup que se crea cuando la base de datos está en estado en línea se denomina backup en línea. También denominado backup dinámico, un backup en línea permite crear un backup de la base de datos sin apagarlo.
+
+Como parte del backup en línea, es posible crear un backup de los siguientes archivos:
+
+* Solo archivos de datos y archivos de control
+* Solo archivos del registro de archivos (en este escenario, la base de datos no se coloca en modo de backup)
+* Base de datos completa, que incluye archivos de datos, archivos de control y archivos del registro de archivos
+
+
+
+
+== Backup sin conexión
+
+Un backup creado cuando la base de datos está en estado montado o apagado se denomina backup sin conexión. Este tipo de backup también se denomina backup en frío. Es posible incluir solo archivos de datos y archivos de control en los backups sin conexión. Puede crear un backup sin conexión montado o apagado sin conexión.
+
+* Cuando se crea un backup sin conexión montado, la base de datos debe estar en estado montado.
++
+Si está en cualquier otro estado, la operación de backup generará errores.
+
+* Al crear un backup sin conexión apagado, la base de datos puede estar en cualquier estado.
++
+El estado de la base de datos se modifica para alcanzar el estado deseado y poder crear el backup. Después de crear el backup, el estado de la base de datos se revierte a su estado original.
+
+

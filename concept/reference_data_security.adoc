@@ -22,16 +22,16 @@ SnapCenter incluye las siguientes funciones de seguridad:
 * SnapCenter 4.1.1 o posterior admite la comunicación de seguridad de la capa de transporte (TLS) 1.2 con ONTAP. También puede usar comunicación TLS 1.2 entre clientes y servidores.
 * SnapCenter admite un conjunto determinado de conjuntos de claves de cifrado SSL para proporcionar seguridad a través de la comunicación de red.
 +
-Para obtener más información, consulte https://["Cómo configurar el conjunto de claves de cifrado SSL"].
+Para obtener más información, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_configure_the_supported_SSL_Cipher_Suite["Cómo configurar el conjunto de claves de cifrado SSL"].
 
 * SnapCenter se instala dentro del firewall de su compañía para habilitar el acceso al servidor SnapCenter y permitir la comunicación entre SnapCenter Server y los plugins.
 * El acceso a la API de SnapCenter y las operaciones utiliza tokens cifrados con el cifrado AES, que caducan luego de 24 horas.
 * SnapCenter se integra con Windows Active Directory para el inicio de sesión y RBAC que rige los permisos de acceso.
-* IPSec es compatible con SnapCenter en ONTAP para equipos host Windows y Linux. https://["Leer más"].
+* IPSec es compatible con SnapCenter en ONTAP para equipos host Windows y Linux. https://docs.netapp.com/us-en/ontap/networking/configure_ip_security_@ipsec@_over_wire_encryption.html#use-ipsec-identities["Leer más"].
 * Los cmdlets de PowerShell de SnapCenter están protegidos por la sesión.
 * Después de un período predeterminado de 15 minutos de inactividad, SnapCenter advierte que la sesión se cerrará en 5 minutos. Después de 20 minutos de inactividad, SnapCenter cierra la sesión, que debe volver a iniciarse. Es posible modificar el período de cierre de sesión por inactividad.
 * El inicio de sesión se deshabilita temporalmente luego de 5 o más intentos incorrectos de inicio de sesión.
-* Admite la autenticación de certificados de CA entre SnapCenter Server y ONTAP. https://["Leer más"].
+* Admite la autenticación de certificados de CA entre SnapCenter Server y ONTAP. https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_securely_connect_SnapCenter_with_ONTAP_using_CA_certificate["Leer más"].
 * Se añade el verificador de integridad al servidor de SnapCenter y a los plugins y valida todos los binarios enviados durante las operaciones de instalación y actualización nuevas.
 
 
@@ -43,7 +43,7 @@ El instalador de SnapCenter Server activa la compatibilidad centralizada con cer
 
 Debe implementar certificados de CA después de instalar SnapCenter Server y los respectivos plugins. Para obtener más información, consulte link:../install/reference_generate_CA_certificate_CSR_file.html["Genere un archivo CSR de certificado de CA"].
 
-También puede implementar el certificado de CA para el plugin de SnapCenter para VMware vSphere. Para obtener más información, consulte https://["Crear e importar certificados"^].
+También puede implementar el certificado de CA para el plugin de SnapCenter para VMware vSphere. Para obtener más información, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_manage_snapcenter_plug-in_for_vmware_vsphere.html#create-and-import-certificates["Crear e importar certificados"^].
 
 
 

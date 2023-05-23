@@ -112,7 +112,7 @@ También debe especificar las direcciones de correo electrónico del remitente y
 NOTE: Para las notificaciones de correo electrónico, se deben haber especificado los detalles del servidor SMTP desde la interfaz gráfica de usuario o desde el comando de PowerShell Set-SmSmtpServer.
 
 +
-Para EMS, consulte https://["Gestione la recogida de datos de EMS"]
+Para EMS, consulte https://docs.netapp.com/us-en/snapcenter/admin/concept_manage_ems_data_collection.html["Gestione la recogida de datos de EMS"]
 
 . Revise el resumen y, a continuación, haga clic en *Finalizar*.
 

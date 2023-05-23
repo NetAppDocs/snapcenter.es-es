@@ -45,7 +45,7 @@ En la página *Detalles del trabajo*, un mensaje de advertencia recomienda que e
 
 . Descargue el paquete de instalación del servidor SnapCenter desde el sitio de soporte de NetApp.
 +
-https://[]
+https://mysupport.netapp.com/site/products/all/details/snapcenter/downloads-tab[]
 
 . Cree una copia del archivo web.config que se encuentra en C:\Program Files\NetApp\SnapCenter WebApp.
 . Exporte las programaciones de SnapCenter relacionadas con el host del plugin desde la programación de tareas de Windows para poder usarlo para restaurar las programaciones si no se realiza la actualización.

@@ -15,41 +15,40 @@ Un grupo de recursos es una agrupacion de recursos en un host o un clúster. Se 
 
 Puede realizar un backup del grupo de recursos bajo demanda en la página Resources. Si un grupo de recursos tiene una política anexada y una programación configurada, los backups se realizan automáticamente según esa programación.
 
-* Pasos*
-
-. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+.Pasos
+. En el panel de navegación de la izquierda, seleccione *Recursos* y el plug-in apropiado de la lista.
 . En la página Resources, seleccione *Resource Group* en la lista *View*.
+. Escriba el nombre del grupo de recursos en el cuadro de búsqueda o haga clic en image:../media/filter_icon.gif["Icono de filtro"], y seleccione la etiqueta.
 +
-Puede buscar el grupo de recursos escribiendo el nombre en el cuadro de búsqueda o haciendo clic en *image:../media/filter_icon.gif[""]* y, a continuación, seleccionar la etiqueta. A continuación, puede hacer clic en *image:../media/filter_icon.gif[""]* para cerrar el panel de filtros.
+Haga clic en image:../media/filter_icon.gif["Icono de filtro"] para cerrar el panel de filtros.
 
-. En la página Resource Groups, seleccione el grupo de recursos que desea incluir en un backup y, a continuación, haga clic en *Back up Now*.
+. En la página Resource Group, seleccione el grupo de recursos que desea incluir en un backup.
 +
 
-NOTE: Si posee un grupo de recursos federado con dos bases de datos y una de ellas tiene el archivo de datos en un almacenamiento de terceros, se cancelará la operación de backup aunque la otra base de datos esté en almacenamiento de NetApp.
+NOTE: Si posee un grupo de recursos federado con dos bases de datos y una tiene datos en un almacenamiento de terceros, se cancelará la operación de backup aunque la otra base de datos esté en almacenamiento de NetApp.
 
 . En la página Backup, realice los siguientes pasos:
 +
-.. Si asoció varias políticas al grupo de recursos, en la lista desplegable *Policy*, seleccione la política que desea usar para la copia de seguridad.
+.. Si tiene varias políticas asociadas con el grupo de recursos, seleccione la política de copia de seguridad que desea usar en la lista desplegable *Política*.
 +
 Si la política seleccionada para el backup bajo demanda está asociada a una programación de backup, los backups bajo demanda se retendrán en función de la configuración de retención especificada para el tipo de programación.
 
-.. Haga clic en *copia de seguridad*.
+.. Seleccione *copia de seguridad*.
 
 
-. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+. Controla el progreso seleccionando *Monitor > Trabajos*.
 
 
-*Después de terminar*
-
-* En la configuración de AIX, puede utilizar el mandato lkdev para bloquear y el mandato rendev para cambiar el nombre de los discos en los que reside la base de datos de la que se ha realizado la copia de seguridad.
+.Después de terminar
+* En la configuración de AIX, puede utilizar `lkdev` comando para bloquear y el `rendev` comando para cambiar el nombre de los discos en los que residía la base de datos de la que se realizó un backup.
 +
 El bloqueo o cambio de nombre de los dispositivos no afectará a la operación de restauración al restaurar mediante esa copia de seguridad.
 
-* Si se produce un error en la operación de backup porque el tiempo de ejecución de la consulta de base de datos superó el valor de tiempo de espera, debe cambiar el valor de los parámetros ORACLE_SQL_QUERY_TIMEOUT Y ORACLE_PLUGIN_SQL_QUERY_TIMEOUT con el cmdlet Set-SmConfigSettings:
+* Si se produce un error en la operación de backup debido a que el tiempo de ejecución de la consulta de base de datos superó el valor del tiempo de espera, debe cambiar el valor de los parámetros ORACLE_SQL_QUERY_TIMEOUT y ORACLE_PLUGIN_SQL_QUERY_TIMEOUT mediante la ejecución del `Set-SmConfigSettings` cmdlet:
 +
 Después de modificar el valor de los parámetros, reinicie SnapCenter el servicio del SPL con el siguiente comando `/opt/NetApp/snapcenter/spl/bin/spl restart`
 
-* Si no se puede acceder al archivo y el punto de montaje no está disponible durante el proceso de verificación, puede que se produzca un error en la operación con el código de error DBV-00100 specified file. Debe modificar los valores de los parámetros VERIFICATION_DELAY y VERIFICATION_RETRY_COUNT en sco.properties.
+* Si no se puede acceder al archivo y el punto de montaje no está disponible durante el proceso de verificación, puede que se produzca un error en la operación con el código de error DBV-00100 specified file. Debe modificar los valores de los parámetros VERIFICATION_DELAY_ y VERIFICATION_RETRY_COUNT en sco.properties.
 +
 Después de modificar el valor de los parámetros, reinicie SnapCenter el servicio del SPL con el siguiente comando `/opt/NetApp/snapcenter/spl/bin/spl restart`
 

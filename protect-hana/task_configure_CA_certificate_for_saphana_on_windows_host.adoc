@@ -117,7 +117,7 @@ Actualice este valor con la clave SCC_CERTIFICATE_ALIAS.
 
 *Acerca de esta tarea*
 
-* Para descargar el último archivo CRL del certificado de CA relacionado, consulte https://["Cómo actualizar el archivo de lista de revocación de certificados en el certificado de CA de SnapCenter"].
+* Para descargar el último archivo CRL del certificado de CA relacionado, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_update_certificate_revocation_list_file_in_SnapCenter_CA_Certificate["Cómo actualizar el archivo de lista de revocación de certificados en el certificado de CA de SnapCenter"].
 * Los complementos personalizados de SnapCenter buscarán los archivos CRL en un directorio preconfigurado.
 * El directorio predeterminado de los archivos CRL de los plugins personalizados de SnapCenter es _'C:\Archivos de programa\NetApp\SnapCenter\Snapcenter Plug-in Creator\ etc\crl'_.
 

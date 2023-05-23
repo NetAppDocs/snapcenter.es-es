@@ -26,4 +26,4 @@ Los siguientes flujos de trabajo muestran la secuencia que debe seguirse para re
 
 image::../media/sco_scc_wfs_clone_workflow.png[Flujo de trabajo de clonado]
 
-También puede usar los cmdlets de PowerShell manualmente o en scripts para realizar operaciones de backup, restauración y clonado. Para obtener información detallada sobre los cmdlets de PowerShell, use la ayuda de cmdlets de SnapCenter o consulte https://["Guía de referencia de cmdlets de SnapCenter Software"^].
+También puede usar los cmdlets de PowerShell manualmente o en scripts para realizar operaciones de backup, restauración y clonado. Para obtener información detallada sobre los cmdlets de PowerShell, use la ayuda de cmdlets de SnapCenter o consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].

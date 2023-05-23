@@ -4,13 +4,19 @@ sidebar: sidebar
 keywords: SnapCenter Server, monitor, backup, activity pane, data protection 
 summary: Es posible supervisar el progreso de diferentes operaciones de backup mediante la página Jobs de SnapCenter. Se recomienda comprobar el progreso para determinar cuándo se completó la tarea o si existe un problema. 
 ---
-= Supervisar las operaciones de backup de bases de datos de Oracle
+= Supervisar la copia de seguridad de Oracle Database
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+Descubra cómo supervisar el progreso de las operaciones de backup y las operaciones de protección de datos.
+
+
+
+== Supervisar las operaciones de backup de bases de datos de Oracle
+
 Es posible supervisar el progreso de diferentes operaciones de backup mediante la página Jobs de SnapCenter. Se recomienda comprobar el progreso para determinar cuándo se completó la tarea o si existe un problema.
 
 *Acerca de esta tarea*

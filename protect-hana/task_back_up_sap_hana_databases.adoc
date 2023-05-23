@@ -27,7 +27,7 @@ link:task_back_up_resource_groups_sap_hana.html["Realice un backup de los grupos
 
 * Si desea crear un backup basado en archivos cuando una o varias bases de datos de arrendatarios están fuera de servicio, defina el parámetro ALLOW_FILE_BASED_BACKUP_IFINACTIVE_ARRENDATARIOS_PRESSE en *YES* en el archivo de propiedades de HANA mediante `Set-SmConfigSettings` cmdlet.
 +
-La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando Get-Help _command_name_. Como alternativa, también puede consultar la https://["Guía de referencia de cmdlets de SnapCenter Software"]
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando Get-Help _command_name_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"]
 
 * Para los comandos previos y posteriores para la pausa, la copia de Snapshot y la reanudación de la copia, debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin desde las rutas siguientes:
 +
@@ -155,7 +155,7 @@ Si la política seleccionada para el backup bajo demanda está asociada a una pr
 +
 ** En las configuraciones de MetroCluster, es posible que SnapCenter no pueda detectar una relación de protección tras una conmutación por error.
 +
-Para obtener más información, consulte: https://["No es posible detectar la relación de SnapMirror o SnapVault tras un fallo en MetroCluster"^]
+Para obtener más información, consulte: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Unable_to_detect_SnapMirror_or_SnapVault_relationship_after_MetroCluster_failover["No es posible detectar la relación de SnapMirror o SnapVault tras un fallo en MetroCluster"^]
 
 ** Si va a realizar el backup de datos de aplicación en VMDK y el tamaño de pila de Java para el plugin de SnapCenter para VMware vSphere no es suficientemente grande, se puede producir un error en el backup.
 +

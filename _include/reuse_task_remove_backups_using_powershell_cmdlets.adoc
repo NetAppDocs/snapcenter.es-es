@@ -6,7 +6,7 @@ Puede utilizar el cmdlet Remove-SmBackup para eliminar backups si ya no los nece
 
 Debe haber preparado el entorno de PowerShell para ejecutar los cmdlets de PowerShell.
 
-La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://["Guía de referencia de cmdlets de SnapCenter Software"^].
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].
 
 * Pasos*
 
