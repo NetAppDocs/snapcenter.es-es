@@ -8124,4 +8124,6 @@
   <block id="6c0673b42ebb5475d507b9bee432a6e1" category="image-alt">Captura de pantalla de los criterios de selección y la entrada del número de serie.</block>
   <block id="e54115ab5aedb070ef9c763b003e67f1" category="section-title">Paso 5: Añada una licencia basada en controladora</block>
   <block id="392e651b70e91641288713738f526ce0" category="section-title">Paso 6: Eliminar la licencia de prueba</block>
+  <block id="46d55a8aefdec15a8ce44087c8123826" category="inline-link">Error en la operación porque no puede detectar el dispositivo para la LUN</block>
+  <block id="24642a08e354f43168ca4f1178850f84" category="list-text">Debe asegurarse de que el LUN no esté asignado al host AIX mediante un iGroup compuesto por protocolos mixtos iSCSI y FC. Para obtener más información, consulte<block ref="94f247529a6b6f563b3a8d4772877431" category="inline-link-rx"></block>.</block>
 </blocks>

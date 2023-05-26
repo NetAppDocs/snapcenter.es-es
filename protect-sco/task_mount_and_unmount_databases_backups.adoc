@@ -41,6 +41,7 @@ NOTE: Para obtener información sobre cómo editar el parámetro asm_diskstring,
 ** En NVMe, se debe instalar NVMe util
 
 
+* Debe asegurarse de que el LUN no esté asignado al host AIX mediante un iGroup compuesto por protocolos mixtos iSCSI y FC. Para obtener más información, consulte https://kb.netapp.com/mgmt/SnapCenter/SnapCenter_Plug-in_for_Oracle_operations_fail_with_error_Unable_to_discover_the_device_for_LUN_LUN_PATH["Error en la operación porque no puede detectar el dispositivo para la LUN"^].
 
 
 * Pasos*
