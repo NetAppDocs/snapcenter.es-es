@@ -1,0 +1,171 @@
+---
+permalink: install/task_configure_two_way_ssl.html 
+sidebar: sidebar 
+keywords: security,two-way ssl,configure two-way ssl 
+summary: Debe configurar la comunicación SSL bidireccional para asegurar la comunicación mutua entre el servidor de SnapCenter y los plugins.   
+---
+= Configure la comunicación SSL bidireccional
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe configurar la comunicación SSL bidireccional para asegurar la comunicación mutua entre el servidor de SnapCenter y los plugins.
+
+*Antes de empezar*
+
+* Generó el archivo CSR de certificado de CA con la longitud mínima admitida de clave de 3072.
+* El certificado de CA debe admitir la autenticación de servidor y la autenticación de cliente.
+* Debe tener un certificado de CA con detalles de clave privada y huella digital.
+* Debe haber activado la configuración SSL unidireccional.
++
+Para obtener información detallada, consulte https://docs.netapp.com/us-en/snapcenter/install/reference_generate_CA_certificate_CSR_file.html["Configurar sección de certificado de CA."]
+
+* Debe haber habilitado la comunicación SSL bidireccional en todos los hosts del plugin y el servidor de SnapCenter.
++
+El entorno con algunos hosts o servidor no habilitado para la comunicación SSL bidireccional no está soportado.
+
+
+
+* Pasos*
+
+. Para enlazar el puerto, ejecute los siguientes pasos en el host de servidor SnapCenter para el puerto 8146 del servidor web IIS de SnapCenter (predeterminado) y otra vez para el puerto 8145 de SMCore (predeterminado) mediante comandos de PowerShell.
++
+.. Quite la vinculación de puertos de certificado autofirmado de SnapCenter existente mediante el siguiente comando de PowerShell.
++
+`> netsh http delete sslcert ipport=0.0.0.0:<SMCore port/IIS port>`
+
++
+Por ejemplo:
+
++
+`> netsh http delete sslcert ipport=0.0.0.0:8145`
+
++
+`> netsh http delete sslcert ipport=0.0.0.0:8146`
+
+.. Enlace el certificado de CA recién adquirido con el servidor SnapCenter y el puerto SMCore.
++
+`> $cert = “<CA_certificate thumbprint>”`
+
++
+`> $guid = [guid]::NewGuid().ToString("B")`
+
++
+`> netsh http add sslcert ipport=0.0.0.0: <SMCore Port/IIS port> certhash=$cert appid="$guid"` `clientcertnegotiation=enable verifyclientcertrevocation=disable`
+
++
+`> netsh http show sslcert ipport=0.0.0.0:<SMCore Port/IIS port>`
+
++
+Por ejemplo:
+
++
+`> $cert = “abc123abc123abc123abc123”`
+
++
+`> $guid = [guid]::NewGuid().ToString("B")`
+
++
+`> netsh http add sslcert ipport=0.0.0.0:8146 certhash=$cert appid="$guid"` `clientcertnegotiation=enable verifyclientcertrevocation=disable`
+
++
+`> $guid = [guid]::NewGuid().ToString("B")`
+
++
+`> netsh http add sslcert ipport=0.0.0.0:8145 certhash=$cert appid="$guid"` `clientcertnegotiation=enable verifyclientcertrevocation=disable`
+
++
+`> netsh http show sslcert ipport=0.0.0.0:8146`
+
++
+`> netsh http show sslcert ipport=0.0.0.0:8145`
+
+
+
+. Para acceder al permiso al certificado de CA, añada el usuario del servidor web IIS predeterminado «*IIS AppPool\SnapCenter*» de SnapCenter en la lista de permisos de certificados siguiendo los siguientes pasos para acceder al certificado de CA recién adquirido.
++
+.. Vaya a la consola de administración de Microsoft (MMC) y, a continuación, haga clic en *Archivo* > *Agregar o quitar SnapIn*.
+.. En la ventana Agregar o quitar complementos, seleccione *certificados* y, a continuación, haga clic en *Agregar*.
+.. En la ventana del complemento certificados, seleccione la opción *cuenta de equipo* y, a continuación, haga clic en *Finalizar*.
+.. Haga clic en *raíz de consola* > *certificados – Equipo local* > *personal* > *certificados*.
+.. Seleccione el certificado SnapCenter.
+.. Para iniciar el asistente para agregar usuarios\permisos, haga clic con el botón derecho en el certificado de CA y seleccione *Todas las tareas* > *Gestionar claves privadas*.
+.. Haga clic en *Agregar*, en el Asistente de selección de usuarios y grupos cambie la ubicación a nombre de equipo local (en la parte superior de la jerarquía)
+.. Añada el usuario IIS AppPool\SnapCenter y proporcione permisos de control completos.
+
+
+. Para el permiso IIS del certificado *CA*, agregue la nueva entrada de claves de registro DWORD en el servidor SnapCenter desde la siguiente ruta:
++
+En el editor del registro de Windows, vaya a la ruta mencionada a continuación,
+
++
+`HKey_Local_Machine\SYSTEM\CurrentControlSet\Control\SecurityProv
+ ders\SCHANNEL`
+
+. Cree una nueva entrada de clave de registro DWORD en el contexto de la configuración del registro SCHANNEL.
++
+`SendTrustedIssuerList = 0`
+
++
+`ClientAuthTrustMode = 2`
+
+
+
+
+
+== Configure el plugin de Windows de SnapCenter para la comunicación SSL bidireccional
+
+Es necesario configurar el plugin de Windows de SnapCenter para la comunicación SSL bidireccional mediante comandos de PowerShell.
+
+*Antes de empezar*
+
+Asegúrese de que la huella digital del certificado de CA esté disponible.
+
+* Pasos*
+
+. Para enlazar el puerto, realice las siguientes acciones en el host del plugin de Windows para el puerto SMCore 8145 (predeterminado).
++
+.. Quite la vinculación de puertos de certificado autofirmado de SnapCenter existente mediante el siguiente comando de PowerShell.
++
+`> netsh http delete sslcert ipport=0.0.0.0:<SMCore port>`
+
++
+Por ejemplo:
+
++
+`> netsh http delete sslcert ipport=0.0.0.0:8145`
+
+.. Enlace el certificado de CA recién adquirido con el puerto SMCore.
++
+`> $cert = “<CA_certificate thumbprint>”`
+
++
+`> $guid = [guid]::NewGuid().ToString("B")`
+
++
+`> netsh http add sslcert ipport=0.0.0.0: <SMCore Port> certhash=$cert appid="$guid"`
+`clientcertnegotiation=enable verifyclientcertrevocation=disable`
+
++
+`> netsh http show sslcert ipport=0.0.0.0:<SMCore Port>`
+
++
+Por ejemplo:
+
++
+`> $cert = “abc123abc123abc123abc123”`
+
++
+`> $guid = [guid]::NewGuid().ToString("B")`
+
++
+`> netsh http add sslcert ipport=0.0.0.0:8145 certhash=$cert appid="$guid"` `clientcertnegotiation=enable verifyclientcertrevocation=disable`
+
++
+`> netsh http show sslcert ipport=0.0.0.0:8145`
+
+
+
+

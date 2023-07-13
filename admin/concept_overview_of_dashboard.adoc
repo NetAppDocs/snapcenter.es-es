@@ -2,7 +2,7 @@
 permalink: admin/concept_overview_of_dashboard.html 
 sidebar: sidebar 
 keywords:  
-summary: 'En el panel de navegación de la izquierda de SnapCenter, Dashboard ofrece un primer vistazo sobre el estado del sistema, incluida la actividad de trabajos recientes, las alertas, el resumen de la protección, la eficiencia y el uso del almacenamiento, el estado de los trabajos de SnapCenter \(backup, clonado, restauración\), el estado de configuración de los hosts independientes y de clústeres de Windows, Número de máquinas virtuales de almacenamiento \(SVM\) gestionadas por SnapCenter y capacidad de licencia.' 
+summary: 'En el panel de navegación de la izquierda de SnapCenter, Dashboard ofrece un primer vistazo sobre el estado del sistema, incluida la actividad de trabajos recientes, las alertas, el resumen de protección, la eficiencia y el uso del almacenamiento, el estado de los trabajos de SnapCenter \(backup, clonado, restauración\), el estado de la configuración para hosts de clústeres de Windows e independientes, Número de máquinas virtuales de almacenamiento (SVM) que gestiona SnapCenter y la capacidad de la licencia.' 
 ---
 = Información general de la consola
 :allow-uri-read: 
@@ -263,7 +263,7 @@ Número de hosts en los que se está realizando la instalación o la desinstalac
 El icono de capacidad con licencia muestra información sobre la capacidad total con licencia, la capacidad utilizada, las alertas de umbral de capacidad y las alertas de caducidad de licencias para licencias basadas en capacidad estándar de SnapCenter.
 
 
-NOTE: Esta pantalla solo aparece si se utilizan licencias basadas en capacidad estándar de SnapCenter en plataformas Cloud Volumes ONTAP o ONTAP Select. En el caso de las plataformas FAS o AFF, la licencia de SnapCenter se basa en controladoras y tiene licencias para ofrecer una capacidad ilimitada y no se necesita ninguna licencia por capacidad.
+NOTE: Esta pantalla solo aparece si se utilizan licencias basadas en capacidad estándar de SnapCenter en plataformas Cloud Volumes ONTAP o ONTAP Select. Para plataformas de cabinas FAS, AFF o All SAN (ASA), la licencia SnapCenter está basada en controladoras y tiene licencia para capacidad ilimitada, sin necesidad de licencia por capacidad.
 
 |===
 | Estado de la licencia | Descripción 

@@ -43,6 +43,8 @@ Puerto SnapCenter
 
 Se usa para la comunicación entre el cliente SnapCenter (el usuario de SnapCenter) y el servidor SnapCenter. También se utiliza para establecer la comunicación de los hosts del plugin con SnapCenter Server.
 
+Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/install/task_install_the_snapcenter_server_using_the_install_wizard.html["Instale el servidor SnapCenter con el asistente de instalación."]
+
 
 
  a| 
@@ -51,6 +53,8 @@ Puerto de comunicación SMCore de SnapCenter
 8145 (HTTPS), bidireccional, personalizable
 
 El puerto se utiliza para establecer la comunicación entre SnapCenter Server y los hosts en los que se han instalado los plugins de SnapCenter.
+
+Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/install/task_install_the_snapcenter_server_using_the_install_wizard.html["Instale el servidor SnapCenter con el asistente de instalación."]
 
 
 
@@ -62,6 +66,8 @@ Puerto MySQL
 El puerto se utiliza para establecer la comunicación entre SnapCenter y la base de datos del repositorio MySQL.
 
 Puede crear conexiones seguras desde el servidor SnapCenter al servidor MySQL. link:../install/concept_configure_secured_mysql_connections_with_snapcenter_server.html["Leer más"]
+
+Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/install/task_install_the_snapcenter_server_using_the_install_wizard.html["Instale el servidor SnapCenter con el asistente de instalación."]
 
 
 
@@ -96,6 +102,8 @@ El puerto se utiliza para establecer la comunicación entre SMCore y los hosts e
 
 La ruta de comunicación también debe estar abierta entre el LIF de gestión de SVM y el servidor SnapCenter.
 
+Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/protect-scw/task_add_hosts_and_install_snapcenter_plug_in_for_microsoft_windows.html["Añada hosts e instale el plugin de SnapCenter para Microsoft Windows"] o. https://docs.netapp.com/us-en/snapcenter/protect-sco/task_add_hosts_and_installing_the_snapcenter_plug_ins_package_for_linux_or_aix.html["Añada hosts e instale el paquete de plugins de SnapCenter para Linux o AIX."]
+
 
 
  a| 
@@ -104,6 +112,8 @@ Plugin de SnapCenter para base de datos de Oracle
 27216, personalizable
 
 El puerto de JDBC predeterminado, lo utiliza el plugin para Oracle para conectarse a la base de datos de Oracle.
+
+Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/protect-sco/task_add_hosts_and_installing_the_snapcenter_plug_ins_package_for_linux_or_aix.html["Añada hosts e instale el paquete de plugins de SnapCenter para Linux o AIX."]
 
 
 
@@ -135,6 +145,8 @@ Plugin de SnapCenter para base de datos SAP HANA vCode Spell Checkports
 Para un tenant único de un contenedor de base de datos multitenant (MDC), el número del puerto termina en 13; para los que no son MDC, el número de puerto termina en 15.
 
 Por ejemplo, 32013 es el número de puerto para la instancia 20 y 31015 es el número de puerto para la instancia 10.
+
+Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/protect-hana/task_add_hosts_and_install_plug_in_packages_on_remote_hosts_sap_hana.html["Añada hosts e instale paquetes de plugins en hosts remotos."]
 
 
 

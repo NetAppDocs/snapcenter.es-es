@@ -32,13 +32,11 @@ Para obtener información sobre cómo editar el parámetro asm_diskstring, consu
 ** El host del clon debe poder detectar LUN de almacenamiento principal o secundario.
 +
 *** Si clona un almacenamiento principal o secundario (almacén o reflejo) en un host alternativo, asegúrese de que se establezca una sesión iSCSI entre el almacenamiento secundario y el host alternativo, o una zona adecuada para Fibre Channel (FC).
-+
-**** https://library.netapp.com/ecm/ecm_download_file/ECMLP2547936["Guía de instalación y configuración de Linux Host Utilities"^]
-**** https://library.netapp.com/ecm/ecm_download_file/ECMP1119223["Guía de instalación y configuración de AIX Host Utilities"^]
-
-
 *** Si clona un almacén o un reflejo en el mismo host, asegúrese de que se establezca una sesión iSCSI entre el almacén o reflejo y el host, o una zona adecuada para FC.
 *** Si clona en un entorno virtualizado, asegúrese de que se establezca una sesión iSCSI entre el almacenamiento principal o secundario y el servidor ESX que aloja al host alternativo, o una zona adecuada para FC.
++
+Para obtener más información, consulte https://docs.netapp.com/us-en/ontap-sanhost/["documentación de utilidades de host"].
+
 
 
 ** Si la base de datos de origen es una base de datos ASM:

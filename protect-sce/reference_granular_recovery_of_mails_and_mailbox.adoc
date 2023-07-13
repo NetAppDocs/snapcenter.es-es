@@ -15,10 +15,9 @@ El software Single Mailbox Recovery (SMBR) le permite restaurar y recuperar mens
 
 La restauración de bases de datos completas sólo para recuperar un correo individual consume mucho tiempo y recursos. SMBR le ayuda a recuperar rápidamente los mensajes de correo electrónico creando una copia de clon de la Snapshot y, a continuación, usando las API de Microsoft para montar el buzón en SMBR. Para obtener información sobre cómo utilizar SMBR, consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP2871407["Guía de administración de SMBR"^].
 
-*Más información*
+Si quiere más información sobre SMBR, consulte lo siguiente:
 
-* link:../install/concept_snapcenter_licenses.html#single-mailbox-recovery-smbr-licenses["Licencias de SMBR"^]
-* https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30035["Biblioteca de documentación de SMBR"^]
+* https://kb.netapp.com/Legacy/SMBR/How_to_manually_restore_a_single_item_with_SMBR["Cómo restaurar manualmente un solo elemento con SMBR (también se aplica a las restauraciones de Ontrack Power Control)"]
 * https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Single_Mailbox_Recovery_(SMBR)/How_to_restore_from_secondary_storage_in_SMBR_with_SnapCenter["Cómo restaurar desde el almacenamiento secundario en SMBR con SnapCenter"^]
 * https://www.youtube.com/watch?v=fOMuaaXrreI&list=PLdXI3bZJEw7nofM6lN44eOe4aOSoryckg&index=3["Recuperación de Microsoft Exchange Mail desde SnapVault mediante SMBR"^]
 

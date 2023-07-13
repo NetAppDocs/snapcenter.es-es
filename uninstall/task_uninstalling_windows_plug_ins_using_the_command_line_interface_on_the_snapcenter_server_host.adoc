@@ -21,6 +21,6 @@ Es necesario que previamente haya iniciado sesión en SnapCenter como usuario de
 . En el host del servidor SnapCenter, introduzca el comando: _Open-SMConnection -SMSbaseUrl \https://SNAPCENTER_SERVER_NAME/DOMAIN_NAME_ y, a continuación, introduzca sus credenciales.
 . Desinstale los plugins de Windows mediante el cmdlet _Uninstall-SmHostPackage_ y los parámetros necesarios.
 +
-La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar el https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar el https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guía de referencia de cmdlets de SnapCenter Software"^].
 
 

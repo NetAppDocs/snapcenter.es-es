@@ -60,6 +60,15 @@ NOTE: Después de la restauración de recuperación ante desastres, se añadirá
 NOTE: La programación de backup del repositorio se restaurará únicamente si instala el plugin de SnapCenter para Windows y asocia LUN de NetApp a la máquina servidor.
 
 
+NOTE: Si las DLL están dañadas, puede intentar reparar el servidor SnapCenter o corregir la instalación defectuosa.
+
+
+NOTE: Si los archivos nsm o de configuración están dañados, puede desinstalar y volver a instalar el servidor SnapCenter con la misma versión.
+
+
+NOTE: Si la máquina virtual está dañada, abra otra máquina virtual o una máquina con el mismo nombre e instale el servidor SnapCenter con la misma versión.
+
+
 
 == API DE REST compatible con la recuperación ante desastres de SnapCenter Server
 

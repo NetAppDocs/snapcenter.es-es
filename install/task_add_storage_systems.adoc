@@ -56,7 +56,7 @@ Sistema de almacenamiento
 Introduzca el nombre o la dirección IP del sistema de almacenamiento.
 
 
-NOTE: Los nombres de los sistemas de almacenamiento, sin incluir el nombre de dominio, deben tener 15 o menos caracteres y los nombres deben poder resolverse. Para crear conexiones del sistema de almacenamiento con nombres de más de 15 caracteres, se puede usar el cmdlet Add-SmStorageConnectionPowerShell.
+NOTE: Los nombres de los sistemas de almacenamiento, sin incluir el nombre de dominio, deben tener 15 caracteres o menos, y los nombres deben poder resolverse. Para crear conexiones del sistema de almacenamiento con nombres de más de 15 caracteres, se puede usar el cmdlet Add-SmStorageConnectionPowerShell.
 
 
 NOTE: En el caso de los sistemas de almacenamiento con configuración MetroCluster (MCC), se recomienda registrar tanto clústeres locales como de otros fabricantes para garantizar operaciones no disruptivas.
@@ -91,6 +91,9 @@ Al seleccionar la casilla de verificación *Enviar notificación AutoSupport par
 .. En Plataforma, seleccione una de las opciones de la lista desplegable.
 +
 Si la SVM es el sistema de almacenamiento secundario en una relación de copia de seguridad, seleccione la casilla de verificación *Secundaria*. Cuando se selecciona la opción *secundario*, SnapCenter no realiza una comprobación de licencia inmediatamente.
+
++
+Si ha agregado SVM en SnapCenter, el usuario debe seleccionar el tipo de plataforma del menú desplegable manualmente.
 
 .. En Protocol, seleccione el protocolo que se configuró durante la configuración del SVM o el clúster, que suele ser HTTPS.
 .. Introduzca el puerto que acepta el sistema de almacenamiento.
@@ -127,6 +130,9 @@ Cuando hace clic en el nombre del clúster, todas las SVM que forman parte del c
 Si se añade una nueva SVM al clúster de ONTAP mediante la GUI de ONTAP, haga clic en *Rediscover* para ver la SVM recién añadida.
 
 
+
+
+NOTE: Si actualizó los sistemas de almacenamiento FAS o AFF a All SAN Array (ASA), debe actualizar la conexión de almacenamiento en el servidor SnapCenter para reflejar el nuevo tipo de almacenamiento en SnapCenter.
 
 *Después de terminar*
 

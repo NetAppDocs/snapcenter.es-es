@@ -47,6 +47,18 @@ También puede implementar el certificado de CA para el plugin de SnapCenter par
 
 
 
+== Comunicación SSL bidireccional
+
+La comunicación SSL bidireccional protege la comunicación mutua entre el servidor de SnapCenter y los plugins.
+
+
+
+== Descripción general de la autenticación basada en certificados
+
+La autenticación basada en certificado verifica la autenticidad de los usuarios respectivos que intentan acceder al host del plugin de SnapCenter. El usuario debe exportar el certificado de servidor de SnapCenter sin clave privada e importarlo en el almacén de confianza del host del plugin. La autenticación basada en certificado solo funciona si la función SSL bidireccional está activada.
+
+
+
 == Autenticación multifactor (MFA)
 
 La MFA usa un proveedor de identidades (IDP) de terceros a través del lenguaje de marcado de aserción de seguridad (SAML) para gestionar las sesiones de los usuarios. Esta funcionalidad mejora la seguridad de la autenticación al tener la opción de utilizar varios factores, como TOTP, biometría, notificaciones de inserción, etc. junto con el nombre de usuario y la contraseña existentes. Además, permite al cliente utilizar sus propios proveedores de identidades de usuario para obtener un inicio de sesión unificado (SSO) en toda su cartera.

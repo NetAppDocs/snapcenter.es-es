@@ -1,0 +1,62 @@
+---
+permalink: install/task_export_ca_certificates_from_snapcenter_server.html 
+sidebar: sidebar 
+keywords: security,authentication, export CA certificates 
+summary: Debe exportar los certificados de CA del servidor SnapCenter a los hosts del plugin. 
+---
+= Exporte certificados de entidad de certificación (CA) del servidor SnapCenter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es necesario exportar los certificados de CA del servidor de SnapCenter a los hosts del plugin mediante la consola de gestión de Microsoft (MMC).
+
+*Lo que necesitará*
+
+Debe haber configurado el SSL bidireccional.
+
+* Pasos*
+
+. Vaya a la consola de administración de Microsoft (MMC) y, a continuación, haga clic en *Archivo* > *Agregar o quitar Snapin*.
+. En la ventana Agregar o quitar complementos, seleccione *certificados* y, a continuación, haga clic en *Agregar*.
+. En la ventana Certificados Snap-in, seleccione la opción *Cuenta de computadora* y luego haga clic en *Finalizar*.
+. Haga clic en *Console root* > *Certificados - Equipo local* > *Personal* > *Certificados*.
+. Haga clic con el botón derecho en el certificado de CA adquirido, que se utiliza para el servidor SnapCenter y, a continuación, seleccione *Todas las tareas* > *Exportar* para iniciar el asistente de exportación.
+. Realice las siguientes acciones en el asistente.
+
+
+|===
+| Para esta opción... | Haga lo siguiente... 
+
+
+ a| 
+Exportar clave privada
+ a| 
+Seleccione *No, no exporte la clave privada* y luego haga clic en *Siguiente*.
+
+
+
+ a| 
+Exportar formato de archivo
+ a| 
+Haga clic en *Siguiente*.
+
+
+
+ a| 
+Nombre de archivo
+ a| 
+Haga clic en *Examinar* y especifique la ruta del archivo para guardar el certificado, y haga clic en *Siguiente*.
+
+
+
+ a| 
+Finalización del Asistente para exportación de certificados
+ a| 
+Revise el resumen y, a continuación, haga clic en *Finalizar* para iniciar la exportación.
+
+|===
+
+NOTE: La autenticación basada en certificados no se admite para las configuraciones de alta disponibilidad de SnapCenter y el plugin de SnapCenter para VMware vSphere.

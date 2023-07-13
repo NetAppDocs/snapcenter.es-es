@@ -32,7 +32,7 @@ Cuando quita un host de SnapCenter, SnapCenter desinstalará todos los paquetes 
 Si utiliza la interfaz gráfica de usuario de SnapCenter, solamente puede desinstalar los plugins de un host cada vez. Sin embargo, puede tener varias operaciones de desinstalación que se ejecuten simultáneamente.
 
 +
-También puede desinstalar un plugin de varios hosts mediante el cmdlet _Uninstall-SmHostPackage_ y los parámetros requeridos. La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2885482["Guía de referencia de cmdlets de SnapCenter Software"^].
+También puede desinstalar un plugin de varios hosts mediante el cmdlet _Uninstall-SmHostPackage_ y los parámetros requeridos. La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guía de referencia de cmdlets de SnapCenter Software"^].
 
 
 

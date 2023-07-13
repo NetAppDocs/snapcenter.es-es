@@ -47,6 +47,10 @@ No puede instalar el plugin para Windows en un host de Windows conectado al alma
 
 
 
+
+NOTE: SnapCenter no admite la adición de un mismo host (host del plugin) a SnapCenter si el host ya forma parte de un grupo de trabajo y se cambió a otro dominio o viceversa.
+Si desea añadir el mismo host, debe quitar el host de SnapCenter y volver a añadirlo.
+
 * Pasos*
 
 . En el panel de navegación de la izquierda, haga clic en *hosts*.

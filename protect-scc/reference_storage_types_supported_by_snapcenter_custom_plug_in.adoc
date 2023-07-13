@@ -18,21 +18,21 @@ SnapCenter admite una amplia variedad de tipos de almacenamiento en máquinas f�
 
 
  a| 
-Servidores físicos y virtuales (los VMDK y LUN de RDM no son compatibles)
+Montajes físicos y directos de NFS en los hosts de máquinas virtuales (no se admiten VMDK y LUN de RDM).
  a| 
 LUN conectados a FC
 
 
 
  a| 
-Servidores físicos y virtuales (los VMDK y LUN de RDM no son compatibles)
+Montajes físicos y directos de NFS en los hosts de máquinas virtuales (no se admiten VMDK y LUN de RDM).
  a| 
 LUN conectados a iSCSI
 
 
 
  a| 
-Servidores físicos y virtuales (los VMDK y LUN de RDM no son compatibles)
+Montajes físicos y directos de NFS en los hosts de máquinas virtuales (no se admiten VMDK y LUN de RDM).
  a| 
 Volúmenes conectados en NFS
 

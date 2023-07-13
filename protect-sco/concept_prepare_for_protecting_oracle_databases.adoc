@@ -54,7 +54,7 @@ Para los usuarios de SnapCenter 4.1.1, la documentación del plugin de SnapCente
 
 *Más información*
 
-* https://imt.netapp.com/matrix/imt.jsp?components=108392;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad"^]
+* https://imt.netapp.com/matrix/imt.jsp?components=112391;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad"^]
 * https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/index.html["Documentación del plugin de SnapCenter para VMware vSphere"^]
 * https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Data_protection_operation_fails_in_a_non-multipath_environment_in_RHEL_7_and_later["Error en la operación de protección de datos en un entorno no multivía en RHEL 7 y versiones posteriores"^]
 
