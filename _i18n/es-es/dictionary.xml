@@ -5057,7 +5057,6 @@
   <block id="03101d2d05b95aa8395d372be971ceec" category="cell">Nombre del parámetro</block>
   <block id="e2072f9dd36121658dfb70db997cac48" category="paragraph">NIVEL_REGISTRO</block>
   <block id="27ef522d71e1457c1d75f1a9fbdffdb9" category="paragraph">Muestra los niveles de los registros que se admiten.</block>
-  <block id="9dec2839914c450a2eba38fd6ed0037d" category="paragraph">Los posibles valores son INFO, DEBUG, TRACE, ERROR, FATAL, Y ADVIERTA.</block>
   <block id="54e3ff300a85eed4faafba9e929fcc68" category="paragraph">SPL_PROTOCOL</block>
   <block id="7af9608cb14f57495b1335e877ee3b0e" category="paragraph">Muestra el protocolo que admite el cargador del plugin de SnapCenter.</block>
   <block id="36c24cffc745e8682deaec9e2c0960f8" category="paragraph">Solo se admite el protocolo HTTPS. Puede agregar el valor si falta el valor predeterminado.</block>
@@ -8443,4 +8442,5 @@ NetApp® Single Mailbox Recovery ha llegado al final de la disponibilidad (EOA) 
   <block id="dc085c0453f245659c31e067671c65b0" category="sidebar">Importe el certificado de CA a los plugins de host UNIX y configure los certificados raíz o intermedios en el almacén de confianza de SPL</block>
   <block id="78a044d413487b3c49b37567f8df9e4f" category="sidebar">Importe el certificado de CA a los plugins de host UNIX</block>
   <block id="7fbe6e40125b7d1b2f5c5c05044e7526" category="sidebar">Habilite la autenticación basada en certificados</block>
+  <block id="20c5c92c0148a7ebef737c442e93b7ec" category="paragraph">Los posibles valores son TRACE, DEBUG, INFO, WARN, ERROR, Y FATAL.</block>
 </blocks>

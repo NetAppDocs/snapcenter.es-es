@@ -32,7 +32,7 @@ NIVEL_REGISTRO
  a| 
 Muestra los niveles de los registros que se admiten.
 
-Los posibles valores son INFO, DEBUG, TRACE, ERROR, FATAL, Y ADVIERTA.
+Los posibles valores son TRACE, DEBUG, INFO, WARN, ERROR, Y FATAL.
 
 
 
