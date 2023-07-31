@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/task_add_resources_to_snapcenter_custom_plug_ins.html 
 sidebar: sidebar 
-keywords:  
+keywords: custom plug-in, resources, snapcenter 
 summary: Debe añadir los recursos que desee incluir en un backup o clonar. En función de su entorno, los recursos pueden ser instancias de una base de datos o recopilaciones que desee clonar o incluir en un backup. 
 ---
 = Añada recursos a los plugins personalizados de SnapCenter
@@ -13,7 +13,7 @@ summary: Debe añadir los recursos que desee incluir en un backup o clonar. En f
 [role="lead"]
 Debe añadir los recursos que desee incluir en un backup o clonar. En función de su entorno, los recursos pueden ser instancias de una base de datos o recopilaciones que desee clonar o incluir en un backup.
 
-.Antes de empezar
+.Lo que necesitará
 * Debe haber completado ciertas tareas, como instalar el servidor SnapCenter, añadir hosts, crear conexiones con el sistema de almacenamiento y añadir credenciales.
 * Debe tener link:concept_develop_a_plug_in_for_your_application.html["se ha creado un plugin personalizado para la aplicación"].
 * Debe haber cargado los plugins en SnapCenter Server.
@@ -73,7 +73,7 @@ Opcional: Seleccione la image:../media/add_policy_from_resourcegroup.gif["Icono 
 
 +
 
-NOTE: Los plugins personalizados de SnapCenter no admiten la detección automática de los recursos y detalles de almacenamiento correspondientes a los entornos físicos y virtuales. Debe proporcionar la información de almacenamiento de los entornos físico y virtual durante la creación de los recursos.
+NOTE: Los plugins personalizados de SnapCenter no admiten la detección automática de los recursos. Los detalles de almacenamiento de entornos físicos y virtuales también no se detectan automáticamente. Debe proporcionar la información de almacenamiento de los entornos físico y virtual durante la creación de los recursos.
 
 +
 image::../media/storage_footprint.gif[Espacio de almacenamiento]

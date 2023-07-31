@@ -11,7 +11,7 @@ summary: Cuando el plugin de SnapCenter para SQL Server está inactivo, realice 
 
 
 [role="lead"]
-Cuando el plugin de SnapCenter para SQL Server está inactivo, realice los siguientes pasos para cambiar a un host de SQL diferente y recuperar los datos.
+Cuando el plugin de SnapCenter para SQL Server está inactivo, siga los siguientes pasos para cambiar a un host de SQL diferente y recuperar los datos.
 
 .Lo que necesitará
 * El host secundario debe tener el mismo sistema operativo, aplicación y nombre de host que el host primario.

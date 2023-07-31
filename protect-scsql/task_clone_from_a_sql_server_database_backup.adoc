@@ -1,7 +1,7 @@
 ---
 permalink: protect-scsql/task_clone_from_a_sql_server_database_backup.html 
 sidebar: sidebar 
-keywords:  
+keywords: clone 
 summary: Puede utilizar SnapCenter para clonar un backup de base de datos de SQL Server. Si desea acceder a o restaurar una versión anterior de los datos, puede clonar backups de base de datos bajo demanda. 
 ---
 = Clonar a partir de un backup de base de datos de SQL Server
@@ -13,8 +13,7 @@ summary: Puede utilizar SnapCenter para clonar un backup de base de datos de SQL
 [role="lead"]
 Puede utilizar SnapCenter para clonar un backup de base de datos de SQL Server. Si desea acceder a o restaurar una versión anterior de los datos, puede clonar backups de base de datos bajo demanda.
 
-*Lo que necesitará*
-
+.Lo que necesitará
 * Debe haberse preparado para la protección de datos completando ciertas tareas, como añadir hosts, identificar recursos y crear conexiones de sistema de almacenamiento.
 * Debe tener un backup de las bases de datos o de los grupos de recursos.
 * El tipo de protección, como reflejo, almacén o reflejo-almacén para el LUN de datos y el LUN de registro, debe ser el mismo para detectar localizadores secundarios durante la clonado en un host alternativo mediante backups de registros.
@@ -22,8 +21,7 @@ Puede utilizar SnapCenter para clonar un backup de base de datos de SQL Server. 
 * Debe asegurarse de que los agregados donde se alojan los volúmenes deben estar en la lista de agregados asignados de la máquina virtual de almacenamiento (SVM).
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * Mientras se clona en una instancia de base de datos independiente, asegúrese de que exista la ruta de acceso del punto de montaje y sea un disco dedicado.
 * Al realizar la clonación en una instancia de clúster de conmutación por error (FCI, Failover Cluster Instance), asegúrese de que los puntos de montaje existen, son un disco compartido y la ruta de acceso y el FCI deben pertenecer al mismo grupo de recursos SQL.
 * Asegúrese de que solo hay un iniciador VFC o FC conectado a cada host. Esto se debe a que, SnapCenter solo admite un iniciador por host.
@@ -43,22 +41,17 @@ Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGU
 
 NOTE: Para los entornos virtuales (VMDK/RDM), asegúrese de que el punto de montaje es un disco dedicado.
 
-* Pasos*
-
-. En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione *complemento SnapCenter para SQL Server* en la lista.
+.Pasos
+. En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione *SnapCenter Plug-in for SQL Server* de la lista.
 . En la página Resources, seleccione *Database* o *Resource Group* en la lista *View*.
 +
 
 NOTE: No se admite la clonado del backup de una instancia.
 
-
-
-* Pasos*
-
 . Seleccione la base de datos o el grupo de recursos.
-. En la página Manage Copies view, seleccione el backup de un sistema de almacenamiento principal o secundario (reflejado o en almacén).
-. Seleccione el backup y, a continuación, haga clic en *image:../media/clone_icon.gif[""]*.
-. En la página Clone Options, realice las siguientes acciones:
+. En la página de visualización de *Manage Copies*, seleccione la copia de seguridad del sistema de almacenamiento principal o secundario (reflejado o en almacén).
+. Seleccione el backup y, a continuación, seleccione *image:../media/clone_icon.gif["el icono de clon"]*.
+. En la página *Clone Options*, realice las siguientes acciones:
 +
 |===
 | Para este campo... | Realice lo siguiente... 
@@ -132,7 +125,7 @@ Indique la fecha y la hora después de las cuales los registros de transacciones
 Esta clonado de momento específico detiene la clonado de las entradas del registro de transacciones que se registraron después de la fecha y la hora especificadas.
 
 |===
-. En la página Script, introduzca el tiempo de espera de script, la ruta y los argumentos del script previo o posterior que deben ejecutarse antes o después de la operación de clonado, según corresponda.
+. En la página *Script*, introduzca el tiempo de espera del script, la ruta y los argumentos del script previo o script posterior que deben ejecutarse antes o después de la operación de clonado, respectivamente.
 +
 Por ejemplo, es posible ejecutar un script para actualizar las capturas SNMP, automatizar alertas, enviar registros, etc.
 
@@ -143,7 +136,7 @@ NOTE: La ruta scripts previos o posteriores no debe incluir unidades o recursos 
 +
 El tiempo de espera predeterminado del script es 60 segundos.
 
-. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
+. En la página *notificación*, en la lista desplegable *preferencia de correo electrónico*, seleccione los escenarios en los que desea enviar los correos electrónicos.
 +
 También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. Si desea adjuntar el informe de la operación de clonado realizada, seleccione *Adjuntar informe de trabajo*.
 
@@ -154,16 +147,14 @@ NOTE: Para las notificaciones de correo electrónico, se deben haber especificad
 +
 Para EMS, consulte https://docs.netapp.com/us-en/snapcenter/admin/concept_manage_ems_data_collection.html["Gestione la recogida de datos de EMS"]
 
-. Revise el resumen y, a continuación, haga clic en *Finalizar*.
-. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+. Revisa el resumen y luego selecciona *Finalizar*.
+. Supervise el progreso de la operación seleccionando *Monitor* > *Trabajos*.
 
 
-*Después de terminar*
-
+.El futuro
 Después de crear el clon, no debe cambiar nunca el nombre.
 
-*Más información*
-
+.Información relacionada
 link:reference_back_up_sql_server_database_or_instance_or_availability_group.html["Realizar backup de base de datos de SQL Server, instancia o grupo de disponibilidad"]
 
 link:task_clone_backups_using_powershell_cmdlets_for_sql.html["Clonar backups mediante cmdlets de PowerShell"]

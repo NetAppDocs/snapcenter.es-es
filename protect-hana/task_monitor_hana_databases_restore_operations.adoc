@@ -1,7 +1,7 @@
 ---
 permalink: protect-hana/task_monitor_hana_databases_restore_operations.html 
 sidebar: sidebar 
-keywords: restore 
+keywords: monitor, SAP HANA databases, restore operations 
 summary: Es posible supervisar el progreso de diferentes operaciones de restauración de SnapCenter mediante la página Jobs. El progreso de una operación puede revisarse para determinar cuándo está completa o si hay un problema. 
 ---
 = Supervisar las operaciones de restauración de bases de datos SAP HANA

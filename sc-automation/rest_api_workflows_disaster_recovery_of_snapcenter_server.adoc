@@ -1,7 +1,7 @@
 ---
 permalink: sc-automation/rest_api_workflows_disaster_recovery_of_snapcenter_server.html 
 sidebar: sidebar 
-keywords:  
+keywords: REST API, disaster recovery, DR 
 summary: La funcionalidad de recuperación ante desastres de SnapCenter usa API DE REST para hacer backups de SnapCenter Server. 
 ---
 = API DE REST de recuperación ante desastres (DR)
@@ -74,14 +74,12 @@ NOTE: Si la máquina virtual está dañada, abra otra máquina virtual o una má
 
 Con las API DE REST, es posible realizar las siguientes operaciones en la página de API de REST de Swagger. Para obtener información sobre cómo acceder a la página de Swagger, consulte link:https://docs.netapp.com/us-en/snapcenter/sc-automation/task_how%20to_access_rest_apis_using_the_swagger_api_web_page.html["Cómo acceder a las API de REST con la página web de la API swagger"].
 
-*Lo que necesitará*
-
+.Lo que necesitará
 * Debe iniciar sesión como usuario administrador de SnapCenter.
 * El servidor SnapCenter debe estar activo y en funcionamiento para ejecutar la API de restauración de recuperación ante desastres.
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 SnapCenter Server DR es compatible con todos los plugins.
 
 |===
@@ -91,8 +89,7 @@ SnapCenter Server DR es compatible con todos los plugins.
  a| 
 Recuperar los backups de recuperación ante desastres de servidores de SnapCenter existentes
 
-
-NOTE: Debe proporcionar la ruta de destino donde estén almacenados los backups de recuperación ante desastres.
+Debe proporcionar la ruta de destino donde estén almacenados los backups de recuperación ante desastres.
  a| 
 `/4.5/disasterrecovery/server/backup?targetpath={path}`
  a| 
@@ -135,4 +132,5 @@ Habilite o deshabilite la recuperación ante desastres de almacenamiento
 PUBLICAR
 
 |===
-Para obtener más información, consulte https://www.youtube.com/watch?v=Nbr_wm9Cnd4&list=PLdXI3bZJEw7nofM6lN44eOe4aOSoryckg["API de recuperación ante desastres"^] vídeo.
+.Si quiere más información
+Consulte link:https://www.youtube.com/watch?v=Nbr_wm9Cnd4&list=PLdXI3bZJEw7nofM6lN44eOe4aOSoryckg["API de recuperación ante desastres"^] vídeo.

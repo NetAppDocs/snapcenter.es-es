@@ -43,10 +43,10 @@ Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGU
 
 == Paso 1: Crear nombre de política
 
-. En el panel de navegación de la izquierda, haga clic en *Configuración*.
-. En la página Configuración, haga clic en *Directivas*.
-. Haga clic en *Nuevo*.
-. En la página Name, escriba el nombre de la política y una descripción.
+. En el panel de navegación izquierdo, selecciona *Configuración*.
+. En la página Configuración, selecciona *Políticas*.
+. Selecciona *Nuevo*.
+. En la página *Nombre*, introduzca el nombre y la descripción de la directiva.
 
 
 
@@ -336,5 +336,5 @@ NOTE: La ruta scripts previos o posteriores no debe incluir unidades o recursos 
 
 == Paso 7: Resumen de la revisión
 
-. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Revisa el resumen y luego selecciona *Finalizar*.
 

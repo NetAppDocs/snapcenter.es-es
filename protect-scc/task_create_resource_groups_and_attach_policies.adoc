@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/task_create_resource_groups_and_attach_policies.html 
 sidebar: sidebar 
-keywords:  
+keywords: resource groups, attach policies, snapcenter 
 summary: Un grupo de recursos es el contenedor al que debe añadir los recursos que desea proteger e incluir en un backup. 
 ---
 = Cree grupos de recursos y asocie políticas en SnapCenter
@@ -10,7 +10,7 @@ summary: Un grupo de recursos es el contenedor al que debe añadir los recursos 
 :imagesdir: ../media/
 
 
-Un grupo de recursos es el contenedor al que debe añadir los recursos que desea proteger e incluir en un backup. Permite realizar un backup simultáneo de todos los datos que están asociados con una aplicación determinada, y son necesarios para cualquier trabajo de protección de datos. También debe añadir una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar.
+Un grupo de recursos es el contenedor al que debe añadir los recursos que desea proteger e incluir en un backup. Permite realizar un backup en simultáneo con todos los datos que están asociados con una aplicación determinada. También debe añadir una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar.
 
 .Pasos
 . En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
@@ -47,12 +47,12 @@ Marque esta casilla de comprobación e introduzca un formato de nombre personali
 Por ejemplo, _customtext_resource group_policy_hostname o resource group_hostname_. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
 
 |===
-. Opcional: En la página Resources, seleccione un nombre de host de la lista desplegable *Host* y el tipo de recurso de la lista desplegable *Tipo de recurso*.
+. Opcional: En la página Recursos, seleccione un nombre de host de la lista desplegable *Host* y el tipo de recurso de la lista desplegable *Tipo de recurso*.
 +
 Esto permite filtrar información en la pantalla.
 
 . Seleccione los recursos de la sección *Recursos disponibles* y, a continuación, seleccione la flecha derecha para moverlos a la sección *Recursos seleccionados*.
-. Opcional: En la página Application Settings, realice lo siguiente:
+. Opcional: En la página *Configuración de la aplicación*, haga lo siguiente:
 +
 .. Seleccione la flecha Backups para establecer las opciones de backup adicionales.
 +
@@ -188,7 +188,7 @@ Las programaciones configuradas figuran en la columna Applied Schedules. No se a
 
 
 
-. En la lista desplegable *Preferencias de correo electrónico* de la página Notificación, seleccione los escenarios en los que desea enviar los correos electrónicos.
+. En la lista desplegable *Preferencias de correo* de la página *Notificación*, selecciona los escenarios en los que deseas enviar los correos electrónicos.
 +
 También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. El servidor SMTP debe configurarse en *Ajustes* > *Ajustes globales*.
 

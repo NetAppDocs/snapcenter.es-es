@@ -13,14 +13,12 @@ summary: Realizar un backup de una base de datos incluye establecer una conexió
 [role="lead"]
 Realizar un backup de una base de datos incluye establecer una conexión con SnapCenter Server, añadir recursos, añadir una política, crear un grupo de recursos de backup y realizar backups.
 
-*Lo que necesitará*
-
+.Lo que necesitará
 * Debe haber preparado el entorno de PowerShell para ejecutar los cmdlets de PowerShell.
 * Debe añadir la conexión con el sistema de almacenamiento y crear una credencial.
 
 
-* Pasos*
-
+.Pasos
 . Inicie una sesión de conexión con el servidor de SnapCenter para el usuario especificado mediante el cmdlet de Open-SmConnection.
 +
 [listing]

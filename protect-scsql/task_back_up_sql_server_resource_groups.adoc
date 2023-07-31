@@ -13,14 +13,13 @@ summary: Puede realizar un backup del grupo de recursos bajo demanda en la pági
 [role="lead"]
 Puede realizar un backup del grupo de recursos bajo demanda en la página Resources. Si un grupo de recursos tiene una política anexada y una programación configurada, los backups se realizan automáticamente según esa programación.
 
-* Pasos*
-
-. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+.Pasos
+. En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
 . En la página Resources, seleccione *Resource Group* en la lista *View*.
 +
-Puede buscar el grupo de recursos escribiendo el nombre en el cuadro de búsqueda o haciendo clic en *image:../media/filter_icon.gif[""]* y, a continuación, seleccionar la etiqueta. A continuación, puede hacer clic en *image:../media/filter_icon.gif[""]* para cerrar el panel de filtros.
+Puede buscar el grupo de recursos escribiendo el nombre en el cuadro de búsqueda o seleccionando *image:../media/filter_icon.gif["Icono de filtro"]* y, a continuación, seleccionar la etiqueta. A continuación, puede seleccionar *image:../media/filter_icon.gif["Icono de filtro"]* para cerrar el panel de filtros.
 
-. En la página Resource Groups, seleccione el grupo de recursos que desea incluir en un backup y, a continuación, haga clic en *Back up Now*.
+. En la página Resource Groups, seleccione el grupo de recursos del que desea realizar un backup y, a continuación, seleccione *Back up Now*.
 . En la página Backup, realice los siguientes pasos:
 +
 .. Si asoció varias políticas al grupo de recursos, en la lista desplegable *Policy*, seleccione la política que desea usar para la copia de seguridad.
@@ -31,14 +30,13 @@ Si la política seleccionada para el backup bajo demanda está asociada a una pr
 +
 La opción *verificar* de la directiva sólo se aplica a los trabajos programados.
 
-.. Haga clic en *copia de seguridad*.
+.. Seleccione *copia de seguridad*.
 
 
-. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+. Supervise el progreso de la operación seleccionando *Monitor* > *Trabajos*.
 
 
-*Más información*
-
+.¿Cuál es el siguiente?
 link:task_create_backup_policies_for_sql_server_databases.html["Crear políticas de backup para bases de datos de SQL Server"]
 
 link:task_create_resource_groups_and_attach_policies_for_sql_server.html["Crear grupos de recursos y asociar políticas para SQL Server"]

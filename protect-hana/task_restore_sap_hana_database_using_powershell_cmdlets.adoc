@@ -1,7 +1,7 @@
 ---
 permalink: protect-hana/task_restore_sap_hana_database_using_powershell_cmdlets.html 
 sidebar: sidebar 
-keywords: restore 
+keywords: restore, sap hana database, snapcenter 
 summary: La restauración de un backup de base de datos SAP HANA incluye iniciar una sesión de conexión con SnapCenter Server, mostrar una lista de backups y recuperar información de los backups, así como restaurar un backup. 
 ---
 = Restaurar una base de datos SAP HANA mediante cmdlets de PowerShell
@@ -13,12 +13,10 @@ summary: La restauración de un backup de base de datos SAP HANA incluye iniciar
 [role="lead"]
 La restauración de un backup de base de datos SAP HANA incluye iniciar una sesión de conexión con SnapCenter Server, mostrar una lista de backups y recuperar información de los backups, así como restaurar un backup.
 
-*Lo que necesitará*
-
+.Lo que necesitará
 Debe haber preparado el entorno de PowerShell para ejecutar los cmdlets de PowerShell.
 
-* Pasos*
-
+.Pasos
 . Inicie una sesión de conexión con el servidor de SnapCenter para el usuario especificado mediante el cmdlet de Open-SmConnection.
 +
 [listing]

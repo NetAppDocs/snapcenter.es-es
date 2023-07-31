@@ -31,9 +31,9 @@ Si instala plugins en un clúster (WSFC), los plugins se instalan en todos los n
 
 * Pasos*
 
-. En el panel de navegación de la izquierda, haga clic en *hosts*.
+. En el panel de navegación izquierdo, seleccione *hosts*.
 . Compruebe que la ficha *Managed hosts* está seleccionada en la parte superior.
-. Haga clic en *Agregar*.
+. Seleccione *Agregar*.
 . En la página hosts, realice las siguientes acciones:
 +
 |===
@@ -83,7 +83,7 @@ NOTE: El modo de autenticación de las credenciales se determina por el tipo de 
 
 |===
 . En la sección *Seleccione Plug-ins to Install*, seleccione los plugins que desee instalar.
-. (Opcional) haga clic en *más opciones*.
+. (Opcional) Seleccione *Más opciones*.
 +
 |===
 | Para este campo... | Realice lo siguiente... 
@@ -116,14 +116,14 @@ Opcionalmente, puede personalizar la ruta.
 
 ** Para los plugins personalizados de SnapCenter:
 +
-... En la sección Custom Plug-ins, haga clic en *Browse* y seleccione la carpeta del plugin personalizado comprimida.
+... En la sección Custom Plug-ins, seleccione *Browse* y seleccione la carpeta del plugin personalizado comprimida.
 +
 La carpeta comprimida contiene el código del plugin y el archivo .xml del descriptor.
 
 +
 Para el plugin de almacenamiento, desplácese hasta _C:\ProgramData\NetApp\SnapCenter\Package Repository_ y seleccione `Storage.zip` carpeta.
 
-... Haga clic en *cargar*.
+... Selecciona *Cargar*.
 +
 El archivo .xml del descriptor en la carpeta del plugin personalizado comprimida se valida antes de cargar el paquete.
 
@@ -158,7 +158,7 @@ IMPORTANT: Proporcione el nombre de GMSA con el siguiente formato: Nombre_de_dom
 NOTE: GMSA se utilizará como cuenta de servicio de inicio de sesión solo en el complemento SnapCenter para el servicio de Windows.
 
 |===
-. Haga clic en *Enviar*.
+. Seleccione *Enviar*.
 +
 Si no ha seleccionado la casilla de comprobación *Skip prechecks, el host se valida para comprobar si cumple con los requisitos para la instalación del plugin. El espacio en disco, RAM, versión de PowerShell, versión de .NET, ubicación (para plugins de Windows) y versión de Java (para plugins de Linux) se validan frente a los requisitos mínimos. Si no se satisfacen los requisitos mínimos, se muestran los mensajes de error o advertencia correspondientes.
 
@@ -169,7 +169,7 @@ Si el error está relacionado con el espacio en disco o RAM, es posible actualiz
 
 NOTE: En una configuración de alta disponibilidad, si actualiza el archivo web.config, debe actualizar el archivo en ambos nodos.
 
-. Si el tipo de host es Linux, verifique la huella digital y, a continuación, haga clic en *Confirmar y enviar*.
+. Si el tipo de host es Linux, verifique la huella dactilar y, a continuación, seleccione *Confirmar y Enviar*.
 +
 
 NOTE: La verificación de huellas digitales es obligatoria aunque se haya añadido anteriormente el mismo host a SnapCenter y se haya confirmado la huella.

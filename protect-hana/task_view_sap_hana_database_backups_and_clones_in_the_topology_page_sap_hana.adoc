@@ -13,8 +13,7 @@ summary: Al prepararse para clonar un recurso o incluirlo en un backup, puede re
 [role="lead"]
 Al prepararse para clonar un recurso o incluirlo en un backup, puede resultar útil ver una representación gráfica de todos los backups y clones del almacenamiento principal y secundario.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 Puede consultar los siguientes iconos de la vista gestionar copias para determinar si los backups o clones están disponibles en el almacenamiento principal y secundario (copias reflejadas o en almacén).
 
 * image:../media/topology_primary_storage.gif["icono de almacenamiento principal"] muestra la cantidad de backups y clones que están disponibles en el almacenamiento principal.
@@ -34,8 +33,7 @@ NOTE: Para los recursos principales de replicación del sistema SAP HANA, las op
 
 En la página Topology, es posible ver todos los backups y clones que están disponibles para el recurso o el grupo de recursos seleccionado. Pueden verse los detalles de estos backups y clones, y luego seleccionarlos para realizar operaciones de protección de datos.
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, seleccione el recurso o el grupo de recursos de la lista desplegable *View*.
 . Seleccione el recurso desde la vista de detalles del recurso o desde la vista de detalles del grupo de recursos.

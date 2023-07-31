@@ -13,12 +13,10 @@ summary: Después de actualizar a SnapCenter 4.3, ya no se muestran los clones. 
 [role="lead"]
 Después de actualizar a SnapCenter 4.3, ya no se muestran los clones. Puede eliminar el clon o dividir los clones desde la página Topology del recurso desde el cual se crearon los clones.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 Si desea localizar el espacio de almacenamiento de los clones ocultos, ejecute el siguiente comando: `Get-SmClone -ListStorageFootprint`
 
-* Pasos*
-
+.Pasos
 . Elimine los backups de los recursos clonados con el cmdlet remove-smbackup.
 . Elimine el grupo de recursos de los recursos clonados mediante el cmdlet remove-smresourcegroup.
 . Quite la protección del recurso clonado mediante el cmdlet remove-smprotectresource.

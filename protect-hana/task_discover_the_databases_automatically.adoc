@@ -13,8 +13,7 @@ summary: Los recursos son bases de datos de SAP HANA y volumen de datos no data 
 [role="lead"]
 Los recursos son bases de datos de SAP HANA y volumen de datos no data en el host Linux que gestiona SnapCenter. Puede añadir estos recursos a grupos de recursos para realizar operaciones de protección de datos después de detectar las bases de datos SAP HANA disponibles.
 
-*Lo que necesitará*
-
+.Lo que necesitará
 * Debe haber completado ciertas tareas, como instalar el servidor SnapCenter, añadir una clave de almacenamiento de usuario HDB, añadir hosts y configurar las conexiones del sistema de almacenamiento.
 * Debe haber configurado la clave de almacenamiento de usuario seguro HDB y el usuario sistema operativo HDB SQL en el host Linux.
 +
@@ -24,14 +23,12 @@ Los recursos son bases de datos de SAP HANA y volumen de datos no data en el hos
 * El plugin de SnapCenter para base de datos SAP HANA no es compatible con la detección automática de los recursos que residen en entornos virtuales RDM/VMDK. Debe proporcionar la información de almacenamiento para entornos virtuales al mismo tiempo que añade las bases de datos de forma manual.
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 Después de instalar el plugin, todos los recursos en ese host Linux se detectan de forma automática y se muestran en la página Resources.
 
 Los recursos de detección automática no se pueden modificar ni eliminar.
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Resources* y seleccione el plugin para base de datos de SAP HANA en la lista.
 . En la página Resources, seleccione el tipo de recurso en la lista View.
 . (Opcional) haga clic en *image:../media/filter_icon.gif[""]* y, a continuación, seleccione el nombre de host.
@@ -55,8 +52,7 @@ NOTE: Si la base de datos SAP HANA no tiene una clave de almacenamiento de usuar
 
 IMPORTANT: Es necesario actualizar los recursos si se cambia el nombre de las bases de datos fuera de SnapCenter.
 
-*Después de terminar*
-
+.¿Cuál es el siguiente?
 Es necesario configurar la clave de almacenamiento de usuario seguro HDB y el usuario del sistema operativo HDBSQL para proteger la base de datos o añadirla al grupo de recursos para realizar operaciones de protección de datos.
 
 link:task_configure_hdb_user_store_key_and_hdbsql_os_user_for_the_sap_hana_database.html["Configure la clave de almacenamiento de usuario HDB y el usuario del sistema operativo HDBSQL para la base de datos SAP HANA"]

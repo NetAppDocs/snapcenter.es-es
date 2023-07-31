@@ -13,8 +13,7 @@ summary: Debe usar la página SnapCenter Add Host para añadir hosts y, a contin
 [role="lead"]
 Debe usar la página SnapCenter Add Host para añadir hosts y, a continuación, instalar los paquetes de los plugins. Los plugins se instalan automáticamente en hosts remotos. Puede añadir un host e instalar paquetes de plugins para un host individual o para un clúster.
 
-*Lo que necesitará*
-
+.Lo que necesitará
 * Debe ser un usuario al que se ha asignado una función que tenga permisos de instalación y desinstalación de plugins, como el rol de administrador de SnapCenter.
 * Al instalar un plugin en un host de Windows, si especifica una credencial que no está incorporada o si el usuario pertenece a un usuario de grupo de trabajo local, debe deshabilitar UAC en el host.
 * Debe asegurarse de que el servicio de cola de mensajes está en ejecución.
@@ -25,14 +24,12 @@ link:../protect-hana/task_configure_gMSA_on_windows_server_2012_or_later.html["C
 
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * No es posible añadir un servidor SnapCenter como host de plugins a otro servidor SnapCenter.
 * Para la replicación de sistemas SAP HANA para descubrir recursos en sistemas primarios y secundarios, se recomienda añadir los sistemas primario y secundario que utilizan usuario raíz o sudo.
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *hosts*.
 . Compruebe que la ficha *Managed hosts* está seleccionada en la parte superior.
 . Haga clic en *Agregar*.

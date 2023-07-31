@@ -13,16 +13,14 @@ summary: La detección automática no es compatible con determinadas instancias 
 [role="lead"]
 La detección automática no es compatible con determinadas instancias de HANA. Debe añadir estos recursos manualmente.
 
-*Lo que necesitará*
-
+.Lo que necesitará
 * Debe haber completado ciertas tareas, como instalar el servidor SnapCenter, añadir hosts, configurar conexiones del sistema de almacenamiento y añadir una clave de almacenamiento de usuario HDB.
 * Para la replicación del sistema SAP HANA, se recomienda añadir todos los recursos de ese sistema HANA a un grupo de recursos y realizar un backup de grupo de recursos. Esto garantiza una copia de seguridad sin problemas durante el modo de recuperación tras fallos.
 
 
 link:task_create_resource_groups_and_attach_policies.html["Crear grupos de recursos y añadir políticas"].
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 La detección automática no es compatible con las siguientes configuraciones:
 
 * Distribución con RDM y VMDK
@@ -36,8 +34,7 @@ NOTE: Si se detectan los recursos anteriores, las operaciones de protección de 
 * Entorno de replicación en cascada en modo de replicación de sistemas
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, seleccione el plugin de SnapCenter para base de datos SAP HANA en la lista desplegable y, a continuación, haga clic en *Resources*.
 . En la página Resources, haga clic en *Add SAP HANA Database*.
 . En la página Provide Resource Details, realice las siguientes acciones:

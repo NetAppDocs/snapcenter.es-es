@@ -13,8 +13,7 @@ summary: El flujo de trabajo de clonado incluye realizar la operación de clonad
 [role="lead"]
 El flujo de trabajo de clonado incluye realizar la operación de clonado y supervisarla.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * Puede clonar en el servidor SAP HANA de origen.
 * Es posible clonar backups de recursos por los siguientes motivos:
 +

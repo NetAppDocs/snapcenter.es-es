@@ -13,8 +13,7 @@ summary: Es necesario usar la página SnapCenterAdd Host para añadir hosts e in
 [role="lead"]
 Debe utilizar la página SnapCenter *Add Host* para añadir hosts e instalar el paquete de plugins. Los plugins se instalan automáticamente en hosts remotos.
 
-*Lo que necesitará*
-
+.Lo que necesitará
 * Debe ser un usuario al que se ha asignado una función que tenga permisos de instalación y desinstalación de plugins, como el rol de administrador de SnapCenter.
 * Al instalar un plugin en un host de Windows, si especifica una credencial que no está incorporada, deberá deshabilitar UAC en el host.
 * Debe asegurarse de que el servicio de cola de mensajes esté en estado en ejecución.
@@ -24,19 +23,17 @@ link:task_configure_gMSA_on_windows_server_2012_or_later.html["Configurar la cue
 
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 No es posible añadir un servidor SnapCenter como host de plugins a otro servidor SnapCenter.
 
 Puede añadir un host e instalar los paquetes de los plugins para un host individual o para un clúster. Si está instalando los plugins en un clúster o clustering de conmutación al nodo de respaldo de Windows Server (WSFC), los plugins se instalan en todos los nodos del clúster.
 
 Para obtener información sobre la gestión de los hosts, consulte link:../admin/concept_manage_hosts.html["Gestionar hosts"^].
 
-* Pasos*
-
-. En el panel de navegación de la izquierda, haga clic en *hosts*.
+.Pasos
+. En el panel de navegación izquierdo, seleccione *hosts*.
 . Compruebe que la ficha *Managed hosts* está seleccionada en la parte superior.
-. Haga clic en *Agregar*.
+. Seleccione *Agregar*.
 . En la página hosts, haga lo siguiente:
 +
 |===
@@ -79,7 +76,7 @@ NOTE: El modo de autenticación de las credenciales se determina por el tipo de 
 
 |===
 . En la sección *Seleccione Plug-ins to Install*, seleccione los plugins que desee instalar.
-. Haga clic en *más opciones*.
+. Seleccione *más opciones*.
 +
 |===
 | Para este campo... | Realice lo siguiente... 
@@ -127,10 +124,10 @@ Proporcione el nombre de GMSA con el siguiente formato: Nombre_de_dominio\accoun
 NOTE: Si el host se agrega con GMSA y si el GMSA tiene privilegios de inicio de sesión y administrador de sistema, el GMSA se utilizará para conectarse a la instancia de SQL.
 
 |===
-. Haga clic en *Enviar*.
+. Seleccione *Enviar*.
 . Para el plugin de SQL, seleccione el host para configurar el directorio de registro.
 +
-.. Haga clic en *Configurar directorio de registro* y, en la página Configurar directorio de registro de host, haga clic en *examinar* y complete los siguientes pasos:
+.. Seleccione *Configurar directorio de registro* y en la página Configurar directorio de registro de host, seleccione *Examinar* y complete los siguientes pasos:
 +
 Tan solo se enumeran las unidades NetApp LUN como disponibles para su selección. SnapCenter realiza un backup y replica el directorio de registro del host como parte de la operación de backup.
 
@@ -140,12 +137,12 @@ image::../media/host_managed_hosts_configureplugin.gif[Configure la página de p
 +
 ... Seleccione la letra de la unidad o el punto de montaje del host donde se almacenará el registro del host.
 ... Si es necesario, elija un subdirectorio.
-... Haga clic en *Guardar*.
+... Seleccione *Guardar*.
 
 
 
 
-. Haga clic en *Enviar*.
+. Seleccione *Enviar*.
 +
 Si no ha seleccionado la casilla de comprobación *Skip prechecks*, el host se valida para comprobar si cumple con los requisitos para la instalación del plugin. El espacio en disco, RAM, versión de PowerShell, versión de .NET, ubicación (para plugins de Windows) y versión de Java (para plugins de Linux) se validan frente a los requisitos mínimos. Si no se satisfacen los requisitos mínimos, se muestran los mensajes de error o advertencia correspondientes.
 

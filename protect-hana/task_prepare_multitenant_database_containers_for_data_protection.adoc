@@ -13,8 +13,7 @@ summary: 'Para los hosts SAP HANA registrados directamente en SnapCenter, instal
 [role="lead"]
 Para los hosts SAP HANA registrados directamente en SnapCenter, instalar o actualizar el plugin de SnapCenter para base de datos SAP HANA dará lugar a una detección automática de los recursos en el host. Después de instalar o actualizar el plugin, para cada recurso de contenedores de bases de datos multitenant (MDC) que se encontraba en el host del plugin, otro recurso de MDC se descubre automáticamente con un formato GUID diferente y se registra en SnapCenter. El nuevo recurso se encontrará en el estado «bloqueado».
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 Por ejemplo, en SnapCenter 4.2, si el recurso de E90 MDC se encuentra en el host del plugin y se registró manualmente, después de actualizar a SnapCenter 4.3, se detecta otro recurso de E90 MDC con un GUID diferente y se registra en SnapCenter.
 
 
@@ -24,8 +23,7 @@ NOTE: Los backups asociados con el recurso de SnapCenter 4.2 y las versiones ant
 
 Ejecute los siguientes pasos para empezar a utilizar el nuevo recurso detectado en SnapCenter 4.3 para las operaciones de protección de datos:
 
-* Pasos*
-
+.Pasos
 . En la página Resources, seleccione el antiguo recurso MDC con copias de seguridad añadidas a la versión anterior de SnapCenter, y colóquelo en "modo de mantenimiento" de la página Topology.
 +
 Si el recurso forma parte de un grupo de recursos, coloque al grupo de recursos en «modo de mantenimiento».
@@ -43,8 +41,7 @@ Por ejemplo, si el período de retención de las copias de Snapshot primarias es
 
 
 
-*Más información*
-
+.Información relacionada
 link:task_configure_hdb_user_store_key_and_hdbsql_os_user_for_the_sap_hana_database.html["Configure la clave de almacenamiento de usuario HDB y el usuario del sistema operativo HDBSQL para la base de datos SAP HANA"]
 
 link:task_view_sap_hana_database_backups_and_clones_in_the_topology_page_sap_hana.html["Consulte los backups y los clones de la base de datos SAP HANA en la página Topology"]

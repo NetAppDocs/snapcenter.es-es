@@ -13,18 +13,15 @@ summary: Un grupo de recursos es una agrupacion de recursos en un host. Se reali
 [role="lead"]
 Un grupo de recursos es una agrupacion de recursos en un host. Se realiza una operación de backup del grupo de recursos con todos los recursos definidos en el grupo.
 
-*Lo que necesitará*
-
+.Lo que necesitará
 * Debe tener creado un grupo de recursos con una política anexada.
 * Si desea realizar un backup de un recurso que tenga una relación de SnapMirror con un almacenamiento secundario, la función ONTAP asignada al usuario de almacenamiento debería incluir el privilegio «sinapmirror all». Sin embargo, si usted está utilizando el rol "'vsadmin'", entonces no se requiere el privilegio "nnapmirror all".
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 Puede realizar un backup del grupo de recursos bajo demanda en la página Resources. Si un grupo de recursos tiene una política anexada y una programación configurada, los backups se realizan automáticamente según esa programación.
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, seleccione *Resource Group* en la lista *View*.
 +

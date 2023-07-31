@@ -13,8 +13,7 @@ summary: Antes de usar SnapCenter para realizar un backup de los recursos de la 
 [role="lead"]
 Antes de usar SnapCenter para realizar un backup de los recursos de la base de datos SAP HANA, debe crear una política de backup para el recurso o grupo de recursos que desea incluir en el backup. Una política de backup es un conjunto de reglas que rigen cómo gestionar, programar y retener backups.
 
-*Lo que necesitará*
-
+.Lo que necesitará
 * Debe tener definida una estrategia de backup.
 +
 Para obtener más detalles, consulte cómo definir una estrategia de protección de datos para las bases de datos SAP HANA.
@@ -26,8 +25,7 @@ Además, puede definir la configuración de replicación, script y aplicaciones 
 
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * Replicación de sistemas SAP HANA
 +
 ** Puede proteger el sistema SAP HANA principal y llevar a cabo todas las operaciones de protección de datos.
@@ -42,8 +40,7 @@ No puede crear un backup para el volumen de datos SAP HANA, pero SnapCenter sigu
 
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Configuración*.
 . En la página Configuración, haga clic en *Directivas*.
 . Haga clic en *Nuevo*.

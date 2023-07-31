@@ -1,7 +1,7 @@
 ---
 permalink: protect-hana/task_restore_and_recover_resources_using_powershell_cmdlets_hana.html 
 sidebar: sidebar 
-keywords:  
+keywords: restore resources, snapcenter 
 summary: La restauración de un backup de recursos incluye el inicio de una sesión de conexión con el servidor SnapCenter, el listado de los backups y la recuperación de información de los backups, y la restauración de un backup. 
 ---
 = Restaurar recursos mediante los cmdlets de PowerShell

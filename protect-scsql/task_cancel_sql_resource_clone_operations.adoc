@@ -1,7 +1,7 @@
 ---
 permalink: protect-scsql/task_cancel_sql_resource_clone_operations.html 
 sidebar: sidebar 
-keywords:  
+keywords: clone, cancel 
 summary: Es posible cancelar las operaciones de clonado que se encuentran en cola. 
 ---
 = Cancelar las operaciones de clonado de recursos SQL
