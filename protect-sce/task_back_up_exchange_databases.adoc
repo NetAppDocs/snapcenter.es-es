@@ -39,7 +39,7 @@ En la página Resources, el image:../media/not_supported_icon.png[""] Icono indi
 NOTE: En un DAG, si una copia activa de la base de datos se encuentra en un almacenamiento de terceros y al menos una copia pasiva de ella reside en un almacenamiento de NetApp, puede proteger la base de datos.
 
 +
-Haga clic en *image:../media/filter_icon.gif[""]* y luego seleccione el nombre de host y el tipo de base de datos para filtrar los recursos. A continuación, puede hacer clic en *image:../media/filter_icon.gif[""]* para cerrar el panel de filtros.
+Haga clic en *image:../media/filter_icon.png[""]* y luego seleccione el nombre de host y el tipo de base de datos para filtrar los recursos. A continuación, puede hacer clic en *image:../media/filter_icon.png[""]* para cerrar el panel de filtros.
 
 +
 ** Para realizar el backup de una base de datos, se debe hacer clic en el nombre de la base de datos.

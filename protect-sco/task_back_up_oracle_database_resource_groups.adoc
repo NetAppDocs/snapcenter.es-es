@@ -11,16 +11,16 @@ summary: Un grupo de recursos es una agrupacion de recursos en un host o un clú
 
 
 [role="lead"]
-Un grupo de recursos es una agrupacion de recursos en un host o un clúster. Se realiza una operación de backup del grupo de recursos con todos los recursos definidos en el grupo.
+Un grupo de recursos es una agrupacion de recursos en un host o un clúster. La operación de backup se realiza con todos los recursos definidos en el grupo de recursos.
 
-Puede realizar un backup del grupo de recursos bajo demanda en la página Resources. Si un grupo de recursos tiene una política anexada y una programación configurada, los backups se realizan automáticamente según esa programación.
+Puede realizar un backup del grupo de recursos bajo demanda en la página Resources. Si el grupo de recursos tiene una política anexada y una programación configurada, los backups se crean según esa programación.
 
 .Pasos
 . En el panel de navegación de la izquierda, seleccione *Recursos* y el plug-in apropiado de la lista.
 . En la página Resources, seleccione *Resource Group* en la lista *View*.
-. Escriba el nombre del grupo de recursos en el cuadro de búsqueda o haga clic en image:../media/filter_icon.gif["Icono de filtro"], y seleccione la etiqueta.
+. Escriba el nombre del grupo de recursos en el cuadro de búsqueda o haga clic en image:../media/filter_icon.png["Icono de filtro"], y seleccione la etiqueta.
 +
-Haga clic en image:../media/filter_icon.gif["Icono de filtro"] para cerrar el panel de filtros.
+Haga clic en image:../media/filter_icon.png["Icono de filtro"] para cerrar el panel de filtros.
 
 . En la página Resource Group, seleccione el grupo de recursos que desea incluir en un backup.
 +

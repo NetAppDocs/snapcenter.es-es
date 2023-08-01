@@ -16,9 +16,9 @@ Si un recurso no es parte de ningún grupo de recursos, es posible realizar back
 .Pasos
 . En el panel de navegación de la izquierda, seleccione *Recursos* y el plug-in apropiado de la lista.
 . En la página Resources, seleccione *Database* en la lista View.
-. Haga clic en image:../media/filter_icon.gif["Icono de filtro"]y, a continuación, seleccione el nombre de host y el tipo de base de datos para filtrar los recursos.
+. Haga clic en image:../media/filter_icon.png["Icono de filtro"]y, a continuación, seleccione el nombre de host y el tipo de base de datos para filtrar los recursos.
 +
-A continuación, puede hacer clic en image:../media/filter_icon.gif["Icono de filtro"] para cerrar el panel de filtros.
+A continuación, puede hacer clic en image:../media/filter_icon.png["Icono de filtro"] para cerrar el panel de filtros.
 
 . Seleccione la base de datos de la que desea realizar el backup.
 +

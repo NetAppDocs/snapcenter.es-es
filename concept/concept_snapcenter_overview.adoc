@@ -28,13 +28,13 @@ SnapCenter puede implementarse de las siguientes maneras:
 +
 ** Datos en sistemas principales de cabinas ONTAP FAS, AFF o All SAN (ASA) y replicados a sistemas secundarios ONTAP FAS, AFF o ASA
 ** Datos en sistemas principales ONTAP Select
-** Datos en sistemas principales y secundarios ONTAP FAS, AFF o ASA y protegidos en el almacenamiento de objetos local de StorageGRID (mediante la integración del backup en el cloud de NetApp BlueXP).
+** Datos en sistemas principales y secundarios de ONTAP FAS, AFF o ASA, y protegidos en el almacenamiento de objetos local de StorageGRID
 
 
 * En las instalaciones, en un cloud híbrido para proteger lo siguiente:
 +
 ** Datos en sistemas principales ONTAP FAS, AFF o ASA replicados a Cloud Volumes ONTAP
-** Datos en sistemas principales y secundarios de ONTAP FAS, AFF o ASA y protegidos para el almacenamiento de objetos y archivos en el cloud (mediante la integración de Cloud Backup de NetApp BlueXP)
+** Datos en sistemas principales y secundarios de ONTAP FAS, AFF o ASA y protegidos para el almacenamiento de objetos y archivos en el cloud (mediante la integración de backup y recuperación de datos de BlueXP).
 
 
 * En un cloud público para proteger lo siguiente:
@@ -184,9 +184,10 @@ SnapCenter Server se comunica con los plugins de Windows a través del agente de
 
 
 
-SnapCenter Server y los plugins se comunican con el agente del host mediante HTTPS.
+SnapCenter Server y los plugins se comunican con el agente del host mediante HTTPS. La información sobre las operaciones de SnapCenter se almacena en el repositorio de SnapCenter.
 
-La información sobre las operaciones de SnapCenter se almacena en el repositorio de SnapCenter.
+
+NOTE: SnapCenter admite espacios de nombres separados para hosts Windows. Si tiene problemas al utilizar un espacio de nombres separado, consulte https://kb.netapp.com/mgmt/SnapCenter/SnapCenter_is_unable_to_discover_resources_when_using_disjoint_namespace["SnapCenter no puede detectar recursos al utilizar espacios de nombres separados"].
 
 
 

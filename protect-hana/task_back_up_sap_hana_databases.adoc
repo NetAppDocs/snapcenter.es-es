@@ -41,19 +41,19 @@ Para Linux: _/var/opt/snapcenter/scc/allowed_Commands_list.txt_
 NOTE: Si no hay comandos en la lista de comandos, se producirá un error en la operación.
 
 .Pasos
-. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
 . En la página Recursos, filtre los recursos de la lista desplegable *Ver* en función del tipo de recurso.
 +
-Haga clic en *image:../media/filter_icon.gif[""]* y luego seleccione el nombre de host y el tipo de recurso para filtrar los recursos. A continuación, puede hacer clic en image:../media/filter_icon.gif[""] para cerrar el panel de filtros.
+Seleccione *image:../media/filter_icon.png[""]* y luego seleccione el nombre de host y el tipo de recurso para filtrar los recursos. A continuación, puede seleccionar image:../media/filter_icon.png[""] para cerrar el panel de filtros.
 
-. Haga clic en el recurso que desea incluir en el backup.
+. Seleccione el recurso que desea incluir en el backup.
 . En la página Resources, seleccione *Use custom name format for Snapshot copy* y, a continuación, escriba un nombre personalizado que desee usar para el nombre de la copia de Snapshot.
 +
 Por ejemplo, _customtext_policy_hostname_ o _resource_hostname_. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
 
 . En la página Application Settings, realice lo siguiente:
 +
-** Haga clic en la flecha *copias de seguridad* para establecer las opciones de copia de seguridad adicionales:
+** Seleccione la flecha *backups* para establecer opciones de copia de seguridad adicionales:
 +
 Habilite el backup del grupo de consistencia y, si es necesario, realice las siguientes tareas:
 
@@ -75,12 +75,12 @@ Deshabilite la sincronización WAFL
 Seleccione este campo para evitar forzar un punto de coherencia de WAFL.
 
 |===
-** Haga clic en la flecha *Scripts* para ejecutar comandos previos y posteriores para la pausa, la copia de Snapshot y la reanudación de la copia.
+** Seleccione la flecha *Scripts* para ejecutar los comandos previos y posteriores para las operaciones de inactividad, copia Snapshot y desactivación.
 +
 También puede ejecutar los comandos previos antes de salir de la operación de backup. Los scripts previos y posteriores se ejecutan en el servidor de SnapCenter.
 
-** Haga clic en la flecha **Custom Configurations**y, a continuación, escriba las parejas de valor personalizadas necesarias para todos los trabajos que utilicen este recurso.
-** Haga clic en la flecha *Snapshot Copy Tool* para seleccionar la herramienta que permite crear copias Snapshot:
+** Seleccione la flecha **Configuraciones personalizadas**y, a continuación, introduzca los pares de valores personalizados necesarios para todos los trabajos que utilizan este recurso.
+** Seleccione la flecha *Snapshot Copy Tool* para seleccionar la herramienta para crear copias snapshot:
 +
 |===
 | Si desea que... | Realice lo siguiente... 
@@ -121,8 +121,8 @@ NOTE: También puede crear una directiva haciendo clic en *image:../media/add_po
 +
 En la sección Configure schedules for selected policies, se muestran las políticas seleccionadas.
 
-.. Haga clic en *image:../media/add_policy_from_resourcegroup.gif[""]* En la columna Configurar programaciones de la directiva para la que desea configurar una programación.
-.. En el cuadro de diálogo Agregar programas para la directiva _policy_name_ , configure la programación y, a continuación, haga clic en *Aceptar*.
+.. Seleccione *image:../media/add_policy_from_resourcegroup.gif[""]* En la columna Configurar programaciones de la directiva para la que desea configurar una programación.
+.. En el cuadro de diálogo Add schedules for policy _policy_name_, configure la programación y, a continuación, seleccione *OK*.
 +
 _policy_name_ es el nombre de la directiva seleccionada.
 
@@ -135,18 +135,18 @@ Las programaciones configuradas figuran en la columna Applied Schedules.
 +
 También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. SMTP también debe configurarse en *Ajustes* > *Ajustes globales*.
 
-. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Revisa el resumen y luego selecciona *Finalizar*.
 +
 Se muestra la página de topología de los recursos.
 
-. Haga clic en *copia de seguridad ahora*.
+. Seleccione *Back up Now*.
 . En la página Backup, realice los siguientes pasos:
 +
 .. Si aplicó varias políticas al recurso, en la lista desplegable *Política*, seleccione la directiva que desea utilizar para la copia de seguridad.
 +
 Si la política seleccionada para el backup bajo demanda está asociada a una programación de backup, los backups bajo demanda se retendrán en función de la configuración de retención especificada para el tipo de programación.
 
-.. Haga clic en *copia de seguridad*.
+.. Seleccione *copia de seguridad*.
 
 
 . Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.

@@ -21,9 +21,9 @@ De manera predeterminada, se crean backups de grupo de consistencia (CG). Si des
 
 . En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione el complemento Oracle Database en la lista.
 . En la página Resources, seleccione *volumen de aplicación* en la lista *View*.
-. Haga clic en *image:../media/filter_icon.gif[""]* y luego seleccione el nombre de host y el tipo de base de datos para filtrar los recursos.
+. Haga clic en *image:../media/filter_icon.png[""]* y luego seleccione el nombre de host y el tipo de base de datos para filtrar los recursos.
 +
-A continuación, puede hacer clic en *image:../media/filter_icon.gif[""]* para cerrar el panel de filtros.
+A continuación, puede hacer clic en *image:../media/filter_icon.png[""]* para cerrar el panel de filtros.
 
 . Seleccione el volumen de la aplicación del que desea realizar un backup.
 +

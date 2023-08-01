@@ -31,9 +31,9 @@ Los recursos de detección automática no se pueden modificar ni eliminar.
 .Pasos
 . En el panel de navegación de la izquierda, haga clic en *Resources* y seleccione el plugin para base de datos de SAP HANA en la lista.
 . En la página Resources, seleccione el tipo de recurso en la lista View.
-. (Opcional) haga clic en *image:../media/filter_icon.gif[""]* y, a continuación, seleccione el nombre de host.
+. (Opcional) haga clic en *image:../media/filter_icon.png[""]* y, a continuación, seleccione el nombre de host.
 +
-A continuación, puede hacer clic en *image:../media/filter_icon.gif[""]* para cerrar el panel de filtros.
+A continuación, puede hacer clic en *image:../media/filter_icon.png[""]* para cerrar el panel de filtros.
 
 . Haga clic en *Actualizar recursos* para descubrir los recursos disponibles en el host.
 +

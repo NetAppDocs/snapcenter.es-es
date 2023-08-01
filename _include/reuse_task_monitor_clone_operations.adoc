@@ -22,7 +22,7 @@ Los siguientes iconos aparecen en la página Jobs e indican el estado de la oper
 . En la página Monitor, haga clic en *Jobs*.
 . En la página Jobs, realice los siguientes pasos:
 +
-.. Haga clic en image:../media/filter_icon.gif[""] para filtrar la lista de modo que solo figuren las operaciones de clonado.
+.. Haga clic en image:../media/filter_icon.png[""] para filtrar la lista de modo que solo figuren las operaciones de clonado.
 .. Especifique las fechas de inicio y finalización.
 .. En la lista desplegable *Tipo*, seleccione *Clonar*.
 .. En la lista desplegable *Estado*, seleccione el estado del clon.

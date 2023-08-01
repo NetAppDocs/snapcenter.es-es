@@ -24,7 +24,7 @@ Si un recurso de un plugin individual no forma parte de ningún grupo de recurso
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, filtre los recursos de la lista desplegable *View* en función del tipo de recurso.
 +
-Haga clic en image:../media/filter_icon.gif[""]y, a continuación, seleccione el nombre de host y el tipo de recurso para filtrar los recursos. A continuación, puede hacer clic en image:../media/filter_icon.gif[""] para cerrar el panel de filtros.
+Haga clic en image:../media/filter_icon.png[""]y, a continuación, seleccione el nombre de host y el tipo de recurso para filtrar los recursos. A continuación, puede hacer clic en image:../media/filter_icon.png[""] para cerrar el panel de filtros.
 
 . Haga clic en el recurso que desea incluir en el backup.
 . En la página Recursos , si desea utilizar un nombre personalizado, active la casilla de verificación *usar formato de nombre personalizado para copia Snapshot* y, a continuación, escriba un formato de nombre personalizado para el nombre de copia Snapshot.
