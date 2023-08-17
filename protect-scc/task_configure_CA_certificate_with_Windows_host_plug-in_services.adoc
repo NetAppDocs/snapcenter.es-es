@@ -15,8 +15,7 @@ Debe configurar el certificado de CA con servicios de plugins del host de Window
 
 Realice los siguientes pasos en el servidor de SnapCenter y en todos los hosts del plugin donde ya se hayan implementado certificados de CA.
 
-* Pasos*
-
+.Pasos
 . Elimine el enlace existente del certificado con el puerto 8145 predeterminado de SMCore. Para ello, ejecute el siguiente comando:
 +
 `> netsh http delete sslcert ipport=0.0.0.0:_<SMCore Port>`

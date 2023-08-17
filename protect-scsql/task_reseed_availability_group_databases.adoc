@@ -1,7 +1,7 @@
 ---
 permalink: protect-scsql/task_reseed_availability_group_databases.html 
 sidebar: sidebar 
-keywords:  
+keywords: reseed 
 summary: 'La propagación es una opción para restaurar las bases de datos de grupos de disponibilidad \(AG\). Si una base de datos secundaria deja de estar sincronizada con la base de datos principal de un AG, puede propagar la base de datos secundaria.' 
 ---
 = Propagación de bases de datos de grupos de disponibilidad
@@ -13,21 +13,18 @@ summary: 'La propagación es una opción para restaurar las bases de datos de gr
 [role="lead"]
 La propagación es una opción para restaurar las bases de datos de grupos de disponibilidad (AG). Si una base de datos secundaria deja de estar sincronizada con la base de datos principal de un AG, puede propagar la base de datos secundaria.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe tener creado un backup de la base de datos de AG secundaria que desea restaurar.
 * El servidor de SnapCenter y el host del plugin deben tener instalada la misma versión de SnapCenter.
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * No puede ejecutar la operación de propagación con bases de datos principales.
 * No puede realizar una operación de propagación si la base de datos de réplica se quita del grupo de disponibilidad. Cuando se elimina la réplica, la operación de propagación genera un error.
 * Mientras ejecuta la operación de propagación con la base de datos de SQL Availability Group, no debe activar los backups de registro en las bases de datos de réplica de esa base de datos de grupo de disponibilidad. Si activa los backups de registros durante la operación de propagación, la operación de propagación con la base de datos de reflejo, "database_name" tiene datos de registro de transacciones insuficientes para preservar la cadena de backup de registros del mensaje de error principal de la base de datos.
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione *complemento SnapCenter para SQL Server* en la lista.
 . En la página Resources, seleccione *Database* en la lista *View*.
 . Seleccione la base de datos secundaria de AG de la lista.

@@ -1,7 +1,7 @@
 ---
 permalink: protect-scsql/task_install_the_snapcenter_plug_in_for_sql_server_silently.html 
 sidebar: sidebar 
-keywords:  
+keywords: install, snapcenter 
 summary: Debe instalar el plugin de SnapCenter para Microsoft SQL Server desde la interfaz de usuario de SnapCenter. Sin embargo, si no puede hacerlo por algún motivo, puede ejecutar el programa de instalación del plugin para SQL Server sin supervisión en el modo silencioso desde la línea de comandos de Windows. 
 ---
 = Instale el plugin de SnapCenter para Microsoft SQL Server silenciosamente desde la línea de comandos
@@ -13,16 +13,14 @@ summary: Debe instalar el plugin de SnapCenter para Microsoft SQL Server desde l
 [role="lead"]
 Debe instalar el plugin de SnapCenter para Microsoft SQL Server desde la interfaz de usuario de SnapCenter. Sin embargo, si no puede hacerlo por algún motivo, puede ejecutar el programa de instalación del plugin para SQL Server sin supervisión en el modo silencioso desde la línea de comandos de Windows.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe eliminar la versión anterior del plugin de SnapCenter para Microsoft SQL Server antes de instalar.
 +
 Para obtener más información, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_Install_a_SnapCenter_Plug-In_manually_and_directly_from_thePlug-In_Host["Cómo instalar un plugin de SnapCenter de forma manual y directa desde el host del plugin"^].
 
 
 
-* Pasos*
-
+.Pasos
 . Compruebe si existe una carpeta C:\temp en el host del plugin y el usuario que ha iniciado sesión tiene acceso completo a ella.
 . Descargue el software del plugin para SQL Server desde C:\ProgramData\NetApp\SnapCenter\Package Repository.
 +

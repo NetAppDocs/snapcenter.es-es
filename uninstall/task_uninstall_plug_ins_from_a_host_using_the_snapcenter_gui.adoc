@@ -13,14 +13,12 @@ summary: Cuando decide que ya no requiere un plugin individual o un paquete de p
 [role="lead"]
 Cuando decide que ya no requiere un plugin individual o un paquete de plugins, puede desinstalarlo por medio de la interfaz de SnapCenter.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Primero debe quitar los grupos de recursos correspondientes al paquete de plugins que vaya a desinstalar.
 * Tiene que desconectar las políticas asociadas a los grupos de recursos correspondientes al paquete de plugins que vaya a desinstalar.
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 Puede desinstalar plugins individuales. Por ejemplo, quizás necesite desinstalar el plugin de SnapCenter para Microsoft SQL Server porque un host se está quedando sin recursos y quiere moverlo a un host más potente. También puede desinstalar paquetes de plugins enteros. Por ejemplo, quizás necesite desinstalar el paquete de plugins de SnapCenter para Linux, que incluye el plugin de SnapCenter para base de datos de Oracle y el plugin de SnapCenter para UNIX.
 
 * La operación de quitar un host implica desinstalar todos los plugins.
@@ -39,16 +37,14 @@ También puede desinstalar un plugin de varios hosts mediante el cmdlet _Uninsta
 
 IMPORTANT: Desinstalar el paquete de plugins de SnapCenter para Windows de un host donde esté instalado el servidor SnapCenter dañará la instalación de SnapCenter Server. No desinstale el paquete de plugins de SnapCenter para Windows a menos que tenga la seguridad de que ya no requiere SnapCenter Server.
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *hosts*.
 . En la página hosts, haga clic en *Managed hosts*.
 . En la página Managed hosts, seleccione el host desde el cual desea desinstalar el plugin o paquete de plugins.
 . Junto al complemento que desea eliminar, haga clic en *Quitar* > *Enviar*.
 
 
-*Después de terminar*
-
+.Después de terminar
 Debe esperar 5 minutos antes de reinstalar el plugin en ese host. Este periodo es suficiente para que la interfaz gráfica de usuario de SnapCenter actualice el estado del host gestionado. Si procede a reinstalar de inmediato el plugin, la instalación no se desarrollará correctamente y provocará un error.
 
 Si va a desinstalar el paquete de plugins de SnapCenter para Linux, los archivos de registro específicos de la desinstalación están disponibles en: _/custom_location/snapcenter/log_.

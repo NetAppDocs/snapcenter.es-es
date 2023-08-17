@@ -1,7 +1,7 @@
 ---
 permalink: protect-scw/task_create_backup_policies_for_windows_file_systems.html 
 sidebar: sidebar 
-keywords:  
+keywords: backup policy 
 summary: Puede crear una nueva política de backup para recursos antes de usar SnapCenter para realizar backups de sistemas de archivos Windows, o bien puede crear una nueva política de backup en el momento de crear un grupo de recursos o al realizar el backup de un recurso. 
 ---
 = Crear políticas de backup para sistemas de archivos Windows
@@ -13,8 +13,7 @@ summary: Puede crear una nueva política de backup para recursos antes de usar S
 [role="lead"]
 Puede crear una nueva política de backup para recursos antes de usar SnapCenter para realizar backups de sistemas de archivos Windows, o bien puede crear una nueva política de backup en el momento de crear un grupo de recursos o al realizar el backup de un recurso.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe tener definida una estrategia de backup. link:task_define_a_backup_strategy_for_windows_file_systems.html["Leer más"^]
 * Debe tener preparada la protección de datos.
 +
@@ -27,8 +26,7 @@ El valor predeterminado es FALSE
 
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * LA RUTA_DE_SCRIPTS se define mediante la clave PredefinedWindowsScriptsDirectory ubicada en el archivo SMCoreServiceHost.exe.Config del host del plugin.
 +
 Si es necesario, puede cambiar esta ruta y reiniciar el servicio SMcore. Se recomienda utilizar la ruta predeterminada para la seguridad.
@@ -41,8 +39,7 @@ Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGU
 
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Configuración*.
 . En la página Configuración, haga clic en *Directivas*.
 . Para determinar si puede utilizar una directiva existente, seleccione el nombre de la directiva y, a continuación, haga clic en *Detalles*.

@@ -61,8 +61,7 @@ El host de Windows ve los LUN en el sistema de almacenamiento como discos virtua
 
 Si desea crear y formatear discos fuera de SnapCenter, sólo se admiten sistemas de archivos NTFS y CSVFS.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Creó un volumen para el LUN en su sistema de almacenamiento.
 +
 El volumen solo debe contener LUN y solo LUN creados con SnapCenter.
@@ -329,8 +328,7 @@ SnapCenter cambiará el tamaño del disco.
 
 Es posible usar el asistente Connect Disk para conectar un LUN existente a un host o volver a conectar un LUN que se ha desconectado.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Inició el servicio iSCSI o FC en el sistema de almacenamiento.
 * Si utiliza iSCSI, debe haber establecido una sesión iSCSI con el sistema de almacenamiento.
 * No se puede conectar un LUN a más de un host a menos que el LUN se comparta entre los hosts de un clúster de conmutación al nodo de respaldo de Windows Server.
@@ -512,8 +510,7 @@ SnapCenter conecta el LUN a la unidad o la ruta de unidad especificada en el hos
 
 Es posible desconectar un LUN de un host sin afectar el contenido del LUN, con una excepción: Si se desconecta un clon antes de haberlo dividido, se pierde el contenido del clon.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Asegúrese de que ninguna aplicación utilice el LUN.
 * Asegúrese de que el LUN no se supervise con software de supervisión.
 * Si el LUN es compartido, asegúrese de quitar las dependencias de recursos de clúster del LUN y verificar que todos los nodos en el clúster estén encendidos, funcionen correctamente y estén disponibles para SnapCenter.

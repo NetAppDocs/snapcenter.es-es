@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/reference_java.html 
 sidebar: sidebar 
-keywords:  
+keywords: Custom plug-in 
 summary: Desarrolle el plugin utilizando el estilo Java. 
 ---
 = Estilo Java

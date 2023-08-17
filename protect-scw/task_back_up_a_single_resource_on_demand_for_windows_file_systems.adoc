@@ -13,8 +13,7 @@ summary: Si un recurso no está en un grupo de recursos, puede realizar el backu
 [role="lead"]
 Si un recurso no está en un grupo de recursos, puede realizar el backup bajo demanda desde la página Resources.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 Si desea realizar un backup de un recurso que tenga una relación de SnapMirror con almacenamiento secundario, el rol asignado al usuario de almacenamiento debería incluir el privilegio «incluir toda la copia reflejada». Sin embargo, si usted está utilizando el rol "'vsadmin'", entonces no se requiere el privilegio "nnapmirror all".
 
 
@@ -23,8 +22,7 @@ NOTE: Al realizar el backup de un sistema de archivos, SnapCenter no hace backup
 
 IMPORTANT: Si va a trabajar en un contexto de sistema de archivos de Windows, no realice backup de archivos de la base de datos. Si lo hace, se crea un backup incoherente y una posible pérdida de datos al restaurar. Para proteger los archivos de la base de datos, debe usar el plugin de SnapCenter adecuado para la base de datos (por ejemplo, plugin de SnapCenter para Microsoft SQL Server, plugin de SnapCenter para Microsoft Exchange Server o un plugin personalizado para archivos de base de datos).
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, seleccione el tipo de recurso File System y, a continuación, seleccione el recurso del que desea realizar backup.
 . Si el asistente File System - Protect no se inicia automáticamente, haga clic en *Protect* para iniciar el asistente.

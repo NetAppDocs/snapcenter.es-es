@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/task_back_up_resource_groups_of_custom_plug_in_resources.html 
 sidebar: sidebar 
-keywords:  
+keywords: backup, custom plug-in 
 summary: Puede realizar un backup del grupo de recursos bajo demanda en la página Resources. Si un grupo de recursos tiene una política anexada y una programación configurada, los backups se realizan automáticamente según esa programación. 
 ---
 = Realice un backup de grupos de recursos de plugins personalizados
@@ -13,18 +13,16 @@ summary: Puede realizar un backup del grupo de recursos bajo demanda en la pági
 [role="lead"]
 Puede realizar un backup del grupo de recursos bajo demanda en la página Resources. Si un grupo de recursos tiene una política anexada y una programación configurada, los backups se realizan automáticamente según esa programación.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe tener creado un grupo de recursos con una política anexada.
 * Si desea realizar un backup de un recurso que tenga una relación de SnapMirror con un almacenamiento secundario, la función ONTAP asignada al usuario de almacenamiento debería incluir el privilegio «incluir toda la copia reflejada». Sin embargo, si usted está utilizando el rol "'vsadmin'", entonces no se requiere el privilegio "nnapmirror all".
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, seleccione *Resource Group* en la lista *View*.
 +
-Se puede buscar el grupo de recursos ingresando su nombre en el cuadro de búsqueda o haciendo clic en image:../media/filter_icon.png[""] y seleccionando la etiqueta. A continuación, puede hacer clic en image:../media/filter_icon.png[""] para cerrar el panel de filtros.
+Se puede buscar el grupo de recursos ingresando su nombre en el cuadro de búsqueda o haciendo clic en image:../media/filter_icon.png["icono de filtro"] y seleccionando la etiqueta. A continuación, puede hacer clic en image:../media/filter_icon.png["icono de filtro"] para cerrar el panel de filtros.
 
 . En la página Resource Groups, seleccione el grupo de recursos que desea incluir en un backup y, a continuación, haga clic en *Back up Now*.
 . En la página Backup, realice los siguientes pasos:

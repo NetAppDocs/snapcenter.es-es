@@ -1,7 +1,7 @@
 ---
 permalink: install/task_register_untrusted_active_directory_domains.html 
 sidebar: sidebar 
-keywords:  
+keywords: Active Directory 
 summary: Debe registrar Active Directory en el servidor de SnapCenter para administrar hosts, usuarios y grupos de varios dominios de Active Directory que no son de confianza. 
 ---
 = Registrar dominios de Active Directory que no son de confianza
@@ -13,8 +13,7 @@ summary: Debe registrar Active Directory en el servidor de SnapCenter para admin
 [role="lead"]
 Debe registrar Active Directory en el servidor de SnapCenter para administrar hosts, usuarios y grupos de varios dominios de Active Directory que no son de confianza.
 
-*Lo que necesitará*
-
+.Antes de empezar
 *Protocolo LDAP y LDAPS*
 
 * Puede registrar los dominios de directorio activo que no son de confianza mediante los protocolos LDAP o LDAPS.

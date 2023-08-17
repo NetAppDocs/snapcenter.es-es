@@ -13,12 +13,10 @@ summary: Puede desinstalar el paquete de plugins de SnapCenter para Linux o el p
 [role="lead"]
 Puede desinstalar el paquete de plugins de SnapCenter para Linux o el paquete de plugins de SnapCenter para AIX mediante la interfaz de línea de comandos.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Asegúrese de eliminar los trabajos programados
 * Asegúrese de que se han completado todos los trabajos en ejecución.
 
 
-*Paso*
-
+.Paso
 Ejecute _/custom_location/NetApp/snapcenter/spl/installation/plugins/uninstall_ para desinstalar.

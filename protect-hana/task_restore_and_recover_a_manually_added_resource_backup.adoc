@@ -13,7 +13,7 @@ summary: Puede utilizar SnapCenter para restaurar y recuperar datos de uno o var
 [role="lead"]
 Puede utilizar SnapCenter para restaurar y recuperar datos de uno o varios backups.
 
-.Lo que necesitará
+.Antes de empezar
 * Debe tener un backup de los recursos o del grupo de recursos.
 * Cancele la operación de backup que se encuentra en curso y que corresponde al recurso o grupo de recursos que desea restaurar.
 * Para los comandos previos a la restauración, después de la restauración, el montaje y el desmontaje, debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin desde las rutas siguientes:

@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/task_add_hosts_and_install_plug_in_packages_on_remote_hosts_scc.html 
 sidebar: sidebar 
-keywords: credentials 
+keywords: add hosts 
 summary: Es necesario usar la página SnapCenterAdd Host para añadir hosts y, a continuación, instalar los paquetes de plugins. Los plugins se instalan automáticamente en hosts remotos. Puede añadir un host e instalar los paquetes de los plugins para un host individual o para un clúster. 
 ---
 = Añada hosts e instale paquetes de plugins en hosts remotos
@@ -13,8 +13,7 @@ summary: Es necesario usar la página SnapCenterAdd Host para añadir hosts y, a
 [role="lead"]
 Es necesario usar la página SnapCenterAdd Host para añadir hosts y, a continuación, instalar los paquetes de plugins. Los plugins se instalan automáticamente en hosts remotos. Puede añadir un host e instalar los paquetes de los plugins para un host individual o para un clúster.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe ser un usuario al que se ha asignado una función que tenga permisos de instalación y desinstalación de plugins, como el rol de administrador de SnapCenter.
 * Debe asegurarse de que el servicio de cola de mensajes está en ejecución.
 * Si está utilizando la cuenta de servicio gestionado en grupo (GMSA), debe configurar GMSA con privilegios administrativos.
@@ -23,14 +22,12 @@ link:task_configure_gMSA_on_windows_server_2012_or_later.html["Configurar la cue
 
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 No es posible añadir un servidor SnapCenter como host de plugins a otro servidor SnapCenter.
 
 Si instala plugins en un clúster (WSFC), los plugins se instalan en todos los nodos del clúster.
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación izquierdo, seleccione *hosts*.
 . Compruebe que la ficha *Managed hosts* está seleccionada en la parte superior.
 . Seleccione *Agregar*.
@@ -110,7 +107,7 @@ Los plugins personalizados se pueden instalar en un sistema Windows o Linux.
 +
 Opcionalmente, puede personalizar la ruta.
 
-** Para el paquete de plugins de SnapCenter para Linux, la ruta predeterminada es /opt/NetApp/snapcenter.
+** Para el paquete de plugins de SnapCenter para Linux, la ruta predeterminada es `/opt/NetApp/snapcenter`.
 +
 Opcionalmente, puede personalizar la ruta.
 
@@ -121,7 +118,7 @@ Opcionalmente, puede personalizar la ruta.
 La carpeta comprimida contiene el código del plugin y el archivo .xml del descriptor.
 
 +
-Para el plugin de almacenamiento, desplácese hasta _C:\ProgramData\NetApp\SnapCenter\Package Repository_ y seleccione `Storage.zip` carpeta.
+Para el plugin de almacenamiento, desplácese a. `_C:\ProgramData\NetApp\SnapCenter\Package Repository_` y seleccione `Storage.zip` carpeta.
 
 ... Selecciona *Cargar*.
 +
@@ -176,6 +173,6 @@ NOTE: La verificación de huellas digitales es obligatoria aunque se haya añadi
 
 . Supervise el progreso de la instalación.
 +
-Los archivos de registro específicos de la instalación están en /custom_location/snapcenter/logs.
+Los archivos de registro específicos de la instalación se encuentran en `/custom_location/snapcenter/` registros.
 
 

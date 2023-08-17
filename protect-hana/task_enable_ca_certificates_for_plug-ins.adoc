@@ -13,16 +13,14 @@ summary: Debe configurar los certificados de CA e implementar los certificados d
 [role="lead"]
 Debe configurar los certificados de CA e implementar los certificados de CA en SnapCenter Server y los hosts de plugin correspondientes. Debe habilitar la validación de certificado de CA para los plugins.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Es posible habilitar o deshabilitar los certificados de CA con el cmdlet run _set-SmCertificateSettings_.
 * Puede mostrar el estado del certificado de los plugins con el _Get-SmCertificateSettings_.
 
 
 La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guía de referencia de cmdlets de SnapCenter Software"^].
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *hosts*.
 . En la página hosts, haga clic en *Managed hosts*.
 . Seleccione uno o varios hosts de plugins.
@@ -30,14 +28,13 @@ La información relativa a los parámetros que se pueden utilizar con el cmdlet 
 . Seleccione *Activar validación de certificados*.
 
 
-*Después de terminar*
-
+.Después de terminar
 El host de la pestaña Managed hosts muestra un candado y el color del candado indica el estado de la conexión entre SnapCenter Server y el host del plugin.
 
-* *image:../media/enable_ca_issues_icon.png[""]* Indica que el certificado de CA no está habilitado ni asignado al host del plugin.
-* *image:../media/enable_ca_good_icon.png[""]* Indica que el certificado de CA se ha validado correctamente.
-* *image:../media/enable_ca_failed_icon.png[""]* Indica que el certificado de CA no se ha podido validar.
-* *image:../media/enable_ca_undefined_icon.png[""]* indica que no se pudo recuperar la información de conexión.
+* *image:../media/enable_ca_issues_icon.png["El certificado de CA no está habilitado ni se asignó al icono de host del plugin"]* Indica que el certificado de CA no está habilitado ni asignado al host del plugin.
+* *image:../media/enable_ca_good_icon.png["El certificado de CA se ha validado correctamente"]* Indica que el certificado de CA se ha validado correctamente.
+* *image:../media/enable_ca_failed_icon.png["No se ha podido validar el certificado de CA"]* Indica que el certificado de CA no se ha podido validar.
+* *image:../media/enable_ca_undefined_icon.png["no se ha podido recuperar la información de conexión"]* indica que no se pudo recuperar la información de conexión.
 +
 
 NOTE: Cuando el estado es amarillo o verde, las operaciones de protección de datos se completan correctamente.

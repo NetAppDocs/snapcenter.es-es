@@ -1,7 +1,7 @@
 ---
 permalink: protect-scsql/reference_clone_sql_server_database_resources.html 
 sidebar: sidebar 
-keywords:  
+keywords: Clone workflow 
 summary: Debe ejecutar varias tareas con SnapCenter Server antes de clonar los recursos de bases de datos a partir de un backup. La clonado de base de datos es el proceso de crear una copia de un momento específico de una base de datos de producción o su conjunto de backups. Puede clonar bases de datos para probar la funcionalidad que se debe implementar utilizando la estructura y el contenido actuales de la base de datos durante los ciclos de desarrollo de aplicaciones, para usar las herramientas de extracción y manipulación de datos al rellenar almacenes de datos, o bien ara recuperar datos que se eliminaron o cambiaron por error. 
 ---
 = Flujo de trabajo de clonado

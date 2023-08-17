@@ -13,8 +13,7 @@ summary: El flujo de trabajo de restauración y recuperación incluye planificar
 [role="lead"]
 El flujo de trabajo de restauración y recuperación incluye planificar, realizar las operaciones de restauración y supervisarlas.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 El siguiente flujo de trabajo muestra la secuencia que debe seguirse para realizar la operación de restauración:
 
 image::../media/restore_workflow.gif[Restaure el flujo de trabajo]

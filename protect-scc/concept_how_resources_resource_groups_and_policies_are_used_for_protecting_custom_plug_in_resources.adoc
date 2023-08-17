@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/concept_how_resources_resource_groups_and_policies_are_used_for_protecting_custom_plug_in_resources.html 
 sidebar: sidebar 
-keywords:  
+keywords: custom plug-in 
 summary: Antes de usar SnapCenter, es necesariol comprender ciertos conceptos básicos vinculados con las operaciones de backup, clonado y restauración que se ejecutan. El usuario interactúa con recursos, grupos de recursos y políticas para diferentes operaciones. 
 ---
 = Cómo se usan los recursos, los grupos de recursos y las políticas para proteger los recursos de los plugins personalizados

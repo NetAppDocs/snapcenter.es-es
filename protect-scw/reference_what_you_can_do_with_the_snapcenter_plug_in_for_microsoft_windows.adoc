@@ -1,7 +1,7 @@
 ---
 permalink: protect-scw/reference_what_you_can_do_with_the_snapcenter_plug_in_for_microsoft_windows.html 
 sidebar: sidebar 
-keywords:  
+keywords: SnapCenter Plug-in for Microsoft Windows 
 summary: Cuando el plugin para Windows está instalado en el entorno, es posible usar SnapCenter para realizar backup, restaurar y clonar sistemas de archivos Windows. También es posible ejecutar tareas complementarias a estas operaciones. 
 ---
 = Tareas que pueden llevarse a cabo con el plugin de SnapCenter para Microsoft Windows

@@ -56,6 +56,6 @@ Estos detalles se muestran en forma de tabla.
 
 NOTE: Los backups que figuran en el almacenamiento secundario no pueden eliminarse ni cambiar de nombre.
 
-. Si desea eliminar un clon, selecciónelo de la tabla y, a continuación, haga clic en image:../media/delete_icon.gif[""].
-. Si desea dividir un clon, selecciónelo de la tabla y, a continuación, haga clic en image:../media/split_cone.gif[""].
+. Si desea eliminar un clon, selecciónelo de la tabla y, a continuación, haga clic en image:../media/delete_icon.gif["Icono de eliminar"].
+. Si desea dividir un clon, selecciónelo de la tabla y, a continuación, haga clic en image:../media/split_cone.gif["Icono de división de clones"].
 

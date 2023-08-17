@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/task_cancel_backup_operations_for_scc.html 
 sidebar: sidebar 
-keywords:  
+keywords: cancel backup, custom plug-in 
 summary: Es posible cancelar las operaciones de backup que se encuentran en cola. 
 ---
 = Cancelar las operaciones de backup para plugins personalizados

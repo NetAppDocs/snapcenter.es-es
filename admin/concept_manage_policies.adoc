@@ -1,7 +1,7 @@
 ---
 permalink: admin/concept_manage_policies.html 
 sidebar: sidebar 
-keywords:  
+keywords: Manage policies 
 summary: Es posible desvincular políticas de un recurso o grupo de recursos, y modificar, eliminar, ver y copiar. 
 ---
 = Gestionar políticas
@@ -78,8 +78,7 @@ Es posible desvincular en cualquier momento políticas que ya no quiera que rija
 
 Si ya no se requieren políticas, es posible eliminarlas.
 
-*Lo que necesitará*
-
+.Antes de empezar
 Debe desvincular la política de los recursos o grupos de recursos si la política está asociada con cualquier recurso o grupo de recursos.
 
 * Pasos*

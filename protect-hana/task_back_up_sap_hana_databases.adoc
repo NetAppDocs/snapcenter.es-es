@@ -13,7 +13,7 @@ summary: Si un recurso aún no es parte de ningún grupo de recursos, es posible
 [role="lead"]
 Si un recurso aún no es parte de ningún grupo de recursos, es posible realizar backups del recurso desde la página Resources.
 
-.Lo que necesitará
+.Antes de empezar
 * Debe tener creada una política de backup.
 * Si desea realizar un backup de un recurso que tenga una relación de SnapMirror con un almacenamiento secundario, la función ONTAP asignada al usuario de almacenamiento debería incluir el privilegio «sinapmirror all». Sin embargo, si usted está utilizando el rol "'vsadmin'", entonces no se requiere el privilegio "nnapmirror all".
 * Para realizar una operación de backup basada en copia de Snapshot, asegúrese de que todas las bases de datos de tenant sean válidas y estén activas.

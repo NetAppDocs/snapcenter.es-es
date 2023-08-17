@@ -1,7 +1,7 @@
 ---
 permalink: admin/task_request_reports_of_the_protection_status_from_the_dashboard.html 
 sidebar: sidebar 
-keywords:  
+keywords: dashboard 
 summary: Es posible solicitar detalles de protección para los recursos gestionados por plugins específicos mediante la consola. 
 ---
 = Solicite informes sobre el estado de protección desde el panel de control

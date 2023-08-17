@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/task_restore_a_resource_backup.html 
 sidebar: sidebar 
-keywords:  
+keywords: restore 
 summary: Es posible usar SnapCenter para restaurar recursos. Las capacidades de las operaciones de restauración dependen del plugin que se use. 
 ---
 = Restaurar un backup de recursos
@@ -13,19 +13,16 @@ summary: Es posible usar SnapCenter para restaurar recursos. Las capacidades de 
 [role="lead"]
 Es posible usar SnapCenter para restaurar recursos. Las capacidades de las operaciones de restauración dependen del plugin que se use.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe tener un backup de los recursos o del grupo de recursos.
 * El administrador de SnapCenter asignó SVM para los volúmenes de origen y los volúmenes de destino si va a replicar copias de Snapshot a un reflejo o un almacén.
 * Cancele la operación de backup que se encuentra en curso y que corresponde al recurso o grupo de recursos que desea restaurar.
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 La operación de restauración predeterminada solo restaura objetos del almacenamiento. Las operaciones de restauración en el nivel de la aplicación solo pueden realizarse si el plugin personalizado incluye dicha capacidad.
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, filtre los recursos de la lista desplegable *View* en función del tipo de recurso.
 +
@@ -64,7 +61,7 @@ Si el recurso contiene volúmenes o qtrees como Storage Footprint, entonces las 
 
 
 
-. En la página Recovery Type, realice los siguientes pasos: Seleccione la opción Apply logs. Asegúrese de que el plugin admite todos los registros y registros hasta que el tipo de restauración antes de seleccionarlo.
+. En la página *Tipo de recuperación*, realice los siguientes pasos: Seleccione la opción para aplicar registros. Asegúrese de que el plugin admite todos los registros y registros hasta que el tipo de restauración antes de seleccionarlo.
 +
 |===
 | Si desea... | Realice lo siguiente... 
@@ -90,9 +87,9 @@ Restaure el backup de recursos
 Seleccione *Ninguno*.
 
 |===
-. En la página Pre OPS, escriba los comandos previos a la restauración y los comandos de desmontaje que se ejecutarán antes de realizar un trabajo de restauración.
-. En la página Post OPS, escriba los comandos de montaje y los comandos posteriores a la restauración que se ejecutarán después de realizar un trabajo de restauración.
-. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
+. En la página *Pre OPS*, escriba los comandos previos a la restauración y los comandos de desmontaje que se ejecutarán antes de realizar un trabajo de restauración.
+. En la página *Post OPS*, escriba los comandos Mount y post restore que se ejecutarán después de realizar un trabajo de restauración.
+. En la página *notificación*, en la lista desplegable *preferencia de correo electrónico*, seleccione los escenarios en los que desea enviar los correos electrónicos.
 +
 También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. SMTP también debe configurarse en la página *Ajustes* > *Ajustes globales*.
 

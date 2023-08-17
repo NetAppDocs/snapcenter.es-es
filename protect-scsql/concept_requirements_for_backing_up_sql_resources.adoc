@@ -1,7 +1,7 @@
 ---
 permalink: protect-scsql/concept_requirements_for_backing_up_sql_resources.html 
 sidebar: sidebar 
-keywords:  
+keywords: Requirements 
 summary: Antes de realizar el backup de un recurso de SQL, debe asegurarse de que se cumplan varios requisitos. 
 ---
 = Requisitos para realizar backups de recursos de SQL

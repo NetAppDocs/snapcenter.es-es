@@ -1,7 +1,7 @@
 ---
 permalink: protect-scsql/task_restore_sql_server_database_backups.html 
 sidebar: sidebar 
-keywords:  
+keywords: restore operation 
 summary: Puede utilizar SnapCenter para restaurar bases de datos de SQL Server con backup. La restauración de bases de datos es un proceso multifásico que copia todos los datos y las páginas de registro de un backup de SQL Server en una base de datos especificada. 
 ---
 = Restaurar backups de base de datos de SQL Server
@@ -13,8 +13,7 @@ summary: Puede utilizar SnapCenter para restaurar bases de datos de SQL Server c
 [role="lead"]
 Puede utilizar SnapCenter para restaurar bases de datos de SQL Server con backup. La restauración de bases de datos es un proceso multifásico que copia todos los datos y las páginas de registro de un backup de SQL Server en una base de datos especificada.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * Puede restaurar las bases de datos de SQL Server con backup en una instancia diferente de SQL Server en el mismo host en que se creó el backup.
 +
 Puede utilizar SnapCenter para restaurar las bases de datos de SQL Server con backup en una ruta alternativa para no sustituir una versión de producción.
@@ -36,8 +35,7 @@ Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGU
 * La mayoría de los campos del asistente Restore son claros y explicativos. Aquí se ofrece información sobre los campos que podrían presentar dificultades.
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, seleccione *Database* o *Resource Group* en la lista *View*.
 . Seleccione la base de datos o el grupo de recursos en la lista.
@@ -190,8 +188,7 @@ También debe especificar las direcciones de correo electrónico del remitente y
 . Supervise el proceso de restauración mediante la página *Monitor* > *Jobs*.
 
 
-*Más información*
-
+.Información relacionada
 link:task_restore_and_recover_resources_using_powershell_cmdlets_for_sql.html["Restaurar y recuperar recursos con cmdlets de PowerShell"]
 
 link:task_restore_a_sql_server_database_from_secondary_storage.html["Restaurar una base de datos de SQL Server a partir de almacenamiento secundario"]

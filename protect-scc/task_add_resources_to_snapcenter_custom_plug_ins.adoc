@@ -13,7 +13,7 @@ summary: Debe añadir los recursos que desee incluir en un backup o clonar. En f
 [role="lead"]
 Debe añadir los recursos que desee incluir en un backup o clonar. En función de su entorno, los recursos pueden ser instancias de una base de datos o recopilaciones que desee clonar o incluir en un backup.
 
-.Lo que necesitará
+.Antes de empezar
 * Debe haber completado ciertas tareas, como instalar el servidor SnapCenter, añadir hosts, crear conexiones con el sistema de almacenamiento y añadir credenciales.
 * Debe tener link:concept_develop_a_plug_in_for_your_application.html["se ha creado un plugin personalizado para la aplicación"].
 * Debe haber cargado los plugins en SnapCenter Server.

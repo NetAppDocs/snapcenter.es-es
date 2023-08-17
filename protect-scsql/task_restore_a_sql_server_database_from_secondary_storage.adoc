@@ -1,7 +1,7 @@
 ---
 permalink: protect-scsql/task_restore_a_sql_server_database_from_secondary_storage.html 
 sidebar: sidebar 
-keywords:  
+keywords: restore operation 
 summary: 'Puede restaurar bases de datos de SQL Server con backup a partir de LUN físicos \(RDM, iSCSI o FCP\) en un sistema de almacenamiento secundario. La función de restauración es un proceso multifásico que copia todos los datos y las páginas de registro a partir de un backup de SQL Server especificado que reside en el sistema de almacenamiento secundario en una base de datos especificada.' 
 ---
 = Restaurar una base de datos de SQL Server a partir de almacenamiento secundario
@@ -13,15 +13,13 @@ summary: 'Puede restaurar bases de datos de SQL Server con backup a partir de LU
 [role="lead"]
 Puede restaurar bases de datos de SQL Server con backup a partir de LUN físicos (RDM, iSCSI o FCP) en un sistema de almacenamiento secundario. La función de restauración es un proceso multifásico que copia todos los datos y las páginas de registro a partir de un backup de SQL Server especificado que reside en el sistema de almacenamiento secundario en una base de datos especificada.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe haber replicado las copias de Snapshot a desde el sistema de almacenamiento principal hasta el secundario.
 * Debe asegurarse de que SnapCenter Server y el host del plugin puedan conectarse al sistema de almacenamiento secundario.
 * La mayoría de los campos del asistente Restore se explican en el proceso de restauración básico. Aquí se ofrece información sobre algunos de los campos que podrían presentar dificultades.
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione *complemento SnapCenter para SQL Server* en la lista.
 . En la página Resources, seleccione *Database* o *Resource Group* en la lista desplegable *View*.
 . Seleccione la base de datos o el grupo de recursos.

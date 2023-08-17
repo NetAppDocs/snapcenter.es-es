@@ -15,8 +15,7 @@ Debe configurar el sistema de almacenamiento que ofrezca acceso SnapCenter al al
 
 Puede añadir una SVM independiente o un clúster compuesto por múltiples SVM. Si utiliza Amazon FSX para ONTAP de NetApp, puede agregar la LIF de administrador FSX compuesta por varias SVM mediante la cuenta fsxadmin o añadir FSX SVM en SnapCenter.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe tener los permisos necesarios en el rol de administrador de infraestructura para crear conexiones de almacenamiento.
 * Debe asegurarse de que no se encuentren en curso las instalaciones de plugins.
 +
@@ -111,7 +110,7 @@ El valor predeterminado es 60 segundos.
 . Haga clic en *Enviar*.
 
 
-*Resultados*
+*resultado*
 
 En la página Storage Systems, en el menú desplegable *Tipo* realice una de las siguientes acciones:
 
@@ -138,7 +137,7 @@ NOTE: Si actualizó los sistemas de almacenamiento FAS o AFF a All SAN Array (AS
 
 Un administrador de clúster debe habilitar AutoSupport en cada nodo del sistema de almacenamiento para enviar notificaciones por correo electrónico desde todos los sistemas de almacenamiento a los que tiene acceso SnapCenter. Para ello, ejecute el siguiente comando desde la línea de comandos del sistema de almacenamiento:
 
-`autosupport trigger modify -node nodename -autosupport-message client.app.info enable -noteto enable`
+`autosupport trigger modify -node nodename -autosupport-message client.app.info -to enable -noteto enable`
 
 
 NOTE: El administrador de máquinas virtuales de almacenamiento (SVM) no tiene acceso a AutoSupport.

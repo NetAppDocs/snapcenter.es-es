@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/task_back_up_custom_plug_in_resources.html 
 sidebar: sidebar 
-keywords:  
+keywords: backup 
 summary: El flujo de trabajo de backup incluye planificar, identificar los recursos para el backup, gestionar las políticas de backup, crear grupos de recursos y añadir políticas, crear backups y supervisar las operaciones. 
 ---
 = Realice backup de recursos de plugins personalizados

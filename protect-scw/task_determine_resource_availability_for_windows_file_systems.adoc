@@ -13,14 +13,12 @@ summary: Los recursos son los LUN y componentes similares del sistema de archivo
 [role="lead"]
 Los recursos son los LUN y componentes similares del sistema de archivos que se mantienen mediante los plugins instalados. Puede añadir esos recursos a grupos de recursos para que pueda realizar trabajos de protección de datos en múltiples recursos, pero primero debe identificar qué recursos tiene disponible. Al detectar los recursos disponibles también se verifica que la instalación de plugins se realizó correctamente.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Ya debe haber completado ciertas tareas, como instalar SnapCenter Server, añadir hosts, crear conexiones de máquina virtual de almacenamiento (SVM) y añadir credenciales.
 * Si los archivos residen en LUN o VMDK de VMware, debe implementar el plugin de SnapCenter para VMware vSphere y registrar el plugin en SnapCenter. Para obtener más información, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/["Documentación del plugin de SnapCenter para VMware vSphere"^].
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, seleccione *File Systems* en la lista.
 . Seleccione el host para filtrar la lista de recursos y, a continuación, haga clic en *Actualizar recursos*.

@@ -13,8 +13,7 @@ summary: 'SnapCenter admite el control de acceso basado en roles (RBAC). El admi
 [role="lead"]
 SnapCenter admite el control de acceso basado en roles (RBAC). El administrador de SnapCenter asigna roles y recursos a través del control de acceso basado en roles de SnapCenter a un usuario en un grupo de trabajo o directorio activo, o a grupos en Active Directory. El usuario de RBAC ahora puede iniciar sesión en SnapCenter con los roles asignados.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe habilitar el servicio de activación de procesos de Windows (WAS) en Windows Server Manager.
 * Si desea utilizar Internet Explorer como explorador para iniciar sesión en el servidor SnapCenter, debe asegurarse de que el modo protegido de Internet Explorer está deshabilitado.
 
@@ -74,7 +73,7 @@ Su usuario actual y el rol asociado se muestran en la esquina superior derecha d
 
 
 
-*Resultados*
+*resultado*
 
 Aparecerá la página Dashboard.
 
@@ -92,8 +91,7 @@ Si tiene dominios de Active Directory que no son de confianza y desea que SnapCe
 
 El servidor de SnapCenter admite MFA para la cuenta de dominio, que forma parte del directorio activo.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe tener la MFA habilitada.
 +
 Para obtener información sobre cómo habilitar la MFA, consulte link:../install/enable_multifactor_authentication.html["Active la autenticación multifactor"]

@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/reference_backup_schedules_of_custom_plug_in_resources.html 
 sidebar: sidebar 
-keywords:  
+keywords: custom plug-in 
 summary: El factor más importante para determinar una programación de backup es la tasa de cambio del recurso. Mientras más frecuentes sean los backups de los recursos, menos archivos de registro necesitará SnapCenter para la restauración, lo cual puede acelerar las operaciones de restauración. 
 ---
 = Programaciones de backup de recursos de plugins personalizados

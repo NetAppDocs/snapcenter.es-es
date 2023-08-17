@@ -1,7 +1,7 @@
 ---
 permalink: protect-sce/task_view_exchange_backups_in_the_topology_page.html 
 sidebar: sidebar 
-keywords:  
+keywords: SnapCenter plug-in for Exchange Server 
 summary: Al preparar el backup de un recurso, puede ser útil ver una representación gráfica de todos los backups del almacenamiento principal y secundario. 
 ---
 = Consulte los backups de Exchange en la página Topology
@@ -13,8 +13,7 @@ summary: Al preparar el backup de un recurso, puede ser útil ver una representa
 [role="lead"]
 Al preparar el backup de un recurso, puede ser útil ver una representación gráfica de todos los backups del almacenamiento principal y secundario.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 En la página Topology, es posible ver todos los backups disponibles para el recurso o el grupo de recursos seleccionado. Es posible ver los detalles de esos backups y, luego, seleccionarlos para ejecutar operaciones de protección de datos.
 
 Puede revisar el siguiente icono en la vista gestionar copias para determinar si los backups están disponibles en el almacenamiento principal y secundario (copias reflejadas o en almacén).
@@ -37,8 +36,7 @@ Por ejemplo, si creó 6 backups con una política para retener solamente 4 backu
 |===
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, seleccione la base de datos, el recurso o el grupo de recursos en la lista desplegable *View*.
 . Se debe seleccionar el recurso desde la vista de detalles de la base de datos o desde la vista de detalles del grupo de recursos.

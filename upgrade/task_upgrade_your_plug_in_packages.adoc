@@ -15,8 +15,7 @@ Los paquetes de plugins se distribuyen como parte de la actualización de SnapCe
 
 El procedimiento de actualización sitúa su host Windows, Linux o AIX en modo «mantenimiento», lo que evita que el host ejecute cualquier trabajo programado.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Si es usted un usuario que no tiene categoría de usuario raíz pero sí tiene acceso a equipos Linux, debe actualizar el archivo _/etc/sudoers_ con los valores de la suma de verificación más recientes antes de ejecutar la operación de actualización.
 * De forma predeterminada, SnapCenter detecta JAVA_HOME del entorno. Si desea utilizar UN JAVA_HOME fijo y si va a actualizar los plugins en un host Linux, debe añadir manualmente el parámetro SKIP_JAVAHOME_UPDATE en el archivo _spl.properties_ ubicado en _/var/opt/snapcenter/spl/etc/_ y establecer el valor en TRUE.
 +
@@ -28,8 +27,7 @@ Ejemplos de archivos de configuración de SnapCenter: SnapDriveService.exe.confi
 
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * El procedimiento de actualización sitúa su host Windows, Linux o AIX en modo «mantenimiento», lo que evita que el host ejecute cualquier trabajo programado.
 * Para el plugin de SnapCenter para Microsoft SQL Server, el plugin de SnapCenter para Microsoft Exchange Server y el plugin de SnapCenter para Microsoft Windows, es recomendable actualizar el servidor y los hosts del plugin a la versión más reciente para ejecutar LA RUTA_DE_SCRIPTS.
 +
@@ -40,8 +38,7 @@ En la página *Detalles del trabajo*, un mensaje de advertencia recomienda que e
 
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación izquierdo, haga clic en *hosts* > *Managed hosts*.
 . Actualice los hosts realizando una de las siguientes tareas:
 +

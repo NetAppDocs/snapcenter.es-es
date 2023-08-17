@@ -36,7 +36,7 @@ La opción *verificar* de la directiva sólo se aplica a los trabajos programado
 . Supervise el progreso de la operación seleccionando *Monitor* > *Trabajos*.
 
 
-.¿Cuál es el siguiente?
+.Información relacionada
 link:task_create_backup_policies_for_sql_server_databases.html["Crear políticas de backup para bases de datos de SQL Server"]
 
 link:task_create_resource_groups_and_attach_policies_for_sql_server.html["Crear grupos de recursos y asociar políticas para SQL Server"]

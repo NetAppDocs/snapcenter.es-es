@@ -1,7 +1,7 @@
 ---
 permalink: protect-scsql/concept_backup_naming_conventions_for_plugin_for_sql.html 
 sidebar: sidebar 
-keywords:  
+keywords: Backup naming conventions 
 summary: Es posible usar la convención de nomenclatura de copia Snapshot predeterminada o usar una convención de nomenclatura personalizada. La convención de nomenclatura de backups predeterminada añade la fecha/hora a los nombres de las copias de Snapshot, lo cual ayuda a identificar cuándo se crearon las copias. 
 ---
 = Convenciones de nomenclatura de backups para el plugin para SQL Server

@@ -1,7 +1,7 @@
 ---
 permalink: protect-sce/task_restore_exchange_databases.html 
 sidebar: sidebar 
-keywords:  
+keywords: SnapCenter plug-in for Exchange Server 
 summary: Es posible usar SnapCenter para restaurar bases de datos de Exchange incluidas en backups. 
 ---
 = Restaurar bases de datos de Exchange
@@ -13,8 +13,7 @@ summary: Es posible usar SnapCenter para restaurar bases de datos de Exchange in
 [role="lead"]
 Es posible usar SnapCenter para restaurar bases de datos de Exchange incluidas en backups.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Es necesario tener en cuenta el backup de los grupos de recursos, la base de datos o los DAG.
 * Cuando la base de datos de Exchange se migra a otra ubicación, la operación de restauración no funciona con backups antiguos.
 * Si va a replicar copias de Snapshot en un reflejo o almacén, el administrador de SnapCenter debe haberle asignado las SVM correspondientes a los volúmenes de origen y destino.
@@ -27,8 +26,7 @@ La https://docs.microsoft.com/en-us/powershell/module/exchange/move-activemailbo
 
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * Cuando se realiza una operación de restauración en una base de datos, la base de datos se monta de nuevo en el mismo host y no se crea ningún volumen nuevo.
 * Los backups DE DAG deben restaurarse desde bases de datos individuales.
 * No se admite la restauración de disco completo si hay otros archivos además del archivo de base de datos de Exchange (.edb).
@@ -48,8 +46,7 @@ Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGU
 
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación izquierdo, haga clic en *Recursos* en la esquina superior izquierda de la página Recursos.
 . Seleccione el plugin para servidor de Exchange de la lista desplegable.
 . En la página Resources, seleccione *Database* en la lista View.

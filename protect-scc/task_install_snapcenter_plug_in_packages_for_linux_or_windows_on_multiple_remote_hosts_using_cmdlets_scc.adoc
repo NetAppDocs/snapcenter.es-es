@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/task_install_snapcenter_plug_in_packages_for_linux_or_windows_on_multiple_remote_hosts_using_cmdlets_scc.html 
 sidebar: sidebar 
-keywords: credentials 
+keywords: install, snapcenter 
 summary: Puede instalar los paquetes de plugins de SnapCenter para Linux o Windows en varios hosts a la vez mediante el cmdlet de PowerShell Install-SmHostPackage. 
 ---
 = Instale paquetes de plugins de SnapCenter para Linux o Windows en varios hosts remotos mediante cmdlets
@@ -13,12 +13,10 @@ summary: Puede instalar los paquetes de plugins de SnapCenter para Linux o Windo
 [role="lead"]
 Puede instalar los paquetes de plugins de SnapCenter para Linux o Windows en varios hosts a la vez mediante el cmdlet de PowerShell Install-SmHostPackage.
 
-*Lo que necesitará*
-
+.Antes de empezar
 El usuario que agrega un host debe tener derechos administrativos en el host.
 
-* Pasos*
-
+.Pasos
 . Inicie PowerShell.
 . En el host de SnapCenter Server, establezca una sesión mediante el cmdlet Open-SmConnection y, a continuación, introduzca sus credenciales.
 . Instale el plugin en varios hosts mediante el cmdlet Install-SmHostPackage y los parámetros requeridos.

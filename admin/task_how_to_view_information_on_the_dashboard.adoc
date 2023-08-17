@@ -1,7 +1,7 @@
 ---
 permalink: admin/task_how_to_view_information_on_the_dashboard.html 
 sidebar: sidebar 
-keywords:  
+keywords: dashboard 
 summary: 'En el panel de navegación de la izquierda de SnapCenter, es posible ver varios iconos de la consola o mostrar, junto con los detalles del sistema asociados. El número de pantallas disponibles en el Panel es fijo y no se puede modificar. El contenido proporcionado en cada visualización depende del control de acceso basado en roles \(RBAC\).' 
 ---
 = Cómo ver información en el panel

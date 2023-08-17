@@ -1,7 +1,7 @@
 ---
 permalink: admin/concept_manage_hosts.html 
 sidebar: sidebar 
-keywords:  
+keywords: Manage hosts 
 summary: 'Es posible añadir hosts, instalar paquetes de plugins de SnapCenter, añadir un servidor de verificación, quitar hosts, migrar trabajos de backup y actualizar hosts para actualizar paquetes de plugins o añadir paquetes de plugins nuevos. Según el plugin que utilice, también puede aprovisionar discos, gestionar recursos compartidos SMB, gestionar grupos iniciadores \(iGroups\), gestionar sesiones iSCSI y migrar datos.' 
 ---
 = Gestionar hosts
@@ -244,7 +244,7 @@ Sólo se puede modificar un campo a la vez.
 . Haga clic en *Enviar*.
 
 
-*Resultados*
+*resultado*
 
 El host se valida y agrega al servidor SnapCenter.
 
@@ -291,7 +291,7 @@ NOTE: No es necesario detener el servicio de plugin primero. El servicio de plug
 
 
 
-*Resultados*
+*resultado*
 
 Después de suspender las programaciones en el host, la página Managed hosts muestra *suspendido* en el campo de estado general del host.
 

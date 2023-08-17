@@ -148,14 +148,12 @@ Después de terminar de configurar las credenciales, es posible que desee asigna
 
 Windows Server 2012 o posterior le permite crear una cuenta de servicio administrado de grupo (GMSA) que proporciona gestión automatizada de contraseñas de cuenta de servicio desde una cuenta de dominio administrado.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe tener un controlador de dominio de Windows Server 2012 o posterior.
 * Debe tener un host de Windows Server 2012 o posterior, que es miembro del dominio.
 
 
-* Pasos*
-
+.Pasos
 . Cree una clave raíz KDS para generar contraseñas únicas para cada objeto de su GMSA.
 . Para cada dominio, ejecute el siguiente comando desde el controlador de dominio de Windows: Add-KDSRootKey -EffectiveImmediately
 . Crear y configurar su GMSA:

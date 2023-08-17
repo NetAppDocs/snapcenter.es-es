@@ -1,7 +1,7 @@
 ---
 permalink: protect-scw/task_install_the_snapcenter_plug_in_for_windows_silently_from_the_command_line.html 
 sidebar: sidebar 
-keywords:  
+keywords: install, snapcenter 
 summary: Puede instalar el plugin de SnapCenter para Microsoft Windows localmente en un host de Windows si no puede instalar el plugin de forma remota desde la interfaz gráfica de usuario de SnapCenter. Puede ejecutar el programa de instalación del plugin de SnapCenter para Microsoft Windows sin supervisión y en el modo silencioso desde la línea de comandos de Windows. 
 ---
 = Instale el plugin de SnapCenter para Microsoft Windows silenciosamente desde la línea de comandos
@@ -13,16 +13,14 @@ summary: Puede instalar el plugin de SnapCenter para Microsoft Windows localment
 [role="lead"]
 Puede instalar el plugin de SnapCenter para Microsoft Windows localmente en un host de Windows si no puede instalar el plugin de forma remota desde la interfaz gráfica de usuario de SnapCenter. Puede ejecutar el programa de instalación del plugin de SnapCenter para Microsoft Windows sin supervisión y en el modo silencioso desde la línea de comandos de Windows.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe haber instalado Microsoft.Net 4.7.2 o superior.
 * Debe haber instalado PowerShell 4.0 o posterior.
 * Debe haber activado la cola de mensajes de Windows.
 * Debe ser un administrador local en el host.
 
 
-* Pasos*
-
+.Pasos
 . Descargue el plugin de SnapCenter para Microsoft Windows desde su ubicación de instalación.
 +
 Por ejemplo, la ruta de instalación predeterminada es C:\ProgramData\NetApp\SnapCenter\Package Repository.

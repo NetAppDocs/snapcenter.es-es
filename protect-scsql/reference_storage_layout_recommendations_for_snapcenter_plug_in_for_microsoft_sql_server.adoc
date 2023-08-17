@@ -1,7 +1,7 @@
 ---
 permalink: protect-scsql/reference_storage_layout_recommendations_for_snapcenter_plug_in_for_microsoft_sql_server.html 
 sidebar: sidebar 
-keywords:  
+keywords: Storage layout 
 summary: Una buena distribución de almacenamiento permite que SnapCenter Server realice backups de bases de datos para que pueda cumplir sus objetivos de recuperación. Se deben tener en cuenta diferentes factores al definir la distribución de almacenamiento, como el tamaño de la base de datos, la tasa de cambio de la base de datos y la frecuencia con la que se realizan backups. 
 ---
 = Recomendaciones sobre distribución de almacenamiento para el plugin de SnapCenter para Microsoft SQL Server

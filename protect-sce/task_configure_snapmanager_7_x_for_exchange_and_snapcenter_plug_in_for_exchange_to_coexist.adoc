@@ -1,7 +1,7 @@
 ---
 permalink: protect-sce/task_configure_snapmanager_7_x_for_exchange_and_snapcenter_plug_in_for_exchange_to_coexist.html 
 sidebar: sidebar 
-keywords:  
+keywords: SnapCenter plug-in for Exchange Server 
 summary: Para habilitar el plugin de SnapCenter para Microsoft Exchange Server y coexistir con SnapManager para Microsoft Exchange Server, debe instalar el plugin de SnapCenter para Microsoft Exchange Server en el mismo servidor de Exchange en el que esté instalado SnapManager para Microsoft Exchange Server, deshabilitar las programaciones de SnapManager para Exchange, Y configurar programaciones y backups nuevos con el plugin de SnapCenter para Microsoft Exchange Server. 
 ---
 = Configure SnapManager 7.x para Exchange y SnapCenter para que coexistan
@@ -13,8 +13,7 @@ summary: Para habilitar el plugin de SnapCenter para Microsoft Exchange Server y
 [role="lead"]
 Para habilitar el plugin de SnapCenter para Microsoft Exchange Server y coexistir con SnapManager para Microsoft Exchange Server, debe instalar el plugin de SnapCenter para Microsoft Exchange Server en el mismo servidor de Exchange en el que esté instalado SnapManager para Microsoft Exchange Server, deshabilitar las programaciones de SnapManager para Exchange, Y configurar programaciones y backups nuevos con el plugin de SnapCenter para Microsoft Exchange Server.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * SnapManager para Microsoft Exchange Server y SnapDrive para Windows ya se han instalado, y los backups de SnapManager para Microsoft Exchange Server se encuentran en el sistema y en el directorio SnapInfo.
 * Debe haber eliminado o recuperado los backups tomados por SnapManager para Microsoft Exchange Server que ya no necesita.
 * Debe haber suspendido o eliminado todas las programaciones creadas por SnapManager para Microsoft Exchange Server del programador de Windows.
@@ -28,8 +27,7 @@ Si no desinstala SnapManager para Microsoft Exchange Server tras la instalación
 
 
 
-* Pasos*
-
+.Pasos
 . Empleando PowerShell en todos los nodos DAG, determine si se ha registrado VSS hardware Provider de SnapDrive para Windows: _Vssadmin list providers_
 +
 [listing]

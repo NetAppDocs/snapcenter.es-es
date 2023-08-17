@@ -4,8 +4,7 @@
 
 Es posible supervisar el progreso de diferentes operaciones de restauración de SnapCenter mediante la página Jobs. El progreso de una operación puede revisarse para determinar cuándo está completa o si hay un problema.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 los estados posteriores a la restauración describen las condiciones del recurso una vez ejecutada la operación de restauración, así como otras acciones de restauración que pueden realizarse.
 
 Los siguientes iconos aparecen en la página Jobs e indican el estado de la operación:
@@ -15,16 +14,15 @@ Los siguientes iconos aparecen en la página Jobs e indican el estado de la oper
 * image:../media/failed_icon.gif["Icono de error"] Error
 * image:../media/warning_icon.gif["Icono de estado completado con advertencias"] Completado con advertencias o no pudo iniciarse debido a advertencias
 * image:../media/verification_job_in_queue.gif["El trabajo de verificación se ha puesto en cola"] En cola
-* image:../media/cancel_icon.gif[""] Cancelada
+* image:../media/cancel_icon.gif["Icono Cancelar"] Cancelada
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Monitor*.
-. En la página Monitor, haga clic en *Jobs*.
-. En la página Jobs, realice los siguientes pasos:
+. En la página *Monitor*, haga clic en *trabajos*.
+. En la página *trabajos*, realice los siguientes pasos:
 +
-.. Haga clic en image:../media/filter_icon.png[""] para filtrar la lista de modo que solo figuren las operaciones de restauración.
+.. Haga clic en image:../media/filter_icon.png["Icono de filtro"] para filtrar la lista de modo que solo figuren las operaciones de restauración.
 .. Especifique las fechas de inicio y finalización.
 .. En la lista desplegable *Tipo*, seleccione *Restaurar*.
 .. En la lista desplegable *Estado*, seleccione el estado de restauración.
@@ -32,7 +30,7 @@ Los siguientes iconos aparecen en la página Jobs e indican el estado de la oper
 
 
 . Seleccione el trabajo de restauración y, a continuación, haga clic en *Detalles* para ver los detalles del trabajo.
-. En la página Detalles del trabajo, haga clic en *Ver registros*.
+. En la página *Detalles del trabajo*, haga clic en *Ver registros*.
 +
 El botón *Ver registros* muestra los registros detallados para la operación seleccionada.
 

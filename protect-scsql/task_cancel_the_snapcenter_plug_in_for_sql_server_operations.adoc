@@ -13,7 +13,7 @@ summary: Es posible cancelar las operaciones de backup que se ejecutan, se encue
 [role="lead"]
 Es posible cancelar las operaciones de backup que se ejecutan, se encuentran en cola o no responden. Cuando se cancela una operación de backup, el servidor de SnapCenter detiene la operación y quita todas las copias de Snapshot del almacenamiento si el backup creado no se registra en SnapCenter Server. Si el backup ya está registrado en el servidor SnapCenter, no retrocederá la copia de Snapshot ya creada incluso después de que se active la cancelación.
 
-.Lo que necesitará
+.Antes de empezar
 * Inició sesión como administrador de SnapCenter o propietario del trabajo para cancelar las operaciones de restauración.
 * Solo es posible cancelar las operaciones de registro o backup completo que se encuentran en cola o en ejecución.
 * No se puede cancelar la operación una vez iniciada la verificación.

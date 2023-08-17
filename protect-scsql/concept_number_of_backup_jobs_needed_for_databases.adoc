@@ -1,7 +1,7 @@
 ---
 permalink: protect-scsql/concept_number_of_backup_jobs_needed_for_databases.html 
 sidebar: sidebar 
-keywords:  
+keywords: Number of backup jobs 
 summary: 'Algunos factores que determinan la cantidad de tareas de backup que se necesitan son el tamaño de la base de datos, la cantidad de volúmenes que se usan, la tasa de cambio de la base de datos y el acuerdo de nivel de servicio \(SLA\).' 
 ---
 = Cantidad de tareas de backup necesarias para bases de datos

@@ -13,8 +13,7 @@ summary: Puede utilizar la página SnapCenter Add Host para añadir hosts de Win
 [role="lead"]
 Puede utilizar la página SnapCenter Add Host para añadir hosts de Windows. El plugin de SnapCenter para Microsoft Windows está instalado automáticamente en el host especificado. Este es el método recomendado para la instalación de plugins. Puede añadir un host e instalar un plugin para un host individual o para un clúster.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe ser un usuario al que se ha asignado una función que tenga permisos de instalación y desinstalación de plugins, como el rol de administrador de SnapCenter.
 * Al instalar un plugin en un host de Windows, si especifica una credencial que no está integrada o si el usuario pertenece a un usuario de grupo de trabajo local, debe deshabilitar UAC en el host.
 * El usuario de SnapCenter debe agregarse a la función «'Iniciar sesión como servicio'» del servidor Windows.
@@ -25,8 +24,7 @@ link:task_configure_gMSA_on_windows_server_2012_or_later.html["Configurar la cue
 
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * No es posible añadir un servidor SnapCenter como host de plugins a otro servidor SnapCenter.
 * Plugins de Windows
 +
@@ -51,8 +49,7 @@ No puede instalar el plugin para Windows en un host de Windows conectado al alma
 NOTE: SnapCenter no admite la adición de un mismo host (host del plugin) a SnapCenter si el host ya forma parte de un grupo de trabajo y se cambió a otro dominio o viceversa.
 Si desea añadir el mismo host, debe quitar el host de SnapCenter y volver a añadirlo.
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *hosts*.
 . Asegúrese de que *Managed hosts* esté seleccionado en la parte superior.
 . Haga clic en *Agregar*.

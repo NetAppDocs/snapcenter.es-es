@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/task_import_CA_certificates.html 
 sidebar: sidebar 
-keywords: SnapCenter 
+keywords: SnapCenter, CA certificate 
 summary: Importe los certificados de CA de SnapCenter Server y los plugins de host de Windows 
 ---
 = Importar certificados de CA
@@ -13,8 +13,7 @@ summary: Importe los certificados de CA de SnapCenter Server y los plugins de ho
 [role="lead"]
 Debe importar los certificados de CA a SnapCenter Server y a los plugins de host de Windows mediante la consola de gestión de Microsoft (MMC).
 
-* Pasos*
-
+.Pasos
 . Vaya a la consola de administración de Microsoft (MMC) y, a continuación, haga clic en *Archivo* > *Agregar o quitar Snapin*.
 . En la ventana Agregar o quitar complementos, seleccione *certificados* y, a continuación, haga clic en *Agregar*.
 . En la ventana del complemento certificados, seleccione la opción *cuenta de equipo* y, a continuación, haga clic en *Finalizar*.

@@ -17,8 +17,7 @@ Debe conocer la dirección IP o el nombre de dominio de gestión de la instancia
 
 No se necesitan permisos especiales para ejecutar el cliente API de REST. Cualquier usuario puede acceder a la página web de Swagger. Los permisos respectivos en los objetos a los que se accede a través de la API DE REST se basan en el usuario que genera el token para iniciar sesión en la API DE REST.
 
-* Pasos*
-
+.Pasos
 . Desde un explorador, introduzca la URL para acceder a la página web de Swagger con el formato _\https://<SnapCenter_IP_address_or_name>:<SnapCenter_port>/swagger/_.
 +
 

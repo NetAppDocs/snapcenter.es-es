@@ -8,8 +8,7 @@ Debe haber preparado el entorno de PowerShell para ejecutar los cmdlets de Power
 
 La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guía de referencia de cmdlets de SnapCenter Software"^].
 
-* Pasos*
-
+.Pasos
 . Inicie una sesión de conexión con el servidor de SnapCenter para el usuario especificado mediante el cmdlet de Open-SmConnection.
 +
 [listing]

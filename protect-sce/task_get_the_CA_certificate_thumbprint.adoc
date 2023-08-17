@@ -13,8 +13,7 @@ summary: Obtenga la huella digital del certificado de CA.
 [role="lead"]
 Una huella digital de certificado es una cadena hexadecimal que identifica un certificado. La huella digital se calcula a partir del contenido del certificado mediante un algoritmo de huella digital.
 
-* Pasos*
-
+.Pasos
 . Realice lo siguiente en la interfaz gráfica de usuario:
 +
 .. Haga doble clic en el certificado.

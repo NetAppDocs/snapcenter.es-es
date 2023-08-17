@@ -1,7 +1,7 @@
 ---
 permalink: concept/concept_resources_resource_groups_and_policies.html 
 sidebar: sidebar 
-keywords: reource, resource group, policy 
+keywords: resource, resource group, policy 
 summary: Antes de usar SnapCenter, es necesariol comprender ciertos conceptos básicos vinculados con las operaciones de backup, clonado y restauración que se ejecutan. El usuario interactúa con recursos, grupos de recursos y políticas para diferentes operaciones. 
 ---
 = Recursos, grupos de recursos y políticas

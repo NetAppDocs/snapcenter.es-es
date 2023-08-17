@@ -13,8 +13,7 @@ summary: Es posible supervisar el progreso de diferentes operaciones de backup m
 [role="lead"]
 Es posible supervisar el progreso de diferentes operaciones de backup mediante la página Jobs de SnapCenter. Se recomienda comprobar el progreso para determinar cuándo se completó la tarea o si existe un problema.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 Los siguientes iconos aparecen en la página Jobs e indican el estado correspondiente de las operaciones:
 
 * image:../media/progress_icon.gif["Icono de estado en curso"] En curso
@@ -22,11 +21,10 @@ Los siguientes iconos aparecen en la página Jobs e indican el estado correspond
 * image:../media/failed_icon.gif["Icono de error"] Error
 * image:../media/warning_icon.gif["Icono de estado completado con advertencias"] Completado con advertencias o no pudo iniciarse debido a advertencias
 * image:../media/verification_job_in_queue.gif["El trabajo de verificación se ha puesto en cola"] En cola
-* image:../media/cancel_icon.gif[""] Cancelada
+* image:../media/cancel_icon.gif["Icono Cancelar"] Cancelada
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Monitor*.
 . En la página Monitor, haga clic en *Jobs*.
 . En la página Jobs, realice los siguientes pasos:

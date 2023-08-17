@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/task_clone_backups_using_powershell_cmdlets.html 
 sidebar: sidebar 
-keywords:  
+keywords: clone backups 
 summary: El flujo de trabajo de clonado incluye planificar, realizar la operación de clonado y supervisar la operación. 
 ---
 = Clonar backups mediante cmdlets de PowerShell
@@ -13,14 +13,12 @@ summary: El flujo de trabajo de clonado incluye planificar, realizar la operaci�
 [role="lead"]
 El flujo de trabajo de clonado incluye planificar, realizar la operación de clonado y supervisar la operación.
 
-*Lo que necesitará*
-
+.Antes de empezar
 Debe haber preparado el entorno de PowerShell para ejecutar los cmdlets de PowerShell.
 
 Para obtener información sobre los cmdlets de PowerShell, use la ayuda de cmdlets de SnapCenter o consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guía de referencia de cmdlets de SnapCenter Software"^].
 
-* Pasos*
-
+.Pasos
 . Inicie una sesión de conexión con el servidor de SnapCenter para el usuario especificado mediante el cmdlet de Open-SmConnection.
 +
 [listing]

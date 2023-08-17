@@ -15,8 +15,7 @@ Un grupo de recursos es un contenedor al cual se añaden recursos que se quieren
 
 Puede proteger los recursos individualmente sin crear un grupo de recursos nuevo. Puede realizar backups del recurso protegido.
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, seleccione *Database* en la lista *View*.
 +
@@ -143,6 +142,5 @@ NOTE: Para habilitar la notificación por correo electrónico, debe tener especi
 . Revise el resumen y, a continuación, haga clic en *Finalizar*.
 
 
-*Más información*
-
+.Información relacionada
 link:task_create_backup_policies_for_sql_server_databases.html["Crear políticas de backup para bases de datos de SQL Server"]

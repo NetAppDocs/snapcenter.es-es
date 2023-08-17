@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/task_back_up_individual_custom_plug_in_resources.html 
 sidebar: sidebar 
-keywords:  
+keywords: backup, custom plug-in 
 summary: Si un recurso de un plugin individual no forma parte de ningún grupo de recursos, puede incluirlo en el backup mediante la página Resources. Puede realizar el backup del recurso bajo demanda, o bien, si el recurso tiene una política anexada y una programación configurada, el backup se realiza automáticamente según esa programación. 
 ---
 = Realice backup de recursos de plugins individuales
@@ -13,18 +13,16 @@ summary: Si un recurso de un plugin individual no forma parte de ningún grupo d
 [role="lead"]
 Si un recurso de un plugin individual no forma parte de ningún grupo de recursos, puede incluirlo en el backup mediante la página Resources. Puede realizar el backup del recurso bajo demanda, o bien, si el recurso tiene una política anexada y una programación configurada, el backup se realiza automáticamente según esa programación.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe tener creada una política de backup.
 * Si desea realizar un backup de un recurso que tenga una relación de SnapMirror con un almacenamiento secundario, la función ONTAP asignada al usuario de almacenamiento debería incluir el privilegio «sinapmirror all». Sin embargo, si usted está utilizando el rol "'vsadmin'", entonces no se requiere el privilegio "nnapmirror all".
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, filtre los recursos de la lista desplegable *View* en función del tipo de recurso.
 +
-Haga clic en image:../media/filter_icon.png[""]y, a continuación, seleccione el nombre de host y el tipo de recurso para filtrar los recursos. A continuación, puede hacer clic en image:../media/filter_icon.png[""] para cerrar el panel de filtros.
+Haga clic en image:../media/filter_icon.png[""]y, a continuación, seleccione el nombre de host y el tipo de recurso para filtrar los recursos. A continuación, puede hacer clic en image:../media/filter_icon.png["Icono de filtro"] para cerrar el panel de filtros.
 
 . Haga clic en el recurso que desea incluir en el backup.
 . En la página Recursos , si desea utilizar un nombre personalizado, active la casilla de verificación *usar formato de nombre personalizado para copia Snapshot* y, a continuación, escriba un formato de nombre personalizado para el nombre de copia Snapshot.
@@ -58,7 +56,7 @@ Seleccione este campo para evitar forzar un punto de coherencia de WAFL.
 
 |===
 +
-image:../media/application_settings.gif[""]
+image:../media/application_settings.gif["Página de configuración de la aplicación"]
 
 .. Haga clic en la flecha *Scripts* para ejecutar comandos previos y posteriores para la pausa, la copia de Snapshot y la reanudación de la copia. También puede ejecutar los comandos previos antes de salir de la operación de backup.
 +
@@ -98,12 +96,12 @@ Seleccione *otros* y, a continuación, escriba el comando para crear una copia S
 .. Seleccione una o varias políticas de la lista desplegable.
 +
 
-NOTE: También puede crear una política haciendo clic en image:../media/add_policy_from_resourcegroup.gif[""].
+NOTE: También puede crear una política haciendo clic en image:../media/add_policy_from_resourcegroup.gif["Icono Agregar"].
 
 +
 En la sección Configure schedules for selected policies, se muestran las políticas seleccionadas.
 
-.. Haga clic en image:../media/add_policy_from_resourcegroup.gif[""] En la columna Configure Schedules correspondiente a la política para la cual se desea configurar una programación.
+.. Haga clic en image:../media/add_policy_from_resourcegroup.gif["Icono Agregar"] En la columna Configure Schedules correspondiente a la política para la cual se desea configurar una programación.
 .. En el cuadro de diálogo Agregar programas para la directiva _policy_name_ , configure la programación y, a continuación, haga clic en *Aceptar*.
 +
 Donde, _policy_name_ es el nombre de la directiva seleccionada.

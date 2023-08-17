@@ -1,7 +1,7 @@
 ---
 permalink: protect-sce/task_cancel_backup_operations_for_exchange_database.html 
 sidebar: sidebar 
-keywords:  
+keywords: SnapCenter plug-in for Exchange Server 
 summary: Es posible cancelar las operaciones de backup que se encuentran en cola. 
 ---
 = Cancelar las operaciones de backup de la base de datos de Exchange

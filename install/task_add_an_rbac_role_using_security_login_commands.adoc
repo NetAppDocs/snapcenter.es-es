@@ -13,8 +13,7 @@ summary: Puede utilizar los comandos Security login para añadir un rol de RBAC 
 [role="lead"]
 Puede utilizar los comandos Security login para añadir un rol de RBAC de ONTAP si los sistemas de almacenamiento ejecutan ONTAP almacenado en clúster.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Antes de crear un rol de RBAC de ONTAP para sistemas de almacenamiento que ejecutan ONTAP almacenado en clúster, debe identificar los siguientes aspectos:
 +
 ** La tarea (o las tareas) que desee ejecutar

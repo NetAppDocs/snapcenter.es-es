@@ -1,7 +1,7 @@
 ---
 permalink: protect-sce/task_create_backup_policies_for_exchange_server_databases.html 
 sidebar: sidebar 
-keywords:  
+keywords: SnapCenter plug-in for Exchange Server 
 summary: Es posible crear una política de backup para los recursos de Exchange o los grupos de recursos antes de usar SnapCenter con el fin de realizar un backup de los recursos de Microsoft Exchange Server. También es posible crear una política de backup en el momento de crear un grupo de recursos o realizar un backup de un único recurso. 
 ---
 = Crear políticas de backup para bases de datos de Exchange Server
@@ -13,8 +13,7 @@ summary: Es posible crear una política de backup para los recursos de Exchange 
 [role="lead"]
 Es posible crear una política de backup para los recursos de Exchange o los grupos de recursos antes de usar SnapCenter con el fin de realizar un backup de los recursos de Microsoft Exchange Server. También es posible crear una política de backup en el momento de crear un grupo de recursos o realizar un backup de un único recurso.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe estar definida la estrategia de protección de datos.
 +
 Para obtener detalles, consulte la información sobre cómo definir una estrategia de protección de datos para bases de datos de Exchange.
@@ -28,8 +27,7 @@ El valor predeterminado es FALSE
 
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * Una política de backup es un conjunto de reglas que rigen cómo gestionar y conservar backups, y con qué frecuencia se realizará un backup del recurso o del grupo de recursos. Asimismo, es posible especificar la configuración de scripts. Puede especificar opciones en la política para ahorrar tiempo cuando desee reutilizarla con otro grupo de recursos.
 * La retención de un backup completo es específica de una política determinada. Una base de datos o un recurso que utiliza la política A con una retención de backup completo de valor 4 retiene 4 backups completos y no afecta la política B de la misma base de datos o recurso, que puede presentar una retención de valor 3 para retener 3 backups completos.
 * La retención de backup de registros rige para todas las políticas y se aplica a todos los backups de registros de una base de datos o registro. Por lo tanto, cuando se realiza un backup completo mediante la política B, la configuración de retención de registros afecta los backups de registros creados con la política A en la misma base de datos o el mismo recurso. De igual modo, la configuración de retención de registros de la política A afecta los backups de registros creados con la política B en la misma base de datos.
@@ -50,8 +48,7 @@ Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGU
 
 | *Mejor práctica:* es mejor configurar la directiva de retención secundaria en función del número de copias de seguridad completas y de registros, en general, que desee conservar. Al configurar las políticas de retención secundarias, tenga en cuenta que cuando las bases de datos y los registros de volúmenes diferentes, cada backup puede tener tres copias de Snapshot y cuando las bases de datos y los registros están en el mismo volumen, cada backup puede tener dos copias de Snapshot. 
 |===
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Configuración*.
 . En la página Configuración, haga clic en *Directivas*.
 . Haga clic en *Nuevo*.

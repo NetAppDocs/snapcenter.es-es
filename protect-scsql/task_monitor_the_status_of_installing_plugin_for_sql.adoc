@@ -1,7 +1,7 @@
 ---
 permalink: protect-scsql/task_monitor_the_status_of_installing_plugin_for_sql.html 
 sidebar: sidebar 
-keywords:  
+keywords: monitor, snapcenter 
 summary: Puede supervisar el progreso de la instalación del paquete de plugins de SnapCenter mediante la página Jobs. Tal vez desee comprobar el progreso de la instalación para determinar si está completo o si hay algún problema. 
 ---
 = Supervise el estado de la instalación del plugin para SQL Server
@@ -13,8 +13,7 @@ summary: Puede supervisar el progreso de la instalación del paquete de plugins 
 [role="lead"]
 Puede supervisar el progreso de la instalación del paquete de plugins de SnapCenter mediante la página Jobs. Tal vez desee comprobar el progreso de la instalación para determinar si está completo o si hay algún problema.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 Los siguientes iconos aparecen en la página Jobs e indican el estado de la operación:
 
 * image:../media/progress_icon.gif["Icono de estado en curso"] En curso
@@ -24,11 +23,10 @@ Los siguientes iconos aparecen en la página Jobs e indican el estado de la oper
 * image:../media/verification_job_in_queue.gif["El trabajo de verificación se ha puesto en cola"] En cola
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Monitor*.
-. En la página Monitor, haga clic en *Jobs*.
-. En la página Jobs, para filtrar la lista de modo que solo se incluyan las operaciones de instalación de plugins, proceda como sigue:
+. En la página *Monitor*, haga clic en *trabajos*.
+. En la página *Jobs*, para filtrar la lista de modo que solo se enumeren las operaciones de instalación de plug-in, haga lo siguiente:
 +
 .. Haga clic en *filtro*.
 .. Opcional: Indique las fechas de inicio y finalización.
@@ -38,5 +36,5 @@ Los siguientes iconos aparecen en la página Jobs e indican el estado de la oper
 
 
 . Seleccione el trabajo de instalación y haga clic en *Detalles* para ver los detalles del trabajo.
-. En la página Detalles del trabajo, haga clic en *Ver registros*.
+. En la página *Detalles del trabajo*, haga clic en *Ver registros*.
 

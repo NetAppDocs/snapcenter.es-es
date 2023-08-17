@@ -13,8 +13,7 @@ summary: Si una base de datos no pertenece a ningún grupo de recursos, es posib
 [role="lead"]
 Si una base de datos no pertenece a ningún grupo de recursos, es posible realizar backups de la base de datos o del grupo de disponibilidad de base de datos desde la página Resources.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe tener creada una política de backup.
 * Se debe haber asignado el agregado que usa la operación de backup a la máquina virtual de almacenamiento usada por la base de datos.
 * Si desea realizar un backup de un recurso que tenga una relación de SnapMirror con un almacenamiento secundario, el rol asignado al usuario de almacenamiento debería incluir el privilegio «sinapmirror all». Sin embargo, si usted está utilizando el rol "'vsadmin'", entonces no se requiere el privilegio "nnapmirror all".
@@ -27,8 +26,7 @@ Si una base de datos no pertenece a ningún grupo de recursos, es posible realiz
 |===
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione el *plug-in de Microsoft Exchange Server* en la lista.
 . En la página Resources, seleccione *Database* o *Database Availability Group* en la lista *View*.
 +

@@ -13,7 +13,7 @@ summary: Debe usar la página SnapCenter Add Host para añadir hosts y, a contin
 [role="lead"]
 Debe usar la página SnapCenter Add Host para añadir hosts y, a continuación, instalar los paquetes de los plugins. Los plugins se instalan automáticamente en hosts remotos. Puede añadir un host e instalar paquetes de plugins para un host individual o para un clúster.
 
-.Lo que necesitará
+.Antes de empezar
 * Debe ser un usuario al que se ha asignado una función que tenga permisos de instalación y desinstalación de plugins, como el rol de administrador de SnapCenter.
 * Al instalar un plugin en un host de Windows, si especifica una credencial que no está incorporada o si el usuario pertenece a un usuario de grupo de trabajo local, debe deshabilitar UAC en el host.
 * Debe asegurarse de que el servicio de cola de mensajes está en ejecución.

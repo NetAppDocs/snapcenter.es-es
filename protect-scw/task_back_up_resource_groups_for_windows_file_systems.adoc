@@ -13,8 +13,7 @@ summary: Un grupo de recursos es una agrupacion de recursos en un host o un clú
 [role="lead"]
 Un grupo de recursos es una agrupacion de recursos en un host o un clúster. Se realiza una operación de backup del grupo de recursos con todos los recursos definidos en el grupo. Puede realizar un backup del grupo de recursos bajo demanda en la página Resources. Si un grupo de recursos tiene una política anexada y una programación configurada, los backups se realizan automáticamente según esa programación.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe tener creado un grupo de recursos con una política anexada.
 * Si desea realizar un backup de un recurso que tenga una relación de SnapMirror con un almacenamiento secundario, la función asignada al usuario de almacenamiento debería incluir el privilegio «incluir toda la copia reflejada». Sin embargo, si usted está utilizando el rol "'vsadmin'", entonces no se requiere el privilegio "nnapmirror all".
 * Si un grupo de recursos tiene varias bases de datos de diferentes hosts, la operación de backup en algunos hosts puede activarse tarde debido a problemas de red. Debe configurar el valor de MaxRetryForUninitializedHosts en web.config mediante el cmdlet Set-SmConfigSettings de PowerShell
@@ -26,8 +25,7 @@ NOTE: Al realizar el backup de un sistema de archivos, SnapCenter no hace backup
 
 IMPORTANT: Si va a trabajar en un contexto de sistema de archivos de Windows, no realice backup de archivos de la base de datos. Si lo hace, se crea un backup incoherente y una posible pérdida de datos al restaurar. Para proteger los archivos de la base de datos, debe usar el plugin de SnapCenter adecuado para la base de datos (por ejemplo, plugin de SnapCenter para Microsoft SQL Server, plugin de SnapCenter para Microsoft Exchange Server o un plugin personalizado para archivos de base de datos).
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, seleccione *Resource Group* en la lista *View*.
 +

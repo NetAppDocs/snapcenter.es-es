@@ -13,7 +13,7 @@ summary: 'Es posible crear una conexión de máquina virtual de almacenamiento (
 [role="lead"]
 Es posible crear una conexión de máquina virtual de almacenamiento (SVM) y una credencial antes de usar cmdlets de PowerShell para realizar backup, restaurar o clonar bases de datos SAP HANA.
 
-.Lo que necesitará
+.Antes de empezar
 * Debe haber preparado el entorno de PowerShell para ejecutar los cmdlets de PowerShell.
 * Debe tener los permisos necesarios en el rol de administrador de infraestructura para crear conexiones de almacenamiento.
 * Debe asegurarse de que no se encuentren en curso las instalaciones de plugins.

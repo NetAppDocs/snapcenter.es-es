@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/task_back_up_resources_using_powershell_cmdlets.html 
 sidebar: sidebar 
-keywords:  
+keywords: backup resources 
 summary: El backup de un recurso implica establecer una conexión con SnapCenter Server, añadir recursos, añadir una política, crear una política de recursos de backup y realizar el backup. 
 ---
 = Realizar backup de recursos con cmdlets de PowerShell
@@ -13,18 +13,15 @@ summary: El backup de un recurso implica establecer una conexión con SnapCenter
 [role="lead"]
 El backup de un recurso implica establecer una conexión con SnapCenter Server, añadir recursos, añadir una política, crear una política de recursos de backup y realizar el backup.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe haber preparado el entorno de PowerShell para ejecutar los cmdlets de PowerShell.
 * Debe añadir la conexión con el sistema de almacenamiento y crear una credencial.
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guía de referencia de cmdlets de SnapCenter Software"^].
 
-* Pasos*
-
+.Pasos
 . Inicie una sesión de conexión con el servidor de SnapCenter para el usuario especificado mediante el cmdlet de Open-SmConnection.
 +
 [listing]

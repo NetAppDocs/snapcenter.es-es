@@ -1,7 +1,7 @@
 ---
 permalink: protect-scw/concept_snapcenter_plug_in_for_windows_features.html 
 sidebar: sidebar 
-keywords:  
+keywords: SnapCenter 
 summary: El plugin para Windows se integra con la tecnología de copia de Snapshot de NetApp en el sistema de almacenamiento. Para trabajar con el plugin para Windows, se utiliza la interfaz de SnapCenter. 
 ---
 = Funciones del plugin de SnapCenter para Windows

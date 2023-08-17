@@ -13,7 +13,7 @@ summary: La restauración de un backup de base de datos SAP HANA incluye iniciar
 [role="lead"]
 La restauración de un backup de base de datos SAP HANA incluye iniciar una sesión de conexión con SnapCenter Server, mostrar una lista de backups y recuperar información de los backups, así como restaurar un backup.
 
-.Lo que necesitará
+.Antes de empezar
 Debe haber preparado el entorno de PowerShell para ejecutar los cmdlets de PowerShell.
 
 .Pasos

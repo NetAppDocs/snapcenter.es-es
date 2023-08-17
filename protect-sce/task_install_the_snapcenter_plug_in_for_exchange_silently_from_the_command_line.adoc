@@ -1,7 +1,7 @@
 ---
 permalink: protect-sce/task_install_the_snapcenter_plug_in_for_exchange_silently_from_the_command_line.html 
 sidebar: sidebar 
-keywords:  
+keywords: SnapCenter plug-in for Exchange Server 
 summary: Debe instalar el plugin para Exchange desde la interfaz de usuario de SnapCenter. Sin embargo, si no puede hacerlo por algún motivo, puede ejecutar el programa de instalación del plugin para Exchange sin supervisión en el modo silencioso desde la línea de comandos de Windows. 
 ---
 = Instale el plugin de SnapCenter para Exchange silenciosamente desde la línea de comandos
@@ -13,8 +13,7 @@ summary: Debe instalar el plugin para Exchange desde la interfaz de usuario de S
 [role="lead"]
 Debe instalar el plugin para Exchange desde la interfaz de usuario de SnapCenter. Sin embargo, si no puede hacerlo por algún motivo, puede ejecutar el programa de instalación del plugin para Exchange sin supervisión en el modo silencioso desde la línea de comandos de Windows.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe tener un backup de los recursos de Microsoft Exchange Server.
 * Debe haber instalado los paquetes de plugins de SnapCenter.
 * Debe eliminar la versión anterior del plugin de SnapCenter para Microsoft SQL Server antes de instalar.
@@ -23,8 +22,7 @@ Para obtener más información, consulte https://kb.netapp.com/Advice_and_Troubl
 
 
 
-* Pasos*
-
+.Pasos
 . Compruebe si existe una carpeta _C:\temp_ en el host del plugin y que el usuario que ha iniciado sesión tiene acceso completo a ella.
 . Descargue el plugin de SnapCenter para Microsoft Windows desde _C:\ProgramData\NetApp\SnapCenter\Package_ Repository.
 +

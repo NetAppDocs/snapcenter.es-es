@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/concept_number_of_backup_jobs_needed.html 
 sidebar: sidebar 
-keywords:  
+keywords: backup jobs 
 summary: 'Algunos factores que determinan la cantidad de trabajos de backup que se necesitan son el tamaño del recurso, la cantidad de volúmenes que se usan, la tasa de cambio del recurso y el acuerdo de nivel de servicio \(SLA\).' 
 ---
 = Cantidad de trabajos de backup necesarios

@@ -1,7 +1,7 @@
 ---
 permalink: protect-scw/task_define_a_backup_strategy_for_windows_file_systems.html 
 sidebar: sidebar 
-keywords:  
+keywords: backup strategy 
 summary: Definir una estrategia de backup antes de crear backups garantiza que se cuente con todos los backups necesarios para restaurar o clonar correctamente los sistemas de archivos. La estrategia de backup queda determinada principalmente por el SLA, el RTO y el RPO. 
 ---
 = Defina una estrategia de backup para sistemas de archivos de Windows

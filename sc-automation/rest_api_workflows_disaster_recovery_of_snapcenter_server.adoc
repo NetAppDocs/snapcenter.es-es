@@ -74,9 +74,12 @@ NOTE: Si la máquina virtual está dañada, abra otra máquina virtual o una má
 
 Con las API DE REST, es posible realizar las siguientes operaciones en la página de API de REST de Swagger. Para obtener información sobre cómo acceder a la página de Swagger, consulte link:https://docs.netapp.com/us-en/snapcenter/sc-automation/task_how%20to_access_rest_apis_using_the_swagger_api_web_page.html["Cómo acceder a las API de REST con la página web de la API swagger"].
 
-.Lo que necesitará
+.Antes de empezar
 * Debe iniciar sesión como usuario administrador de SnapCenter.
 * El servidor SnapCenter debe estar activo y en funcionamiento para ejecutar la API de restauración de recuperación ante desastres.
+* Si las DLL están dañadas, repare la instalación del servidor de SnapCenter.
+* Si NSM está dañado o los archivos de configuración están dañados, desinstale y vuelva a instalar el servidor SnapCenter con la misma versión.
+* Si la máquina virtual está dañada, abra otra máquina virtual con el mismo nombre e instale el servidor SnapCenter con la misma versión.
 
 
 .Acerca de esta tarea
@@ -132,5 +135,5 @@ Habilite o deshabilite la recuperación ante desastres de almacenamiento
 PUBLICAR
 
 |===
-.Si quiere más información
+.Información relacionada
 Consulte link:https://www.youtube.com/watch?v=Nbr_wm9Cnd4&list=PLdXI3bZJEw7nofM6lN44eOe4aOSoryckg["API de recuperación ante desastres"^] vídeo.

@@ -1,7 +1,7 @@
 ---
 permalink: protect-scsql/concept_when_to_schedule_verification_jobs.html 
 sidebar: sidebar 
-keywords:  
+keywords: SnapCenter Plug-in for Microsoft SQL Server 
 summary: 'Si bien SnapCenter puede verificar los backups de inmediato después de crearlos, esta tarea puede aumentar significativamente el tiempo necesario para finalizar la tarea de backup y consume muchos recursos. Por lo tanto, casi siempre es conveniente programar la verificación en una tarea independiente más tarde. Por ejemplo, si se realiza el backup de una base de datos a las 5:00 todos los días, se puede programar la verificación una hora después, a las 6:00' 
 ---
 = Cuándo programar tareas de verificación

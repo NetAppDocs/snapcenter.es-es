@@ -13,7 +13,7 @@ summary: Los recursos son las bases de datos, las instancias de aplicaciones, lo
 [role="lead"]
 Los recursos son las bases de datos, las instancias de aplicaciones, los grupos de disponibilidad y los componentes similares que se mantienen mediante los plugins instalados. Es posible añadir esos recursos a grupos de recursos para ejecutar tareas de protección de datos, pero primero es necesario identificar qué recursos están disponibles. Identificar los recursos disponibles también permite verificar que el plugin se haya instalado correctamente.
 
-.Lo que necesitará
+.Antes de empezar
 * Debe haber completado ciertas tareas, como instalar SnapCenter Server, añadir hosts, crear conexiones de sistema de almacenamiento y añadir credenciales.
 * Para detectar las bases de datos de Microsoft SQL, se debe cumplir una de las siguientes condiciones.
 +

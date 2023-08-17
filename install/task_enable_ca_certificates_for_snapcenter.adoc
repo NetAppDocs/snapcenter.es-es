@@ -13,8 +13,7 @@ summary: Debe configurar los certificados de CA y habilitar la validación de ce
 [role="lead"]
 Debe configurar los certificados de CA y habilitar la validación de certificados de CA para el servidor SnapCenter.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Es posible habilitar o deshabilitar los certificados de CA con el cmdlet Set-SmCertificateSettings.
 * Puede mostrar el estado del certificado del servidor SnapCenter mediante el cmdlet de Get-SmCertificateSettings.
 

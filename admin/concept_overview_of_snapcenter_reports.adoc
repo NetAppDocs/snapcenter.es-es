@@ -1,7 +1,7 @@
 ---
 permalink: admin/concept_overview_of_snapcenter_reports.html 
 sidebar: sidebar 
-keywords:  
+keywords: SnapCenter reports 
 summary: SnapCenter ofrece distintas opciones de generación de informes que permiten supervisar y gestionar el estado y el éxito operativo del sistema. 
 ---
 = Información general sobre las funcionalidades de generación de informes de SnapCenter
@@ -130,8 +130,7 @@ Esta opción configura el servidor SMTP para enviar todos los informes de trabaj
 
 Si desea enviar actualizaciones de trabajos de protección de datos de SnapCenter regulares a usted mismo o a terceros para poder supervisar esas actualizaciones, puede configurar la opción para enviar por correo electrónico los informes de SnapCenter cuando crea un grupo de recursos.
 
-*Lo que necesitará*
-
+.Antes de empezar
 Configuró el servidor SMTP en la página Global Settings, en Settings.
 
 * Pasos*

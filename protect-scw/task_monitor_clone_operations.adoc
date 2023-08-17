@@ -1,7 +1,7 @@
 ---
 permalink: protect-scw/task_monitor_clone_operations.html 
 sidebar: sidebar 
-keywords:  
+keywords: monitor clone 
 summary: Es posible supervisar el progreso de las operaciones de clonado de SnapCenter mediante la página Jobs. El progreso de una operación puede revisarse para determinar cuándo está completa o si hay un problema. 
 ---
 = Supervise las operaciones de clonación
@@ -13,8 +13,7 @@ summary: Es posible supervisar el progreso de las operaciones de clonado de Snap
 [role="lead"]
 Es posible supervisar el progreso de las operaciones de clonado de SnapCenter mediante la página Jobs. El progreso de una operación puede revisarse para determinar cuándo está completa o si hay un problema.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 Los siguientes iconos aparecen en la página Jobs e indican el estado de la operación:
 
 * image:../media/progress_icon.gif["Icono de estado en curso"] En curso
@@ -22,16 +21,16 @@ Los siguientes iconos aparecen en la página Jobs e indican el estado de la oper
 * image:../media/failed_icon.gif["Icono de error"] Error
 * image:../media/warning_icon.gif["Icono de estado completado con advertencias"] Completado con advertencias o no pudo iniciarse debido a advertencias
 * image:../media/verification_job_in_queue.gif["El trabajo de verificación se ha puesto en cola"] En cola
-* image:../media/cancel_icon.gif[""] Cancelada
+* image:../media/cancel_icon.gif["Icono Cancelar"] Cancelada
 
 
 * Pasos*
 
 . En el panel de navegación de la izquierda, haga clic en *Monitor*.
-. En la página Monitor, haga clic en *Jobs*.
-. En la página Jobs, realice los siguientes pasos:
+. En la página *Monitor*, haga clic en *trabajos*.
+. En la página *trabajos*, realice los siguientes pasos:
 +
-.. Haga clic en image:../media/filter_icon.png[""] para filtrar la lista de modo que solo figuren las operaciones de clonado.
+.. Haga clic en image:../media/filter_icon.png["Icono de filtro"] para filtrar la lista de modo que solo figuren las operaciones de clonado.
 .. Especifique las fechas de inicio y finalización.
 .. En la lista desplegable *Tipo*, seleccione *Clonar*.
 .. En la lista desplegable *Estado*, seleccione el estado del clon.

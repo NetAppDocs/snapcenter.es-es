@@ -1,7 +1,7 @@
 ---
 permalink: protect-scsql/concept_multiple_databases_on_the_same_volume.html 
 sidebar: sidebar 
-keywords:  
+keywords: Multiple databases 
 summary: 'Es posible colocar todas las bases de datos en el mismo volumen, ya que la política de backup incluye una opción para configurar la cantidad máxima de bases de datos por backup \(el valor predeterminado es 100\).' 
 ---
 = Varias bases de datos en el mismo volumen

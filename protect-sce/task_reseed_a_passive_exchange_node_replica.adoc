@@ -13,8 +13,7 @@ summary: Si necesita realimentar una copia de réplica, por ejemplo, cuando una 
 [role="lead"]
 Si necesita realimentar una copia de réplica, por ejemplo, cuando una copia está dañada, puede realimentar el backup más reciente con la función de propagación en SnapCenter.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe utilizar SnapCenter Server 4.1 o una versión posterior, y el plugin para Exchange 4.1 o una versión posterior.
 +
 Las versiones de SnapCenter anteriores a 4.1 no admiten volver a insertar una réplica.
@@ -27,8 +26,7 @@ Las versiones de SnapCenter anteriores a 4.1 no admiten volver a insertar una r�
 
 | *Práctica recomendada:* para evitar el retraso entre nodos, recomendamos crear una nueva copia de seguridad antes de realizar una operación de propagación o elegir el host con la última copia de seguridad. 
 |===
-* Pasos*
-
+.Pasos
 . En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione *plug-in de Microsoft Exchange Server* en la lista.
 . En la página Resources, seleccione la opción correspondiente en la lista View:
 +

@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/task_create_policies_for_custom_plug_in_resources.html 
 sidebar: sidebar 
-keywords:  
+keywords: create policies, custom plug-in 
 summary: Antes de usar SnapCenter para realizar un backup de recursos específicos de un plugin personalizado, debe crear una política de backup para el recurso o el grupo de recursos que incluirá en el backup. 
 ---
 = Crear políticas para recursos de plugins personalizados
@@ -13,8 +13,7 @@ summary: Antes de usar SnapCenter para realizar un backup de recursos específic
 [role="lead"]
 Antes de usar SnapCenter para realizar un backup de recursos específicos de un plugin personalizado, debe crear una política de backup para el recurso o el grupo de recursos que incluirá en el backup.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe tener definida una estrategia de backup.
 +
 Para obtener detalles, consulte la información sobre cómo definir una estrategia de protección de datos para plugins personalizados.
@@ -30,14 +29,12 @@ El administrador de SnapCenter debe haberle asignado las instancias de SVM de lo
 * Debe añadir manualmente los recursos que desee proteger.
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * Una política de backup es un conjunto de reglas que rigen cómo gestionar, programar y retener backups. De forma adicional, puede definir la configuración de replicación, script y aplicaciones.
 * Puede especificar opciones en la política para ahorrar tiempo cuando desee reutilizarla con otro grupo de recursos.
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Configuración*.
 . En la página Configuración, haga clic en *Directivas*.
 . Haga clic en *Nuevo*.
@@ -50,7 +47,7 @@ El administrador de SnapCenter debe haberle asignado las instancias de SVM de lo
 NOTE: Puede especificar la programación (fecha de inicio, fecha de finalización y frecuencia) para la operación de backup mientras crea un grupo de recursos. De este modo, puede crear grupos de recursos que compartan la misma política y la misma frecuencia de backup, pero también asignar diferentes programaciones de backup a cada política.
 
 +
-image::../media/backup_settings.gif[configuración de copia de seguridad]
+image::../media/backup_settings.gif[Configuración de copia de seguridad]
 
 +
 
@@ -59,7 +56,7 @@ NOTE: Si ha programado para las 2:00 a.m., la programación no se activará dura
 ** En la sección Custom backup settings, proporcione los ajustes específicos de backup que deban pasarse al plugin en formato de clave-valor. Puede pasar varios pares de clave-valor al plugin.
 
 
-. En la página Retention, especifique la configuración de retención para el tipo de backup y el tipo de programación seleccionados en la página Backup Type:
+. En la página *Retention*, especifique la configuración de retención para el tipo de copia de seguridad y el tipo de programación seleccionado en la página *Backup Type*:
 +
 |===
 | Si desea... | Realice lo siguiente... 
@@ -86,7 +83,7 @@ Conserve las copias de Snapshot por una cierta cantidad de días
 Seleccione *mantener copias Snapshot para* y, a continuación, especifique el número de días durante los que desea conservar las copias Snapshot antes de eliminarlas.
 
 |===
-. En la página Replication, especifique la configuración de replicación:
+. En la página *Replicación*, especifique la configuración de replicación:
 +
 |===
 | Para este campo... | Realice lo siguiente... 

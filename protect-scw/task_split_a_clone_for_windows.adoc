@@ -1,7 +1,7 @@
 ---
 permalink: protect-scw/task_split_a_clone_for_windows.html 
 sidebar: sidebar 
-keywords:  
+keywords: split clone 
 summary: Es posible usar SnapCenter para dividir un recurso clonado de un recurso primario. El clon que se divide se independiza del recurso primario. 
 ---
 = Divida un clon
@@ -13,8 +13,7 @@ summary: Es posible usar SnapCenter para dividir un recurso clonado de un recurs
 [role="lead"]
 Es posible usar SnapCenter para dividir un recurso clonado de un recurso primario. El clon que se divide se independiza del recurso primario.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * No se puede ejecutar la operación de división de clones en un clon intermedio.
 +
 Por ejemplo, después de crear el clon 1 a partir de un backup de la base de datos, puede realizar un backup del clon 1 y luego clonar este backup (que sería el clon 2). Una vez creado el clon 2, el clon 1 se convierte en un clon intermedio y la operación de división de clones puede hacerse con el clon 1. No obstante, esta operación también puede ejecutarse con el clon 2.
@@ -27,10 +26,9 @@ Después de dividir el clon 2, puede ejecutar la operación de división de clon
 * Asegúrese de que el volumen o el agregado del sistema de almacenamiento estén en línea.
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
-. En la página Resources, seleccione la opción correspondiente en la lista View:
+. En la página *Recursos*, seleccione la opción adecuada en la lista Ver:
 +
 |===
 | Opción | Descripción 
@@ -53,7 +51,7 @@ Seleccione *Ruta* en la lista Ver.
 +
 Se muestra la página con el resumen.
 
-. En la vista Manage Copies, seleccione el recurso clonado (por ejemplo, la base de datos o el LUN) y, a continuación, haga clic en *image:../media/split_cone.gif[""]*.
+. En la vista *Administrar copias*, seleccione el recurso clonado (por ejemplo, la base de datos o LUN) y, a continuación, haga clic en *image:../media/split_cone.gif["Icono de división de clones"]*.
 . Revise el tamaño estimado del clon que se va a dividir y el espacio necesario disponible en el agregado y, a continuación, haga clic en *Inicio*.
 . Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
 +
@@ -75,6 +73,5 @@ Se produce un error en la operación de inicio de división de clones si hay un 
 
 
 
-*Más información*
-
+.Información relacionada
 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/SnapCenter_clone_or_verfication_fails_with_aggregate_does_not_exist["Se produce un error en la verificación o el clon de SnapCenter porque no existe agregado"]

@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/task_clone_custom_plug_in_resource_backups.html 
 sidebar: sidebar 
-keywords:  
+keywords: clone, custom plug-in 
 summary: El flujo de trabajo de clonado incluye realizar la operación de clonado y supervisarla. 
 ---
 = Clonar backups de recursos de plugins personalizados
@@ -13,8 +13,7 @@ summary: El flujo de trabajo de clonado incluye realizar la operación de clonad
 [role="lead"]
 El flujo de trabajo de clonado incluye realizar la operación de clonado y supervisarla.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 Es posible clonar backups de recursos por los siguientes motivos:
 
 * Para probar la funcionalidad que debe implementarse mediante la estructura de recursos actuales y el contenido durante los ciclos de desarrollo de aplicaciones

@@ -1,7 +1,7 @@
 ---
 permalink: admin/task_request_status_reports_of_the_jobs_from_the_dashboard.html 
 sidebar: sidebar 
-keywords:  
+keywords: dashboard, snapcenter 
 summary: En la página Dashboard, es posible solicitar informes de trabajos de backup, restauración y clonado. Esto resulta útil para identificar la cantidad total de trabajos con errores o realizados correctamente en el entorno de SnapCenter. 
 ---
 = Solicite informes de estado de trabajos desde la consola
@@ -29,6 +29,6 @@ Al hacer clic en el gráfico de donut, se le redirigirá de la página Dashboard
 . En la parte superior de la página Monitor, haga clic en *Informes*.
 
 
-*Resultados*
+*resultado*
 
 El informe muestra información solo sobre el trabajo seleccionado. Puede revisar el informe o descargarlo en su sistema local.

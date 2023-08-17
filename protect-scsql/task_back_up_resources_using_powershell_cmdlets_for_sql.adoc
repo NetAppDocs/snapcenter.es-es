@@ -13,15 +13,13 @@ summary: Puede utilizar los cmdlets de PowerShell para realizar backup de bases 
 [role="lead"]
 Puede utilizar los cmdlets de PowerShell para realizar backup de bases de datos de SQL Server o sistemas de archivos Windows. Esto incluye la realización de backups de una base de datos de SQL Server o de un sistema de archivos de Windows incluye establecer una conexión con SnapCenter Server, determinar las instancias de la base de datos de SQL Server o los sistemas de archivos Windows, crear un grupo de recursos de backup, realizar el backup y verificar.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe haber preparado el entorno de PowerShell para ejecutar los cmdlets de PowerShell.
 * Debe añadir la conexión con el sistema de almacenamiento y crear una credencial.
 * Es necesario haber añadido los hosts y detectado los recursos.
 
 
-* Pasos*
-
+.Pasos
 . Inicie una sesión de conexión con el servidor de SnapCenter para el usuario especificado mediante el cmdlet de Open-SmConnection.
 +
 [listing]

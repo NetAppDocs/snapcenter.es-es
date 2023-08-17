@@ -1,7 +1,7 @@
 ---
 permalink: protect-scsql/task_create_backup_policies_for_sql_server_databases.html 
 sidebar: sidebar 
-keywords:  
+keywords: backup policy 
 summary: Es posible crear una política de backup para el recurso o el grupo de recursos antes de usar SnapCenter con el fin de realizar un backup de los recursos de SQL Server. También es posible crear una política de backup en el momento de crear un grupo de recursos o realizar un backup de un único recurso. 
 ---
 = Crear políticas de backup para bases de datos de SQL Server
@@ -13,7 +13,7 @@ summary: Es posible crear una política de backup para el recurso o el grupo de 
 [role="lead"]
 Es posible crear una política de backup para el recurso o el grupo de recursos antes de usar SnapCenter con el fin de realizar un backup de los recursos de SQL Server. También es posible crear una política de backup en el momento de crear un grupo de recursos o realizar un backup de un único recurso.
 
-.Lo que necesitará
+.Antes de empezar
 * Debe estar definida la estrategia de protección de datos.
 * Debe haberse preparado para la protección de datos completando ciertas tareas, como instalar SnapCenter, añadir hosts, identificar recursos y crear conexiones con el sistema de almacenamiento.
 * Debe haber configurado el directorio de registro del host para backup de registro.

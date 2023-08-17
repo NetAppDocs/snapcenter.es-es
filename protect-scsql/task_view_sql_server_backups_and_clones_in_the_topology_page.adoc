@@ -13,8 +13,7 @@ summary: Al prepararse para clonar un recurso o incluirlo en un backup, puede re
 [role="lead"]
 Al prepararse para clonar un recurso o incluirlo en un backup, puede resultar útil ver una representación gráfica de todos los backups y clones del almacenamiento principal y secundario.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 En la página Topology, es posible ver todos los backups y clones que están disponibles para el recurso o el grupo de recursos seleccionado. Pueden verse los detalles de estos backups y clones, y luego seleccionarlos para realizar operaciones de protección de datos.
 
 Puede consultar los siguientes iconos en la vista *Administrar copias* para determinar si las copias de seguridad y clones están disponibles en el almacenamiento principal y secundario (copias reflejadas o copias vault).
@@ -34,8 +33,7 @@ Por ejemplo, si creó 6 backups con una política para retener solamente 4 backu
 
 NOTE: Los clones de un backup de un reflejo con versión flexible en un volumen de tipo reflejo-almacén se muestran en la vista de topología, pero el número de backups de reflejo no incluye el backup con versión flexible.
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, seleccione el recurso o el grupo de recursos de la lista desplegable *View*.
 . Seleccione el recurso desde la vista de detalles del recurso o desde la vista de detalles del grupo de recursos.

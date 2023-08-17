@@ -1,7 +1,7 @@
 ---
 permalink: concept/concept_disaster_recovery.html 
 sidebar: sidebar 
-keywords:  
+keywords: Disaster Recovery 
 summary: Es posible recuperar el servidor SnapCenter en caso de desastres como daños en los recursos o bloqueo del servidor con la función de recuperación ante desastres de SnapCenter. 
 ---
 = Recuperación ante desastres de SnapCenter

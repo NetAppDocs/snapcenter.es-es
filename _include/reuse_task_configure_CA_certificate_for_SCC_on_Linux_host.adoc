@@ -10,8 +10,7 @@ Los plugins personalizados utilizan el archivo 'keystore.jks', que se encuentra 
 
 == Gestionar contraseña para el almacén de claves del plugin personalizado y el alias de la pareja de claves firmada de CA en uso
 
-* Pasos*
-
+.Pasos
 . Puede recuperar la contraseña predeterminada del almacén de claves del plugin personalizado desde el archivo de propiedades del agente del plugin personalizado.
 +
 Es el valor correspondiente a la clave 'KEYSTORE_PASS'.
@@ -37,8 +36,7 @@ NOTE: La contraseña para el almacén de claves de plugin personalizado y para t
 
 Debe configurar los certificados intermedios o de raíz sin la clave privada para personalizar el almacén de confianza del plugin.
 
-* Pasos*
-
+.Pasos
 . Desplácese hasta la carpeta que contiene el almacén de claves del plugin personalizado: /Opt/NetApp/snapcenter/scc/etc.
 . Busque el archivo 'keystore.jks'.
 . Enumere los certificados añadidos al almacén de claves:
@@ -60,8 +58,7 @@ NOTE: Debe añadir el certificado de CA raíz y luego los certificados de CA int
 
 Debe configurar la pareja de claves firmadas de CA en el almacén de confianza del plugin personalizado.
 
-* Pasos*
-
+.Pasos
 . Desplácese hasta la carpeta que contiene el almacén de claves del plugin personalizado /opt/NetApp/snapcenter/scc/etc.
 . Busque el archivo 'keystore.jks'.
 . Enumere los certificados añadidos al almacén de claves:
@@ -97,14 +94,12 @@ Actualice este valor con la clave SCC_CERTIFICATE_ALIAS.
 
 == Configurar la lista de revocación de certificados (CRL) para los plugins personalizados de SnapCenter
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * Los complementos personalizados de SnapCenter buscarán los archivos CRL en un directorio preconfigurado.
 * El directorio predeterminado de los archivos CRL de los plugins personalizados de SnapCenter es ' opt/NetApp/snapcenter/scc/etc/crl'.
 
 
-* Pasos*
-
+.Pasos
 . Puede modificar y actualizar el directorio predeterminado del archivo agent.properties en función de la CLAVE CRL_PATH.
 +
 Puede colocar más de un archivo CRL en este directorio. Los certificados entrantes se verificarán en cada CRL.

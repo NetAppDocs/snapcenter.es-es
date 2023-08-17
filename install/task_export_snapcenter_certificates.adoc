@@ -60,6 +60,6 @@ Revise el resumen y, a continuación, haga clic en *Finalizar* para iniciar la e
 |===
 
 
-*Resultados*
+*resultado*
 
 Los certificados se exportan en formato .pfx.

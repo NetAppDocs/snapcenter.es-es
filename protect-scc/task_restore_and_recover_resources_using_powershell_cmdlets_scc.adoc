@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/task_restore_and_recover_resources_using_powershell_cmdlets_scc.html 
 sidebar: sidebar 
-keywords:  
+keywords: restore resources 
 summary: La restauración de un backup de recursos incluye el inicio de una sesión de conexión con el servidor SnapCenter, el listado de los backups y la recuperación de información de los backups, y la restauración de un backup. 
 ---
 = Restaurar recursos mediante los cmdlets de PowerShell
@@ -15,8 +15,7 @@ La restauración de un backup de recursos incluye el inicio de una sesión de co
 
 Debe haber preparado el entorno de PowerShell para ejecutar los cmdlets de PowerShell.
 
-* Pasos*
-
+.Pasos
 . Inicie una sesión de conexión con el servidor de SnapCenter para el usuario especificado mediante el cmdlet de Open-SmConnection.
 +
 [listing]

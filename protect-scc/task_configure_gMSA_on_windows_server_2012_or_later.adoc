@@ -1,7 +1,7 @@
 ---
 permalink: protect-scc/task_configure_gMSA_on_windows_server_2012_or_later.html 
 sidebar: sidebar 
-keywords:  
+keywords: gMSA 
 summary: 'Windows Server 2012 o posterior le permite crear una cuenta de servicio gestionado de grupo \(GMSA\) que proporciona administración automatizada de contraseñas de cuenta de servicio desde una cuenta de dominio administrado.' 
 ---
 = Configurar GMSA en Windows Server 2012 o posterior
@@ -13,14 +13,12 @@ summary: 'Windows Server 2012 o posterior le permite crear una cuenta de servici
 [role="lead"]
 Windows Server 2012 o posterior le permite crear una cuenta de servicio administrado de grupo (GMSA) que proporciona gestión automatizada de contraseñas de cuenta de servicio desde una cuenta de dominio administrado.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe tener un controlador de dominio de Windows Server 2012 o posterior.
 * Debe tener un host de Windows Server 2012 o posterior, que es miembro del dominio.
 
 
-* Pasos*
-
+.Pasos
 . Cree una clave raíz KDS para generar contraseñas únicas para cada objeto de su GMSA.
 . Para cada dominio, ejecute el siguiente comando desde el controlador de dominio de Windows: Add-KDSRootKey -EffectiveImmediately
 . Crear y configurar su GMSA:

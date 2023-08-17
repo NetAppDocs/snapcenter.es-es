@@ -13,4 +13,4 @@ summary: Debe instalar y configurar el plugin de SnapCenter para Microsoft Excha
 [role="lead"]
 Debe instalar y configurar el plugin de SnapCenter para Microsoft Exchange Server si desea proteger las bases de datos de Exchange.
 
-image::../media/sce_install_configure_workflow.gif[sce instala el flujo de trabajo de configuración]
+image::../media/sce_install_configure_workflow.gif[Flujo de trabajo de instalación]

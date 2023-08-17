@@ -13,8 +13,7 @@ summary: Para configurar el control de acceso basado en roles para usuarios de S
 [role="lead"]
 Para configurar el control de acceso basado en roles para usuarios de SnapCenter, es posible añadir usuarios o grupos y asignar roles. El rol determina las opciones a las que los usuarios de SnapCenter pueden acceder.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Inició sesión con el rol de administrador de SnapCenter.
 * Creó las cuentas de usuario o de grupo en Active Directory mediante el sistema operativo o la base de datos. No se puede usar SnapCenter para crear estas cuentas.
 +

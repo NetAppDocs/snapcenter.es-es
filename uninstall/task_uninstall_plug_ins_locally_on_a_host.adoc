@@ -13,8 +13,7 @@ summary: Puede desinstalar los plugins de SnapCenter localmente de un host si no
 [role="lead"]
 Puede desinstalar los plugins de SnapCenter localmente de un host si no puede acceder al host desde el servidor SnapCenter.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 La práctica recomendada para desinstalar plugins individuales o paquetes de plugins es utilizar la interfaz gráfica de usuario de SnapCenter o usar el cmdlet Uninstall-SmHostPackage en la interfaz de línea de comandos del host SnapCenter Server. Estos procedimientos ayudan al servidor SnapCenter a mantenerse actualizado con cualquier cambio.
 
 Sin embargo, es posible que tenga una rara necesidad de desinstalar los plugins localmente. Por ejemplo, quizás haya ejecutado un trabajo de desinstalación desde SnapCenter Server, pero el trabajo generó un error, o tal vez desinstaló SnapCenter Server y los plugins huérfanos permanecen aún en el host.
@@ -25,8 +24,7 @@ IMPORTANT: Desinstalar un paquete de plugins localmente en un host no elimina lo
 
 IMPORTANT: No trate de desinstalar el paquete de plugins de SnapCenter para Windows localmente desde Control Panel. Debe utilizar la interfaz gráfica de usuario de SnapCenter para asegurarse de que el plugin de SnapCenter para Microsoft Windows se desinstala correctamente.
 
-* Pasos*
-
+.Pasos
 . En el sistema host, acceda al Panel de control y haga clic en *Desinstalar un programa*.
 . En la lista de programas, seleccione el complemento SnapCenter o el paquete de plugins que desee desinstalar y haga clic en *Desinstalar*.
 +

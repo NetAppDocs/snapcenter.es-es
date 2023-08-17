@@ -13,8 +13,7 @@ summary: Cuando SnapCenter Server quita un host, primero elimina los backups, cl
 [role="lead"]
 Cuando SnapCenter Server quita un host, primero elimina los backups, clones, trabajos de clonado, grupos de recursos y recursos que figuran para ese host en la página SnapCenter Resources. A continuación, desinstala los paquetes de plugins del host.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * Si elimina un host, los backups, clones y grupos de recursos asociados con el host también se eliminan.
 * Al quitar los grupos de recursos, se eliminan también todas las programaciones asociadas.
 * Si se elimina un host que tiene un grupo de recursos compartido con otro host, también se elimina el grupo de recursos.
@@ -25,10 +24,9 @@ La información relativa a los parámetros que se pueden utilizar con el cmdlet 
 * El tiempo requerido para quitar un host depende de la cantidad de backups y de la configuración de retención. Esto es debido a que las copias de Snapshot se eliminan de cada una de las controladoras y se borran los metadatos.
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *hosts*.
-. En la página hosts, haga clic en *Managed hosts*.
+. En la página *Hosts*, haz clic en *Hosts administrados*.
 . Seleccione el host que desea eliminar y, a continuación, haga clic en *Quitar*.
 . En el caso de clústeres RAC Oracle, para eliminar el software SnapCenter de todos los hosts del clúster, seleccione *incluir todos los hosts del cluster*.
 +

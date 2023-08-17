@@ -13,7 +13,7 @@ summary: Debe configurar la clave de almacenamiento de usuario HDB y el usuario 
 [role="lead"]
 Debe configurar la clave de almacenamiento de usuario HDB y el usuario del sistema operativo HDBSQL para realizar operaciones de protección de datos en bases de datos SAP HANA.
 
-.Lo que necesitará
+.Antes de empezar
 * Si la base de datos SAP HANA no tiene la clave de almacenamiento de usuario seguro HDB y el usuario de sistema operativo SQL HDB configurados, aparece un icono de candado rojo solo para los recursos detectados automáticamente. Si durante una operación de detección posterior, se encontró que la clave de almacenamiento de usuario seguro HDB configurada era incorrecta o no proveía acceso a la base de datos, entonces el icono de candado rojo volverá a aparecer.
 * Es necesario configurar la clave de almacenamiento de usuario seguro HDB y el usuario del sistema operativo HDB SQL para proteger la base de datos, o bien añadirla a un grupo de recursos para realizar operaciones de protección de datos.
 * Debe configurar HDB SQL OS User para acceder a la base de datos del sistema. Si HDB SQL OS User está configurado para acceder solo a la base de datos de tenant, se producirá un error en la operación de detección.

@@ -1,7 +1,7 @@
 ---
 permalink: protect-sce/task_restore_an_exchange_server_database_from_secondary_storage.html 
 sidebar: sidebar 
-keywords:  
+keywords: SnapCenter plug-in for Exchange Server 
 summary: 'Es posible restaurar una base de datos de Exchange Server con backup a partir de un almacenamiento secundario (reflejo o almacén).' 
 ---
 = Restaurar una base de datos de servidor de Exchange desde un almacenamiento secundario
@@ -15,8 +15,7 @@ Es posible restaurar una base de datos de Exchange Server con backup a partir de
 
 Debe haber replicado las copias de Snapshot a desde el almacenamiento principal hasta un almacenamiento secundario.
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione *plug-in de Microsoft Exchange Server* en la lista.
 . En la página Resources, seleccione *Database* o *Resource Group* en la lista desplegable *View*.
 . Seleccione la base de datos o el grupo de recursos.

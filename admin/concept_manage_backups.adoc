@@ -1,7 +1,7 @@
 ---
 permalink: admin/concept_manage_backups.html 
 sidebar: sidebar 
-keywords:  
+keywords: Manage backups 
 summary: Es posible cambiar el nombre de los backups y eliminarlos. También es posible eliminar varios backups simultáneamente. 
 ---
 = Gestionar backups
@@ -44,8 +44,7 @@ Si catalogó los backups de bases de datos de Oracle con Oracle Recovery Manager
 
 Es posible eliminar backups si ya no los requiere para otras operaciones de protección de datos.
 
-*Lo que necesitará*
-
+.Antes de empezar
 Debe haber eliminado los clones asociados antes de eliminar un backup.
 
 

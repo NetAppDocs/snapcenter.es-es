@@ -13,8 +13,7 @@ summary: Un grupo de recursos es un conjunto de recursos en un host o DAG de Exc
 [role="lead"]
 Un grupo de recursos es un conjunto de recursos en un host o DAG de Exchange, y puede incluir un DAG completo o bases de datos individuales. Puede realizar backups de los grupos de recursos desde la página Resources.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe tener creado un grupo de recursos con una política anexada.
 * Asignó el agregado que utiliza la operación de backup a la SVM que utiliza la base de datos.
 * Si desea realizar un backup de un recurso que tenga una relación de SnapMirror con un almacenamiento secundario, el rol asignado al usuario de almacenamiento debería incluir el privilegio «sinapmirror all». Sin embargo, si usted está utilizando el rol "'vsadmin'", entonces no se requiere el privilegio "nnapmirror all".
@@ -25,12 +24,10 @@ El backup tendrá éxito con una copia de base de datos activa/pasiva en el alma
 
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 Puede realizar un backup del grupo de recursos bajo demanda en la página Resources. Si un grupo de recursos tiene una política anexada y una programación configurada, los backups se realizan automáticamente según esa programación.
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione el *plug-in de Microsoft Exchange Server* en la lista.
 . En la página Resources, seleccione *Resource Group* en la lista *View*.
 +

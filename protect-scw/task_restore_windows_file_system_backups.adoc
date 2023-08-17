@@ -13,8 +13,7 @@ summary: Puede utilizar SnapCenter para restaurar backups de sistemas de archivo
 [role="lead"]
 Puede utilizar SnapCenter para restaurar backups de sistemas de archivos. La restauración de sistema de archivos es un proceso multifase que copia todos los datos de un backup especificado en la ubicación original del sistema de archivos.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe tener un backup del sistema de archivos.
 * Si existe una operación programada, como una operación de backup, en curso para un sistema de archivos, debe cancelarse esa operación antes de poder iniciar una operación de restauración.
 * Solo puede restaurar un backup de sistema de archivos a la ubicación original, no a una ruta alternativa.
@@ -25,8 +24,7 @@ No puede restaurar un solo archivo desde un backup porque el sistema de archivos
 * SnapCenter puede restaurar los sistemas de archivos de un clúster de Windows sin que el grupo de clústeres esté sin conexión.
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * LA RUTA_DE_SCRIPTS se define mediante la clave PredefinedWindowsScriptsDirectory ubicada en el archivo SMCoreServiceHost.exe.Config del host del plugin.
 +
 Si es necesario, puede cambiar esta ruta y reiniciar el servicio SMcore. Se recomienda utilizar la ruta predeterminada para la seguridad.
@@ -39,8 +37,7 @@ Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGU
 
 
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . Para filtrar la lista de recursos, seleccione las opciones File System y Resource Group.
 . Seleccione un grupo de recursos de la lista y, a continuación, haga clic en *Restaurar*.

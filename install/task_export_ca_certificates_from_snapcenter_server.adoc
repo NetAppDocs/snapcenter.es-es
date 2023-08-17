@@ -13,8 +13,7 @@ summary: Debe exportar los certificados de CA del servidor SnapCenter a los host
 [role="lead"]
 Es necesario exportar los certificados de CA del servidor de SnapCenter a los hosts del plugin mediante la consola de gestión de Microsoft (MMC).
 
-*Lo que necesitará*
-
+.Antes de empezar
 Debe haber configurado el SSL bidireccional.
 
 * Pasos*

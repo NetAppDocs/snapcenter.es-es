@@ -13,7 +13,7 @@ summary: Puede instalar los paquetes de plugins de SnapCenter para Linux o Windo
 [role="lead"]
 Puede instalar los paquetes de plugins de SnapCenter para Linux o Windows en varios hosts a la vez mediante el cmdlet de PowerShell Install-SmHostPackage.
 
-.Lo que necesitará
+.Antes de empezar
 Debe haberse registrado en SnapCenter como usuario del dominio con derechos de administrador local en cada host en el que desee instalar el paquete de plugins.
 
 .Pasos

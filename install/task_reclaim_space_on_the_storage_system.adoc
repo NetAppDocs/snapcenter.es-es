@@ -15,8 +15,7 @@ Si bien NTFS hace un seguimiento del espacio disponible en un LUN cuando se modi
 
 Si ejecuta el cmdlet en un host de plugin remoto, debe ejecutar el cmdlet SnapCenterOpen-SMConnection para abrir una conexión con el servidor de SnapCenter.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Antes de ejecutar una operación de restauración, debe asegurarse de que el proceso de recuperación de espacio se haya completado.
 * Si el LUN se comparte entre los hosts de un clúster de conmutación al nodo de respaldo de Windows Server, debe ejecutar la recuperación de espacio en el host propietario del grupo de clústeres.
 * Para que el almacenamiento alcance un rendimiento óptimo, la recuperación de espacio debe ejecutarse con la mayor frecuencia posible.

@@ -1,7 +1,7 @@
 ---
 permalink: protect-hana/concept_minimum_privileges_required_for_sap_hana_and_exchange_plug_in.html 
 sidebar: sidebar 
-keywords:  
+keywords: Minimum ONTAP privileges 
 summary: Los privilegios mínimos requeridos de ONTAP varían en función de los plugins de SnapCenter que utilice para la protección de datos. 
 ---
 = Privilegios mínimos ONTAP requeridos para el plugin de SAP HANA

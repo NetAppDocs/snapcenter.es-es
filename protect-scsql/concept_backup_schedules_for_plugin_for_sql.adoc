@@ -1,7 +1,7 @@
 ---
 permalink: protect-scsql/concept_backup_schedules_for_plugin_for_sql.html 
 sidebar: sidebar 
-keywords:  
+keywords: Backup schedules 
 summary: 'La frecuencia de los backups \(tipo de programación\) se especifica en las políticas; la programación de los backups se especifica en la configuración del grupo de recursos.' 
 ---
 = Programaciones de backups para el plugin para SQL Server

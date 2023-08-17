@@ -1,7 +1,7 @@
 ---
 permalink: admin/concept_manage_ems_data_collection.html 
 sidebar: sidebar 
-keywords:  
+keywords: EMS data collection 
 summary: 'Es posible programar y gestionar la recogida de datos de Event Management System (EMS) mediante cmdlets de PowerShell. La recogida de datos de EMS implica recopilar datos sobre SnapCenter Server, los paquetes de plugins de SnapCenter instalados, los hosts y datos similares y, posteriormente, enviarlos a una máquina virtual de almacenamiento ONTAP específica \(SVM\).' 
 ---
 = Gestione la recogida de datos de EMS
@@ -69,6 +69,5 @@ Es posible supervisar el estado de la recogida de datos de EMS mediante varios c
 . Recupere información acerca del destino de recogida de datos de EMS. Para ello, introduzca _Get-SmDataCollectionEmsTarget_.
 
 
-*Más información*
-
+.Información relacionada
 La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guía de referencia de cmdlets de SnapCenter Software"^].
