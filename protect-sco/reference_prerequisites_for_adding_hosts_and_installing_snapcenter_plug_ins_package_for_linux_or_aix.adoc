@@ -77,7 +77,7 @@ NOTE: Si utiliza la base de datos de Oracle en LVM en sistemas operativos Oracle
  a| 
 RAM mínima para el plugin de SnapCenter en el host
  a| 
-1 GB
+2 GB
 
 
 
@@ -211,7 +211,7 @@ RAM mínima para el plugin de SnapCenter en el host
  a| 
 Espacio de registro e instalación mínimo para el plugin de SnapCenter en el host
  a| 
-1 GB
+2 GB
 
 
 NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de almacenamiento en la carpeta de registros. El espacio de registro necesario varía en función de la cantidad de entidades que se han de proteger y la frecuencia de las operaciones de protección de datos. Si no hay espacio en disco suficiente, no se crearán registros de las operaciones ejecutadas recientemente.
