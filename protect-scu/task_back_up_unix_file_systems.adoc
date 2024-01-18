@@ -1,0 +1,83 @@
+---
+permalink: protect-scu/task_back_up_unix_file_systems.html 
+sidebar: sidebar 
+keywords: backup, Unix file system, policy, schedule, resources 
+summary: Si un recurso no es parte de ningún grupo de recursos, es posible realizar backups del recurso desde la página Resources. 
+---
+= Hacer backup de sistemas de archivos Unix
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si un recurso no es parte de ningún grupo de recursos, es posible realizar backups del recurso desde la página Resources.
+
+.Pasos
+. En el panel de navegación de la izquierda, seleccione *Recursos* y el plug-in apropiado de la lista.
+. En la página Recursos, seleccione *Ruta* en la lista Ver.
+. Haga clic en image:../media/filter_icon.png["Icono de filtro"], Y, a continuación, seleccione el nombre de host y los sistemas de archivos Unix para filtrar los recursos.
+. Seleccione el sistema de archivos del que desea realizar un backup.
+. En la página Resources, puede realizar los siguientes pasos:
++
+.. Marque la casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de la copia de Snapshot.
++
+Por ejemplo: `customtext_policy_hostname` o. `resource_hostname`. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+
+
+
+. En la página Application Settings, realice lo siguiente:
++
+** Seleccione la flecha Scripts y escriba los comandos previos y posteriores para el modo de inactividad, copia de Snapshot y la reanudación de la copia. También puede escribir los comandos previos para que se ejecuten antes de salir en caso de un fallo.
+** Seleccione una de las opciones de consistencia de backup:
++
+*** Seleccione *Sistema de archivos consistente* si desea asegurarse de que los datos almacenados en caché de los sistemas de archivos se vacían antes de crear la copia de seguridad y no se realizan operaciones en el sistema de archivos durante la creación de la copia de seguridad.
+*** Seleccione *Consistente al bloqueo* si desea asegurarse de que los datos almacenados en caché de los sistemas de archivos se vacían antes de crear la copia de seguridad.
+
+
+
+
+. En la página Policies, realice los siguientes pasos:
++
+.. Seleccione una o varias políticas de la lista desplegable.
++
+
+NOTE: Puede crear una política haciendo clic en image:../media/add_policy_from_resourcegroup.gif["agregar símbolo"].
+
++
+En la sección Configure schedules for selected policies, se muestran las políticas seleccionadas.
+
+.. Haga clic en image:../media/add_policy_from_resourcegroup.gif["agregar símbolo"] En la columna Configure Schedules para configurar una programación para la política que desea.
+.. En la ventana Add schedules for policy _policy_name_, configure la programación y, a continuación, seleccione `OK`.
++
+_policy_name_ es el nombre de la directiva seleccionada.
+
++
+Las programaciones configuradas figuran en la columna Applied Schedules.
+
+
+
+. En la página Notificación, seleccione los escenarios en los que desea enviar los correos electrónicos desde la lista desplegable *Preferencias de correo electrónico*.
++
+Debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. Si desea asociar el informe de la operación de backup ejecutada en el recurso, seleccione *Attach Job Report*.
+
++
+
+NOTE: Para las notificaciones de correo electrónico, se deben haber especificado los detalles del servidor SMTP desde la interfaz gráfica de usuario o el comando de PowerShell `Set-SmSmtpServer`.
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
++
+Se muestra la página de topología.
+
+. Haga clic en *copia de seguridad ahora*.
+. En la página Backup, realice los siguientes pasos:
++
+.. Si aplicó varias políticas al recurso, en la lista desplegable Policy seleccione la política que desea usar para el backup.
++
+Si la política seleccionada para el backup bajo demanda está asociada a una programación de backup, los backups bajo demanda se retendrán en función de la configuración de retención especificada para el tipo de programación.
+
+.. Haga clic en *copia de seguridad*.
+
+
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+

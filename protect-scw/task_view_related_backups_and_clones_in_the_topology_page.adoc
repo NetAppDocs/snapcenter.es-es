@@ -33,6 +33,13 @@ NOTE: Los clones de un backup de un reflejo de versión flexible en un volumen d
 
 NOTE: Los clones de un backup de un reflejo de versión flexible en un volumen de tipo reflejo-almacén se muestran en la vista de topología, pero el número de backups de reflejos de la vista de topología no incluye el backup de versión flexible.
 
+Si tiene una relación secundaria como Continuidad empresarial de SnapMirror (SM-BC), verá los siguientes iconos adicionales:
+
+* image:../media/topology_replica_site_up.png["sitio de réplica activo"] implica que el sitio de réplica está activo.
+* image:../media/topology_replica_site_down.png["sitio de réplica inactivo"]  implica que el sitio de réplica está caído.
+* image:../media/topology_reestablished.png["la relación se restablece"] implica que no se restableció la relación de reflejo o almacén secundario.
+
+
 .Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, seleccione el recurso o el grupo de recursos de la lista desplegable *View*.
@@ -45,7 +52,21 @@ Si el recurso está protegido, se muestra la página con el resumen seleccionado
 La sección Summary Card muestra la cantidad total de backups y clones. Únicamente para bases de datos Oracle, la sección Summary Card también muestra el número total de backups de registro.
 
 +
-Al hacer clic en el botón de actualización, se inicia una consulta del almacenamiento para ver un número preciso.
+Al hacer clic en el botón *Actualizar* se inicia una consulta del almacenamiento para mostrar un recuento preciso.
+
++
+Si se realiza una copia de seguridad habilitada para SnapLock, al hacer clic en el botón *Actualizar* se actualiza el tiempo de caducidad de SnapLock principal y secundario recuperado de ONTAP. Una programación semanal también actualiza el tiempo de caducidad de SnapLock principal y secundario recuperado de ONTAP.
+
++
+Cuando el recurso de la aplicación se distribuya entre varios volúmenes, el tiempo de caducidad de SnapLock para el backup será el tiempo de caducidad de SnapLock más largo que esté establecido para una copia de Snapshot en un volumen. El tiempo de caducidad de SnapLock más largo se recupera de ONTAP.
+
++
+Para la continuidad del negocio con SnapMirror (SM-BC), al hacer clic en el botón *Actualizar*, se actualiza el inventario de backup de SnapCenter consultando ONTAP tanto para los sitios primarios como de réplica. Una programación semanal también realiza esta actividad para todas las bases de datos que contienen una relación SM-BC.
+
++
+** Para las relaciones SM-BC, Mirror asíncrono, Vault o MirrorVault con el nuevo destino primario se deben configurar manualmente después de la conmutación al nodo de respaldo.
+** Después de la conmutación por error, es necesario crear un backup para que SnapCenter detecte la conmutación al nodo de respaldo. Puede hacer clic en *Actualizar* solo después de que se haya creado una copia de seguridad.
+
 
 . En la vista Administrar copias, haga clic en *copias de seguridad* o *clones* en el almacenamiento principal o secundario para ver los detalles de una copia de seguridad o un clon.
 +

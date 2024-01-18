@@ -32,6 +32,7 @@ NOTE: Si no hay comandos en la lista de comandos, se producirá un error en la o
 .Acerca de esta tarea
 * Las copias de backup basadas de archivos no se pueden restaurar desde SnapCenter.
 * Después de actualizar a SnapCenter 4.3, se pueden restaurar los backups realizados en SnapCenter 4.2, pero no se pueden recuperar. Para recuperar los backups realizados en SnapCenter 4.2, debe usar el estudio HANA o secuencias de comandos de recuperación HANA externas a SnapCenter.
+* Para políticas habilitadas con SnapLock, para ONTAP 9.12.1 y versiones anteriores, si especifica un periodo de bloqueo de copias snapshot, los clones creados a partir de las copias Snapshot a prueba de manipulaciones como parte de la restauración heredarán el tiempo de caducidad de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 
 .Pasos
@@ -156,6 +157,10 @@ Los comandos de desmontaje no están disponibles para los recursos de detección
 . En la página Post OPS, escriba los comandos de montaje y los comandos posteriores a la restauración que se ejecutarán después de realizar un trabajo de restauración.
 +
 Los comandos de montaje no están disponibles para los recursos detectados automáticamente.
+
++
+
+NOTE: Para los comandos previos y posteriores para la pausa, la copia de Snapshot y la reanudación de la copia, debe comprobar si existen comandos en la lista de comandos disponible en el host del plugin en la ruta _/opt/snapcenter/snapenter/scc/allowed_commands.config_ para Linux y _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc\allowed_commands_list.txt_ para Windows.
 
 . En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
 +

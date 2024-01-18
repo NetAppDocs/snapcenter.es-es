@@ -1,0 +1,95 @@
+---
+permalink: protect-scu/concept_overview_snapcenter_plug_in_for_UNIX_file_systems.html 
+sidebar: sidebar 
+keywords: overview, unix file system, plug-in for unix file system, backup, restore, clone 
+summary: El plugin para sistemas de archivos Unix admite backup, restauración y clonado de sistemas de archivos Unix de tof. 
+---
+= Tareas que pueden llevarse a cabo con el plugin de SnapCenter para sistemas de archivos Unix
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cuando el plugin para sistemas de archivos Unix está instalado en el entorno, es posible usar SnapCenter para realizar backup, restaurar y clonar sistemas de archivos Unix. También es posible ejecutar tareas complementarias a estas operaciones.
+
+* Detectar recursos
+* Hacer backup de sistemas de archivos Unix
+* Programar operaciones de backup
+* Restaurar backups de sistema de archivos
+* Clonar backups de sistema de archivos
+* Supervisar operaciones de backup, de restauración y de clonado
+
+
+
+
+== Configuraciones admitidas
+
+|===
+| Elemento | Configuración admitida 
+
+
+ a| 
+Entornos
+ a| 
+* Servidor físico
+* Servidor virtual
+
+
+
+
+ a| 
+Sistemas operativos
+ a| 
+* Red Hat Enterprise Linux
+* Oracle Linux
+* SUSE Linux Enterprise Server (SLES)
+
+
+
+
+ a| 
+Sistemas de ficheros
+ a| 
+* SAN:
++
+** Sistemas de archivos basados en LVM y no LVM
+** LVM sobre VMDK ext3, ext4 y xfs
+
+
+* NFS: NFS v3, NFS v4.x
+
+
+
+
+ a| 
+Protocolos
+ a| 
+* FC
+* FCoE
+* ISCSI
+* NFS
+
+
+
+
+ a| 
+Multivía
+ a| 
+sí
+
+|===
+
+
+== Limitaciones
+
+* No se admite la combinación de RDM y discos virtuales en un grupo de volúmenes.
+* No se admite la restauración de nivel de archivos.
++
+Sin embargo, puede realizar manualmente una restauración en el nivel de archivos clonando el backup y luego copiando los archivos manualmente.
+
+* No se admite la combinación de sistemas de archivos distribuidos entre VMDK procedentes de NFS y almacenes de datos VMFS.
+* No se admite NVMe.
+* No se admite la continuidad del negocio con SnapMirror (SM-BC).
+* No se admite el aprovisionamiento.
+

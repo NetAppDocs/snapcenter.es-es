@@ -14,13 +14,20 @@ summary: Un grupo de recursos es un contenedor donde se añaden recursos que se 
 Un grupo de recursos es un contenedor donde se añaden recursos que se quieren proteger e incluir en un backup. Permite realizar un backup en simultáneo con todos los datos que están asociados con una determinada aplicación.
 
 .Acerca de esta tarea
-Una base de datos con archivos en grupos de discos de ASM debe tener el estado «MOUNT» o «OPEN» para verificar sus backups mediante la utilidad Oracle DBVERIFY.
-
+* Una base de datos con archivos en grupos de discos de ASM debe tener el estado «MOUNT» o «OPEN» para verificar sus backups mediante la utilidad Oracle DBVERIFY.
++
 Añada una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar.
 
++
 En la siguiente imagen, se muestra la relación entre los recursos, los grupos de recursos y las políticas para las bases de datos:
 
++
 image::../media/sco_resourcegroup_policy.gif[política de sco resourcegroup]
+
+* Para políticas habilitadas con SnapLock, para ONTAP 9.12.1 y versiones anteriores, si especifica un periodo de bloqueo de copias snapshot, los clones creados a partir de las copias Snapshot a prueba de manipulaciones como parte de la restauración heredarán el tiempo de caducidad de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+* No se permite añadir bases de datos nuevas sin SM-BC a un grupo de recursos existente que contiene recursos con SM-BC.
+* No se admite la adición de bases de datos nuevas a un grupo de recursos existente en modo de conmutación al nodo de respaldo de SM-BC. Puede añadir recursos al grupo de recursos solo en estado normal o de conmutación por error.
+
 
 .Pasos
 . En el panel de navegación de la izquierda, seleccione *Recursos* y el plug-in apropiado de la lista.
@@ -41,6 +48,10 @@ Por ejemplo, si añadió HR como etiqueta a varios grupos de recursos, más adel
 Por ejemplo, customtext_resource group_policy_hostname o resource group_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
 
 .. Especifique los destinos de los archivos de registro de archivos que no desea incluir en el backup.
++
+
+NOTE: Debe utilizar exactamente el mismo destino que se estableció en Oracle, incluido el prefijo, si es necesario.
+
 
 
 . En la página Resources, seleccione un nombre de host de la base de datos Oracle en la lista desplegable *Host*.

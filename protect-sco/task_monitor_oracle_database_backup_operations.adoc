@@ -59,7 +59,7 @@ El botón *Ver registros* muestra los registros detallados para la operación se
 
 El panel Activity muestra las cinco operaciones más recientes que se ejecutaron. También muestra el momento en que se inició la operación y su estado.
 
-El panel Activity muestra información sobre las operaciones de backup, restauración, clonado y backup programado. Si utiliza el plugin para SQL Server o el plugin para Exchange Server, el panel Activity también muestra información sobre la operación de propagación.
+El panel Activity muestra información sobre las operaciones de backup, restauración, clonado y backup programado.
 
 .Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.

@@ -36,6 +36,7 @@ El valor de la tecla se puede mostrar desde swagger a través de la API: API /4.
 Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGURACIÓN de API.
 
 * La mayoría de los campos de las páginas del asistente Clone Lifecycle son autoexplicativos. Aquí se ofrece información sobre los campos que podrían presentar dificultades.
+* Para ONTAP 9.12.1 y versiones posteriores, si especifica un período de bloqueo de la copia snapshot, los clones creados a partir de estas copias Snapshot a prueba de manipulaciones heredarán la hora de caducidad de la SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 
 .Pasos

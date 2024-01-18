@@ -34,8 +34,4 @@ Los siguientes iconos aparecen en la página Jobs e indican el estado de la oper
 +
 El botón *Ver registros* muestra los registros detallados para la operación seleccionada.
 
-+
-
-IMPORTANT: Tras la operación de restauración basada en volumen, los metadatos del backup se eliminan del repositorio de SnapCenter, pero las entradas de catálogo de backup permanecen en el catálogo SAP HANA. Aunque el estado del trabajo de restauración indique image:../media/success_icon.gif["Icono de estado completado"], debe hacer clic en los detalles del trabajo para ver el signo de advertencia de algunas de las tareas secundarias. Haga clic en el signo de advertencia y elimine las entradas del catálogo de backup indicadas.
-
 

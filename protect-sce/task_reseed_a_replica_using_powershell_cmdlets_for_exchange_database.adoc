@@ -13,7 +13,7 @@ summary: Puede usar cmdlets de PowerShell para restaurar una réplica en mal est
 [role="lead"]
 Puede usar cmdlets de PowerShell para restaurar una réplica en mal estado mediante la copia más reciente del mismo host o la copia más reciente de un host alternativo.
 
-La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guía de referencia de cmdlets de SnapCenter Software"^].
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2886895["Guía de referencia de cmdlets de SnapCenter Software"^].
 
 .Pasos
 . Inicie una sesión de conexión con el servidor SnapCenter para el usuario especificado mediante el `Open-SmConnection` cmdlet.

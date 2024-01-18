@@ -19,6 +19,26 @@ Antes de usar SnapCenter para realizar backups de recursos de base de datos de O
 * En el marco de los preparativos para la protección de datos, completó tareas como instalar SnapCenter, añadir hosts, detectar bases de datos y crear conexiones del sistema de almacenamiento.
 * Si desea replicar copias de Snapshot en un almacenamiento secundario con SnapMirror o SnapVault, el administrador de SnapCenter debe haberle asignado las SVM de los volúmenes de origen y de destino.
 * Si instaló el plugin como usuario no raíz, debe asignar manualmente los permisos de ejecución a los directorios de scripts previos y posteriores.
+* Para conocer los requisitos previos y las limitaciones de Continuidad del negocio con SnapMirror (SM-BC), consulte https://docs.netapp.com/us-en/ontap/smbc/considerations-limits.html#volumes["Límites de objetos para la continuidad del negocio de SnapMirror"].
+
+
+.Acerca de esta tarea
+* SnapLock
++
+** Si se selecciona la opción 'Retain the backup copies for a specific number of days', el período de retención de SnapLock debe ser menor o igual que los días de retención mencionados.
++
+Especificar un período de bloqueo de copia Snapshot evita la eliminación de las copias Snapshot hasta que caduque el período de retención. Esto puede hacer que se conserve un mayor número de copias Snapshot que el número especificado en la política.
+
++
+Para ONTAP 9.12.1 y versiones posteriores, si especifica un período de bloqueo de la copia snapshot, los clones creados a partir de estas copias Snapshot a prueba de manipulaciones heredarán la hora de caducidad de la SnapLock. Debe limpiar manualmente los clones después del tiempo de caducidad de SnapLock.
+
++
+
+NOTE: La configuración principal de SnapLock se gestiona en la política de backup de SnapCenter y el secundario
+ONTAP gestiona la configuración de SnapLock.
+
+
+
 
 
 * Pasos*
@@ -139,6 +159,15 @@ Conserve las copias de Snapshot por una cierta cantidad de días
  a| 
 Seleccione *mantener copias Snapshot para* y, a continuación, especifique el número de días durante los que desea conservar las copias Snapshot antes de eliminarlas.
 
+
+
+ a| 
+Período de bloqueo de copia de snapshot
+ a| 
+Seleccione Snapshot copy locking period y seleccione días, meses o años.
+
+El período de retención de SnapLock debe ser inferior a 100 años.
+
 |===
 +
 
@@ -155,12 +184,24 @@ Actualizar SnapMirror tras crear una copia Snapshot local
  a| 
 Seleccione este campo para crear copias reflejadas de los conjuntos de backup en otro volumen (replicación de SnapMirror).
 
+Esta opción debe estar habilitada para SnapMirror Business Continuity (SM-BC).
+
+Durante la replicación secundaria, el tiempo de caducidad del SnapLock carga el tiempo de caducidad del SnapLock principal.
+
+Al hacer clic en el botón *Refrescar* de la página Topología, se actualiza el tiempo de caducidad de SnapLock secundario y primario que se recuperan de ONTAP.
+
 
 
  a| 
 Actualizar SnapVault después de crear una copia Snapshot local
  a| 
 Seleccione esta opción para realizar una replicación de backup disco a disco (backups de SnapVault).
+
+Cuando SnapLock se configura solo en el secundario desde ONTAP conocido como Almacén de SnapLock, al hacer clic en el botón *Refrescar* de la página Topología se actualiza el período de bloqueo en el secundario que se recupera de ONTAP.
+
+Para obtener más información sobre el Almacén SnapLock, consulte https://docs.netapp.com/us-en/ontap/snaplock/commit-snapshot-copies-worm-concept.html["Confirmar copias Snapshot a WORM en un destino de almacén"]
+
+Consulte link:..protect-sco/task_view_oracle_databse_backups_and_clones_in_the_topology_page.html["Consulte los backups y los clones de las bases de datos de Oracle en la página Topology"].
 
 
 

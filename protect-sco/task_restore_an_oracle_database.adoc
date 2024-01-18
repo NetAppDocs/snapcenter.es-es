@@ -19,14 +19,19 @@ Si instaló el plugin como usuario no raíz, debe asignar manualmente los permis
 
 *Acerca de esta tarea*
 
-La recuperación se lleva a cabo con los registros de archivos disponibles en la ubicación del registro de archivos configurado. Si la base de datos se está ejecutando en modo ARCHIVELOG, Oracle Database guarda los grupos rellenados de archivos redo log en uno o más destinos sin conexión, conocidos conjuntamente como redo log archivado. SnapCenter identifica y monta la cantidad óptima de backups de registros según el SCN especificado, la fecha y la hora seleccionadas o la opción All logs. Si los registros de archivos requeridos para la recuperación no están disponibles en la ubicación configurada, debe montar la copia Snapshot que contiene los registros y especificar la ruta como registros de archivo externos.
-
+* La recuperación se lleva a cabo con los registros de archivos disponibles en la ubicación del registro de archivos configurado. Si la base de datos se está ejecutando en modo ARCHIVELOG, Oracle Database guarda los grupos rellenados de archivos redo log en uno o más destinos sin conexión, conocidos conjuntamente como redo log archivado. SnapCenter identifica y monta la cantidad óptima de backups de registros según el SCN especificado, la fecha y la hora seleccionadas o la opción All logs. Si los registros de archivos requeridos para la recuperación no están disponibles en la ubicación configurada, debe montar la copia Snapshot que contiene los registros y especificar la ruta como registros de archivo externos.
++
 Si se migra la base de datos de ASM de ASMLIB a ASMFD, los backups creados con ASMLIB no se pueden utilizar para restaurar la base de datos. Es necesario crear backups en la configuración de ASMFD y utilizar esos backups para restaurar. De forma similar, si se migra la base de datos de ASM de ASMFD a ASMLIB, es necesario crear backups en la configuración de ASMLIB para restaurar.
 
++
 Cuando restaura una base de datos, se crea un archivo de bloqueo operativo (.sm_lock_dbsid) en el host de la base de datos de Oracle, en el directorio _/var/opt/snapcenter/sco/lock_, para evitar que se ejecuten varias operaciones en la base de datos. Después de restaurar la base de datos, se elimina automáticamente el archivo de bloqueo operativo.
 
++
 
 NOTE: No se admite la restauración de archivos SPFILE y Password.
+
+* Para políticas habilitadas con SnapLock, para ONTAP 9.12.1 y versiones anteriores, si especifica un periodo de bloqueo de copias snapshot, los clones creados a partir de las copias Snapshot a prueba de manipulaciones como parte de la restauración heredarán el tiempo de caducidad de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+
 
 * Pasos*
 

@@ -156,25 +156,40 @@ Si cualquiera de estos parámetros no se asignan al valor predeterminado, o si d
 
 . Ejecute una de las siguientes acciones, según sea necesario:
 +
-** Inicie el servicio de cargador de plugins de SnapCenter como usuario raíz:
+** Inicie el servicio de cargador de plugins de SnapCenter:
 +
- `/custom_location/NetApp/snapcenter/spl/bin/spl start`
+*** Como usuario root, ejecute: `/custom_location/NetApp/snapcenter/spl/bin/spl start`
+*** Como usuario no raíz, ejecute: `sudo /custom_location/NetApp/snapcenter/spl/bin/spl start`
+
+
 ** Detenga el servicio de cargador de plugins de SnapCenter:
 +
- `/custom_location/NetApp/snapcenter/spl/bin/spl stop`
+*** Como usuario root, ejecute: `/custom_location/NetApp/snapcenter/spl/bin/spl stop`
+*** Como usuario no raíz, ejecute: `sudo /custom_location/NetApp/snapcenter/spl/bin/spl stop`
 +
 
 NOTE: Puede utilizar la opción -force con el comando stop para detener el servicio de cargador de plugins de SnapCenter enérgicamente. Sin embargo, debe ser cauteloso antes de hacerlo, ya que también termina las operaciones existentes.
 
+
+
 ** Reinicie el servicio de cargador de plugins de SnapCenter:
 +
- `/custom_location/NetApp/snapcenter/spl/bin/spl restart`
+*** Como usuario root, ejecute: `/custom_location/NetApp/snapcenter/spl/bin/spl restart`
+*** Como usuario no raíz, ejecute: `sudo /custom_location/NetApp/snapcenter/spl/bin/spl restart`
+
+
 ** Busque el estado del servicio de cargador de plugins de SnapCenter:
 +
- `/custom_location/NetApp/snapcenter/spl/bin/spl status`
+*** Como usuario root, ejecute: `/custom_location/NetApp/snapcenter/spl/bin/spl status`
+*** Como usuario no root, ejecute: `sudo /custom_location/NetApp/snapcenter/spl/bin/spl status`
+
+
 ** Busque el cambio en el servicio de cargador de plugins de SnapCenter:
 +
- `/custom_location/NetApp/snapcenter/spl/bin/spl change`
+*** Como usuario root, ejecute: `/custom_location/NetApp/snapcenter/spl/bin/spl change`
+*** Como usuario no raíz, ejecute: `sudo /custom_location/NetApp/snapcenter/spl/bin/spl change`
+
+
 
 
 

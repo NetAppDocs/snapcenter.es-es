@@ -1,0 +1,30 @@
+---
+permalink: protect-scu/reference_prepare_for_protecting_UNIX file systems.html 
+sidebar: sidebar 
+keywords: unix file systems, preparation for protection, prerequisites 
+summary: Antes de ejecutar una operación de protección de datos, como un backup, un clon o una restauración, debe configurar el entorno. 
+---
+= Prepárese para la protección de sistemas de archivos Unix
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de ejecutar una operación de protección de datos, como un backup, un clon o una restauración, debe configurar el entorno. También debe configurar SnapCenter Server para que use las tecnologías SnapMirror y SnapVault.
+
+Para aprovechar las ventajas de las tecnologías SnapVault y SnapMirror, debe configurar e inicializar una relación de protección de datos entre el volumen de origen y el volumen de destino en el dispositivo de almacenamiento. Puede usar NetApp System Manager o la línea de comandos de la consola de almacenamiento para ejecutar estas tareas.
+
+Antes de utilizar el plugin para sistemas de archivos Unix, el administrador de SnapCenter debe instalar y configurar el servidor SnapCenter y llevar a cabo las tareas de los requisitos previos.
+
+* Instalar y configurar SnapCenter Server. link:../install/task_install_the_snapcenter_server_using_the_install_wizard.html["Leer más"^]
+* Configure el entorno de SnapCenter añadiendo conexiones con el sistema de almacenamiento. link:../install/task_add_storage_systems.html["Leer más"^]
++
+
+NOTE: SnapCenter no admite varias SVM con el mismo nombre en clústeres diferentes. Cada SVM registrada en SnapCenter con registro de SVM o de clúster debe ser única.
+
+* Añada hosts, instale los plugins y detecte los recursos.
+* Si va a utilizar SnapCenter Server para proteger sistemas de archivos Unix que residen en LUN o VMDK de VMware RDM, debe poner en marcha el plugin de SnapCenter para VMware vSphere y registrar el plugin con SnapCenter.
+* Instale Java en el host Linux.
+* Configure SnapMirror y SnapVault en ONTAP si quiere realizar una replicación de backup.
+

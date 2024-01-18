@@ -24,6 +24,7 @@ El valor de la tecla se puede mostrar desde swagger a través de la API: API /4.
 +
 Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGURACIÓN de API.
 
+* Para políticas habilitadas con SnapLock, para ONTAP 9.12.1 y versiones anteriores, si especifica un periodo de bloqueo de copias snapshot, los clones creados a partir de las copias Snapshot a prueba de manipulaciones como parte de la restauración heredarán el tiempo de caducidad de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 
 .Pasos
@@ -124,7 +125,7 @@ También debe especificar las direcciones de correo electrónico del remitente y
 Para habilitar la notificación por correo electrónico, debe tener especificados los detalles del servidor SNMP ya sea mediante la GUI o el comando de PowerShell `Set-SmSmtpServer`.
 
 +
-La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guía de referencia de cmdlets de SnapCenter Software"^].
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2886895["Guía de referencia de cmdlets de SnapCenter Software"^].
 
 . Revise el resumen y, a continuación, haga clic en *Finalizar*.
 

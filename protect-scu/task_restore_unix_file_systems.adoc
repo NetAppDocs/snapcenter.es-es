@@ -1,0 +1,58 @@
+---
+permalink: protect-scu/task_restore_unix_file_systems.html 
+sidebar: sidebar 
+keywords: restore, recover, Unix file systems 
+summary: En caso de pérdida de datos, es posible usar SnapCenter para restaurar datos. 
+---
+= Restaurar sistemas de archivos Unix
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+En caso de pérdida de datos, puede utilizar SnapCenter para restaurar sistemas de archivos Unix.
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Recursos, seleccione *Ruta* o *Grupo de recursos* en la lista *Ver*.
+. Seleccione el sistema de archivos en la vista de detalles o en la vista de detalles del grupo de recursos.
++
+Se muestra la página de topología.
+
+. En la vista Manage Copies, seleccione *copias de seguridad* en los sistemas de almacenamiento principal o secundario (reflejado o replicado).
+. Seleccione el backup en la tabla y haga clic en *image:../media/restore_icon.gif["icono de restauración"]*.
+. En la página Restore Scope:
++
+** Para los sistemas de archivos NFS, por defecto se selecciona la opción *Connect and Copy* restore. También puede seleccionar *Reversión de volumen* o *Restauración rápida*.
+** Para sistemas de archivos que no son NFS, el alcance de la restauración se selecciona según el diseño.
++
+Es posible que los nuevos archivos creados después de la copia de seguridad no estén disponibles después de la restauración, según el tipo y el diseño del sistema de archivos.
+
+
+
+. En la página PreOps, escriba los comandos previos a la restauración que se ejecutarán antes de realizar un trabajo de restauración.
+. En la página PostOps, escriba los comandos posteriores a la restauración que se ejecutarán después de realizar un trabajo de restauración.
++
+
+NOTE: Debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin en la ruta _/opt/NetApp/snapcenter/scc/etc/allowed_commands.config_.
+
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar las notificaciones por correo electrónico.
++
+También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. Si desea adjuntar el informe de la operación de restauración realizada, debe seleccionar *Adjuntar informe de trabajo*.
+
++
+
+NOTE: Para la notificación por correo electrónico, debe haber especificado los detalles del servidor SMTP a través de la interfaz gráfica de usuario o el comando Set-SmSmtpServer de PowerShell.
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
++
+
+IMPORTANT: Si la operación de restauración falla, no se admite la reversión.
+
++
+
+NOTE: En caso de restauración de un sistema de archivos que reside en el grupo de volúmenes, el contenido antiguo del sistema de archivos no se eliminará. Solo el contenido del sistema de archivos clonado se copiará al sistema de archivos de origen. Esto es aplicable cuando hay varios sistemas de archivos en el grupo de volúmenes y restauraciones predeterminadas del sistema de archivos NFS.
+
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+

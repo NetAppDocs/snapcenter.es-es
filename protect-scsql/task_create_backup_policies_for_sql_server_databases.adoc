@@ -26,18 +26,39 @@ Para obtener información sobre cómo los administradores asignan recursos a los
 +
 El valor predeterminado es FALSE.
 
+* Para obtener más información sobre continuidad del negocio con SnapMirror (SM-BC), consulte si desea obtener más información sobre requisitos previos y limitaciones https://docs.netapp.com/us-en/ontap/smbc/considerations-limits.html#volumes["Límites de objetos para la continuidad del negocio de SnapMirror"].
 
 
 .Acerca de esta tarea
-Una política de backup es un conjunto de reglas que rigen cómo gestionar y conservar backups, y con qué frecuencia se realizará un backup del recurso o del grupo de recursos. De forma adicional, se puede especificar la configuración de replicación y script. Puede especificar opciones en la política para ahorrar tiempo cuando desee reutilizarla con otro grupo de recursos.
-
+* Una política de backup es un conjunto de reglas que rigen cómo gestionar y conservar backups, y con qué frecuencia se realizará un backup del recurso o del grupo de recursos. De forma adicional, se puede especificar la configuración de replicación y script. Puede especificar opciones en la política para ahorrar tiempo cuando desee reutilizarla con otro grupo de recursos.
++
 LA RUTA_DE_SCRIPTS se define mediante la clave PredefinedWindowsScriptsDirectory ubicada en el archivo SMCoreServiceHost.exe.Config del host del plugin.
 
++
 Si es necesario, puede cambiar esta ruta y reiniciar el servicio SMcore. Se recomienda utilizar la ruta predeterminada para la seguridad.
 
++
 El valor de la tecla se puede mostrar desde swagger a través de la API: API /4.7/config settings
 
++
 Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGURACIÓN de API.
+
+* SnapLock
++
+** Si se selecciona la opción 'Retain the backup copies for a specific number of days', el período de retención de SnapLock debe ser menor o igual que los días de retención mencionados.
++
+Especificar un período de bloqueo de copia Snapshot evita la eliminación de las copias Snapshot hasta que caduque el período de retención.  Esto puede hacer que se conserve un mayor número de copias Snapshot que el número especificado en la política.
+
++
+Para ONTAP 9.12.1 y versiones posteriores, si especifica un período de bloqueo de la copia snapshot, los clones creados a partir de estas copias Snapshot a prueba de manipulaciones heredarán la hora de caducidad de la SnapLock.  Debe limpiar manualmente los clones después del tiempo de caducidad de SnapLock.
+
++
+
+NOTE: La configuración principal de SnapLock se gestiona en la política de backup de SnapCenter y la configuración secundaria de SnapLock se gestiona mediante ONTAP.
+
+
+
+
 
 
 
@@ -129,7 +150,7 @@ NOTE: En las configuraciones de clúster, los backups se conservan en cada nodo 
 Solo puede seleccionar un tipo de programación por política.
 
 +
-image::../media/backup_settings.gif[configuración de copia de seguridad]
+image::../media/backup_settings.gif[Pantalla de configuración de copia de seguridad.]
 
 +
 
@@ -192,6 +213,10 @@ NOTE: El valor de retención máximo es 1018 para recursos en ONTAP 9.4 o poster
 .. Si desea especificar el número de días durante los que desea conservar las copias Snapshot antes de eliminarlas, seleccione *mantener copias Snapshot para*.
 
 
+. Si desea especificar el período de bloqueo de la copia snapshot, seleccione *Período de bloqueo de la copia snapshot* y seleccione días, meses o años.
++
+El período de retención de SnapLock debe ser inferior a 100 años.
+
 
 
 . En la sección *Configuración de copias de seguridad completas* para la configuración de retención por hora, por día, por semana y por mes, especifique la configuración de retención para el tipo de programación seleccionado en la página Tipo de copia de seguridad.
@@ -213,9 +238,14 @@ IMPORTANT: Debe establecer el número de retención en 2 o un valor más alto si
 .. Para especificar el número de días durante los cuales desea conservar las copias snapshot antes de eliminarlas, seleccione *Mantener copias snapshot para*.
 
 
+. Si desea especificar el período de bloqueo de la copia snapshot, seleccione *Período de bloqueo de la copia snapshot* y seleccione días, meses o años.
++
+El período de retención de SnapLock debe ser inferior a 100 años.
 
-
++
 De forma predeterminada, la retención de copias de Snapshot de registro se establece en 7 días. Use el cmdlet Set-SmPolicy para cambiar la retención de la copia de Snapshot de registro.
+
+
 
 En este ejemplo se establece la retención de la copia Snapshot del registro en 2:
 
@@ -241,6 +271,15 @@ https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/Sn
 Actualice SnapMirror después de crear una copia snapshot local.
 
 . Seleccione esta opción para crear copias de SnapMirror de conjuntos de backups en otro volumen (SnapMirror).
++
+Esta opción debe estar habilitada para continuidad del negocio con SnapMirror (SM-BC) o para SnapMirror Sync (SM-S).
+
++
+Durante la replicación secundaria, el tiempo de caducidad del SnapLock carga el tiempo de caducidad del SnapLock principal. Al hacer clic en el botón *Refrescar* de la página Topología, se actualiza el tiempo de caducidad de SnapLock secundario y primario que se recuperan de ONTAP.
+
++
+Consulte link:..protect-scsql/task_view_sql_server_backups_and_clones_in_the_topology_page.html["Consulte los backups y los clones de SQL Server en la página Topology"].
+
 
 
 --
@@ -249,6 +288,18 @@ Actualice SnapMirror después de crear una copia snapshot local.
 Actualice SnapVault después de crear una copia snapshot.
 
 . Seleccione esta opción para realizar una replicación de backup de disco a disco.
++
+Durante la replicación secundaria, el tiempo de caducidad del SnapLock carga el tiempo de caducidad del SnapLock principal. Al hacer clic en el botón *Refrescar* de la página Topología, se actualiza el tiempo de caducidad de SnapLock secundario y primario que se recuperan de ONTAP.
+
++
+Cuando SnapLock se configura solo en el secundario desde ONTAP conocido como Almacén de SnapLock, al hacer clic en el botón *Refrescar* de la página Topología se actualiza el período de bloqueo en el secundario que se recupera de ONTAP.
+
++
+Para obtener más información sobre el Almacén SnapLock, consulte https://docs.netapp.com/us-en/ontap/snaplock/commit-snapshot-copies-worm-concept.html["Confirmar copias Snapshot a WORM en un destino de almacén"]
+
++
+Consulte link:..protect-scsql/task_view_sql_server_backups_and_clones_in_the_topology_page.html["Consulte los backups y los clones de SQL Server en la página Topology"].
+
 
 
 --

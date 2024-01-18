@@ -19,7 +19,7 @@ En esta sección se describen los dos tipos de recuperación ante desastres (DR)
 * Se realiza una copia de seguridad de los datos del servidor de SnapCenter y se pueden recuperar sin que se añada ningún plugin al servidor de SnapCenter ni se gestione.
 * El servidor SnapCenter secundario debe instalarse en el mismo directorio de instalación y en el mismo puerto que el servidor SnapCenter primario.
 * Para la autenticación multifactor (MFA), durante la recuperación ante desastres del servidor de SnapCenter, cierre todas las pestañas del explorador y vuelva a abrir un navegador para iniciar sesión de nuevo. Esto borrará las cookies de sesión existentes o activas y actualizará los datos de configuración correctos.
-* La funcionalidad de recuperación ante desastres de SnapCenter usa API DE REST para hacer backups de SnapCenter Server. Consulte link:../sc-automation/rest_api_workflows_disaster_recovery_of_snapcenter_server.html["Flujos de trabajo de API de REST para la recuperación ante desastres de SnapCenter Server"].
+* La funcionalidad de recuperación ante desastres de SnapCenter usa API DE REST para hacer backups de SnapCenter Server. Consulte link:../tech-refresh/task_tech_refresh_server_host.html["Flujos de trabajo de API de REST para la recuperación ante desastres de SnapCenter Server"].
 * No se realiza una copia de seguridad del archivo de configuración relacionado con la configuración de auditoría en un backup de la recuperación ante desastres ni en el servidor de recuperación ante desastres después de la operación de restauración. Debe repetir manualmente la configuración del registro de auditoría.
 
 

@@ -31,7 +31,9 @@ Para Linux: _/var/opt/snapcenter/scc/allowed_Commands_list.txt_
 NOTE: Si no hay comandos en la lista de comandos, se producirá un error en la operación.
 
 .Acerca de esta tarea
-Para obtener más información sobre las limitaciones de las operaciones de división de clones, consulte http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["Guía de gestión de almacenamiento lógico de ONTAP 9"^].
+* Para obtener más información sobre las limitaciones de las operaciones de división de clones, consulte http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["Guía de gestión de almacenamiento lógico de ONTAP 9"^].
+* Para políticas habilitadas con SnapLock, para ONTAP 9.12.1 y versiones anteriores, si especifica un periodo de bloqueo de copias snapshot, los clones creados a partir de las copias Snapshot a prueba de manipulaciones como parte de la restauración heredarán el tiempo de caducidad de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+
 
 .Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
@@ -116,6 +118,10 @@ Ejemplo para NFS:
 
 +
  mount VSERVER_DATA_IP:%VOLUME_NAME_Clone /mnt
++
+
+NOTE: Para los comandos previos y posteriores para la pausa, la copia de Snapshot y la reanudación de la copia, debe comprobar si existen comandos en la lista de comandos disponible en el host del plugin en la ruta _/opt/snapcenter/snapenter/scc/allowed_commands.config_ para Linux y _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc\allowed_commands_list.txt_ para Windows.
+
 
 
 . En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.

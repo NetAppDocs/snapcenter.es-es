@@ -32,7 +32,17 @@ El administrador de SnapCenter debe haberle asignado las instancias de SVM de lo
 .Acerca de esta tarea
 * Una política de backup es un conjunto de reglas que rigen cómo gestionar, programar y retener backups. De forma adicional, puede definir la configuración de replicación, script y aplicaciones.
 * Puede especificar opciones en la política para ahorrar tiempo cuando desee reutilizarla con otro grupo de recursos.
+* SnapLock
++
+** Si se selecciona la opción 'Retain the backup copies for a specific number of days', el período de retención de SnapLock debe ser menor o igual que los días de retención mencionados.
+** Especificar un período de bloqueo de copia Snapshot evita la eliminación de las copias Snapshot hasta que caduque el período de retención. Esto puede hacer que se conserve un mayor número de copias Snapshot que el número especificado en la política.
+** Para ONTAP 9.12.1 y versiones posteriores, si especifica un período de bloqueo de la copia snapshot, los clones creados a partir de estas copias Snapshot a prueba de manipulaciones heredarán la hora de caducidad de la SnapLock. Debe limpiar manualmente los clones después del tiempo de caducidad de SnapLock.
 
+
+
+
+
+NOTE: La configuración principal de SnapLock se gestiona en la política de backup de SnapCenter y la configuración secundaria de SnapLock se gestiona mediante ONTAP.
 
 .Pasos
 . En el panel de navegación de la izquierda, haga clic en *Configuración*.
@@ -82,6 +92,15 @@ Conserve las copias de Snapshot por una cierta cantidad de días
  a| 
 Seleccione *mantener copias Snapshot para* y, a continuación, especifique el número de días durante los que desea conservar las copias Snapshot antes de eliminarlas.
 
+
+
+ a| 
+Período de bloqueo de copia de snapshot
+ a| 
+Seleccione Snapshot copy locking period y seleccione días, meses o años.
+
+El período de retención de SnapLock debe ser inferior a 100 años.
+
 |===
 . En la página *Replicación*, especifique la configuración de replicación:
 +
@@ -96,12 +115,27 @@ Seleccione este campo para crear copias reflejadas de los conjuntos de backup en
 
 Si la relación en ONTAP es del tipo Mirror/Vault y solo se selecciona esta opción, la copia de Snapshot creada en el origen no se transferirá al destino, pero figurará en el destino. Si esta copia de Snapshot se selecciona del destino con el fin de realizar una operación de recuperación, aparece un mensaje de error indicando que la ubicación secundaria no está disponible para el backup reflejado/en almacenamiento.
 
+Durante la replicación secundaria, el tiempo de caducidad del SnapLock carga el tiempo de caducidad del SnapLock principal.
+
+Al hacer clic en el botón *Refrescar* de la página Topología, se actualiza el tiempo de caducidad de SnapLock secundario y primario que se recuperan de ONTAP.
+
+Consulte link:protect-scc/task_view_custom_plug_in_resource_backups_and_clones_in_the_topology_page.html["Consulte los clones y backups relacionados con los recursos de plugins personalizados en la página Topology"].
+
 
 
  a| 
 *Actualizar SnapVault después de crear una copia Snapshot local*
  a| 
 Seleccione esta opción para realizar una replicación de backup disco a disco (backups de SnapVault).
+
+Durante la replicación secundaria, el tiempo de caducidad del SnapLock carga el tiempo de caducidad del SnapLock principal. Al hacer clic en el botón *Refrescar* de la página Topología, se actualiza el tiempo de caducidad de SnapLock secundario y primario que se recuperan de ONTAP.
+
+Cuando SnapLock se configura solo en el secundario desde ONTAP conocido como Almacén de SnapLock, al hacer clic en el botón *Refrescar* de la página Topología se actualiza el período de bloqueo en el secundario que se recupera de ONTAP.
+
+Para obtener más información sobre el almacén de SnapLock, consulte Confirmar copias snapshot en WORM en un almacén
+destino
+
+Consulte link:protect-scc/task_view_custom_plug_in_resource_backups_and_clones_in_the_topology_page.html["Consulte los clones y backups relacionados con los recursos de plugins personalizados en la página Topology"].
 
 
 

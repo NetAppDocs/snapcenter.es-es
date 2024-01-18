@@ -20,7 +20,9 @@ Es posible usar SnapCenter para restaurar recursos. Las capacidades de las opera
 
 
 .Acerca de esta tarea
-La operación de restauración predeterminada solo restaura objetos del almacenamiento. Las operaciones de restauración en el nivel de la aplicación solo pueden realizarse si el plugin personalizado incluye dicha capacidad.
+* La operación de restauración predeterminada solo restaura objetos del almacenamiento. Las operaciones de restauración en el nivel de la aplicación solo pueden realizarse si el plugin personalizado incluye dicha capacidad.
+* Para políticas habilitadas con SnapLock, para ONTAP 9.12.1 y versiones anteriores, si especifica un periodo de bloqueo de copias snapshot, los clones creados a partir de las copias Snapshot a prueba de manipulaciones como parte de la restauración heredarán el tiempo de caducidad de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+
 
 .Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.

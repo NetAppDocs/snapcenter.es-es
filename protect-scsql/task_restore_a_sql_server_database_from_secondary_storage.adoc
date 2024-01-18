@@ -19,6 +19,9 @@ Puede restaurar bases de datos de SQL Server con backup a partir de LUN físicos
 * La mayoría de los campos del asistente Restore se explican en el proceso de restauración básico. Aquí se ofrece información sobre algunos de los campos que podrían presentar dificultades.
 
 
+.Acerca de esta tarea
+Para políticas habilitadas con SnapLock, para ONTAP 9.12.1 y versiones anteriores, si especifica un periodo de bloqueo de copias snapshot, los clones creados a partir de las copias Snapshot a prueba de manipulaciones como parte de la restauración heredarán el tiempo de caducidad de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+
 .Pasos
 . En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione *complemento SnapCenter para SQL Server* en la lista.
 . En la página Resources, seleccione *Database* o *Resource Group* en la lista desplegable *View*.

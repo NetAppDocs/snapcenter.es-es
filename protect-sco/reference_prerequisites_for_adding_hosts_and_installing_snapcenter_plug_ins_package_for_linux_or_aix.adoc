@@ -94,8 +94,8 @@ NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de alm
  a| 
 Paquetes de software obligatorios
  a| 
-* Tipos Java 1.8.x (64 bits) Oracle Java y OpenJDK
-* Tipos de Java 11 (64 bits) Oracle Java y OpenJDK
+* Java 1,8.x (64 bits) Oracle Java y OpenJDK
+* Java 11 (64 bits) Oracle Java y OpenJDK
 
 
 

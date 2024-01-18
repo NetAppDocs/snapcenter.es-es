@@ -41,13 +41,29 @@ El valor de la tecla se puede mostrar desde swagger a través de la API: API /4.
 +
 Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGURACIÓN de API.
 
-
-
++
 |===
 
 
 | *Mejor práctica:* es mejor configurar la directiva de retención secundaria en función del número de copias de seguridad completas y de registros, en general, que desee conservar. Al configurar las políticas de retención secundarias, tenga en cuenta que cuando las bases de datos y los registros de volúmenes diferentes, cada backup puede tener tres copias de Snapshot y cuando las bases de datos y los registros están en el mismo volumen, cada backup puede tener dos copias de Snapshot. 
 |===
+* SnapLock
++
+** Si se selecciona la opción 'Retain the backup copies for a specific number of days', el período de retención de SnapLock debe ser menor o igual que los días de retención mencionados.
++
+Especificar un período de bloqueo de copia Snapshot evita la eliminación de las copias Snapshot hasta que caduque el período de retención.  Esto puede hacer que se conserve un mayor número de copias Snapshot que el número especificado en la política.
+
++
+Para ONTAP 9.12.1 y versiones posteriores, si especifica un período de bloqueo de la copia snapshot, los clones creados a partir de estas copias Snapshot a prueba de manipulaciones heredarán la hora de caducidad de la SnapLock.  Debe limpiar manualmente los clones después del tiempo de caducidad de SnapLock.
+
++
+
+NOTE: La configuración principal de SnapLock se gestiona en la política de backup de SnapCenter y la configuración secundaria de SnapLock se gestiona mediante ONTAP.
+
+
+
+
+
 .Pasos
 . En el panel de navegación de la izquierda, haga clic en *Configuración*.
 . En la página Configuración, haga clic en *Directivas*.
@@ -190,6 +206,15 @@ Seleccione la opción *Keep log backups for last* y especifique el número de d�
 
 Se conservan los backups de registros por la cantidad de días de backups completos.
 
+
+
+ a| 
+Período de bloqueo de copia de snapshot
+ a| 
+Seleccione *Período de bloqueo de copia de instantánea* y seleccione Días, Meses o Años.
+
+El período de retención de SnapLock debe ser inferior a 100 años.
+
 |===
 +
 Si seleccionó *Log backup* como tipo de copia de seguridad, las copias de seguridad de registros se conservan como parte de la configuración de retención de último minuto para las copias de seguridad completas.
@@ -213,6 +238,15 @@ Si se supera la cantidad especificada de backups completos, se eliminarán los b
 Retener los backups completos por una cantidad determinada de días
  a| 
 Seleccione la opción *Keep Snapshot copies for* y especifique la cantidad de días que se conservarán las copias de Snapshot (copias de seguridad completas).
+
+
+
+ a| 
+Período de bloqueo de copia de snapshot
+ a| 
+Seleccione *Período de bloqueo de copia de instantánea* y seleccione Días, Meses o Años.
+
+El período de retención de SnapLock debe ser inferior a 100 años.
 
 |===
 +
@@ -239,6 +273,12 @@ En el ejemplo, el valor 10 indica que se conservan hasta 10 backups de registros
 
  a| 
 Actualizar SnapMirror tras crear una copia Snapshot local
+
+Durante la replicación secundaria, el tiempo de caducidad del SnapLock carga el tiempo de caducidad del SnapLock principal.
+
+Al hacer clic en el botón *Refrescar* de la página Topología, se actualiza el tiempo de caducidad de SnapLock secundario y primario que se recuperan de ONTAP.
+
+Consulte link:..protect-sce/task_view_exchange_backups_in_the_topology_page.html["Consulte los backups de Exchange en la página Topology"].
  a| 
 Seleccione esta opción para mantener copias de SnapMirror de conjuntos de backups en otro volumen (SnapMirror).
 

@@ -1,0 +1,195 @@
+---
+permalink: protect-scu/task_configure_snapcenter_plug_in_loader_service.html 
+sidebar: sidebar 
+keywords: SPL, plug-in loader service 
+summary: El servicio de cargador de plugins de SnapCenter carga el paquete del plugin para Linux con el fin de interactuar con el servidor de SnapCenter. El servicio de cargador de plugins de SnapCenter se instala cuando se instala el paquete de plugins de SnapCenter para Linux. 
+---
+= Configure el servicio de cargador de plugins de SnapCenter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El servicio de cargador de plugins de SnapCenter carga el paquete del plugin para Linux con el fin de interactuar con el servidor de SnapCenter. El servicio de cargador de plugins de SnapCenter se instala cuando se instala el paquete de plugins de SnapCenter para Linux.
+
+*Acerca de esta tarea*
+
+Después de instalar el paquete de plugins de SnapCenter para Linux, el servicio de cargador de plugins de SnapCenter se inicia automáticamente. Si el servicio de cargador de plugins de SnapCenter no se inicia de forma automática, tendrá que:
+
+* Asegúrese de que no se haya eliminado el directorio donde está funcionando el plugin
+* Aumente el espacio de la memoria asignado a la máquina virtual Java
+
+
+El archivo spl.properties, que se encuentra en _/custom_location/NetApp/snapcenter/spl/etc/_, contiene los parámetros siguientes. Los valores predeterminados se asignan a estos parámetros.
+
+|===
+| Nombre del parámetro | Descripción 
+
+
+ a| 
+NIVEL_REGISTRO
+ a| 
+Muestra los niveles de los registros que se admiten.
+
+Los posibles valores son TRACE, DEBUG, INFO, WARN, ERROR, Y FATAL.
+
+
+
+ a| 
+SPL_PROTOCOL
+ a| 
+Muestra el protocolo que admite el cargador del plugin de SnapCenter.
+
+Solo se admite el protocolo HTTPS. Puede agregar el valor si falta el valor predeterminado.
+
+
+
+ a| 
+SNAPCENTER_SERVER_PROTOCOL
+ a| 
+Muestra el protocolo compatible con SnapCenter Server.
+
+Solo se admite el protocolo HTTPS. Puede agregar el valor si falta el valor predeterminado.
+
+
+
+ a| 
+SKIP_JAVAHOME_UPDATE
+ a| 
+De forma predeterminada, el servicio SPL detecta la ruta de Java y el parámetro update JAVA_HOME.
+
+Por lo tanto, el valor predeterminado se establece en FALSE. Puede establecer EN TRUE si desea deshabilitar el comportamiento predeterminado y corregir manualmente la ruta de acceso java.
+
+
+
+ a| 
+SPL_KEYSTORE_PASS
+ a| 
+Muestra la contraseña del archivo keystore.
+
+Puede cambiar este valor solo si cambia la contraseña o crea un nuevo archivo keystore.
+
+
+
+ a| 
+SPL_PORT
+ a| 
+Muestra el número de puerto en el que se está ejecutando el cargador del plugin de SnapCenter.
+
+Puede agregar el valor si falta el valor predeterminado.
+
+
+NOTE: No debe cambiar el valor después de instalar los plugins.
+
+
+
+ a| 
+SNAPCENTER_SERVER_HOST
+ a| 
+Muestra la dirección IP o el nombre de host del servidor SnapCenter.
+
+
+
+ a| 
+SPL_KEYSTORE_RUTA
+ a| 
+Muestra la ruta absoluta del archivo keystore.
+
+
+
+ a| 
+SNAPCENTER_SERVER_PORT
+ a| 
+Muestra el número de puerto en el que se está ejecutando el servidor SnapCenter.
+
+
+
+ a| 
+LOGS_MAX_COUNT
+ a| 
+Muestra el número de archivos de registro del cargador del plugin de SnapCenter que se conservan en la carpeta _/custom_location/snapcenter/spl/logs_.
+
+El valor predefinido se establece en 5000. Si la cantidad es superior al valor especificado, se conservan los 5000 últimos archivos modificados. La comprobación del número de archivos se realiza de forma automática cada 24 horas desde el momento en que se inicia el servicio de cargador de plugins de SnapCenter.
+
+
+NOTE: Si elimina manualmente el archivo spl.properties, el número de archivos que se desea conservar se establece en 9999.
+
+
+
+ a| 
+JAVA_HOME
+ a| 
+Muestra la ruta del directorio absoluto DE JAVA_HOME que se utiliza para iniciar el servicio SPL.
+
+Esta ruta se determina durante la instalación y como parte del SPL de inicio.
+
+
+
+ a| 
+LOG_MAX_SIZE
+ a| 
+Muestra el tamaño máximo del archivo de registro de trabajos.
+
+Una vez alcanzado el tamaño máximo, el archivo de registro se comprime y los registros se escriben en el nuevo archivo de ese trabajo.
+
+
+
+ a| 
+RETAIN_LOGS_OF_LAST_DAYS
+ a| 
+Muestra el número de días hasta los que se conservan los registros.
+
+
+
+ a| 
+ENABLE_CERTIFICATE_VALIDATION
+ a| 
+Muestra TRUE cuando la validación de certificados de CA está habilitada para el host.
+
+Puede habilitar o deshabilitar este parámetro editando la versión spl.properties o bien mediante la interfaz gráfica de usuario o el cmdlet de SnapCenter.
+
+|===
+Si cualquiera de estos parámetros no se asignan al valor predeterminado, o si desea asignar o cambiar el valor, puede modificar el archivo spl.properties. También puede verificar el archivo spl.properties y editarlo para solucionar los problemas relacionados con los valores que se asignan a los parámetros. Después de modificar el archivo spl.properties, tendrá que reiniciar el servicio de cargador de plugins de SnapCenter.
+
+* Pasos*
+
+. Ejecute una de las siguientes acciones, según sea necesario:
++
+** Inicie el servicio de cargador de plugins de SnapCenter:
++
+*** Como usuario root, ejecute: `/custom_location/NetApp/snapcenter/spl/bin/spl start`
+*** Como usuario no raíz, ejecute: `sudo /custom_location/NetApp/snapcenter/spl/bin/spl start`
+
+
+** Detenga el servicio de cargador de plugins de SnapCenter:
++
+*** Como usuario root, ejecute: `/custom_location/NetApp/snapcenter/spl/bin/spl stop`
+*** Como usuario no raíz, ejecute: `sudo /custom_location/NetApp/snapcenter/spl/bin/spl stop`
++
+
+NOTE: Puede utilizar la opción -force con el comando stop para detener el servicio de cargador de plugins de SnapCenter enérgicamente. Sin embargo, debe ser cauteloso antes de hacerlo, ya que también termina las operaciones existentes.
+
+
+
+** Reinicie el servicio de cargador de plugins de SnapCenter:
++
+*** Como usuario root, ejecute: `/custom_location/NetApp/snapcenter/spl/bin/spl restart`
+*** Como usuario no raíz, ejecute: `sudo /custom_location/NetApp/snapcenter/spl/bin/spl restart`
+
+
+** Busque el estado del servicio de cargador de plugins de SnapCenter:
++
+*** Como usuario root, ejecute: `/custom_location/NetApp/snapcenter/spl/bin/spl status`
+*** Como usuario no root, ejecute: `sudo /custom_location/NetApp/snapcenter/spl/bin/spl status`
+
+
+** Busque el cambio en el servicio de cargador de plugins de SnapCenter:
++
+*** Como usuario root, ejecute: `/custom_location/NetApp/snapcenter/spl/bin/spl change`
+*** Como usuario no raíz, ejecute: `sudo /custom_location/NetApp/snapcenter/spl/bin/spl change`
+
+
+
+
+

@@ -19,19 +19,26 @@ Si instaló el plugin como usuario no raíz, debe asignar manualmente los permis
 
 *Acerca de esta tarea*
 
-La operación de clonado crea una copia de los archivos de datos de la base de datos y, luego, crea nuevos archivos de registro de recuperación en línea y archivos de control. La base de datos puede recuperarse opcionalmente a una hora específica, según las opciones de recuperación especificadas.
-
+* La operación de clonado crea una copia de los archivos de datos de la base de datos y, luego, crea nuevos archivos de registro de recuperación en línea y archivos de control. La base de datos puede recuperarse opcionalmente a una hora específica, según las opciones de recuperación especificadas.
++
 
 NOTE: Se produce un error en la clonado si intenta clonar un backup que se creó en un host Linux en un host AIX o viceversa.
 
++
 SnapCenter crea una base de datos independiente cuando se clona desde un backup de base de datos de Oracle RAC. SnapCenter admite la creación de un clon desde el backup de bases de datos Data Guard en espera y Active Data Guard en espera.
 
++
 Durante la clonado, SnapCenter monta la cantidad óptima de backups de registros basados en SCN o dat y el tiempo para las operaciones de recuperación. Después de la recuperación, el backup de registros se desasocia. Todos estos clones están montados en _/var/opt/snapcenter/scu/Clones/_. Si está usando ASM sobre NFS, debe agregar _/var/opt/snapcenter/scu/clones/*/*/*_ a la ruta de acceso existente definida en el parámetro asm_diskstring.
 
++
 Mientras se clona un backup de una base de datos ASM en un entorno SAN, se crean reglas udev para el host clonado en _/etc/udev/rules.d/999-scu-netapp.rules_. Estas reglas udev asociadas con los dispositivos host clonados se eliminan cuando se elimina el clon.
 
++
 
 NOTE: En una configuración de Flex ASM, no puede realizar la operación de clonado en nodos Leaf si la cardinalidad es menor que el número de nodos del clúster RAC.
+
+* Para políticas habilitadas con SnapLock, para ONTAP 9.12.1 y versiones anteriores, si especifica un periodo de bloqueo de copias snapshot, los clones creados a partir de las copias Snapshot a prueba de manipulaciones como parte de la restauración heredarán el tiempo de caducidad de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+
 
 * Pasos*
 

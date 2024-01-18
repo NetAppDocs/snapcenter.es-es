@@ -80,7 +80,7 @@ Si va a montar el backup de una base de datos de ASM, aparece la ruta de acceso 
 
 +
 La información relativa a los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando Get-Help _command_name_.
-Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2886206["Guía de referencia de comandos del software SnapCenter"^].
+Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2886896["Guía de referencia de comandos del software SnapCenter"^].
 
 
 

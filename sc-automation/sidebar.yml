@@ -14,13 +14,8 @@ entries:
   url: "/sc-automation/concept_input_variables_controlling_an_api_request.html"
 - title: Interpretación de una respuesta API
   url: "/sc-automation/concept_interpreting_an_api_response.html"
-- title: API de REST compatibles
-  entries:
-  - title: API DE REST compatibles con SnapCenter Server y los plugins
-    url: "/sc-automation/reference_supported_rest_apis.html"
-  - title: API DE REST compatible con la recuperación ante desastres de SnapCenter
-      Server
-    url: "/sc-automation/rest_api_workflows_disaster_recovery_of_snapcenter_server.html"
+- title: API DE REST compatibles con SnapCenter Server y los plugins
+  url: "/sc-automation/reference_supported_rest_apis.html"
 - title: Cómo acceder a las API de REST a través de la página web de API de Swagger
   url: "/sc-automation/task_how to_access_rest_apis_using_the_swagger_api_web_page.html"
 - title: Comience con la API DE REST

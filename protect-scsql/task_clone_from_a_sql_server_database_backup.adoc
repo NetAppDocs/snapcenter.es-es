@@ -41,6 +41,9 @@ Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGU
 
 NOTE: Para los entornos virtuales (VMDK/RDM), asegúrese de que el punto de montaje es un disco dedicado.
 
+* Para políticas habilitadas con SnapLock, para ONTAP 9.12.1 y versiones anteriores, si especifica un periodo de bloqueo de copias snapshot, los clones creados a partir de las copias Snapshot a prueba de manipulaciones heredarán el tiempo de caducidad de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+
+
 .Pasos
 . En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione *SnapCenter Plug-in for SQL Server* de la lista.
 . En la página Resources, seleccione *Database* o *Resource Group* en la lista *View*.

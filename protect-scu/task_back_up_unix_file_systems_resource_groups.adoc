@@ -1,0 +1,34 @@
+---
+permalink: protect-scu/task_back_up_unix_file_systems_resource_groups.html 
+sidebar: sidebar 
+keywords: backup, resource group 
+summary: Se realiza una operación de backup del grupo de recursos con todos los recursos definidos en el grupo. 
+---
+= Realizar un backup de los grupos de recursos de sistemas de archivos Unix
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede realizar una copia de seguridad de los sistemas de archivos Unix definidos en el grupo de recursos. Puede realizar un backup del grupo de recursos bajo demanda en la página Resources. Si el grupo de recursos tiene una política anexada y una programación configurada, los backups se crean según esa programación.
+
+.Pasos
+. En el panel de navegación de la izquierda, seleccione *Recursos* y el plug-in apropiado de la lista.
+. En la página Resources, seleccione *Resource Group* en la lista *View*.
+. Escriba el nombre del grupo de recursos en el cuadro de búsqueda o haga clic en image:../media/filter_icon.png["Icono de filtro"], y seleccione la etiqueta.
++
+Haga clic en image:../media/filter_icon.png["Icono de filtro"] para cerrar el panel de filtros.
+
+. En la página Resource Group, seleccione el grupo de recursos que desea incluir en un backup.
+. En la página Backup, realice los siguientes pasos:
++
+.. Si tiene varias políticas asociadas con el grupo de recursos, seleccione la política de copia de seguridad que desea usar en la lista desplegable *Política*.
++
+Si la política seleccionada para el backup bajo demanda está asociada a una programación de backup, los backups bajo demanda se retendrán en función de la configuración de retención especificada para el tipo de programación.
+
+.. Seleccione *copia de seguridad*.
+
+
+. Controla el progreso seleccionando *Monitor > Trabajos*.
+

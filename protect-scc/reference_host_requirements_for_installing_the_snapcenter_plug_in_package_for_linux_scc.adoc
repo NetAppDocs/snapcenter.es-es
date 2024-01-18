@@ -47,7 +47,7 @@ NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de alm
  a| 
 Paquetes de software obligatorios
  a| 
-Tipos de Java 1.8 (64 bits)Oracle Java o OpenJDK
+Java 1,8 (64 bits) Oracle Java u OpenJDK
 
 Si ha actualizado JAVA a la versión más reciente, debe asegurarse de que la opción JAVA_HOME ubicada en /var/opt/snapcenter/spl/etc/spl.properties esté configurada en la versión DE JAVA correcta y en la ruta de acceso correcta.
 
