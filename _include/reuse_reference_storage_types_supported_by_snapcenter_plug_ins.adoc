@@ -5,7 +5,7 @@
 SnapCenter es compatible con una gran variedad de tipos de almacenamiento, tanto en máquinas físicas como virtuales. Antes de instalar el paquete para el host, es necesario verificar que el tipo de almacenamiento sea compatible.
 
 Windows Server es compatible con el aprovisionamiento y la protección de datos de SnapCenter. Para obtener la información más reciente sobre las versiones compatibles, consulte
-https://imt.netapp.com/matrix/imt.jsp?components=112389;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+https://imt.netapp.com/matrix/imt.jsp?components=116859;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 |===
 | Máquina | Tipo de almacenamiento | Aprovisionamiento con | Notas de soporte 

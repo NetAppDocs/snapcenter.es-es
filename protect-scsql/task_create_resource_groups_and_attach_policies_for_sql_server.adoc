@@ -16,7 +16,7 @@ Un grupo de recursos es un contenedor al cual se añaden recursos que se quieren
 Puede proteger los recursos individualmente sin crear un grupo de recursos nuevo. Puede realizar backups del recurso protegido.
 
 .Acerca de esta tarea
-* Para políticas habilitadas con SnapLock, para ONTAP 9.12.1 y versiones anteriores, si especifica un periodo de bloqueo de copias snapshot, los clones creados a partir de las copias Snapshot a prueba de manipulaciones heredarán el tiempo de caducidad de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+* Para ONTAP 9.12.1 y versiones posteriores, los clones creados a partir de las copias snapshot de SnapVault de SnapLock como parte de la restauración heredarán el tiempo de caducidad de Vault de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 * No se permite añadir bases de datos nuevas sin SM-BC a un grupo de recursos existente que contiene recursos con SM-BC.
 * No se admite la adición de bases de datos nuevas a un grupo de recursos existente en modo de conmutación al nodo de respaldo de SM-BC. Puede añadir recursos al grupo de recursos solo en estado normal o de conmutación por error.
 
