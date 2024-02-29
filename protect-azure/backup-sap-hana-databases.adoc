@@ -1,0 +1,58 @@
+---
+permalink: protect-azure/backup-sap-hana-databases.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for SAP HANA Database, back up, databases, Azure NetApp Files 
+summary: Realice un backup del recurso desde la página Resources. 
+---
+= Realizar un backup de las bases de datos SAP HANA que se ejecutan en Azure NetApp Files
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si un recurso aún no es parte de ningún grupo de recursos, es posible realizar backups del recurso desde la página Resources.
+
+.Pasos
+. En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
+. En la página Recursos, filtre los recursos de la lista desplegable *Ver* en función del tipo de recurso.
+. Seleccione el recurso que desea incluir en el backup.
+. En la página Resources, seleccione *Use custom name format for Snapshot copy* y, a continuación, escriba un nombre personalizado que desee usar para el nombre de la copia de Snapshot.
+. En la página Application Settings, realice lo siguiente:
++
+.. Seleccione la flecha *backups* para establecer opciones de copia de seguridad adicionales.
+.. Seleccione la flecha *Scripts* para ejecutar los comandos previos y posteriores para las operaciones de inactividad, copia Snapshot y desactivación.
+.. Seleccione la flecha *Configuraciones personalizadas* y, a continuación, introduzca los pares de valores personalizados necesarios para todos los trabajos que utilizan este recurso.
+.. Seleccione la *Herramienta de copia de instantáneas > SnapCenter sin consistencia del sistema de archivos* para crear copias snapshot.
++
+La opción *File System Consistency* solo se aplica a las aplicaciones que se ejecutan en hosts de Windows.
+
+
+
+. En la página Policies, realice los siguientes pasos:
++
+.. Seleccione una o varias políticas de la lista desplegable.
+.. Seleccione *image:../media/add_policy_from_resourcegroup.gif[""]* En la columna Configurar programaciones de la directiva para la que desea configurar una programación.
+.. En el cuadro de diálogo Add schedules for policy _policy_name_, configure la programación y, a continuación, seleccione *OK*.
++
+_policy_name_ es el nombre de la directiva seleccionada.
+
+
+
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
++
+También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. SMTP también debe configurarse en *Ajustes* > *Ajustes globales*.
+
+. Revisa el resumen y luego selecciona *Finalizar*.
+. Seleccione *Back up Now*.
+. En la página Backup, realice los siguientes pasos:
++
+.. Si hay varias políticas asociadas con el recurso, en la lista desplegable *Policy*, seleccione la política que desea usar para la copia de seguridad.
++
+Si la política seleccionada para el backup bajo demanda está asociada a una programación de backup, los backups bajo demanda se retendrán en función de la configuración de retención especificada para el tipo de programación.
+
+
+
+. Seleccione *copia de seguridad*.
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+

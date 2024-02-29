@@ -1,0 +1,35 @@
+---
+permalink: protect-azure/create-backup-policies-oracle.html 
+sidebar: sidebar 
+keywords: create policies, Oracle, backup policies 
+summary: Cree una política de backup para el recurso o grupo de recursos que desea incluir en un backup. 
+---
+= Crear políticas de backup para bases de datos de Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de usar SnapCenter para realizar backups de recursos de base de datos de Oracle, debe crear una política de backup para el recurso o el grupo de recursos que se respaltendrá.
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Configuración*.
+. En la página Configuración, haga clic en *Directivas*.
+. Seleccione Oracle Database en la lista desplegable.
+. Haga clic en *Nuevo*.
+. En la página Name, escriba el nombre de la política y una descripción.
+. En la página Backup Type, realice los siguientes pasos:
++
+.. Seleccione el tipo de backup como backup online o sin conexión.
+.. Especifique la frecuencia de programación.
+.. Si desea catalogar la copia de seguridad con Oracle Recovery Manager (RMAN), seleccione *Catalog backup with Oracle Recovery Manager (RMAN)*.
+.. Si desea reducir los registros de archivos después de la copia de seguridad, seleccione *Prune archive logs after backup*.
+.. Especifique la configuración de eliminación de archive log.
+
+
+. En la página Retention, especifique la configuración de retención.
+. En la página Script, introduzca la ruta y los argumentos del script previo o script posterior que desea ejecutar antes o después de la operación de backup, según corresponda.
+. En la página Verification, seleccione la programación de backup para la que desea realizar la operación de verificación e introduzca la ruta y los argumentos del script previo o posterior que desea ejecutar antes o después de la operación de verificación, según corresponda.
+. Revise el resumen y haga clic en *Finalizar*.
+

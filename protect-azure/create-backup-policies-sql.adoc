@@ -1,0 +1,69 @@
+---
+permalink: protect-azure/create-backup-policies-sql.html 
+sidebar: sidebar 
+keywords: create policies, sql, backup policies 
+summary: Cree una política de backup para el recurso o grupo de recursos que desea incluir en un backup. 
+---
+= Crear políticas de backup para bases de datos de SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible crear una política de backup para el recurso o el grupo de recursos antes de usar SnapCenter con el fin de realizar un backup de los recursos de SQL Server. También es posible crear una política de backup en el momento de crear un grupo de recursos o realizar un backup de un único recurso.
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Configuración*.
+. En la página Configuración, haga clic en *Directivas*.
+. Haga clic en *Nuevo*.
+. En la página Name, escriba el nombre de la política y una descripción.
+. En la página Settings, realice los siguientes pasos:
++
+.. Seleccione el tipo de backup.
++
+... Seleccione *Full Backup and Log Backup* si desea realizar una copia de seguridad de los archivos de la base de datos y los registros de transacciones.
+... Seleccione *Full Backup* si desea realizar una copia de seguridad solo de los archivos de la base de datos.
+... Seleccione *Log Backup* si desea realizar una copia de seguridad solo de los registros de transacciones.
+... Seleccione *Copia de seguridad de solo copia* si desea realizar una copia de seguridad de sus recursos utilizando otra aplicación.
+
+
+.. En la sección Availability Group Settings, realice las siguientes acciones:
++
+... Seleccione Backup on preferred backup replica si desea realizar un backup solo en la réplica.
+... Seleccione la réplica principal o secundaria del AG para el backup.
+... Seleccione la prioridad de backup.
+
+
+.. Especifique el tipo de programación.
+
+
+. En la página Retention, según el tipo de backup seleccionado, especifique la configuración de retención.
++
+
+NOTE: No se admite la replicación a almacenamiento secundario.
+
+. En la página Verification, realice los siguientes pasos:
++
+.. En la sección Run verification for following backup schedules, seleccione la frecuencia de backup.
+.. En la sección Database consistency check options, realice las siguientes acciones:
++
+... Seleccione *limitar la estructura de integridad a la estructura física de la base de datos (PHYSICAL_ONLY)* para limitar la comprobación de integridad a la estructura física de la base de datos y detectar páginas dañadas, errores de sumas de comprobación y errores de hardware habituales que afecten a la base de datos.
+... Seleccione *Suprimir todos los mensajes informativos (NO INFOMSGS)* para suprimir todos los mensajes informativos.
++
+Seleccionado de forma predeterminada.
+
+... Seleccione *Display all reported error messages per object (ALL_ERRORMSGS)* para visualizar todos los errores notificados por objeto.
+... Seleccione *no comprobar los índices no almacenados en clúster (NOINDEX)* si no desea comprobar los índices no almacenados en clúster.
++
+La base de datos de SQL Server utiliza la comprobación de la consistencia de base de datos de Microsoft SQL Server para comprobar la integridad lógica y física de los objetos de la base de datos.
+
+... Seleccione *Limite las comprobaciones y obtenga los bloqueos en lugar de utilizar una copia de Snapshot de la base de datos interna (TABLOCK)* para limitar las comprobaciones y obtener bloqueos en lugar de utilizar una copia de Snapshot interna de la base de datos.
+
+
+.. En la sección *Backup de registro*, seleccione *verificar copia de seguridad de registro al finalizar* para verificar la copia de seguridad de registro al finalizar.
+.. En la sección *Verification script settings*, introduzca la ruta de acceso y los argumentos del script previo o posterior que deben ejecutarse antes o después de la operación de verificación, respectivamente.
+
+
+. Revise el resumen y haga clic en *Finalizar*.
+

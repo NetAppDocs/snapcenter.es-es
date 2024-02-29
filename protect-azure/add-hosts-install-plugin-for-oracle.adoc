@@ -1,0 +1,37 @@
+---
+permalink: protect-azure/add-hosts-install-plugin-for-oracle.html 
+sidebar: sidebar 
+keywords: add host, install, install plug-in, oracle, database 
+summary: Añada hosts y, a continuación, instale los paquetes de plugins. 
+---
+= Añadir hosts e instalar el plugin de SnapCenter para base de datos de Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede utilizar la página Add Host para añadir hosts y, a continuación, instalar el paquete de plugins de SnapCenter para Linux o el paquete de plugins de SnapCenter para AIX. Los plugins se instalan automáticamente en hosts remotos.
+
+Puede añadir un host e instalar paquetes de plugins para un host individual o para un clúster. Si instala el plugin en un clúster (Oracle RAC), el plugin se instala en todos los nodos del clúster. Para Oracle RAC One Node, debe instalar el plugin en nodos activos y pasivos.
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *hosts*.
+. Verifique que la pestaña *Managed Hosts* esté seleccionada.
+. Haga clic en *Agregar*.
+. En la página hosts, realice las siguientes acciones:
++
+.. En el campo Tipo de host, seleccione el tipo de host.
+.. En el campo Host name, introduzca el nombre de dominio completamente cualificado (FQDN) o la dirección IP del host.
+.. En el campo Credenciales, introduzca la credencial que ha creado.
+
+
+. En la sección Select Plug-ins to Install, seleccione los plugins que desea instalar.
+. (Opcional) Haga clic en *Más opciones* y especifique los detalles.
+. Haga clic en *Enviar*.
+. Compruebe la huella y, a continuación, haga clic en *Confirmar y enviar*.
++
+En una configuración de clúster, debe comprobar la huella de cada uno de los nodos del clúster.
+
+. Supervise el progreso de la instalación.
+

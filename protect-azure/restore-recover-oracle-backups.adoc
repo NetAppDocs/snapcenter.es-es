@@ -1,0 +1,125 @@
+---
+permalink: protect-azure/restore-recover-oracle-backups.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for Oracle Database, restore, recover, tablespaces, pluggable databases, point-in-time 
+summary: Puede utilizar SnapCenter para restaurar y recuperar datos de uno o varios backups. 
+---
+= Restaurar y recuperar bases de datos de Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+En caso de pérdida de datos, es posible usar SnapCenter para restaurar datos desde uno o más backups en el sistema de archivos activo para luego recuperar la base de datos.
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Recursos, seleccione *Base de datos* o *Grupo de recursos* en la lista Ver.
+. Seleccione la base de datos o el grupo de recursos en la lista.
+. En la vista Administrar copias, seleccione *Copias de seguridad* en el sistema de almacenamiento primario.
+. Seleccione el backup en la tabla y haga clic en *image:../media/restore_icon.gif["icono de restauración"]*.
+. En la página Restore Scope, realice las siguientes tareas:
++
+.. Seleccione RAC si seleccionó un backup de una base de datos en el entorno RAC.
+.. Realice las siguientes acciones:
++
+... Seleccione *Todos los archivos de datos* si desea restaurar solo los archivos de la base de datos.
+... Seleccione *Tablespaces* si desea restaurar solo los tablespaces.
+... Seleccione *Redo log files* si desea restaurar los archivos redo log de las bases de datos en espera de Data Guard o Active Data Guard.
+... Seleccione *Pluggable databases* y especifique las PDB que desea restaurar.
+... Seleccione * tablespaces de base de datos conectables (PDB)* y, a continuación, especifique la PDB y los tablespaces de esa PDB que desea restaurar.
+... Seleccione *Restaurar la base de datos en el mismo host donde se creó la copia de seguridad* si desea restaurar la base de datos en el mismo servidor SQL donde se realizan las copias de seguridad.
+... Seleccione *Restaurar la base de datos a un host alternativo* si desea que la base de datos se restaure en un servidor SQL diferente en el mismo host o en otro donde se realicen las copias de seguridad.
+... Seleccione *Cambiar el estado de la base de datos si es necesario para restaurar y recuperar* para cambiar el estado de la base de datos al estado requerido para realizar operaciones de restauración y recuperación.
+... Seleccione *Force in place restore* si desea realizar restauraciones in situ en los escenarios en los que se agregan nuevos archivos de datos después de la copia de seguridad o cuando se agregan, eliminan o recrean LUN en un grupo de discos de LVM.
+
+
+
+
+. En la página Restore Scope, seleccione una de las siguientes opciones:
++
+.. Seleccione *All Logs* si desea recuperar la última transacción.
+.. Seleccione *Until SCN (System Change Number)* si desea recuperar un SCN específico.
+.. Seleccione *Fecha y hora* si desea recuperar una fecha y hora específicas.
+.. Seleccione *No recovery* si no desea recuperar.
+.. Seleccione *Especificar ubicaciones de archive log externas* si desea especificar la ubicación de los archivos archive log externos.
+
+
+. En la página Pre-Ops and Post Ops, especifique los detalles obligatorios.
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+
+
+
+
+== Restauración y recuperación de espacios de tablas mediante la recuperación de un momento específico
+
+Puede restaurar un subconjunto de espacios de tablas que se hayan dañado o borrado sin que el resto de espacios de tablas de la base de datos se vea afectado. SnapCenter utiliza RMAN para realizar una recuperación puntual (PITR) de los tablespaces.
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Recursos, seleccione *Base de datos* o *Grupo de recursos* en la lista Ver.
+. Seleccione la base de datos del tipo instancia única (multitenant).
+. En la vista Manage Copies, seleccione *copias de seguridad* en el sistema de almacenamiento.
++
+Si la copia de seguridad no está catalogada, debe seleccionar la copia de seguridad y hacer clic en *Catálogo*.
+
+. Seleccione el backup catalogado y haga clic en *image:../media/restore_icon.gif["icono de restauración"]*.
+. En la página Restore Scope, realice las siguientes tareas:
++
+.. Seleccione *RAC* si ha seleccionado una copia de seguridad de una base de datos en el entorno RAC.
+.. Seleccione *Tablespaces* si desea restaurar solo los tablespaces.
+.. Seleccione *Cambiar el estado de la base de datos si es necesario para restaurar y recuperar* para cambiar el estado de la base de datos al estado requerido para realizar operaciones de restauración y recuperación.
+
+
+. En la página Restore Scope, seleccione una de las siguientes opciones:
++
+.. Seleccione *Until SCN (System Change Number)* si desea recuperar un SCN específico.
+.. Seleccione *Fecha y hora* si desea recuperar una fecha y hora específicas.
+
+
+. En la página Pre-Ops and Post Ops, especifique los detalles obligatorios.
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Supervise el proceso de restauración mediante la página *Monitor* > *Jobs*.
+
+
+
+
+== Restaure y recupere una base de datos conectable mediante la recuperación de un momento específico
+
+Puede restaurar y recuperar una base de datos conectables (PDB) que se dañó o se borró sin afectar a las otras PDB de la base de datos de contenedores (CDB). SnapCenter utiliza RMAN para realizar una recuperación de un momento específico (PITR) de la PDB.
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Recursos, seleccione *Base de datos* o *Grupo de recursos* en la lista Ver.
+. Seleccione la base de datos del tipo instancia única (multitenant).
+. En la vista Manage Copies, seleccione *copias de seguridad* en el sistema de almacenamiento.
++
+Si la copia de seguridad no está catalogada, debe seleccionar la copia de seguridad y hacer clic en *Catálogo*.
+
+. Seleccione el backup catalogado y haga clic en *image:../media/restore_icon.gif["icono de restauración"]*.
+. En la página Restore Scope, realice las siguientes tareas:
++
+.. Seleccione *RAC* si ha seleccionado una copia de seguridad de una base de datos en el entorno RAC.
+.. Según si desea restaurar la PDB o los espacios de tablas en una PDB, realice una de las acciones:
++
+*** Seleccione *Pluggable databases (PDBs)* si desea restaurar una PDB.
+*** Seleccione *Pluggable database (PDB) tablespaces* si desea restaurar los espacios de tabla en una PDB.
+
+
+
+
+. En la página Restore Scope, seleccione una de las siguientes opciones:
++
+.. Seleccione *Until SCN (System Change Number)* si desea recuperar un SCN específico.
+.. Seleccione *Fecha y hora* si desea recuperar una fecha y hora específicas.
+
+
+. En la página Pre-Ops and Post Ops, especifique los detalles obligatorios.
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Supervise el proceso de restauración mediante la página *Monitor* > *Jobs*.
+

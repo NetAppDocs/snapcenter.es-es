@@ -1,0 +1,74 @@
+---
+permalink: protect-azure/clone-sql-database-backups.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for SQL Server Database, clone, database, backups 
+summary: Es posible usar SnapCenter para clonar un backup. 
+---
+= Clone el backup de base de datos de SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede utilizar SnapCenter para clonar un backup de base de datos de SQL Server. Si desea acceder a o restaurar una versión anterior de los datos, puede clonar backups de base de datos bajo demanda.
+
+.Pasos
+. En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
+. En la página Resources, seleccione *Database* o *Resource Group* en la lista *View*.
+. Seleccione la base de datos o el grupo de recursos.
+. En la página de vista *Administrar copias*, seleccione la copia de seguridad desde el sistema de almacenamiento primario.
+. Seleccione el backup y, a continuación, seleccione *image:../media/clone_icon.gif["el icono de clon"]*.
+. En la página *Clonar opciones*, proporcione todos los detalles requeridos.
+. En la página ubicación, seleccione una ubicación de almacenamiento para crear un clon.
++
+Si los volúmenes de ANF de bases de datos de SQL Server se configuran en un pool de CAPACIDAD DE CALIDAD DE SERVICIO manual, especifique la CALIDAD DE SERVICIO de los volúmenes clonados.
+
++
+Si no se especifica LA CALIDAD DE SERVICIO para los volúmenes clonados, se usará la CALIDAD DE SERVICIO del volumen de origen. Si se utiliza el pool de capacidad automática DE CALIDAD DE SERVICIO, se ignorará el valor de CALIDAD DE SERVICIO especificado.
+
+. En la página Logs, seleccione una de las siguientes opciones:
++
+.. Seleccione *Ninguno* si desea clonar solo la copia de seguridad completa sin ningún registro.
+.. Seleccione *All log backups* si desea clonar todas las copias de seguridad de registros disponibles con fecha posterior a la copia de seguridad completa.
+.. Seleccione *by log backups until* si desea clonar la base de datos en función de los registros de copia de seguridad que se crearon hasta el registro de copia de seguridad con la fecha seleccionada.
+.. Seleccione *Por fecha específica hasta* si no desea aplicar los registros de transacciones después de la fecha y hora especificadas.
+
+
+. En la página *Script*, introduzca el tiempo de espera del script, la ruta y los argumentos del script previo o script posterior que deben ejecutarse antes o después de la operación de clonado, respectivamente.
+. En la página *notificación*, en la lista desplegable *preferencia de correo electrónico*, seleccione los escenarios en los que desea enviar los correos electrónicos.
+. Revisa el resumen y luego selecciona *Finalizar*.
+. Supervise el progreso de la operación seleccionando *Monitor* > *Trabajos*.
+
+
+
+
+== Ejecute el ciclo de vida del clon
+
+Mediante SnapCenter, puede crear clones a partir de un grupo de recursos o una base de datos. Puede realizar un clon bajo demanda o programar operaciones de clonado periódicas de un grupo de recursos o una base de datos. Si clona un backup periódicamente, puede utilizar el clon para desarrollar aplicaciones, completar datos o recuperar datos.
+
+.Pasos
+. En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
+. En la página Resources, seleccione *Database* o *Resource Group* en la lista *View*.
+. Seleccione la base de datos o el grupo de recursos.
+. En la página de vista *Administrar copias*, seleccione la copia de seguridad desde el sistema de almacenamiento primario.
+. Seleccione el backup y, a continuación, seleccione *image:../media/clone_icon.gif["el icono de clon"]*.
+. En la página *Clonar opciones*, proporcione todos los detalles requeridos.
+. En la página ubicación, seleccione una ubicación de almacenamiento para crear un clon.
++
+Si los volúmenes de ANF de bases de datos de SQL Server se configuran en un pool de CAPACIDAD DE CALIDAD DE SERVICIO manual, especifique la CALIDAD DE SERVICIO de los volúmenes clonados.
+
++
+Si no se especifica LA CALIDAD DE SERVICIO para los volúmenes clonados, se usará la CALIDAD DE SERVICIO del volumen de origen. Si se utiliza el pool de capacidad automática DE CALIDAD DE SERVICIO, se ignorará el valor de CALIDAD DE SERVICIO especificado.
+
+. En la página *Script*, introduzca el tiempo de espera del script, la ruta y los argumentos del script previo o script posterior que deben ejecutarse antes o después de la operación de clonado, respectivamente.
+. En la página Schedule, realice una de las siguientes acciones:
++
+** Seleccione *Ejecutar ahora* si desea ejecutar el trabajo de clonado inmediatamente.
+** Seleccione *Configure schedule* cuando desee determinar con qué frecuencia debe producirse la operación de clonación, cuándo debe iniciarse la programación de clonación, en qué día debe producirse la operación de clonación, cuándo debe caducar la programación y si los clones deben eliminarse después de que caduque la programación.
+
+
+. En la página *notificación*, en la lista desplegable *preferencia de correo electrónico*, seleccione los escenarios en los que desea enviar los correos electrónicos.
+. Revisa el resumen y luego selecciona *Finalizar*.
+. Supervise el progreso de la operación seleccionando *Monitor* > *Trabajos*.
+

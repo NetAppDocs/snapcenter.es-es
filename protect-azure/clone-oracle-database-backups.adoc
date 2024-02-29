@@ -1,0 +1,121 @@
+---
+permalink: protect-azure/clone-oracle-database-backups.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for Oracle Database, clone, database, backups. split clone, pluggable database 
+summary: Es posible usar SnapCenter para clonar un backup. 
+---
+= Clone el backup de base de datos de Oracle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible utilizar SnapCenter para clonar una base de datos de Oracle con el backup de esa base de datos.
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Recursos, seleccione *Base de datos* o *Grupo de recursos* en la lista Ver.
+. Seleccione la base de datos.
+. En la página Manage Copies view, seleccione el backup en el sistema de almacenamiento principal.
+. Seleccione la copia de seguridad de datos y, a continuación, haga clic en *image:../media/clone_icon.gif["el icono de clon"]*.
+. En la página Name, seleccione si desea clonar una base de datos (CDB o no CDB) o clonar una base de datos conectables (PDB).
+. En la página Locations, especifique los detalles necesarios.
++
+Si los volúmenes de ANF de la base de datos de Oracle están configurados en un pool de CAPACIDAD de CALIDAD DE SERVICIO manual, especifique la CALIDAD DE SERVICIO de los volúmenes clonados.
+
++
+Si no se especifica LA CALIDAD DE SERVICIO para los volúmenes clonados, se usará la CALIDAD DE SERVICIO del volumen de origen. Si se utiliza el pool de capacidad automática DE CALIDAD DE SERVICIO, se ignorará el valor de CALIDAD DE SERVICIO especificado.
+
+. En la página Credentials, realice una de las siguientes acciones:
++
+.. Para el nombre de credencial para el usuario sys, seleccione la credencial que se utilizará para definir la contraseña de usuario sys de la base de datos clonada.
+.. Para el nombre de credencial de instancia de ASM, seleccione *Ninguno* si la autenticación del sistema operativo está activada para conectarse a la instancia de ASM en el host del clon.
++
+De lo contrario, seleccione la credencial de Oracle ASM configurada con el usuario «sys» o un usuario con el privilegio «sysasm» aplicable al host de clonado.
+
+
+
+. En la página Pre-Ops, especifique la ruta y los argumentos de los scripts previos, y en la sección Database Parameter settings, modifique los valores de los parámetros de la base de datos completados automáticamente que se utilizan para inicializar la base de datos.
+. En la página Post-Ops, se seleccionan por defecto *Recover database* y *Until Cancel* para realizar la recuperación de la base de datos clonada.
++
+.. Si selecciona *Until Cancel*, SnapCenter realiza la recuperación mediante el montaje de la última copia de seguridad de registros que tiene la secuencia ininterrumpida de registros de archivos después de esa copia de seguridad de datos que se seleccionó para la clonación.
+.. Si selecciona *Fecha y hora*, SnapCenter recupera la base de datos hasta una fecha y hora especificadas.
+.. Si selecciona *Until SCN*, SnapCenter recupera la base de datos hasta un SCN especificado.
+.. Si selecciona *Especificar ubicaciones de archive log externas*, SnapCenter identifica y monta el número óptimo de copias de seguridad de log según el SCN especificado o la fecha y hora seleccionadas.
+.. Por defecto, la casilla de verificación *Crear nuevo DBID* está seleccionada para generar un número único (DBID) para la base de datos clonada diferenciándola de la base de datos de origen.
++
+Desactive la casilla de comprobación si desea asignar el DBID de la base de datos de origen a la base de datos clonada. En esta situación, si desea registrar la base de datos clonada en el catálogo de RMAN externo donde la base de datos de origen ya está registrada, se produce un error en la operación.
+
+.. Active la casilla de verificación *Create tempfile for temporary tablespace* si desea crear un archivo temporal para el tablespace temporal por defecto de la base de datos clonada.
+.. En *Introduzca las entradas sql que se aplicarán cuando se cree el clon*, agregue las entradas sql que desea aplicar cuando se cree el clon.
+.. En *Introduzca los scripts que se ejecutarán después de la operación de clonación*, especifique la ruta de acceso y los argumentos del postscript que desea ejecutar después de la operación de clonación.
+
+
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
+. Revisa el resumen y luego selecciona *Finalizar*.
+. Supervise el progreso de la operación seleccionando *Monitor* > *Trabajos*.
+
+
+
+
+== Clonar una base de datos conectable
+
+Es posible clonar una base de datos conectables (PDB) en una base de datos diferente o la misma CDB objetivo en el mismo host o alternativo. También es posible recuperar la PDB clonada en un SCN o la fecha y la hora que desee.
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Recursos, seleccione *Base de datos* o *Grupo de recursos* en la lista Ver.
+. Seleccione la base de datos del tipo instancia única (multitenant).
+. En la página Manage Copies view, seleccione el backup en el sistema de almacenamiento principal.
+. Seleccione el backup y, a continuación, haga clic en *image:../media/clone_icon.gif["el icono de clon"]*.
+. En la página Nombre, seleccione *PDB Clone* y especifique los otros detalles.
+. En la página Locations, especifique los detalles necesarios.
+. En la página Pre-Ops, especifique la ruta y los argumentos de los scripts previos, y en la sección Database Parameter settings, modifique los valores de los parámetros de la base de datos completados automáticamente que se utilizan para inicializar la base de datos.
+. En la página Post-Ops, se selecciona *Until Cancel* de forma predeterminada para realizar la recuperación de la base de datos clonada.
++
+.. Si selecciona *Until Cancel*, SnapCenter realiza la recuperación mediante el montaje de la última copia de seguridad de registros que tiene la secuencia ininterrumpida de registros de archivos después de esa copia de seguridad de datos que se seleccionó para la clonación.
+.. Si selecciona *Fecha y hora*, SnapCenter recupera la base de datos hasta una fecha y hora especificadas.
+.. Si selecciona *Especificar ubicaciones de archive log externas*, SnapCenter identifica y monta el número óptimo de copias de seguridad de log según el SCN especificado o la fecha y hora seleccionadas.
+.. Por defecto, la casilla de verificación *Crear nuevo DBID* está seleccionada para generar un número único (DBID) para la base de datos clonada diferenciándola de la base de datos de origen.
++
+Desactive la casilla de comprobación si desea asignar el DBID de la base de datos de origen a la base de datos clonada. En esta situación, si desea registrar la base de datos clonada en el catálogo de RMAN externo donde la base de datos de origen ya está registrada, se produce un error en la operación.
+
+.. Active la casilla de verificación *Create tempfile for temporary tablespace* si desea crear un archivo temporal para el tablespace temporal por defecto de la base de datos clonada.
+.. En *Introduzca las entradas sql que se aplicarán cuando se cree el clon*, agregue las entradas sql que desea aplicar cuando se cree el clon.
+.. En *Introduzca los scripts que se ejecutarán después de la operación de clonación*, especifique la ruta de acceso y los argumentos del postscript que desea ejecutar después de la operación de clonación.
+
+
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
+. Revisa el resumen y luego selecciona *Finalizar*.
+. Supervise el progreso de la operación seleccionando *Monitor* > *Trabajos*.
+
+
+
+
+== Dividir el clon de una base de datos de Oracle
+
+Es posible usar SnapCenter para dividir un recurso clonado de un recurso primario. El clon que se divide se independiza del recurso primario.
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione *Database* en la lista View.
+. Seleccione el recurso clonado (por ejemplo, la base de datos o el LUN) y haga clic en *image:../media/clone_icon.gif["el icono de clon"]*.
+. Revise el tamaño estimado del clon que se va a dividir y el espacio necesario disponible en el agregado y, a continuación, haga clic en *Inicio*.
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+
+
+
+
+== Clon dividido de una base de datos conectable
+
+Es posible utilizar SnapCenter para dividir una base de datos conectables (PDB) clonada.
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. Seleccione la base de datos del contenedor de origen (CDB) en la vista del recurso o grupo de recursos.
+. En la vista Administrar copias, seleccione *Clones* en los sistemas de almacenamiento primarios.
+. Seleccione el clon de PDB (targetCDB:PDBClone) y, a continuación, haga clic en *image:../media/clone_icon.gif["el icono de clon"]*.
+. Revise el tamaño estimado del clon que se va a dividir y el espacio necesario disponible en el agregado y, a continuación, haga clic en *Inicio*.
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+

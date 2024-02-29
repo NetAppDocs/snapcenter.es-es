@@ -1,0 +1,41 @@
+---
+permalink: protect-azure/add-hosts-install-plugin-for-sap-hana.html 
+sidebar: sidebar 
+keywords: add host, install, install plug-in, SAP HANA 
+summary: Añada hosts y, a continuación, instale los paquetes de plugins. 
+---
+= Añadir hosts e instalar el plugin de SnapCenter para base de datos SAP HANA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe usar la página SnapCenter Add Host para añadir hosts y, a continuación, instalar los paquetes de los plugins. Los plugins se instalan automáticamente en hosts remotos.
+
+.Antes de empezar
+* Debe ser un usuario al que se ha asignado una función que tenga permisos de instalación y desinstalación de plugins, como el rol de administrador de SnapCenter.
+* Al instalar un plugin en un host de Windows, si especifica una credencial que no está incorporada o si el usuario pertenece a un usuario de grupo de trabajo local, debe deshabilitar UAC en el host.
+* Si está instalando en el host centralizado, asegúrese de que el software cliente SAP HANA esté instalado en ese host y abra los puertos necesarios en el host de la base de datos SAP HANA para ejecutar las consultas SQL HDB de forma remota.
+
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *hosts*.
+. Verifique que la pestaña *Managed Hosts* esté seleccionada.
+. Haga clic en *Agregar*.
+. En la página hosts, realice las siguientes acciones:
++
+.. En el campo Tipo de host, seleccione el tipo de host.
+.. En el campo Host name, introduzca el nombre de dominio completamente cualificado (FQDN) o la dirección IP del host.
+.. En el campo Credenciales, introduzca la credencial que ha creado.
+
+
+. En la sección Select Plug-ins to Install, seleccione los plugins que desea instalar.
+. (Opcional) Haga clic en *Más opciones* y especifique los detalles.
+. Haga clic en *Enviar*.
+. Si el tipo de host es Linux, verifique la huella digital y, a continuación, haga clic en *Confirmar y enviar*.
++
+En una configuración de clúster, debe comprobar la huella de cada uno de los nodos del clúster.
+
+. Supervise el progreso de la instalación.
+

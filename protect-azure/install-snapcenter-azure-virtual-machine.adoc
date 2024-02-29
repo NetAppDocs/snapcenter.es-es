@@ -1,0 +1,44 @@
+---
+permalink: protect-azure/install-snapcenter-azure-virtual-machine.html 
+sidebar: sidebar 
+keywords: snapcenter server, azure virtual machine, install 
+summary: Descargue e instale SnapCenter en Azure Virtual Machine. 
+---
+= Instalar SnapCenter en la máquina virtual de Azure
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede descargar el software SnapCenter del sitio de soporte de NetApp e instalar el software en la máquina virtual de Azure.
+
+.Antes de empezar
+Asegúrese de que la máquina virtual de Azure Windows cumple los requisitos de instalación del servidor SnapCenter. Para obtener más información, consulte link:../install/reference_domain_and_workgroup_requirements.html["Prepare la instalación del servidor SnapCenter"].
+
+.Pasos
+. Descargue el paquete de instalación del servidor SnapCenter desde https://mysupport.netapp.com/site/products/all/details/snapcenter/downloads-tab["Sitio de soporte de NetApp"].
+. Inicie la instalación del servidor SnapCenter haciendo doble clic en el archivo .exe descargado.
++
+Tras iniciar la instalación, se realizan todas las comprobaciones previas y si los requisitos mínimos no se cumplen los correctos, se muestran mensajes de error o advertencia. Puede ignorar los mensajes de advertencia y continuar con la instalación; sin embargo, los errores deben corregirse.
+
+. Revise los valores rellenados previamente necesarios para la instalación del servidor SnapCenter y modifíquelos si es necesario.
++
+No es necesario especificar la contraseña para la base de datos de repositorio del servidor MySQL. Durante la instalación del servidor SnapCenter, la contraseña se genera automáticamente.
+
++
+
+NOTE: El carácter especial “%” no está soportado en la ruta de acceso personalizada de la base de datos del repositorio. Si incluye “%” en la ruta, la instalación falla.
+
+. Haga clic en *instalar ahora*.
++
+Si ha especificado valores que no son válidos, se mostrarán los mensajes de error adecuados. Debe volver a introducir los valores e iniciar la instalación.
+
++
+
+NOTE: Si hace clic en el botón *Cancelar*, se completará el paso que se está ejecutando y, a continuación, se iniciará la operación de reversión. El servidor SnapCenter se eliminará por completo del host.
+
++
+Sin embargo, si hace clic en *Cancelar* cuando se están realizando las operaciones "reinicio del sitio del servidor SnapCenter" o "esperando inicio del servidor SnapCenter", la instalación continuará sin cancelar la operación.
+
+

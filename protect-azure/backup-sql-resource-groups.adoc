@@ -1,0 +1,28 @@
+---
+permalink: protect-azure/backup-sql-resource-groups.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for SQL Server Database, back up, resource groups 
+summary: Un grupo de recursos es una agrupacion de recursos en un host. Se realiza una operación de backup del grupo de recursos con todos los recursos definidos en el grupo. 
+---
+= Realizar un backup de grupos de recursos de SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede realizar el backup de los grupos de recursos que consten de varios recursos. Se realiza una operación de backup del grupo de recursos con todos los recursos definidos en el grupo.
+
+.Pasos
+. En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
+. En la página Resources, seleccione *Resource Group* en la lista *View*.
+. En la página Resource Groups, seleccione el grupo de recursos del que desea realizar un backup y, a continuación, seleccione *Back up Now*.
+. En la página Backup, realice los siguientes pasos:
++
+.. Si hay varias políticas asociadas con el grupo de recursos, en la lista desplegable *Policy*, seleccione la política que desea usar para la copia de seguridad.
+.. Después de la copia de seguridad, seleccione *Verify* para verificar la copia de seguridad bajo demanda.
+.. Seleccione *copia de seguridad*.
+
+
+. Supervise el progreso de la operación seleccionando *Monitor* > *Trabajos*.
+

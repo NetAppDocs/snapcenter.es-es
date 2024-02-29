@@ -1,0 +1,41 @@
+---
+permalink: protect-azure/restore-recover-sql-backups.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for SQL Server Database, restore, recover 
+summary: Puede utilizar SnapCenter para restaurar y recuperar datos de uno o varios backups. 
+---
+= Restaurar y recuperar bases de datos de SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede utilizar SnapCenter para restaurar bases de datos de SQL Server con backup. La restauración de bases de datos es un proceso multifásico que copia todos los datos y las páginas de registro de un backup de SQL Server en una base de datos especificada.
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Recursos, seleccione *Base de datos* o *Grupo de recursos* en la lista Ver.
+. Seleccione la base de datos o el grupo de recursos en la lista.
+. En la vista Administrar copias, seleccione *Copias de seguridad* del sistema de almacenamiento.
+. Seleccione el backup en la tabla y haga clic en el image:../media/restore_icon.gif["icono de restauración"] .
+. En la página Restore Scope, seleccione una de las siguientes opciones:
++
+.. Seleccione *Restaurar la base de datos en el mismo host donde se creó la copia de seguridad* si desea restaurar la base de datos en el mismo servidor SQL donde se realizan las copias de seguridad.
+.. Seleccione *Restaurar la base de datos a un host alternativo* si desea que la base de datos se restaure en un servidor SQL diferente en el mismo host o en otro donde se realicen las copias de seguridad.
+
+
+. En la página Restore Scope, seleccione una de las siguientes opciones:
++
+.. Seleccione *Ninguno* cuando necesite restaurar sólo la copia de seguridad completa sin ningún registro.
+.. Seleccione *All log backups* up-to-the-minute backup restore operation para restaurar todas las copias de seguridad de registros disponibles después de la copia de seguridad completa.
+.. Seleccione *by log backups* para realizar una operación de restauración a un momento específico, que restaura la base de datos en función de los registros de copia de seguridad hasta el registro de copia de seguridad con la fecha seleccionada.
+.. Seleccione *by specific date until* para especificar la fecha y la hora después de las cuales no se aplican registros de transacciones a la base de datos restaurada.
+.. Si ha seleccionado *todas las copias de seguridad de registro*, *por copias de seguridad de registro* o *por fecha específica hasta* y los registros se encuentran en una ubicación personalizada, seleccione *usar directorio de registro personalizado* y, a continuación, especifique la ubicación del registro.
+
+
+. En la página Pre-Ops and Post Ops, especifique los detalles obligatorios.
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Supervise el proceso de restauración mediante la página *Monitor* > *Jobs*.
+

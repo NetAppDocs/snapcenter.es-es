@@ -8840,4 +8840,210 @@ ONTAP gestiona la configuración de SnapLock.</block>
   <block id="f70e7af7132291b170364c37c143af5f" category="paragraph">Para ONTAP 9.12.1 y versiones siguientes, los clones creados a partir de las copias snapshot de SnapLock heredarán el tiempo de caducidad de SnapLock Vault. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.</block>
   <block id="d24a44cebb5d893d4a6ffefcfde236ea" category="paragraph">Para ver los requisitos mínimos del ONTAP y el complemento de la aplicación, consulte<block ref="fb6518117a57311639cf7e25ef1c11e1" category="inline-link-rx"></block>.</block>
   <block id="9f15a95270d57c31e3fbf8e82eb6d5a6" category="paragraph">Consulte<block ref="fb6518117a57311639cf7e25ef1c11e1" category="inline-link-rx"></block></block>
+  <block id="9166c380efba6c6a0d61dc08bcc135ee" category="summary">Cree una política de backup para el recurso o grupo de recursos que desea incluir en un backup.</block>
+  <block id="73f45971c435fbf9828b3c34fe76a670" category="paragraph">Antes de usar SnapCenter para realizar backups de recursos de base de datos de Oracle, debe crear una política de backup para el recurso o el grupo de recursos que se respaltendrá.</block>
+  <block id="32005b30ff172564875bf82c9538168f" category="list-text">Seleccione Oracle Database en la lista desplegable.</block>
+  <block id="079151e2a65ec7ff3445310b706078c0" category="list-text">Seleccione el tipo de backup como backup online o sin conexión.</block>
+  <block id="e1f4feb4c45f5316b8eb2a7570b14cec" category="list-text">Especifique la frecuencia de programación.</block>
+  <block id="35968ec44acc7cc8a13556f173c47cc3" category="list-text">Especifique la configuración de eliminación de archive log.</block>
+  <block id="8bf586bfc11638f24bb033f322fb6ce1" category="list-text">En la página Retention, especifique la configuración de retención.</block>
+  <block id="7db2a3f013bbf7ae548baa053e8f7584" category="list-text">En la página Verification, seleccione la programación de backup para la que desea realizar la operación de verificación e introduzca la ruta y los argumentos del script previo o posterior que desea ejecutar antes o después de la operación de verificación, según corresponda.</block>
+  <block id="5dac7fdec7dddd64bc366ee8bd5cd09d" category="list-text">En la página Recursos, seleccione *Base de datos* o *Grupo de recursos* en la lista Ver.</block>
+  <block id="58b7e36fa95125edcb8d66ea2e67582f" category="list-text">En la vista Administrar copias, seleccione *Copias de seguridad* en el sistema de almacenamiento primario.</block>
+  <block id="2f8a690686af1b1cda975ef6f4f1bed0" category="list-text">Seleccione RAC si seleccionó un backup de una base de datos en el entorno RAC.</block>
+  <block id="1399d83514b742ea6df34f461fcc4de2" category="list-text">Seleccione *Todos los archivos de datos* si desea restaurar solo los archivos de la base de datos.</block>
+  <block id="acdb11b54cf63e8364ce855a4985b70a" category="list-text">Seleccione *Tablespaces* si desea restaurar solo los tablespaces.</block>
+  <block id="e2d164854dc02140bc455818e74a5c33" category="list-text">Seleccione *Redo log files* si desea restaurar los archivos redo log de las bases de datos en espera de Data Guard o Active Data Guard.</block>
+  <block id="03853c460c3f942eb442c5ca0ad40fad" category="list-text">Seleccione *Pluggable databases* y especifique las PDB que desea restaurar.</block>
+  <block id="57845f4a15c2596bee374a61bd147668" category="list-text">Seleccione *Restaurar la base de datos en el mismo host donde se creó la copia de seguridad* si desea restaurar la base de datos en el mismo servidor SQL donde se realizan las copias de seguridad.</block>
+  <block id="5ccb59313a41bd2c5b6739ff2b109e74" category="list-text">Seleccione *Restaurar la base de datos a un host alternativo* si desea que la base de datos se restaure en un servidor SQL diferente en el mismo host o en otro donde se realicen las copias de seguridad.</block>
+  <block id="d3848423ad873508b35dee4f882c93c1" category="list-text">Seleccione *All Logs* si desea recuperar la última transacción.</block>
+  <block id="5d5be53ceca242c265f3132067176acf" category="list-text">Seleccione *Until SCN (System Change Number)* si desea recuperar un SCN específico.</block>
+  <block id="876471c99dbc13177cc4d457546d7871" category="list-text">Seleccione *Fecha y hora* si desea recuperar una fecha y hora específicas.</block>
+  <block id="29efffe1f66a8912fca8bb27c93fc1b8" category="list-text">Seleccione *No recovery* si no desea recuperar.</block>
+  <block id="961e01d405e8a902edb16845143ab971" category="list-text">Seleccione *Especificar ubicaciones de archive log externas* si desea especificar la ubicación de los archivos archive log externos.</block>
+  <block id="6882420907ef9d77d69021bc2b742fdf" category="list-text">En la página Pre-Ops and Post Ops, especifique los detalles obligatorios.</block>
+  <block id="dfd5f1051da1aa9e9af8ea3369dfdb2f" category="paragraph">Puede restaurar un subconjunto de espacios de tablas que se hayan dañado o borrado sin que el resto de espacios de tablas de la base de datos se vea afectado. SnapCenter utiliza RMAN para realizar una recuperación puntual (PITR) de los tablespaces.</block>
+  <block id="35e42acf13f657c4bd3843e31c6b7b55" category="list-text">Seleccione la base de datos del tipo instancia única (multitenant).</block>
+  <block id="9a40b04f123f9d768ad814799ac13ed6" category="list-text">Seleccione el backup catalogado y haga clic en *<block ref="401f8f248ae37b21256b9fc8e83bcaa3" category="inline-image-macro-rx" type="image"></block>*.</block>
+  <block id="f10007ef38ad8ef0be191acdb24506f2" category="list-text">Seleccione *RAC* si ha seleccionado una copia de seguridad de una base de datos en el entorno RAC.</block>
+  <block id="c319a65d4dabd1b8676673c0f51fbca4" category="list-text">Seleccione *Pluggable databases (PDBs)* si desea restaurar una PDB.</block>
+  <block id="7a30df58c32f2e58ee04367dc1a289ff" category="list-text">Seleccione *Pluggable database (PDB) tablespaces* si desea restaurar los espacios de tabla en una PDB.</block>
+  <block id="d9c103e9b28e2bebca1491609f830d9e" category="list-text">Seleccione el tipo de backup.</block>
+  <block id="8b7749a11c408f4525e8b6cd3dbf31fa" category="list-text">Seleccione *Full Backup and Log Backup* si desea realizar una copia de seguridad de los archivos de la base de datos y los registros de transacciones.</block>
+  <block id="411148f58714b813c6fcff4f84e64c7e" category="list-text">Seleccione *Full Backup* si desea realizar una copia de seguridad solo de los archivos de la base de datos.</block>
+  <block id="181c2702cfecfcccae058cc9bef558cf" category="list-text">Seleccione *Log Backup* si desea realizar una copia de seguridad solo de los registros de transacciones.</block>
+  <block id="4f33ec7f0b6c5efe51b9298d732010fe" category="list-text">Seleccione *Copia de seguridad de solo copia* si desea realizar una copia de seguridad de sus recursos utilizando otra aplicación.</block>
+  <block id="1a97eb2e4853a1fca9bc58dd7af59b48" category="list-text">Seleccione Backup on preferred backup replica si desea realizar un backup solo en la réplica.</block>
+  <block id="9ec51e1bd21eedcf15db405459689d24" category="list-text">Seleccione la réplica principal o secundaria del AG para el backup.</block>
+  <block id="ec3712a222adf7900d9abd47ada2d148" category="list-text">Seleccione la prioridad de backup.</block>
+  <block id="e392de06f36aab499d20ac2874bd6a7a" category="list-text">Especifique el tipo de programación.</block>
+  <block id="1616215a05c2a11b9d7f8a7b0c957551" category="list-text">En la página Retention, según el tipo de backup seleccionado, especifique la configuración de retención.</block>
+  <block id="8164c29499ad21176441bff9c0dfb5a6" category="admonition">No se admite la replicación a almacenamiento secundario.</block>
+  <block id="c9d5c0fdf2d0d7d116a31da7f7075cf2" category="list-text">Seleccione *Suprimir todos los mensajes informativos (NO INFOMSGS)* para suprimir todos los mensajes informativos.</block>
+  <block id="1ecb3b72a5b2c2c1236cd984534e09ff" category="paragraph">Seleccionado de forma predeterminada.</block>
+  <block id="d3f2f88e0e51cd1bb2e765ff2a9329ea" category="list-text">Seleccione *no comprobar los índices no almacenados en clúster (NOINDEX)* si no desea comprobar los índices no almacenados en clúster.</block>
+  <block id="7ce3afddd78d2c95f3288b6c71328476" category="summary">Realice un backup del recurso desde la página Resources.</block>
+  <block id="cffecc178cc1b99a91effece6bd4417b" category="doc">Realizar backups de bases de datos de SQL Server que se ejecutan en Azure NetApp Files</block>
+  <block id="79acc61170d146040e6782f199b67161" category="list-text">En la página Recursos, seleccione *Base de datos*, *Instancia* o *Grupo de disponibilidad* en la lista desplegable Ver.</block>
+  <block id="fddaa056d058e982a13036e05323d6f8" category="list-text">Seleccione *Use Microsoft SQL Server scheduler* y, a continuación, seleccione la instancia del programador en la lista desplegable *Scheduler Instance* que está asociada con la política de programación.</block>
+  <block id="444abdb0adbf904dfeb2b6b85da3e698" category="list-text">Seleccione el servidor de verificación.</block>
+  <block id="102beeaa44096cb1c4640f46b3cabe69" category="list-text">Seleccione *Ejecutar verificación después de copia de seguridad* o *Ejecutar verificación programada*.</block>
+  <block id="2c7804d18e9ae000973714b450e90bee" category="list-text">Si hay varias políticas asociadas con el recurso, en la lista desplegable *Policy*, seleccione la política que desea usar para la copia de seguridad.</block>
+  <block id="51bfdba913c7ca3420c862bcfa885fba" category="list-text">Seleccione *Verificar después de la copia de seguridad*.</block>
+  <block id="1a8b5d536181d67e04a2989ce55f1471" category="summary">Es posible usar SnapCenter para clonar un backup.</block>
+  <block id="e42122c0e464caa33250257fa8321c7b" category="doc">Clone el backup de base de datos de Oracle</block>
+  <block id="11e13a2f33d440e2a7175548ecae015f" category="list-text">Seleccione la base de datos.</block>
+  <block id="f27570b9a0395e940f2b631b70c9c9f3" category="list-text">En la página Manage Copies view, seleccione el backup en el sistema de almacenamiento principal.</block>
+  <block id="dc1a7c9a6c9105494aa3e624b96a4a8a" category="list-text">Seleccione la copia de seguridad de datos y, a continuación, haga clic en *<block ref="11ec183c45ca833d0220ddbf2e2e1d98" category="inline-image-macro-rx" type="image"></block>*.</block>
+  <block id="e5c5d189e7dca60262ce11d4d8948a36" category="list-text">En la página Name, seleccione si desea clonar una base de datos (CDB o no CDB) o clonar una base de datos conectables (PDB).</block>
+  <block id="9b65003600b751fccc76508227fd13ab" category="list-text">En la página Locations, especifique los detalles necesarios.</block>
+  <block id="b1410d725eb84bd1cd2dc5a0773800ed" category="paragraph">Si los volúmenes de ANF de la base de datos de Oracle están configurados en un pool de CAPACIDAD de CALIDAD DE SERVICIO manual, especifique la CALIDAD DE SERVICIO de los volúmenes clonados.</block>
+  <block id="3cf00704aaf3ff788104ae85f809de64" category="paragraph">Si no se especifica LA CALIDAD DE SERVICIO para los volúmenes clonados, se usará la CALIDAD DE SERVICIO del volumen de origen. Si se utiliza el pool de capacidad automática DE CALIDAD DE SERVICIO, se ignorará el valor de CALIDAD DE SERVICIO especificado.</block>
+  <block id="3bac96329347bd387d3dc16e22e55c99" category="list-text">En la página Credentials, realice una de las siguientes acciones:</block>
+  <block id="fa4de18b260a3195ce9f3aa2275053fe" category="list-text">Para el nombre de credencial para el usuario sys, seleccione la credencial que se utilizará para definir la contraseña de usuario sys de la base de datos clonada.</block>
+  <block id="21daac57ff613e2256c134d57a24b7fe" category="list-text">Para el nombre de credencial de instancia de ASM, seleccione *Ninguno* si la autenticación del sistema operativo está activada para conectarse a la instancia de ASM en el host del clon.</block>
+  <block id="478856c905ade2c9882f8f0df0259cdc" category="paragraph">De lo contrario, seleccione la credencial de Oracle ASM configurada con el usuario «sys» o un usuario con el privilegio «sysasm» aplicable al host de clonado.</block>
+  <block id="68571f7a88ba34fcf2f6bd54a8757e49" category="list-text">En la página Pre-Ops, especifique la ruta y los argumentos de los scripts previos, y en la sección Database Parameter settings, modifique los valores de los parámetros de la base de datos completados automáticamente que se utilizan para inicializar la base de datos.</block>
+  <block id="b5b8ca4c1991a55b0219f5cabf10cfcf" category="list-text">En la página Post-Ops, se seleccionan por defecto *Recover database* y *Until Cancel* para realizar la recuperación de la base de datos clonada.</block>
+  <block id="f27d210631347656f8a0cd665f480ed0" category="list-text">Si selecciona *Until Cancel*, SnapCenter realiza la recuperación mediante el montaje de la última copia de seguridad de registros que tiene la secuencia ininterrumpida de registros de archivos después de esa copia de seguridad de datos que se seleccionó para la clonación.</block>
+  <block id="2aac70261177d063218ac71d31d5ea6b" category="list-text">Si selecciona *Fecha y hora*, SnapCenter recupera la base de datos hasta una fecha y hora especificadas.</block>
+  <block id="8e177bbd95dbc94a22433e0d93d58971" category="list-text">Si selecciona *Until SCN*, SnapCenter recupera la base de datos hasta un SCN especificado.</block>
+  <block id="7bf7e16e76dcebbcabe537cf40e7eaa0" category="list-text">Si selecciona *Especificar ubicaciones de archive log externas*, SnapCenter identifica y monta el número óptimo de copias de seguridad de log según el SCN especificado o la fecha y hora seleccionadas.</block>
+  <block id="c3117bb6d1093367c8c8311f31a140cd" category="list-text">Por defecto, la casilla de verificación *Crear nuevo DBID* está seleccionada para generar un número único (DBID) para la base de datos clonada diferenciándola de la base de datos de origen.</block>
+  <block id="0b001fe4141b08084edf2ba3b8c346a0" category="list-text">Active la casilla de verificación *Create tempfile for temporary tablespace* si desea crear un archivo temporal para el tablespace temporal por defecto de la base de datos clonada.</block>
+  <block id="cfd2830969742a0cf37ec3c88a0c7896" category="list-text">En *Introduzca las entradas sql que se aplicarán cuando se cree el clon*, agregue las entradas sql que desea aplicar cuando se cree el clon.</block>
+  <block id="95ec4bf6dbf6754ecfda5bb09b3a8415" category="list-text">En *Introduzca los scripts que se ejecutarán después de la operación de clonación*, especifique la ruta de acceso y los argumentos del postscript que desea ejecutar después de la operación de clonación.</block>
+  <block id="dcc66de93aefa3105fda8cbdb3cdc2cf" category="list-text">Seleccione el backup y, a continuación, haga clic en *<block ref="11ec183c45ca833d0220ddbf2e2e1d98" category="inline-image-macro-rx" type="image"></block>*.</block>
+  <block id="13bc47d703b82b962d33b3cf47bf64fb" category="list-text">En la página Nombre, seleccione *PDB Clone* y especifique los otros detalles.</block>
+  <block id="92336218cb59d91f7080fee85c60b95f" category="list-text">En la página Post-Ops, se selecciona *Until Cancel* de forma predeterminada para realizar la recuperación de la base de datos clonada.</block>
+  <block id="82a14f04b2bdde64af5a7a694ab98bba" category="section-title">Dividir el clon de una base de datos de Oracle</block>
+  <block id="787b61c3679ebc574f4962a1f5aebb0c" category="list-text">Seleccione el recurso clonado (por ejemplo, la base de datos o el LUN) y haga clic en *<block ref="11ec183c45ca833d0220ddbf2e2e1d98" category="inline-image-macro-rx" type="image"></block>*.</block>
+  <block id="562ffa91cb05be38d306e7ac7ab12d9c" category="list-text">En la vista Administrar copias, seleccione *Clones* en los sistemas de almacenamiento primarios.</block>
+  <block id="62ef6c6e852eca46dfc82fdc6ad386b2" category="list-text">Seleccione el clon de PDB (targetCDB:PDBClone) y, a continuación, haga clic en *<block ref="11ec183c45ca833d0220ddbf2e2e1d98" category="inline-image-macro-rx" type="image"></block>*.</block>
+  <block id="06297b8a736154148ec90e3788831eaa" category="doc">Restaurar y recuperar bases de datos de SQL Server</block>
+  <block id="b01943524a657671dfae0f3f1f0948e5" category="paragraph">Puede utilizar SnapCenter para restaurar bases de datos de SQL Server con backup. La restauración de bases de datos es un proceso multifásico que copia todos los datos y las páginas de registro de un backup de SQL Server en una base de datos especificada.</block>
+  <block id="ddec2d3a4d88b9b7250ed10e6ef19f3f" category="list-text">En la vista Administrar copias, seleccione *Copias de seguridad* del sistema de almacenamiento.</block>
+  <block id="6408662ebc634bb326a1dde94a44620f" category="list-text">Seleccione *All log backups* up-to-the-minute backup restore operation para restaurar todas las copias de seguridad de registros disponibles después de la copia de seguridad completa.</block>
+  <block id="aa9472a7b9cb1fc29c7cbe53b4716e81" category="summary">Configure la cuenta de almacenamiento de Azure en SnapCenter.</block>
+  <block id="118cba115d0fa759158cb2faa450d5de" category="doc">Configure la cuenta de almacenamiento de Azure</block>
+  <block id="fadf22d2749d2c990d51a1177ed75a3c" category="paragraph">Debe configurar la cuenta de almacenamiento de Azure en SnapCenter.</block>
+  <block id="f2a9b03c9542d4be6aef4bdb2f408f9e" category="paragraph">La cuenta de almacenamiento de Azure contiene detalles sobre el ID de suscripción, las credenciales de Azure y la cuenta de Azure NetApp.</block>
+  <block id="8f8706f3da7c34c2111a8e25ce94e098" category="list-text">En la página Sistemas de almacenamiento, seleccione *Azure NetApp Files* y haga clic en *Nuevo*.</block>
+  <block id="b67933dc97bd3a16f77741efb04c9c6a" category="list-text">Seleccione la credencial, el ID de suscripción y la cuenta de NetApp en las listas desplegables correspondientes.</block>
+  <block id="b19cf02c2424a0928eeec4a9d7a2f2f8" category="summary">Descargue e instale SnapCenter en Azure Virtual Machine.</block>
+  <block id="cefcdf7a4638575f474bc5a3bda6c998" category="doc">Instalar SnapCenter en la máquina virtual de Azure</block>
+  <block id="4370482304eb1ca0418f2cd3fd63eb67" category="paragraph">Puede descargar el software SnapCenter del sitio de soporte de NetApp e instalar el software en la máquina virtual de Azure.</block>
+  <block id="ce65cbdd1461bceb86d66ab0fad635e1" category="paragraph">Asegúrese de que la máquina virtual de Azure Windows cumple los requisitos de instalación del servidor SnapCenter. Para obtener más información, consulte <block ref="b3dec771f92c2fb9f455ad37ca093b8b" category="inline-link-macro-rx"></block>.</block>
+  <block id="70c594713d865f6147d93e740c40169b" category="list-text">Descargue el paquete de instalación del servidor SnapCenter desde<block ref="ae591c0a5c1f7ed1b2805b45c211ae4c" category="inline-link-rx"></block>.</block>
+  <block id="ba1d33ffe1922d93bdd900b985993172" category="paragraph">Tras iniciar la instalación, se realizan todas las comprobaciones previas y si los requisitos mínimos no se cumplen los correctos, se muestran mensajes de error o advertencia. Puede ignorar los mensajes de advertencia y continuar con la instalación; sin embargo, los errores deben corregirse.</block>
+  <block id="944ed313a3d76953a4897da7159e4286" category="admonition">El carácter especial “%” no está soportado en la ruta de acceso personalizada de la base de datos del repositorio. Si incluye “%” en la ruta, la instalación falla.</block>
+  <block id="a8ba59cefefd06f7932de8d4f14fea85" category="paragraph">Si ha especificado valores que no son válidos, se mostrarán los mensajes de error adecuados. Debe volver a introducir los valores e iniciar la instalación.</block>
+  <block id="3c075b0794a69a869247bae0fa8232c3" category="summary">Cree la credencial para añadir el host del plugin.</block>
+  <block id="fc2036df5c2e9ad58052254d635ada38" category="doc">Cree la credencial para añadir el host del plugin</block>
+  <block id="ab21a8c77f03ed9714c3a24a550e2416" category="paragraph">SnapCenter utiliza credenciales para autenticar usuarios para las operaciones de SnapCenter.</block>
+  <block id="2af8c72fafd2de00780256e0886cf680" category="paragraph">Debe crear credenciales para instalar los plugins de SnapCenter, y credenciales adicionales para realizar operaciones de protección de datos.</block>
+  <block id="2c918b288cc3e2bd0419ef617cee7af1" category="list-text">En la página Credential, especifique la siguiente información necesaria para crear la credencial.</block>
+  <block id="dcd46a1f9a42cb16a43e224e294b8f7a" category="paragraph">Nombre de credencial</block>
+  <block id="29a3c3b668504b90c64c2a6ed618330f" category="paragraph">Seleccione el modo de autenticación de la lista desplegable.</block>
+  <block id="77a89adb2bed495492c121bfa080d52c" category="paragraph">Tipo de autenticación</block>
+  <block id="5517313827872a130ab285b0e5e37dce" category="paragraph">Seleccione *Basado en contraseña* o *Basado en clave SSH* (solo para host Linux).</block>
+  <block id="df8915ff8479f150e2964f44c91d2fd4" category="paragraph">Especifique el nombre de usuario.</block>
+  <block id="fa7df0dba25d02121ff5ab3fb162be91" category="paragraph">Si seleccionó autenticación basada en contraseña, especifique la contraseña.</block>
+  <block id="fab1bac8f68d0e85c7d853e7cc89dee8" category="paragraph">Clave privada SSH</block>
+  <block id="66f8dac0eed0421ac7fcaabbabc37a68" category="paragraph">Si seleccionó la autenticación basada en clave SSH, especifique la clave privada.</block>
+  <block id="c07c0cf4af9b314370d0665aadeaf338" category="paragraph">Seleccione la casilla de comprobación Use sudo privileges si va a crear credenciales para usuarios que no son raíz.</block>
+  <block id="703b449c96829cc800359f1d8ec271aa" category="admonition">Esto solo se aplica a usuarios Linux.</block>
+  <block id="ad7e2b46dbd658b836afa67739728364" category="doc">Realice un backup de los grupos de recursos de Oracle</block>
+  <block id="3e069730cfbdc79be14782b101342cba" category="paragraph">Puede realizar el backup de los grupos de recursos que consten de varios recursos. Se realiza una operación de backup del grupo de recursos con todos los recursos definidos en el grupo.</block>
+  <block id="5aec80aae3b9f1be4549537d901f39a5" category="list-text">Si hay varias políticas asociadas con el grupo de recursos, en la lista desplegable *Policy*, seleccione la política que desea usar para la copia de seguridad.</block>
+  <block id="a762c8a08fd8dd6ac2427dad067d141f" category="doc">Cree grupos de recursos y conecte políticas de backup de SAP HANA</block>
+  <block id="257763ed8a159d456a92e8b44d26aa9e" category="paragraph">Permite realizar un backup en simultáneo con todos los datos que están asociados con una determinada aplicación. Un grupo de recursos es necesario para cualquier trabajo de protección de datos. También debe añadir una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar.</block>
+  <block id="4b94425e098b41d12bc8e290ef43106f" category="summary">Añada hosts y, a continuación, instale los paquetes de plugins.</block>
+  <block id="5a19eafc64d4b27754e1ea4fcdfa49f1" category="doc">Añadir hosts e instalar el plugin de SnapCenter para base de datos de Oracle</block>
+  <block id="836b7a28ba9782fad01628dc33073d15" category="paragraph">Puede añadir un host e instalar paquetes de plugins para un host individual o para un clúster. Si instala el plugin en un clúster (Oracle RAC), el plugin se instala en todos los nodos del clúster. Para Oracle RAC One Node, debe instalar el plugin en nodos activos y pasivos.</block>
+  <block id="25df78dd01892122ff0e8b622af903f3" category="list-text">Verifique que la pestaña *Managed Hosts* esté seleccionada.</block>
+  <block id="70d62db3cdc3b09c944b95bb46579a2d" category="list-text">En el campo Tipo de host, seleccione el tipo de host.</block>
+  <block id="aee77bbd57baf3f9ef22c7fc4d9bdef8" category="list-text">En el campo Host name, introduzca el nombre de dominio completamente cualificado (FQDN) o la dirección IP del host.</block>
+  <block id="2e22c5b13053f3515b22c9c1ede2d7a8" category="list-text">En el campo Credenciales, introduzca la credencial que ha creado.</block>
+  <block id="cc01060000f3f813df5ac7a397f6c747" category="list-text">(Opcional) Haga clic en *Más opciones* y especifique los detalles.</block>
+  <block id="b75f291f313008e72d9ff0963164ee31" category="doc">Cree grupos de recursos y asocie las políticas de backup de SQL</block>
+  <block id="2fd8d5ede56ca6e33060f1eb3dd0734b" category="paragraph">Antes de usar SnapCenter para realizar un backup de los recursos de la base de datos SAP HANA, debe crear una política de backup para el recurso o grupo de recursos que desea incluir en el backup.</block>
+  <block id="e479da34c5ed7685fcd981da443e348b" category="list-text">Seleccione *Copia de seguridad basada en archivos* si desea realizar una comprobación de integridad de la base de datos.</block>
+  <block id="9b13b3a5ddf2908f3bd7c006d6b212ee" category="list-text">Seleccione *Basado en Snapshot* si desea crear una copia de seguridad utilizando la tecnología de copia Snapshot.</block>
+  <block id="ed5262a9aab3035c8548c5f3793c76f6" category="list-text">En la página Retention, especifique la configuración de retención para el tipo de backup y el tipo de programación seleccionados.</block>
+  <block id="98950caea953c79d817eba870ba7ae48" category="summary">Cree la credencial de Azure en SnapCenter para acceder a la cuenta de Azure NetApp.</block>
+  <block id="1ed01bab203e8745a0dcfe58f019c1d9" category="doc">Cree las credenciales de Azure en SnapCenter</block>
+  <block id="df807c6f76450e7af962b9ec2ffe867e" category="paragraph">Debe crear la credencial de Azure en SnapCenter para acceder a la cuenta de Azure NetApp.</block>
+  <block id="c564c60262d5040cb9b4b2cb05c8532d" category="paragraph">Antes de crear la credencial de Azure, asegúrese de haber creado el principal de servicio en Azure. Se necesitarán el ID de inquilino, el ID de cliente y la clave secreta asociados con el principal de servicio para crear la credencial de Azure.</block>
+  <block id="aeec85b47cdcde0a1bea1e8a52e7efae" category="paragraph">Seleccione *Azure Credential* de la lista desplegable.</block>
+  <block id="7131a7a6bfe81200d21d5a33c64847b6" category="paragraph">ID de inquilino</block>
+  <block id="797fc8989dfaa45ed85ce3b352fc0fb9" category="paragraph">Introduzca el ID de inquilino.</block>
+  <block id="4836681379c28438ec7ff8290c2fe10d" category="paragraph">Introduzca el ID de cliente.</block>
+  <block id="6c5562c545345e1e93d50451b999407b" category="paragraph">Clave secreta de cliente</block>
+  <block id="3f809529e531a829d1af35c6277c0600" category="paragraph">Introduzca la clave secreta del cliente.</block>
+  <block id="83a5e957cdd4905f7e78a688fa59e4a6" category="doc">Clone el backup de base de datos SAP HANA</block>
+  <block id="3e37c81f26466e5aef19ea7d64f141ae" category="list-text">Seleccione el host que tiene el plugin SAP HANA instalado para gestionar el sistema HANA clonado.</block>
+  <block id="e3455d720fcc40e26f0d36ee7581259f" category="paragraph">Puede ser un host de plugin centralizado o un host de sistema HANA.</block>
+  <block id="5c197ff6b8d148a9f919430a485adff2" category="list-text">Introduzca el SID de SAP HANA para clonar a partir de los backups existentes.</block>
+  <block id="11dae6129ac88bf8ce4b74a3f04b2931" category="list-text">Si los volúmenes de ANF de base de datos SAP HANA están configurados en un pool de CAPACIDAD DE CALIDAD DE SERVICIO manual, especifique la CALIDAD DE SERVICIO de los volúmenes clonados.</block>
+  <block id="db72f6a27d253d274b29062a99ea2856" category="paragraph">Si se detecta automáticamente el sistema HANA de origen y se instala el plugin del host de destino del clon en el host SAP HANA, SnapCenter desmonta automáticamente los volúmenes de datos de HANA existentes en el host de destino del clonado y monta los volúmenes de datos de HANA recién clonados.</block>
+  <block id="42558f3e0d13c5a3ab297f0a09e3dce0" category="admonition">La división de clones está deshabilitada para los clones de ANF porque el clon de ANF ya es un volumen independiente creado a partir de la copia de Snapshot seleccionada.</block>
+  <block id="1d085da91833ced7df79bd36f6ed095f" category="doc">Clone el backup de base de datos de SQL Server</block>
+  <block id="98649dd054e392acef8b60637dd1e4eb" category="list-text">En la página de vista *Administrar copias*, seleccione la copia de seguridad desde el sistema de almacenamiento primario.</block>
+  <block id="064cfc5ceb5ed3cddf1bdbcfa6887172" category="list-text">En la página *Clonar opciones*, proporcione todos los detalles requeridos.</block>
+  <block id="de9209bd485fee913b85e751555d74c3" category="paragraph">Si los volúmenes de ANF de bases de datos de SQL Server se configuran en un pool de CAPACIDAD DE CALIDAD DE SERVICIO manual, especifique la CALIDAD DE SERVICIO de los volúmenes clonados.</block>
+  <block id="b157956c9a5d380bfe61bbff0addd0ac" category="list-text">Seleccione *Ninguno* si desea clonar solo la copia de seguridad completa sin ningún registro.</block>
+  <block id="8079e6a754354a9a6eac9e4b8e07e1a0" category="list-text">Seleccione *All log backups* si desea clonar todas las copias de seguridad de registros disponibles con fecha posterior a la copia de seguridad completa.</block>
+  <block id="e43d167835a003da76fd0c153beda160" category="list-text">Seleccione *by log backups until* si desea clonar la base de datos en función de los registros de copia de seguridad que se crearon hasta el registro de copia de seguridad con la fecha seleccionada.</block>
+  <block id="aff03f4a9d4bb9f6f9919a54f788b1b8" category="list-text">Seleccione *Por fecha específica hasta* si no desea aplicar los registros de transacciones después de la fecha y hora especificadas.</block>
+  <block id="337965cee791a041ec57dfa24fedd746" category="list-text">Seleccione *Configure schedule* cuando desee determinar con qué frecuencia debe producirse la operación de clonación, cuándo debe iniciarse la programación de clonación, en qué día debe producirse la operación de clonación, cuándo debe caducar la programación y si los clones deben eliminarse después de que caduque la programación.</block>
+  <block id="f89c4239b02a9740bafee733a8c2165e" category="doc">Crear grupos de recursos y asociar las políticas de backup de Oracle</block>
+  <block id="092f39203912611ce7a36e3e869ded6b" category="paragraph">Destino del archivo archive log</block>
+  <block id="041394902f3d98321d4bfd68f857de13" category="paragraph">Especifique los destinos de los archivos de registro de archivos.</block>
+  <block id="9563afdee3cf0b9796a53f40dab22f0c" category="list-text">Seleccione la política para la que desea configurar la programación de verificación y haga clic en *<block ref="abe09f480538c71c9fc89b98cd91e2d0" category="inline-image-macro-rx" type="image"></block>.</block>
+  <block id="ac90f60a6a5dd000206a2912f740697f" category="doc">Realice un backup de grupos de recursos SAP HANA</block>
+  <block id="974344da42d421b4dd34c3a98dedb9c1" category="doc">Restaurar y recuperar bases de datos SAP HANA</block>
+  <block id="2d09f159dc8f2cf742ceb30290c92ea6" category="paragraph">Es posible restaurar y recuperar datos de los backups.</block>
+  <block id="0d9e685a9c99b721efacde42faca34d9" category="paragraph">Para los sistemas Auto Discovered HANA, si se selecciona la opción *Complete Resource*, la restauración se realiza utilizando la tecnología Single File snapshot restore. Si la casilla de verificación *Fast Restore* está seleccionada, se utiliza la tecnología Volume Revert.</block>
+  <block id="99b3dba223899e7fb94fd6d1e2ec6105" category="paragraph">Para los recursos agregados manualmente, siempre se utiliza la tecnología Volume Revert.</block>
+  <block id="6ebabcb2ba7b30c2d0a0aa41d985c7bc" category="list-text">En la página Restore Scope, seleccione *Complete Resource*.</block>
+  <block id="17d91aa5af0e524138bf305183ffe871" category="paragraph">Se restauran todos los volúmenes de datos configurados de la base de datos SAP HANA.</block>
+  <block id="d084cf7b664db6d86e5773141e47c52f" category="list-text">Para los sistemas HANA detectados automáticamente, en la página Restore Scope, realice las siguientes acciones:</block>
+  <block id="54e194bf5cfb154480d284f314afb664" category="list-text">Seleccione *Recuperar al estado más reciente* si desea recuperarse lo más cerca posible de la hora actual.</block>
+  <block id="c01b52c5a76f239c6646e3f7088568c6" category="list-text">Seleccione *Recuperar a punto en el tiempo* si desea recuperar al punto en el tiempo especificado.</block>
+  <block id="f2f7d2a8ee1240bdbd4b04cf378241ab" category="list-text">Seleccione *Recuperar a copia de seguridad de datos especificada* si desea recuperar una copia de seguridad de datos específica.</block>
+  <block id="bf61d8f4770f97cbbd31703c6d730b3b" category="list-text">Seleccione *No recovery* si no desea recuperar ahora.</block>
+  <block id="22b709ce565c80098fe2e4182927f525" category="list-text">Especifique la ubicación de backup de registros.</block>
+  <block id="eca17d3ca3df1d216ab9ee9a1a31fb70" category="list-text">Especifique la ubicación del catálogo de backups.</block>
+  <block id="10ee6df71b74c57a6b9f1595f3efce16" category="doc">Realizar un backup de las bases de datos SAP HANA que se ejecutan en Azure NetApp Files</block>
+  <block id="13c7c834f7b8414cef2ddebbd37e4d86" category="list-text">Seleccione la flecha *backups* para establecer opciones de copia de seguridad adicionales.</block>
+  <block id="820ce0339ce64af93adc295b0695c2f8" category="list-text">Seleccione la flecha *Configuraciones personalizadas* y, a continuación, introduzca los pares de valores personalizados necesarios para todos los trabajos que utilizan este recurso.</block>
+  <block id="54e4bfc320112c89c44dab7ba656c966" category="list-text">Seleccione la *Herramienta de copia de instantáneas &gt; SnapCenter sin consistencia del sistema de archivos* para crear copias snapshot.</block>
+  <block id="40defed757ae2b8a311e0272f6d77f1b" category="paragraph">La opción *File System Consistency* solo se aplica a las aplicaciones que se ejecutan en hosts de Windows.</block>
+  <block id="f3d79571b40021bb0ad32b78398ef057" category="doc">Realizar backups de las bases de datos de Oracle que se ejecutan en Azure NetApp Files</block>
+  <block id="5afb14e7449db1f35fc15f6f85899c21" category="list-text">En la página Recursos, seleccione *Base de datos* en la lista desplegable Ver.</block>
+  <block id="a73fd7b4976dfcc1e3546be7ca66ef9a" category="doc">Añadir hosts e instalar el plugin de SnapCenter para base de datos de SQL Server</block>
+  <block id="eac029c95aaaeafaf99dc2f35db06dd6" category="paragraph">SnapCenter admite la protección de datos de instancias de SQL en recursos compartidos de SMB en Azure NetApp Files. Se admiten las configuraciones de grupos de disponibilidad (AG) independientes.</block>
+  <block id="d1172cfcd7a47a2529d53edd244acfc5" category="paragraph">Debe usar la página SnapCenter Add Host para añadir hosts y, a continuación, instalar el paquete de los plugins. Los plugins se instalan automáticamente en hosts remotos.</block>
+  <block id="016ddebcc4c9bce19a86657e974ffb35" category="list-text">Seleccione *Configurar directorio de registro* y en la página Configurar directorio de registro de host, introduzca la ruta SMB del directorio de registro de host y haga clic en *Guardar*.</block>
+  <block id="9c03188338f33fbc98c0bedf6a655e99" category="list-text">Haga clic en *Enviar* y supervise el progreso de la instalación.</block>
+  <block id="10033039ea407528903621059143983f" category="summary">Añada las bases de datos SAP HANA.</block>
+  <block id="65072a18905d082d8c0ec964ee899a87" category="doc">Añada una base de datos SAP HANA</block>
+  <block id="983432516052147b4195eff39945656b" category="paragraph">Debe añadir manualmente la base de datos SAP HANA.</block>
+  <block id="42db56a55cf7b2e7c082bec753ed991f" category="paragraph">Los recursos se deben añadir manualmente si el plugin está instalado en un servidor centralizado. Si el plugin de SAP HANA se instala en el host de la base de datos de HANA, el sistema HANA se detecta de forma automática.</block>
+  <block id="44ad4fb3028a44dd7e1cccf4676046cc" category="admonition">La detección automática no es compatible con la configuración de varios hosts HANA. Solo es necesario añadir a través del plugin centralizado.</block>
+  <block id="027f450221ddb96bc1d081ea94a7dd4a" category="list-text">Introduzca el tipo de recurso como Single Container, Multitenant Database Container o Non-data Volume.</block>
+  <block id="e898199c829d90ae41784a78cdd2d6d9" category="list-text">Introduzca el nombre del sistema SAP HANA.</block>
+  <block id="cf253dc5a484d80a6b33ae68007e2d62" category="list-text">Introduzca el ID del sistema (SID).</block>
+  <block id="f9c8e114a36ca0b831ecce357d1e5abf" category="list-text">Introduzca el nombre de usuario para el que se configuró la clave de almacenamiento de usuario seguro HDB.</block>
+  <block id="2b0d7d4552b59040e15317cfff8068a4" category="list-text">En la página Proporcionar espacio de almacenamiento, seleccione *Azure NetApp Files* como tipo de almacenamiento.</block>
+  <block id="76a43e4fdf38d1bf2ab7cd64e1d24429" category="list-text">Seleccione la cuenta de Azure NetApp.</block>
+  <block id="b2a12ed50ab788953d23c52c8962eab8" category="list-text">Seleccione el pool de capacidad y los volúmenes asociados.</block>
+  <block id="ca326a551325da6560358f1a719a2589" category="doc">Añadir hosts e instalar el plugin de SnapCenter para base de datos SAP HANA</block>
+  <block id="60c3e5dbe50b3ac1a499a2fd4014ef1b" category="paragraph">Debe usar la página SnapCenter Add Host para añadir hosts y, a continuación, instalar los paquetes de los plugins. Los plugins se instalan automáticamente en hosts remotos.</block>
+  <block id="2e5a7588f1caf86b5977da7c11079d6c" category="list-text">Si está instalando en el host centralizado, asegúrese de que el software cliente SAP HANA esté instalado en ese host y abra los puertos necesarios en el host de la base de datos SAP HANA para ejecutar las consultas SQL HDB de forma remota.</block>
+  <block id="97f2c8bf124398ba05bca9cc6fb869b1" category="list-text">Datos principales en Azure NetApp Files (Oracle, Microsoft SQL y SAP HANA)</block>
+  <block id="3559da2fac74b3e69a2cd678efee3582" category="sidebar">Proteja las aplicaciones que se ejecutan en Azure NetApp Files</block>
+  <block id="dd5c6b13be74557c3408d452b60be7a6" category="sidebar">Instale SnapCenter y cree las credenciales</block>
 </blocks>

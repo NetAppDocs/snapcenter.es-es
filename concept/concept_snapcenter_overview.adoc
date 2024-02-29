@@ -41,6 +41,7 @@ SnapCenter puede implementarse de las siguientes maneras:
 +
 ** Datos sobre sistemas principales de Cloud Volumes ONTAP (antes ONTAP Cloud)
 ** Datos en Amazon FSX para ONTAP
+** Datos principales en Azure NetApp Files (Oracle, Microsoft SQL y SAP HANA)
 
 
 
