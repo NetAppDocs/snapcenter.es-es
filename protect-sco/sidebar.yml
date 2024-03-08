@@ -144,6 +144,8 @@ entries:
     url: "/protect-sco/task_delete_clone_of_a_pluggable_database.html"
 - title: Gestione los volúmenes de aplicaciones
   entries:
+  - title: "¿Qué son volúmenes de aplicación"
+    url: "/protect-sco/overview-application-volume.html"
   - title: Añada volúmenes de la aplicación
     url: "/protect-sco/add-application-volume.html"
   - title: Aplicación de backup para volúmenes
