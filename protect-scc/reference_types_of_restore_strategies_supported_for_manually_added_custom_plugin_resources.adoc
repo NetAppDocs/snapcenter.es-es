@@ -24,7 +24,7 @@ NOTE: No es posible recuperar recursos de plugins personalizados añadidos manua
 
 
 
-NOTE: Si el recurso contiene volúmenes o qtrees, se eliminan las copias de Snapshot realizadas después de la copia de Snapshot seleccionada para restaurar en tales volúmenes o qtrees y no pueden recuperarse. Además, si hay algún otro recurso alojado en los mismos volúmenes o qtrees, también se lo elimina.
+NOTE: Si el recurso contiene volúmenes o qtrees, las snapshots realizadas después de la Snapshot seleccionada para restaurar en los volúmenes o qtrees se eliminan y no pueden recuperarse. Además, si hay algún otro recurso alojado en los mismos volúmenes o qtrees, también se lo elimina.
 
 
 

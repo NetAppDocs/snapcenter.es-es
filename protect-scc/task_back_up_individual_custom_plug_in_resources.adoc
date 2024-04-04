@@ -25,9 +25,9 @@ Si un recurso de un plugin individual no forma parte de ningún grupo de recurso
 Haga clic en image:../media/filter_icon.png[""]y, a continuación, seleccione el nombre de host y el tipo de recurso para filtrar los recursos. A continuación, puede hacer clic en image:../media/filter_icon.png["Icono de filtro"] para cerrar el panel de filtros.
 
 . Haga clic en el recurso que desea incluir en el backup.
-. En la página Recursos , si desea utilizar un nombre personalizado, active la casilla de verificación *usar formato de nombre personalizado para copia Snapshot* y, a continuación, escriba un formato de nombre personalizado para el nombre de copia Snapshot.
+. En la página Recurso, si desea utilizar un nombre personalizado, active la casilla de verificación *Use custom name format for Snapshot copy* y, a continuación, introduzca un formato de nombre personalizado para el nombre de la instantánea.
 +
-Por ejemplo, _customtext_policy_hostname_ o _resource_hostname_. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+Por ejemplo, _customtext_policy_hostname_ o _resource_hostname_. De forma predeterminada, se añade una fecha/hora al nombre de la Snapshot.
 
 . En la página Application Settings, realice lo siguiente:
 +
@@ -43,7 +43,7 @@ Habilite el backup del grupo de consistencia y, si es necesario, realice las sig
  a| 
 Permitir que se complete la operación de snapshot del grupo de consistencia
  a| 
-Seleccione Urgent, Medium o Relaxed para especificar el tiempo de espera hasta completar la operación de la copia de Snapshot.
+Seleccione Urgent, Medium o Relaxed para especificar el tiempo de espera hasta completar la operación de Snapshot.
 
 Urgent = 5 segundos, Medium = 7 segundos y Relaxed = 20 segundos.
 
@@ -58,35 +58,35 @@ Seleccione este campo para evitar forzar un punto de coherencia de WAFL.
 +
 image:../media/application_settings.gif["Página de configuración de la aplicación"]
 
-.. Haga clic en la flecha *Scripts* para ejecutar comandos previos y posteriores para la pausa, la copia de Snapshot y la reanudación de la copia. También puede ejecutar los comandos previos antes de salir de la operación de backup.
+.. Haga clic en la flecha *Scripts* para ejecutar los comandos PRE y POST para las operaciones de inactividad, instantánea y desactivación. También puede ejecutar los comandos previos antes de salir de la operación de backup.
 +
 Los scripts previos y posteriores se ejecutan en el servidor de SnapCenter.
 
 .. Haga clic en la flecha *configuraciones personalizadas* y, a continuación, introduzca los pares de valores personalizados necesarios para todos los trabajos que utilicen este recurso.
-.. Haga clic en la flecha *Snapshot Copy Tool* para seleccionar la herramienta que permite crear copias Snapshot:
+.. Haga clic en la flecha * Herramienta de copia de instantáneas * para seleccionar la herramienta para crear instantáneas:
 +
 |===
 | Si desea que... | Realice lo siguiente... 
 
 
  a| 
-SnapCenter debe tomar una copia de Snapshot en el nivel del almacenamiento
+SnapCenter tomará una snapshot en el nivel del almacenamiento
  a| 
 Seleccione *SnapCenter sin coherencia del sistema de archivos*.
 
 
 
  a| 
-SnapCenter utilice el plugin para Windows y coloque el sistema de archivos en estado coherente para luego crear una copia de Snapshot
+SnapCenter utilice el plugin para Windows y coloque el sistema de archivos en estado coherente para luego crear una copia Snapshot
  a| 
 Seleccione *SnapCenter with File System Consistency*.
 
 
 
  a| 
-Se escriba el comando para crear una copia de Snapshot
+Para escribir el comando para crear una snapshot
  a| 
-Seleccione *otros* y, a continuación, escriba el comando para crear una copia Snapshot.
+Seleccione *Otro* y luego ingrese el comando para crear una instantánea.
 
 |===
 

@@ -19,7 +19,7 @@ Un acuerdo de nivel de servicio define el nivel de servicio que se espera y abor
 
 == Tipos de backups compatibles con la base de datos de Exchange
 
-Los backups de buzones de correo de Exchange que usan SnapCenter requieren elegir el tipo de recurso, como bases de datos y DAG. Se aprovecha la tecnología de copia de Snapshot para crear copias en línea y de solo lectura de los volúmenes donde residen los recursos.
+Los backups de buzones de correo de Exchange que usan SnapCenter requieren elegir el tipo de recurso, como bases de datos y DAG. Se aprovecha la tecnología de Snapshot para crear copias en línea y de solo lectura de los volúmenes donde residen los recursos.
 
 |===
 | Tipo de backup | Descripción 
@@ -85,9 +85,9 @@ Algunos factores que determinan la cantidad de trabajos de backup que se necesit
 
 == Convenciones de nomenclatura de backups
 
-Es posible usar la convención de nomenclatura de copia Snapshot predeterminada o usar una convención de nomenclatura personalizada. La convención de nomenclatura de backups predeterminada añade la fecha/hora a los nombres de las copias de Snapshot, lo cual ayuda a identificar cuándo se crearon las copias.
+Es posible usar la convención de nomenclatura de Snapshot predeterminada o usar una convención de nomenclatura personalizada. la convención de nomenclatura de backups predeterminada añade la fecha/hora a los nombres de Snapshot, lo cual ayuda a identificar cuándo se crearon las copias.
 
-La copia Snapshot usa la siguiente convención de nomenclatura predeterminada:
+La Snapshot usa la siguiente convención de nomenclatura predeterminada:
 
 `resourcegroupname_hostname_timestamp`
 
@@ -104,7 +104,7 @@ En este ejemplo, los elementos de la sintaxis tienen los siguientes significados
 * _03-12-2015_23.17.26_ es la fecha y la marca de hora.
 
 
-Como alternativa, puede especificar el formato de nombre de la copia Snapshot mientras protege los recursos o grupos de recursos seleccionando *usar formato de nombre personalizado para copia Snapshot*. Por ejemplo, customtext_resourcegroup_policy_hostname o resourcegroup_hostname. De forma predeterminada, se añade el sufijo de fecha y hora al nombre de la copia de Snapshot.
+Como alternativa, es posible especificar el formato del nombre de Snapshot y proteger los recursos o grupos de recursos si se selecciona *Use custom name format for Snapshot copy*. Por ejemplo, customtext_resourcegroup_policy_hostname o resourcegroup_hostname. De forma predeterminada, se añade el sufijo de fecha y hora al nombre de la Snapshot.
 
 
 

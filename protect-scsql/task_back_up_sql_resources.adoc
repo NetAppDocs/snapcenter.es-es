@@ -33,9 +33,9 @@ En la vista de topología, no puede diferenciar si el estado del backup, la fech
 
 
 
-. En la página Resources, active la casilla de verificación *formato de nombre personalizado para copia de Snapshot* y, a continuación, introduzca un formato de nombre personalizado que desee usar para el nombre de la copia de Snapshot.
+. En la página Resources, active la casilla de comprobación *custom name format for Snapshot copy* y, a continuación, introduzca un formato de nombre personalizado que desee usar para el nombre de Snapshot.
 +
-Por ejemplo, customtext_policy_hostname o resource_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+Por ejemplo, customtext_policy_hostname o resource_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la Snapshot.
 
 . En la página Policies, ejecute las siguientes tareas:
 +

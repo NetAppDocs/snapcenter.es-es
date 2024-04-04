@@ -17,7 +17,7 @@ Es posible desvincular políticas de un recurso o grupo de recursos, y modificar
 
 == Modificar políticas
 
-Puede modificar las opciones de replicación, la configuración de retención de copias de Snapshot, el número de reintentos o la información de scripts mientras se asocia una política a un recurso o grupo de recursos. Puede modificar el tipo de programación (frecuencia) solo después de desvincular una política.
+Puede modificar las opciones de replicación, la configuración de retención de Snapshot, el número de reintentos o la información de scripts mientras se asocia una política a un recurso o grupo de recursos. Puede modificar el tipo de programación (frecuencia) solo después de desvincular una política.
 
 *Acerca de esta tarea*
 

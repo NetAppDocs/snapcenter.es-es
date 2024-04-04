@@ -49,9 +49,9 @@ Haga clic en *image:../media/filter_icon.png[""]* y luego seleccione el nombre d
 ** Para realizar backup de un grupo de disponibilidad de base de datos, se debe hacer clic en el nombre del grupo.
 
 
-. Si desea especificar un nombre personalizado para la copia de Snapshot, en la página Resources, active la casilla de verificación *usar formato de nombre personalizado para copia de Snapshot* y, a continuación, escriba el formato de nombre personalizado que desee usar para el nombre de la copia de Snapshot.
+. Si desea especificar un nombre de instantánea personalizado, en la página Recursos, active la casilla de comprobación *Use custom name format for Snapshot copy* y, a continuación, introduzca el formato del nombre personalizado que desee usar para el nombre de instantánea.
 +
-Por ejemplo, _customtext_policy_hostname_ o _resource_hostname_. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+Por ejemplo, _customtext_policy_hostname_ o _resource_hostname_. De forma predeterminada, se añade una fecha/hora al nombre de la Snapshot.
 
 . En la página Policies, realice los siguientes pasos:
 +

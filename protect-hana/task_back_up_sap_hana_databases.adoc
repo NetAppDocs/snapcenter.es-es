@@ -16,7 +16,7 @@ Si un recurso aún no es parte de ningún grupo de recursos, es posible realizar
 .Antes de empezar
 * Debe tener creada una política de backup.
 * Si desea realizar un backup de un recurso que tenga una relación de SnapMirror con un almacenamiento secundario, la función ONTAP asignada al usuario de almacenamiento debería incluir el privilegio «sinapmirror all». Sin embargo, si usted está utilizando el rol "'vsadmin'", entonces no se requiere el privilegio "nnapmirror all".
-* Para realizar una operación de backup basada en copia de Snapshot, asegúrese de que todas las bases de datos de tenant sean válidas y estén activas.
+* Para la operación de backup basado en copias de Snapshot, asegúrese de que todas las bases de datos de tenant sean válidas y estén activas.
 * Para crear backups de replicación del sistema SAP HANA, se recomienda añadir todos los recursos del sistema SAP HANA a un grupo de recursos. Esto garantiza una copia de seguridad sin problemas durante el modo de recuperación tras fallos.
 +
 link:task_create_resource_groups_and_attach_policies.html["Crear grupos de recursos y añadir políticas"].
@@ -28,7 +28,7 @@ link:task_back_up_resource_groups_sap_hana.html["Realice un backup de los grupos
 +
 La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando Get-Help _command_name_. Como alternativa, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP2886895["Guía de referencia de cmdlets de SnapCenter Software"]
 
-* Para los comandos previos y posteriores para la pausa, la copia de Snapshot y la reanudación de la copia, debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin desde las rutas siguientes:
+* Para los comandos previos y posteriores para operaciones de inactividad, Snapshot y la reanudación de la copia, debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin con las rutas siguientes:
 +
 Para Windows: _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc\allowed_Commands_list.txt_
 
@@ -47,9 +47,9 @@ NOTE: Si no hay comandos en la lista de comandos, se producirá un error en la o
 Seleccione *image:../media/filter_icon.png[""]* y luego seleccione el nombre de host y el tipo de recurso para filtrar los recursos. A continuación, puede seleccionar image:../media/filter_icon.png[""] para cerrar el panel de filtros.
 
 . Seleccione el recurso que desea incluir en el backup.
-. En la página Resources, seleccione *Use custom name format for Snapshot copy* y, a continuación, escriba un nombre personalizado que desee usar para el nombre de la copia de Snapshot.
+. En la página Recursos, seleccione *Use custom name format for Snapshot copy* y, a continuación, escriba el formato del nombre personalizado que desee usar para el nombre de Snapshot.
 +
-Por ejemplo, _customtext_policy_hostname_ o _resource_hostname_. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+Por ejemplo, _customtext_policy_hostname_ o _resource_hostname_. De forma predeterminada, se añade una fecha/hora al nombre de la Snapshot.
 
 . En la página Application Settings, realice lo siguiente:
 +
@@ -65,7 +65,7 @@ Habilite el backup del grupo de consistencia y, si es necesario, realice las sig
  a| 
 Permitir que se complete la operación de "Snapshot de grupo de consistencia"
  a| 
-Seleccione *Urgent*, *Medium* o *Relaxed* para especificar el tiempo de espera para que termine la operación de copia snapshot. Urgent = 5 segundos, Medium = 7 segundos y Relaxed = 20 segundos.
+Seleccione *Urgente*, *Medio* o *Relacionado* para especificar el tiempo de espera para que finalice la operación de instantánea. Urgent = 5 segundos, Medium = 7 segundos y Relaxed = 20 segundos.
 
 
 
@@ -75,19 +75,19 @@ Deshabilite la sincronización WAFL
 Seleccione este campo para evitar forzar un punto de coherencia de WAFL.
 
 |===
-** Seleccione la flecha *Scripts* para ejecutar los comandos previos y posteriores para las operaciones de inactividad, copia Snapshot y desactivación.
+** Seleccione la flecha *Scripts* para ejecutar los comandos PRE y POST para las operaciones de inactividad, instantánea y desactivación.
 +
 También puede ejecutar los comandos previos antes de salir de la operación de backup. Los scripts previos y posteriores se ejecutan en el servidor de SnapCenter.
 
 ** Seleccione la flecha **Configuraciones personalizadas**y, a continuación, introduzca los pares de valores personalizados necesarios para todos los trabajos que utilizan este recurso.
-** Seleccione la flecha *Snapshot Copy Tool* para seleccionar la herramienta para crear copias snapshot:
+** Seleccione la flecha * Herramienta de copia de instantáneas * para seleccionar la herramienta para crear instantáneas:
 +
 |===
 | Si desea que... | Realice lo siguiente... 
 
 
  a| 
-SnapCenter cree una copia de Snapshot a nivel del almacenamiento
+SnapCenter cree una snapshot a nivel del almacenamiento
  a| 
 Seleccione *SnapCenter sin coherencia del sistema de archivos*.
 
@@ -101,9 +101,9 @@ Seleccione *SnapCenter with File System Consistency*.
 
 
  a| 
-Se escriba el comando para crear una copia de Snapshot
+Para escribir el comando para crear una snapshot
  a| 
-Seleccione *otros* y, a continuación, escriba el comando para crear una copia Snapshot.
+Seleccione *Otro* y luego ingrese el comando para crear una instantánea.
 
 |===
 +

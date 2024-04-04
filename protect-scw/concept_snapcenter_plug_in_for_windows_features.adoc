@@ -2,7 +2,7 @@
 permalink: protect-scw/concept_snapcenter_plug_in_for_windows_features.html 
 sidebar: sidebar 
 keywords: SnapCenter 
-summary: El plugin para Windows se integra con la tecnología de copia de Snapshot de NetApp en el sistema de almacenamiento. Para trabajar con el plugin para Windows, se utiliza la interfaz de SnapCenter. 
+summary: El plugin para Windows se integra con la tecnología Snapshot de NetApp en el sistema de almacenamiento. Para trabajar con el plugin para Windows, se utiliza la interfaz de SnapCenter. 
 ---
 = Funciones del plugin de SnapCenter para Windows
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: El plugin para Windows se integra con la tecnología de copia de Snapsh
 
 
 [role="lead"]
-El plugin para Windows se integra con la tecnología de copia de Snapshot de NetApp en el sistema de almacenamiento. Para trabajar con el plugin para Windows, se utiliza la interfaz de SnapCenter.
+El plugin para Windows se integra con la tecnología Snapshot de NetApp en el sistema de almacenamiento. Para trabajar con el plugin para Windows, se utiliza la interfaz de SnapCenter.
 
 El plugin para Windows incluye estas características principales:
 
@@ -23,9 +23,9 @@ La interfaz de SnapCenter ofrece estandarización y consistencia entre plugins y
 +
 Es posible programar backups del sistema de archivos rutinarios, configurar retención de backups basada en políticas y configurar operaciones de restauración. Si desea supervisar de manera proactiva el entorno del sistema de archivos, configure SnapCenter para que envíe alertas por correo electrónico.
 
-* *Tecnología de copia snapshot de NetApp* no disruptiva
+* *Tecnología NetApp instantánea no disruptiva*
 +
-El plugin para Windows utiliza la tecnología de copia de Snapshot de NetApp. Esto permite realizar backups de sistemas de archivos en cuestión de segundos y restaurarlos rápidamente sin necesidad de dejar sin conexión el host. Las copias de Snapshot consumen un espacio de almacenamiento mínimo.
+El plugin para Windows utiliza la tecnología Snapshot de NetApp. Esto permite realizar backups de sistemas de archivos en cuestión de segundos y restaurarlos rápidamente sin necesidad de dejar sin conexión el host. Las snapshots consumen un espacio de almacenamiento mínimo.
 
 
 

@@ -38,9 +38,9 @@ Aparece la página Application volume-Protect.
  a| 
 Utilice un formato de nombre personalizado para la copia de Snapshot
  a| 
-Marque esta casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de la copia de Snapshot.
+Marque esta casilla de comprobación y después introduzca un formato de nombre personalizado que desee usar para el nombre de Snapshot.
 
-Por ejemplo, customtext__policy_hostname o resource_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+Por ejemplo, customtext__policy_hostname o resource_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la Snapshot.
 
 
 

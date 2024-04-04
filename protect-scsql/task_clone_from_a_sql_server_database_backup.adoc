@@ -41,7 +41,7 @@ Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGU
 
 NOTE: Para los entornos virtuales (VMDK/RDM), asegúrese de que el punto de montaje es un disco dedicado.
 
-* Para ONTAP 9.12.1 y versiones posteriores, los clones creados a partir de las copias snapshot de SnapVault de SnapLock como parte de la restauración heredarán el tiempo de caducidad de Vault de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+* Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 
 .Pasos

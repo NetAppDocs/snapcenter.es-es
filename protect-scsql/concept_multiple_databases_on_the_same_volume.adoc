@@ -13,4 +13,4 @@ summary: 'Es posible colocar todas las bases de datos en el mismo volumen, ya qu
 [role="lead"]
 Es posible colocar todas las bases de datos en el mismo volumen, ya que la política de backup incluye una opción para configurar la cantidad máxima de bases de datos por backup (el valor predeterminado es 100).
 
-Por ejemplo, si hay 200 bases de datos en el mismo volumen, se crean dos copias de Snapshot con 100 bases de datos en cada copia.
+Por ejemplo, si hay 200 bases de datos en el mismo volumen, se crean dos Snapshot con 100 bases de datos en cada snapshot.

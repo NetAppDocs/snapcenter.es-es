@@ -20,15 +20,15 @@ Si un recurso no es parte de ningún grupo de recursos, es posible realizar back
 . Seleccione el sistema de archivos del que desea realizar un backup.
 . En la página Resources, puede realizar los siguientes pasos:
 +
-.. Marque la casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de la copia de Snapshot.
+.. Marque la casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de Snapshot.
 +
-Por ejemplo: `customtext_policy_hostname` o. `resource_hostname`. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+Por ejemplo: `customtext_policy_hostname` o. `resource_hostname`. De forma predeterminada, se añade una fecha/hora al nombre de Snapshot.
 
 
 
 . En la página Application Settings, realice lo siguiente:
 +
-** Seleccione la flecha Scripts y escriba los comandos previos y posteriores para el modo de inactividad, copia de Snapshot y la reanudación de la copia. También puede escribir los comandos previos para que se ejecuten antes de salir en caso de un fallo.
+** Seleccione la flecha Scripts y escriba los comandos previos y posteriores para el modo de inactividad, Snapshot y la reanudación de la copia. También puede escribir los comandos previos para que se ejecuten antes de salir en caso de un fallo.
 ** Seleccione una de las opciones de consistencia de backup:
 +
 *** Seleccione *Sistema de archivos consistente* si desea asegurarse de que los datos almacenados en caché de los sistemas de archivos se vacían antes de crear la copia de seguridad y no se realizan operaciones en el sistema de archivos durante la creación de la copia de seguridad.

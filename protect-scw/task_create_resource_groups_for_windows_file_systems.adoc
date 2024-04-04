@@ -14,7 +14,7 @@ summary: Un grupo de recursos es el contenedor donde puede añadir varios sistem
 Un grupo de recursos es el contenedor donde puede añadir varios sistemas de archivos que desea proteger. También deben añadir una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar y, a continuación, especificar la programación de backups.
 
 .Acerca de esta tarea
-* Para ONTAP 9.12.1 y versiones posteriores, los clones creados a partir de las copias snapshot de SnapVault de SnapLock como parte de la restauración heredarán el tiempo de caducidad de Vault de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+* Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 * No se admite la adición de nuevos sistemas de archivos sin SM-BC a un grupo de recursos existente que contenga recursos con SM-BC.
 * No se admite la adición de nuevos sistemas de archivos a un grupo de recursos existente en el modo de conmutación por error de SM-BC. Puede añadir recursos al grupo de recursos solo en estado normal o de conmutación por error.
 
@@ -46,9 +46,9 @@ NOTE: El nombre del grupo de recursos no debe superar los 250 caracteres.
  a| 
 Utilice un formato de nombre personalizado para la copia de Snapshot
  a| 
-Opcional: Escriba un nombre de copia de Snapshot personalizado y su formato.
+Opcional: Introduzca un nombre y un formato de Snapshot personalizados.
 
-Por ejemplo, customtext_resourcegroup_policy_hostname o resourcegroup_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+Por ejemplo, customtext_resourcegroup_policy_hostname o resourcegroup_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la Snapshot.
 
 
 

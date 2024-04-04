@@ -29,9 +29,9 @@ IMPORTANT: Si va a trabajar en un contexto de sistema de archivos de Windows, no
 +
 Especifique la configuración de protección, según se describe en las tareas para crear grupos de recursos.
 
-. Opcional: En la página Resource del asistente, introduzca un formato de nombre personalizado para la copia de Snapshot.
+. Opcional: En la página Resource del asistente, introduzca un formato de nombre personalizado para la snapshot.
 +
-Por ejemplo, customtext_resourcegroup_policy_hostname o resourcegroup_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+Por ejemplo, customtext_resourcegroup_policy_hostname o resourcegroup_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la Snapshot.
 
 . En la página Policies, ejecute las siguientes tareas:
 +

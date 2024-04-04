@@ -82,7 +82,7 @@ host
 +
 Debe reasignar el usuario o el grupo de RBAC al clúster o DAG para incluir el nodo nuevo al usuario o grupo de RBAC. Por ejemplo, tiene un clúster de dos nodos y ha asignado un usuario o un grupo RBAC al clúster. Cuando añada otro nodo al clúster, debe reasignar al usuario o grupo de RBAC al clúster para incluir el nodo nuevo del usuario o grupo de RBAC.
 
-* Si tiene pensado replicar copias de Snapshot, la conexión de almacenamiento tanto para el volumen de origen como de destino debe asignarse al usuario que realiza la operación.
+* Si tiene pensado replicar snapshots, la conexión de almacenamiento tanto para el volumen de origen como de destino debe asignarse al usuario que realiza la operación.
 +
 Antes de asignar acceso a los usuarios, debería añadir activos.
 

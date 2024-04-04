@@ -55,7 +55,8 @@ modo de inactividad
  a| 
 obligatorio
  a| 
-Este código auxiliar es responsable de realizar una pausa. Coloca la aplicación en un estado en el que podemos crear una copia Snapshot. Esto se denomina antes de la operación de copia de Snapshot de almacenamiento.
+Este código auxiliar es responsable de realizar una pausa. Coloca el
+Aplicación en un estado en el que podemos crear una copia snapshot. Esto se denomina antes de una operación de Snapshot del almacenamiento.
 
 
 
@@ -64,7 +65,9 @@ inactivación
  a| 
 obligatorio
  a| 
-Este código auxiliar es responsable de realizar una pausa. Coloca la aplicación en un estado normal. Esto se denomina después de la operación de copia de Snapshot de almacenamiento.
+Este código auxiliar es responsable de realizar una pausa. En lugar
+la aplicación en un estado normal. Esto se denomina después del almacenamiento
+Operación de Snapshot.
 
 
 

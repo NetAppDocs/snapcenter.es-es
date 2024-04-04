@@ -42,9 +42,9 @@ Por ejemplo, si añadió HR como etiqueta a varios grupos de recursos, más adel
  a| 
 Utilice un formato de nombre personalizado para la copia de Snapshot
  a| 
-Marque esta casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de la copia de Snapshot.
+Marque esta casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de Snapshot.
 
-Por ejemplo, _customtext_resource group_policy_hostname o resource group_hostname_. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+Por ejemplo, _customtext_resource group_policy_hostname o resource group_hostname_. De forma predeterminada, se añade una fecha/hora al nombre de la Snapshot.
 
 |===
 . Opcional: En la página Recursos, seleccione un nombre de host de la lista desplegable *Host* y el tipo de recurso de la lista desplegable *Tipo de recurso*.
@@ -66,7 +66,7 @@ Habilite el backup del grupo de consistencia y realice las siguientes tareas:
  a| 
 Permitir que se complete la operación de snapshot del grupo de consistencia
  a| 
-Seleccione Urgent, Medium o Relaxed para especificar el tiempo de espera hasta completar la operación de la copia de Snapshot.
+Seleccione Urgent, Medium o Relaxed para especificar el tiempo de espera hasta completar la operación de Snapshot.
 
 Urgent = 5 segundos, Medium = 7 segundos y Relaxed = 20 segundos.
 
@@ -81,7 +81,7 @@ Seleccione este campo para evitar forzar un punto de coherencia de WAFL.
 +
 image:../media/application_settings.gif["Una captura de pantalla de las opciones para backup de grupo de consistencia: Urgente, medio o relajado."]
 
-.. Seleccione la flecha Scripts y escriba los comandos previos y posteriores para el modo de inactividad, copia de Snapshot y la reanudación de la copia. También puede escribir los comandos previos para que se ejecuten antes de salir en caso de un fallo.
+.. Seleccione la flecha Scripts y escriba los comandos previos y posteriores para el modo de inactividad, Snapshot y la reanudación de la copia. También puede escribir los comandos previos para que se ejecuten antes de salir en caso de un fallo.
 .. Seleccione la flecha Custom Configurations y utilice este recurso para escribir los pares personalizados clave-valor requeridos en todas las operaciones de protección de datos.
 +
 |===
@@ -138,32 +138,32 @@ Permite la gestión de registros de ficheros en subdirectorios.
 Debe utilizar este parámetro si los registros de archivo se encuentran en subdirectorios.
 
 |===
-.. Seleccione la flecha *Snapshot Copy Tool* para seleccionar la herramienta para crear copias snapshot:
+.. Seleccione la flecha * Herramienta de copia de instantáneas * para seleccionar la herramienta para crear instantáneas:
 +
 |===
 | Si desea que... | Realice lo siguiente... 
 
 
  a| 
-SnapCenter utilice el plugin para Windows y coloque el sistema de archivos en estado coherente antes de crear una copia de Snapshot. En el caso de recursos de Linux, esta opción no es aplicable.
+SnapCenter utilice el plugin para Windows y coloque el sistema de archivos en estado coherente antes de crear una Snapshot. En el caso de recursos de Linux, esta opción no es aplicable.
  a| 
-Seleccione SnapCenter with File System Consistency.
+Seleccione *SnapCenter with File System Consistency*.
 
 Esta opción no es aplicable para el plugin de SnapCenter para la base de datos SAP HANA.
 
 
 
  a| 
-SnapCenter cree una copia de Snapshot en el nivel del almacenamiento
+SnapCenter creará una snapshot a nivel del almacenamiento
  a| 
-Seleccione SnapCenter without File System Consistency.
+Seleccione *SnapCenter sin coherencia del sistema de archivos*.
 
 
 
  a| 
-Se escriba el comando que se ejecutará en el host a fin de crear copias de Snapshot.
+Se escriba el comando que se ejecutará en el host a fin de crear snapshots.
  a| 
-Seleccione Other y escriba el comando que se ejecutará en el host a fin de crear una copia de Snapshot.
+Seleccione *Otro* y, a continuación, introduzca el comando que se ejecutará en el host para crear una instantánea.
 
 |===
 

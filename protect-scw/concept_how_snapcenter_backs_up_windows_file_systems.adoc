@@ -2,7 +2,7 @@
 permalink: protect-scw/concept_how_snapcenter_backs_up_windows_file_systems.html 
 sidebar: sidebar 
 keywords: SnapCenter 
-summary: 'SnapCenter usa la tecnología de copia de Snapshot para realizar backups de los recursos del sistema de archivos Windows que residen en LUN, CSV (volúmenes compartidos de clúster), volúmenes RDM, ALM en clústeres de Windows y VMDK basado en VMFS/NFS (sistema de archivos de máquina virtual VMware con NFS).' 
+summary: 'SnapCenter usa la tecnología Snapshot para realizar backups de los recursos del sistema de archivos Windows que residen en LUN, CSV (volúmenes compartidos de clúster), volúmenes RDM, ALM en clústeres de Windows y VMDK basado en VMFS/NFS (sistema de archivos de máquina virtual VMware con NFS).' 
 ---
 = Cómo hace SnapCenter para realizar backup de sistemas de archivos Windows
 :allow-uri-read: 
@@ -11,13 +11,13 @@ summary: 'SnapCenter usa la tecnología de copia de Snapshot para realizar backu
 
 
 [role="lead"]
-SnapCenter usa la tecnología de copia de Snapshot para realizar backups de los recursos del sistema de archivos Windows que residen en LUN, CSV (volúmenes compartidos de clúster), volúmenes RDM, ALM en clústeres de Windows y VMDK basado en VMFS/NFS (sistema de archivos de máquina virtual VMware con NFS).
+SnapCenter usa la tecnología Snapshot para realizar backups de los recursos del sistema de archivos Windows que residen en LUN, CSV (volúmenes compartidos de clúster), volúmenes RDM, ALM en clústeres de Windows y VMDK basado en VMFS/NFS (sistema de archivos de máquina virtual VMware con NFS).
 
-SnapCenter crea backups a partir de copias snapshot de los sistemas de archivos. Los backups federados, en los que un mismo volumen contiene LUN de varios hosts, son más rápidos y eficientes que los backups de cada LUN individual porque solo se crea una copia de Snapshot del volumen, en lugar de Snapshots individuales de cada sistema de archivos.
+SnapCenter crea backups a partir de snapshots de los sistemas de archivos. Los backups federados, en los que un mismo volumen contiene LUN de varios hosts, son más rápidos y eficientes que los backups de cada LUN individual porque solo se crea una snapshot del volumen, en lugar de Snapshots individuales de cada sistema de archivos.
 
-Cuando SnapCenter crea una copia de Snapshot, se captura todo el volumen del sistema de almacenamiento en la copia de Snapshot. Sin embargo, el backup solo es válido para el servidor de host para el cual se creó el backup.
+Cuando SnapCenter crea una copia Snapshot, se captura todo el volumen del sistema de almacenamiento en la copia Snapshot. Sin embargo, el backup solo es válido para el servidor de host para el cual se creó el backup.
 
-Si hay datos de otros servidores de host en el mismo volumen, no es posible restaurarlos desde la copia de Snapshot.
+Si hay datos de otros servidores de host en el mismo volumen, no es posible restaurarlos desde la Snapshot.
 
 
 NOTE: Si un sistema de archivos Windows contiene una base de datos, el proceso de backup del sistema de archivos no es igual que el de la base de datos. Para realizar un backup de una base de datos, se usa uno de los plugins de la base de datos.

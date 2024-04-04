@@ -87,7 +87,7 @@ Modo de inactividad
  a| 
 Sí
  a| 
-Necesita realizar una pausa en la aplicación. En la mayoría de los casos, esto implica poner la aplicación en un estado donde SnapCenter Server puede crear un backup (por ejemplo, una copia Snapshot).
+Necesita realizar una pausa en la aplicación. En la mayoría de los casos, esto implica colocar la aplicación en un estado en el que el servidor de SnapCenter pueda crear un backup (por ejemplo, una copia Snapshot).
  a| 
 Antes de que el servidor de SnapCenter cree una copia de Snapshot o realice un backup en general.
 
@@ -100,7 +100,8 @@ Sí
  a| 
 Necesita realizar una reanudación de la aplicación. En la mayoría de los casos, esto significa volver a poner la aplicación en un estado de funcionamiento normal.
  a| 
-Después de que el servidor SnapCenter haya creado una copia de Snapshot o haya realizado un backup en general.
+Después de que el servidor de SnapCenter haya creado una instantánea o tiene
+realización de una copia de seguridad en general.
 
 
 

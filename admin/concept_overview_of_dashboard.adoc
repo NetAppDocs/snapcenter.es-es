@@ -41,7 +41,7 @@ Al hacer clic en una alerta específica, se le redirigirá a la página Alertas 
 
 == Último resumen sobre protección
 
-El icono Resumen de protección más reciente brinda el estado de protección de todas las entidades a las que se tiene acceso. De forma predeterminada, la pantalla se establece para proporcionar el estado de todos los plugins. La información de estado se proporciona para los recursos cuyo backup se realiza en un almacenamiento primario como copias de Snapshot y en un almacenamiento secundario mediante tecnologías de SnapMirror y SnapVault. La información sobre el estado de protección para el almacenamiento secundario se basa en el tipo de plugin seleccionado.
+El icono Resumen de protección más reciente brinda el estado de protección de todas las entidades a las que se tiene acceso. De forma predeterminada, la pantalla se establece para proporcionar el estado de todos los plugins. La información de estado se proporciona para los recursos respaldados por un backup en almacenamiento primario como copias Snapshot, y en almacenamiento secundario mediante las tecnologías SnapMirror y SnapVault. La información sobre el estado de protección para el almacenamiento secundario se basa en el tipo de plugin seleccionado.
 
 
 NOTE: Si utiliza una política de protección de reflejo-almacén, los contadores para el resumen de protección se muestran en el gráfico resumido SnapVault y no en el gráfico de SnapMirror.
@@ -52,7 +52,7 @@ El estado de protección para plugins individuales es disponible si selecciona u
 IMPORTANT: Los informes sobre almacenamiento secundario se aplican solo a SnapVault; los informes de SnapMirror no se admiten.
 
 
-NOTE: SAP HANA proporciona información sobre el estado de protección para almacenamiento primario y secundario para copias de Snapshot. Solo el estado de protección del almacenamiento principal está disponible para backups basados en archivos.
+NOTE: SAP HANA ofrece información sobre el estado de protección para almacenamiento principal y secundario de Snapshots. Solo el estado de protección del almacenamiento principal está disponible para backups basados en archivos.
 
 |===
 | Estado de protección | Almacenamiento primario | Almacenamiento secundario 
@@ -141,9 +141,9 @@ Recuento de trabajos que se están ejecutando actualmente.
 
 El icono almacenamiento muestra el almacenamiento primario y secundario que consumen los trabajos de protección en un periodo de 90 días, muestra gráficamente las tendencias de consumo y calcula el ahorro en almacenamiento primario. La información de almacenamiento se actualiza una vez cada 24 horas a las 12:00 a.m.
 
-El total de consumo del día, que comprende el número total de backups disponibles en SnapCenter y el tamaño ocupado por estos backups, se mostrará en la parte superior de la pantalla. Un respaldo podría tener varias copias Snapshot asociadas y el número reflejará la misma. Esto se puede aplicar tanto a copias de Snapshot primarias como secundarias. Por ejemplo, ha creado 10 backups, de los cuales 2 se eliminan debido a la retención de backup basado en políticas y 1 backup se elimina explícitamente por usted. Por lo tanto, se mostrará el recuento de 7 backups junto con el tamaño ocupado por estos 7 backups.
+El total de consumo del día, que comprende el número total de backups disponibles en SnapCenter y el tamaño ocupado por estos backups, se mostrará en la parte superior de la pantalla. Un backup puede tener varias copias Snapshot asociadas y el número reflejará la misma. Esto se aplica tanto a las snapshots primarias como secundarias. Por ejemplo, ha creado 10 backups, de los cuales 2 se eliminan debido a la retención de backup basado en políticas y 1 backup se elimina explícitamente por usted. Por lo tanto, se mostrará el recuento de 7 backups junto con el tamaño ocupado por estos 7 backups.
 
-El factor de ahorro en almacenamiento del almacenamiento primario es la proporción de la capacidad lógica (ahorros en copias Snapshot y clones, además del almacenamiento consumido) con la capacidad física del almacenamiento primario. Un gráfico de barras ilustra el ahorro en almacenamiento.
+El factor de ahorro de almacenamiento para el almacenamiento primario es la proporción de capacidad lógica (ahorro en clones y snapshots más almacenamiento consumido) con respecto a la capacidad física del almacenamiento principal. Un gráfico de barras ilustra el ahorro en almacenamiento.
 
 El gráfico de líneas traza por separado el consumo de almacenamiento primario y secundario día a día durante un período de 90 días rotativas. Pasar el puntero por los gráficos ofrece resultados detallados día a día.
 

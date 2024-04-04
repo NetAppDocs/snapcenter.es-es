@@ -2,7 +2,7 @@
 permalink: protect-scsql/concept_type_of_backups_supported.html 
 sidebar: sidebar 
 keywords: Type of backups 
-summary: 'El backup de bases de datos SQL Server del sistema y del usuario con SnapCenter requiere seleccionar el tipo de recurso, como bases de datos, instancias de SQL Server y grupos de disponibilidad \(AG\). Se aprovecha la tecnología de copia de Snapshot para crear copias en línea y de solo lectura de los volúmenes donde residen los recursos.' 
+summary: 'El backup de bases de datos SQL Server del sistema y del usuario con SnapCenter requiere seleccionar el tipo de recurso, como bases de datos, instancias de SQL Server y grupos de disponibilidad \(AG\). Se aprovecha la tecnología de Snapshot para crear copias en línea y de solo lectura de los volúmenes donde residen los recursos.' 
 ---
 = Tipo de backups admitido
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 'El backup de bases de datos SQL Server del sistema y del usuario con S
 
 
 [role="lead"]
-El backup de bases de datos SQL Server del sistema y del usuario con SnapCenter requiere seleccionar el tipo de recurso, como bases de datos, instancias de SQL Server y grupos de disponibilidad (AG). Se aprovecha la tecnología de copia de Snapshot para crear copias en línea y de solo lectura de los volúmenes donde residen los recursos.
+El backup de bases de datos SQL Server del sistema y del usuario con SnapCenter requiere seleccionar el tipo de recurso, como bases de datos, instancias de SQL Server y grupos de disponibilidad (AG). Se aprovecha la tecnología de Snapshot para crear copias en línea y de solo lectura de los volúmenes donde residen los recursos.
 
 Puede seleccionar la opción de solo copia para especificar que SQL Server no trunque los registros de transacciones. Debe utilizar esta opción cuando gestiona SQL Server con otras aplicaciones de backup. Mantener intactos los registros de transacciones permite que cualquier aplicación de backup restaure las bases de datos del sistema. Los backups de solo copia son independientes de la secuencia de backups programados, y no afectan los procedimientos de backup y restauración de la base de datos.
 

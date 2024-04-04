@@ -28,12 +28,12 @@ Los plugins personalizados de SnapCenter sirven para las operaciones de protecci
 
 Es posible usar el plugin de almacenamiento para operaciones de protección de datos.
 
-* Tome copias Snapshot de grupo de consistencia de los volúmenes de almacenamiento en los clústeres de ONTAP.
+* Realice copias Snapshot de grupo de coherencia de los volúmenes de almacenamiento en los clústeres de ONTAP.
 * Realice copias de seguridad de aplicaciones personalizadas mediante el marco incorporado de secuencias de comandos previas y posteriores
 +
 Es posible realizar backups de un volumen de ONTAP, LUN o un qtree.
 
-* Actualización de las copias snapshot del almacenamiento principal y el secundario de ONTAP aprovechando la relación de replicación existente (SnapVault/SnapMirror/replicación unificada) mediante la normativa de SnapCenter
+* Actualice las snapshots creadas del almacenamiento primario a un secundario de ONTAP aprovechando la relación de replicación existente (SnapVault/SnapMirror/replicación unificada) mediante la normativa de SnapCenter
 +
 ONTAP principal y secundario puede ser ONTAP FAS, AFF, cabina All SAN (ASA), Select o Cloud ONTAP.
 

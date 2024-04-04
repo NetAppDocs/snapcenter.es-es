@@ -27,9 +27,9 @@ NOTE: El nombre del grupo de recursos no debe superar los 250 caracteres.
 +
 Por ejemplo, si añadió HR como etiqueta a varios grupos de recursos, más adelante encontrará todos los grupos de recursos asociados usando esa etiqueta.
 
-.. Marque la casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de la copia de Snapshot.
+.. Marque la casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de Snapshot.
 +
-Por ejemplo, customtext_resource group_policy_hostname o resource group_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+Por ejemplo, customtext_resource group_policy_hostname o resource group_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la Snapshot.
 
 
 
@@ -41,7 +41,7 @@ NOTE: Los recursos aparecen en la sección Available Resources solo si se detect
 . Seleccione los recursos de la sección Available Resources y muévalos a la sección Selected Resources.
 . En la página Application Settings, realice lo siguiente:
 +
-** Seleccione la flecha Scripts y escriba los comandos previos y posteriores para el modo de inactividad, copia de Snapshot y la reanudación de la copia. También puede escribir los comandos previos para que se ejecuten antes de salir en caso de un fallo.
+** Seleccione la flecha Scripts y escriba los comandos previos y posteriores para el modo de inactividad, Snapshot y la reanudación de la copia. También puede escribir los comandos previos para que se ejecuten antes de salir en caso de un fallo.
 ** Seleccione una de las opciones de consistencia de backup:
 +
 *** Seleccione *Sistema de archivos consistente* si desea asegurarse de que los datos almacenados en caché de los sistemas de archivos se vacían antes de crear la copia de seguridad y no se permiten operaciones de entrada o salida en el sistema de archivos durante la creación de la copia de seguridad.

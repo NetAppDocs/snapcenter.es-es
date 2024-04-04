@@ -295,10 +295,10 @@ Es posible aumentar o reducir el tamaño de un disco a medida que el sistema de 
 * Para el LUN con aprovisionamiento grueso, se muestra el tamaño expandible (tamaño disponible en el volumen) como tamaño máximo.
 * Los LUN con particiones tipo MBR tienen un límite de tamaño de 2 TB.
 * Los LUN con particiones tipo GPT tienen un límite de tamaño del sistema de almacenamiento de 16 TB.
-* Se recomienda realizar una copia de Snapshot antes de cambiar el tamaño de un LUN.
-* Si se necesita restaurar un LUN de una copia de Snapshot realizada antes de cambiar el tamaño del LUN, SnapCenter cambia automáticamente el tamaño del LUN al tamaño de la copia de Snapshot.
+* Se recomienda realizar una snapshot antes de cambiar el tamaño de un LUN.
+* Si se necesita restaurar un LUN de una snapshot realizada antes de cambiar el tamaño de la LUN, SnapCenter cambia automáticamente el tamaño del LUN al tamaño de la snapshot.
 +
-Después de la operación de restauración, los datos añadidos a la LUN después de cambiar su tamaño deben restaurarse a partir de una copia Snapshot realizada después de cambiar su tamaño.
+Después de la operación de restauración, los daños añadidos al LUN después de su cambio de tamaño deben restaurarse desde una copia de Snapshot realizada antes de cambiar su tamaño.
 
 
 

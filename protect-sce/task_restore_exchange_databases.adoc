@@ -16,7 +16,7 @@ Es posible usar SnapCenter para restaurar bases de datos de Exchange incluidas e
 .Antes de empezar
 * Es necesario tener en cuenta el backup de los grupos de recursos, la base de datos o los DAG.
 * Cuando la base de datos de Exchange se migra a otra ubicación, la operación de restauración no funciona con backups antiguos.
-* Si va a replicar copias de Snapshot en un reflejo o almacén, el administrador de SnapCenter debe haberle asignado las SVM correspondientes a los volúmenes de origen y destino.
+* Si va a replicar snapshots en un reflejo o almacén, el administrador de SnapCenter debe haberle asignado las SVM correspondientes a los volúmenes de origen y destino.
 * En un DAG, si una copia de la base de datos activa se encuentra en un almacenamiento de terceros y desea restaurar desde el backup de copia de base de datos pasiva que se encuentra en un almacenamiento de NetApp, hacer que la copia pasiva (almacenamiento de NetApp) sea una copia activa, actualizar los recursos y realizar la operación de restauración.
 +
 Ejecute el `Move-ActiveMailboxDatabase` comando para realizar la copia pasiva de la base de datos como copia activa de la base de datos.
@@ -44,7 +44,7 @@ El valor de la tecla se puede mostrar desde swagger a través de la API: API /4.
 +
 Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGURACIÓN de API.
 
-* Para ONTAP 9.12.1 y versiones posteriores, los clones creados a partir de las copias snapshot de SnapVault de SnapLock como parte de la restauración heredarán el tiempo de caducidad de Vault de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+* Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 
 .Pasos

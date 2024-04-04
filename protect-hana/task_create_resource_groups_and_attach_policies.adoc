@@ -15,7 +15,7 @@ Un grupo de recursos es el contenedor al que debe añadir los recursos que desea
 
 .Acerca de esta tarea
 * Para crear backups de replicación del sistema SAP HANA, se recomienda añadir todos los recursos del sistema SAP HANA a un grupo de recursos. Esto garantiza una copia de seguridad sin problemas durante el modo de recuperación tras fallos.
-* Para ONTAP 9.12.1 y versiones posteriores, los clones creados a partir de las copias snapshot de SnapVault de SnapLock como parte de la restauración heredarán el tiempo de caducidad de Vault de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+* Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 
 .Pasos
@@ -49,9 +49,9 @@ Por ejemplo, si añadió HR como etiqueta a varios grupos de recursos, más adel
  a| 
 Utilice un formato de nombre personalizado para la copia de Snapshot
  a| 
-Marque esta casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de la copia de Snapshot.
+Marque esta casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de Snapshot.
 
-Por ejemplo, customtext_resource group_policy_hostname o resource group_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+Por ejemplo, customtext_resource group_policy_hostname o resource group_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la Snapshot.
 
 |===
 . En la página Resources, seleccione un nombre de host de la lista desplegable *Host* y un tipo de recurso de la lista desplegable *Tipo de recurso*.
@@ -73,7 +73,7 @@ Habilite el backup del grupo de consistencia y realice las siguientes tareas:
  a| 
 Permitir que se complete la operación de snapshot del grupo de consistencia
  a| 
-Seleccione *Urgent*, *Medium* o *Relaxed* para especificar el tiempo de espera para completar la operación de copia snapshot.
+Seleccione *Urgente*, *Medio* o *Relacionado* para especificar el tiempo de espera para completar la operación de instantánea.
 
 Urgent = 5 segundos, Medium = 7 segundos y Relaxed = 20 segundos.
 
@@ -88,7 +88,7 @@ Seleccione este campo para evitar forzar un punto de coherencia de WAFL.
 +
 image:../media/application_settings.gif[""]
 
-.. Haga clic en la flecha *Scripts* e introduzca los comandos previos y posteriores para las operaciones de inactividad, copia snapshot y reanudación. También puede escribir los comandos previos para que se ejecuten antes de salir en caso de un fallo.
+.. Haga clic en la flecha *Scripts* e introduzca los comandos PRE y POST para las operaciones de inactividad, instantánea y desactivación. También puede escribir los comandos previos para que se ejecuten antes de salir en caso de un fallo.
 .. Haga clic en la flecha *configuraciones personalizadas* e introduzca los pares personalizados clave-valor requeridos para todas las operaciones de protección de datos que utilizan este recurso.
 +
 |===
@@ -149,14 +149,14 @@ Debe utilizar este parámetro si los registros de archivo se encuentran en subdi
 
 NOTE: Los pares personalizados de clave-valor son compatibles con los sistemas del plugin de SAP HANA Linux y no son compatibles con la base de datos SAP HANA registrada como un plugin de Windows centralizado.
 
-.. Haga clic en la flecha *Snapshot Copy Tool* para seleccionar la herramienta que permite crear copias Snapshot:
+.. Haga clic en la flecha * Herramienta de copia de instantáneas * para seleccionar la herramienta para crear instantáneas:
 +
 |===
 | Si desea que... | Realice lo siguiente... 
 
 
  a| 
-SnapCenter utilice el plugin para Windows y coloque el sistema de archivos en estado coherente antes de crear una copia de Snapshot. En el caso de recursos de Linux, esta opción no es aplicable.
+SnapCenter utilice el plugin para Windows y coloque el sistema de archivos en estado coherente antes de crear una Snapshot. En el caso de recursos de Linux, esta opción no es aplicable.
  a| 
 Seleccione *SnapCenter with File System Consistency*.
 
@@ -165,7 +165,7 @@ Esta opción no es aplicable para el plugin de SnapCenter para la base de datos 
 
 
  a| 
-SnapCenter cree una copia de Snapshot en el nivel del almacenamiento
+SnapCenter creará una snapshot a nivel del almacenamiento
  a| 
 Seleccione *SnapCenter sin coherencia del sistema de archivos*.
 
@@ -174,7 +174,7 @@ Seleccione *SnapCenter sin coherencia del sistema de archivos*.
  a| 
 Se escriba el comando que se ejecutará en el host a fin de crear copias de Snapshot.
  a| 
-Seleccione *otros* y, a continuación, escriba el comando que se ejecutará en el host para crear una copia Snapshot.
+Seleccione *Otro* y, a continuación, introduzca el comando que se ejecutará en el host para crear una instantánea.
 
 |===
 

@@ -20,7 +20,7 @@ Para obtener detalles, consulte la información sobre cómo definir una estrateg
 
 * Debe haberse preparado para la protección de datos completando ciertas tareas, como instalar SnapCenter, añadir hosts, identificar recursos y crear conexiones con el sistema de almacenamiento.
 * Debe haber actualizado (detectado) los recursos de Exchange Server.
-* Si va a replicar copias de Snapshot en un reflejo o almacén, el administrador de SnapCenter debe haberle asignado las máquinas virtuales de almacenamiento (SVM) para los volúmenes de origen y de destino.
+* Si va a replicar snapshots en un reflejo o almacén, el administrador de SnapCenter debe haberle asignado las máquinas virtuales de almacenamiento (SVM) para los volúmenes de origen y de destino.
 * Para ejecutar los scripts de PowerShell en scripts previos y posteriores, es necesario configurar el valor de `usePowershellProcessforScripts` parámetro en true en la `web.config` archivo.
 +
 El valor predeterminado es FALSE
@@ -45,16 +45,16 @@ Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGU
 |===
 
 
-| *Mejor práctica:* es mejor configurar la directiva de retención secundaria en función del número de copias de seguridad completas y de registros, en general, que desee conservar. Al configurar las políticas de retención secundarias, tenga en cuenta que cuando las bases de datos y los registros de volúmenes diferentes, cada backup puede tener tres copias de Snapshot y cuando las bases de datos y los registros están en el mismo volumen, cada backup puede tener dos copias de Snapshot. 
+| *Mejor práctica:* es mejor configurar la directiva de retención secundaria en función del número de copias de seguridad completas y de registros, en general, que desee conservar. Cuando se configuran las políticas de retención secundarias, se tiene en cuenta que cuando las bases de datos y los registros que están en volúmenes diferentes, cada backup puede tener tres Snapshot y cuando las bases de datos y los registros están en el mismo volumen, cada backup puede tener dos Snapshot. 
 |===
 * SnapLock
 +
 ** Si se selecciona la opción 'Retain the backup copies for a specific number of days', el período de retención de SnapLock debe ser menor o igual que los días de retención mencionados.
 +
-Especificar un período de bloqueo de copia Snapshot evita la eliminación de las copias Snapshot hasta que caduque el período de retención.  Esto puede hacer que se conserve un mayor número de copias Snapshot que el número especificado en la política.
+Si se especifica un período de bloqueo de Snapshot, se evita la eliminación de las snapshots hasta que caduque el período de retención.  Esto podría llevar a retener un número mayor de instantáneas que el recuento especificado en la política.
 
 +
-Para ONTAP 9.12.1 y versiones siguientes, los clones creados a partir de las copias snapshot de SnapLock heredarán el tiempo de caducidad de SnapLock Vault. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las snapshots de SnapLock heredarán el tiempo de caducidad de SnapLock Vault. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 +
 
@@ -175,7 +175,7 @@ NOTE: El valor de retención máximo es 1018 para recursos en ONTAP 9.4 o poster
 
 +
 
-IMPORTANT: Debe establecer el número de retención en 2 o un valor más alto si tiene pensado habilitar la replicación de SnapVault. Si establece el número de retención en 1, la operación puede generar un error, ya que la primera copia de Snapshot es la de referencia para la relación de SnapVault hasta que se replica una nueva copia de Snapshot en el destino.
+IMPORTANT: Debe establecer el número de retención en 2 o un valor más alto si tiene pensado habilitar la replicación de SnapVault. Si establece el número de retención en 1, la operación puede generar un error, ya que la primera Snapshot es la de referencia para la relación de SnapVault hasta que se replica una nueva Snapshot en el destino.
 
 +
 .. En la sección Log backups retention settings, seleccione una de las siguientes opciones:
@@ -195,7 +195,7 @@ Las carpetas de registro creadas como parte de los backups completos y de regist
 
 Es posible configurar el valor de retención UTM como 0, si no desea realizar una restauración de último minuto. Esto habilitará la operación de restauración a un momento específico.
 
-*Mejor práctica:* es mejor que la configuración sea igual a la configuración de copias Snapshot totales (copias de seguridad completas) en la sección Configuración de retención de copias de seguridad completas. De este modo se garantiza que se conservan los archivos de registro para cada backup completo.
+*Mejores prácticas:* Es mejor que la configuración sea igual a la configuración de Total Snapshots (copias de seguridad completas) en la sección Configuración de retención de copia de seguridad completa. De este modo se garantiza que se conservan los archivos de registro para cada backup completo.
 
 
 
@@ -209,7 +209,7 @@ Se conservan los backups de registros por la cantidad de días de backups comple
 
 
  a| 
-Período de bloqueo de copia de snapshot
+Período de bloqueo de instantánea
  a| 
 Seleccione *Período de bloqueo de copia de instantánea* y seleccione Días, Meses o Años.
 
@@ -226,9 +226,9 @@ Si seleccionó *Log backup* como tipo de copia de seguridad, las copias de segur
 
 
  a| 
-Retener únicamente una cantidad específica de copias de Snapshot
+Conserve únicamente una cantidad específica de snapshots
  a| 
-Si desea especificar el número de copias de seguridad completas que se conservarán, seleccione la opción *total Snapshot copies to keep* y especifique el número de copias de Snapshot (copias de seguridad completas) que se retendrán.
+Si desea especificar el número de copias de seguridad completas que se deben conservar, seleccione la opción *Total de copias de Snapshot para mantener* y especifique el número de instantáneas (copias de seguridad completas) que se deben retener.
 
 Si se supera la cantidad especificada de backups completos, se eliminarán los backups completos que exceden dicha cantidad empezando por las copias más antiguas.
 
@@ -237,12 +237,12 @@ Si se supera la cantidad especificada de backups completos, se eliminarán los b
  a| 
 Retener los backups completos por una cantidad determinada de días
  a| 
-Seleccione la opción *Keep Snapshot copies for* y especifique la cantidad de días que se conservarán las copias de Snapshot (copias de seguridad completas).
+Seleccione la opción *Keep Snapshot copies for* y especifique el número de días para conservar Snapshots (copias de seguridad completas).
 
 
 
  a| 
-Período de bloqueo de copia de snapshot
+Período de bloqueo de instantánea
  a| 
 Seleccione *Período de bloqueo de copia de instantánea* y seleccione Días, Meses o Años.
 
@@ -272,7 +272,7 @@ En el ejemplo, el valor 10 indica que se conservan hasta 10 backups de registros
 
 
  a| 
-Actualizar SnapMirror tras crear una copia Snapshot local
+Actualice SnapMirror después de crear una instantánea local
 
 Durante la replicación secundaria, el tiempo de caducidad del SnapLock carga el tiempo de caducidad del SnapLock principal.
 
@@ -285,7 +285,7 @@ Seleccione esta opción para mantener copias de SnapMirror de conjuntos de backu
 
 
  a| 
-Actualizar SnapVault después de crear una copia Snapshot local
+Actualizar SnapVault después de crear una instantánea local
  a| 
 Seleccione esta opción para realizar una replicación de backup de disco a disco.
 
@@ -296,7 +296,7 @@ Etiqueta de la política secundaria
  a| 
 Seleccione una etiqueta de Snapshot.
 
-Según la etiqueta de copia de Snapshot que seleccione, ONTAP aplicará la política de retención de copias de Snapshot secundarias que corresponda a esa etiqueta.
+Según la etiqueta de Snapshot que seleccione, ONTAP aplicará la política de retención de Snapshot secundaria que corresponda a esa etiqueta.
 
 
 NOTE: Si ha seleccionado *Actualizar SnapMirror después de crear una copia Snapshot local*, puede especificar opcionalmente la etiqueta de la directiva secundaria. Sin embargo, si ha seleccionado *Actualizar SnapVault después de crear una copia Snapshot local*, debe especificar la etiqueta de la directiva secundaria.
@@ -311,7 +311,7 @@ Introduzca el número de intentos de replicación que deben producirse antes de 
 |===
 +
 
-NOTE: Debe configurar la política de retención de SnapMirror en ONTAP para el almacenamiento secundario a fin de evitar alcanzar el límite máximo de copias de Snapshot en el almacenamiento secundario.
+NOTE: Debe configurar la política de retención de SnapMirror en ONTAP para el almacenamiento secundario a fin de evitar que se alcance el límite máximo de Snapshots en el almacenamiento secundario.
 
 . En la página Script, introduzca la ruta y los argumentos del script previo o script posterior que se deben ejecutar antes o después de la operación de backup, según corresponda.
 +

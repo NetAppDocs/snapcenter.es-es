@@ -23,7 +23,7 @@ Es posible programar operaciones de backup, configurar la retención de backup b
 
 * *Tecnología de copia snapshot de NetApp* no disruptiva
 +
-SnapCenter utiliza la tecnología de copias de Snapshot de NetApp con el plugin para bases de datos de SAP HANA para realizar backups de recursos.
+SnapCenter utiliza la tecnología Snapshot de NetApp con el plugin para bases de datos de SAP HANA para realizar backups de recursos.
 
 
 
@@ -38,12 +38,12 @@ También es posible configurar las credenciales para que los usuarios de SnapCen
 +
 Se requiere una licencia de FlexClone en el sistema de almacenamiento donde desea crear el clon.
 
-* Compatibilidad con la función de copia de Snapshot de grupo de consistencia de ONTAP como parte de la creación de backups.
+* Compatibilidad con la función Snapshot del grupo de consistencia (CG) de ONTAP como parte de la creación de backups.
 * Capacidad para ejecutar varios backups de forma simultánea entre varios hosts de recursos
 +
-En una sola operación se consolidan copias de Snapshot cuando los recursos en un solo host comparten el mismo volumen.
+En una sola operación se consolidan Snapshot cuando los recursos en un solo host comparten el mismo volumen.
 
-* Capacidad para crear copias de Snapshot con comandos externos.
+* Capacidad para crear snapshots con comandos externos
 * Compatibilidad con backups basados en archivos.
 * Compatibilidad con LVM de Linux en el sistema de archivos XFS.
 

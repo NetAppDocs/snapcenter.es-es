@@ -68,6 +68,6 @@ Debe eliminar manualmente todos los clones creados para los recursos del grupo d
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, seleccione *Resource Group* en la lista *View*.
 . Seleccione el grupo de recursos y haga clic en *Eliminar*.
-. Opcional: Marque la casilla de comprobación *Delete backups and detach policies associated with this Resource Group* para quitar todos los backups, los metadatos, las políticas y las copias de Snapshot que estén asociados con el grupo de recursos.
+. Opcional: Seleccione la casilla de verificación *Eliminar copias de seguridad y desvincular políticas asociadas con este grupo de recursos* para eliminar todas las copias de seguridad, metadatos, políticas e instantáneas asociadas con el grupo de recursos.
 . Haga clic en *Aceptar*.
 

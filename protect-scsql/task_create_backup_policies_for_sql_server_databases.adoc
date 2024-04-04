@@ -18,7 +18,7 @@ Es posible crear una política de backup para el recurso o el grupo de recursos 
 * Debe haberse preparado para la protección de datos completando ciertas tareas, como instalar SnapCenter, añadir hosts, identificar recursos y crear conexiones con el sistema de almacenamiento.
 * Debe haber configurado el directorio de registro del host para backup de registro.
 * Debe haber actualizado (detectado) los recursos de SQL Server.
-* Si va a replicar copias de Snapshot en un reflejo o almacén, el administrador de SnapCenter debe haberle asignado las máquinas virtuales de almacenamiento (SVM) para los volúmenes de origen y de destino.
+* Si va a replicar snapshots en un reflejo o almacén, el administrador de SnapCenter debe haberle asignado las máquinas virtuales de almacenamiento (SVM) para los volúmenes de origen y de destino.
 +
 Para obtener información sobre cómo los administradores asignan recursos a los usuarios, consulte la información de instalación de SnapCenter.
 
@@ -47,10 +47,10 @@ Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGU
 +
 ** Si se selecciona la opción 'Retain the backup copies for a specific number of days', el período de retención de SnapLock debe ser menor o igual que los días de retención mencionados.
 +
-Especificar un período de bloqueo de copia Snapshot evita la eliminación de las copias Snapshot hasta que caduque el período de retención.  Esto puede hacer que se conserve un mayor número de copias Snapshot que el número especificado en la política.
+Si se especifica un período de bloqueo de Snapshot, se evita la eliminación de las snapshots hasta que caduque el período de retención.  Esto podría llevar a retener un número mayor de instantáneas que el recuento especificado en la política.
 
 +
-Para ONTAP 9.12.1 y versiones posteriores, los clones creados a partir de las copias snapshot de SnapVault de SnapLock como parte de la restauración heredarán el tiempo de caducidad de Vault de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 +
 
@@ -84,7 +84,7 @@ NOTE: La configuración principal de SnapLock se gestiona en la política de bac
 Realizar un backup de los archivos de la base de datos y los registros de transacciones y para truncar los registros de transacciones.
 
 . Seleccione *copia de seguridad completa y copia de seguridad de registro*.
-. Introduzca el número máximo de bases de datos que se deben incluir en un backup para cada copia de Snapshot.
+. Introduzca el número máximo de bases de datos que se deben incluir en un backup para cada Snapshot.
 +
 
 NOTE: Debe aumentar dicho valor si desea ejecutar varias operaciones de backup en forma simultánea.
@@ -97,7 +97,8 @@ NOTE: Debe aumentar dicho valor si desea ejecutar varias operaciones de backup e
 Realice un backup de los archivos de la base de datos.
 
 . Seleccione *copia de seguridad completa*.
-. Introduzca el número máximo de bases de datos que se deben incluir en un backup para cada copia de Snapshot. El valor predeterminado es 100
+. Introduzca el número máximo de bases de datos que se deben incluir en un backup para cada Snapshot.
+El valor predeterminado es 100
 +
 
 NOTE: Debe aumentar dicho valor si desea ejecutar varias operaciones de backup en forma simultánea.
@@ -175,7 +176,7 @@ En la página Retention, según el tipo de backup seleccionado en la página de 
 ====
 .Número específico de copias
 --
-Retener únicamente una cantidad específica de copias de Snapshot.
+Conserve únicamente una cantidad específica de snapshots.
 
 . Seleccione la opción *Keep log backups aplicable a Last <number> Days* y especifique el número de días que se conservarán. Si se acerca a ese límite, tal vez deba eliminar copias más antiguas.
 
@@ -192,10 +193,10 @@ Retener las copias de backup por una cantidad determinada de días.
 ====
 . En la sección *Configuración de copias de seguridad completas* para la configuración de retención a petición, realice las siguientes acciones:
 +
-.. Especifique el número total de copias de Snapshot que se van a conservar
+.. Especifique el número total de snapshots que desea conservar
 +
-... Para especificar el número de copias snapshot que se deben conservar, seleccione *Total de copias snapshot que se deben conservar*.
-... Si la cantidad de copias de Snapshot supera el número especificado, las copias se eliminan empezando por las más antiguas.
+... Para especificar el número de instantáneas que se deben conservar, seleccione *Total de copias snapshot que se deben conservar*.
+... Si la cantidad de snapshots supera el número especificado, las snapshots se eliminan empezando por las más antiguas.
 
 
 
@@ -203,17 +204,17 @@ Retener las copias de backup por una cantidad determinada de días.
 
 
 
-IMPORTANT: De forma predeterminada, el valor del número de retención se establece en 2. Si establece el número de retención en 1, la operación puede generar un error, ya que la primera copia de Snapshot es la de referencia para la relación de SnapVault hasta que se replica una nueva copia de Snapshot en el destino.
+IMPORTANT: De forma predeterminada, el valor del número de retención se establece en 2. Si establece el número de retención en 1, la operación puede generar un error, ya que la primera Snapshot es la de referencia para la relación de SnapVault hasta que se replica una nueva Snapshot en el destino.
 
 
 NOTE: El valor de retención máximo es 1018 para recursos en ONTAP 9.4 o posterior, y 254 para recursos en ONTAP 9.3 o anterior. Se producirá un error en los backups si la retención se establece en un valor superior a la versión de ONTAP subyacente.
 
-. Tiempo que se conservan las copias de Snapshot
+. Tiempo que se conservan las Snapshots
 +
-.. Si desea especificar el número de días durante los que desea conservar las copias Snapshot antes de eliminarlas, seleccione *mantener copias Snapshot para*.
+.. Si desea especificar el número de días durante los cuales desea conservar las instantáneas antes de eliminarlas, seleccione *Mantener copias instantáneas para*.
 
 
-. Si desea especificar el período de bloqueo de la copia snapshot, seleccione *Período de bloqueo de la copia snapshot* y seleccione días, meses o años.
+. Si desea especificar el período de bloqueo de la instantánea, seleccione *Período de bloqueo de la copia de instantánea* y seleccione Días, meses o años.
 +
 El período de retención de SnapLock debe ser inferior a 100 años.
 
@@ -221,9 +222,9 @@ El período de retención de SnapLock debe ser inferior a 100 años.
 
 . En la sección *Configuración de copias de seguridad completas* para la configuración de retención por hora, por día, por semana y por mes, especifique la configuración de retención para el tipo de programación seleccionado en la página Tipo de copia de seguridad.
 +
-.. Especifique el número total de copias de Snapshot que se van a conservar
+.. Especifique el número total de snapshots que desea conservar
 +
-... Para especificar el número de copias snapshot que se deben conservar, seleccione *Total de copias snapshot que se deben conservar*. Si la cantidad de copias de Snapshot supera el número especificado, las copias se eliminan empezando por las más antiguas.
+... Para especificar el número de instantáneas que se deben conservar, seleccione *Total de copias snapshot que se deben conservar*. Si la cantidad de snapshots supera el número especificado, las snapshots se eliminan empezando por las más antiguas.
 
 
 
@@ -231,23 +232,23 @@ El período de retención de SnapLock debe ser inferior a 100 años.
 
 
 
-IMPORTANT: Debe establecer el número de retención en 2 o un valor más alto si tiene pensado habilitar la replicación de SnapVault. Si establece el número de retención en 1, la operación puede generar un error, ya que la primera copia de Snapshot es la de referencia para la relación de SnapVault hasta que se replica una nueva copia de Snapshot en el destino.
+IMPORTANT: Debe establecer el número de retención en 2 o un valor más alto si tiene pensado habilitar la replicación de SnapVault. Si establece el número de retención en 1, la operación puede generar un error, ya que la primera Snapshot es la de referencia para la relación de SnapVault hasta que se replica una nueva Snapshot en el destino.
 
-. Tiempo que se conservan las copias de Snapshot
+. Tiempo que se conservan las Snapshots
 +
-.. Para especificar el número de días durante los cuales desea conservar las copias snapshot antes de eliminarlas, seleccione *Mantener copias snapshot para*.
+.. Para especificar el número de días durante los cuales desea conservar las instantáneas antes de eliminarlas, seleccione *Mantener copias instantáneas para*.
 
 
-. Si desea especificar el período de bloqueo de la copia snapshot, seleccione *Período de bloqueo de la copia snapshot* y seleccione días, meses o años.
+. Si desea especificar el período de bloqueo de la instantánea, seleccione *Período de bloqueo de la copia de instantánea* y seleccione Días, meses o años.
 +
 El período de retención de SnapLock debe ser inferior a 100 años.
 
 +
-De forma predeterminada, la retención de copias de Snapshot de registro se establece en 7 días. Use el cmdlet Set-SmPolicy para cambiar la retención de la copia de Snapshot de registro.
+De forma predeterminada, la retención de Snapshot de registro se establece en 7 días. Use el cmdlet Set-SmPolicy para cambiar la retención de Snapshot de registro.
 
 
 
-En este ejemplo se establece la retención de la copia Snapshot del registro en 2:
+En este ejemplo, se establece la retención de Snapshot de registro en 2:
 
 .Muestra el ejemplo
 []
@@ -308,7 +309,7 @@ Consulte link:..protect-scsql/task_view_sql_server_backups_and_clones_in_the_top
 . Seleccione una etiqueta de Snapshot.
 
 
-Según la etiqueta de copia de Snapshot que seleccione, ONTAP aplicará la política de retención de copias de Snapshot secundarias que corresponda a esa etiqueta.
+Según la etiqueta de Snapshot que seleccione, ONTAP aplicará la política de retención de Snapshot secundaria que corresponda a esa etiqueta.
 
 
 NOTE: Si ha seleccionado *Actualizar SnapMirror después de crear una copia Snapshot local*, puede especificar opcionalmente la etiqueta de la directiva secundaria. Sin embargo, si ha seleccionado *Actualizar SnapVault después de crear una copia Snapshot local*, debe especificar la etiqueta de la directiva secundaria.
@@ -335,7 +336,7 @@ NOTE: La ruta scripts previos o posteriores no debe incluir unidades o recursos 
 
 +
 
-NOTE: Debe configurar la política de retención de SnapMirror en ONTAP para que el almacenamiento secundario no alcance el límite máximo de copias de Snapshot.
+NOTE: Debe configurar la política de retención de SnapMirror en ONTAP para que el almacenamiento secundario no alcance el límite máximo de Snapshots.
 
 
 
@@ -368,9 +369,9 @@ En la página Verification, realice los siguientes pasos:
 ... Seleccione *no comprobar los índices no almacenados en clúster (NOINDEX)* si no desea comprobar los índices no almacenados en clúster. La base de datos de SQL Server utiliza la comprobación de la consistencia de base de datos de Microsoft SQL Server para comprobar la integridad lógica y física de los objetos de la base de datos.
 
 
-.. Limitar las comprobaciones y obtener los bloqueos en lugar de utilizar una copia de Snapshot de la base de datos interna (TABLOCK)
+.. Limitar las comprobaciones y obtener los bloqueos en lugar de utilizar una instantánea de la base de datos interna (TABLOCK)
 +
-... Seleccione *Limite las comprobaciones y obtenga los bloqueos en lugar de utilizar una copia de Snapshot de la base de datos interna (TABLOCK)* para limitar las comprobaciones y obtener bloqueos en lugar de utilizar una copia de Snapshot interna de la base de datos.
+... Seleccione *Limitar las comprobaciones y obtener los bloqueos en lugar de utilizar una copia Snapshot interna de la base de datos (TABLOCK)* para limitar las comprobaciones y obtener bloqueos en lugar de utilizar una instantánea interna de la base de datos.
 
 
 

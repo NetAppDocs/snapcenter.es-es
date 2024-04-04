@@ -26,9 +26,9 @@ Aparece la página Database-Protect.
 
 . En la página Resources, puede realizar los siguientes pasos:
 +
-.. Marque la casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de la copia de Snapshot.
+.. Marque la casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de Snapshot.
 +
-Por ejemplo: `customtext_policy_hostname` o. `resource_hostname`. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+Por ejemplo: `customtext_policy_hostname` o. `resource_hostname`. De forma predeterminada, se añade una fecha/hora al nombre de Snapshot.
 
 .. Especifique los destinos de los archivos de registro de archivos que no desea incluir en el backup.
 

@@ -42,7 +42,7 @@ Si el recurso está protegido, se muestra la página con el resumen seleccionado
 
 . Consulte *Summary Card* para ver un resumen del número de copias de seguridad y clones disponibles en el almacenamiento principal y secundario.
 +
-La sección *Tarjeta de resumen* muestra el número total de copias de seguridad basadas en archivos, copias de seguridad de instantáneas y clones.
+La sección *Summary Card* muestra el número total de copias de seguridad basadas en archivos, copias de seguridad basadas en copias Snapshot y clones.
 
 +
 Al hacer clic en el botón *Actualizar* se inicia una consulta del almacenamiento para mostrar un recuento preciso.
@@ -51,7 +51,7 @@ Al hacer clic en el botón *Actualizar* se inicia una consulta del almacenamient
 Si se realiza una copia de seguridad habilitada para SnapLock, al hacer clic en el botón *Actualizar* se actualiza el tiempo de caducidad de SnapLock principal y secundario recuperado de ONTAP. Una programación semanal también actualiza el tiempo de caducidad de SnapLock principal y secundario recuperado de ONTAP.
 
 +
-Cuando el recurso de la aplicación se distribuya entre varios volúmenes, el tiempo de caducidad de SnapLock para el backup será el tiempo de caducidad de SnapLock más largo que esté establecido para una copia de Snapshot en un volumen. El tiempo de caducidad de SnapLock más largo se recupera de ONTAP.
+Cuando el recurso de la aplicación se distribuya entre varios volúmenes, el tiempo de caducidad de SnapLock para el backup será el tiempo de caducidad de SnapLock más largo que se establezca para una snapshot en un volumen. El tiempo de caducidad de SnapLock más largo se recupera de ONTAP.
 
 +
 Después de la copia de seguridad a petición, haciendo clic en el botón *Actualizar* actualiza los detalles de la copia de seguridad o clonación.

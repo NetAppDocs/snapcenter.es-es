@@ -37,7 +37,7 @@ Si el recurso forma parte de un grupo de recursos, coloque al grupo de recursos 
 . Elimine el grupo de recursos en la página Topology.
 . Elimine el recurso MDC antiguo de la página Resources.
 +
-Por ejemplo, si el período de retención de las copias de Snapshot primarias es de 7 días y la retención de copias de Snapshot secundarias es de 45 días, después de completar 45 días y después de eliminar todos los backups, debe eliminar el grupo de recursos y el recurso MDC antiguo.
+Por ejemplo, si el período de retención de Snapshot primario es de 7 días y la retención de Snapshot secundarias es de 45 días, una vez completados 45 días y después de eliminar todos los backups, debe eliminar el grupo de recursos y el recurso de MDC anterior.
 
 
 

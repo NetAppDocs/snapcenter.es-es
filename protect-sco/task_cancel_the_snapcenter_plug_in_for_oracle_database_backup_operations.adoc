@@ -17,7 +17,7 @@ Debe iniciar sesión como administrador de SnapCenter o propietario del trabajo 
 
 *Acerca de esta tarea*
 
-Cuando se cancela una operación de backup, el servidor de SnapCenter detiene la operación y quita todas las copias de Snapshot del almacenamiento si el backup creado no se registra en SnapCenter Server. Si el backup ya está registrado en el servidor SnapCenter, no retrocederá la copia de Snapshot ya creada incluso después de que se active la cancelación.
+Cuando se cancela una operación de backup, el servidor de SnapCenter detiene la operación y quita todas las snapshots del almacenamiento si el backup creado no se registró en el servidor de SnapCenter. Si la copia de seguridad ya está registrada en el servidor de SnapCenter, no revertirá la copia snapshot ya creada incluso después de que se active la cancelación.
 
 * Solo es posible cancelar la operación de registro o backup completo que se encuentra en cola o en ejecución.
 * No se puede cancelar la operación una vez iniciada la verificación.

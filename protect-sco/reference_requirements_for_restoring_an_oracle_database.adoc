@@ -14,7 +14,7 @@ summary: Antes de restaurar una base de datos de Oracle, debe asegurarse de que 
 Antes de restaurar una base de datos de Oracle, debe asegurarse de que se hayan completado los requisitos previos.
 
 * Definió la estrategia de restauración y recuperación.
-* El administrador de SnapCenter asignó SVM para los volúmenes de origen y los volúmenes de destino si va a replicar copias de Snapshot a un reflejo o un almacén.
+* El administrador de SnapCenter asignó SVM para los volúmenes de origen y los volúmenes de destino si va a replicar Snapshots a un reflejo o un almacén.
 * Si se reducen los archivos de registro como parte del backup, debe haber montado manualmente los backups de los archivos de registro requeridos.
 * Si desea restaurar bases de datos de Oracle que residen en un VMDK, debe asegurarse de que la máquina invitada tenga la cantidad requerida de ranuras libres para asignar los VMDK clonados.
 * Se aseguró de que todos los volúmenes de datos y los volúmenes de registros de archivos que pertenecen a la base de datos estén protegidos si la protección secundaria está habilitada para esa base de datos.

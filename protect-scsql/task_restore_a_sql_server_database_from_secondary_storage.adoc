@@ -14,13 +14,13 @@ summary: 'Puede restaurar bases de datos de SQL Server con backup a partir de LU
 Puede restaurar bases de datos de SQL Server con backup a partir de LUN físicos (RDM, iSCSI o FCP) en un sistema de almacenamiento secundario. La función de restauración es un proceso multifásico que copia todos los datos y las páginas de registro a partir de un backup de SQL Server especificado que reside en el sistema de almacenamiento secundario en una base de datos especificada.
 
 .Antes de empezar
-* Debe haber replicado las copias de Snapshot a desde el sistema de almacenamiento principal hasta el secundario.
+* Debe haber replicado las snapshots a desde el sistema de almacenamiento principal hasta el secundario.
 * Debe asegurarse de que SnapCenter Server y el host del plugin puedan conectarse al sistema de almacenamiento secundario.
 * La mayoría de los campos del asistente Restore se explican en el proceso de restauración básico. Aquí se ofrece información sobre algunos de los campos que podrían presentar dificultades.
 
 
 .Acerca de esta tarea
-Para políticas habilitadas con SnapLock, para ONTAP 9.12.1 y versiones anteriores, si especifica un periodo de bloqueo de copias snapshot, los clones creados a partir de las copias Snapshot a prueba de manipulaciones como parte de la restauración heredarán el tiempo de caducidad de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+Para las políticas con SnapLock habilitado, para ONTAP 9.12.1 y versiones anteriores, si se especifica un período de bloqueo de Snapshot, los clones creados a partir de las instantáneas a prueba de manipulaciones como parte de la restauración heredarán el tiempo de caducidad de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 .Pasos
 . En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione *complemento SnapCenter para SQL Server* en la lista.

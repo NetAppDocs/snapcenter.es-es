@@ -2,7 +2,7 @@
 permalink: protect-scsql/task_clean_up_the_secondary_backup_count_using_powershell_cmdlets_for_sql.html 
 sidebar: sidebar 
 keywords: backups 
-summary: Puede utilizar el cmdlet Remove-SmBackup para borrar el número de backups de backups secundarios que no tienen copias de Snapshot. Puede ser conveniente usar este cmdlet cuando las copias de Snapshot totales que se muestran en la topología Manage Copies no coinciden con la configuración de retención de copias de Snapshot de almacenamiento secundario. 
+summary: Puede utilizar el cmdlet Remove-SmBackup para borrar el número de backups de backups secundarios que no tienen Snapshots. Se recomienda utilizar este cmdlet cuando el total de las Snapshot que se muestran en la topología Manage Copies no corresponde al valor de retención de Snapshot del almacenamiento secundario. 
 ---
 = Borre el número de backup secundario con cmdlets de PowerShell
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Puede utilizar el cmdlet Remove-SmBackup para borrar el número de back
 
 
 [role="lead"]
-Puede utilizar el cmdlet Remove-SmBackup para borrar el número de backups de backups secundarios que no tienen copias de Snapshot. Puede ser conveniente usar este cmdlet cuando las copias de Snapshot totales que se muestran en la topología Manage Copies no coinciden con la configuración de retención de copias de Snapshot de almacenamiento secundario.
+Puede utilizar el cmdlet Remove-SmBackup para borrar el número de backups de backups secundarios que no tienen Snapshot. Se recomienda utilizar este cmdlet cuando el total de las Snapshot que se muestran en la topología Manage Copies no corresponde al valor de retención de Snapshot del almacenamiento secundario.
 
 Debe haber preparado el entorno de PowerShell para ejecutar los cmdlets de PowerShell.
 
@@ -26,7 +26,7 @@ Open-SmConnection  -SMSbaseurl  https:\\snapctr.demo.netapp.com:8146/
 ----
 . Borre el número de backups secundarios con el parámetro -CleanupSecondaryBackups.
 +
-En este ejemplo, se borra el número de backups secundarios sin copias de Snapshot:
+Este ejemplo borra el número de backups para backups secundarios sin snapshots:
 
 +
 [listing]

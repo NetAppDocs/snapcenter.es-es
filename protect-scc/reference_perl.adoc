@@ -164,7 +164,7 @@ Modo de inactividad
  a| 
 obligatorio
  a| 
-Este archivo stub es responsable de realizar un modo de inactividad, lo que significa colocar la aplicación en un estado en el que puede crear una copia Snapshot. Esto se llama antes de la operación de copia de Snapshot. Los metadatos de la aplicación que se conservará deben definirse como parte de la respuesta, que se devolverá durante las operaciones posteriores de clonado o restauración en la copia Snapshot de almacenamiento correspondiente en forma de parámetros de configuración.
+Este stub es responsable de realizar una pausa, lo que significa colocar la aplicación en un estado donde se puede crear una instantánea. Esto se denomina antes de la operación de snapshot. Los metadatos de la aplicación que se van a conservar deben definirse como parte de la respuesta, que se devolverá durante las siguientes operaciones de clonado o restauración en la copia Snapshot de almacenamiento correspondiente, en forma de parámetros de configuración.
 
 
 
@@ -173,7 +173,7 @@ Inactivación
  a| 
 obligatorio
  a| 
-Este código auxiliar es responsable de realizar un modo de inactividad, lo que significa poner la aplicación en un estado normal. Esto se llama después de crear una copia Snapshot.
+Este código auxiliar es responsable de realizar un modo de inactividad, lo que significa poner la aplicación en un estado normal. Esto se denomina después de crear una snapshot.
 
 
 

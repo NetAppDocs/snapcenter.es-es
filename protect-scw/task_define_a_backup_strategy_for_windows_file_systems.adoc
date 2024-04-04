@@ -47,9 +47,9 @@ Algunos factores que determinan la cantidad de backups que se necesitan son el t
 
 == Convención de nomenclatura de backups para sistemas de archivos Windows
 
-Los backups del sistema de archivos Windows usan la convención de nomenclatura predeterminada para las copias de Snapshot. La convención de nomenclatura de backups predeterminada añade la fecha/hora a los nombres de las copias de Snapshot, lo cual ayuda a identificar cuándo se crearon las copias.
+Los backups del sistema de archivos Windows usan la convención de nomenclatura de Snapshot predeterminada. la convención de nomenclatura de backups predeterminada añade la fecha/hora a los nombres de Snapshot, lo cual ayuda a identificar cuándo se crearon las copias.
 
-La copia de Snapshot usa la siguiente convención de nomenclatura predeterminada: Resourcegroupname_hostname_timestamp
+La Snapshot usa la siguiente convención de nomenclatura predeterminada: Resourcegroupname_hostname_timestamp
 
 Es necesario asignar un nombre a los grupos de recursos de backup de forma lógica, como en el ejemplo siguiente:
 

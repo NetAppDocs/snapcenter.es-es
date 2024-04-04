@@ -257,9 +257,9 @@ Las programaciones de los backups (el momento exacto en que se realizan los back
 
 == Convenciones de nomenclatura de backups
 
-Es posible usar la convención de nomenclatura de copia Snapshot predeterminada o usar una convención de nomenclatura personalizada. La convención de nomenclatura de backups predeterminada añade la fecha/hora a los nombres de las copias de Snapshot, lo cual ayuda a identificar cuándo se crearon las copias.
+Es posible usar la convención de nomenclatura de Snapshot predeterminada o usar una convención de nomenclatura personalizada. la convención de nomenclatura de backups predeterminada añade la fecha/hora a los nombres de Snapshot, lo cual ayuda a identificar cuándo se crearon las copias.
 
-La copia Snapshot usa la siguiente convención de nomenclatura predeterminada:
+La Snapshot usa la siguiente convención de nomenclatura predeterminada:
 
 `resourcegroupname_hostname_timestamp`
 
@@ -276,7 +276,7 @@ En este ejemplo, los elementos de la sintaxis tienen los siguientes significados
 * _03-12-2015_23.17.26_ es la fecha y la marca de hora.
 
 
-Como alternativa, puede especificar el formato de nombre de la copia Snapshot mientras protege los recursos o grupos de recursos seleccionando *usar formato de nombre personalizado para copia Snapshot*. Por ejemplo, customtext_resourcegroup_policy_hostname o resourcegroup_hostname. De forma predeterminada, se añade el sufijo de fecha y hora al nombre de la copia de Snapshot.
+Como alternativa, es posible especificar el formato del nombre de Snapshot y proteger los recursos o grupos de recursos si se selecciona *Use custom name format for Snapshot copy*. Por ejemplo, customtext_resourcegroup_policy_hostname o resourcegroup_hostname. De forma predeterminada, se añade el sufijo de fecha y hora al nombre de la Snapshot.
 
 
 
@@ -299,6 +299,6 @@ NOTE: Para la retención a largo plazo de copias de backup, es conveniente usar 
 
 Es posible verificar las copias de backups en el volumen de almacenamiento principal o en el volumen de almacenamiento secundario de SnapMirror y SnapVault. La verificación con un volumen de almacenamiento secundario reduce la carga para el volumen de almacenamiento principal.
 
-Cuando se verifica un backup que se encuentra en el volumen de almacenamiento primario o secundario, todas las copias de Snapshot primarias y secundarias se marcan como verificadas.
+Cuando se verifica un backup que se encuentra en el volumen de almacenamiento primario o secundario, todas las snapshots primarias y secundarias se marcan como verificadas.
 
 Se necesita una licencia de SnapRestore para verificar copias de backup en un volumen de almacenamiento secundario de SnapMirror o SnapVault.

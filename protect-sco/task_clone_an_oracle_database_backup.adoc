@@ -37,7 +37,7 @@ Mientras se clona un backup de una base de datos ASM en un entorno SAN, se crean
 
 NOTE: En una configuración de Flex ASM, no puede realizar la operación de clonado en nodos Leaf si la cardinalidad es menor que el número de nodos del clúster RAC.
 
-* Para políticas habilitadas con SnapLock, para ONTAP 9.12.1 y versiones anteriores, si especifica un periodo de bloqueo de copias snapshot, los clones creados a partir de las copias Snapshot a prueba de manipulaciones como parte de la restauración heredarán el tiempo de caducidad de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+* Para las políticas con SnapLock habilitado, para ONTAP 9.12.1 y versiones anteriores, si se especifica un período de bloqueo de Snapshot, los clones creados a partir de las instantáneas a prueba de manipulaciones como parte de la restauración heredarán el tiempo de caducidad de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 
 * Pasos*

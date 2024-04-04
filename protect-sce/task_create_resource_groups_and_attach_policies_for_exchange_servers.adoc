@@ -24,7 +24,7 @@ El valor de la tecla se puede mostrar desde swagger a través de la API: API /4.
 +
 Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGURACIÓN de API.
 
-* Para ONTAP 9.12.1 y versiones posteriores, los clones creados a partir de las copias snapshot de SnapVault de SnapLock como parte de la restauración heredarán el tiempo de caducidad de Vault de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+* Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 
 .Pasos
@@ -63,9 +63,9 @@ Por ejemplo, si añadió HR como etiqueta a varios grupos de recursos, más adel
  a| 
 Utilice un formato de nombre personalizado para la copia de Snapshot
  a| 
-Opcional: Escriba un nombre de copia de Snapshot personalizado y su formato.
+Opcional: Introduzca un nombre y un formato de Snapshot personalizados.
 
-Por ejemplo, _customtext_resourcegroup_policy_hostname_ o _resourcegroup_hostname_. De forma predeterminada, se añade una fecha/hora al nombre de la copia de Snapshot.
+Por ejemplo, _customtext_resourcegroup_policy_hostname_ o _resourcegroup_hostname_. De forma predeterminada, se añade una fecha/hora al nombre de la Snapshot.
 
 |===
 . En la página Resources, realice los siguientes pasos:
@@ -87,7 +87,7 @@ En las secciones Available Resources y Selected Resources, el nombre de la base 
 *** Seleccione *Autoselect all resources on same Storage volume* para mover todos los recursos del mismo volumen a la sección Selected Resources.
 *** Seleccione los recursos de la sección Available Resources y, a continuación, haga clic en la flecha derecha para mover estos elementos a la sección Selected Resources.
 +
-Los grupos de recursos de SnapCenter para Microsoft Exchange Server no pueden tener más de 30 bases de datos por copia de Snapshot. Si hay más de 30 bases de datos en un grupo de recursos, se crea una segunda copia de Snapshot para las bases de datos adicionales. Por lo tanto, se crean 2 subtrabajos en la tarea de copia de seguridad principal. Para los backups que tienen replicación secundaria, mientras que la actualización de SnapMirror o SnapVault está en curso, es posible que haya escenarios en los que la actualización de ambos subtrabajos se superponga. La tarea de backup principal se mantiene en ejecución permanente incluso si los registros indican que la tarea se ha completado.
+Los grupos de recursos de SnapCenter para Microsoft Exchange Server no pueden tener más de 30 bases de datos por Snapshot. Si hay más de 30 bases de datos en un grupo de recursos, se crea una segunda Snapshot para las bases de datos adicionales. Por lo tanto, se crean 2 subtrabajos en la tarea de copia de seguridad principal. Para los backups que tienen replicación secundaria, mientras que la actualización de SnapMirror o SnapVault está en curso, es posible que haya escenarios en los que la actualización de ambos subtrabajos se superponga. La tarea de backup principal se mantiene en ejecución permanente incluso si los registros indican que la tarea se ha completado.
 
 
 

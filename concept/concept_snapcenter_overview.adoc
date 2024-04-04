@@ -60,7 +60,7 @@ https://automationstore.netapp.com/home.shtml["Almacén de automatización del a
 
 * Backups basados en normativas
 +
-Los backups basados en políticas aprovechan la tecnología de copia de Snapshot de NetApp para crear backups a disco rápidos, coherentes con las aplicaciones y con gestión eficiente del espacio. De manera opcional, puede automatizar la protección de estos backups en el almacenamiento secundario mediante las actualizaciones de las relaciones de protección existentes.
+Los backups basados en políticas aprovechan la tecnología Snapshot de NetApp para crear backups a disco rápidos, con gestión eficiente del espacio y consistentes con las aplicaciones. De manera opcional, puede automatizar la protección de estos backups en el almacenamiento secundario mediante las actualizaciones de las relaciones de protección existentes.
 
 * Realice backups para varios recursos
 +
@@ -316,7 +316,7 @@ Para los usuarios de SnapCenter 4.1.1, la documentación del plugin de SnapCente
 
 * Posibilita la protección de datos para aplicaciones de otros plugins que se ejecutan en hosts Windows en el entorno de SnapCenter
 * Automatiza las operaciones de backup, restauración y clonado para aplicaciones en sistemas de archivos de Microsoft en su entorno SnapCenter
-* Admite el aprovisionamiento de almacenamiento, la consistencia de copias de Snapshot y la reclamación de espacio para hosts Windows
+* Admite el aprovisionamiento de almacenamiento, la coherencia de Snapshot y la reclamación de espacio para hosts Windows
 +
 
 NOTE: El plugin para Windows aprovisiona recursos compartidos SMB y sistemas de archivos Windows en LUN de RDM físicos, pero no admite operaciones de backup para sistemas de archivos Windows en recursos compartidos SMB.

@@ -58,7 +58,7 @@ Seleccionado de forma predeterminada.
 +
 La base de datos de SQL Server utiliza la comprobación de la consistencia de base de datos de Microsoft SQL Server para comprobar la integridad lógica y física de los objetos de la base de datos.
 
-... Seleccione *Limite las comprobaciones y obtenga los bloqueos en lugar de utilizar una copia de Snapshot de la base de datos interna (TABLOCK)* para limitar las comprobaciones y obtener bloqueos en lugar de utilizar una copia de Snapshot interna de la base de datos.
+... Seleccione *Limitar las comprobaciones y obtener los bloqueos en lugar de utilizar una copia Snapshot interna de la base de datos (TABLOCK)* para limitar las comprobaciones y obtener bloqueos en lugar de utilizar una instantánea interna de la base de datos.
 
 
 .. En la sección *Backup de registro*, seleccione *verificar copia de seguridad de registro al finalizar* para verificar la copia de seguridad de registro al finalizar.

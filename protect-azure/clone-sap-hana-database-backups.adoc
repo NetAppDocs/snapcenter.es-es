@@ -47,6 +47,6 @@ Si se detecta automáticamente el sistema HANA de origen y se instala el plugin 
 . Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
 +
 
-NOTE: La división de clones está deshabilitada para los clones de ANF porque el clon de ANF ya es un volumen independiente creado a partir de la copia de Snapshot seleccionada.
+NOTE: La división de clones está deshabilitada para los clones de ANF porque el clon de ANF ya es un volumen independiente creado a partir de la snapshot seleccionada.
 
 

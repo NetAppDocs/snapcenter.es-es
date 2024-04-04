@@ -13,10 +13,10 @@ summary: 'Es posible restaurar una base de datos de Exchange Server con backup a
 [role="lead"]
 Es posible restaurar una base de datos de Exchange Server con backup a partir de un almacenamiento secundario (reflejo o almacén).
 
-Debe haber replicado las copias de Snapshot a desde el almacenamiento principal hasta un almacenamiento secundario.
+Debe haber replicado las Snapshots desde el almacenamiento principal hasta un almacenamiento secundario.
 
 .Acerca de esta tarea
-* Para ONTAP 9.12.1 y versiones posteriores, los clones creados a partir de las copias snapshot de SnapVault de SnapLock como parte de la restauración heredarán el tiempo de caducidad de Vault de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+* Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 
 .Pasos

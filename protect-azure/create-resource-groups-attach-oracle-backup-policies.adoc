@@ -41,7 +41,7 @@ Escriba una o más etiquetas que más adelante le permitirán buscar el grupo de
  a| 
 Utilice un formato de nombre personalizado para la copia de Snapshot
  a| 
-Marque esta casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de la copia de Snapshot.
+Marque esta casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de Snapshot.
 
 
 

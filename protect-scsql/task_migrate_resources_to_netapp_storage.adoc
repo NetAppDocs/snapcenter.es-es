@@ -91,7 +91,7 @@ La base de datos de SQL Server utiliza la comprobación de la consistencia de ba
 
 NOTE: Se recomienda seleccionar esta opción para disminuir el tiempo de ejecución.
 
-** Seleccione la opción **TABLOCK** para limitar las comprobaciones y obtener bloqueos en lugar de utilizar una copia de Snapshot interna de la base de datos.
+** Seleccione la opción **TABLOCK** para limitar las comprobaciones y obtener bloqueos en lugar de utilizar una instantánea interna de la base de datos.
 
 
 |===

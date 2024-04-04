@@ -23,7 +23,7 @@ Antes de usar SnapCenter para realizar un backup de los recursos de la base de d
 .. Seleccione el tipo de backup.
 +
 ... Seleccione *Copia de seguridad basada en archivos* si desea realizar una comprobación de integridad de la base de datos.
-... Seleccione *Basado en Snapshot* si desea crear una copia de seguridad utilizando la tecnología de copia Snapshot.
+... Seleccione *Basado en Snapshot* si desea crear una copia de seguridad utilizando la tecnología Snapshot.
 
 
 .. Especifique el tipo de programación.

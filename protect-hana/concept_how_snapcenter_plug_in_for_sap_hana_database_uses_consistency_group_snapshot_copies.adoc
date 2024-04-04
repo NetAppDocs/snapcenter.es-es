@@ -2,15 +2,15 @@
 permalink: protect-hana/concept_how_snapcenter_plug_in_for_sap_hana_database_uses_consistency_group_snapshot_copies.html 
 sidebar: sidebar 
 keywords: SnapCenter Plug-in for SAP HANA Database 
-summary: Es posible usar el plugin para crear copias Snapshot de grupos de consistencia para los grupos de recursos. Un grupo de consistencia es un contenedor que puede albergar varios volúmenes para que se gestionen como una misma entidad. Un grupo de consistencia es un conjunto de copias de Snapshot simultáneas de varios volúmenes, que ofrece copias consistentes de un grupo de volúmenes. 
+summary: Es posible utilizar el plugin para crear snapshots de grupos de consistencia para los grupos de recursos. Un grupo de consistencia es un contenedor que puede albergar varios volúmenes para que se gestionen como una misma entidad. Un grupo de consistencia es un conjunto de Snapshot simultáneas de varios volúmenes, que ofrece copias consistentes de un grupo de volúmenes. 
 ---
-= Cómo usa el plugin de SnapCenter para base de datos SAP HANA las copias de Snapshot de grupos de consistencia
+= Cómo usa el plugin de SnapCenter para base de datos SAP HANA las snapshots de grupos de consistencia
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Es posible usar el plugin para crear copias Snapshot de grupos de consistencia para los grupos de recursos. Un grupo de consistencia es un contenedor que puede albergar varios volúmenes para que se gestionen como una misma entidad. Un grupo de consistencia es un conjunto de copias de Snapshot simultáneas de varios volúmenes, que ofrece copias consistentes de un grupo de volúmenes.
+Es posible utilizar el plugin para crear snapshots de grupos de consistencia para los grupos de recursos. Un grupo de consistencia es un contenedor que puede albergar varios volúmenes para que se gestionen como una misma entidad. Un grupo de consistencia es un conjunto de Snapshot simultáneas de varios volúmenes, que ofrece copias consistentes de un grupo de volúmenes.
 
-También es posible especificar un tiempo de espera para la controladora de almacenamiento a fin de agrupar de forma coherente las copias de Snapshot. Las opciones de tiempo de espera disponibles son *Urgent*, *Medium* y *Relaxed*. También es posible habilitar o deshabilitar la sincronización de Write Anywhere File Layout (WAFL) durante la operación de copia de Snapshot de grupos consistentes. La sincronización WAFL mejora el rendimiento de una copia de Snapshot de grupo de consistencia.
+También es posible especificar un tiempo de espera para la controladora de almacenamiento a fin de agrupar de forma coherente las snapshots. Las opciones de tiempo de espera disponibles son *Urgent*, *Medium* y *Relaxed*. También es posible habilitar o deshabilitar la sincronización de Write Anywhere File Layout (WAFL) durante la operación de snapshot de grupos consistentes. La sincronización WAFL mejora el rendimiento de una snapshot de grupo de consistencia.

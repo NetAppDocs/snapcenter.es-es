@@ -16,7 +16,7 @@ Si un recurso aún no es parte de ningún grupo de recursos, es posible realizar
 .Pasos
 . En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
 . En la página Recursos, seleccione *Base de datos* en la lista desplegable Ver.
-. En la página Resources, seleccione *Use custom name format for Snapshot copy* y, a continuación, escriba un nombre personalizado que desee usar para el nombre de la copia de Snapshot.
+. En la página Recursos, seleccione *Use custom name format for Snapshot copy* y, a continuación, escriba el formato del nombre personalizado que desee usar para el nombre de Snapshot.
 . En la página Policies, realice los siguientes pasos:
 +
 .. Seleccione una o varias políticas de la lista desplegable.

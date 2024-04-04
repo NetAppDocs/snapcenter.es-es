@@ -34,7 +34,7 @@ La restauración de AG falla cuando se cumple alguna de las siguientes condicion
 https://support.microsoft.com/kb/2887595["Artículo de soporte de Microsoft 2887595: Paquete acumulativo de actualizaciones de Windows RT 8.1, Windows 8.1 y Windows Server 2012 R2: Noviembre de 2013"]
 
 * Debe tener un backup de los grupos de recursos o de las bases de datos.
-* Si va a replicar copias de Snapshot en un reflejo o almacén, el administrador de SnapCenter debe haberle asignado las máquinas virtuales de almacenamiento (SVM) para los volúmenes de origen y de destino.
+* Si va a replicar snapshots en un reflejo o almacén, el administrador de SnapCenter debe haberle asignado las máquinas virtuales de almacenamiento (SVM) para los volúmenes de origen y de destino.
 +
 Para obtener información sobre cómo los administradores asignan recursos a los usuarios, consulte la información de instalación de SnapCenter.
 

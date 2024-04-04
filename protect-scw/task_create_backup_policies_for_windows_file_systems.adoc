@@ -19,7 +19,7 @@ Puede crear una nueva política de backup para recursos antes de usar SnapCenter
 +
 Para prepararse para la protección de datos, debe completar ciertas tareas, como instalar SnapCenter, añadir hosts, detectar recursos y crear conexiones de máquina virtual de almacenamiento (SVM).
 
-* Si desea replicar copias de Snapshot en un almacenamiento secundario con SnapMirror o SnapVault, el administrador de SnapCenter debe haberle asignado las SVM de los volúmenes de origen y de destino.
+* Si desea replicar snapshots en un almacenamiento secundario con snapmirror o snapvault, el administrador de SnapCenter debe haberle asignado las SVM de los volúmenes de origen y de destino.
 * Si desea ejecutar los scripts de PowerShell en scripts previos y posteriores, debe establecer el valor del parámetro usePowershellProcessforScripts en TRUE en el archivo web.config.
 +
 El valor predeterminado es FALSE
@@ -41,8 +41,8 @@ Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGU
 * SnapLock
 +
 ** Si se selecciona la opción 'Retain the backup copies for a specific number of days', el período de retención de SnapLock debe ser menor o igual que los días de retención mencionados.
-** Especificar un período de bloqueo de copia Snapshot evita la eliminación de las copias Snapshot hasta que caduque el período de retención. Esto puede hacer que se conserve un mayor número de copias Snapshot que el número especificado en la política.
-** Para ONTAP 9.12.1 y versiones posteriores, los clones creados a partir de las copias snapshot de SnapVault de SnapLock como parte de la restauración heredarán el tiempo de caducidad de Vault de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+** Si se especifica un período de bloqueo de Snapshot, se evita la eliminación de las snapshots hasta que caduque el período de retención. Esto podría llevar a retener un número mayor de instantáneas que el recuento especificado en la política.
+** Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 
 
@@ -105,7 +105,7 @@ NOTE: Si ha programado para las 2:00 a.m., la programación no se activará dura
  a| 
 Total de copias de Snapshot que se conservan
  a| 
-Elija esta opción si desea especificar el número de copias de Snapshot que almacena SnapCenter antes de eliminarlas automáticamente.
+Elija esta opción si desea especificar el número de instantáneas que SnapCenter almacena antes de eliminarlas automáticamente.
 
 
 
@@ -119,7 +119,7 @@ Elija esta opción si desea especificar el número de días que SnapCenter retie
  a| 
 Período de bloqueo de copia de snapshot
  a| 
-Seleccione Snapshot copy locking period y seleccione días, meses o años.
+Seleccione Período de bloqueo de instantáneas y seleccione Días, Meses o Años.
 
 El período de retención de SnapLock debe ser inferior a 100 años.
 
@@ -169,7 +169,7 @@ Etiqueta de la política secundaria
  a| 
 Seleccione una etiqueta de Snapshot.
 
-Según la etiqueta de copia de Snapshot que seleccione, ONTAP aplicará la política de retención de copias de Snapshot secundarias que corresponda a esa etiqueta.
+Según la etiqueta de Snapshot que seleccione, ONTAP aplicará la política de retención de Snapshot secundaria que corresponda a esa etiqueta.
 
 
 NOTE: Si ha seleccionado *Actualizar SnapMirror después de crear una copia Snapshot local*, puede especificar opcionalmente la etiqueta de la directiva secundaria. Sin embargo, si ha seleccionado *Actualizar SnapVault después de crear una copia Snapshot local*, debe especificar la etiqueta de la directiva secundaria.
@@ -184,7 +184,7 @@ Introduzca el número de intentos de replicación que deben producirse antes de 
 |===
 +
 
-NOTE: Debe configurar la política de retención de SnapMirror en ONTAP para el almacenamiento secundario a fin de evitar alcanzar el límite máximo de copias de Snapshot en el almacenamiento secundario.
+NOTE: Debe configurar la política de retención de SnapMirror en ONTAP para el almacenamiento secundario a fin de evitar que se alcance el límite máximo de Snapshots en el almacenamiento secundario.
 
 . En la página Script, introduzca la ruta del script previo o script posterior que desea que el servidor SnapCenter ejecute antes o después de la operación de backup respectivamente, y el límite de tiempo que SnapCenter espera para que se ejecute el script.
 +

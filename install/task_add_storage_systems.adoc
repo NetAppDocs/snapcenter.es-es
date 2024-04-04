@@ -33,7 +33,7 @@ SnapCenter no admite varios sistemas de almacenamiento con el mismo nombre en cl
 +
 Si se habilitan estas funciones, SnapCenter envía la información de AutoSupport al sistema de almacenamiento y mensajes de EMS al syslog del sistema de almacenamiento cuando se protege un recurso, una operación de restauración o clonado se completa correctamente o una operación genera errores.
 
-* Si planifica replicar copias de Snapshot en un destino de SnapMirror o un destino de SnapVault, debe configurar conexiones al sistema de almacenamiento para la SVM o el clúster de destino, así como la SVM o el clúster de origen.
+* Si planifica replicar snapshots en un destino de SnapMirror o un destino de SnapVault, debe configurar conexiones al sistema de almacenamiento para la SVM o el clúster de destino, así como la SVM o el clúster de origen.
 
 
 

@@ -96,7 +96,7 @@ El siguiente cmdlet restaura el repositorio de bases de datos MySQL de SnapCente
 C:\PS>Restore-SmRepositoryBackup -BackupName MYSQL_DS_SC_Repository_mva-x3550-s09_09-15-2016_10.32.00.4445
 ----
 +
-El siguiente cmdlet restaura la base de datos MySQL de SnapCenter cuando se eliminan accidentalmente los archivos de backup del LUN de iSCSI. Para VMDK, restaure manualmente desde copias de Snapshot de ONTAP.
+El siguiente cmdlet restaura la base de datos MySQL de SnapCenter cuando se eliminan accidentalmente los archivos de backup del LUN de iSCSI. Para VMDK, restaure manualmente desde snapshots de ONTAP.
 
 +
 [listing]

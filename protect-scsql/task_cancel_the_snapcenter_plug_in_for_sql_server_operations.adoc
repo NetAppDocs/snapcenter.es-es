@@ -2,7 +2,7 @@
 permalink: protect-scsql/task_cancel_the_snapcenter_plug_in_for_sql_server_operations.html 
 sidebar: sidebar 
 keywords: cancel, backup 
-summary: Es posible cancelar las operaciones de backup que se ejecutan, se encuentran en cola o no responden. Cuando se cancela una operación de backup, el servidor de SnapCenter detiene la operación y quita todas las copias de Snapshot del almacenamiento si el backup creado no se registra en SnapCenter Server. Si el backup ya está registrado en el servidor SnapCenter, no retrocederá la copia de Snapshot ya creada incluso después de que se active la cancelación. 
+summary: Es posible cancelar las operaciones de backup que se ejecutan, se encuentran en cola o no responden. Cuando se cancela una operación de backup, el servidor de SnapCenter detiene la operación y quita todas las snapshots del almacenamiento si el backup creado no se registró en el servidor de SnapCenter. Si la copia de seguridad ya está registrada en el servidor de SnapCenter, no revertirá la copia snapshot ya creada incluso después de que se active la cancelación. 
 ---
 = Cancelar las operaciones de backup del plugin de SnapCenter para Microsoft SQL Server
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Es posible cancelar las operaciones de backup que se ejecutan, se encue
 
 
 [role="lead"]
-Es posible cancelar las operaciones de backup que se ejecutan, se encuentran en cola o no responden. Cuando se cancela una operación de backup, el servidor de SnapCenter detiene la operación y quita todas las copias de Snapshot del almacenamiento si el backup creado no se registra en SnapCenter Server. Si el backup ya está registrado en el servidor SnapCenter, no retrocederá la copia de Snapshot ya creada incluso después de que se active la cancelación.
+Es posible cancelar las operaciones de backup que se ejecutan, se encuentran en cola o no responden. Cuando se cancela una operación de backup, el servidor de SnapCenter detiene la operación y quita todas las snapshots del almacenamiento si el backup creado no se registró en el servidor de SnapCenter. Si la copia de seguridad ya está registrada en el servidor de SnapCenter, no revertirá la copia snapshot ya creada incluso después de que se active la cancelación.
 
 .Antes de empezar
 * Inició sesión como administrador de SnapCenter o propietario del trabajo para cancelar las operaciones de restauración.
