@@ -1,16 +1,14 @@
-= 
+---
+permalink: protect-scu/task_split_a_clone.html 
+sidebar: sidebar 
+keywords: split clone, snapcenter 
+summary: Es posible usar SnapCenter para dividir un recurso clonado de un recurso primario. El clon que se divide se independiza del recurso primario. 
+---
+= Divida un clon
 :allow-uri-read: 
-
-
---
-permalink: protect-scu/task_split_a_clone.html
-barra lateral: barra lateral
-palabras clave: split clone, SnapCenter
-Resumen: 'Puede utilizar SnapCenter para dividir un recurso clonado del recurso principal. El clon que se divide se independiza del recurso primario.'
-----
-= Dividir un clon
-:icons: fuente
+:icons: font
 :imagesdir: ../media/
+
 
 [role="lead"]
 Es posible usar SnapCenter para dividir un recurso clonado de un recurso primario. El clon que se divide se independiza del recurso primario.
@@ -77,5 +75,3 @@ Se produce un error en la operación de inicio de división de clones si hay un 
 
 .Información relacionada
 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/SnapCenter_clone_or_verfication_fails_with_aggregate_does_not_exist["Se produce un error en la verificación o el clon de SnapCenter porque no existe agregado"]
-
---

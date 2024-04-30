@@ -76,3 +76,20 @@ NOTE: Si se elimina el último backup restante, no se pueden eliminar las entrad
 NOTE: Si tiene algunos backups obsoletos de bases de datos en SnapCenter que no corresponden a ningún backup en el sistema de almacenamiento, debe emplear el comando remove-smbackup para borrar dichas entradas de backup obsoletos. Si se catalogaron los backups obsoletos, se descatalogarán de la base de datos del catálogo de recuperación.
 
 
+
+
+
+== Quitar la protección
+
+Eliminar protección elimina todos los backups y desvincula todas las políticas. Antes de quitar la protección, debe asegurarse de que los backups no estén montados y que no haya clones asociados con el backup.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, seleccione el recurso o el grupo de recursos de la lista desplegable *View*.
+. Seleccione el recurso o el grupo de recursos de la lista.
++
+Se muestra la página con el resumen o grupo de recursos.
+
+. Seleccione la copia de seguridad y haga clic en *Eliminar protección*.
+

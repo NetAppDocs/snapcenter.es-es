@@ -8298,14 +8298,6 @@ La información relativa a los parámetros que se pueden utilizar con el comando
   <block id="40b141d81ebc81d0277454ddd95983be" category="paragraph">Después de la copia de seguridad a petición, haciendo clic en el botón *Actualizar* actualiza los detalles de la copia de seguridad o clonación.</block>
   <block id="e3eb3098d9512640ba3691ccfbed50f5" category="paragraph">También puede usar los cmdlets de PowerShell manualmente o en scripts para realizar operaciones de backup, restauración y clonado. Para obtener información detallada sobre los cmdlets de PowerShell, use la ayuda de cmdlets de SnapCenter o consulte<block ref="b70cb1971d6e57b9289aed553ef357cb" category="inline-link-rx"></block></block>
   <block id="f1472e722e81a79d38810332425a4e76" category="paragraph">También puede usar los cmdlets de PowerShell manualmente o en scripts para realizar operaciones de backup, restauración y clonado. Para obtener información sobre los cmdlets de PowerShell, use la ayuda de cmdlets de SnapCenter o consulte<block ref="b70cb1971d6e57b9289aed553ef357cb" category="inline-link-rx"></block>.</block>
-  <block id="5145b2adfb55517e007962efd2a08be6" category="paragraph">permalink: protect-scu/task_split_a_clone.html
-barra lateral: barra lateral
-palabras clave: split clone, SnapCenter
-Resumen: 'Puede utilizar SnapCenter para dividir un recurso clonado del recurso principal. El clon que se divide se independiza del recurso primario.'
-----
-= Dividir un clon
-:icons: fuente
-:imagesdir: ../media/</block>
   <block id="e9b924bbf420ab11fb241e13f75a92c1" category="summary">Después de instalar el plugin para sistemas de archivos Unix, los sistemas de archivos del host se detectan automáticamente y se muestran en la página Recursos.</block>
   <block id="5f6bb3736007978d5604be7df99325f8" category="doc">Descubra los sistemas de archivos UNIX disponibles para backup</block>
   <block id="c94588b5932cbd964b99829c9c53f185" category="paragraph">Después de instalar el plugin, se detectan automáticamente todos los sistemas de archivos de ese host y se muestran en la página Resources. Puede añadir estos sistemas de archivos a grupos de recursos para realizar operaciones de protección de datos.</block>
@@ -9074,4 +9066,7 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="bf971f3c72b83a1aac6d9fe1cb39850c" category="admonition">Los backups que figuran en el almacenamiento secundario no pueden eliminarse ni cambiar de nombre. La eliminación de snapshots se gestiona mediante la configuración de retención de ONTAP.</block>
   <block id="eb71c7e77b1cb5486117cdac9d378fb6" category="list-text">Si desea especificar un nombre de instantánea personalizado, en la página Recursos, active la casilla de comprobación *Use custom name format for Snapshot copy* y, a continuación, introduzca el formato del nombre personalizado que desee usar para el nombre de instantánea.</block>
   <block id="2457e427df18c87448fa7fa796d115c7" category="paragraph">Los backups de buzones de correo de Exchange que usan SnapCenter requieren elegir el tipo de recurso, como bases de datos y DAG. Se aprovecha la tecnología de Snapshot para crear copias en línea y de solo lectura de los volúmenes donde residen los recursos.</block>
+  <block id="495685c9e0a33087f4a235b8fe0d5e1c" category="section-title">Quitar la protección</block>
+  <block id="d315d492e2b430b33a4c4cd7b63eda74" category="paragraph">Eliminar protección elimina todos los backups y desvincula todas las políticas. Antes de quitar la protección, debe asegurarse de que los backups no estén montados y que no haya clones asociados con el backup.</block>
+  <block id="58184ed57b20efbfac17064f1bc0e4f4" category="list-text">Seleccione la copia de seguridad y haga clic en *Eliminar protección*.</block>
 </blocks>
