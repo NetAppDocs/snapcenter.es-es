@@ -197,7 +197,7 @@ NOTE: El plugin de SnapCenter para UNIX que forma parte del paquete de plugins d
  a| 
 Sistemas operativos
  a| 
-AIX 6.1 o posterior
+AIX 7,1 o posterior
 
 
 

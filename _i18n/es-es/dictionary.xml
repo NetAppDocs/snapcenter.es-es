@@ -4339,7 +4339,6 @@
   <block id="6347721d31864738b0e7a03f5553e69b" category="section-title">Requisitos del host AIX</block>
   <block id="fed30036a3caffc826b4e66f434f67ea" category="paragraph">Debe asegurarse de que el host cumpla los requisitos antes de instalar el paquete de plugins de SnapCenter para AIX.</block>
   <block id="cddfaa01c32e2362546c78364751248b" category="admonition">El plugin de SnapCenter para UNIX que forma parte del paquete de plugins de SnapCenter para AIX, no admite grupos de volúmenes concurrentes.</block>
-  <block id="895327977020e495debf0b375c7541d8" category="paragraph">AIX 6.1 o posterior</block>
   <block id="5dcb853141d33f26c1df2f75da07200a" category="list-text">Java 1.8.x (64 bits) IBM Java</block>
   <block id="3fe85b9e16f08cb63e5aaa5c215097d7" category="list-text">Java 11 (64 bits) IBM Java</block>
   <block id="f805f99adc12df0c565005d33166c7bc" category="section-title">Configure privilegios sudo para usuarios que no son raíz para el host AIX</block>
@@ -9069,4 +9068,5 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="495685c9e0a33087f4a235b8fe0d5e1c" category="section-title">Quitar la protección</block>
   <block id="d315d492e2b430b33a4c4cd7b63eda74" category="paragraph">Eliminar protección elimina todos los backups y desvincula todas las políticas. Antes de quitar la protección, debe asegurarse de que los backups no estén montados y que no haya clones asociados con el backup.</block>
   <block id="58184ed57b20efbfac17064f1bc0e4f4" category="list-text">Seleccione la copia de seguridad y haga clic en *Eliminar protección*.</block>
+  <block id="ad569cc1cca820033bb20ffe1d5bc4a5" category="paragraph">AIX 7,1 o posterior</block>
 </blocks>
