@@ -223,7 +223,7 @@ Este comando solo está disponible en el nivel de privilegios de administrador.
 Si utiliza una licencia estándar de SnapCenter basada en controladora y necesita eliminar la licencia de prueba basada en capacidad (número de serie que termina en «'50'»), debe utilizar comandos MySQL para eliminar manualmente la licencia de prueba. La licencia de prueba no se puede eliminar con la interfaz gráfica de usuario de SnapCenter.
 
 
-NOTE: La eliminación manual de una licencia de prueba solo es necesaria si utiliza una licencia estándar basada en controladora de SnapCenter. Si adquirió una licencia basada en capacidad estándar de SnapCenter y la añade a la interfaz gráfica de usuario de SnapCenter, la licencia de prueba se sobrescribe automáticamente.
+NOTE: La eliminación manual de una licencia de prueba solo es necesaria si utiliza una licencia estándar basada en controladora de SnapCenter.
 
 .Pasos
 . En el servidor de SnapCenter, abra una ventana de PowerShell para restablecer la contraseña de MySQL.
@@ -231,7 +231,7 @@ NOTE: La eliminación manual de una licencia de prueba solo es necesaria si util
 .. Ejecute el cmdlet Open-SmConnection para iniciar una sesión de conexión con SnapCenter Server para una cuenta de administrador de SnapCenter.
 .. Ejecute el comando set-SmRepositoryPassword para restablecer la contraseña de MySQL.
 +
-Para obtener más información sobre los cmdlets de, consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP2886895["Guía de referencia de cmdlets de SnapCenter Software"^].
+Para obtener información sobre los cmdlets, consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guía de referencia de cmdlets de SnapCenter Software"^].
 
 
 

@@ -50,4 +50,12 @@ Se requiere una licencia de FlexClone en el sistema de almacenamiento donde est�
 NOTE: Los volúmenes NAS deben tener una política de exportación predeterminada en la máquina virtual de almacenamiento (SVM).
 
 * Compatibilidad con FileStream y grupos de archivos en bases de datos independientes de SQL Server.
+* Compatibilidad con memoria no volátil rápida (NVMe) en Windows Server 2022
++
+** Flujos de trabajo de backup, restauración, clonado y verificación en distribución de VMDK creada en NVMe over TCP/IP.
+** Es compatible con la versión de firmware 1,3 de NVMe a partir de la actualización 2 de ESX 8,0 y requiere la versión 21 de hardware virtual.
+** No se admite Windows Server Failover Clustering (WSFC) para aplicaciones a través de VMDK en NVMe sobre TCP/IP.
+
+
+* Es compatible con la sincronización activa de SnapMirror (lanzada inicialmente como SnapMirror Business Continuity [SM-BC]) que permite que los servicios empresariales continúen funcionando incluso si se produce un fallo completo del sitio; es posible que las aplicaciones conmuten por error de forma transparente mediante una copia secundaria. No se requiere intervención manual ni secuencias de comandos adicionales para activar una recuperación tras fallos con SnapMirror sincronización activa.
 

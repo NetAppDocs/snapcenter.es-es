@@ -1,0 +1,82 @@
+---
+permalink: install/configure_two_way_ssl_linux.html 
+sidebar: sidebar 
+keywords: security,two-way ssl,configure two-way ssl, linux host 
+summary: Debe configurar la comunicación SSL bidireccional para proteger la comunicación mutua entre el servidor de SnapCenter en el host de Linux y los plugins. 
+---
+= Configure la comunicación SSL bidireccional en el host Linux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe configurar la comunicación SSL bidireccional para proteger la comunicación mutua entre el servidor de SnapCenter en el host de Linux y los plugins.
+
+.Antes de empezar
+* Debe haber configurado el certificado de CA para el host Linux.
+* Debe haber habilitado la comunicación SSL bidireccional en todos los hosts del plugin y el servidor de SnapCenter.
+
+
+.Pasos
+. Copie *certificate.pem* a _/etc/pki/ca-trust/source/anchors/_.
+. Añada los certificados en la lista de confianza del host Linux.
++
+** `cp root-ca.pem /etc/pki/ca-trust/source/anchors/`
+** `cp certificate.pem /etc/pki/ca-trust/source/anchors/`
+** `update-ca-trust extract`
+
+
+. Compruebe si los certificados se han agregado a la lista de confianza.
+`trust list | grep "<CN of your certificate>"`
+. Actualice *ssl_certificate* y *ssl_certificate_key* en el archivo *nginx* de SnapCenter y reinicie.
++
+** `vim /etc/nginx/conf.d/snapcenter.conf`
+** `systemctl restart nginx`
+
+
+. Actualice el enlace de la GUI del servidor de SnapCenter.
+. Actualice los valores de las siguientes claves en *snapmanager.web.ui.dll.config* que están ubicadas en _ /<installation path>/NetApp/snapcenter/SnapManagerWeb_ y *SMCoreServiceHost.dll.config* que están ubicadas en _/<installation path>/NetApp/snapcenter/SMCore_.
++
+** <add key="SERVICE_CERTIFICATE_PATH" value="<path of certificate.pfx>" />
+** <add key="SERVICE_CERTIFICATE_PASSWORD" value="<password>"/>
+
+
+. Reinicie los siguientes servicios.
++
+** `systemctl restart smcore.service`
+** `systemctl restart snapmanagerweb.service`
+
+
+. Compruebe que el certificado esté conectado al puerto web de SnapManager.
+`openssl s_client -connect localhost:8146 -brief`
+. Compruebe que el certificado está conectado al puerto smcore.
+`openssl s_client -connect localhost:8145 -brief`
+. Gestione la contraseña del almacén de claves y el alias de SPL.
++
+.. Recuperar la contraseña predeterminada del almacén de claves SPL asignada a la clave *spl_KEYSTORE_PASS* en el archivo de propiedades spl.
+.. Cambie la contraseña del almacén de claves.
+`keytool -storepasswd -keystore keystore.jks`
+.. Cambie la contraseña de todos los alias de las entradas de clave privada.
+`keytool -keypasswd -alias "<alias_name>" -keystore keystore.jks`
+.. Actualice la misma contraseña para la clave *spl_KEYSTORE_PASS* en _spl.properties_.
+.. Reinicie el servicio.
+
+
+. En el host Linux del plugin, añada los certificados raíz e intermedios en el almacén de claves del plugin de SPL.
++
+** `keytool -import -trustcacerts -alias <any preferred alias name> -file <path of root-ca.pem> -keystore <path of keystore.jks mentioned in spl.properties file>`
+** `keytool -importkeystore -srckeystore <path of certificate.pfx> -srcstoretype pkcs12 -destkeystore <path of keystore.jks mentioned in spl.properties file> -deststoretype JKS`
++
+... Compruebe las entradas en keystore.jks.
+`keytool -list -v -keystore <path to keystore.jks>`
+... Cambie el nombre de cualquier alias si es necesario.
+`keytool -changealias -alias "old-alias" -destalias "new-alias" -keypass keypass -keystore </path/to/keystore> -storepass storepas`
+
+
+
+
+. Actualice el valor de *spl_CERTIFICATE_ALIAS* en el archivo _spl.properties_ con el alias *certificate.pfx* almacenado en _keystore.jks_ y reinicie el servicio spl: `systemctl restart spl`
+. Compruebe que el certificado está conectado al puerto smcore.
+`openssl s_client -connect localhost:8145 -brief`
+

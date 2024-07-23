@@ -18,13 +18,6 @@ SnapCenter es compatible con una amplia gama de tipos de almacenamiento tanto en
 
 
  a| 
-Servidores físicos y virtuales
- a| 
-LUN conectados a FC
-
-
-
- a| 
 Servidor físico
  a| 
 LUN conectados a iSCSI
@@ -34,6 +27,17 @@ LUN conectados a iSCSI
  a| 
 Servidores físicos y virtuales
  a| 
-Volúmenes conectados en NFS
+* LUN conectados a FC
+* Volúmenes conectados en NFS
+
+
+
+
+ a| 
+VMware ESXi
+ a| 
+Almacenes de datos VVOL en NFS y SAN
+
+El almacén de datos VVOL solo se puede aprovisionar con ONTAP Tools para VMware vSphere.
 
 |===

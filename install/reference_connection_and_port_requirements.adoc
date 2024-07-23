@@ -59,9 +59,20 @@ Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/i
 
 
  a| 
+Puerto de servicio del programador
+ a| 
+8154 (HTTPS)
+
+Este puerto se utiliza para orquestar los flujos de trabajo del programador de SnapCenter para todos los plugins gestionados dentro del host del servidor SnapCenter de forma centralizada.
+
+Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/install/task_install_the_snapcenter_server_using_the_install_wizard.html["Instale el servidor SnapCenter con el asistente de instalación."]
+
+
+
+ a| 
 Puerto MySQL
  a| 
-3306 (HTTPS), bidireccional
+3306 (HTTPS), bidireccional, personalizable
 
 El puerto se utiliza para establecer la comunicación entre SnapCenter y la base de datos del repositorio MySQL.
 
@@ -118,7 +129,18 @@ Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/p
 
 
  a| 
-Plugins personalizados para SnapCenter
+Plugin de SnapCenter para base de datos de Exchange
+ a| 
+909, personalizable
+
+NET predeterminado. El plugin para Windows utiliza el puerto TCP para conectarse a las devoluciones de llamadas VSS de Exchange.
+
+Para personalizar el puerto, consulte link:../protect-sce/task_add_hosts_and_install_plug_in_for_exchange.html["Añada hosts e instale el plugin para Exchange"].
+
+
+
+ a| 
+Complementos compatibles con NetApp para SnapCenter
  a| 
 9090 (HTTPS), fija
 

@@ -63,22 +63,7 @@ Para un formato de nombre de usuario de administrador local integrado, utilice _
 
 
 
-== Paso 4: Añadir una licencia basada en capacidad de SnapCenter
-
-. En el panel izquierdo de la GUI de SnapCenter, haga clic en *Configuración > Software* y, a continuación, en la sección Licencia, haga clic en *+*.
-. Seleccione uno de los dos métodos para obtener la licencia:
-+
-** Introduzca sus credenciales de inicio de sesión en el sitio de soporte de NetApp para importar licencias.
-** Desplácese hasta la ubicación del archivo de licencia de NetApp y haga clic en *Open*.
-
-
-. En la página Notifications del asistente, utilice el umbral de capacidad predeterminado del 90 %.
-. Haga clic en *Finalizar*.
-
-
-
-
-== Paso 5: Configure las conexiones al sistema de almacenamiento
+== Paso 4: Configure las conexiones al sistema de almacenamiento
 
 . En el panel izquierdo, haga clic en *sistemas de almacenamiento > Nuevo*.
 . En la página Add Storage System, realice lo siguiente:

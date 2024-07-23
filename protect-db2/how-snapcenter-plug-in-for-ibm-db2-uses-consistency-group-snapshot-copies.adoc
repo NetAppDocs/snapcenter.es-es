@@ -1,0 +1,16 @@
+---
+permalink: protect-db2/how-snapcenter-plug-in-for-ibm-db2-uses-consistency-group-snapshot-copies.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for IBM Db2 
+summary: Es posible usar el plugin para crear copias Snapshot de grupos de coherencia para los grupos de recursos. Un grupo de consistencia es un contenedor que puede albergar varios volúmenes para que se gestionen como una misma entidad. Un grupo de coherencia es un conjunto de snapshots simultáneas de varios volúmenes, que ofrece copias consistentes de un grupo de volúmenes. 
+---
+= Cómo utiliza el plugin de SnapCenter para IBM DB2 las snapshots de grupos de consistencia
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible usar el plugin para crear copias Snapshot de grupos de coherencia para los grupos de recursos. Un grupo de consistencia es un contenedor que puede albergar varios volúmenes para que se gestionen como una misma entidad. Un grupo de coherencia es un conjunto de snapshots simultáneas de varios volúmenes, que ofrece copias consistentes de un grupo de volúmenes.
+
+También es posible especificar un tiempo de espera para la controladora de almacenamiento a fin de agrupar de forma coherente las copias de Snapshot. Las opciones de tiempo de espera disponibles son *Urgent*, *Medium* y *Relaxed*. También es posible habilitar o deshabilitar la sincronización de Write Anywhere File Layout (WAFL) durante la operación de snapshot de grupos consistentes. La sincronización WAFL mejora el rendimiento de una snapshot de grupo de coherencia.

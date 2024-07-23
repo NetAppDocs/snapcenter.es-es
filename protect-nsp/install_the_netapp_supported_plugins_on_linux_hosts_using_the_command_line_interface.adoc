@@ -1,0 +1,50 @@
+---
+permalink: protect-nsp/install_the_netapp_supported_plugins_on_linux_hosts_using_the_command_line_interface.html 
+sidebar: sidebar 
+keywords: install, NetApp supported plug-in 
+summary: 'Debe instalar los plugins compatibles de SnapCenter NetApp mediante la interfaz de usuario (UI) de SnapCenter. Si el entorno no permite la instalación remota del plugin desde la interfaz de usuario de SnapCenter, puede instalar el complemento compatible con NetApp en el modo de consola o en el modo silencioso mediante la interfaz de línea de comandos (CLI).' 
+---
+= Instale los plugins compatibles con NetApp en los hosts Linux mediante la interfaz de línea de comandos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe instalar los plugins compatibles de NetApp mediante la interfaz de usuario (UI) de SnapCenter. Si el entorno no permite la instalación remota del plugin desde la interfaz de usuario de SnapCenter, puede instalar los complementos compatibles con NetApp en el modo de consola o en el modo silencioso mediante la interfaz de línea de comandos (CLI).
+
+.Pasos
+. Copie el archivo de instalación del paquete de plugins de SnapCenter para Linux (snapcenter_linux_host_plugin.bin) desde C:\ProgramData\NetApp\SnapCenter\Package Repository en el host en el que desea instalar los plugins compatibles de NetApp.
++
+Puede acceder a esta ruta desde el host en el que está instalado el servidor SnapCenter.
+
+. Desde el símbolo del sistema, desplácese hasta el directorio en el que copió el archivo de instalación.
+. Instale el plugin: `path_to_installation_bin_file/snapcenter_linux_host_plugin.bin -i silent -DPORT=port_number_for_host -DSERVER_IP=server_name_or_ip_address -DSERVER_HTTPS_PORT=port_number_for_server`
++
+** -DPORT indica el puerto de comunicación HTTPS de SMCore.
+** -DSERVER_IP indica la dirección IP del servidor SnapCenter.
+** -DSERVER_HTTPS_PORT indica el puerto HTTPS del servidor SnapCenter.
+** -DUSER_INSTALL_DIR indica el directorio en el que desea instalar el paquete de plugins de SnapCenter para Linux.
+** DINSTALL_LOG_NAME indica el nombre del archivo de registro.
+
+
++
+[listing]
+----
+/tmp/sc-plugin-installer/snapcenter_linux_host_plugin.bin -i silent  -DPORT=8145 -DSERVER_IP=scserver.domain.com -DSERVER_HTTPS_PORT=8146 -DUSER_INSTALL_DIR=/opt -DINSTALL_LOG_NAME=SnapCenter_Linux_Host_Plugin_Install_2.log -DCHOSEN_FEATURE_LIST=CUSTOM
+----
+. Añada el host al servidor de SnapCenter con el cmdlet Add-Smhost y los parámetros requeridos.
++
+La información relativa a los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Alternativamente, también puede consultar la https://docs.netapp.com/us-en/snapcenter-cmdlets/index.html["Guía de referencia de cmdlets de SnapCenter Software"^].
+
+. Inicie sesión en SnapCenter y cargue el plugin compatible con NetApp desde la interfaz de usuario de o mediante cmdlets de PowerShell.
++
+En la sección, puede cargar el plugin compatible con NetApp desde la interfaz de usuario link:add_hosts_and_install_plug_in_packages_on_remote_hosts.html["Añada hosts e instale paquetes de plugins en hosts remotos"] .
+
++
+La ayuda sobre cmdlet de SnapCenter y la información de referencia sobre cmdlet contienen más información acerca de cmdlets de PowerShell.
+
++
+https://docs.netapp.com/us-en/snapcenter-cmdlets/index.html["Guía de referencia de cmdlets de SnapCenter Software"^].
+
+

@@ -1,0 +1,18 @@
+---
+permalink: protect-nsp/install_netapp_supported_plugins.html 
+sidebar: sidebar 
+keywords: install workflow, NetApp supported plug-in 
+summary: Deber instalar y configurar plugins compatibles con SnapCenter NetApp si desea proteger los recursos de plugins compatibles con NetApp. 
+---
+= Flujo de trabajo de instalación de plugins compatibles con SnapCenter NetApp
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Deber instalar y configurar plugins compatibles con SnapCenter NetApp si desea proteger los recursos de plugins compatibles con NetApp.
+
+image::../media/scc_install_configure_workflow.png[Flujo de trabajo de complementos compatibles con SnapCenter NetApp]
+
+link:develop_a_plug_in_for_your_application.html["Desarrolle un complemento para la aplicación"]

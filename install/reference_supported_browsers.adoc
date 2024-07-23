@@ -13,10 +13,7 @@ summary: El software SnapCenter se puede usar en diversos exploradores.
 [role="lead"]
 El software SnapCenter se puede usar en diversos exploradores.
 
-* Cromo
-+
-Si utiliza v66, es posible que no se pueda iniciar la interfaz gráfica de usuario de SnapCenter.
-
+* Chrome versión 125 y posteriores
 * Internet Explorer
 +
 La interfaz de usuario de SnapCenter no se carga correctamente si se utiliza IE 10 o versiones anteriores. Debe actualizar a IE 11.

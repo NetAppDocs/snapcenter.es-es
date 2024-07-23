@@ -1,0 +1,202 @@
+---
+permalink: protect-nsp/add_resources_to_netapp_supported_plugins.html 
+sidebar: sidebar 
+keywords: NetApp supported plug-in, resources, snapcenter 
+summary: Debe añadir los recursos que desee incluir en un backup o clonar. En función de su entorno, los recursos pueden ser instancias de una base de datos o recopilaciones que desee clonar o incluir en un backup. 
+---
+= Añada recursos a los plugins compatibles con NetApp
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe añadir los recursos que desee incluir en un backup o clonar. En función de su entorno, los recursos pueden ser instancias de una base de datos o recopilaciones que desee clonar o incluir en un backup.
+
+.Antes de empezar
+* Debe haber completado ciertas tareas, como instalar el servidor SnapCenter, añadir hosts, crear conexiones con el sistema de almacenamiento y añadir credenciales.
+* Usted debe tener link:develop_a_plug_in_for_your_application.html["se ha creado un plugin personalizado para la aplicación"].
+* Debe haber cargado los plugins en SnapCenter Server.
+
+
+.Pasos
+. En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
+. En la página Recursos, selecciona *Agregar recurso*.
+. En la página Provide Resource Details, realice las siguientes acciones:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Nombre
+ a| 
+Escriba el nombre del recurso.
+
+
+
+ a| 
+Nombre de host
+ a| 
+Seleccione el host.
+
+
+
+ a| 
+Tipo
+ a| 
+Seleccione el tipo. El usuario define el tipo según el archivo de descripción del plugin. Por ejemplo, base de datos e instancia.
+
+Si el tipo seleccionado tiene un elemento principal, escriba los detalles de dicho elemento. Por ejemplo, si el tipo es una base de datos y el elemento principal es una instancia, escriba los detalles de la instancia.
+
+
+
+ a| 
+Nombre de credencial
+ a| 
+Seleccione Credential o cree una credencial nueva.
+
+
+
+ a| 
+Monte las rutas
+ a| 
+Escriba las rutas de montaje en el punto donde se monta el recurso. Solo corresponde a un host Windows.
+
+|===
+. En la página Provide Storage Footprint, seleccione un sistema de almacenamiento y elija uno o más volúmenes, LUN y qtrees y, a continuación, seleccione *Save*.
++
+Opcional: Seleccione la image:../media/add_policy_from_resourcegroup.gif["Icono más"] Icono para añadir más volúmenes, LUN y qtrees desde otros sistemas de almacenamiento.
+
++
+
+NOTE: Los plugins compatibles con NetApp no admiten la detección automática de los recursos. Los detalles de almacenamiento de entornos físicos y virtuales también no se detectan automáticamente. Debe proporcionar la información de almacenamiento de los entornos físico y virtual durante la creación de los recursos.
+
++
+image::../media/storage_footprint.gif[Espacio de almacenamiento]
+
+. En la página Resource Settings, proporcione pares personalizados de clave-valor para el recurso.
++
+
+NOTE: Asegúrese de que el nombre de las claves personalizadas está en mayúsculas.
+
++
+image::../media/resource_settings.gif[configuración de recursos]
+
++
+Para conocer los parámetros de conexión correspondientes, consulte link:add_resources_to_netapp_supported_plugins.html#parameters-to-configure-the-resource["Parámetros para configurar el recurso"]
+
+. Revisa el resumen y luego selecciona *Finalizar*.
+
+
+.Resultado
+Los recursos se muestran junto con cierta información, como el tipo, el host o el nombre de clúster, las políticas y los grupos de recursos asociados, y el estado general.
+
+
+IMPORTANT: Es necesario actualizar los recursos si se cambia el nombre de las bases de datos fuera de SnapCenter.
+
+.Después de terminar
+Si desea proporcionar acceso a los activos a otros usuarios, el administrador de SnapCenter debe realizar la asignación. De este modo, los usuarios pueden realizar las acciones para las cuales tienen permisos sobre los activos que les asignaron.
+
+Después de añadir los recursos, puede modificar sus detalles. Si un recurso de plugins compatibles con NetApp tiene backups asociados, los siguientes campos no se pueden modificar: Nombre del recurso, tipo de recurso y nombre de host.
+
+
+
+== Parámetros para configurar el recurso
+
+Si va a añadir los plugins manualmente, puede utilizar los siguientes parámetros para configurar el recurso en la página Resource Settings.
+
+
+
+=== Plugin para MongoDB
+
+Configuración del recurso:
+
+* MONGODB_APP_SERVER=(para el tipo de recurso como cluster compartido) o MONGODB_REPLICASET_SERVER=(para el tipo de recurso como replicaset)
+* OPLOG_PATH=(Parámetro opcional en caso de que se proporcione desde MongoDB.propertiesfile)
+* MONGODB_AUTHENTICATION_TYPE= (PLAIN para la autenticación LDAP y Ninguno para otros)
+
+
+Debe proporcionar los siguientes parámetros n archivo MongoDB.properties:
+
+* DISABLE_START_STOP_SERVICES=
++
+** N si el plugin realiza los servicios start/stop.
+** Si el usuario realiza los servicios START/**STOP.
+** El parámetro opcional como valor predeterminado se establece en N.
+
+
+* OPLOG_PATH_= (Parámetro opcional en caso de que ya se haya proporcionado como par clave-valor personalizado en SnapCenter).
+
+
+
+
+=== Plugin para MaxDB
+
+Configuración del recurso:
+
+* XUSER_ENABLE (Y|N) activa o desactiva el uso de un xuser para MaxDB para que no se necesite una contraseña para el usuario de la base de datos.
+* HANDLE_LOGWRITER (Y|N) ejecuta operaciones de suspensión del escritor de registro (N) o reanudación del escritor de registro (Y).
+* DBMCLICMD (path_to_dbmcli_cmd) especifica la ruta al comando dbmcli de MaxDB. Si no se define, se utiliza dbmcli en la ruta de búsqueda.
+
+
+
+NOTE: En el caso de entornos Windows, la ruta debe estar entre comillas dobles ('...').
+
+* SQLCLICMD (path_to_sqlcli_cmd) especifica la ruta al comando sqlcli de MaxDB. Si la ruta de acceso no está definida, sqlcli se utiliza en la ruta de búsqueda.
+* MAXDB_UPDATE_HIST_LOG (Y|N) indica al programa de copia de seguridad de MaxDB si debe actualizar el registro del historial de MaxDB.
+* MAXDB_CHECK_SNAPSHOT_DIR : example, SID1:directory[,directory...]; [SID2:directoary[,directory...] Comprueba que una operación de copia de Snapshot de Snap Creator se realice correctamente y garantiza que se cree la snapshot.
++
+Esto se aplica únicamente a NFS. El directorio debe apuntar a la ubicación que contiene el directorio .snapshot. Se pueden incluir varios directorios en una lista separada por comas.
+
++
+En MaxDB 7.8 y versiones posteriores, la solicitud de backup de base de datos se Marca con errores en el historial de backup.
+
+* MAXDB_BACKUP_TEMPLATES: Especifica una plantilla de copia de seguridad para cada base de datos.
++
+La plantilla debe existir y ser un tipo externo de plantilla de copia de seguridad. Para habilitar la integración de instantáneas para MaxDB 7,8 y posterior, debe tener la funcionalidad de servidor en segundo plano de MaxDB y la plantilla de copia de seguridad de MaxDB ya configurada del tipo EXTERNO.
+
+* MAXDB_BG_SERVER_PREFIX: Especifica el prefijo para el nombre del servidor en segundo plano.
++
+Si se establece el parámetro MAXDB_BACKUP_TEMPLATES, también debe establecer el parámetro MAXDB_BG_SERVER_PREFIX. Si no establece el prefijo, se utiliza el valor predeterminado na_bg_.
+
+
+
+
+
+=== Plugin para Sybase ASE
+
+Configuración del recurso:
+
+* SYBASE_SERVER (DATA_SERVER_NAME) especifica el nombre del servidor de datos Sybase (opción-S en el comando isql). Por ejemplo, p_test.
+* SYBASE_DATABASES_EXCLUDE (db_name) permite excluir las bases de datos si se utiliza la construcción “ALL”.
++
+Puede especificar varias bases de datos con una lista separada por punto y coma. Por ejemplo: pubs2;test_db1.
+
+* SYBASE_USER: User_name especifica el usuario del sistema operativo que puede ejecutar el comando isql.
++
+Necesario para UNIX. Este parámetro es obligatorio si el usuario que ejecuta los comandos start y stop de Snap Creator Agent (normalmente el usuario raíz) y el usuario que ejecuta el comando isql son diferentes.
+
+* SYBASE_TRAN_DUMP db_name:DIRECTORY_PATH permite realizar un volcado de transacciones de Sybase después de crear una instantánea. Por ejemplo, pubs2:/sybasedumps/ pubs2
++
+Debe especificar cada base de datos que necesita un volcado de transacciones.
+
+* SYBASE_TRAN_DUMP_COMPRESS (Y|N ) activa o desactiva la compresión de volcado de transacciones de Sybase nativa.
+* SYBASE_iSQL_CMD (por ejemplo, /opt/sybase/ocs-15_0/bin/isql) define la ruta de acceso al comando isql.
+* SYBASE_EXCLUDE_TEMPDB (Y|N) permite excluir automáticamente las bases de datos temporales creadas por el usuario.
+
+
+
+
+=== Complemento para aplicaciones Oracle (ORASCPM)
+
+Configuración del recurso:
+
+* SQLPLUS_cmd especifica la ruta a sqlplus.
+* ORACLE_DATABASES muestra las bases de datos de Oracle de las que se debe realizar un backup y el usuario correspondiente (database:user).
+* CNTL_FILE_BACKUP_DIR especifica el directorio para la copia de seguridad del archivo de control.
+* ORA_TEMP especifica el directorio de los archivos temporales.
+* ORACLE_HOME especifica el directorio en el que está instalado el software de Oracle.
+* ARCHIVE_LOG_ONLY especifica si se realizará o no el backup de los registros de archivos.
+* ORACLE_BACKUP_MODE especifica si se realizará una copia de seguridad en línea o fuera de línea.
+

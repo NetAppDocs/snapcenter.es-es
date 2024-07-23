@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Storage types 
 summary: SnapCenter es compatible con una gran variedad de tipos de almacenamiento, tanto en máquinas físicas como virtuales. Antes de instalar el paquete para el host, es necesario verificar que el tipo de almacenamiento sea compatible. 
 ---
-= Tipos de almacenamiento compatibles con los plugins de SnapCenter para Microsoft Windows
+= Tipos de almacenamiento compatibles con el plugin de SnapCenter para Microsoft Windows
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -93,6 +93,16 @@ Interfaz gráfica de usuario de SnapCenter o cmdlets de PowerShell
 Compatibilidad solo para aprovisionamiento.
 
 No puede utilizar SnapCenter para realizar backup de datos o recursos compartidos mediante el protocolo SMB.
+
+
+
+ a| 
+Máquina virtual de VMware
+ a| 
+Almacenes de datos VVOL en NFS y SAN
+ a| 
+Herramientas de ONTAP para VMware vSphere
+ a| 
 
 
 

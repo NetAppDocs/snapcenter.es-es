@@ -1,0 +1,40 @@
+---
+permalink: uninstall/uninstall_snapcenter_server_linux.html 
+sidebar: sidebar 
+keywords: uninstall, snapcenter server, linux 
+summary: Si no desea utilizar más el servidor de SnapCenter para gestionar trabajos de protección de datos, puede desinstalar SnapCenter Server. 
+---
+= Desinstale el servidor SnapCenter en el host Linux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si no desea utilizar más el servidor de SnapCenter para gestionar trabajos de protección de datos, puede desinstalar SnapCenter Server. Al desinstalar el servidor SnapCenter se quitan todos sus componentes.
+
+.Pasos
+. Realice una de las acciones para desinstalar el servidor SnapCenter.
++
+|===
+| Si desea ejecutar... | Realice lo siguiente... 
+
+
+ a| 
+Desinstalación no interactiva
+ a| 
+`$ sudo /opt/NetApp/snapcenter/SnapManagerWeb/installation/uninstall -i silent -DCONFIRM=1`
+
+Ejemplo: Sudo /opt/NetApp/snapcenter/SnapManagerWeb/installation/uninstall
+
+
+
+ a| 
+Desinstalación interactiva
+ a| 
+`$ sudo <USER_INSTALL_DIR>/NetApp/snapcenter/SnapManagerWeb/installation/uninstall`
+
+Introduzca cualquier valor distinto de 0 en la entrada de confirmación para confirmar la desinstalación.
+
+|===
+

@@ -19,7 +19,7 @@ Antes de añadir un host e instalar el paquete de plugins para Linux, debe satis
 El complemento de SnapCenter para sistemas de archivos Unix puede ser instalado por un usuario que no sea root. Sin embargo, debe configurar los privilegios sudo para el usuario no raíz para instalar e iniciar el proceso del plugin. Después de instalar el plugin, los procesos se ejecutan como un usuario efectivo que no es raíz.
 
 * Cree credenciales con modo de autenticación como Linux para el usuario de instalación.
-* Debe haber instalado Java 1,8.x o Java 11 de 64 bits en el host Linux.
+* Debe haber instalado Java 11 en el host Linux.
 +
 
 NOTE: Asegúrese de haber instalado únicamente la edición certificada de JAVA 11 en el host Linux.
@@ -70,9 +70,7 @@ NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de alm
  a| 
 Paquetes de software obligatorios
  a| 
-* Java 1,8.x (64 bits) Oracle Java y OpenJDK
-* Java 11 (64 bits) Oracle Java y OpenJDK
-
+Java 11 Oracle Java y OpenJDK
 
 
 NOTE: Asegúrese de haber instalado únicamente la edición certificada de JAVA 11 en el host Linux.

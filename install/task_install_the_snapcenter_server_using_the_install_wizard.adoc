@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: install, snapcenter software, install wizard 
 summary: Puede ejecutar el ejecutable del instalador del servidor SnapCenter para instalar el servidor SnapCenter. 
 ---
-= Instale el servidor SnapCenter
+= Instale el servidor de SnapCenter en el host de Windows
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -63,4 +63,23 @@ Sin embargo, si hace clic en *Cancelar* cuando se están realizando las operacio
 +
 Los archivos de registro siempre aparecen (los más antiguos primero) en la carpeta %temp% del usuario administrador. Si desea redirigir las ubicaciones de registro, inicie la instalación del servidor SnapCenter desde el símbolo del sistema ejecutando:``C:\installer_location\installer_name.exe /log"C:\"``
 
+
+
+
+
+== Registre el producto para habilitar la asistencia
+
+Si es nuevo en productos de NetApp y no tiene una cuenta de NetApp existente, debe registrar el producto para habilitar la asistencia.
+
+.Pasos
+. Después de instalar SnapCenter, vaya a *Ayuda > Acerca de*.
+. En el cuadro de diálogo _About SnapCenter_, anote la instancia de SnapCenter, un número de 20 dígitos que comienza por 971.
+. Haga clic en https://register.netapp.com[].
+. Haga clic en *no soy un cliente registrado de NetApp*.
+. Especifique sus datos para registrarse.
+. Deje en blanco el campo Número de serie de referencia de NetApp.
+. Seleccione *SnapCenter* en la lista desplegable Línea de productos.
+. Seleccione el proveedor de facturación.
+. Introduzca el identificador de instancia de SnapCenter de 20 dígitos.
+. Haga clic en *Enviar*.
 

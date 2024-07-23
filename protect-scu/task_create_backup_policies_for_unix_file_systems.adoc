@@ -16,6 +16,7 @@ Antes de usar SnapCenter para realizar backups de sistemas de archivos Unix, deb
 .Antes de empezar
 * En el marco de los preparativos para la protección de datos, completó tareas como instalar SnapCenter, añadir hosts, detectar sistemas de archivos y crear conexiones con el sistema de almacenamiento.
 * Si desea replicar snapshots en un almacenamiento secundario con snapmirror o snapvault, el administrador de SnapCenter debe haberle asignado las SVM de los volúmenes de origen y de destino.
+* Revise los requisitos previos y las limitaciones específicos de SnapMirror Active Sync. Para obtener más información, consulte https://docs.netapp.com/us-en/ontap/smbc/considerations-limits.html#volumes["Límites de objetos para la sincronización activa de SnapMirror"].
 
 
 .Pasos
@@ -68,6 +69,8 @@ NOTE: Puede retener los backups de registros de archivos únicamente si seleccio
 Actualizar SnapMirror tras crear una copia Snapshot local
  a| 
 Seleccione este campo para crear copias reflejadas de los conjuntos de backup en otro volumen (replicación de SnapMirror).
+
+Esta opción debe estar habilitada para la sincronización activa de SnapMirror.
 
 
 

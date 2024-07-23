@@ -17,7 +17,13 @@ Si un recurso aún no es parte de ningún grupo de recursos, es posible realizar
 * Para la autenticación de credenciales de Windows, debe configurar la credencial antes de instalar los plugins.
 * Para la autenticación de la instancia de SQL Server, debe añadir la credencial después de instalar los plugins.
 * Para la autenticación GMSA, debe configurar GMSA mientras registra el host con SnapCenter en la página *Agregar host* o *Modificar host* para activar y utilizar el GMSA.
-* Si el host se agrega con GMSA y si el GMSA tiene privilegios de inicio de sesión y administrador del sistema, el GMSA se utilizará para conectarse a la instancia de SQL.
+* Si el host se agrega con gMSA y si gMSA tiene privilegios de inicio de sesión y administrador del sistema, gMSA puede conectarse a la instancia de SQL.
++
+** SnapCenter verificará si la autenticación para instancias SQL está configurada. Si la autenticación está configurada, se accederá a la instancia SQL con esta credencial.
+** Si la autenticación no está configurada, utilice gMSA para ver si el plugin de SQL está funcionando actualmente. Si el plugin funciona, se utilizará para establecer una conexión con la instancia de SQL.
+** Se accederá a la instancia de SQL mediante la autenticación de las credenciales de Windows cuando no se haya configurado la autenticación de las instancias de SQL y el plugin no esté operativo.
+
+
 
 
 .Pasos

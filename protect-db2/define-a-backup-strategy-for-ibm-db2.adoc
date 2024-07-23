@@ -1,0 +1,27 @@
+---
+permalink: protect-db2/define-a-backup-strategy-for-ibm-db2.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for IBM Db2 
+summary: 'Definir una estrategia de backup antes de crear las tareas de backup ayuda a garantizar que se cuente con todos los backups necesarios para restaurar o clonar correctamente los recursos. La estrategia de backup queda determinada principalmente por el acuerdo de nivel de servicio \(SLA\), el objetivo de tiempo de recuperación \(RPO\) y el objetivo de punto de recuperación \(RPO\).' 
+---
+= Definir una estrategia de backup para IBM DB2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Definir una estrategia de backup antes de crear las tareas de backup ayuda a garantizar que se cuente con todos los backups necesarios para restaurar o clonar correctamente los recursos. La estrategia de backup queda determinada principalmente por el SLA, el RTO y el RPO.
+
+.Acerca de esta tarea
+Un acuerdo de nivel de servicio define el nivel de servicio que se espera y aborda varios problemas vinculados con el servicio, como su disponibilidad y rendimiento. El objetivo de tiempo de recuperación es el plazo de recuperación después de una interrupción del servicio. El RPO define la estrategia respecto de la antigüedad de los archivos que se deben recuperar del almacenamiento de backup para reanudar las operaciones regulares después de un fallo. El acuerdo de nivel de servicio, el objetivo de tiempo de recuperación y el RPO ayudan a establecer una estrategia de protección de datos.
+
+.Pasos
+. Determinar cuándo se debe realizar el backup de los recursos.
+. Decidir cuántas tareas de backup se necesitan.
+. Decidir el nombre que se asignará a los backups.
+. Decidir si se desea crear una política basada en copias de Snapshot para realizar backup de las Snapshot consistentes con las aplicaciones de la base de datos.
+. Decidir si se desean usar la tecnología NetApp SnapMirror para la replicación o la tecnología NetApp SnapVault para la retención a largo plazo.
+. Determinar el período de retención para las snapshots en el sistema de almacenamiento de origen y el destino de SnapMirror.
+. Determinar si se desean ejecutar comandos antes o después de la operación de backup y proporcionar un script previo o posterior.
+

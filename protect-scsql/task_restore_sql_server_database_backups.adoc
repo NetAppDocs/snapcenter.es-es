@@ -33,7 +33,7 @@ El valor de la tecla se puede mostrar desde swagger a través de la API: API /4.
 Puede usar LA API GET para mostrar el valor de la clave. No se admite LA CONFIGURACIÓN de API.
 
 * La mayoría de los campos del asistente Restore son claros y explicativos. Aquí se ofrece información sobre los campos que podrían presentar dificultades.
-* Para la operación de restauración de continuidad del negocio de SnapMirror (SM-BC), debe seleccionar el backup en la ubicación principal.
+* Para la operación de restauración de sincronización activa de SnapMirror, debe seleccionar el backup de la ubicación principal.
 * Para las políticas con SnapLock habilitado, para ONTAP 9.12.1 y versiones anteriores, si se especifica un período de bloqueo de Snapshot, los clones creados a partir de las instantáneas a prueba de manipulaciones como parte de la restauración heredarán el tiempo de caducidad de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 

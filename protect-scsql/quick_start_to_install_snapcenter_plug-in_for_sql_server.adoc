@@ -49,15 +49,6 @@ Si desea instalar SnapCenter a modo de prueba con almacenamiento FAS, AFF o ASA,
 
 
  a| 
-SnapCenter basada en capacidad estándar
- a| 
-Necesario con ONTAP Select y Cloud Volumes ONTAP
-
-Si es cliente de Cloud Volumes ONTAP o ONTAP Select, necesita adquirir una licencia basada en capacidad por TB en función de los datos gestionados por SnapCenter. De forma predeterminada, SnapCenter envía una licencia de prueba integrada basada en capacidad estándar de SnapCenter de 90 días y 100 TB. Si desea obtener más detalles, póngase en contacto con el representante de ventas.
-
-
-
- a| 
 SnapMirror o SnapVault
  a| 
 ONTAP
@@ -113,7 +104,7 @@ CPU
 RAM
  a| 
 * Host del servidor: 8 GB
-* Host de plugins: 1 GB
+* Host de plugins: 4 GB
 
 
 
@@ -123,10 +114,13 @@ Espacio en el disco duro
  a| 
 Host del servidor:
 
-* 4 GB para software y registros de SnapCenter Server
-* 6 GB para el repositorio de SnapCenter
+* 7 GB para software y registros de SnapCenter Server
+* 8 GB para el repositorio de SnapCenter
 * Cada host de plugin: 2 GB para la instalación y los registros de un plugin, esto es obligatorio solo si el plugin está instalado en un host dedicado.
 
+
+
+NOTE: Si tiene el servidor de SnapCenter en el mismo host en el que está instalado el repositorio de SnapCenter, se recomienda tener 15 GB.
 
 
 
@@ -136,8 +130,8 @@ Bibliotecas de terceros
 Requerida en el host de servidor de SnapCenter y el host de plugins:
 
 * Microsoft .NET Framework 4.7.2 o posterior
-* Windows Management Framework (WMF) 4.0 o posterior
-* PowerShell 4.0 o posterior
+* ASP. NET Core Hosting Bundle (8.0.5 o posterior)
+* PowerShell 7.4.2 o posterior
 
 
 
@@ -262,22 +256,7 @@ Para un formato de nombre de usuario de administrador local integrado, utilice _
 
 
 
-=== Paso 4: Añadir una licencia basada en capacidad de SnapCenter
-
-. En el panel izquierdo de la GUI de SnapCenter, haga clic en *Configuración > Software* y, a continuación, en la sección Licencia, haga clic en *+*.
-. Seleccione uno de los dos métodos para obtener la licencia:
-+
-** Introduzca sus credenciales de inicio de sesión en el sitio de soporte de NetApp para importar licencias.
-** Desplácese hasta la ubicación del archivo de licencia de NetApp y haga clic en *Open*.
-
-
-. En la página Notifications del asistente, utilice el umbral de capacidad predeterminado del 90 %.
-. Haga clic en *Finalizar*.
-
-
-
-
-=== Paso 5: Configure las conexiones al sistema de almacenamiento
+=== Paso 4: Configure las conexiones al sistema de almacenamiento
 
 . En el panel izquierdo, haga clic en *sistemas de almacenamiento > Nuevo*.
 . En la página Add Storage System, realice lo siguiente:

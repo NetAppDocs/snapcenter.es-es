@@ -1,0 +1,47 @@
+---
+permalink: protect-mysql/discover-the-databases-automatically.html 
+sidebar: sidebar 
+keywords: credentials 
+summary: Los recursos son bases de datos MySQL en el host Linux gestionados por SnapCenter. Es posible añadir estos recursos a grupos de recursos para realizar operaciones de protección de datos después de detectar las bases de datos MySQL disponibles. 
+---
+= Detectar las bases de datos automáticamente
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Los recursos son bases de datos MySQL en el host Linux gestionados por SnapCenter. Es posible añadir los recursos a grupos de recursos para realizar operaciones de protección de datos después de detectar las bases de datos MySQL disponibles.
+
+.Antes de empezar
+* Debe haber completado ciertas tareas, como instalar SnapCenter Server, añadir hosts y configurar las conexiones del sistema de almacenamiento.
+* El plugin de SnapCenter para MySQL no es compatible con la detección automática de los recursos que residen en los entornos virtuales de RDM/VMDK. Debe proporcionar la información de almacenamiento para entornos virtuales al mismo tiempo que añade las bases de datos de forma manual.
+
+
+.Acerca de esta tarea
+* Después de instalar el plugin, se detectan automáticamente todas las bases de datos en ese host Linux y se muestran en la página Resources.
+* Solo se detectan automáticamente las bases de datos.
+
+
+Los recursos de detección automática no se pueden modificar ni eliminar.
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Resources* y, a continuación, seleccione el plugin para MySQL de la lista.
+. En la página Resources, seleccione el tipo de recurso en la lista View.
+. (Opcional) haga clic en *image:../media/filter_icon.png["icono de filtro"]* y, a continuación, seleccione el nombre de host.
++
+A continuación, puede hacer clic en *image:../media/filter_icon.png["icono de filtro"]* para cerrar el panel de filtros.
+
+. Haga clic en *Actualizar recursos* para descubrir los recursos disponibles en el host.
++
+Los recursos se muestran junto con cierta información, como el tipo de recurso, el nombre del host, los grupos de recursos asociados, el tipo de backup, las políticas y el estado general.
+
++
+** Si la base de datos se encuentra en un almacenamiento de NetApp y no está protegida, se muestra Not protected en la columna Overall Status.
+** Si una base de datos se encuentra en un sistema de almacenamiento de NetApp y está protegida, y si no se ejecuta una operación de backup, se muestra Not run en la columna Overall Status. El estado cambiará de otro modo a Backup failed o Backup succeeded según el estado de la última copia de seguridad.
+
+
+
+
+
+IMPORTANT: Debe actualizar los recursos si se cambia el nombre de las instancias fuera de SnapCenter.

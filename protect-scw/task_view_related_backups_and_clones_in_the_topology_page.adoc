@@ -33,7 +33,7 @@ NOTE: Los clones de un backup de un reflejo de versión flexible en un volumen d
 
 NOTE: Los clones de un backup de un reflejo de versión flexible en un volumen de tipo reflejo-almacén se muestran en la vista de topología, pero el número de backups de reflejos de la vista de topología no incluye el backup de versión flexible.
 
-Si tiene una relación secundaria como Continuidad empresarial de SnapMirror (SM-BC), verá los siguientes iconos adicionales:
+Si tiene una relación secundaria como SnapMirror Active Sync (inicialmente lanzado como SnapMirror Business Continuity [SM-BC]), verá los siguientes iconos adicionales:
 
 * image:../media/topology_replica_site_up.png["sitio de réplica activo"] implica que el sitio de réplica está activo.
 * image:../media/topology_replica_site_down.png["sitio de réplica inactivo"]  implica que el sitio de réplica está caído.
@@ -61,10 +61,10 @@ Si se realiza una copia de seguridad habilitada para SnapLock, al hacer clic en 
 Cuando el recurso de la aplicación se distribuya entre varios volúmenes, el tiempo de caducidad de SnapLock para el backup será el tiempo de caducidad de SnapLock más largo que se establezca para una snapshot en un volumen. El tiempo de caducidad de SnapLock más largo se recupera de ONTAP.
 
 +
-Para la continuidad del negocio con SnapMirror (SM-BC), al hacer clic en el botón *Actualizar*, se actualiza el inventario de backup de SnapCenter consultando ONTAP tanto para los sitios primarios como de réplica. Una programación semanal también realiza esta actividad para todas las bases de datos que contienen una relación SM-BC.
+Para la sincronización activa de SnapMirror, al hacer clic en el botón *Actualizar* se actualiza el inventario de copia de seguridad de SnapCenter consultando ONTAP tanto para los sitios primarios como para los de réplica. Una programación semanal también realiza esta actividad en todas las bases de datos que contienen una relación de sincronización activa de SnapMirror.
 
 +
-** Para las relaciones SM-BC, Mirror asíncrono, Vault o MirrorVault con el nuevo destino primario se deben configurar manualmente después de la conmutación al nodo de respaldo.
+** Para la sincronización activa de SnapMirror y solo para ONTAP 9.14.1, las relaciones de reflejo asíncrono o reflejo asíncrono de almacén con el nuevo destino primario deben configurarse manualmente después de una conmutación al nodo de respaldo. A partir de ONTAP 9.15.1 en adelante, el reflejo asíncrono o el reflejo asíncrono se configura automáticamente en el nuevo destino primario.
 ** Después de la conmutación por error, es necesario crear un backup para que SnapCenter detecte la conmutación al nodo de respaldo. Puede hacer clic en *Actualizar* solo después de que se haya creado una copia de seguridad.
 
 
@@ -79,12 +79,6 @@ NOTE: Los backups que figuran en el sistema de almacenamiento secundario no pued
 
 +
 Si utiliza los plugins de personalizados de SnapCenter, no puede cambiar el nombre de los backups que están en el sistema de almacenamiento principal.
-
-+
-** Si selecciona un backup de un recurso o grupo de recursos de Oracle, también puede realizar operaciones de montaje y desmontaje.
-** Si seleccionó un backup de registro de un recurso o grupo de recursos de Oracle, también puede realizar operaciones de cambio de nombre, montaje, desmontaje y eliminación.
-** Si utiliza el paquete de plugins de SnapCenter para Linux y catalogó el backup con Oracle Recovery Manager (RMAN), no puede cambiar el nombre de esos backups catalogados.
-
 
 . Si desea eliminar un clon, selecciónelo en la tabla y haga clic en image:../media/delete_icon.gif["icono de eliminar"] para eliminar el clon.
 

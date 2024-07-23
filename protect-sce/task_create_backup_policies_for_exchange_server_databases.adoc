@@ -23,8 +23,9 @@ Para obtener detalles, consulte la información sobre cómo definir una estrateg
 * Si va a replicar snapshots en un reflejo o almacén, el administrador de SnapCenter debe haberle asignado las máquinas virtuales de almacenamiento (SVM) para los volúmenes de origen y de destino.
 * Para ejecutar los scripts de PowerShell en scripts previos y posteriores, es necesario configurar el valor de `usePowershellProcessforScripts` parámetro en true en la `web.config` archivo.
 +
-El valor predeterminado es FALSE
+El valor predeterminado es FALSE.
 
+* Revise los requisitos previos y las limitaciones específicos de SnapMirror Active Sync. Para obtener más información, consulte https://docs.netapp.com/us-en/ontap/smbc/considerations-limits.html#volumes["Límites de objetos para la sincronización activa de SnapMirror"].
 
 
 .Acerca de esta tarea
@@ -250,8 +251,7 @@ El período de retención de SnapLock debe ser inferior a 100 años.
 
 |===
 +
-
-NOTE: Si se dispone de una base de datos que solo tiene backups de registros y ningún backup completo en un host de una configuración de DAG, los backups de registros se retienen de las siguientes maneras:
+Si se dispone de una base de datos que solo tiene backups de registros y ningún backup completo en un host de una configuración de DAG, los backups de registros se retienen de las siguientes maneras:
 
 +
 *** De forma predeterminada, SnapCenter busca el backup completo más antiguo de la base de datos en todos los otros hosts del DAG y elimina todos los backups de registros de este host que se realizaron antes del backup completo.
@@ -273,14 +273,19 @@ En el ejemplo, el valor 10 indica que se conservan hasta 10 backups de registros
 
  a| 
 Actualice SnapMirror después de crear una instantánea local
+ a| 
+Seleccione esta opción para mantener copias de SnapMirror de conjuntos de backups en otro volumen (SnapMirror).
 
 Durante la replicación secundaria, el tiempo de caducidad del SnapLock carga el tiempo de caducidad del SnapLock principal.
+
+Esta opción debe estar habilitada para la sincronización activa de SnapMirror.
+
+
+IMPORTANT: La política solo se puede usar si se configura la sincronización activa de SnapMirror para volúmenes de Exchange ONTAP. SnapCenter no permite esto. Debe activar la opción “Mirror”.
 
 Al hacer clic en el botón *Refrescar* de la página Topología, se actualiza el tiempo de caducidad de SnapLock secundario y primario que se recuperan de ONTAP.
 
 Consulte link:..protect-sce/task_view_exchange_backups_in_the_topology_page.html["Consulte los backups de Exchange en la página Topology"].
- a| 
-Seleccione esta opción para mantener copias de SnapMirror de conjuntos de backups en otro volumen (SnapMirror).
 
 
 

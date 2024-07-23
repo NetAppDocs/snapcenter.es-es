@@ -26,7 +26,7 @@ Para obtener información sobre cómo los administradores asignan recursos a los
 +
 El valor predeterminado es FALSE.
 
-* Para obtener más información sobre continuidad del negocio con SnapMirror (SM-BC), consulte si desea obtener más información sobre requisitos previos y limitaciones https://docs.netapp.com/us-en/ontap/smbc/considerations-limits.html#volumes["Límites de objetos para la continuidad del negocio de SnapMirror"].
+* Revise los requisitos previos y las limitaciones específicos de SnapMirror Active Sync. Para obtener más información, consulte https://docs.netapp.com/us-en/ontap/smbc/considerations-limits.html#volumes["Límites de objetos para la sincronización activa de SnapMirror"].
 
 
 .Acerca de esta tarea
@@ -273,7 +273,7 @@ Actualice SnapMirror después de crear una copia snapshot local.
 
 . Seleccione esta opción para crear copias de SnapMirror de conjuntos de backups en otro volumen (SnapMirror).
 +
-Esta opción debe estar habilitada para continuidad del negocio con SnapMirror (SM-BC) o para SnapMirror Sync (SM-S).
+Esta opción debe estar habilitada para la sincronización activa de SnapMirror.
 
 +
 Durante la replicación secundaria, el tiempo de caducidad del SnapLock carga el tiempo de caducidad del SnapLock principal. Al hacer clic en el botón *Refrescar* de la página Topología, se actualiza el tiempo de caducidad de SnapLock secundario y primario que se recuperan de ONTAP.

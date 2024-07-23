@@ -34,6 +34,9 @@ Entornos
  a| 
 * Servidor físico
 * Servidor virtual
++
+Almacenes de datos VVOL en NFS y SAN. El almacén de datos VVOL solo se puede aprovisionar con ONTAP Tools para VMware vSphere.
+
 
 
 
@@ -90,6 +93,5 @@ Sin embargo, puede realizar manualmente una restauración en el nivel de archivo
 
 * No se admite la combinación de sistemas de archivos distribuidos entre VMDK procedentes de NFS y almacenes de datos VMFS.
 * No se admite NVMe.
-* No se admite la continuidad del negocio con SnapMirror (SM-BC).
 * No se admite el aprovisionamiento.
 

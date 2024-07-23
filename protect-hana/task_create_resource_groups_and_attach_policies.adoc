@@ -16,6 +16,8 @@ Un grupo de recursos es el contenedor al que debe añadir los recursos que desea
 .Acerca de esta tarea
 * Para crear backups de replicación del sistema SAP HANA, se recomienda añadir todos los recursos del sistema SAP HANA a un grupo de recursos. Esto garantiza una copia de seguridad sin problemas durante el modo de recuperación tras fallos.
 * Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+* No se admite la adición de bases de datos nuevas sin sincronización activa de SnapMirror a un grupo de recursos existente que contiene recursos con sincronización activa de SnapMirror.
+* No se admite la adición de bases de datos nuevas a un grupo de recursos existente en el modo de conmutación por error de la sincronización activa de SnapMirror. Puede añadir recursos al grupo de recursos solo en estado normal o de conmutación por error.
 
 
 .Pasos

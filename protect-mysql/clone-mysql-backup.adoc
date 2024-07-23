@@ -1,0 +1,111 @@
+---
+permalink: protect-mysql/clone-mysql-backup.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for MySQL,run as 
+summary: Es posible usar SnapCenter para clonar un backup. Es posible clonar desde un backup primario o secundario. 
+---
+= Clonar un backup de MySQL
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible usar SnapCenter para clonar un backup. Es posible clonar desde un backup primario o secundario.
+
+.Antes de empezar
+* Debe tener un backup de los recursos o del grupo de recursos.
+* Debe asegurarse de que los agregados donde se alojan los volúmenes deben estar en la lista de agregados asignados de la máquina virtual de almacenamiento (SVM).
+* Para los comandos previos o posteriores a la clonado, debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin desde las rutas siguientes:
++
+Para Windows: _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc\allowed_Commands_list.txt_
+
++
+Para Linux: _/var/opt/snapcenter/scc/allowed_Commands_list.txt_
+
+
+
+
+NOTE: Si no hay comandos en la lista de comandos, se producirá un error en la operación. * Para la versión MySQL 5,7, debe configurar IGNORE_MYSQLX_PORT = true (por defecto false) en el MySQL. archivo de propiedades.
+
+.Acerca de esta tarea
+* No es posible proteger las instancias de MySQL clonadas.
+* Para obtener más información sobre las limitaciones de las operaciones de división de clones, consulte http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["Guía de gestión de almacenamiento lógico de ONTAP 9"^].
+* Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. En la página Resources, filtre los recursos de la lista desplegable *View* en función del tipo de recurso.
++
+Los recursos se muestran junto con cierta información, como el tipo, el host, las políticas y los grupos de recursos asociados, y el estado.
+
+. Seleccione el recurso o el grupo de recursos.
++
+Debe seleccionar un recurso para seleccionar un grupo de recursos.
+
++
+Se muestra la página con el resumen o grupo de recursos.
+
+. En la vista Manage Copies, seleccione *copias de seguridad* ya sea en los sistemas de almacenamiento primario o secundario (reflejado o en almacén).
+. Seleccione el backup de datos de la tabla y haga clic en image:../media/clone_icon.gif["el icono de clon"].
+. En la página Location, lleve a cabo las siguientes acciones:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Clone el servidor
+ a| 
+Elija el host donde se debe crear el clon.
+
+
+
+ a| 
+Puerto
+ a| 
+Proporcione el puerto en el que se iniciará la instancia de MySQL clonada.
+
+
+
+ a| 
+Dirección IP de exportación NFS
+ a| 
+Introduzca las direcciones IP o los nombres de host a los que se van a exportar los volúmenes clonados.
+
+|===
+. En la página Scripts, realice los siguientes pasos:
++
+
+NOTE: Los scripts se ejecutan en el host del plugin.
+
++
+.. Introduzca los comandos para el clon previo o posterior que se deben ejecutar antes o después de la operación de clonado, respectivamente.
++
+*** Comando previo a la clonado: Elimine las bases de datos existentes con el mismo nombre
+*** Comando posterior a la clonado: Verifique o inicie una base de datos.
+
+
+.. Escriba el comando de montaje para montar un sistema de archivos en un host.
++
+Comando de montaje para un volumen o qtree en un equipo Linux:
+
++
+Ejemplo para NFS:
+
++
+ mount VSERVER_DATA_IP:%VOLUME_NAME_Clone /mnt
++
+
+NOTE: Para los comandos previos y posteriores para operaciones de inactividad, Snapshot y reanudación, debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin en la ruta _/opt/snapcenter/snapenter/scc/allowed_commands.config_ para Linux y _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc\allowed_commands_list.txt_ para Windows.
+
+
+
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
++
+También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo.
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
+

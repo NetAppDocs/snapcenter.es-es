@@ -1,0 +1,47 @@
+---
+permalink: protect-postgresql/discover-the-clusters-automatically.html 
+sidebar: sidebar 
+keywords: credentials 
+summary: Los recursos son clústeres PostgreSQL en el host Linux que administra SnapCenter. Es posible añadir estos recursos a grupos de recursos para realizar operaciones de protección de datos después de detectar los clústeres de PostgreSQL disponibles. 
+---
+= Detecte los clústeres automáticamente
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Los recursos son clústeres PostgreSQL en el host Linux que administra SnapCenter. Es posible añadir los recursos a grupos de recursos para realizar operaciones de protección de datos después de detectar los clústeres de PostgreSQL disponibles.
+
+.Antes de empezar
+* Debe haber completado ciertas tareas, como instalar SnapCenter Server, añadir hosts y configurar las conexiones del sistema de almacenamiento.
+* El plugin de SnapCenter para PostgreSQL no admite la detección automática de los recursos que residen en entornos virtuales de RDM/VMDK.
+
+
+.Acerca de esta tarea
+* Después de instalar el plugin, se detectan automáticamente todos los clústeres en ese host Linux y se muestran en la página Resources.
+* Solo los clústeres se detectan automáticamente.
+
+
+Los recursos de detección automática no se pueden modificar ni eliminar.
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Resources* y, a continuación, seleccione el plugin para PostgreSQL de la lista.
+. En la página Resources, seleccione el tipo de recurso en la lista View.
+. (Opcional) haga clic en *image:../media/filter_icon.png["icono de filtro"]* y, a continuación, seleccione el nombre de host.
++
+A continuación, puede hacer clic en *image:../media/filter_icon.png["icono de filtro"]* para cerrar el panel de filtros.
+
+. Haga clic en *Actualizar recursos* para descubrir los recursos disponibles en el host.
++
+Los recursos se muestran junto con cierta información, como el tipo de recurso, el nombre del host, los grupos de recursos asociados, el tipo de backup, las políticas y el estado general.
+
++
+** Si el clúster está en un almacenamiento de NetApp y no está protegido, se muestra Not protected en la columna Overall Status.
+** Si el clúster se encuentra en un sistema de almacenamiento de NetApp y está protegido, y si no hay operación de backup ejecutada, se muestra Backup not run en la columna Overall Status. El estado cambiará de otro modo a Backup failed o Backup succeeded según el estado de la última copia de seguridad.
+
+
+
+
+
+IMPORTANT: Los recursos se deben actualizar si se cambia el nombre de los clústeres fuera de SnapCenter.

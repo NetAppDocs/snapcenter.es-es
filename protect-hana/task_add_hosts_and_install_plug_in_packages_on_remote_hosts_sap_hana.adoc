@@ -14,13 +14,19 @@ summary: Debe usar la página SnapCenter Add Host para añadir hosts y, a contin
 Debe usar la página SnapCenter Add Host para añadir hosts y, a continuación, instalar los paquetes de los plugins. Los plugins se instalan automáticamente en hosts remotos. Puede añadir un host e instalar paquetes de plugins para un host individual o para un clúster.
 
 .Antes de empezar
+* Si el sistema operativo del host de SnapCenter Server es Windows 2019 y el sistema operativo del host del plugin es Windows 2022, debe realizar lo siguiente:
++
+** Actualice a Windows Server 2019 (compilación del sistema operativo 17763,5936) o posterior
+** Actualice a Windows Server 2022 (compilación del sistema operativo 20348,2402) o posterior
+
+
 * Debe ser un usuario al que se ha asignado una función que tenga permisos de instalación y desinstalación de plugins, como el rol de administrador de SnapCenter.
 * Al instalar un plugin en un host de Windows, si especifica una credencial que no está incorporada o si el usuario pertenece a un usuario de grupo de trabajo local, debe deshabilitar UAC en el host.
 * Debe asegurarse de que el servicio de cola de mensajes está en ejecución.
 * La documentación de administración contiene información sobre la gestión de los hosts.
 * Si está utilizando la cuenta de servicio gestionado en grupo (GMSA), debe configurar GMSA con privilegios administrativos.
 +
-link:../protect-hana/task_configure_gMSA_on_windows_server_2012_or_later.html["Configure la cuenta de servicio gestionado de grupo en Windows Server 2012 o posterior para SAP HANA"^]
+link:../protect-hana/task_configure_gMSA_on_windows_server_2012_or_later.html["Configure la cuenta de servicio gestionado de grupo en Windows Server 2016 o posterior para SAP HANA"^]
 
 
 

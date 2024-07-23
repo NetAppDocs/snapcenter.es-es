@@ -1,7 +1,7 @@
 ---
 permalink: protect-sce/task_add_hosts_and_install_plug_in_for_exchange.html 
 sidebar: sidebar 
-keywords: SnapCenter Plug-in for Microsoft Exchange Server 
+keywords: SnapCenter Plug-in for Microsoft Exchange Server, NET TCP 
 summary: Es posible usar la página Add SnapCenterHost para añadir hosts de Windows. El plugin para Exchange se instala automáticamente en el host especificado. Este es el método recomendado para la instalación de plugins. Puede añadir un host e instalar un plugin para un host individual o para un clúster. 
 ---
 = Añada hosts e instale el plugin para Exchange
@@ -14,10 +14,16 @@ summary: Es posible usar la página Add SnapCenterHost para añadir hosts de Win
 Puede utilizar la página SnapCenter Add Host para añadir hosts de Windows. El plugin para Exchange se instala automáticamente en el host especificado. Este es el método recomendado para la instalación de plugins. Puede añadir un host e instalar un plugin para un host individual o para un clúster.
 
 .Antes de empezar
+* Si el sistema operativo del host de SnapCenter Server es Windows 2019 y el sistema operativo del host del plugin es Windows 2022, debe realizar lo siguiente:
++
+** Actualice a Windows Server 2019 (compilación del sistema operativo 17763,5936) o posterior
+** Actualice a Windows Server 2022 (compilación del sistema operativo 20348,2402) o posterior
+
+
 * Debe ser un usuario al que se ha asignado una función que tiene permisos para instalar y desinstalar plugins, como el administrador de SnapCenter
 * Al instalar un plugin en un host de Windows, si especifica una credencial que no está incorporada o si el usuario pertenece a un usuario de grupo de trabajo local, debe deshabilitar UAC en el host.
 * El servicio de cola de mensajes debe estar en ejecución.
-* Si está utilizando la cuenta de servicio gestionado en grupo (GMSA), debe configurar GMSA con privilegios administrativos. Para obtener más información, consultelink:task_configure_gMSA_on_windows_server_2012_or_later.html["Configurar la cuenta de servicio administrado de grupo en Windows Server 2012 o posterior para Microsoft Exchange Server"^].
+* Si está utilizando la cuenta de servicio gestionado en grupo (GMSA), debe configurar GMSA con privilegios administrativos. Para obtener más información, consulte link:task_configure_gMSA_on_windows_server_2012_or_later.html["Configurar la cuenta de servicio administrado de grupo en Windows Server 2016 o posterior para Microsoft Exchange Server"^].
 
 
 .Acerca de esta tarea
@@ -184,4 +190,28 @@ Si el error está relacionado con el espacio en disco o la RAM, puede actualizar
 NOTE: En una configuración de alta disponibilidad, si actualiza el archivo web.config, debe actualizar el archivo en ambos nodos.
 
 . Supervise el progreso de la instalación.
+
+
+
+
+== Configure el puerto personalizado para la comunicación de NET TCP
+
+De forma predeterminada, a partir de la versión SnapCenter 6,0, el plugin SnapCenter para Windows utiliza el puerto 909 para la comunicación NET TCP. Si el puerto 909 está en uso, puede configurar otro puerto para la comunicación NET TCP.
+
+.Pasos
+. Modifique el valor de la clave _NetTCPPort_ ubicada en _C:\Program Files\NetApp\SnapCenter\SnapCenter Plug-in for Microsoft Windows\vssproviders\navssprv.exe.config_ al número de puerto requerido.
+`<add key="NetTCPPort" value="new_port_number" />`
+. Modifique el valor de la clave _NetTCPPort_ ubicada en _C:\Program Files\NetApp\SnapCenter\SnapCenter Plug-in for Microsoft Windows\SnapDriveService.dll.config_ al número de puerto requerido.
+`<add key="NetTCPPort" value="new_port_number" />`
+. Anule el registro del servicio _Data ONTAP VSS Hardware Provider_ ejecutando el siguiente comando:
+`"C:\Program Files\NetApp\SnapCenter\SnapCenter Plug-in for Microsoft Windows\navssprv.exe" -r service -u`
++
+Compruebe que el servicio no se muestra en la lista de servicios de _services.msc_.
+
+. Registre el servicio _Data ONTAP VSS Hardware Provider_ ejecutando el siguiente comando:
+`"C:\Program Files\NetApp\SnapCenter\SnapCenter Plug-in for Microsoft Windows\vssproviders\navssprv.exe" -r service -a ".\LocalSystem"``
++
+Compruebe si el servicio se muestra ahora en la lista de servicios de _services.msc_.
+
+. Reinicie el servicio _Plug-in para Windows_.
 

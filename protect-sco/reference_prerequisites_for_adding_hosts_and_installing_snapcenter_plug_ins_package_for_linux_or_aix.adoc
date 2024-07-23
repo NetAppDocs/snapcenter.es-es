@@ -23,7 +23,7 @@ El plugin de SnapCenter para base de datos Oracle puede ser instalado por un usu
 El paquete de plugins de SnapCenter para AIX resuelve automáticamente el enlace simbólico del nivel de archivo, pero no los enlaces simbólicos del nivel de directorio para obtener la ruta absoluta DE JAVA_HOME.
 
 * Cree credenciales con el modo de autenticación como Linux o AIX para el usuario de instalación.
-* Debe haber instalado Java 1.8.x o Java 11 de 64 bits en el host Linux o AIX.
+* Debe haber instalado Java 11 en el host Linux o AIX.
 +
 
 NOTE: Asegúrese de haber instalado únicamente la edición certificada de JAVA 11 en el host Linux.
@@ -94,9 +94,7 @@ NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de alm
  a| 
 Paquetes de software obligatorios
  a| 
-* Java 1,8.x (64 bits) Oracle Java y OpenJDK
-* Java 11 (64 bits) Oracle Java y OpenJDK
-
+Java 11 Oracle Java y OpenJDK
 
 
 NOTE: Asegúrese de haber instalado únicamente la edición certificada de JAVA 11 en el host Linux.
@@ -115,6 +113,7 @@ SnapCenter 2.0 y versiones posteriores permiten que un usuario no raíz instale 
 *Lo que necesitará*
 
 * Sudo versión 1.8.7 o posterior.
+* Para el usuario que no es root, asegúrese de que el nombre del usuario que no es root y del grupo del usuario debe ser el mismo.
 * Edite el archivo _/etc/ssh/sshd_config_ para configurar los algoritmos de código de autenticación de mensajes: Macs hmac-sha2-256 y MACs hmac-sha2-512.
 +
 Reinicie el servicio sshd después de actualizar el archivo de configuración.
@@ -174,9 +173,11 @@ Puede obtener el valor de _crs_home_ del archivo _/etc/oracle/olr.loc_.
 
 _LINUX_USER_ es el nombre del usuario que no es raíz que ha creado.
 
-Puede obtener el _checksum_value_ del archivo *oracle_checksum.txt*, que se encuentra en _C:\ProgramData\NetApp\SnapCenter\Package Repository_.
+Puede obtener el _checksum_value_ del archivo *sc_unix_plugins_checksum.txt*, que se encuentra en:
 
-Si ha especificado una ubicación personalizada, esta será _custom_path\NetApp\SnapCenter\Package Repository_.
+* _C:\ProgramData\NetApp\SnapCenter\Package Repository\sc_unix_plugins_checksum.txt_ si el servidor SnapCenter está instalado en el host de Windows.
+* _/opt/NetApp/snapcenter/SnapManagerWeb/Repository/sc_unix_plugins_checksum.txt_ si el servidor SnapCenter está instalado en el host Linux.
+
 
 
 IMPORTANT: Se debe utilizar el ejemplo solo como referencia para crear sus propios datos.
@@ -221,9 +222,7 @@ NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de alm
  a| 
 Paquetes de software obligatorios
  a| 
-* Java 1.8.x (64 bits) IBM Java
-* Java 11 (64 bits) IBM Java
-
+Java 11 IBM Java
 
 Si ha actualizado JAVA a la versión más reciente, debe asegurarse de que la opción JAVA_HOME ubicada en /var/opt/snapcenter/spl/etc/spl.properties esté configurada en la versión DE JAVA correcta y en la ruta de acceso correcta.
 
@@ -298,9 +297,11 @@ Puede obtener el valor de _crs_home_ del archivo _/etc/oracle/olr.loc_.
 
 _AIX_USER_ es el nombre del usuario que no es raíz que ha creado.
 
-Puede obtener el _checksum_value_ del archivo *oracle_checksum.txt*, que se encuentra en _C:\ProgramData\NetApp\SnapCenter\Package Repository_.
+Puede obtener el _checksum_value_ del archivo *sc_unix_plugins_checksum.txt*, que se encuentra en:
 
-Si ha especificado una ubicación personalizada, esta será _custom_path\NetApp\SnapCenter\Package Repository_.
+* _C:\ProgramData\NetApp\SnapCenter\Package Repository\sc_unix_plugins_checksum.txt_ si el servidor SnapCenter está instalado en el host de Windows.
+* _/opt/NetApp/snapcenter/SnapManagerWeb/Repository/sc_unix_plugins_checksum.txt_ si el servidor SnapCenter está instalado en el host Linux.
+
 
 
 IMPORTANT: Se debe utilizar el ejemplo solo como referencia para crear sus propios datos.

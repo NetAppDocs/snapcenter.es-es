@@ -24,6 +24,10 @@ Debe configurar el certificado de CA con el sitio SnapCenter en el host de Windo
 . Haga clic en *Editar*.
 . En la lista desplegable Certificado SSL, seleccione el Certificado SSL importado recientemente.
 . Haga clic en *Aceptar*.
++
+
+NOTE: El sitio del programador de SnapCenter (el puerto predeterminado es 8154, HTTPS) está configurado con un certificado autofirmado. Este puerto se comunica dentro del host del servidor SnapCenter y no es obligatorio configurarlo con un certificado de CA. Sin embargo, si el entorno exige que utilice un certificado de CA, repita los pasos 5 a 9 con el sitio del programador de SnapCenter.
+
 
 
 

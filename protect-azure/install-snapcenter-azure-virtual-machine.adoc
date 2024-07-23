@@ -14,7 +14,9 @@ summary: Descargue e instale SnapCenter en Azure Virtual Machine.
 Puede descargar el software SnapCenter del sitio de soporte de NetApp e instalar el software en la máquina virtual de Azure.
 
 .Antes de empezar
-Asegúrese de que la máquina virtual de Azure Windows cumple los requisitos de instalación del servidor SnapCenter. Para obtener más información, consulte link:../install/reference_domain_and_workgroup_requirements.html["Prepare la instalación del servidor SnapCenter"].
+* Asegúrese de que la máquina virtual de Azure Windows cumple los requisitos de instalación del servidor SnapCenter. Para obtener más información, consulte link:../install/reference_domain_and_workgroup_requirements.html["Prepare la instalación del servidor SnapCenter"].
+* Si es nuevo en Azure NetApp Files y no tiene una cuenta de NetApp existente, asegúrese de que se ha registrado para poder acceder al software de SnapCenter.
+
 
 .Pasos
 . Descargue el paquete de instalación del servidor SnapCenter desde https://mysupport.netapp.com/site/products/all/details/snapcenter/downloads-tab["Sitio de soporte de NetApp"].
@@ -41,4 +43,23 @@ NOTE: Si hace clic en el botón *Cancelar*, se completará el paso que se está 
 +
 Sin embargo, si hace clic en *Cancelar* cuando se están realizando las operaciones "reinicio del sitio del servidor SnapCenter" o "esperando inicio del servidor SnapCenter", la instalación continuará sin cancelar la operación.
 
+
+
+
+
+== Registre el producto para habilitar la asistencia
+
+Si es nuevo en NetApp y no tiene una cuenta de NetApp existente, debe registrar el producto para habilitar el soporte.
+
+.Pasos
+. Después de instalar SnapCenter, vaya a *Ayuda > Acerca de*.
+. En el cuadro de diálogo _About SnapCenter_, anote la instancia de SnapCenter, un número de 20 dígitos que comienza por 971.
+. Haga clic en https://register.netapp.com[].
+. Haga clic en *no soy un cliente registrado de NetApp*.
+. Especifique sus datos para registrarse.
+. Deje en blanco el campo Número de serie de referencia de NetApp.
+. Seleccione *SnapCenter* en la lista desplegable Línea de productos.
+. Seleccione el proveedor de facturación.
+. Introduzca el identificador de instancia de SnapCenter de 20 dígitos.
+. Haga clic en *Enviar*.
 

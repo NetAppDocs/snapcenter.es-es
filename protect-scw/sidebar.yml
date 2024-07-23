@@ -13,8 +13,8 @@ entries:
     url: "/protect-scw/concept_snapcenter_plug_in_for_windows_features.html"
   - title: Cómo hace SnapCenter para realizar backup de sistemas de archivos Windows
     url: "/protect-scw/concept_how_snapcenter_backs_up_windows_file_systems.html"
-  - title: Tipos de almacenamiento compatibles con los plugins de SnapCenter para
-      Microsoft Windows
+  - title: Tipos de almacenamiento compatibles con el plugin de SnapCenter para Microsoft
+      Windows
     url: "/protect-scw/reference_storage_types_supported_by_snapcenter_plug_ins_for_microsoft_windows.html"
   - title: Privilegios mínimos de ONTAP requeridos para el plugin de Windows
     url: "/protect-scw/reference_minimum_ontap_privileges_required_for_windows_plug_in.html"

@@ -17,6 +17,9 @@ Puede utilizar la página Add Host para añadir hosts y, a continuación, instal
 
 Puede añadir un host e instalar paquetes de plugins para un host individual o para un clúster. Si instala el plugin en un clúster (Oracle RAC), el plugin se instala en todos los nodos del clúster. Para Oracle RAC One Node, debe instalar el plugin en nodos activos y pasivos.
 
+
+NOTE: Solo se admite la autenticación basada en contraseña cuando se instala el plugin en Oracle RAC. No se admite la autenticación basada en claves SSH.
+
 Debe asignarse a un rol que tenga permisos de instalación y desinstalación de plugins, como el rol de administrador de SnapCenter.
 
 

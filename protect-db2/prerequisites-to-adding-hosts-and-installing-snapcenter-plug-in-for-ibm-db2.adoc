@@ -1,0 +1,178 @@
+---
+permalink: protect-db2/prerequisites-to-adding-hosts-and-installing-snapcenter-plug-in-for-ibm-db2.html 
+sidebar: sidebar 
+keywords: credentials 
+summary: Antes de añadir un host e instalar los paquetes de plugins, debe cumplir con todos los requisitos. El plugin SnapCenter para IBM DB2 está disponible en entornos Windows y Linux. 
+---
+= Requisitos previos para añadir hosts e instalar el plugin de SnapCenter para IBM DB2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de añadir un host e instalar los paquetes de plugins, debe cumplir con todos los requisitos. El plugin SnapCenter para IBM DB2 está disponible en entornos Windows y Linux.
+
+* Debe haber instalado Java 11 en el host.
++
+
+NOTE: IBM Java no es compatible.
+
+* Para Windows, el plugin Creator Service debe ejecutarse con el usuario de Windows '`LocalSystem`', que es el comportamiento predeterminado cuando el plugin para IBM DB2 se instala como administrador de dominio.
+* Al instalar un plugin en un host de Windows, si especifica una credencial que no está integrada o si el usuario pertenece a un usuario de grupo de trabajo local, debe deshabilitar UAC en el host. El plugin de SnapCenter para Microsoft Windows se implementará de forma predeterminada con el plugin IBM DB2 en hosts de Windows.
+* El servidor de SnapCenter debe tener acceso al puerto 8145 o un puerto personalizado de plugin para el host IBM DB2.
+
+
+
+
+== Host Windows
+
+* Debe tener un usuario de dominio con privilegios de administrador local y permisos locales para iniciar sesión en el host remoto.
+* Al instalar el plugin para IBM DB2 en un host de Windows, el plugin de SnapCenter para Microsoft Windows se instala automáticamente.
+* Debe haber habilitado la conexión SSH por contraseña para el usuario raíz o no raíz.
+* Debe haber instalado Java 11 en el host de Windows.
++
+http://www.java.com/en/download/manual.jsp["Descargas de Java para todos los sistemas operativos"]
+
++
+https://imt.netapp.com/matrix/imt.jsp?components=117015;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"]
+
+
+
+
+
+== Hosts Linux
+
+* Debe haber habilitado la conexión SSH por contraseña para el usuario raíz o no raíz.
+* Debe haber instalado la biblioteca *mksh* en su host Linux.
+* Debe haber instalado Java 11 en el host Linux.
++
+http://www.java.com/en/download/manual.jsp["Descargas de Java para todos los sistemas operativos"]
+
++
+https://imt.netapp.com/matrix/imt.jsp?components=117015;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"]
+
+* Para bases de datos IBM DB2 que se ejecutan en un host Linux, cuando se instala el plugin para IBM DB2, el plugin de SnapCenter para UNIX se instala automáticamente.
+* Debe tener *bash* como shell por defecto para la instalación del plug-in.
+
+
+
+
+== Comandos suplementarios
+
+Para ejecutar un comando complementario en el plugin de SnapCenter para IBM DB2, debe incluirlo en el `allowed_commands.config` archivo.
+
+`allowed_commands.config` El archivo está ubicado en el subdirectorio «ETC» del directorio del plugin de SnapCenter para IBM DB2.
+
+.Host Windows
+Valor predeterminado: `C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc\allowed_commands.config`
+
+Ruta personalizada: `<Custom_Directory>\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc\allowed_commands.config`
+
+.Hosts Linux
+Valor predeterminado: `/opt/NetApp/snapcenter/scc/etc/allowed_commands.config`
+
+Ruta personalizada: `<custom_Directory>/NetApp/snapcenter/scc/etc/allowed_commands.config`
+
+Para permitir comandos complementarios en el host del plugin, abra `allowed_commands.config` archivo en un editor. Introduzca cada comando en una línea independiente. No distingue mayúsculas de minúsculas.
+Por ejemplo:
+
+comando: mount
+
+comando: umount
+
+Asegúrese de especificar el nombre de ruta completo. El nombre de ruta debe escribirse entre comillas si contiene espacios.
+Por ejemplo:
+
+Comando: «C:\Program Files\NetApp\SnapCreator commands\sdcli.exe»
+
+comando: myscript.bat
+
+Si la `allowed_commands.config` el archivo no está presente, los comandos o la ejecución del script se bloquearán y el flujo de trabajo fallará con el siguiente error:
+
+ejecución '[/mnt/mount -a] no permitida. Autorizar agregando el comando en el archivo %s en el host del plugin.
+
+Si el comando o el script no está presente en `allowed_commands.config`, el comando o la ejecución del script se bloqueará y el flujo de trabajo fallará con el siguiente error:
+
+ejecución '[/mnt/mount -a] no permitida. Autorizar agregando el comando en el archivo %s en el host del plugin.
+
+
+NOTE: No debe utilizar una entrada comodín (*) para permitir todos los comandos.
+
+
+
+== Configure privilegios sudo para usuarios que no son raíz para el host Linux
+
+SnapCenter 2.0 y versiones posteriores permiten que un usuario no raíz instale el paquete de plugins de SnapCenter para Linux e inicie el proceso del plugin. Los procesos del plug-in se ejecutan como un usuario efectivo que no es raíz. Tiene que configurar los privilegios sudo para el usuario que no sea raíz con el fin de ofrecer acceso a varias rutas.
+
+*Lo que necesitará*
+
+* Sudo versión 1.8.7 o posterior.
+* Para el usuario que no es root, asegúrese de que el nombre del usuario que no es root y del grupo del usuario debe ser el mismo.
+* Edite el archivo _/etc/ssh/sshd_config_ para configurar los algoritmos de código de autenticación de mensajes: Macs hmac-sha2-256 y MACs hmac-sha2-512.
++
+Reinicie el servicio sshd después de actualizar el archivo de configuración.
+
++
+Ejemplo:
+
++
+[listing]
+----
+#Port 22
+#AddressFamily any
+#ListenAddress 0.0.0.0
+#ListenAddress ::
+#Legacy changes
+#KexAlgorithms diffie-hellman-group1-sha1
+#Ciphers aes128-cbc
+#The default requires explicit activation of protocol
+Protocol 2
+HostKey/etc/ssh/ssh_host_rsa_key
+MACs hmac-sha2-256
+----
+
+
+*Acerca de esta tarea*
+
+Tiene que configurar los privilegios sudo para usuarios que no son raíz con el fin de ofrecer acceso a las rutas siguientes:
+
+* /Home/_LINUX_USER_/.sc_netapp/snapcenter_linux_host_plugin.bin
+* /Custom_location/NetApp/snapcenter/spl/installation/plugins/uninstall
+* /Custom_location/NetApp/snapcenter/spl/bin/spl
+
+
+* Pasos*
+
+. Inicie sesión en el host Linux en el que desee instalar el paquete de plugins de SnapCenter para Linux.
+. Añada las siguientes líneas al archivo /etc/sudoers mediante la función visudo de Linux.
++
+[listing, subs="+quotes"]
+----
+Cmnd_Alias HPPLCMD = sha224:checksum_value== /home/_LINUX_USER_/.sc_netapp/snapcenter_linux_host_plugin.bin, /opt/NetApp/snapcenter/spl/installation/plugins/uninstall, /opt/NetApp/snapcenter/spl/bin/spl, /opt/NetApp/snapcenter/scc/bin/scc
+Cmnd_Alias PRECHECKCMD = sha224:checksum_value== /home/_LINUX_USER_/.sc_netapp/Linux_Prechecks.sh
+Cmnd_Alias CONFIGCHECKCMD = sha224:checksum_value== /opt/NetApp/snapcenter/spl/plugins/scu/scucore/configurationcheck/Config_Check.sh
+Cmnd_Alias SCCMD = sha224:checksum_value== /opt/NetApp/snapcenter/spl/bin/sc_command_executor
+Cmnd_Alias SCCCMDEXECUTOR =checksum_value== /opt/NetApp/snapcenter/scc/bin/sccCommandExecutor
+_LINUX_USER_ ALL=(ALL) NOPASSWD:SETENV: HPPLCMD, PRECHECKCMD, CONFIGCHECKCMD, SCCCMDEXECUTOR, SCCMD
+Defaults: _LINUX_USER_ !visiblepw
+Defaults: _LINUX_USER_ !requiretty
+----
++
+
+NOTE: Si tiene una configuración de RAC, junto con otros comandos permitidos, debe agregar lo siguiente al archivo /etc/sudoers: '/<crs_home>/bin/olsnodes'
+
+
+
+Puede obtener el valor de _crs_home_ del archivo _/etc/oracle/olr.loc_.
+
+_LINUX_USER_ es el nombre del usuario que no es raíz que ha creado.
+
+Puede obtener el _checksum_value_ del archivo *sc_unix_plugins_checksum.txt*, que se encuentra en:
+
+* _C:\ProgramData\NetApp\SnapCenter\Package Repository\sc_unix_plugins_checksum.txt_ si el servidor SnapCenter está instalado en el host de Windows.
+* _/opt/NetApp/snapcenter/SnapManagerWeb/Repository/sc_unix_plugins_checksum.txt_ si el servidor SnapCenter está instalado en el host Linux.
+
+
+
+IMPORTANT: Se debe utilizar el ejemplo solo como referencia para crear sus propios datos.

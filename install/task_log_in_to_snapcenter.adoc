@@ -16,6 +16,7 @@ SnapCenter admite el control de acceso basado en roles (RBAC). El administrador 
 .Antes de empezar
 * Debe habilitar el servicio de activación de procesos de Windows (WAS) en Windows Server Manager.
 * Si desea utilizar Internet Explorer como explorador para iniciar sesión en el servidor SnapCenter, debe asegurarse de que el modo protegido de Internet Explorer está deshabilitado.
+* Si el servidor SnapCenter está instalado en el host Linux, debe iniciar sesión mediante la cuenta de usuario que se utilizó para instalar el servidor de SnapCenter.
 
 
 *Acerca de esta tarea*
@@ -34,7 +35,7 @@ La dirección URL predeterminada de la interfaz gráfica de usuario es una conex
 
 Para la implementación de alta disponibilidad (ha), debe acceder a SnapCenter mediante la IP del clúster virtual _\https://Virtual_Cluster_IP_or_FQDN:8146_. Si no ve la interfaz de usuario de SnapCenter al ir a _\https://Virtual_Cluster_IP_or_FQDN:8146_ en Internet Explorer (IE), debe añadir la dirección IP de clúster virtual o FQDN como un sitio de confianza de IE en cada host de plugin. Otra opción es deshabilitar la seguridad mejorada de IE en cada host del plugin. Para obtener más información, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Unable_to_access_cluster_IP_address_from_outside_network["No se puede acceder a la dirección IP del clúster desde la red externa"^].
 
-Además de usar la interfaz gráfica de usuario de SnapCenter, es posible usar los cmdlets de PowerShell para crear scripts para llevar a cabo operaciones de configuración, backup y restauración. Es posible que algunos cmdlets se hayan modificado en cada versión de SnapCenter. La https://library.netapp.com/ecm/ecm_download_file/ECMLP2886895["Guía de referencia de cmdlets de SnapCenter Software"^] tiene los detalles.
+Además de usar la interfaz gráfica de usuario de SnapCenter, es posible usar los cmdlets de PowerShell para crear scripts para llevar a cabo operaciones de configuración, backup y restauración. Es posible que algunos cmdlets se hayan modificado en cada versión de SnapCenter. El https://docs.netapp.com/us-en/snapcenter-cmdlets/index.html["Guía de referencia de cmdlets de SnapCenter Software"^] contiene los detalles.
 
 
 NOTE: Si es la primera vez que inicia sesión en SnapCenter, debe usar las credenciales que proporcionó durante el proceso de instalación.
@@ -83,7 +84,11 @@ Si se produce un error en el registro y no se puede acceder al sitio, debe asign
 
 Después de iniciar sesión en SnapCenter Server como usuario con RBAC por primera vez, actualice la lista de recursos.
 
-Si tiene dominios de Active Directory que no son de confianza y desea que SnapCenter admita, debe registrar esos dominios con SnapCenter antes de configurar las funciones para los usuarios en dominios que no son de confianza. link:../install/task_register_untrusted_active_directory_domains.html["Leer más"^]
+Si tiene dominios de Active Directory que no son de confianza y desea que SnapCenter admita, debe registrar esos dominios con SnapCenter antes de configurar las funciones para los usuarios en dominios que no son de confianza. link:../install/task_register_untrusted_active_directory_domains.html["Leer más"^].
+
+Si desea añadir el host de un plugin en SnapCenter que se ejecuta en el host de Linux, debe obtener el archivo de suma de comprobación de la ubicación: _/opt/NetApp/snapcenter/SnapManagerWeb/Repository_.
+
+A partir de la versión 6,0, se crea en el escritorio un acceso directo para SnapCenter PowerShell. Puede acceder directamente a los cmdlets de PowerShell de SnapCenter utilizando el acceso directo.
 
 
 
@@ -92,11 +97,7 @@ Si tiene dominios de Active Directory que no son de confianza y desea que SnapCe
 El servidor de SnapCenter admite MFA para la cuenta de dominio, que forma parte del directorio activo.
 
 .Antes de empezar
-* Debe tener la MFA habilitada.
-+
-Para obtener información sobre cómo habilitar la MFA, consulte link:../install/enable_multifactor_authentication.html["Active la autenticación multifactor"]
-
-
+Debe tener la MFA habilitada. Para obtener más información sobre cómo habilitar MFA, consulte link:../install/enable_multifactor_authentication.html["Active la autenticación multifactor"]
 
 *Acerca de esta tarea*
 

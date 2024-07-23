@@ -33,6 +33,7 @@ NOTE: Si no hay comandos en la lista de comandos, se producirá un error en la o
 * Las copias de backup basadas de archivos no se pueden restaurar desde SnapCenter.
 * Después de actualizar a SnapCenter 4.3, se pueden restaurar los backups realizados en SnapCenter 4.2, pero no se pueden recuperar. Para recuperar los backups realizados en SnapCenter 4.2, debe usar el estudio HANA o secuencias de comandos de recuperación HANA externas a SnapCenter.
 * Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+* Para la operación de restauración de sincronización activa de SnapMirror, debe seleccionar el backup de la ubicación principal.
 
 
 .Pasos

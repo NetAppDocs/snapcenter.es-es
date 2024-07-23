@@ -15,7 +15,7 @@ Puede instalar el plugin de SnapCenter para Microsoft Windows localmente en un h
 
 .Antes de empezar
 * Debe haber instalado Microsoft.Net 4.7.2 o superior.
-* Debe haber instalado PowerShell 4.0 o posterior.
+* Debe haber instalado PowerShell 7.4.2 o posterior.
 * Debe haber activado la cola de mensajes de Windows.
 * Debe ser un administrador local en el host.
 

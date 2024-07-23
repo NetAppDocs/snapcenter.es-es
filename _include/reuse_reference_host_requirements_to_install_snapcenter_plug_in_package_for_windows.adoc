@@ -37,9 +37,9 @@ NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de alm
  a| 
 Paquetes de software obligatorios
  a| 
-* Microsoft .NET Framework 4.7.2 o posterior
-* Windows Management Framework (WMF) 4.0 o posterior
-* PowerShell 4.0 o posterior
+* . Núcleo NETO 8.0.5
+* PowerShell Core 7.4.2
+* Java 11 Oracle Java y OpenJDK
 
 
 Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=117007;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].

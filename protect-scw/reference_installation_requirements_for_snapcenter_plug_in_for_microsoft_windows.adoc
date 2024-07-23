@@ -63,9 +63,9 @@ NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de alm
  a| 
 Paquetes de software obligatorios
  a| 
-* Microsoft .NET Framework 4.7.2 o posterior
-* Windows Management Framework (WMF) 4.0 o posterior
-* PowerShell 4.0 o posterior
+* . Núcleo NETO 8.0.5
+* PowerShell Core 7.4.2
+* Java 11 Oracle Java y OpenJDK
 
 
 Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=117007;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
@@ -144,13 +144,13 @@ Después de terminar de configurar las credenciales, es posible que desee asigna
 
 
 
-== Configurar GMSA en Windows Server 2012 o posterior
+== Configurar GMSA en Windows Server 2016 o posterior
 
-Windows Server 2012 o posterior le permite crear una cuenta de servicio administrado de grupo (GMSA) que proporciona gestión automatizada de contraseñas de cuenta de servicio desde una cuenta de dominio administrado.
+Windows Server 2016 o posterior le permite crear una cuenta de servicio administrado de grupo (GMSA) que proporciona gestión automatizada de contraseñas de cuenta de servicio desde una cuenta de dominio administrado.
 
 .Antes de empezar
-* Debe tener un controlador de dominio de Windows Server 2012 o posterior.
-* Debe tener un host de Windows Server 2012 o posterior, que es miembro del dominio.
+* Debe tener un controlador de dominio de Windows Server 2016 o posterior.
+* Debe tener un host de Windows Server 2016 o posterior, que es miembro del dominio.
 
 
 .Pasos

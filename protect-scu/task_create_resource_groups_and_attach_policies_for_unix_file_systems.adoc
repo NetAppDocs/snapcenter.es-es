@@ -13,6 +13,22 @@ summary: Un grupo de recursos es un contenedor donde se añaden recursos que se 
 [role="lead"]
 Un grupo de recursos es un contenedor donde se añaden recursos que se quieren proteger e incluir en un backup. El grupo de recursos permite realizar un backup con todos los datos que están asociados con los sistemas de archivos.
 
+.Acerca de esta tarea
+* Una base de datos con archivos en grupos de discos de ASM debe tener el estado «MOUNT» o «OPEN» para verificar sus backups mediante la utilidad Oracle DBVERIFY.
++
+Añada una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar.
+
++
+En la siguiente imagen, se muestra la relación entre los recursos, los grupos de recursos y las políticas para las bases de datos:
+
++
+image::../media/sco_resourcegroup_policy.gif[política de sco resourcegroup]
+
+* Para las políticas con SnapLock habilitado, para ONTAP 9.12.1 y versiones anteriores, si se especifica un período de bloqueo de Snapshot, los clones creados a partir de las instantáneas a prueba de manipulaciones como parte de la restauración heredarán el tiempo de caducidad de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+* No se admiten la adición de nuevos sistemas de archivos sin sincronización activa de SnapMirror a un grupo de recursos existente que contiene recursos con sincronización activa de SnapMirror.
+* No se admite la adición de nuevos sistemas de archivos a un grupo de recursos existente en el modo de conmutación por error de la sincronización activa de SnapMirror. Puede añadir recursos al grupo de recursos solo en estado normal o de conmutación por error.
+
+
 .Pasos
 . En el panel de navegación de la izquierda, seleccione *Recursos* y el plug-in apropiado de la lista.
 . En la página Resources, haga clic en *New Resource Group*.

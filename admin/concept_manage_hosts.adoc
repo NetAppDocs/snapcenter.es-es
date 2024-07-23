@@ -14,11 +14,17 @@ summary: 'Es posible añadir hosts, instalar paquetes de plugins de SnapCenter, 
 Es posible añadir hosts, instalar paquetes de plugins de SnapCenter, añadir un servidor de verificación, quitar hosts, migrar trabajos de backup y actualizar hosts para actualizar paquetes de plugins o añadir paquetes de plugins nuevos. Según el plugin que utilice, también puede aprovisionar discos, gestionar recursos compartidos SMB, gestionar grupos iniciadores (iGroups), gestionar sesiones iSCSI y migrar datos.
 
 |===
-| Puede ejecutar estas tareas... | Para Microsoft Exchange Server | Para Microsoft SQL Server | Para Microsoft Windows | Para bases de datos de Oracle | Para base de datos SAP HANA | Para plugins personalizados 
+| Puede ejecutar estas tareas... | Para Microsoft Exchange Server | Para Microsoft SQL Server | Para Microsoft Windows | Para bases de datos de Oracle | Para base de datos SAP HANA | Para plugins compatibles con NetApp | Para DB2 | Para PostgreSQL | Para MySQL 
 
 
  a| 
 Añada los hosts e instale el paquete de plugins
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
  a| 
 Sí
  a| 
@@ -48,11 +54,23 @@ No
 No
  a| 
 No
+ a| 
+No
+ a| 
+No
+ a| 
+No
 
 
 
  a| 
 Suspenda las programaciones y coloque los hosts en modo de mantenimiento
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
  a| 
 Sí
  a| 
@@ -82,11 +100,23 @@ Sí
 Sí
  a| 
 Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
 
 
 
  a| 
 Quite hosts de SnapCenter
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
  a| 
 Sí
  a| 
@@ -116,6 +146,12 @@ Sí
 Sí
  a| 
 Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
 
 
 
@@ -127,6 +163,12 @@ No
 No
  a| 
 Sí
+ a| 
+No
+ a| 
+No
+ a| 
+No
  a| 
 No
  a| 
@@ -150,6 +192,12 @@ No
 No
  a| 
 No
+ a| 
+No
+ a| 
+No
+ a| 
+No
 
 
 
@@ -161,6 +209,12 @@ No
 No
  a| 
 Sí
+ a| 
+No
+ a| 
+No
+ a| 
+No
  a| 
 No
  a| 
@@ -183,6 +237,13 @@ No
  a| 
 No
  a| 
+No
+ a| 
+No
+ a| 
+No
+ a| 
+No
 
 |===
 

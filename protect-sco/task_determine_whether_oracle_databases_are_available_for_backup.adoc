@@ -13,8 +13,7 @@ summary: Los recursos son bases de datos de Oracle en el host gestionado por Sna
 [role="lead"]
 Los recursos son bases de datos de Oracle en el host gestionado por SnapCenter. Es posible añadir estas bases de datos a grupos de recursos para realizar operaciones de protección de datos después de detectar las bases de datos disponibles.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe haber completado ciertas tareas, como instalar el servidor SnapCenter, añadir hosts, crear conexiones con el sistema de almacenamiento y añadir credenciales.
 * Si las bases de datos residen en un disco de máquina virtual (VMDK) o una asignación de dispositivo sin formato (RDM), es necesario implementar el plugin de SnapCenter para VMware vSphere y registrar el plugin con SnapCenter.
 +
@@ -30,8 +29,7 @@ Para obtener más información, consulte https://docs.netapp.com/us-en/sc-plugin
 
 Es posible evitar que SnapCenter descubra entradas que no forman parte de una base de datos añadidas en el archivo oratab.
 
-* Pasos*
-
+.Pasos
 . Después de instalar el plugin para Oracle, el usuario raíz debe crear el archivo *sc_oratab.config* en el directorio _/var/opt/snapcenter/sco/etc/_.
 +
 Conceda el permiso de escritura al propietario y grupo binario de Oracle para que el archivo pueda mantenerse en el futuro.
@@ -76,8 +74,7 @@ Las bases de datos deben estar en estado montado o superior para que la detecci�
 
 Si eliminó una base de datos de Oracle en el host, el servidor de SnapCenter no tendrá conocimiento y enumerará la base de datos eliminada. Debe actualizar manualmente los recursos para actualizar la lista de recursos de SnapCenter.
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, seleccione *Database* en la lista *View*.
 +

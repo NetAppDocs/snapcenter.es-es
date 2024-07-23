@@ -64,17 +64,19 @@ Habilitada de forma predeterminada, la función SLM detecta periódicamente los 
 +
 Debe instalar NVMe util para clonar o montar en un host alternativo.
 
-** Backup, restauración, clonado, montaje, desmontaje, Se admiten las operaciones de catalogación, descatalogación y verificación en el hardware de NVMe, excepto en los entornos virtualizados como VMDK y RDM.
+** Backup, restaurar, clonar, montar, desmontar, las operaciones de catálogo, descatalogación y verificación se admiten en el hardware de NVMe, excepto en los entornos virtualizados como RDM.
 +
 Las operaciones anteriores se admiten en dispositivos sin particiones o con una sola partición.
 
-
-
-
-
++
 
 NOTE: Puede configurar una solución multivía para dispositivos NVMe estableciendo la opción multivía nativa del kernel. No se admite la función multivía de Device Mapper (DM).
 
+** Backup, restaurar, clonar, montar, desmontar, los flujos de trabajo de catálogo, descatalogación y verificación son compatibles con NVMe over TCP/IP.
+** Backup, restaurar, clonar, montar, desmontar, los flujos de trabajo de catálogo, descatalogación y verificación se admiten en la distribución VMDK creada en NVMe over TCP/IP.
+
+
+* Es compatible con la sincronización activa de SnapMirror (lanzada inicialmente como SnapMirror Business Continuity [SM-BC]) que permite que los servicios empresariales continúen funcionando incluso si se produce un fallo completo del sitio; es posible que las aplicaciones conmuten por error de forma transparente mediante una copia secundaria. No se requiere intervención manual ni secuencias de comandos adicionales para activar una recuperación tras fallos con SnapMirror sincronización activa.
 * Admite cualquier usuario no predeterminado en lugar de oracle y Grid.
 +
 Para admitir los usuarios no predeterminados, debe establecer los usuarios no predeterminados modificando los valores de los parámetros en el archivo *sco.properties* ubicado en _file /var/opt/snapcenter/sco/etc/_.

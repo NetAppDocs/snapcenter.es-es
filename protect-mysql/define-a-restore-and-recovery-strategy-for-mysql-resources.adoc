@@ -1,0 +1,23 @@
+---
+permalink: protect-mysql/define-a-restore-and-recovery-strategy-for-mysql-resources.html 
+sidebar: sidebar 
+keywords: restore and recovery strategy, MySQL resources, snapcenter 
+summary: Para poder ejecutar operaciones de restauración y recuperación correctamente, es necesario definir una estrategia antes de restaurar y recuperar una base de datos. 
+---
+= Defina una estrategia de restauración y recuperación para recursos de MySQL
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para poder ejecutar operaciones de restauración y recuperación correctamente, es necesario definir una estrategia antes de restaurar y recuperar una base de datos.
+
+
+NOTE: Sólo se admite la recuperación manual de la base de datos.
+
+.Pasos
+. Determinar las estrategias de restauración compatibles con los recursos de MySQL añadidos manualmente
+. Determinar las estrategias de restauración compatibles con las bases de datos MySQL detectadas automáticamente
+. Decidir el tipo de operaciones de recuperación que se desea ejecutar.
+

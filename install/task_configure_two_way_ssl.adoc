@@ -1,20 +1,19 @@
 ---
 permalink: install/task_configure_two_way_ssl.html 
 sidebar: sidebar 
-keywords: security,two-way ssl,configure two-way ssl 
-summary: Debe configurar la comunicación SSL bidireccional para asegurar la comunicación mutua entre el servidor de SnapCenter y los plugins.   
+keywords: security,two-way ssl,configure two-way ssl, windows host 
+summary: Es necesario configurar la comunicación SSL bidireccional para asegurar la comunicación mutua entre SnapCenter Server en el host de Windows y los plugins. 
 ---
-= Configure la comunicación SSL bidireccional
+= Configure la comunicación SSL bidireccional en el host de Windows
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Debe configurar la comunicación SSL bidireccional para asegurar la comunicación mutua entre el servidor de SnapCenter y los plugins.
+Es necesario configurar la comunicación SSL bidireccional para asegurar la comunicación mutua entre SnapCenter Server en el host de Windows y los plugins.
 
-*Antes de empezar*
-
+.Antes de empezar
 * Generó el archivo CSR de certificado de CA con la longitud mínima admitida de clave de 3072.
 * El certificado de CA debe admitir la autenticación de servidor y la autenticación de cliente.
 * Debe tener un certificado de CA con detalles de clave privada y huella digital.
@@ -28,8 +27,7 @@ El entorno con algunos hosts o servidor no habilitado para la comunicación SSL 
 
 
 
-* Pasos*
-
+.Pasos
 . Para enlazar el puerto, ejecute los siguientes pasos en el host de servidor SnapCenter para el puerto 8146 del servidor web IIS de SnapCenter (predeterminado) y otra vez para el puerto 8145 de SMCore (predeterminado) mediante comandos de PowerShell.
 +
 .. Quite la vinculación de puertos de certificado autofirmado de SnapCenter existente mediante el siguiente comando de PowerShell.
@@ -119,12 +117,10 @@ En el editor del registro de Windows, vaya a la ruta mencionada a continuación,
 
 Es necesario configurar el plugin de Windows de SnapCenter para la comunicación SSL bidireccional mediante comandos de PowerShell.
 
-*Antes de empezar*
-
+.Antes de empezar
 Asegúrese de que la huella digital del certificado de CA esté disponible.
 
-* Pasos*
-
+.Pasos
 . Para enlazar el puerto, realice las siguientes acciones en el host del plugin de Windows para el puerto SMCore 8145 (predeterminado).
 +
 .. Quite la vinculación de puertos de certificado autofirmado de SnapCenter existente mediante el siguiente comando de PowerShell.

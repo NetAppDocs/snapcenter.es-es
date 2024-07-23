@@ -23,6 +23,7 @@ Para obtener más detalles, consulte cómo definir una estrategia de protección
 +
 Además, puede definir la configuración de replicación, script y aplicaciones en la política. Estas opciones ahorran tiempo cuando se desea volver a utilizar la política con otro grupo de recursos.
 
+* Revise los requisitos previos y las limitaciones específicos de SnapMirror Active Sync. Para obtener más información, consulte https://docs.netapp.com/us-en/ontap/smbc/considerations-limits.html#volumes["Límites de objetos para la sincronización activa de SnapMirror"].
 
 
 .Acerca de esta tarea
@@ -147,6 +148,8 @@ El período de retención de SnapLock debe ser inferior a 100 años.
 *Actualizar SnapMirror después de crear una copia Snapshot local*
  a| 
 Seleccione este campo para crear copias reflejadas de los conjuntos de backup en otro volumen (replicación de SnapMirror).
+
+Esta opción debe estar habilitada para la sincronización activa de SnapMirror.
 
 Si la relación en ONTAP es del tipo Reflejo y almacén y si selecciona solo esta opción, la instancia de Snapshot creada en el origen no se transferirá al destino, pero figurará en el destino. Si esta Snapshot se selecciona desde el destino para realizar una operación de restauración, entonces aparece el mensaje de error Secondary Location is not available for the selected vaulted/mirrored backup.
 

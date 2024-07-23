@@ -19,7 +19,7 @@ Antes de usar SnapCenter para realizar backups de recursos de base de datos de O
 * En el marco de los preparativos para la protección de datos, completó tareas como instalar SnapCenter, añadir hosts, detectar bases de datos y crear conexiones del sistema de almacenamiento.
 * Si desea replicar snapshots en un almacenamiento secundario con snapmirror o snapvault, el administrador de SnapCenter debe haberle asignado las SVM de los volúmenes de origen y de destino.
 * Si instaló el plugin como usuario no raíz, debe asignar manualmente los permisos de ejecución a los directorios de scripts previos y posteriores.
-* Para conocer los requisitos previos y las limitaciones de Continuidad del negocio con SnapMirror (SM-BC), consulte https://docs.netapp.com/us-en/ontap/smbc/considerations-limits.html#volumes["Límites de objetos para la continuidad del negocio de SnapMirror"].
+* Revise los requisitos previos y las limitaciones específicos de SnapMirror Active Sync. Para obtener más información, consulte https://docs.netapp.com/us-en/ontap/smbc/considerations-limits.html#volumes["Límites de objetos para la sincronización activa de SnapMirror"].
 
 
 .Acerca de esta tarea
@@ -184,7 +184,7 @@ Actualice SnapMirror después de crear una instantánea local
  a| 
 Seleccione este campo para crear copias reflejadas de los conjuntos de backup en otro volumen (replicación de SnapMirror).
 
-Esta opción debe estar habilitada para SnapMirror Business Continuity (SM-BC).
+Esta opción debe estar habilitada para la sincronización activa de SnapMirror.
 
 Durante la replicación secundaria, el tiempo de caducidad del SnapLock carga el tiempo de caducidad del SnapLock principal.
 

@@ -6,7 +6,9 @@ entries:
   url: "/upgrade/task_configure_snapcenter_to_check_for_available_updates.html"
 - title: Actualizar el flujo de trabajo
   url: "/upgrade/upgrade_workflow.html"
-- title: Actualice el servidor SnapCenter
+- title: Actualice el servidor SnapCenter en el host de Windows
   url: "/upgrade/task_upgrade_snapcenter.html"
+- title: Actualice el servidor SnapCenter en el host Linux
+  url: "/upgrade/upgrade_snapcenter_server_linux.html"
 - title: Actualice los paquetes de plugins
   url: "/upgrade/task_upgrade_your_plug_in_packages.html"

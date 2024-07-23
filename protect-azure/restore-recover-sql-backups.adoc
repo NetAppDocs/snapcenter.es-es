@@ -13,6 +13,13 @@ summary: Puede utilizar SnapCenter para restaurar y recuperar datos de uno o var
 [role="lead"]
 Puede utilizar SnapCenter para restaurar bases de datos de SQL Server con backup. La restauración de bases de datos es un proceso multifásico que copia todos los datos y las páginas de registro de un backup de SQL Server en una base de datos especificada.
 
+.Acerca de esta tarea
+Debe asegurarse de que la instancia de destino para la restauración esté configurada con un usuario de Active Directory que pertenezca al dominio de directorio SMB ADactive y tenga permisos para establecer los permisos de archivo adecuadamente. Debe configurar las credenciales en SnapCenter a nivel de instancia.
+
+La autenticación SQL para la instancia de destino no se admitirá para las configuraciones SMB. La instancia de destino se debe configurar en SnapCenter con el usuario de Active Directory que tenga los permisos necesarios.
+
+Si la cuenta de servicio de servicios del plugin de SnapCenter no es un usuario de directorio activo, mientras realiza la restauración a un host alternativo, se necesitará el usuario con control total sobre los volúmenes de origen para poder suplantar la soberanía y realizar la operación requerida.
+
 .Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Recursos, seleccione *Base de datos* o *Grupo de recursos* en la lista Ver.

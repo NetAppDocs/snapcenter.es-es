@@ -73,6 +73,7 @@ Los privilegios mínimos requeridos de ONTAP varían en función de los plugins 
 ** crear snapshots de volumen
 ** eliminación de snapshots de volumen
 ** modificación de las copias de snapshot de volumen
+** modificación de snapshot de volumen: snaplock: tiempo de caducidad
 ** cambio de nombre de copias de snapshot de volumen
 ** restauración de copias snapshot de volumen
 ** archivo de restauración de snapshots de volumen

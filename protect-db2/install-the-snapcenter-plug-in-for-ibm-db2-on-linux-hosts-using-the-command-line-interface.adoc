@@ -1,0 +1,56 @@
+---
+permalink: protect-db2/install-the-snapcenter-plug-in-for-ibm-db2-on-linux-hosts-using-the-command-line-interface.html 
+sidebar: sidebar 
+keywords: install, SnapCenter Plug-in for IBM Db2 
+summary: 'Debe instalar el plugin de SnapCenter para base de datos IBM DB2 mediante la interfaz de usuario de SnapCenter. Si el entorno no permite la instalación remota del plugin desde la interfaz de usuario de SnapCenter, puede instalar el plugin para base de datos IBM DB2 en el modo de consola o en el modo silencioso mediante la interfaz de línea de comandos (CLI1).' 
+---
+= Instale el plugin de SnapCenter para IBM DB2 en hosts Linux mediante la interfaz de la línea de comandos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe instalar el plugin de SnapCenter para base de datos IBM DB2 mediante la interfaz de usuario de SnapCenter. Si el entorno no permite la instalación remota del plugin desde la interfaz de usuario de SnapCenter, puede instalar el plugin para base de datos IBM DB2 en el modo de consola o en el modo silencioso mediante la interfaz de línea de comandos (CLI).
+
+.Antes de empezar
+* Debe instalar el plugin para base de datos IBM DB2 en cada host Linux en el que resida el cliente IBM DB2.
+* El host Linux en el que se instala el plugin de SnapCenter para base de datos IBM DB2 debe cumplir con los requisitos dependientes de software, base de datos y sistema operativo.
++
+La herramienta de matriz de interoperabilidad (IMT) contiene la última información sobre las configuraciones soportadas.
+
++
+https://imt.netapp.com/matrix/imt.jsp?components=117015;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"]
+
+* El plugin de SnapCenter para base de datos IBM DB2 forma parte del paquete de plugins de SnapCenter para Linux. Antes de instalar el paquete de plugins de SnapCenter para Linux, debe haber instalado SnapCenter en un host de Windows.
+
+
+.Acerca de esta tarea
+Si no se mencionan los parámetros, SnapCenter se instala con los valores predeterminados.
+
+.Pasos
+. Copie el archivo de instalación del paquete de plugins de SnapCenter para Linux (snapcenter_linux_host_plugin.bin) desde C:\ProgramData\NetApp\SnapCenter\Package Repository en el host en el que desea instalar el plugin para IBM DB2.
++
+Puede acceder a esta ruta desde el host en el que está instalado el servidor SnapCenter.
+
+. Desde el símbolo del sistema, desplácese hasta el directorio en el que copió el archivo de instalación.
+. Instale el plugin: `path_to_installation_bin_file/snapcenter_linux_host_plugin.bin -i silent -DPORT=port_number_for_host -DSERVER_IP=server_name_or_ip_address -DSERVER_HTTPS_PORT=port_number_for_server`
++
+** -DPORT indica el puerto de comunicación HTTPS de SMCore.
+** -DSERVER_IP indica la dirección IP del servidor SnapCenter.
+** -DSERVER_HTTPS_PORT indica el puerto HTTPS del servidor SnapCenter.
+** -DUSER_INSTALL_DIR indica el directorio en el que desea instalar el paquete de plugins de SnapCenter para Linux.
+** DINSTALL_LOG_NAME indica el nombre del archivo de registro.
+
+
++
+[listing]
+----
+/tmp/sc-plugin-installer/snapcenter_linux_host_plugin.bin -i silent  -DPORT=8145 -DSERVER_IP=scserver.domain.com -DSERVER_HTTPS_PORT=8146 -DUSER_INSTALL_DIR=/opt -DINSTALL_LOG_NAME=SnapCenter_Linux_Host_Plugin_Install_2.log -DCHOSEN_FEATURE_LIST=CUSTOM
+----
+. Edite el archivo /<installation directory>/NetApp/snapcenter/scc/etc/SC_SMS_Services.properties y, a continuación, añada el parámetro PLUGINS_ENABLED = DB2:3,0.
+. Añada el host al servidor de SnapCenter con el cmdlet Add-Smhost y los parámetros requeridos.
++
+La información relativa a los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Alternativamente, también puede consultar la https://docs.netapp.com/us-en/snapcenter-cmdlets/index.html["Guía de referencia de cmdlets de SnapCenter Software"^].
+
+

@@ -1,0 +1,105 @@
+---
+permalink: protect-db2/restore-ibm-db2-database-using-powershell-cmdlets.html 
+sidebar: sidebar 
+keywords: restore, ibm db2, snapcenter 
+summary: La restauración de un backup de IBM DB2 incluye iniciar una sesión de conexión con SnapCenter Server, mostrar una lista de backups y recuperar información de los backups, así como restaurar un backup. 
+---
+= Restaurar una base de datos IBM DB2 mediante cmdlets de PowerShell
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La restauración de un backup de IBM DB2 incluye iniciar una sesión de conexión con SnapCenter Server, mostrar una lista de backups y recuperar información de los backups, así como restaurar un backup.
+
+.Antes de empezar
+Debe haber preparado el entorno de PowerShell para ejecutar los cmdlets de PowerShell.
+
+.Pasos
+. Inicie una sesión de conexión con el servidor de SnapCenter para el usuario especificado mediante el cmdlet de Open-SmConnection.
++
+[listing]
+----
+PS C:\> Open-SmConnection
+----
+. Identifique el backup que desea restaurar mediante los cmdlets Get-SmBackup y Get-SmBackupReport.
++
+Este ejemplo muestra que hay dos backups disponibles para restaurar:
+
++
+[listing]
+----
+ PS C:\> Get-SmBackup -AppObjectId cn24.sccore.test.com\DB2\db2inst1\Library
+
+        BackupId    BackupName                    BackupTime            BackupType
+        --------    ----------                    ----------            ----------
+         1          Payroll Dataset_vise-f6_08... 8/4/2015 11:02:32 AM  Full Backup
+         2          Payroll Dataset_vise-f6_08... 8/4/2015 11:23:17 AM
+----
++
+En este ejemplo, se muestra información detallada sobre el backup del 29 de enero de 2015 al 3 de febrero de 2015:
+
++
+[listing]
+----
+PS C:\> Get-SmBackupReport -FromDateTime "1/29/2015" -ToDateTime "2/3/2015"
+
+SmBackupId           : 113
+   SmJobId              : 2032
+   StartDateTime        : 2/2/2015 6:57:03 AM
+   EndDateTime          : 2/2/2015 6:57:11 AM
+   Duration             : 00:00:07.3060000
+   CreatedDateTime      : 2/2/2015 6:57:23 AM
+   Status               : Completed
+   ProtectionGroupName  : Clone
+   SmProtectionGroupId  : 34
+   PolicyName           : Vault
+   SmPolicyId           : 18
+   BackupName           : Clone_SCSPR0019366001_02-02-2015_06.57.08
+   VerificationStatus   : NotVerified
+
+   SmBackupId           : 114
+   SmJobId              : 2183
+   StartDateTime        : 2/2/2015 1:02:41 PM
+   EndDateTime          : 2/2/2015 1:02:38 PM
+   Duration             : -00:00:03.2300000
+   CreatedDateTime      : 2/2/2015 1:02:53 PM
+   Status               : Completed
+   ProtectionGroupName  : Clone
+   SmProtectionGroupId  : 34
+   PolicyName           : Vault
+   SmPolicyId           : 18
+   BackupName           : Clone_SCSPR0019366001_02-02-2015_13.02.45
+   VerificationStatus   : NotVerified
+----
+. Puede restaurar los datos del backup mediante el cmdlet Restore-SmBackup.
++
+
+NOTE: AppObjectId es «Host\Plugin\UID», donde UID = <instance_name> es para un recurso de instancia de DB2 detectado manualmente y UID = <instance_name>\<databse_name> es para un recurso de base de datos IBM DB2. Puede obtener el ResourceID a partir del cmdlet Get-smResources.
+
++
+[listing]
+----
+Get-smResources  -HostName cn24.sccore.test.com  -PluginCode DB2
+----
++
+Este ejemplo muestra cómo restaurar la base de datos desde el almacenamiento primario:
+
++
+[listing]
+----
+Restore-SmBackup -PluginCode DB2 -AppObjectId cn24.sccore.test.com\DB2\db2inst1\DB01 -BackupId 3
+----
++
+Este ejemplo muestra cómo restaurar la base de datos desde el almacenamiento secundario:
+
++
+[listing]
+----
+Restore-SmBackup -PluginCode 'DB2' -AppObjectId cn24.sccore.test.com\DB2\db2inst1\DB01 -BackupId 399 -Confirm:$false  -Archive @( @{"Primary"="<Primary Vserver>:<PrimaryVolume>";"Secondary"="<Secondary Vserver>:<SecondaryVolume>"})
+----
++
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Alternativamente, también puede consultar la https://docs.netapp.com/us-en/snapcenter-cmdlets/index.html["Guía de referencia de cmdlets de SnapCenter Software"^].
+
+

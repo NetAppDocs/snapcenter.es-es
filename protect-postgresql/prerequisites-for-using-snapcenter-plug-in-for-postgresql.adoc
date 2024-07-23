@@ -1,0 +1,24 @@
+---
+permalink: protect-postgresql/prerequisites-for-using-snapcenter-plug-in-for-postgresql.html 
+sidebar: sidebar 
+keywords: Credentials,SnapCenter Plug-in for postgresql 
+summary: Antes de utilizar el plugin de SnapCenter para PostgreSQL, el administrador de SnapCenter debe instalar y configurar el servidor SnapCenter y ejecutar las tareas de requisitos previos. 
+---
+= Requisitos previos para usar el plugin de SnapCenter para PostgreSQL
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de utilizar el plugin de SnapCenter para PostgreSQL, el administrador de SnapCenter debe instalar y configurar el servidor SnapCenter y ejecutar las tareas de requisitos previos.
+
+* Instalar y configurar SnapCenter Server.
+* Inicie sesión en el servidor SnapCenter.
+* Configure el entorno de SnapCenter añadiendo conexiones con el sistema de almacenamiento y creando credenciales, si es necesario.
+* Instale Java 11 en su host Linux o Windows.
++
+Debe configurar la ruta de Java en la variable de rutas del entorno del equipo host.
+
+* Configure SnapMirror y SnapVault si quiere realizar una replicación de backup.
+

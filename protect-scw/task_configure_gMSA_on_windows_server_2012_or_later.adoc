@@ -2,20 +2,20 @@
 permalink: protect-scw/task_configure_gMSA_on_windows_server_2012_or_later.html 
 sidebar: sidebar 
 keywords: gMSA 
-summary: 'Windows Server 2012 o posterior le permite crear una cuenta de servicio gestionado de grupo \(GMSA\) que proporciona administración automatizada de contraseñas de cuenta de servicio desde una cuenta de dominio administrado.' 
+summary: 'Windows Server 2016 o posterior le permite crear una cuenta de servicio gestionado de grupo \(GMSA\) que proporciona administración automatizada de contraseñas de cuenta de servicio desde una cuenta de dominio administrado.' 
 ---
-= Configurar GMSA en Windows Server 2012 o posterior
+= Configurar GMSA en Windows Server 2016 o posterior
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Windows Server 2012 o posterior le permite crear una cuenta de servicio administrado de grupo (GMSA) que proporciona gestión automatizada de contraseñas de cuenta de servicio desde una cuenta de dominio administrado.
+Windows Server 2016 o posterior le permite crear una cuenta de servicio administrado de grupo (GMSA) que proporciona gestión automatizada de contraseñas de cuenta de servicio desde una cuenta de dominio administrado.
 
 .Antes de empezar
-* Debe tener un controlador de dominio de Windows Server 2012 o posterior.
-* Debe tener un host de Windows Server 2012 o posterior, que es miembro del dominio.
+* Debe tener un controlador de dominio de Windows Server 2016 o posterior.
+* Debe tener un host de Windows Server 2016 o posterior, que es miembro del dominio.
 
 
 .Pasos

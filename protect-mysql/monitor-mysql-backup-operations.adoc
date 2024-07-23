@@ -1,0 +1,48 @@
+---
+permalink: protect-mysql/monitor-mysql-backup-operations.html 
+sidebar: sidebar 
+keywords: SnapCenter Server 
+summary: Es posible supervisar el progreso de diferentes operaciones de backup mediante la página Jobs de SnapCenter. Se recomienda comprobar el progreso para determinar cuándo se completó la tarea o si existe un problema. 
+---
+= Supervisar las operaciones de backup de MySQL
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible supervisar el progreso de diferentes operaciones de backup mediante la página Jobs de SnapCenter. Se recomienda comprobar el progreso para determinar cuándo se completó la tarea o si existe un problema.
+
+.Acerca de esta tarea
+Los siguientes iconos aparecen en la página Jobs e indican el estado correspondiente de las operaciones:
+
+* image:../media/progress_icon.gif["Icono de estado en curso"] En curso
+* image:../media/success_icon.gif["Icono de estado completado"] Completado correctamente
+* image:../media/failed_icon.gif["Icono de error"] Error
+* image:../media/warning_icon.gif["Icono de estado completado con advertencias"] Completado con advertencias o no pudo iniciarse debido a advertencias
+* image:../media/verification_job_in_queue.gif["El trabajo de verificación se ha puesto en cola"] En cola
+* image:../media/cancel_icon.gif["Icono Cancelar"] Cancelada
+
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Monitor*.
+. En la página Monitor, haga clic en *Jobs*.
+. En la página Jobs, realice los siguientes pasos:
++
+.. Haga clic en image:../media/filter_icon.png[""] para filtrar la lista de modo que solo se muestren las operaciones de backup.
+.. Especifique las fechas de inicio y finalización.
+.. En la lista desplegable *Tipo*, seleccione *copia de seguridad*.
+.. En la lista desplegable *Estado*, seleccione el estado de copia de seguridad.
+.. Haga clic en *aplicar* para ver las operaciones completadas correctamente.
+
+
+. Seleccione un trabajo de copia de seguridad y, a continuación, haga clic en *Detalles* para ver los detalles del trabajo.
++
+
+NOTE: Aunque el estado del trabajo de backup indiqueimage:../media/success_icon.gif["Icono de estado completado"], al hacer clic en los detalles del trabajo, puede ver que algunas de las tareas secundarias de la operación de copia de seguridad aún están en curso o marcadas con señales de advertencia.
+
+. En la página Detalles del trabajo, haga clic en *Ver registros*.
++
+El botón *Ver registros* muestra los registros detallados para la operación seleccionada.
+
+

@@ -1,0 +1,16 @@
+---
+permalink: protect-db2/housekeeping-of-log-backups.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for IBM DB2 
+summary: SnapCenter gestiona el mantenimiento de los backups de registros y de datos en los niveles de sistema de almacenamiento y sistema de archivos, y dentro del catálogo de backup IBM DB2. 
+---
+= Cómo hace SnapCenter para gestionar el mantenimiento de backups de datos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapCenter gestiona el mantenimiento de los backups de datos en los niveles de sistema de almacenamiento y sistema de archivos.
+
+Las snapshots en el almacenamiento primario y secundario y sus entradas correspondientes en el catálogo IBM DB2 se eliminan de acuerdo con la configuración de retención.

@@ -1,0 +1,40 @@
+---
+permalink: protect-mysql/monitor-the-status-of-installing-plugin-for-mysql.html 
+sidebar: sidebar 
+keywords: monitor, install, snapCenter plug-in for mysql 
+summary: Puede supervisar el progreso de la instalación del paquete de plugins de SnapCenter mediante la página Jobs. Tal vez desee comprobar el progreso de la instalación para determinar si está completo o si hay algún problema. 
+---
+= Supervise el estado de instalación del plugin para MySQL
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede supervisar el progreso de la instalación del paquete de plugins de SnapCenter mediante la página Jobs. Tal vez desee comprobar el progreso de la instalación para determinar si está completo o si hay algún problema.
+
+.Acerca de esta tarea
+Los siguientes iconos aparecen en la página Jobs e indican el estado de la operación:
+
+* image:../media/progress_icon.gif["Icono de estado en curso"] En curso
+* image:../media/success_icon.gif["Icono de estado completado"] Completado correctamente
+* image:../media/failed_icon.gif["Icono de error"] Error
+* image:../media/warning_icon.gif["Icono de estado completado con advertencias"] Completado con advertencias o no pudo iniciarse debido a advertencias
+* image:../media/verification_job_in_queue.gif["El trabajo de verificación se ha puesto en cola"] En cola
+
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Monitor*.
+. En la página *Monitor*, haga clic en *trabajos*.
+. En la página *Jobs*, para filtrar la lista de modo que solo se enumeren las operaciones de instalación de plug-in, haga lo siguiente:
++
+.. Haga clic en *filtro*.
+.. Opcional: Indique las fechas de inicio y finalización.
+.. En el menú desplegable Tipo, seleccione *instalación Plug-in*.
+.. En el menú desplegable de estado, seleccione el estado de instalación.
+.. Haga clic en *aplicar*.
+
+
+. Seleccione el trabajo de instalación y haga clic en *Detalles* para ver los detalles del trabajo.
+. En la página *Detalles del trabajo*, haga clic en *Ver registros*.
+

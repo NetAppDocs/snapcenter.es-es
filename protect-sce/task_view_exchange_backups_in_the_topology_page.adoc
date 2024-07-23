@@ -26,14 +26,21 @@ Puede revisar el siguiente icono en la vista gestionar copias para determinar si
 +
 Por ejemplo, si creó 6 backups con una política para retener solamente 4 backups, se muestran 6 backups.
 
-
-
 +
 |===
 
 
 | *Mejor práctica:* para asegurarse de que se muestra el número correcto de copias de seguridad replicadas, le recomendamos que actualice la topología. 
 |===
+
+
+
+
+Si tiene una relación secundaria como SnapMirror Active Sync (inicialmente lanzado como SnapMirror Business Continuity [SM-BC]), verá los siguientes iconos adicionales:
+
+* image:../media/topology_replica_site_up.png["sitio de réplica activo"] implica que el sitio de réplica está activo.
+* image:../media/topology_replica_site_down.png["sitio de réplica inactivo"]  implica que el sitio de réplica está caído.
+* image:../media/topology_reestablished.png["la relación se restablece"] implica que no se restableció la relación de reflejo o almacén secundario.
 
 
 .Pasos
@@ -57,7 +64,12 @@ Si se realiza una copia de seguridad habilitada para SnapLock, al hacer clic en 
 Cuando el recurso de la aplicación se distribuya entre varios volúmenes, el tiempo de caducidad de SnapLock para el backup será el tiempo de caducidad de SnapLock más largo que se establezca para una snapshot en un volumen. El tiempo de caducidad de SnapLock más largo se recupera de ONTAP.
 
 +
-Después de la copia de seguridad a petición, haciendo clic en el botón *Actualizar* actualiza los detalles de la copia de seguridad o clonación.
+Para la sincronización activa de SnapMirror, al hacer clic en el botón *Actualizar* se actualiza el inventario de copia de seguridad de SnapCenter consultando ONTAP tanto para los sitios primarios como para los de réplica. Una programación semanal también realiza esta actividad en todas las bases de datos que contienen una relación de sincronización activa de SnapMirror.
+
++
+** Para la sincronización activa de SnapMirror y solo para ONTAP 9.14.1, las relaciones de reflejo asíncrono o reflejo asíncrono de almacén con el nuevo destino primario deben configurarse manualmente después de una conmutación al nodo de respaldo. A partir de ONTAP 9.15.1 en adelante, el reflejo asíncrono o el reflejo asíncrono se configura automáticamente en el nuevo destino primario.Después de la conmutación al nodo de respaldo.
+** Después de la conmutación por error, es necesario crear un backup para que SnapCenter detecte la conmutación al nodo de respaldo. Puede hacer clic en *Actualizar* solo después de que se haya creado una copia de seguridad.
+
 
 . En la vista Administrar copias, haga clic en *copias de seguridad* en el almacenamiento principal o secundario para ver los detalles de una copia de seguridad.
 +

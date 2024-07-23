@@ -1,0 +1,73 @@
+---
+permalink: install/configure_ca_certificate_linux_host.html 
+sidebar: sidebar 
+keywords: SnapCenter, configure, CA certificate, linux, linux host 
+summary: Debe configurar el certificado de CA con un servidor SnapCenter en un host Linux. 
+---
+= Configurar certificado de CA para el host Linux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Después de instalar el servidor SnapCenter en Linux, el instalador crea el certificado autofirmado. Si desea usar el certificado de CA, debe configurar los certificados para los servicios de proxy inverso nginx, registro de auditoría y SnapCenter.
+
+
+
+== Configure el certificado nginx
+
+.Pasos
+. Vaya a _/etc/nginx/conf.d_: `cd /etc/nginx/conf.d`
+. Abra *snapcenter.conf* usando vi o cualquier editor de texto.
+. Navegue a la sección del servidor en el archivo de configuración.
+. Modifique las rutas de acceso de _ssl_certificate_ y _ssl_certificate_key_ para apuntar al certificado de CA.
+. Guarde y cierre el archivo.
+. Volver a cargar nginx: `$nginx -s reload`
+
+
+
+
+== Configure el certificado de registro de auditoría
+
+.Pasos
+. Abra _INSTALL_DIR/NetApp/snapcenter/SnapManagerWeb/SnapManager.Web.ui.dll.config_ utilizando vi o cualquier editor de texto.
++
+El valor predeterminado de _INSTALL_DIR_ es _/OPT_.
+
+. Edite las claves *AUDILOG_CERTIFICATE_PATH* y *AUDILOG_CERTIFICATE_PASSWORD* para incluir la ruta y contraseña del certificado CA respectivamente.
++
+Solo se admite el formato _.pfx_ para los certificados de registro de auditoría.
+
+. Guarde y cierre el archivo.
+. Reinicie el servicio *snapmanagerweb*: `$ systemctl restart snapmanagerweb`
+
+
+
+
+== Configure el certificado de servicios SnapCenter
+
+.Pasos
+. Abra los siguientes archivos de configuración utilizando vi o cualquier editor de texto.
++
+** _INSTALL_DIR/NetApp/snapcenter/SnapManagerWeb/SnapManager.Web.ui.dll.config_
+** _INSTALL_DIR/NetApp/snapcenter/SMCore/SMCoreServiceHost.dll.config_
+** _INSTALL_DIR/NetApp/snapcenter/Scheduler/Scheduler.api.dll.config_
++
+El valor predeterminado de _INSTALL_DIR_ es _/OPT_.
+
+
+
+. Edite las claves *SERVICE_CERTIFICATE_PATH* y *SERVICE_CERTIFICATE_PASSWORD* para incluir la ruta del certificado de CA y la contraseña respectivamente.
++
+Solo se admite el formato _.pfx_ para el certificado de servicios SnapCenter.
+
+. Guarde y cierre los archivos.
+. Reinicie todos los servicios.
++
+** `$ systemctl restart snapmanagerweb`
+** `$ systemctl restart smcore`
+** `$ systemctl restart scheduler`
+
+
+

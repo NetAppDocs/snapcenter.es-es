@@ -1,0 +1,127 @@
+---
+permalink: protect-postgresql/configure-CA-certificate-for-postgresql-on-windows-host.html 
+sidebar: sidebar 
+keywords: SnapCenter 
+summary: Configure el certificado de CA para el servicio de plugins personalizados de SnapCenter en el host de Windows 
+---
+= Configure el certificado de CA para el servicio de plugins PostgreSQL de SnapCenter en el host Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe gestionar la contraseña del almacén de claves de los plugins personalizados y su certificado, configurar el certificado de CA, configurar los certificados raíz o intermedios en el almacén de confianza de plugins personalizados y configurar la pareja de claves firmada de CA en el almacén de confianza de plugins personalizados con el servicio de plugins personalizados de SnapCenter para activar el certificado digital instalado.
+
+Los plugins personalizados utilizan el archivo _keystore.jks_, que se encuentra en _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc_, tanto como su almacén de confianza como su almacén de claves.
+
+
+
+== Gestionar contraseña para el almacén de claves del plugin personalizado y el alias de la pareja de claves firmada de CA en uso
+
+.Pasos
+. Puede recuperar la contraseña predeterminada del almacén de claves del plugin personalizado desde el archivo de propiedades del agente del plugin personalizado.
++
+Es el valor que corresponde a la clave _KEYSTORE_PASS_.
+
+. Cambie la contraseña del almacén de claves:
++
+_keytool -storepasswd -keystore.jks_
+
++
+
+NOTE: Si el comando "keytool" no se reconoce en el símbolo del sistema de Windows, reemplace el comando keytool por su ruta completa.
+
++
+_C:\Archivos de programa\Java\<jdk_version>\bin\keytool.exe" -storepasswd -keystore.jks_
+
+. Cambie la contraseña para todos los alias de las entradas de clave privada en el almacén de claves por la misma contraseña utilizada para el almacén de claves:
++
+_keytool -keypasswd -alias "alias_name_in_cert" -keystore keystore.jks_
+
++
+Actualice lo mismo para el archivo key KEYSTORE_PASS en _agent.properties_.
+
+. Reinicie el servicio después de cambiar la contraseña.
++
+
+NOTE: La contraseña para el almacén de claves de plugin personalizado y para toda la contraseña de alias asociada de la clave privada debe ser la misma.
+
+
+
+
+
+== Configure los certificados intermedios o de raíz para el almacén de confianza del plugin personalizado
+
+Debe configurar los certificados intermedios o de raíz sin la clave privada para personalizar el almacén de confianza del plugin.
+
+.Pasos
+. Desplácese hasta la carpeta que contiene el almacén de claves del plugin personalizado _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc_
+. Busque el archivo 'keystore.jks'.
+. Enumere los certificados añadidos al almacén de claves:
++
+_keytool -list -v -keystore.jks_
+
+. Añada un certificado raíz o intermedio:
++
+_Keytool -import -trustcacerts -alias myRootCA -file /root/USERTrustRSA_Root.cer -keystore.jks_
+
+. Reinicie el servicio después de configurar los certificados raíz o intermedios en el almacén de confianza del plugin personalizado.
+
+
+
+NOTE: Debe añadir el certificado de CA raíz y luego los certificados de CA intermedios.
+
+
+
+== Configure el par de claves firmadas de CA para el almacén de confianza del plugin personalizado
+
+Debe configurar la pareja de claves firmadas de CA en el almacén de confianza del plugin personalizado.
+
+.Pasos
+. Desplácese hasta la carpeta que contiene el almacén de claves del plugin personalizado _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc_
+. Busque el archivo _keystore.jks_.
+. Enumere los certificados añadidos al almacén de claves:
++
+_keytool -list -v -keystore.jks_
+
+. Agregue el certificado de CA con clave pública y privada.
++
+_Keytool -importkeystore -srckeystore /root/snapcenter.ssl.test.netapp.com.pfx -srcstoretype pkcs12 -destkeystore.jks -deststoretype JKS_
+
+. Enumere los certificados añadidos al almacén de claves.
++
+_keytool -list -v -keystore.jks_
+
+. Compruebe que el almacén de claves contiene el alias correspondiente al nuevo certificado de CA, que se añadió al almacén de claves.
+. Cambie la contraseña de clave privada añadida para el certificado de CA a la contraseña del almacén de claves.
++
+La contraseña predeterminada del plugin personalizado keystore es el valor de key KEYSTORE_PASS en el archivo agent.properties.
+
++
+_Keytool -keypasswd -alias "alias_name_in_CA_cert" -keystore.jks_
+
+. Configure el nombre del alias del certificado de CA en el archivo _agent.properties_.
++
+Actualice este valor con la clave SCC_CERTIFICATE_ALIAS.
+
+. Reinicie el servicio después de configurar el par de claves firmado de CA en el almacén de confianza del plugin personalizado.
+
+
+
+
+== Configurar la lista de revocación de certificados (CRL) para los plugins personalizados de SnapCenter
+
+.Acerca de esta tarea
+* Para descargar el último archivo CRL del certificado de CA relacionado, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_update_certificate_revocation_list_file_in_SnapCenter_CA_Certificate["Cómo actualizar el archivo de lista de revocación de certificados en el certificado de CA de SnapCenter"].
+* Los complementos personalizados de SnapCenter buscarán los archivos CRL en un directorio preconfigurado.
+* El directorio predeterminado de los archivos CRL de los plugins personalizados de SnapCenter es _'C:\Archivos de programa\NetApp\SnapCenter\Snapcenter Plug-in Creator\ etc\crl'_.
+
+
+.Pasos
+. Puede modificar y actualizar el directorio predeterminado del archivo _agent.properties_ en función de la CLAVE CRL_PATH.
+. Puede colocar más de un archivo CRL en este directorio.
++
+Los certificados entrantes se verificarán en cada CRL.
+
+

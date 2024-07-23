@@ -1,0 +1,87 @@
+---
+permalink: protect-postgresql/create-backup-policies-for-postgresql.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for PostgreSQL 
+summary: Antes de usar SnapCenter para realizar un backup de los recursos de clúster de PostgreSQL, debe crear una política de backup para el recurso o grupo de recursos que desea incluir en el backup. Una política de backup es un conjunto de reglas que rigen cómo gestionar, programar y retener backups. 
+---
+= Crear políticas de backup para PostgreSQL
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de usar SnapCenter para realizar un backup de recursos de PostgreSQL, debe crear una política de backup para el recurso o grupo de recursos que desee incluir en el backup. Una política de backup es un conjunto de reglas que rigen cómo gestionar, programar y retener backups.
+
+.Antes de empezar
+* Debe tener definida una estrategia de backup.
++
+Para obtener más detalles, consulte la información sobre cómo definir una estrategia de protección de datos para clústeres de PostgreSQL.
+
+* Debe haberse preparado para la protección de datos completando tareas como instalar SnapCenter, añadir hosts, configurar las conexiones del sistema de almacenamiento y añadir recursos.
+* El administrador de SnapCenter debe haberle asignado las instancias de SVM de los volúmenes de origen y de destino en caso de que replique snapshots en un reflejo o almacén.
++
+Además, puede definir la configuración de replicación, script y aplicaciones en la política. Estas opciones ahorran tiempo cuando se desea volver a utilizar la política con otro grupo de recursos.
+
+
+
+.Acerca de esta tarea
+* SnapLock
++
+** Si se selecciona la opción 'Retain the backup copies for a specific number of days', el período de retención de SnapLock debe ser menor o igual que los días de retención mencionados.
+** Si se especifica un período de bloqueo de instantáneas, se evita la eliminación de las instantáneas hasta que caduque el período de retención. Esto podría provocar que se retenga un número mayor de instantáneas que el recuento especificado en la política.
+** Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+
+
+
+
+
+NOTE: La configuración principal de SnapLock se gestiona en la política de backup de SnapCenter y la configuración secundaria de SnapLock se gestiona mediante ONTAP.
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Configuración*.
+. En la página Configuración, haga clic en *Directivas*.
+. Haga clic en *Nuevo*.
+. En la página Name, escriba el nombre de la política y una descripción.
+. En la página Policy type, realice lo siguiente:
++
+.. Seleccione el tipo de almacenamiento.
+.. En la sección *Configuración de copia de seguridad personalizada*, proporcione cualquier configuración de copia de seguridad específica que tenga que pasarse al plugin en formato de clave-valor.
++
+Puede pasar varios pares de clave-valor al plugin.
+
+
+
+. En la página Instantánea, especifique el tipo de programación seleccionando *On Demand*, *Hourly*, *Daily*, *Weekly* o *Monthly*.
++
+
+NOTE: Puede especificar la programación (fecha de inicio, fecha de finalización y frecuencia) para la operación de backup mientras crea un grupo de recursos. Esto le permite crear grupos de recursos que comparten la misma política y frecuencia de backup, pero también le permite asignar diferentes programaciones de backup a cada política.
+
++
+image::../media/backup_settings.gif[configuración de copia de seguridad]
+
++
+
+NOTE: Si ha programado para las 2:00 a.m., la programación no se activará durante el horario de verano.
+
+. En la sección Snapshot settings, especifique el número de instantáneas que desea conservar.
+. En la página Retention, especifique la configuración de retención para el tipo de backup y el tipo de programación seleccionados en la página Backup Type:
++
+|===
+| Si desea... | Realice lo siguiente... 
+
+
+ a| 
+Conserve un cierto número de instantáneas
+ a| 
+Seleccione *Copias para mantener* y, a continuación, especifique el número de instantáneas que desea conservar.
+
+Si la cantidad de copias de Snapshot supera el número especificado, las copias de Snapshot se eliminan empezando por las más antiguas.
+
+|===
++
+
+IMPORTANT: Para los backups basados en copias de Snapshot, debe establecer el número de retención en 2 o más si va a habilitar la replicación de SnapVault. Si establece el número de retención en 1, la operación puede generar un error, ya que la primera snapshot es la de referencia para la relación de SnapVault hasta que se replica una nueva snapshot en el destino.
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+

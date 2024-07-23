@@ -1,0 +1,349 @@
+---
+permalink: protect-nsp/perl.html 
+sidebar: sidebar 
+keywords: custom plug-in 
+summary: Desarrolle el complemento usando PERL. 
+---
+= Desarrollo basado en PERL
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe seguir ciertas convenciones mientras desarrolla el plugin con PERL.
+
+* El contenido debe ser legible
+* Debe implementar la configuración de operaciones obligatorias, el modo de inactividad y la reanudación
+* Debe utilizar una sintaxis específica para devolver los resultados al agente
+* El contenido debe guardarse como archivo <PLUGIN_NAME>.pm
+
+
+Las operaciones disponibles son
+
+* Setenv
+* versión
+* modo de inactividad
+* inactivación
+* clone_pre, clone_post
+* restaurar_pre, restaurar
+* limpieza
+
+
+
+
+== Manejo general del plug-in
+
+
+
+=== Uso del objeto Results
+
+Todas las operaciones de plugin personalizado deben definir el objeto Results. Este objeto envía mensajes, código de salida, stdout y stderr de vuelta al agente host.
+
+Objeto resultados:
+
+ my $result = {
+....
+      exit_code => 0,
+      stdout => "",
+      stderr => "",
+};
+....
+Devolver el objeto Results:
+
+ return $result;
+
+
+=== Conservación de la coherencia de los datos
+
+Es posible conservar datos entre operaciones (excepto limpieza) como parte de la misma ejecución del flujo de trabajo. Esto se logra usando pares clave-valor. Los pares clave-valor de los datos se establecen como parte del objeto de resultado y se conservan y están disponibles en las operaciones posteriores del mismo flujo de trabajo.
+
+En el ejemplo de código siguiente se establecen los datos que se van a conservar:
+
+....
+my $result = {
+  exit_code => 0,
+  stdout => "",
+  stderr => "",
+};
+  $result->{env}->{‘key1’} = ‘value1’;
+  $result->{env}->{‘key2’} = ‘value2’;
+  ….
+  return $result
+....
+El código anterior establece dos pares clave-valor, que están disponibles como entrada en la operación posterior. Los dos pares clave-valor se pueden acceder mediante el siguiente código:
+
+....
+sub setENV {
+    my ($self, $config) = @_;
+    my $first_value = $config->{‘key1’};
+    my $second_value = $config->{‘key2’};
+    …
+}
+....
+ === Logging error messages
+Cada operación puede enviar mensajes al agente host, que muestra y almacena el contenido. Un mensaje contiene el nivel de mensaje, una Marca de tiempo y un texto de mensaje. Se admiten mensajes multilínea.
+
+....
+Load the SnapCreator::Event Class:
+my $msgObj = new SnapCreator::Event();
+my @message_a = ();
+....
+Utilice el método msgObj para capturar un mensaje mediante el método Collect.
+
+....
+$msgObj->collect(\@message_a, INFO, "My INFO Message");
+$msgObj->collect(\@message_a, WARN, "My WARN Message");
+$msgObj->collect(\@message_a, ERROR, "My ERROR Message");
+$msgObj->collect(\@message_a, DEBUG, "My DEBUG Message");
+$msgObj->collect(\@message_a, TRACE, "My TRACE Message");
+....
+Aplicar mensajes al objeto resultados:
+
+ $result->{message} = \@message_a;
+
+
+=== Uso de los espárragos del plug-in
+
+Los plugins personalizados deben exponer los talones del plug-in. Estos son métodos a los que llama el servidor SnapCenter, en función de un flujo de trabajo.
+
+|===
+| Muñón de complemento | Opcional/obligatorio | Específico 
+
+
+ a| 
+Setenv
+ a| 
+obligatorio
+ a| 
+Este código auxiliar establece el entorno y el objeto de configuración.
+
+Aquí se debe realizar cualquier análisis o manejo del entorno. Cada vez que se llama un archivo stub, el archivo stub setenv se llama justo antes. Solo es necesario para complementos DE tipo PERL.
+
+
+
+ a| 
+Versión
+ a| 
+Opcional
+ a| 
+Este código auxiliar se utiliza para obtener la versión de la aplicación.
+
+
+
+ a| 
+Detección
+ a| 
+Opcional
+ a| 
+Este archivo stub se utiliza para detectar objetos de aplicación como la instancia o la base de datos alojada en el agente o host.
+
+Se espera que el complemento devuelva los objetos de aplicación detectados en un formato específico como parte de la respuesta. Este código auxiliar sólo se utiliza en caso de que la aplicación esté integrada con SnapDrive para Unix.
+
+
+NOTE: Sistema de archivos Linux (Linux Flavors) es compatible. AIX/Solaris (Unix Flavors) no son compatibles.
+
+
+
+ a| 
+discovery_complete
+ a| 
+Opcional
+ a| 
+Este archivo stub se utiliza para detectar objetos de aplicación como la instancia o la base de datos alojada en el agente o host.
+
+Se espera que el complemento devuelva los objetos de aplicación detectados en un formato específico como parte de la respuesta. Este código auxiliar sólo se utiliza en caso de que la aplicación esté integrada con SnapDrive para Unix.
+
+
+NOTE: Sistema de archivos Linux (Linux Flavors) es compatible. AIX y Solaris (versiones Unix) no son compatibles.
+
+
+
+ a| 
+Modo de inactividad
+ a| 
+obligatorio
+ a| 
+Este stub es responsable de realizar una pausa, lo que significa colocar la aplicación en un estado donde se puede crear una instantánea. Esto se denomina antes de la operación de snapshot. Los metadatos de la aplicación que se van a conservar deben definirse como parte de la respuesta, que se devolverá durante las siguientes operaciones de clonado o restauración en la copia Snapshot de almacenamiento correspondiente, en forma de parámetros de configuración.
+
+
+
+ a| 
+Inactivación
+ a| 
+obligatorio
+ a| 
+Este código auxiliar es responsable de realizar un modo de inactividad, lo que significa poner la aplicación en un estado normal. Esto se denomina después de crear una snapshot.
+
+
+
+ a| 
+clone_pre
+ a| 
+opcional
+ a| 
+Este archivo stub es responsable de realizar tareas previas a la clonación. Se supone que se utiliza la interfaz de clonación del servidor de SnapCenter integrada y se activa al realizar la operación de clonación.
+
+
+
+ a| 
+clone_post
+ a| 
+opcional
+ a| 
+Este archivo stub es responsable de realizar tareas posteriores a la clonación. Esto supone que se utiliza la interfaz de clonación del servidor de SnapCenter integrada y se activa solo al realizar una operación de clonado.
+
+
+
+ a| 
+restaurar_pre
+ a| 
+opcional
+ a| 
+Este archivo stub es responsable de realizar tareas prerestore. Esto supone que se utiliza la interfaz de restauración de servidor de SnapCenter incorporada y se activa al realizar una operación de restauración.
+
+
+
+ a| 
+Restaurar
+ a| 
+opcional
+ a| 
+Este código auxiliar es responsable de realizar tareas de restauración de aplicaciones. Esto supone que se utiliza la interfaz de restauración de servidor de SnapCenter incorporada y que solo se activa al realizar una operación de restauración.
+
+
+
+ a| 
+Limpieza
+ a| 
+opcional
+ a| 
+Este archivo stub es responsable de realizar una limpieza después de las operaciones de backup, restauración o clonado. La limpieza puede realizarse durante la ejecución normal del flujo de trabajo o en caso de que se produzca un error en el mismo. Puede inferir el nombre del flujo de trabajo bajo el cual se llama a la limpieza haciendo referencia a LA ACCIÓN de parámetro de configuración, que puede ser copia de seguridad, clonVolAndLun o archivoOrVolRestore. El parámetro DE configuración ERROR_MESSAGE indica si se produjo algún error al ejecutar el flujo de trabajo. Si ERROR_MESSAGE está definido y NO es NULL, se llama a la limpieza durante la ejecución de un fallo de flujo de trabajo.
+
+
+
+ a| 
+versión_aplicación
+ a| 
+Opcional
+ a| 
+SnapCenter utiliza este archivo stub para que el complemento gestione el detalle de la versión de la aplicación.
+
+|===
+
+
+=== Información sobre el paquete de plugins
+
+Cada plugin debe tener la siguiente información:
+
+....
+package MOCK;
+our @ISA = qw(SnapCreator::Mod);
+=head1 NAME
+MOCK - class which represents a MOCK module.
+=cut
+=head1 DESCRIPTION
+MOCK implements methods which only log requests.
+=cut
+use strict;
+use warnings;
+use diagnostics;
+use SnapCreator::Util::Generic qw ( trim isEmpty );
+use SnapCreator::Util::OS qw ( isWindows isUnix getUid
+createTmpFile );
+use SnapCreator::Event qw ( INFO ERROR WARN DEBUG COMMENT ASUP
+CMD DUMP );
+my $msgObj = new SnapCreator::Event();
+my %config_h = ();
+....
+
+
+=== Operaciones
+
+Puede codificar varias operaciones, como setenv, Version, Quiesce y UnQUIESCE, que son compatibles con los plug-ins personalizados.
+
+
+
+==== Funcionamiento de setenv
+
+La operación setenv es necesaria para los complementos creados con PERL. Puede ajustar el ENV y acceder fácilmente a los parámetros del plug-in.
+
+....
+sub setENV {
+    my ($self, $obj) = @_;
+    %config_h = %{$obj};
+    my $result = {
+      exit_code => 0,
+      stdout => "",
+      stderr => "",
+    };
+    return $result;
+}
+....
+
+
+==== Operación de versión
+
+La operación de versión devuelve la información de la versión de la aplicación.
+
+....
+sub version {
+  my $version_result = {
+    major => 1,
+    minor => 2,
+    patch => 1,
+    build => 0
+  };
+  my @message_a = ();
+  $msgObj->collect(\@message_a, INFO, "VOLUMES
+$config_h{'VOLUMES'}");
+  $msgObj->collect(\@message_a, INFO,
+"$config_h{'APP_NAME'}::quiesce");
+  $version_result->{message} = \@message_a;
+  return $version_result;
+}
+....
+
+
+==== Operaciones de inactivación
+
+La operación de inactividad realiza una operación de inactividad de la aplicación en los recursos que se enumeran en el parámetro RESOURCES.
+
+....
+sub quiesce {
+  my $result = {
+      exit_code => 0,
+      stdout => "",
+      stderr => "",
+  };
+  my @message_a = ();
+  $msgObj->collect(\@message_a, INFO, "VOLUMES
+$config_h{'VOLUMES'}");
+  $msgObj->collect(\@message_a, INFO,
+"$config_h{'APP_NAME'}::quiesce");
+  $result->{message} = \@message_a;
+  return $result;
+}
+....
+
+
+==== Funcionamiento de la reanudación
+
+La operación de inactividad es necesaria para desactivar la activación de la aplicación. La lista de recursos está disponible en el parámetro RESOURCES.
+
+....
+sub unquiesce {
+  my $result = {
+      exit_code => 0,
+      stdout => "",
+      stderr => "",
+  };
+  my @message_a = ();
+  $msgObj->collect(\@message_a, INFO, "VOLUMES
+$config_h{'VOLUMES'}");
+  $msgObj->collect(\@message_a, INFO,
+"$config_h{'APP_NAME'}::unquiesce");
+  $result->{message} = \@message_a;
+  return $result;
+}
+....

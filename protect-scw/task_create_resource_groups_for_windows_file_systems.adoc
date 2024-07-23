@@ -15,8 +15,8 @@ Un grupo de recursos es el contenedor donde puede añadir varios sistemas de arc
 
 .Acerca de esta tarea
 * Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
-* No se admite la adición de nuevos sistemas de archivos sin SM-BC a un grupo de recursos existente que contenga recursos con SM-BC.
-* No se admite la adición de nuevos sistemas de archivos a un grupo de recursos existente en el modo de conmutación por error de SM-BC. Puede añadir recursos al grupo de recursos solo en estado normal o de conmutación por error.
+* No se admiten la adición de sistemas de archivos nuevos sin sincronización activa de SnapMirror a un grupo de recursos existente que contiene recursos con sincronización activa de SnapMirror.
+* No se admite la adición de sistemas de archivos nuevos a un grupo de recursos existente en el modo de conmutación por error de la sincronización activa de SnapMirror. Puede añadir recursos al grupo de recursos solo en estado normal o de conmutación por error.
 
 
 .Pasos
