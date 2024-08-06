@@ -130,7 +130,7 @@ Parámetros que se deben transferir para instalar el servidor SnapCenter:
 * Si el estado _SELinux_ está activado y el modo _CURRENT_ es “forzado”, el servicio *nginx* no se inicia. Debe ejecutar los siguientes comandos:
 +
 .. Vaya al directorio principal.
-.. Ejecute el comando: `jorunalctl -x|grep nginx`.
+.. Ejecute el comando: `journalctl -x|grep nginx`.
 .. Si el puerto interno de WebApp (8147) no puede escuchar, ejecute los siguientes comandos:
 +
 *** `ausearch -c 'nginx' --raw | audit2allow -M my-nginx`

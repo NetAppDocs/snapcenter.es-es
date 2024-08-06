@@ -87,7 +87,7 @@ NOTE: Se recomienda, pero no es obligatorio, añadir licencias estándar de Snap
 
 |===
 
-NOTE: Las licencias avanzada y SnapCenter de servicios de archivos NAS de SnapCenter quedaron obsoletas y ya no están disponibles. Esta licencia basada en la capacidad ya no se requiere para Amazon FSx para NetApp ONTAP y Cloud Volumes ONTAP.
+NOTE: Las licencias avanzada y SnapCenter de servicios de archivos NAS de SnapCenter quedaron obsoletas y ya no están disponibles. Esta licencia basada en la capacidad ya no se requiere para Amazon FSx para NetApp ONTAP y Cloud Volumes ONTAP. Las licencias estándar y basadas en capacidad no son requeridas para Azure NetApp Files.
 
 Debe instalar una o más licencias de SnapCenter. Para obtener información sobre cómo agregar licencias, consulte link:../install/concept_snapcenter_standard_controller_based_licenses.html["Añada licencias estándar basadas en controladora de SnapCenter"].
 
