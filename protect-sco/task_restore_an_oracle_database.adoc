@@ -176,7 +176,7 @@ Si se reducen los registros de archivos como parte del backup y se montaron manu
 
 NOTE: Debe verificar la ruta y el contenido de la ruta de montaje antes de enumerarla como ubicación de registro externo.
 
-** http://www.netapp.com/us/media/tr-4591.pdf["Informe técnico de NetApp 4591: Protección de bases de datos: Backup, recuperación, replicación y DR"^]
+** https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-overview.html["Protección de datos de Oracle con ONTAP"^]
 ** https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/ORA-00308%3A_cannot_open_archived_log_ORA_LOG_arch1_123_456789012.arc["Se produce un error en el funcionamiento con ORA-00308"^]
 
 
