@@ -9876,4 +9876,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="a2706d1c365c79f6f2378228b67eb95a" category="admonition">Las licencias estándar y basadas en capacidad no son requeridas para Azure NetApp Files.</block>
   <block id="9e19caeb431a5e29a1a63e3cee4b36c9" category="inline-link">Protección de datos de Oracle con ONTAP</block>
   <block id="d118010bb2b3542007c6749bfd237123" category="list-text"><block ref="d118010bb2b3542007c6749bfd237123" category="inline-link-rx"></block></block>
+  <block id="26d0f7d5ea2b87e82f98d6e622ecf6a0" category="admonition">Desde 5,0, los usuarios administradores de Vserver solo son compatibles con las API REST. Si desea crear roles con un administrador que no sea de Vserver, debe usar ZAPI.</block>
+  <block id="3955db71dd681bf23ceee85c567a0129" category="admonition">Desde SnapCenter 5,0, los usuarios de administradores de clústeres solo son compatibles con las API REST. Si desea crear roles con un administrador que no sea del clúster, debe usar ZAPI.</block>
 </blocks>

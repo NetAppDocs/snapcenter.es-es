@@ -39,6 +39,9 @@ NOTE: Debe repetir este comando para cada permiso.
 
 Hay varios comandos de la CLI de ONTAP que debe ejecutar para crear roles de SVM y asignar permisos.
 
+
+NOTE: Desde 5,0, los usuarios administradores de Vserver solo son compatibles con las API REST. Si desea crear roles con un administrador que no sea de Vserver, debe usar ZAPI.
+
 * `security login role create -vserver SVM_Name -role SVM_Role_Name -cmddirname "snapmirror list-destinations" -access all`
 * `security login role create -vserver SVM_Name -role SVM_Role_Name -cmddirname "event generate-autosupport-log" -access all`
 * `security login role create -vserver SVM_Name -role SVM_Role_Name -cmddirname "job history show" -access all`
