@@ -24,15 +24,13 @@ Microsoft Windows
 
 Solo se admiten las versiones en inglés, alemán, japonés y chino simplificado de los sistemas operativos.
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte
-https://imt.netapp.com/matrix/imt.jsp?components=116859;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=121033;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
  a| 
 * Red Hat Enterprise Linux (RHEL) 8 y 9
 * SUSE Linux Enterprise Server (SLES) 15
 
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte
-https://imt.netapp.com/matrix/imt.jsp?components=116859;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=121032;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 
 

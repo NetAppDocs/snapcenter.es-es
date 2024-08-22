@@ -57,7 +57,7 @@ Sistemas operativos
  a| 
 Microsoft Windows
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=117007;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener la información más reciente sobre las versiones compatibles, consulte la https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 
 
@@ -86,7 +86,7 @@ Paquetes de software obligatorios
 * Java 11 Oracle Java y OpenJDK
 
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=117007;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener la información más reciente sobre las versiones compatibles, consulte la https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 Para obtener información específica sobre la solución de problemas de .NET, consulte https://kb.netapp.com/mgmt/SnapCenter/SnapCenter_upgrade_or_install_fails_with_This_KB_is_not_related_to_the_OS["La actualización o instalación de SnapCenter falla en sistemas heredados que no tienen conexión a Internet."]
 
@@ -141,7 +141,7 @@ Sistemas operativos
  a| 
 Microsoft Windows
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=117007;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener la información más reciente sobre las versiones compatibles, consulte la https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 
 
@@ -170,7 +170,7 @@ Paquetes de software obligatorios
 * Java 11 Oracle Java y OpenJDK
 
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=117007;&solution=1258&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener la información más reciente sobre las versiones compatibles, consulte la https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 Para obtener información específica sobre la solución de problemas de .NET, consulte https://kb.netapp.com/mgmt/SnapCenter/SnapCenter_upgrade_or_install_fails_with_This_KB_is_not_related_to_the_OS["La actualización o instalación de SnapCenter falla en sistemas heredados que no tienen conexión a Internet."]
 

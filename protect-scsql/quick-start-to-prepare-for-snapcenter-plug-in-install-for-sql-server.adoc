@@ -72,7 +72,7 @@ NOTE: Se recomienda, pero no es obligatorio, añadir licencias estándar de Snap
 
 == Requisitos del host y puerto
 
-Para ver los requisitos mínimos del ONTAP y el complemento de la aplicación, consulte https://imt.netapp.com/matrix/imt.jsp?components=117008;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad"^].
+Para conocer los requisitos mínimos de ONTAP y complementos de aplicaciones, consulte https://imt.netapp.com/matrix/imt.jsp?components=121030;&solution=1259&isHWU&src=IMT[] [Herramienta de Matriz de Interoperabilidad^].
 
 [cols="1,3"]
 |===
@@ -82,7 +82,7 @@ Para ver los requisitos mínimos del ONTAP y el complemento de la aplicación, c
  a| 
 Sistema operativo (64 bits)
  a| 
-Consulte https://imt.netapp.com/matrix/imt.jsp?components=117008;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad"^]
+Consulte https://imt.netapp.com/matrix/imt.jsp?components=121030;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad"^]
 
 
 

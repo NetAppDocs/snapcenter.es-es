@@ -20,7 +20,7 @@ Debe instalar el plugin de SnapCenter para clúster PostgreSQL mediante la inter
 La herramienta de matriz de interoperabilidad (IMT) contiene la última información sobre las configuraciones soportadas.
 
 +
-https://imt.netapp.com/matrix/imt.jsp?components=117015;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"]
+https://imt.netapp.com/matrix/imt.jsp?components=121069;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"]
 
 * El plugin de SnapCenter para el clúster PostgreSQL forma parte del paquete de plugins de SnapCenter para Linux. Antes de instalar el paquete de plugins de SnapCenter para Linux, debe haber instalado SnapCenter en un host de Windows.
 

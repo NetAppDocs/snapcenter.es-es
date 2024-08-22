@@ -29,4 +29,4 @@ Realizar cambios en la configuración de seguridad de Internet Explorer puede da
 * Microsoft Edge
 
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=116859;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^] : .

@@ -35,7 +35,7 @@ NOTE: IBM Java no es compatible.
 http://www.java.com/en/download/manual.jsp["Descargas de Java para todos los sistemas operativos"]
 
 +
-https://imt.netapp.com/matrix/imt.jsp?components=117015;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"]
+https://imt.netapp.com/matrix/imt.jsp?components=121069;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"]
 
 
 
@@ -49,7 +49,7 @@ https://imt.netapp.com/matrix/imt.jsp?components=117015;&solution=1259&isHWU&src
 http://www.java.com/en/download/manual.jsp["Descargas de Java para todos los sistemas operativos"]
 
 +
-https://imt.netapp.com/matrix/imt.jsp?components=117015;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"]
+https://imt.netapp.com/matrix/imt.jsp?components=121069;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"]
 
 * Para los clústeres PostgreSQL que se ejecutan en un host Linux, cuando se instala el plugin para PostgreSQL, el plugin de SnapCenter para UNIX se instala de forma automática.
 * Debe tener *bash* como shell por defecto para la instalación del plug-in.

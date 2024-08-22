@@ -60,7 +60,7 @@ NOTE: No se admiten las operaciones de migración de PDB y clonado de PDB.
 
 
 
-Para obtener la información más reciente sobre las versiones de Oracle admitidas, consulte https://imt.netapp.com/matrix/imt.jsp?components=117016;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener la información más reciente sobre las versiones de Oracle soportadas, consulte la https://imt.netapp.com/matrix/imt.jsp?components=121071;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 
 
