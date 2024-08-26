@@ -20,7 +20,7 @@ Cuando sea necesario actualizar el host de SnapCenter Server, puede instalar la 
 
 
 . Inicie sesión como usuario administrador de SnapCenter.
-. Cree un backup del servidor de SnapCenter en el host antiguo mediante la API: `/5.0/server/backup` O bien el cmdlet: _New-SmServerBackup_.
+. Cree un backup del servidor SnapCenter en el host anterior mediante la API: `/<snapcenter_version>/server/backup` O el cmdlet: _New-SmServerBackup_.
 +
 
 NOTE: Antes de realizar el backup, suspenda todos los trabajos programados y asegúrese de que no existan trabajos en ejecución.
@@ -30,9 +30,9 @@ NOTE: Antes de realizar el backup, suspenda todos los trabajos programados y ase
 IMPORTANT: Si desea restaurar el backup en el servidor de SnapCenter que se está ejecutando en un nuevo dominio, antes de realizar un backup, debe añadir el usuario de dominio nuevo en el host anterior de SnapCenter y asignar el rol de administrador de SnapCenter.
 
 . Copie el backup del host anterior en el nuevo.
-. Restaure el backup del servidor SnapCenter en el nuevo host mediante la API: `/5.0/server/restore` O bien el cmdlet: _Restore-SmServerBackup_.
+. Restaure el backup del servidor SnapCenter en el nuevo host mediante la API: `/<snapcenter_version>/server/restore` O el cmdlet: _Restore-SmServerBackup_.
 +
-Restore actualizará la nueva URL del servidor SnapCenter en todos los hosts de forma predeterminada. Si desea omitir la actualización, use el atributo _-SkipSMSURLInHosts_ y actualice por separado la URL del servidor ejecutando mediante la API: `/5.0/server/configureurl` O bien el cmdlet: _Set-SmServerConfig_.
+Restore actualizará la nueva URL del servidor SnapCenter en todos los hosts de forma predeterminada. Si desea omitir la actualización, use el atributo _-SkipSMSURLInHosts_ y actualice por separado la URL del servidor ejecutando mediante la API: `/<snapcenter_version>/server/configureurl` O el cmdlet: _Set-SmServerConfig_.
 
 +
 
@@ -49,7 +49,7 @@ Si la copia de seguridad se restaura en el servidor SnpCenter que se ejecuta en 
 
 NOTE: Si actualizó manualmente el archivo web.config en el antiguo host de SnapCenter, las actualizaciones no se copiarán en el nuevo host. Debe realizar los mismos cambios manualmente en el archivo web.config del nuevo host.
 
-. Si omitió la actualización de la URL del servidor de SnapCenter o alguno de los hosts se encontraba inactivo durante el proceso de restauración, actualice el nuevo nombre del servidor en todos los hosts o los hosts especificados que gestiona SnapCenter mediante la API: `/5.0/server/configureurl` O bien el cmdlet: _Set-SmServerConfig_.
+. Si omitió la actualización de la URL del servidor de SnapCenter o alguno del host se encontraba inactivo durante el proceso de restauración, actualice el nuevo nombre de servidor en todos los hosts o los hosts especificados que gestiona SnapCenter mediante la API: `/<snapcenter_version>/server/configureurl` O el cmdlet: _Set-SmServerConfig_.
 . Active los trabajos programados en todos los hosts desde el nuevo servidor de SnapCenter.
 
 
@@ -62,7 +62,7 @@ Puede realizar una actualización tecnológica de cualquier nodo del clúster F5
 Para obtener información sobre cómo añadir un nodo a un clúster F5, consulte https://docs.netapp.com/us-en/snapcenter/install/concept_configure_snapcenter_servers_for_high_availabiity_using_f5.html["Configurar servidores SnapCenter para alta disponibilidad mediante F5"].
 
 
-NOTE: Si cambia la url del clúster F5, la url se puede actualizar en todos los hosts usando la API: `/5.0/server/configureurl` O bien el cmdlet: _Set-SmServerConfig_.
+NOTE: Si cambia la url del clúster F5, la url se puede actualizar en todos los hosts mediante la API: `/<snapcenter_version>/server/configureurl` O el cmdlet: _Set-SmServerConfig_.
 
 
 
@@ -74,7 +74,7 @@ Es posible quitar el antiguo host de servidor de SnapCenter después de verifica
 
 == Realice una reversión al antiguo host del servidor de SnapCenter
 
-En caso de cualquier problema, puede recuperar el antiguo host del servidor de SnapCenter actualizando la URL del servidor de SnapCenter en todos los hosts que utilizan la API: `/5.0/server/configureurl` O bien el cmdlet: _Set-SmServerConfig_.
+En caso de cualquier problema, puede recuperar el antiguo host del servidor SnapCenter actualizando la URL del servidor SnapCenter en todos los hosts a través de la API: `/<snapcenter_version>/server/configureurl` O el cmdlet: _Set-SmServerConfig_.
 
 
 
@@ -98,9 +98,9 @@ Asegúrese de tener una copia de seguridad del antiguo servidor SnapCenter.
 
 . Copie el antiguo backup del servidor de SnapCenter en el nuevo host.
 . Inicie sesión como usuario administrador de SnapCenter.
-. Restaure el backup del servidor SnapCenter en el nuevo host mediante la API: `/5.0/server/restore` O bien el cmdlet: _Restore-SmServerBackup_.
+. Restaure el backup del servidor SnapCenter en el nuevo host mediante la API: `/<snapcenter_version>/server/restore` O el cmdlet: _Restore-SmServerBackup_.
 +
-Restore actualizará la nueva URL del servidor SnapCenter en todos los hosts de forma predeterminada. Si desea omitir la actualización, use el atributo _-SkipSMSURLInHosts_ y actualice por separado la URL del servidor mediante la API: `/5.0/server/configureurl` O bien el cmdlet: _Set-SmServerConfig_.
+Restore actualizará la nueva URL del servidor SnapCenter en todos los hosts de forma predeterminada. Si desea omitir la actualización, use el atributo _-SkipSMSURLInHosts_ y actualice por separado la URL del servidor mediante la API: `/<snapcenter_version>/server/configureurl` O el cmdlet: _Set-SmServerConfig_.
 
 +
 
@@ -110,7 +110,7 @@ NOTE: Si el host del plugin no puede resolver el nombre de host del servidor, in
 
 NOTE: Las entradas _etc/host_ del servidor no se restaurarán. Puede restaurarlo manualmente desde el servidor antiguo.
 
-. Si omitió la actualización de la URL o alguno de los hosts estaba inactivo durante el proceso de restauración, actualice el nuevo nombre del servidor en todos los hosts o los hosts especificados que SnapCenter gestiona mediante la API: `/5.0/server/configureurl` O bien el cmdlet: _Set-SmServerConfig_.
+. Si omitió la actualización de la URL o alguno del host estaba inactivo durante el proceso de restauración, actualice el nuevo nombre del servidor en todos los hosts o los hosts especificados que SnapCenter gestiona mediante la API: `/<snapcenter_version>/server/configureurl` O el cmdlet: _Set-SmServerConfig_.
 
 
 
@@ -131,9 +131,9 @@ Asegúrese de tener una copia de seguridad del antiguo servidor SnapCenter.
 
 . Copie el antiguo backup del servidor de SnapCenter en el nuevo host.
 . Inicie sesión como usuario administrador de SnapCenter.
-. Restaure el backup del servidor SnapCenter en el nuevo host mediante la API: `/5.0/server/restore` O bien el cmdlet: _Restore-SmServerBackup_.
+. Restaure el backup del servidor SnapCenter en el nuevo host mediante la API: `/<snapcenter_version>/server/restore` O el cmdlet: _Restore-SmServerBackup_.
 +
-Restore actualizará la nueva URL del servidor SnapCenter en todos los hosts de forma predeterminada. Si desea omitir la actualización, use el atributo _-SkipSMSURLInHosts_ y actualice por separado la URL del servidor mediante la API: `/5.0/server/configureurl` O bien el cmdlet: _Set-SmServerConfig_.
+Restore actualizará la nueva URL del servidor SnapCenter en todos los hosts de forma predeterminada. Si desea omitir la actualización, use el atributo _-SkipSMSURLInHosts_ y actualice por separado la URL del servidor mediante la API: `/<snapcenter_version>/server/configureurl` O el cmdlet: _Set-SmServerConfig_.
 
 +
 
@@ -143,7 +143,7 @@ NOTE: Si el host del plugin no puede resolver el nombre de host del servidor, in
 
 NOTE: Las entradas _etc/host_ del servidor no se restaurarán. Puede restaurarlo manualmente desde el servidor antiguo.
 
-. Si omitió la actualización de la URL o alguno de los hosts estaba inactivo durante el proceso de restauración, actualice el nuevo nombre del servidor en todos los hosts o los hosts especificados que SnapCenter gestiona mediante la API: `/5.0/server/configureurl` O bien el cmdlet: _Set-SmServerConfig_.
+. Si omitió la actualización de la URL o alguno del host estaba inactivo durante el proceso de restauración, actualice el nuevo nombre del servidor en todos los hosts o los hosts especificados que SnapCenter gestiona mediante la API: `/<snapcenter_version>/server/configureurl` O el cmdlet: _Set-SmServerConfig_.
 . Convierta el host independiente en clúster de F5.
 +
 Para obtener información sobre cómo configurar F5, consulte https://docs.netapp.com/us-en/snapcenter/install/concept_configure_snapcenter_servers_for_high_availabiity_using_f5.html["Configurar servidores SnapCenter para alta disponibilidad mediante F5"].

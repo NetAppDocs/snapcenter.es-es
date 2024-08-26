@@ -77,7 +77,7 @@ Compruebe que tiene un nombre de SVM único en los clústeres de SnapCenter. Si 
 
 NOTE: Siempre que se conecte un nuevo LUN al host, tendrá un nuevo número de serie. Durante el descubrimiento del sistema de archivos de Windows, SnapCenter tratará cada número de serie único como nuevo recurso. Durante la actualización de la tecnología de almacenamiento cuando el LUN de un nuevo almacenamiento se conecta al host con la misma letra o ruta de unidad, la detección del sistema de archivos de Windows en SnapCenter marcará el recurso existente como eliminado, incluso si se monta con la misma letra o ruta de la unidad y mostrará el nuevo LUN como nuevo recurso. Cuando el recurso se marca como eliminado, no se considerará para la actualización de la tecnología de almacenamiento en SnapCenter, y se perderán todos los backups del recurso anterior. Cuando se produce una actualización del almacenamiento, en el caso de recursos del sistema de archivos Windows, no se debe realizar la detección de recursos antes de ejecutar la API o el cmdlet de actualización de almacenamiento.
 
-. Ejecute la API de actualización del almacenamiento: `/5.0/techrefresh/primarystorage` O bien el cmdlet: _Invoke-SmTechRefreshPrimaryStorage_.
+. Ejecute la API de actualización del almacenamiento: `/<snapcenter_version>/techrefresh/primarystorage` O el cmdlet: _Invoke-SmTechRefreshPrimaryStorage_.
 +
 
 NOTE: Si el recurso se configura con una política de replicación habilitada, el backup más reciente después de la actualización de almacenamiento debe tener detalles del almacenamiento secundario.
@@ -87,11 +87,11 @@ NOTE: Si el recurso se configura con una política de replicación habilitada, e
 .. Si utiliza una configuración de SQL Availability Group (AG), los backups se mantienen en el nivel de nodo. Debe proporcionar el nombre de nodo como entrada para la actualización de la tecnología de almacenamiento.
 .. Si utiliza la configuración de Oracle Real Application Clusters (RAC), puede realizar la actualización de la tecnología de almacenamiento en cualquier nodo.
 +
-El atributo _IsDryRun_ se establece en True de forma predeterminada. Así, se identificarán los recursos para los que se actualiza el almacenamiento. Puede ver el recurso y los detalles del almacenamiento modificados ejecutando la API '5,0/jobs/{jobid}' o el cmdlet _Get-SmJobSummaryReport_.
+El atributo _IsDryRun_ se establece en True de forma predeterminada. Así, se identificarán los recursos para los que se actualiza el almacenamiento. Para ver el recurso y los detalles del almacenamiento modificados, debe ejecutar la API: '<SnapCenter_version>/jobs/{jobid}' o el cmdlet _Get-SmJobSummaryReport_.
 
 
 
-. Después de verificar los detalles del almacenamiento, establezca el atributo _IsDryRun_ en False y ejecute la API de actualización de almacenamiento: `/5.0/techrefresh/primarystorage` O bien el cmdlet: _Invoke-SmTechRefreshPrimaryStorage_.
+. Después de verificar los detalles del almacenamiento, establezca el atributo _IsDryRun_ en False y ejecute la API de actualización del almacenamiento `/<snapcenter_version>/techrefresh/primarystorage` : O el cmdlet: _Invoke-SmTechRefreshPrimaryStorage_.
 +
 Esto actualizará los detalles de almacenamiento en las copias de seguridad antiguas.
 
@@ -102,7 +102,7 @@ Puede ejecutar la API o el cmdlet en el mismo host varias veces y actualizará l
 
 NOTE: La jerarquía de clones no se puede migrar en ONTAP. Si el almacenamiento que se migra tiene metadatos de clonado en SnapCenter, el recurso clonado se marcará como recurso independiente. Los clones de los metadatos del clon se eliminarán de forma recursiva.
 
-. (Opcional) Si no se mueven todas las snapshots del almacenamiento primario antiguo al nuevo, ejecute la siguiente API: `/5.0/hosts/primarybackupsexistencecheck` O el cmdlet _Invoke-SmPrimaryBackupsExistenceCheck_.
+. (Opcional) Si todas las snapshots no se mueven del almacenamiento primario antiguo a un nuevo almacenamiento primario, ejecute la siguiente API: `/<snapcenter_version>/hosts/primarybackupsexistencecheck` O el cmdlet _Invoke-SmPrimaryBackupsExistenceCheck_.
 +
 Esto realizará la comprobación de existencia de instantáneas en el nuevo almacenamiento primario y marcará los respectivos backups que no están disponibles para ninguna operación en SnapCenter.
 
@@ -138,7 +138,7 @@ Es necesario un nuevo backup para que SnapCenter identifique el último espacio 
 
 IMPORTANT: Debe esperar hasta que se complete esta operación. Si continúa con el siguiente paso antes de que finalice, SnapCenter perderá por completo metadatos de Snapshot secundarias antiguas.
 
-. Después de crear correctamente el backup de todos los recursos de un host, ejecute la API de actualización del almacenamiento secundario: `/5.0/techrefresh/secondarystorage` O bien el cmdlet: _Invoke-SmTechRefreshSecondaryStorage_.
+. Después de crear correctamente el backup de todos los recursos en un host, ejecute la API de actualización del almacenamiento secundario `/<snapcenter_version>/techrefresh/secondarystorage` o el cmdlet: _Invoke-SmTechRefreshSecondaryStorage_.
 +
 Esto actualizará los detalles del almacenamiento secundario de los backups anteriores en el host dado.
 
