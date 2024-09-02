@@ -4,7 +4,7 @@
 
 SnapCenter es compatible con una gran variedad de tipos de almacenamiento, tanto en máquinas físicas como virtuales. Antes de instalar el paquete para el host, es necesario verificar que el tipo de almacenamiento sea compatible.
 
-Windows Server es compatible con el aprovisionamiento y la protección de datos de SnapCenter. Para acceder a la información más actualizada sobre las versiones compatibles, consulte la https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT[] [Herramienta de matriz de interoperabilidad de NetApp^].
+Windows Server es compatible con el aprovisionamiento y la protección de datos de SnapCenter. Para obtener la información más reciente sobre las versiones compatibles, consulte la https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 |===
 | Máquina | Tipo de almacenamiento | Aprovisionamiento con | Notas de soporte 
@@ -38,8 +38,6 @@ Recursos compartidos de SMB3 (CIFS) que residen en una máquina virtual de almac
 Interfaz gráfica de usuario de SnapCenter o cmdlets de PowerShell
  a| 
 Compatibilidad solo para aprovisionamiento.
-
-No puede utilizar SnapCenter para realizar backup de datos o recursos compartidos mediante el protocolo SMB.
 
 
 
@@ -81,8 +79,6 @@ Un sistema invitado conectado a recursos compartidos de SMB3 que residen en una 
 Interfaz gráfica de usuario de SnapCenter o cmdlets de PowerShell
  a| 
 Compatibilidad solo para aprovisionamiento.
-
-No puede utilizar SnapCenter para realizar backup de datos o recursos compartidos mediante el protocolo SMB.
 
 
 
@@ -130,8 +126,6 @@ Un sistema invitado conectado a recursos compartidos de SMB3 que residen en una 
 Interfaz gráfica de usuario de SnapCenter o cmdlets de PowerShell
  a| 
 Compatibilidad solo para aprovisionamiento.
-
-No puede utilizar SnapCenter para realizar backup de datos o recursos compartidos mediante el protocolo SMB.
 
 
 NOTE: No se admiten los discos de acceso directo Hyper-V ni el backup de bases de datos en VHD(x) con aprovisionamiento en almacenamiento de NetApp.

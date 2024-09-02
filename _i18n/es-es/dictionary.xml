@@ -1974,7 +1974,6 @@
   <block id="539ba05c387c505e5829bcee612dec7c" category="paragraph">Interfaz gráfica de usuario de SnapCenter o cmdlets de PowerShell</block>
   <block id="0b0c2887a236e9135995566b39c6a69e" category="paragraph">Recursos compartidos de SMB3 (CIFS) que residen en una máquina virtual de almacenamiento (SVM)</block>
   <block id="ac8951fb8900c75e1b47b9440e783d24" category="paragraph">Compatibilidad solo para aprovisionamiento.</block>
-  <block id="23fb16c1c9b83befc8a21b31b0a433d2" category="paragraph">No puede utilizar SnapCenter para realizar backup de datos o recursos compartidos mediante el protocolo SMB.</block>
   <block id="86cbd38e0939fb9a14eea3387d05d7b4" category="paragraph">Máquina virtual de VMware</block>
   <block id="a200c15748125d289ffe86820ffcd19f" category="paragraph">LUN de RDM conectados por un adaptador de bus de host FC o iSCSI</block>
   <block id="a5e23c97dd15d671c82b090f4480878c" category="paragraph">Cmdlets de PowerShell</block>
@@ -3111,9 +3110,6 @@
   <block id="42c3a197506df634d37106aa12e94817" category="paragraph">En el siguiente ejemplo, se muestran las rutas actualizadas en la sección [client] del archivo my.iniI.</block>
   <block id="7bbf719310f30342c522d3414da61277" category="list-text">Detenga la aplicación web del servidor SnapCenter en el servidor de información de Internet (IIS).</block>
   <block id="b93c543a0f96a9413f8f7281e2b85709" category="list-text">Reinicie el servicio MySQL.</block>
-  <block id="20990864d085d9bb1f322b2df271bdec" category="list-text">Actualice el valor de la clave MySQLProtocol en el archivo web.config.</block>
-  <block id="4828d55a2fe6e484512c9947b0fd06ef" category="paragraph">En el siguiente ejemplo, se muestra el valor de la clave MySQLProtocol actualizada en el archivo web.config.</block>
-  <block id="67882348f76a80bca6ec205f6d47a382" category="list-text">Actualice el archivo web.config con las rutas proporcionadas en la sección [client] del archivo my.iniI.</block>
   <block id="6217c9a70228dfb942cee33273650127" category="list-text">Inicie la aplicación web del servidor SnapCenter en IIS.</block>
   <block id="7f2254a19dcb8d48356527ff8514efab" category="section-title">Configure conexiones MySQL protegidas para configuraciones de alta disponibilidad</block>
   <block id="887dc7045f93986f64fbe50a55983beb" category="paragraph">Es posible generar certificados de capa de sockets seguros (SSL) y archivos de claves para los dos nodos de alta disponibilidad (ha) a fin de proteger la comunicación entre SnapCenter Server y los servidores MySQL. Los certificados y los archivos de claves se deben configurar en las instancias de MySQL Server y en los nodos ha.</block>
@@ -3133,9 +3129,6 @@
   <block id="89093a295da7b5b9812cf7cccb724876" category="paragraph">Se recomienda usar el nombre de dominio completo del servidor como nombre común para el certificado del servidor.</block>
   <block id="4f3f310802411b7b71c042c2d0a84b55" category="list-text">Detenga la aplicación web del servidor SnapCenter en el servidor de información de Internet (IIS) en los dos nodos ha.</block>
   <block id="ceac3af00f29021cbec639a39d8bf71f" category="list-text">Reinicie el servicio MySQL en los dos nodos ha.</block>
-  <block id="dc4e66eba3a59e87b1bbedb41d37736c" category="list-text">Actualice el valor de la clave MySQLProtocol del archivo web.config en los dos nodos de alta disponibilidad.</block>
-  <block id="bc8fe1879d43dbf3a3bb5cbbeedf0de0" category="paragraph">En el siguiente ejemplo, se muestra el valor de la clave MySQLProtocol actualizada en el archivo web.config.</block>
-  <block id="7e5a31df8ef045a4de9b8f57aa6c423f" category="list-text">Actualice el archivo web.config con las rutas especificadas en la sección [client] del archivo my.ini en los dos nodos de alta disponibilidad.</block>
   <block id="ca74309e5786b1bad64702fbd15c6437" category="paragraph">En el siguiente ejemplo, se muestran las rutas actualizadas en la sección [client] de los archivos my.iniI.</block>
   <block id="3c3e0111222e44f64ad4670abe8d6923" category="list-text">Inicie la aplicación web servidor SnapCenter en IIS en los dos nodos ha.</block>
   <block id="38c6db21335904565d9a647706a7ba00" category="list-text">Use el cmdlet Set-SmRepositoryConfig -RebuildSlave -Force de PowerShell con la opción -Force en uno de los nodos de alta disponibilidad para establecer la replicación de MySQL protegida en los dos nodos de alta disponibilidad.</block>
@@ -9845,7 +9838,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="26d0f7d5ea2b87e82f98d6e622ecf6a0" category="admonition">Desde 5,0, los usuarios administradores de Vserver solo son compatibles con las API REST. Si desea crear roles con un administrador que no sea de Vserver, debe usar ZAPI.</block>
   <block id="3955db71dd681bf23ceee85c567a0129" category="admonition">Desde SnapCenter 5,0, los usuarios de administradores de clústeres solo son compatibles con las API REST. Si desea crear roles con un administrador que no sea del clúster, debe usar ZAPI.</block>
   <block id="3fd57bbce38ee807b2553fd56f562c3a" category="paragraph">Para obtener la información más reciente sobre las versiones compatibles, consulte la<block ref="734369dbdcbe00444fc7be843d617a6c" category="inline-link-rx"></block>.</block>
-  <block id="785127eaa67d3c056c9086f5c305587c" category="paragraph">Windows Server es compatible con el aprovisionamiento y la protección de datos de SnapCenter. Para acceder a la información más actualizada sobre las versiones compatibles, consulte la <block ref="e3393440e41cc60e26745e63c4eef2dd" category="inline-link-rx"></block> [Herramienta de matriz de interoperabilidad de NetApp^].</block>
   <block id="e688fd8ff964975e518ba6e9fff48630" category="paragraph">Para obtener la información más reciente sobre las versiones compatibles, consulte<block ref="64fc8efacd4fa13b8c1907c1db527b3d" category="inline-link-rx"></block>.</block>
   <block id="580a1e1b3bc67640f27785bacfdba10c" category="paragraph">Para obtener la información más reciente sobre las versiones compatibles, consulte <block ref="fd691abce396db29ca9081f79eea36a4" category="inline-link-rx"></block>.</block>
   <block id="f773b518874c315e0079bcc43b41dafb" category="paragraph">Para obtener la información más reciente sobre las versiones compatibles, consulte <block ref="7e664c06fb213184870ee71fe5278749" category="inline-link-rx"></block>.</block>
@@ -9884,4 +9876,11 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="cc0cce77e1e28838ab6e9078eb7da114" category="list-text">Después de verificar los detalles del almacenamiento, establezca el atributo _IsDryRun_ en False y ejecute la API de actualización del almacenamiento<block ref="84d2bad3561662612c0f19102d8af171" prefix=" " category="inline-code"></block> : O el cmdlet: _Invoke-SmTechRefreshPrimaryStorage_.</block>
   <block id="c81b0a7466aafc83de0beda501358cdd" category="list-text">(Opcional) Si todas las snapshots no se mueven del almacenamiento primario antiguo a un nuevo almacenamiento primario, ejecute la siguiente API:<block ref="6e088a1a2676abbb3b6434c32a05fa0c" prefix=" " category="inline-code"></block> O el cmdlet _Invoke-SmPrimaryBackupsExistenceCheck_.</block>
   <block id="da838fd656a52206a5571426cdea502d" category="list-text">Después de crear correctamente el backup de todos los recursos en un host, ejecute la API de actualización del almacenamiento secundario<block ref="519c39228e07d21e137e72515657a3cf" prefix=" " category="inline-code"></block> o el cmdlet: _Invoke-SmTechRefreshSecondaryStorage_.</block>
+  <block id="4f76be6e3e78147f069df76d367c9608" category="paragraph">Windows Server es compatible con el aprovisionamiento y la protección de datos de SnapCenter. Para obtener la información más reciente sobre las versiones compatibles, consulte la <block ref="1b8aeeaa3467913188c00052ded68716" category="inline-link-rx"></block>.</block>
+  <block id="e41c493e675bae82cb792b14a41ea23d" category="list-text">Actualice el valor de la clave MySQLProtocol en el archivo SnapManager.web.ui.dll.config.</block>
+  <block id="195748e3bf5f1bb6db5e627914555154" category="paragraph">En el siguiente ejemplo, se muestra el valor de la clave MySQLProtocol actualizada en el archivo SnapManager.web.ui.dll.config.</block>
+  <block id="fc8660e632799d14ef937c4ca79726ab" category="list-text">Actualice el archivo SnapManager.web.ui.dll.config con las rutas proporcionadas en la sección [client] del archivo my.inii.</block>
+  <block id="0512eab1623a615d3740da31907b5d7c" category="list-text">Actualice el valor de la clave MySQLProtocol del archivo SnapManager.web.ui.dll.config en los dos nodos HA.</block>
+  <block id="e20a4407f4a132523f0ff53a11de8ea9" category="paragraph">En el siguiente ejemplo, se muestra el valor de la clave MySQLProtocol actualizada en el archivo SnapManager.web.ui.dll.config.</block>
+  <block id="282f609628cc0aa1febc1031254fda4e" category="list-text">Actualice el archivo SnapManager.web.ui.dll.config con las rutas especificadas en la sección [client] del archivo my.ini en los dos nodos de alta disponibilidad.</block>
 </blocks>

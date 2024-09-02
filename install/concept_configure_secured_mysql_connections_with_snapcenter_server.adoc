@@ -95,16 +95,16 @@ ssl-key="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/client-key.pem"
 ----
 . Detenga la aplicación web del servidor SnapCenter en el servidor de información de Internet (IIS).
 . Reinicie el servicio MySQL.
-. Actualice el valor de la clave MySQLProtocol en el archivo web.config.
+. Actualice el valor de la clave MySQLProtocol en el archivo SnapManager.web.ui.dll.config.
 +
-En el siguiente ejemplo, se muestra el valor de la clave MySQLProtocol actualizada en el archivo web.config.
+En el siguiente ejemplo, se muestra el valor de la clave MySQLProtocol actualizada en el archivo SnapManager.web.ui.dll.config.
 
 +
 [listing]
 ----
 <add key="MySQLProtocol" value="SSL" />
 ----
-. Actualice el archivo web.config con las rutas proporcionadas en la sección [client] del archivo my.iniI.
+. Actualice el archivo SnapManager.web.ui.dll.config con las rutas proporcionadas en la sección [client] del archivo my.inii.
 +
 En el siguiente ejemplo, se muestran las rutas actualizadas en la sección [client] del archivo my.iniI.
 
@@ -279,16 +279,16 @@ ssl-key="C:/ProgramData/NetApp/SnapCenter/MySQL Data/Data/server-key.pem"
 
 . Detenga la aplicación web del servidor SnapCenter en el servidor de información de Internet (IIS) en los dos nodos ha.
 . Reinicie el servicio MySQL en los dos nodos ha.
-. Actualice el valor de la clave MySQLProtocol del archivo web.config en los dos nodos de alta disponibilidad.
+. Actualice el valor de la clave MySQLProtocol del archivo SnapManager.web.ui.dll.config en los dos nodos HA.
 +
-En el siguiente ejemplo, se muestra el valor de la clave MySQLProtocol actualizada en el archivo web.config.
+En el siguiente ejemplo, se muestra el valor de la clave MySQLProtocol actualizada en el archivo SnapManager.web.ui.dll.config.
 
 +
 [listing]
 ----
 <add key="MySQLProtocol" value="SSL" />
 ----
-. Actualice el archivo web.config con las rutas especificadas en la sección [client] del archivo my.ini en los dos nodos de alta disponibilidad.
+. Actualice el archivo SnapManager.web.ui.dll.config con las rutas especificadas en la sección [client] del archivo my.ini en los dos nodos de alta disponibilidad.
 +
 En el siguiente ejemplo, se muestran las rutas actualizadas en la sección [client] de los archivos my.iniI.
 
