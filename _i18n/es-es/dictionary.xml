@@ -3934,12 +3934,6 @@
   <block id="7a94136f80a88afa27fcebdcd0e728a6" category="paragraph">Después de agregar usuarios o grupos y asignar roles, actualice la lista de recursos.</block>
   <block id="14c90652b0a2e523d6e8630706107e75" category="summary">El software SnapCenter se puede usar en diversos exploradores.</block>
   <block id="6d84e3718084e0db779da4ff8791a2f2" category="doc">Exploradores compatibles</block>
-  <block id="ebe4f447bd3316e4f81ab2a6d2f26810" category="list-text">Internet Explorer</block>
-  <block id="74e84f9442fdb7717385ee092400869a" category="paragraph">La interfaz de usuario de SnapCenter no se carga correctamente si se utiliza IE 10 o versiones anteriores. Debe actualizar a IE 11.</block>
-  <block id="8b45fc0c82a493bebd2ae705881299e0" category="list-text">Tan solo se ofrece compatibilidad para las funciones de seguridad de nivel predeterminado.</block>
-  <block id="8c39fdaac8e8c7ec5824fd1acda14c9a" category="paragraph">Realizar cambios en la configuración de seguridad de Internet Explorer puede dar como resultado problemas significativos de visualización para el explorador.</block>
-  <block id="c5c74f2a0046f37ca93f6d8e3c775364" category="list-text">Es necesario deshabilitar la vista de compatibilidad de Internet Explorer.</block>
-  <block id="a5c41f715c1b8a880253846c025624e9" category="list-text">Microsoft Edge</block>
   <block id="57cb4604cb5a08f7df53f4664acf802c" category="summary">Puede configurar Servicios de Internet Information Server \(IIS\) en el servidor de Windows para crear una cuenta personalizada del grupo de aplicaciones cuando necesite habilitar los permisos de lectura de Active Directory para SnapCenter.</block>
   <block id="852f965b48b17a73b0751ade963c60d7" category="doc">Configure los grupos de aplicaciones de IIS para habilitar los permisos de lectura de Active Directory</block>
   <block id="455df4e09a44d6f772e16ebd873a4ec2" category="paragraph">Puede configurar Servicios de Internet Information Server (IIS) en Windows Server para crear una cuenta personalizada del grupo de aplicaciones cuando necesite habilitar los permisos de lectura de Active Directory para SnapCenter.</block>
@@ -7459,7 +7453,6 @@
   <block id="46d55a8aefdec15a8ce44087c8123826" category="inline-link">Error en la operación porque no puede detectar el dispositivo para la LUN</block>
   <block id="24642a08e354f43168ca4f1178850f84" category="list-text">Debe asegurarse de que el LUN no esté asignado al host AIX mediante un iGroup compuesto por protocolos mixtos iSCSI y FC. Para obtener más información, consulte<block ref="94f247529a6b6f563b3a8d4772877431" category="inline-link-rx"></block>.</block>
   <block id="4fb437564892944d73f87c822342e2bb" category="cell">4.8</block>
-  <block id="028a3c414b2f36abce9baa1df750ef89" category="admonition">La longitud de la clave RSA del certificado de CA debe ser de 3072 bits como mínimo.</block>
   <block id="36fecb1daf18c8eeaacbcc8cdc70f4a6" category="paragraph">ONTAP principal y secundario puede ser ONTAP FAS, AFF, cabina All SAN (ASA), Select o Cloud ONTAP.</block>
   <block id="d21fbb2a5ce79a2a4ef0780b73023b2e" category="paragraph">Montajes físicos y directos de NFS en los hosts de máquinas virtuales (no se admiten VMDK y LUN de RDM).</block>
   <block id="f2688d5a483bee7fcbd80a4e666fc088" category="inline-link">documentación de utilidades de host</block>
@@ -8924,7 +8917,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="cf46417d06a0356fc053eba2626759a2" category="list-text">Seleccione el proveedor de facturación.</block>
   <block id="98d7dda5167a79acadd993f0ad819512" category="list-text">Introduzca el identificador de instancia de SnapCenter de 20 dígitos.</block>
   <block id="a22e3c4898555ed30acf91192f3c301a" category="paragraph">Puerto de servicio del programador</block>
-  <block id="f494773247b901f17fbe90691d43594a" category="paragraph">8154 (HTTPS)</block>
   <block id="0703d446ecd330b75f76dab17472df37" category="paragraph">Este puerto se utiliza para orquestar los flujos de trabajo del programador de SnapCenter para todos los plugins gestionados dentro del host del servidor SnapCenter de forma centralizada.</block>
   <block id="e029a63ec5a2d5331a40bbf8a483cc16" category="paragraph">3306 (HTTPS), bidireccional, personalizable</block>
   <block id="10dbf6dc6b3b30fd58efded1253516d8" category="paragraph">Plugin de SnapCenter para base de datos de Exchange</block>
@@ -9883,4 +9875,10 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="0512eab1623a615d3740da31907b5d7c" category="list-text">Actualice el valor de la clave MySQLProtocol del archivo SnapManager.web.ui.dll.config en los dos nodos HA.</block>
   <block id="e20a4407f4a132523f0ff53a11de8ea9" category="paragraph">En el siguiente ejemplo, se muestra el valor de la clave MySQLProtocol actualizada en el archivo SnapManager.web.ui.dll.config.</block>
   <block id="282f609628cc0aa1febc1031254fda4e" category="list-text">Actualice el archivo SnapManager.web.ui.dll.config con las rutas especificadas en la sección [client] del archivo my.ini en los dos nodos de alta disponibilidad.</block>
+  <block id="be9f9eca92a7b91f5cf9f485b92f2f33" category="admonition">La longitud de la clave RSA del certificado de CA debe ser de 3072 bits como mínimo.</block>
+  <block id="76f30afe00c2fd9de2c57b507789aa7c" category="paragraph">8154 (HTTPS)</block>
+  <block id="064270f4c1b637c782011391ccc057cb" category="paragraph">Puerto RabbitMQ</block>
+  <block id="310b8da14055c2cf4702264e02854d3d" category="paragraph">5672 gbe (tcp)</block>
+  <block id="c55a170d16570920e099a9e43d38db67" category="paragraph">Este es el puerto predeterminado en el que RabbitMQ escucha y se utiliza para la comunicación del modelo editor-suscriptor entre el servicio Programador y SnapCenter.</block>
+  <block id="f5a551e6a3161ca6d9ee33d926d734d5" category="list-text">Microsoft Edge 110.0.1587.17 y posteriores</block>
 </blocks>

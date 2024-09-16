@@ -14,19 +14,7 @@ summary: El software SnapCenter se puede usar en diversos exploradores.
 El software SnapCenter se puede usar en diversos exploradores.
 
 * Chrome versión 125 y posteriores
-* Internet Explorer
-+
-La interfaz de usuario de SnapCenter no se carga correctamente si se utiliza IE 10 o versiones anteriores. Debe actualizar a IE 11.
-
-+
-** Tan solo se ofrece compatibilidad para las funciones de seguridad de nivel predeterminado.
-+
-Realizar cambios en la configuración de seguridad de Internet Explorer puede dar como resultado problemas significativos de visualización para el explorador.
-
-** Es necesario deshabilitar la vista de compatibilidad de Internet Explorer.
-
-
-* Microsoft Edge
+* Microsoft Edge 110.0.1587.17 y posteriores
 
 
 Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^] : .

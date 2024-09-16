@@ -70,6 +70,15 @@ Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/i
 
 
  a| 
+Puerto RabbitMQ
+ a| 
+5672 gbe (tcp)
+
+Este es el puerto predeterminado en el que RabbitMQ escucha y se utiliza para la comunicación del modelo editor-suscriptor entre el servicio Programador y SnapCenter.
+
+
+
+ a| 
 Puerto MySQL
  a| 
 3306 (HTTPS), bidireccional, personalizable
