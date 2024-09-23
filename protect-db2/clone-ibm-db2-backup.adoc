@@ -33,6 +33,10 @@ NOTE: Si no hay comandos en la lista de comandos, se producirá un error en la o
 * Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 
+[role="tabbed-block"]
+====
+.UI de SnapCenter
+--
 .Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, filtre los recursos de la lista desplegable *View* en función del tipo de recurso.
@@ -133,3 +137,195 @@ También debe especificar las direcciones de correo electrónico del remitente y
 Después de clonar los recursos DB2 detectados automáticamente, el recurso clonado se marca como recurso manual. Haga clic en *Refrescar recursos* para recuperar el recurso DB2 clonado. Cuando se elimina el clon, también se limpian el almacenamiento y el host.
 
 Si no se actualizan los recursos después de la operación de clonado e intentan eliminar el clon, no se limpian el almacenamiento y el host. Debe eliminar las entradas manualmente en fstab.
+
+--
+.Cmdlets de PowerShell
+--
+.Pasos
+. Inicie una sesión de conexión con el servidor de SnapCenter para el usuario especificado mediante el cmdlet de Open-SmConnection.
++
+[listing]
+----
+Open-SmConnection  -SMSbaseurl  https://snapctr.demo.netapp.com:8146
+----
+. Enumere los backups que pueden clonarse mediante el cmdlet Get-SmBackup o Get-SmResourceGroup.
++
+Este ejemplo muestra información sobre todos los backups disponibles:
+
++
+[listing]
+----
+C:\PS>PS C:\> Get-SmBackup
+
+BackupId   BackupName                     BackupTime   BackupType
+--------   ----------                     ----------   ----------
+1          Payroll Dataset_vise-f6_08...  8/4/2015     Full Backup
+                                          11:02:32 AM
+
+2          Payroll Dataset_vise-f6_08...  8/4/2015
+                                          11:23:17 AM
+----
++
+En este ejemplo, se muestra información sobre un grupo de recursos especificado, sus recursos y sus políticas asociadas:
+
++
+[listing]
+----
+PS C:\> Get-SmResourceGroup -ListResources –ListPolicies
+
+Description :
+CreationTime : 8/4/2015 3:44:05 PM
+ModificationTime : 8/4/2015 3:44:05 PM
+EnableEmail : False
+EmailSMTPServer :
+EmailFrom :
+EmailTo :
+EmailSubject :
+EnableSysLog : False
+ProtectionGroupType : Backup
+EnableAsupOnFailure : False
+Policies : {FinancePolicy}
+HostResourceMaping : {}
+Configuration : SMCoreContracts.SmCloneConfiguration
+LastBackupStatus :
+VerificationServer :
+EmailBody :
+EmailNotificationPreference : Never
+VerificationServerInfo : SMCoreContracts.SmVerificationServerInfo
+SchedulerSQLInstance :
+CustomText :
+CustomSnapshotFormat :
+SearchResources : False
+ByPassCredential : False
+IsCustomSnapshot :
+MaintenanceStatus : Production
+PluginProtectionGroupTypes : {SMSQL}
+Name : Payrolldataset
+Type : Group
+Id : 1
+Host :
+UserName :
+Passphrase :
+Deleted : False
+Auth : SMCoreContracts.SmAuth
+IsClone : False
+CloneLevel : 0
+ApplySnapvaultUpdate : False
+ApplyRetention : False
+RetentionCount : 0
+RetentionDays : 0
+ApplySnapMirrorUpdate : False
+SnapVaultLabel :
+MirrorVaultUpdateRetryCount : 7
+AppPolicies : {}
+Description : FinancePolicy
+PreScriptPath :
+PreScriptArguments :
+PostScriptPath :
+PostScriptArguments :
+ScriptTimeOut : 60000
+DateModified : 8/4/2015 3:43:30 PM
+DateCreated : 8/4/2015 3:43:30 PM
+Schedule : SMCoreContracts.SmSchedule
+PolicyType : Backup
+PluginPolicyType : SMSQL
+Name : FinancePolicy
+Type :
+Id : 1
+Host :
+UserName :
+Passphrase :
+Deleted : False
+Auth : SMCoreContracts.SmAuth
+IsClone : False
+CloneLevel : 0
+clab-a13-13.sddev.lab.netapp.com
+DatabaseGUID :
+SQLInstance : clab-a13-13
+DbStatus : AutoClosed
+DbAccess : eUndefined
+IsSystemDb : False
+IsSimpleRecoveryMode : False
+IsSelectable : True
+SqlDbFileGroups : {}
+SqlDbLogFiles : {}
+AppFileStorageGroups : {}
+LogDirectory :
+AgName :
+Version :
+VolumeGroupIndex : -1
+IsSecondary : False
+Name : TEST
+Type : SQL Database
+Id : clab-a13-13\TEST
+Host : clab-a13-13.sddev.mycompany.com
+UserName :
+Passphrase :
+Deleted : False
+Auth : SMCoreContracts.SmAuth
+IsClone : False
+----
+. Inicie una operación de clonado a partir de un backup existente con el cmdlet New-SmClone.
++
+En este ejemplo, se crea un clon a partir de un determinado backup con todos los registros:
+
++
+[listing]
+----
+PS C:\> New-SmClone
+-BackupName payroll_dataset_vise-f3_08-05-2015_15.28.28.9774
+-Resources @{"Host"="vise-f3.sddev.mycompany.com";
+"Type"="SQL Database";"Names"="vise-f3\SQLExpress\payroll"}
+-CloneToInstance vise-f3\sqlexpress -AutoAssignMountPoint
+-Suffix _clonefrombackup
+-LogRestoreType All -Policy clonefromprimary_ondemand
+
+PS C:> New-SmBackup -ResourceGroupName PayrollDataset -Policy FinancePolicy
+----
++
+En este ejemplo, se crea un clon en una instancia concreta de Microsoft SQL Server:
+
++
+[listing]
+----
+PS C:\> New-SmClone
+-BackupName "BackupDS1_NY-VM-SC-SQL_12-08-2015_09.00.24.8367"
+-Resources @{"host"="ny-vm-sc-sql";"Type"="SQL Database";
+"Names"="ny-vm-sc-sql\AdventureWorks2012_data"}
+-AppPluginCode SMSQL -CloneToInstance "ny-vm-sc-sql"
+-Suffix _CLPOSH -AssignMountPointUnderPath "C:\SCMounts"
+----
+. Puede consultar el estado del trabajo de clonado mediante el cmdlet Get-SmCloneReport.
++
+En este ejemplo, se muestra un informe de clonado con el correspondiente ID de trabajo:
+
++
+[listing]
+----
+PS C:\> Get-SmCloneReport -JobId 186
+
+SmCloneId : 1
+SmJobId : 186
+StartDateTime : 8/3/2015 2:43:02 PM
+EndDateTime : 8/3/2015 2:44:08 PM
+Duration : 00:01:06.6760000
+Status : Completed
+ProtectionGroupName : Draper
+SmProtectionGroupId : 4
+PolicyName : OnDemand_Clone
+SmPolicyId : 4
+BackupPolicyName : OnDemand_Full_Log
+SmBackupPolicyId : 1
+CloneHostName : SCSPR0054212005.mycompany.com
+CloneHostId : 4
+CloneName : Draper__clone__08-03-2015_14.43.53
+SourceResources : {Don, Betty, Bobby, Sally}
+ClonedResources : {Don_DRAPER, Betty_DRAPER, Bobby_DRAPER,
+                   Sally_DRAPER}
+----
+
+
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Alternativamente, también puede consultar la https://docs.netapp.com/us-en/snapcenter-cmdlets/index.html["Guía de referencia de cmdlets de SnapCenter Software"^].
+
+--
+====

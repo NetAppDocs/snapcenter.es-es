@@ -156,8 +156,6 @@ entries:
   - title: Crear una conexión del sistema de almacenamiento y una credencial mediante
       cmdlets de PowerShell
     url: "/protect-scsql/task_create_a_storage_system_connection_and_a_credential_using_powershell_cmdlets_for_sql.html"
-  - title: Realizar backup de recursos con cmdlets de PowerShell
-    url: "/protect-scsql/task_back_up_resources_using_powershell_cmdlets_for_sql.html"
   - title: Cancelar las operaciones de backup del plugin de SnapCenter para Microsoft
       SQL Server
     url: "/protect-scsql/task_cancel_the_snapcenter_plug_in_for_sql_server_operations.html"
@@ -177,10 +175,10 @@ entries:
     url: "/protect-scsql/task_restore_sql_server_database_backups.html"
   - title: Restaurar una base de datos de SQL Server a partir de almacenamiento secundario
     url: "/protect-scsql/task_restore_a_sql_server_database_from_secondary_storage.html"
+  - title: Restaurar recursos mediante los cmdlets de PowerShell
+    url: "/protect-scsql/task_restore_and_recover_resources_using_powershell_cmdlets_for_sql.html"
   - title: Propagación de bases de datos de grupos de disponibilidad
     url: "/protect-scsql/task_reseed_availability_group_databases.html"
-  - title: Restaurar y recuperar recursos con cmdlets de PowerShell
-    url: "/protect-scsql/task_restore_and_recover_resources_using_powershell_cmdlets_for_sql.html"
   - title: Supervisar operaciones de restauración
     url: "/protect-scsql/task_monitor_sql_resources_restore_operations.html"
   - title: Cancele las operaciones de restauración
@@ -191,8 +189,6 @@ entries:
     url: "/protect-scsql/reference_clone_sql_server_database_resources.html"
   - title: Clonar a partir de un backup de base de datos de SQL Server
     url: "/protect-scsql/task_clone_from_a_sql_server_database_backup.html"
-  - title: Clonar backups mediante cmdlets de PowerShell
-    url: "/protect-scsql/task_clone_backups_using_powershell_cmdlets_for_sql.html"
   - title: Ejecute el ciclo de vida del clon
     url: "/protect-scsql/task_perform_clone_lifecycle_management.html"
   - title: Supervisar las operaciones de clonado en SnapCenter

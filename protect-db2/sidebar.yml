@@ -117,15 +117,13 @@ entries:
     url: "/protect-db2/create-backup-policies-for-ibm-db2.html"
   - title: Crear grupos de recursos y añadir políticas
     url: "/protect-db2/create-resource-groups-and-attach-policies.html"
-  - title: Realice un backup de IBM DB2
-    url: "/protect-db2/back-up-ibm-db2.html"
+  - title: Realizar un backup de las bases de datos de DB2
+    url: "/protect-db2/back-up-db2-databases.html"
   - title: Realice un backup de los grupos de recursos
     url: "/protect-db2/back-up-resource-groups-ibm-db2.html"
   - title: Cree una conexión del sistema de almacenamiento y una credencial mediante
       cmdlets de PowerShell para IBM DB2
     url: "/protect-db2/create-a-storage-system-connection-and-a-run-as-account-using-powershell-cmdlets-for-ibm-db2.html"
-  - title: Realizar un backup de bases de datos mediante cmdlets de PowerShell
-    url: "/protect-db2/back-up-databases-using-powershell-cmdlets-ibm-db2.html"
   - title: Supervisar las operaciones de backup
     entries:
     - title: Supervise las operaciones de backup en la página Jobs de SnapCenter
@@ -144,8 +142,6 @@ entries:
     url: "/protect-db2/restore-manually-added-resource-backup.html"
   - title: Restaurar un backup de base de datos detectado automáticamente
     url: "/protect-db2/restore-auto-discovered-database-backup.html"
-  - title: Restaure IBM DB2 mediante cmdlets de PowerShell
-    url: "/protect-db2/restore-ibm-db2-database-using-powershell-cmdlets.html"
   - title: Supervisar operaciones de restauración
     url: "/protect-db2/monitor-db2-restore-operations.html"
 - title: Clonar backups de recursos de IBM DB2
@@ -154,8 +150,6 @@ entries:
     url: "/protect-db2/clone-ibm-db2-resource-backups.html"
   - title: Clonar un backup de base de datos IBM DB2
     url: "/protect-db2/clone-ibm-db2-backup.html"
-  - title: Clonar backups de la base de datos IBM DB2 mediante cmdlets de PowerShell
-    url: "/protect-db2/clone-ibm-db2-backups-using-powershell-cmdlets.html"
   - title: Supervisar las operaciones de clonado en SnapCenter
     url: "/protect-db2/monitor-db2-clone-operations.html"
   - title: Divida un clon

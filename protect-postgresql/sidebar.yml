@@ -123,8 +123,6 @@ entries:
   - title: Cree una conexión del sistema de almacenamiento y una credencial mediante
       cmdlets de PowerShell para PostgreSQL
     url: "/protect-postgresql/create-a-storage-system-connection-and-a-run-as-account-using-powershell-cmdlets-for-postgresql.html"
-  - title: Realizar un backup de los clústeres mediante cmdlets de PowerShell
-    url: "/protect-postgresql/back-up-clusters-using-powershell-cmdlets-postgresql.html"
   - title: Supervisar las operaciones de backup
     entries:
     - title: Supervise las operaciones de backup en la página Jobs de SnapCenter
@@ -144,8 +142,6 @@ entries:
     url: "/protect-postgresql/restore-and-recover-a-manually-added-resource-backup.html"
   - title: Restaure y recupere un backup de clúster detectado automáticamente
     url: "/protect-postgresql/restore-and-recover-an-auto-discovered-cluster-backup.html"
-  - title: Restaure PostgreSQL mediante cmdlets de PowerShell
-    url: "/protect-postgresql/restore-postgresql-using-powershell-cmdlets.html"
   - title: Restaurar recursos mediante los cmdlets de PowerShell
     url: "/protect-postgresql/restore-and-recover-resources-using-powershell-cmdlets-postgresql.html"
   - title: Supervisar operaciones de restauración
@@ -156,8 +152,6 @@ entries:
     url: "/protect-postgresql/clone-postgresql-resource-backups.html"
   - title: Clonar un backup de clúster PostgreSQL
     url: "/protect-postgresql/clone-postgresql-backup.html"
-  - title: Clone backups de clústeres PostgreSQL mediante cmdlets de PowerShell
-    url: "/protect-postgresql/clone-postgresql-backups-using-powershell-cmdlets.html"
   - title: Supervisar las operaciones de clonado en SnapCenter
     url: "/protect-postgresql/monitor-postgresql-clone-operations.html"
   - title: Divida un clon

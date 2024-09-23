@@ -75,8 +75,6 @@ entries:
   - title: Crear una conexión del sistema de almacenamiento y una credencial mediante
       cmdlets de PowerShell
     url: "/protect-scw/task_create_a_storage_system_connection_and_a_credential_using_powershell_cmdlets_for_windows.html"
-  - title: Realizar backup de recursos con cmdlets de PowerShell
-    url: "/protect-scw/task_back_up_resources_using_powershell_cmdlets_for_windows.html"
   - title: Supervisar las operaciones de backup
     url: "/protect-scw/task_monitor_backup_operations.html"
   - title: Cancele las operaciones de backup
@@ -91,7 +89,7 @@ entries:
   entries:
   - title: Restaurar backups de sistemas de archivos Windows
     url: "/protect-scw/task_restore_windows_file_system_backups.html"
-  - title: Restaurar y recuperar recursos con cmdlets de PowerShell
+  - title: Restaurar recursos mediante los cmdlets de PowerShell
     url: "/protect-scw/task_restore_and_recover_resources_using_powershell_cmdlets_for_windows.html"
   - title: Supervisar operaciones de restauración
     url: "/protect-scw/task_monitor_restore_operations.html"
@@ -101,8 +99,6 @@ entries:
   entries:
   - title: Clonar desde un backup de sistema de archivos Windows
     url: "/protect-scw/task_clone_from_a_windows_file_system_backup.html"
-  - title: Clonar backups mediante cmdlets de PowerShell
-    url: "/protect-scw/task_clone_backups_using_powershell_cmdlets_for_windows.html"
   - title: Supervise las operaciones de clonación
     url: "/protect-scw/task_monitor_clone_operations.html"
   - title: Cancele las operaciones de clonado

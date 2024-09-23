@@ -18,6 +18,10 @@ Si un recurso individual de plugins compatibles con NetApp no forma parte de nin
 * Si desea realizar un backup de un recurso que tenga una relación de SnapMirror con un almacenamiento secundario, la función ONTAP asignada al usuario de almacenamiento debería incluir el privilegio «sinapmirror all». Sin embargo, si usted está utilizando el rol "'vsadmin'", entonces no se requiere el privilegio "nnapmirror all".
 
 
+[role="tabbed-block"]
+====
+.UI de SnapCenter
+--
 .Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, filtre los recursos de la lista desplegable *View* en función del tipo de recurso.
@@ -131,3 +135,89 @@ Si la política seleccionada para el backup bajo demanda está asociada a una pr
 
 . Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
 
+
+--
+.Cmdlets de PowerShell
+--
+.Pasos
+. Inicie una sesión de conexión con el servidor de SnapCenter para el usuario especificado mediante el cmdlet de Open-SmConnection.
++
+[listing]
+----
+Open-smconnection  -SMSbaseurl  https:\\snapctr.demo.netapp.com:8146\
+----
++
+Se muestra una solicitud de nombre de usuario y contraseña.
+
+. Añada los recursos mediante el cmdlet Add-SmResources.
++
+En este ejemplo, se añaden recursos:
+
++
+[listing]
+----
+Add-SmResource -HostName '10.232.206.248' -PluginCode 'DB2' -ResourceName NONREC1 -ResourceType Database -StorageFootPrint ( @
+{"VolumeName"="DB2_NONREC1DB";"LunName"="DB2_NONREC1DB";"Vserver"="vserver_scauto_secondary"}) -Instance db2inst1
+----
+. Cree una política de backup mediante el cmdlet Add-SmPolicy.
++
+En este ejemplo, se crea una nueva política de backup:
+
++
+[listing]
+----
+Add-SMPolicy -PolicyName 'db2VolumePolicy' -PolicyType 'Backup' -PluginPolicyType DB2  -description 'VolumePolicy'
+----
+. Añada un nuevo grupo de recursos a SnapCenter mediante el cmdlet Add-SmResourceGroup.
++
+En este ejemplo, se crea un nuevo grupo de recursos con la política y los recursos especificados:
+
++
+[listing]
+----
+Add-SmResourceGroup -ResourceGroupName 'Verify_ManualBackup_DatabaseLevel_MultipleVolume_unix' -Resources @(@
+{"Host"="10.232.206.248";"Uid"="db2inst2\NONREC"},@{"Host"="10.232.206.248";"Uid"="db2inst1\NONREC"}) -Policies db2ManualPolicy
+----
+. Para iniciar una tarea de backup se usa el cmdlet New-SmBackup.
++
+[listing]
+----
+New-SMBackup -DatasetName Verify_ManualBackup_DatabaseLevel_MultipleVolume_unix -Policy db2ManualPolicy
+----
+. Consulte el estado del trabajo de backup mediante el cmdlet Get-SmBackupReport.
++
+Este ejemplo muestra un informe con un resumen de todos los trabajos realizados en la fecha especificada:
+
++
+[listing]
+----
+PS C:\> Get-SmBackupReport -JobId 351
+Output:
+BackedUpObjects           : {DB1}
+FailedObjects             : {}
+IsScheduled               : False
+HasMetadata               : False
+SmBackupId                : 269
+SmJobId                   : 2361
+StartDateTime             : 10/4/2016 11:20:45 PM
+EndDateTime               : 10/4/2016 11:21:32 PM
+Duration                  : 00:00:46.2536470
+CreatedDateTime           : 10/4/2016 11:21:09 PM
+Status                    : Completed
+ProtectionGroupName       : Verify_ASUP_Message_windows
+SmProtectionGroupId       : 211
+PolicyName                : test2
+SmPolicyId                : 20
+BackupName                : Verify_ASUP_Message_windows_scc54_10-04-2016_23.20.46.2758
+VerificationStatus        : NotVerified
+VerificationStatuses      :
+SmJobError                :
+BackupType                : SCC_BACKUP
+CatalogingStatus          : NotApplicable
+CatalogingStatuses        :
+ReportDataCreatedDateTime :
+----
+
+
+--
+====

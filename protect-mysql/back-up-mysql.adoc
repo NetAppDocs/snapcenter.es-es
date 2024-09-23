@@ -29,6 +29,10 @@ Para Linux: _/var/opt/snapcenter/scc/allowed_Commands_list.txt_
 
 NOTE: Si no hay comandos en la lista de comandos, se producirá un error en la operación.
 
+[role="tabbed-block"]
+====
+.UI de SnapCenter
+--
 .Pasos
 . En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
 . En la página Recursos, filtre los recursos de la lista desplegable *Ver* en función del tipo de recurso.
@@ -151,3 +155,87 @@ Para aumentar el tamaño de pila de Java, busque el archivo de script _/opt/neta
 
 
 
+
+--
+.Cmdlets de PowerShell
+--
+.Pasos
+. Inicie una sesión de conexión con el servidor de SnapCenter para el usuario especificado mediante el cmdlet de Open-SmConnection.
++
+[listing]
+----
+Open-SmConnection  -SMSbaseurl  https:\\snapctr.demo.netapp.com:8146\
+----
++
+Se muestra una solicitud de nombre de usuario y contraseña.
+
+. Añada recursos manuales mediante el cmdlet Add-SmResources.
++
+Este ejemplo muestra cómo agregar una instancia de MySQL:
+
++
+[listing]
+----
+PS C:\> Add-SmResource -HostName 10.32.212.13 -PluginCode MySQL -ResourceType Instance -ResourceName mysqlinst1 -StorageFootPrint (@{"VolumeName"="winmysql01_data01";"LUNName"="winmysql01_data01";"StorageSystem"="scsnfssvm"}) -MountPoints "D:\"
+----
+. Cree una política de backup mediante el cmdlet Add-SmPolicy.
+. Proteja el recurso o añada un nuevo grupo de recursos a SnapCenter mediante el cmdlet Add-SmResourceGroup.
+. Para iniciar una tarea de backup se usa el cmdlet New-SmBackup.
++
+Este ejemplo muestra cómo realizar un backup de un grupo de recursos:
+
++
+[listing]
+----
+C:\PS> New-SmBackup -Resources @{"Host"="scs000211748.gdl.englab.netapp.com";"Uid"="mysqld_3306";"PluginName"="MySQL"} -Policy "MySQL_snapshotbased"
+----
++
+Este ejemplo realiza un backup de un recurso protegido:
+
++
+[listing]
+----
+C:\PS> New-SMBackup -Resources @{"Host"="10.232.204.42";"Uid"="MDC\SID";"PluginName"="hana"} -Policy mysql_policy2
+----
+. Supervise el estado de la tarea (running, completed o failed) mediante el cmdlet Get-smJobSummaryReport.
++
+[listing]
+----
+PS C:\> Get-smJobSummaryReport -JobID 123
+----
+. Supervise los detalles del trabajo de backup como ID de backup, nombre de backup para realizar una operación de restauración o clonado mediante el cmdlet Get-SmBackupReport.
++
+[listing]
+----
+PS C:\> Get-SmBackupReport -JobId 351
+Output:
+BackedUpObjects           : {DB1}
+FailedObjects             : {}
+IsScheduled               : False
+HasMetadata               : False
+SmBackupId                : 269
+SmJobId                   : 2361
+StartDateTime             : 10/4/2016 11:20:45 PM
+EndDateTime               : 10/4/2016 11:21:32 PM
+Duration                  : 00:00:46.2536470
+CreatedDateTime           : 10/4/2016 11:21:09 PM
+Status                    : Completed
+ProtectionGroupName       : Verify_ASUP_Message_windows
+SmProtectionGroupId       : 211
+PolicyName                : test2
+SmPolicyId                : 20
+BackupName                : Verify_ASUP_Message_windows_scc54_10-04-2016_23.20.46.2758
+VerificationStatus        : NotVerified
+VerificationStatuses      :
+SmJobError                :
+BackupType                : SCC_BACKUP
+CatalogingStatus          : NotApplicable
+CatalogingStatuses        :
+ReportDataCreatedDateTime :
+----
+
+
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Alternativamente, también puede consultar la https://docs.netapp.com/us-en/snapcenter-cmdlets/index.html["Guía de referencia de cmdlets de SnapCenter Software"^].
+
+--
+====

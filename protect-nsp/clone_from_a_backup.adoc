@@ -22,6 +22,10 @@ Es posible usar SnapCenter para clonar un backup. Es posible clonar desde un bac
 .Acerca de esta tarea
 Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
+[role="tabbed-block"]
+====
+.UI de SnapCenter
+--
 .Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página *Recursos*, filtre los recursos de la lista desplegable *Ver* en función del tipo de recurso.
@@ -107,3 +111,171 @@ También debe especificar las direcciones de correo electrónico del remitente y
 . Revise el resumen y haga clic en *Finalizar*.
 . Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
 
+
+--
+.Cmdlets de PowerShell
+--
+.Pasos
+. Inicie una sesión de conexión con el servidor de SnapCenter para el usuario especificado mediante el cmdlet de Open-SmConnection.
++
+[listing]
+----
+Open-SmConnection  -SMSbaseurl  https:\\snapctr.demo.netapp.com:8146/
+----
+. Enumere los backups que pueden clonarse mediante el cmdlet Get-SmBackup o Get-SmResourceGroup.
++
+Este ejemplo muestra información sobre todos los backups disponibles:
+
++
+[listing]
+----
+ C:\PS>PS C:\> Get-SmBackup
+
+BackupId                      BackupName                    BackupTime                    BackupType
+--------                      ----------                    ----------                    ----------
+   1              Payroll Dataset_vise-f6_08... 8/4/2015    11:02:32 AM                   Full Backup
+   2              Payroll Dataset_vise-f6_08... 8/4/2015    11:23:17 AM
+----
++
+En este ejemplo, se muestra información sobre un grupo de recursos especificado:
+
++
+[listing]
+----
+PS C:\> Get-SmResourceGroup
+
+    Description                 :
+    CreationTime                : 10/10/2016 4:45:53 PM
+    ModificationTime            : 10/10/2016 4:45:53 PM
+    EnableEmail                 : False
+    EmailSMTPServer             :
+    EmailFrom                   :
+    EmailTo                     :
+    EmailSubject                :
+    EnableSysLog                : False
+    ProtectionGroupType         : Backup
+    EnableAsupOnFailure         : False
+    Policies                    : {}
+    HostResourceMaping          : {}
+    Configuration               : SMCoreContracts.SmCloneConfiguration
+    LastBackupStatus            : Completed
+    VerificationServer          :
+    EmailBody                   :
+    EmailNotificationPreference : Never
+    VerificationServerInfo      :
+    SchedulerSQLInstance        :
+    CustomText                  :
+    CustomSnapshotFormat        :
+    SearchResources             : False
+    ByPassCredential            : False
+    IsCustomSnapshot            :
+    MaintenanceStatus           : Production
+    PluginProtectionGroupTypes  : {SMSQL}
+    Tag                         :
+    IsInternal                  : False
+    EnableEmailAttachment       : False
+    VerificationSettings        : {}
+    Name                        : NFS_DB
+    Type                        : Group
+    Id                          : 2
+    Host                        :
+    UserName                    :
+    Passphrase                  :
+    Deleted                     : False
+    Auth                        : SMCoreContracts.SmAuth
+    IsClone                     : False
+    CloneLevel                  : 0
+    Hosts                       :
+    StorageName                 :
+    ResourceGroupNames          :
+    PolicyNames                 :
+
+    Description                 :
+    CreationTime                : 10/10/2016 4:51:36 PM
+    ModificationTime            : 10/10/2016 5:27:57 PM
+    EnableEmail                 : False
+    EmailSMTPServer             :
+    EmailFrom                   :
+    EmailTo                     :
+    EmailSubject                :
+    EnableSysLog                : False
+    ProtectionGroupType         : Backup
+    EnableAsupOnFailure         : False
+    Policies                    : {}
+    HostResourceMaping          : {}
+    Configuration               : SMCoreContracts.SmCloneConfiguration
+    LastBackupStatus            : Failed
+    VerificationServer          :
+    EmailBody                   :
+    EmailNotificationPreference : Never
+    VerificationServerInfo      :
+    SchedulerSQLInstance        :
+    CustomText                  :
+    CustomSnapshotFormat        :
+    SearchResources             : False
+    ByPassRunAs                 : False
+    IsCustomSnapshot            :
+    MaintenanceStatus           : Production
+    PluginProtectionGroupTypes  : {SMSQL}
+    Tag                         :
+    IsInternal                  : False
+    EnableEmailAttachment       : False
+    VerificationSettings        : {}
+    Name                        : Test
+    Type                        : Group
+    Id                          : 3
+    Host                        :
+    UserName                    :
+    Passphrase                  :
+    Deleted                     : False
+    Auth                        : SMCoreContracts.SmAuth
+    IsClone                     : False
+    CloneLevel                  : 0
+    Hosts                       :
+    StorageName                 :
+    ResourceGroupNames          :
+    PolicyNames                 :
+----
+. Inicie una operación de clonado de un grupo de recursos de clonado o un backup existente con el cmdlet New-SmClone.
++
+En este ejemplo, se crea un clon a partir de un determinado backup con todos los registros:
+
++
+[listing]
+----
+New-SmClone -BackupName Verify_delete_clone_on_qtree_windows_scc54_10-04-2016_19.05.48.0886 -Resources @{"Host"="scc54.sccore.test.com";"Uid"="QTREE1"}  -
+CloneToInstance scc54.sccore.test.com -Suffix '_QtreeCloneWin9'  -AutoAssignMountPoint -AppPluginCode 'DummyPlugin' -initiatorname 'iqn.1991-
+05.com.microsoft:scc54.sccore.test.com' -igroupprotocol 'mixed'
+----
+. Puede consultar el estado del trabajo de clonado mediante el cmdlet Get-SmCloneReport.
++
+En este ejemplo, se muestra un informe de clonado con el correspondiente ID de trabajo:
+
++
+[listing]
+----
+PS C:\> Get-SmCloneReport -JobId 186
+
+    SmCloneId           : 1
+    SmJobId             : 186
+    StartDateTime       : 8/3/2015 2:43:02 PM
+    EndDateTime         : 8/3/2015 2:44:08 PM
+    Duration            : 00:01:06.6760000
+    Status              : Completed
+    ProtectionGroupName : Draper
+    SmProtectionGroupId : 4
+    PolicyName          : OnDemand_Clone
+    SmPolicyId          : 4
+    BackupPolicyName    : OnDemand_Full_Log
+    SmBackupPolicyId    : 1
+    CloneHostName       : SCSPR0054212005.mycompany.com
+    CloneHostId         : 4
+    CloneName           : Draper__clone__08-03-2015_14.43.53
+    SourceResources     : {Don, Betty, Bobby, Sally}
+    ClonedResources     : {Don_DRAPER, Betty_DRAPER, Bobby_DRAPER, Sally_DRAPER}
+    SmJobError          :
+----
+
+
+--
+====
