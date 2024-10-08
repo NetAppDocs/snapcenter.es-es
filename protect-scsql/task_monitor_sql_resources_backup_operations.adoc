@@ -7,7 +7,7 @@ summary: Es posible supervisar el progreso de diferentes operaciones de backup m
 = Supervise las operaciones de backup de los recursos de SQL en la página SnapCenter Jobs
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ../media/ ///
 
 
 [role="lead"]
@@ -44,5 +44,21 @@ NOTE: Aunque el estado del trabajo de backup indiqueimage:../media/success_icon.
 . En la página Detalles del trabajo, haga clic en *Ver registros*.
 +
 El botón *Ver registros* muestra los registros detallados para la operación seleccionada.
+
+
+
+
+
+== Supervise las operaciones de protección de datos en recursos de SQL en el panel Activity
+
+El panel Activity muestra las cinco operaciones más recientes que se ejecutaron. También muestra el momento en que se inició la operación y su estado.
+
+El panel Activity muestra información sobre las operaciones de backup, restauración, clonado y backup programado.
+
+.Pasos
+. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+. Haga clic en image:../media/activity_pane_icon.gif[""] En el panel Activity para ver las cinco operaciones más recientes.
++
+Al hacer clic en una de las operaciones, los detalles de la operación se enumeran en la página *Detalles del trabajo*.
 
 

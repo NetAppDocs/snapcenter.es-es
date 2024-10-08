@@ -67,22 +67,20 @@ entries:
     url: "/protect-scw/task_create_backup_policies_for_windows_file_systems.html"
   - title: Crear grupos de recursos para sistemas de archivos Windows
     url: "/protect-scw/task_create_resource_groups_for_windows_file_systems.html"
+  - title: Crear una conexión del sistema de almacenamiento y una credencial mediante
+      cmdlets de PowerShell
+    url: "/protect-scw/task_create_a_storage_system_connection_and_a_credential_using_powershell_cmdlets_for_windows.html"
   - title: Realice el backup de un solo recurso bajo demanda para sistemas de archivos
       Windows
     url: "/protect-scw/task_back_up_a_single_resource_on_demand_for_windows_file_systems.html"
   - title: Realizar un backup de grupos de recursos para sistemas de archivos Windows
     url: "/protect-scw/task_back_up_resource_groups_for_windows_file_systems.html"
-  - title: Crear una conexión del sistema de almacenamiento y una credencial mediante
-      cmdlets de PowerShell
-    url: "/protect-scw/task_create_a_storage_system_connection_and_a_credential_using_powershell_cmdlets_for_windows.html"
   - title: Supervisar las operaciones de backup
     url: "/protect-scw/task_monitor_backup_operations.html"
   - title: Cancele las operaciones de backup
     url: "/protect-scw/task_cancel_backup_operations_for_windows_file_system.html"
   - title: Consulte los backups y los clones relacionados en la página Topology
     url: "/protect-scw/task_view_related_backups_and_clones_in_the_topology_page.html"
-  - title: Quitar los backups con el cmdlet de PowerShell
-    url: "/protect-scw/task_remove_backups_using_powershell_cmdlets_for_windows.html"
   - title: Borre el número de backup secundario con cmdlets de PowerShell
     url: "/protect-scw/task_clean_up_the_secondary_backup_count_using_powershell_cmdlets_for_windows.html"
 - title: Restaurar sistemas de archivos Windows
