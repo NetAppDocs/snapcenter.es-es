@@ -18,16 +18,14 @@ Puede utilizar SnapCenter para restaurar y recuperar datos de uno o varios backu
 * Cancele la operación de backup que se encuentra en curso y que corresponde al recurso o grupo de recursos que desea restaurar.
 * Para los comandos previos a la restauración, después de la restauración, el montaje y el desmontaje, debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin desde las rutas siguientes:
 +
-Para Windows: _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc\allowed_Commands_list.txt_
+** Ubicación predeterminada en el host de Windows: _C:\Archivos de programa\NetApp\SnapCenter\SnapCenter Plug-in Creator\etc\allowed_commands.config_
+** Ubicación predeterminada en el host Linux: _/opt/NetApp/SnapCenter/scc/etc/allowed_commands.config_
 
-+
-Para Linux: _/var/opt/snapcenter/scc/allowed_Commands_list.txt_
 
-+
+
+
 
 NOTE: Si no hay comandos en la lista de comandos, se producirá un error en la operación.
-
-
 
 .Acerca de esta tarea
 * Las copias de backup basadas de archivos no se pueden restaurar desde SnapCenter.
@@ -90,10 +88,6 @@ Los comandos de desmontaje no están disponibles para los recursos de detección
 . En la página Post OPS, escriba los comandos de montaje y los comandos posteriores a la restauración que se ejecutarán después de realizar un trabajo de restauración.
 +
 Los comandos de montaje no están disponibles para los recursos detectados automáticamente.
-
-+
-
-NOTE: Para los comandos previos y posteriores para operaciones de inactividad, Snapshot y reanudación, debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin en la ruta _/opt/snapcenter/snapenter/scc/allowed_commands.config_ para Linux y _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc\allowed_commands_list.txt_ para Windows.
 
 . En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
 +

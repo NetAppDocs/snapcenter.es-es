@@ -18,22 +18,30 @@ SnapCenter es compatible con una amplia gama de tipos de almacenamiento tanto en
 
 
  a| 
-Servidores físicos y virtuales
- a| 
-LUN conectados a FC
-
-
-
- a| 
 Servidor físico
  a| 
-LUN conectados a iSCSI
+* LUN conectados a FC
+* LUN conectados a iSCSI
+* Volúmenes conectados en NFS
+
 
 
 
  a| 
-Servidores físicos y virtuales
+VMware ESXi
  a| 
-Volúmenes conectados en NFS
+* Los LUN de RDM conectados por un HBAScanning de adaptadores de bus de host (HBA) FC o iSCSI pueden tardar mucho en completarse debido a que SnapCenter analiza todos los adaptadores de bus de host presentes en el host.
++
+Puede editar el archivo *LinuxConfig.pm* ubicado en _/opt/NetApp/snapcenter/spl/plugins/scu/scucore/modules/SCU/Config_ para establecer el valor del parámetro *SCSI_HOSTS_OPTIMIZED_RESCAN* en 1 para volver a analizar sólo los HBA que aparecen en HBA_DRIVER_NAMES.
+
+* LUN iSCSI conectados directamente al sistema invitado por el iniciador de iSCSI
+* VMDK en almacenes de datos NFS
+* VMDK en VMFS creado
+* Volúmenes NFS conectados directamente con el Guest VM
+* Almacenes de datos VVOL en NFS y SAN
++
+El almacén de datos VVOL solo se puede aprovisionar con ONTAP Tools para VMware vSphere.
+
+
 
 |===

@@ -34,7 +34,7 @@ Si una base de datos no pertenece a ningún grupo de recursos, es posible realiz
 . En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione el *plug-in de Microsoft Exchange Server* en la lista.
 . En la página Resources, seleccione *Database* o *Database Availability Group* en la lista *View*.
 +
-En la página Resources, el image:../media/not_supported_icon.png[""] Icono indica que la base de datos está en un almacenamiento de otros proveedores.
+En la página Resources, image:../media/not_supported_icon.png["almacenamiento no compatible"] el icono indica que la base de datos está en un almacenamiento de terceros.
 
 +
 
@@ -217,7 +217,7 @@ C:\PS> Get-SmJobSummaryReport -JobId 168
 ----
 
 
-La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, consulte https://docs.netapp.com/us-en/snapcenter-cmdlets/index.htmlnapCenter[] Software cmdlet Reference Guide^].
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Como alternativa, consulte https://docs.netapp.com/us-en/snapcenter-cmdlets/index.html["Guía de referencia de cmdlets de SnapCenter Software"^].
 
 --
 ====

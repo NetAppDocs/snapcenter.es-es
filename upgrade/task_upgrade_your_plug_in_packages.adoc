@@ -13,7 +13,7 @@ summary: Los paquetes de plugins se distribuyen como parte de la actualización 
 [role="lead"]
 Los paquetes de plugins se distribuyen como parte de la actualización de SnapCenter.
 
-El procedimiento de actualización sitúa su host Windows, Linux o AIX en modo «mantenimiento», lo que evita que el host ejecute cualquier trabajo programado.
+No es necesario colocar manualmente cada host de plugin que desea actualizar en modo de mantenimiento, ya que el procedimiento de actualización coloca a sus hosts de plugin de Windows, Linux o AIX en modo de mantenimiento. El modo de mantenimiento impide que se ejecuten cualquier trabajo programado en el host del plugin durante la actualización.
 
 .Antes de empezar
 * Si es usted un usuario que no tiene categoría de usuario raíz pero sí tiene acceso a equipos Linux, debe actualizar el archivo _/etc/sudoers_ con los valores de la suma de verificación más recientes antes de ejecutar la operación de actualización.
@@ -28,7 +28,6 @@ Ejemplos de archivos de configuración de SnapCenter: SnapDriveService.exe.confi
 
 
 .Acerca de esta tarea
-* El procedimiento de actualización sitúa su host Windows, Linux o AIX en modo «mantenimiento», lo que evita que el host ejecute cualquier trabajo programado.
 * Para el plugin de SnapCenter para Microsoft SQL Server, el plugin de SnapCenter para Microsoft Exchange Server y el plugin de SnapCenter para Microsoft Windows, es recomendable actualizar el servidor y los hosts del plugin a la versión más reciente para ejecutar LA RUTA_DE_SCRIPTS.
 +
 Para las programaciones de backup y verificación existentes con scripts previos y posteriores habilitados en la política, las operaciones de backup seguirán funcionando después de la actualización.
@@ -42,14 +41,14 @@ En la página *Detalles del trabajo*, un mensaje de advertencia recomienda que e
 . En el panel de navegación izquierdo, haga clic en *hosts* > *Managed hosts*.
 . Actualice los hosts realizando una de las siguientes tareas:
 +
-** Si la columna Estado general muestra ""actualización disponible"" para uno de los hosts, haga clic en el nombre de host y realice lo siguiente:
+** Si la columna Overall Status muestra «Upgrade available» de uno de los hosts de los plugins, haga clic en el nombre de host del plugin y realice lo siguiente:
 +
 ... Haga clic en *más opciones*.
-... Seleccione *Skip prechecks* si no desea validar si el host cumple los requisitos para actualizar el plugin.
+... Seleccione *Omitir comprobaciones previas* si no desea validar si el host del plugin cumple con los requisitos para actualizar el plugin.
 ... Haga clic en *Actualizar*.
 
 
-** Si desea actualizar varios hosts, seleccione todos los hosts, haga clic en image:../media/more_icon.gif[""]Y, a continuación, haga clic en *Actualizar* > *Aceptar*.
+** Si desea actualizar varios hosts de plugin, seleccione todos los hosts, haga clic en image:../media/more_icon.gif[""]y, a continuación, haga clic en *Actualizar* > *Aceptar*.
 +
 Todos los servicios relacionados se reinician durante la actualización del plugin.
 
@@ -58,7 +57,7 @@ Todos los servicios relacionados se reinician durante la actualización del plug
 NOTE: Todos los plugins del paquete se seleccionan, pero solo los que se habían instalado con la versión anterior de SnapCenter se actualizan. El resto de plugins no se instalarán. Debe utilizar la opción *Add plug-ins* para instalar cualquier complemento nuevo.
 
 +
-Si no ha seleccionado la casilla de comprobación *Skip prechecks, se analiza el host para verificar si cumple los requisitos para instalar el plugin. Si no se satisfacen los requisitos mínimos, se muestran los mensajes de error o advertencia correspondientes. Después de solucionar el problema, haga clic en *Actualizar*.
+Si no ha seleccionado la casilla de verificación *Skip prechecks*, el host del plugin se valida para ver si cumple con los requisitos para instalar el plugin. Si no se cumplen los requisitos mínimos, se muestran los mensajes de error o advertencia correspondientes. Después de solucionar el problema, haga clic en *Actualizar*.
 
 +
 

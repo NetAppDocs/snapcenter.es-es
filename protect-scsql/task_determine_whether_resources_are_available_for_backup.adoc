@@ -50,7 +50,7 @@ NOTE: SnapCenter sólo puede realizar una copia de seguridad de la base de datos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, seleccione *Database*, *Instance* o *Availability Group* en la lista desplegable *View*.
 +
-Haga clic en image:../media/filter_icon.png[""] Y seleccione el nombre del host y la instancia de SQL Server para filtrar los recursos. A continuación, puede hacer clic en image:../media/filter_icon.png[""] para cerrar el panel de filtros.
+Haga clic image:../media/filter_icon.png["icono de filtro"] en y seleccione el nombre de host y la instancia de SQL Server para filtrar los recursos. A continuación, puede hacer clic en image:../media/filter_icon.png["icono de filtro"] para cerrar el panel de filtros.
 
 . Haga clic en *Actualizar recursos*.
 +

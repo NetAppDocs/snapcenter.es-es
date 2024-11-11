@@ -13,7 +13,7 @@ summary: 'El software Single Mailbox Recovery (SMBR) le permite restaurar y recu
 [role="lead"]
 El software Single Mailbox Recovery (SMBR) le permite restaurar y recuperar mensajes de correo electrónico o buzones en lugar de la base de datos completa de Exchange.
 
-La restauración de bases de datos completas sólo para recuperar un correo individual consume mucho tiempo y recursos. SMBR le ayuda a recuperar rápidamente los mensajes de correo electrónico creando una copia de clon de la Snapshot y, a continuación, usando las API de Microsoft para montar el buzón en SMBR. Para obtener información sobre cómo utilizar SMBR, consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP2871407["Guía de administración de SMBR"^].
+La restauración de bases de datos completas sólo para recuperar un correo individual consume mucho tiempo y recursos. SMBR le ayuda a recuperar rápidamente los mensajes de correo electrónico creando una copia de clon de la Snapshot y, a continuación, usando las API de Microsoft para montar el buzón en SMBR. Para obtener información sobre cómo utilizar SMBR, consulte https://docs.netapp.com/p/snap/smbr/8.3/Administrative-Server-Administration-Guide.pdf["Guía de administración de SMBR"^].
 
 Si quiere más información sobre SMBR, consulte lo siguiente:
 

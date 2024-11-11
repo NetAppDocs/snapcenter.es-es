@@ -196,7 +196,7 @@ NOTE: En una configuración de alta disponibilidad, si actualiza el archivo web.
 
 == Configure el puerto personalizado para la comunicación de NET TCP
 
-De forma predeterminada, a partir de la versión SnapCenter 6,0, el plugin SnapCenter para Windows utiliza el puerto 909 para la comunicación NET TCP. Si el puerto 909 está en uso, puede configurar otro puerto para la comunicación NET TCP.
+De forma predeterminada, a partir de la versión SnapCenter 6,0, el plugin SnapCenter para Windows utiliza el puerto 909 para la comunicación de NET TCP. Si el puerto 909 está en uso, puede configurar otro puerto para la comunicación NET TCP.
 
 .Pasos
 . Modifique el valor de la clave _NetTCPPort_ ubicada en _C:\Program Files\NetApp\SnapCenter\SnapCenter Plug-in for Microsoft Windows\vssproviders\navssprv.exe.config_ al número de puerto requerido.

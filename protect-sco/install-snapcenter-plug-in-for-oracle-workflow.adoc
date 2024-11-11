@@ -13,4 +13,4 @@ summary: Debe instalar y configurar el plugin de SnapCenter para base de datos d
 [role="lead"]
 Debe instalar y configurar el plugin de SnapCenter para base de datos de Oracle si desea proteger las bases de datos Oracle.
 
-image::../media/sco_install_configure_workflow.png[flujo de trabajo de configuración de sco]
+image::../media/sco_install_configure_workflow.png[Flujo de trabajo de instalación del plugin de Oracle]

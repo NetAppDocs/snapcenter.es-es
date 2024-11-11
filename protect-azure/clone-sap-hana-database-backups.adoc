@@ -25,6 +25,10 @@ Es posible usar SnapCenter para clonar un backup.
 +
 Puede ser un host de plugin centralizado o un host de sistema HANA.
 
++
+
+NOTE: Si el plugin de HANA se instala en un host centralizado que gestiona bases de datos de HANA en otros hosts, mientras crea o elimina clones, SnapCenter omite intencionalmente las operaciones del lado del host (montar o desmontar sistema de archivos) como servidor de destino es un host centralizado. Es necesario utilizar scripts previos o posteriores a la clonado para realizar las operaciones de montaje y desmontaje.
+
 .. Introduzca el SID de SAP HANA para clonar a partir de los backups existentes.
 .. Introduzca las direcciones IP o los nombres de host a los que se van a exportar los volúmenes clonados.
 .. Si los volúmenes de ANF de base de datos SAP HANA están configurados en un pool de CAPACIDAD DE CALIDAD DE SERVICIO manual, especifique la CALIDAD DE SERVICIO de los volúmenes clonados.

@@ -21,9 +21,9 @@ De manera predeterminada, se crean backups de grupo de consistencia (CG). Si des
 
 . En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione el complemento Oracle Database en la lista.
 . En la página Resources, seleccione *volumen de aplicación* en la lista *View*.
-. Haga clic en *image:../media/filter_icon.png[""]* y luego seleccione el nombre de host y el tipo de base de datos para filtrar los recursos.
+. Haga clic en image:../media/filter_icon.png["icono de filtro"]y, a continuación, seleccione el nombre de host y el tipo de base de datos para filtrar los recursos.
 +
-A continuación, puede hacer clic en *image:../media/filter_icon.png[""]* para cerrar el panel de filtros.
+A continuación, puede hacer clic en image:../media/filter_icon.png["icono de filtro"] para cerrar el panel de filtros.
 
 . Seleccione el volumen de la aplicación del que desea realizar un backup.
 +
@@ -55,7 +55,7 @@ Especifique los destinos de los archivos de registro de archivos que no desea in
 .. Seleccione una o varias políticas de la lista desplegable.
 +
 
-NOTE: También puede crear una directiva haciendo clic en *image:../media/add_policy_from_resourcegroup.gif[""]*.
+NOTE: También puede crear una política haciendo clic en image:../media/add_policy_from_resourcegroup.gif["añada una política"].
 
 
 
@@ -63,7 +63,7 @@ NOTE: También puede crear una directiva haciendo clic en *image:../media/add_po
 En la sección Configure schedules for selected policies, se muestran las políticas seleccionadas.
 
 +
-.. Haga clic en image:../media/add_policy_from_resourcegroup.gif[""] En la columna Configure Schedules correspondiente a la política para la cual se desea configurar una programación.
+.. Se debe hacer clic en image:../media/add_policy_from_resourcegroup.gif["añada una política"] en la columna Configure Schedules para la política cuya programación se desea configurar.
 .. En la ventana Add schedules for policy _policy_name_, configure la programación y haga clic en *OK*.
 +
 _policy_name_ es el nombre de la directiva seleccionada.

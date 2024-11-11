@@ -88,7 +88,7 @@ Seleccione este campo para evitar forzar un punto de coherencia de WAFL.
 
 |===
 +
-image:../media/application_settings.gif[""]
+image:../media/application_settings.gif["configuración de la aplicación"]
 
 .. Haga clic en la flecha *Scripts* e introduzca los comandos PRE y POST para las operaciones de inactividad, instantánea y desactivación. También puede escribir los comandos previos para que se ejecuten antes de salir en caso de un fallo.
 .. Haga clic en la flecha *configuraciones personalizadas* e introduzca los pares personalizados clave-valor requeridos para todas las operaciones de protección de datos que utilizan este recurso.

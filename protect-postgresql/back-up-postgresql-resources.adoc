@@ -15,6 +15,6 @@ Es posible crear un backup de un recurso (clúster) o un grupo de recursos. El f
 
 Los siguientes flujos de trabajo muestran la secuencia que debe seguirse para realizar la operación de backup:
 
-image::../media/db2_backup_workflow.gif[Flujo de trabajo de backup de PostgreSQL]
+image::../media/db2_backup_workflow.png[Flujo de trabajo de backup de PostgreSQL]
 
 También puede usar los cmdlets de PowerShell manualmente o en scripts para realizar operaciones de backup, restauración y clonado. La ayuda sobre cmdlet de SnapCenter y la información de referencia sobre cmdlet contienen más información acerca de cmdlets de PowerShell. https://docs.netapp.com/us-en/snapcenter-cmdlets/index.html["Guía de referencia de cmdlets de SnapCenter Software"^].

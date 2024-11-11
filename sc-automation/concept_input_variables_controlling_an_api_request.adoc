@@ -7,7 +7,7 @@ summary: Puede controlar cómo se procesa una llamada API mediante parámetros y
 = Variables de entrada que controlan una solicitud API
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

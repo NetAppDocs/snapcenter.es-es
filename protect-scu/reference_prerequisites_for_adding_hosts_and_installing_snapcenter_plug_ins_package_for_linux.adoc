@@ -78,4 +78,4 @@ NOTE: Asegúrese de haber instalado únicamente la edición certificada de JAVA 
 Si ha actualizado JAVA a la versión más reciente, debe asegurarse de que la opción JAVA_HOME ubicada en /var/opt/snapcenter/spl/etc/spl.properties esté configurada en la versión DE JAVA correcta y en la ruta de acceso correcta.
 
 |===
-Para acceder a la información más actualizada sobre las versiones compatibles, consulte la https://imt.netapp.com/matrix/imt.jsp?components=121073;&solution=1257&isHWU&src=IMT[] [Herramienta de matriz de interoperabilidad de NetApp^].
+Para obtener la información más reciente sobre las versiones compatibles, consulte la https://imt.netapp.com/matrix/imt.jsp?components=121073;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].

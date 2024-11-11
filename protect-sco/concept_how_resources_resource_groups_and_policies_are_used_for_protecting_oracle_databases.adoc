@@ -33,4 +33,4 @@ Cuando se realiza un backup de todas las bases de datos de un host, por ejemplo,
 
 En la siguiente imagen, se muestra la relación entre los recursos, los grupos de recursos y las políticas para las bases de datos:
 
-image::../media/sco_resourcegroup_policy.gif[política de sco resourcegroup]
+image::../media/sco_resourcegroup_policy.gif[política de grupo de recursos]

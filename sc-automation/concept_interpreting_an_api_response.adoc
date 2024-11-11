@@ -7,7 +7,7 @@ summary: Cada solicitud de API genera una respuesta al cliente. Debe examinar la
 = Interpretación de una respuesta API
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -57,7 +57,7 @@ Especifique la ruta de acceso en la que se montará el sistema de archivos.
 .. Introduzca los comandos para el clon previo o posterior que se deben ejecutar antes o después de la operación de clonado, respectivamente.
 +
 
-NOTE: Debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin en la ruta _/opt/NetApp/snapcenter/scc/allowed_commands.config_.
+NOTE: Debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin en la ruta _/opt/NetApp/snapcenter/scc/etc/allowed_commands.config_.
 
 
 

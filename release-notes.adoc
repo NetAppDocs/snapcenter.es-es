@@ -7,10 +7,10 @@ summary: Proporciona información importante sobre esta versión de SnapCenter S
 = Notas de la versión
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]
 Proporciona información importante sobre esta versión de SnapCenter Server y los paquetes de plugins de SnapCenter, incluidos los problemas solucionados, los problemas conocidos, las precauciones y las limitaciones.
 
-Para obtener más información, consulte la https://library.netapp.com/ecm/ecm_download_file/ECMLP3323468["Notas de la versión de software SnapCenter 6,0"^].
+Para obtener más información, consulte la https://library.netapp.com/ecm/ecm_download_file/ECMLP3323468["Notas de la versión de software SnapCenter 6,0 y 6.0.1"^].

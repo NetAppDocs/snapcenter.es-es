@@ -17,4 +17,4 @@ Es posible programar varios backups para que se realicen simultáneamente en dif
 
 Los siguientes flujos de trabajo muestran la secuencia que debe seguirse para realizar la operación de backup:
 
-image:../media/sce_backup_workflow.gif[""]
+image:../media/sce_backup_workflow.gif["Flujo de trabajo de backup de base de datos de Exchange"]

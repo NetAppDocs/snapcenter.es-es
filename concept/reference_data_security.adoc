@@ -46,7 +46,7 @@ El instalador de SnapCenter Server activa la compatibilidad centralizada con cer
 
 Debe implementar certificados de CA después de instalar SnapCenter Server y los respectivos plugins. Para obtener más información, consulte link:../install/reference_generate_CA_certificate_CSR_file.html["Genere un archivo CSR de certificado de CA"].
 
-También puede implementar el certificado de CA para el plugin de SnapCenter para VMware vSphere. Para obtener más información, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_manage_snapcenter_plug-in_for_vmware_vsphere.html#create-and-import-certificates["Crear e importar certificados"^].
+También puede implementar el certificado de CA para el plugin de SnapCenter para VMware vSphere. Para obtener más información, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_create_and_import_certificates.html["Crear e importar certificados"^].
 
 
 

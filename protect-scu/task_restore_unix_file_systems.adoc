@@ -44,7 +44,7 @@ Es posible que los nuevos archivos creados después de la copia de seguridad no 
 . En la página PostOps, escriba los comandos posteriores a la restauración que se ejecutarán después de realizar un trabajo de restauración.
 +
 
-NOTE: Debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin en la ruta _/opt/NetApp/snapcenter/scc/etc/allowed_commands.config_.
+NOTE: Debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin en la ubicación _/opt/NetApp/SnapCenter/scc/etc/allowed_commands.config_ path.
 
 . En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar las notificaciones por correo electrónico.
 +

@@ -157,7 +157,7 @@ Durante la replicación secundaria, el tiempo de caducidad del SnapLock carga el
 
 Al hacer clic en el botón *Refrescar* de la página Topología, se actualiza el tiempo de caducidad de SnapLock secundario y primario que se recuperan de ONTAP.
 
-Consulte link:..protect-hana/task_view_sap_hana_database_backups_and_clones_in_the_topology_page_sap_hana.html["Consulte los backups y los clones de la base de datos SAP HANA en la página Topology"].
+Consulte link:../protect-hana/task_view_sap_hana_database_backups_and_clones_in_the_topology_page_sap_hana.html["Consulte los backups y los clones de la base de datos SAP HANA en la página Topology"].
 
 
 
@@ -172,7 +172,7 @@ Cuando SnapLock se configura solo en el secundario desde ONTAP conocido como Alm
 
 Para obtener más información sobre el Almacén SnapLock, consulte https://docs.netapp.com/us-en/ontap/snaplock/commit-snapshot-copies-worm-concept.html["Confirmar copias Snapshot a WORM en un destino de almacén"]
 
-Consulte link:..protect-hana/task_view_sap_hana_database_backups_and_clones_in_the_topology_page_sap_hana.html["Consulte los backups y los clones de la base de datos SAP HANA en la página Topology"].
+Consulte link:task_view_sap_hana_database_backups_and_clones_in_the_topology_page_sap_hana.html["Consulte los backups y los clones de la base de datos SAP HANA en la página Topology"].
 
 
 

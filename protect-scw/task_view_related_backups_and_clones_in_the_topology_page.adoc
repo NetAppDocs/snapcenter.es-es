@@ -35,9 +35,9 @@ NOTE: Los clones de un backup de un reflejo de versión flexible en un volumen d
 
 Si tiene una relación secundaria como SnapMirror Active Sync (inicialmente lanzado como SnapMirror Business Continuity [SM-BC]), verá los siguientes iconos adicionales:
 
-* image:../media/topology_replica_site_up.png["sitio de réplica activo"] implica que el sitio de réplica está activo.
-* image:../media/topology_replica_site_down.png["sitio de réplica inactivo"]  implica que el sitio de réplica está caído.
-* image:../media/topology_reestablished.png["la relación se restablece"] implica que no se restableció la relación de reflejo o almacén secundario.
+* image:../media/topology_replica_site_up.png["sitio de réplica activo"] El sitio de réplica está activo.
+* image:../media/topology_replica_site_down.png["sitio de réplica inactivo"] El sitio de réplica está inactivo.
+* image:../media/topology_reestablished.png["la relación se restablece"] No se restableció la relación de reflejo o almacén secundario.
 
 
 .Pasos

@@ -23,7 +23,7 @@ Inició sesión con el rol de administrador de SnapCenter.
 . En la página Add Role, especifique un nombre y una descripción para el nuevo rol.
 +
 
-NOTE: Desde SnapCenter 4.5, sólo puede incluir los siguientes caracteres especiales en nombres de usuario y nombres de grupos: Espacio ( ), guión (-), guión bajo (_) y dos puntos (:). Si desea utilizar una función que ha creado en una versión anterior de SnapCenter con estos caracteres especiales, puede deshabilitar la validación del nombre de la función cambiando el valor del parámetro 'DisableSQLInjtionValidation' a TRUE en el archivo web.config ubicado en el que está instalado SnapCenter WebApp. Después de modificar el valor, no es necesario reiniciar el servicio.
+NOTE: Sólo puede incluir los siguientes caracteres especiales en nombres de usuario y nombres de grupo: Espacio ( ), guión (-), subrayado (_) y dos puntos (:).
 
 . Seleccione *todos los miembros de esta función pueden ver los objetos de otros miembros* para permitir que otros miembros de la función vean recursos como volúmenes y hosts después de actualizar la lista de recursos.
 +

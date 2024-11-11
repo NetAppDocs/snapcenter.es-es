@@ -5,11 +5,8 @@ keywords: copyrights, notice, trademarks, patents, privacy, open source
 summary: Los avisos legales proporcionan acceso a las declaraciones de copyright, marcas comerciales, patentes y mucho más. 
 ---
 = Avisos legales
-:hardbreaks:
 :allow-uri-read: 
-:nofooter: 
 :icons: font
-:linkattrs: 
 :imagesdir: ./media/
 
 

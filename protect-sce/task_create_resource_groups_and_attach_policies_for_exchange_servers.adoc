@@ -127,7 +127,7 @@ También debe especificar las direcciones de correo electrónico del remitente y
 Para habilitar la notificación por correo electrónico, debe tener especificados los detalles del servidor SNMP ya sea mediante la GUI o el comando de PowerShell `Set-SmSmtpServer`.
 
 +
-La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. También puede consultar https://docs.netapp.com/us-en/snapcenter-cmdlets/index.htmlnapCenter[] la Guía de referencia del cmdlet de software Software Reference Guide^].
+La información relativa a los parámetros que se pueden utilizar con el cmdlet y sus descripciones se puede obtener ejecutando _Get-Help nombre_comando_. Alternativamente, también puede consultar la https://docs.netapp.com/us-en/snapcenter-cmdlets/index.html["Guía de referencia de cmdlets de SnapCenter Software"^].
 
 . Revise el resumen y, a continuación, haga clic en *Finalizar*.
 

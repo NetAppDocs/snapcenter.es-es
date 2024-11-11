@@ -285,7 +285,7 @@ IMPORTANT: La política solo se puede usar si se configura la sincronización ac
 
 Al hacer clic en el botón *Refrescar* de la página Topología, se actualiza el tiempo de caducidad de SnapLock secundario y primario que se recuperan de ONTAP.
 
-Consulte link:..protect-sce/task_view_exchange_backups_in_the_topology_page.html["Consulte los backups de Exchange en la página Topology"].
+Consulte link:../protect-sce/task_view_exchange_backups_in_the_topology_page.html["Consulte los backups de Exchange en la página Topology"].
 
 
 

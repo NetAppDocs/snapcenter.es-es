@@ -86,7 +86,7 @@ link:https://docs.netapp.com/us-en/snapcenter/install/task_add_a_user_or_group_a
 .Después de terminar
 * Después de añadir los clústeres, puede modificar los detalles del clúster PostgreSQL.
 * Los recursos migrados (tablespace y clusters) de SnapCenter 5,0 se etiquetarán como tipo de cluster PostgreSQL en SnapCenter 6,0.
-* Cuando modifique los recursos agregados manualmente que se migran desde SnapCenter 5,0 o inferior, haga lo siguiente en la página *Configuración de recursos* para pares de valor de clave personalizados:
+* Cuando modifique los recursos agregados manualmente que se migran desde SnapCenter 5,0 o una versión anterior, haga lo siguiente en la página *Configuración de recursos* para pares de valores de clave personalizados:
 +
 ** Especifique el término “PUERTO” en el campo *Nombre*.
 ** Especifique el número de puerto en el campo *Valor*.

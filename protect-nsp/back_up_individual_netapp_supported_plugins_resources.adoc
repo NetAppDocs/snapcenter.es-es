@@ -26,7 +26,7 @@ Si un recurso individual de plugins compatibles con NetApp no forma parte de nin
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, filtre los recursos de la lista desplegable *View* en función del tipo de recurso.
 +
-Haga clic en image:../media/filter_icon.png[""]y, a continuación, seleccione el nombre de host y el tipo de recurso para filtrar los recursos. A continuación, puede hacer clic en image:../media/filter_icon.png["Icono de filtro"] para cerrar el panel de filtros.
+Haga clic en image:../media/filter_icon.png["icono de filtro"]y, a continuación, seleccione el nombre de host y el tipo de recurso para filtrar los recursos. A continuación, puede hacer clic en image:../media/filter_icon.png["icono de filtro"] para cerrar el panel de filtros.
 
 . Haga clic en el recurso que desea incluir en el backup.
 . En la página Recurso, si desea utilizar un nombre personalizado, active la casilla de verificación *Use custom name format for Snapshot copy* y, a continuación, introduzca un formato de nombre personalizado para el nombre de la instantánea.

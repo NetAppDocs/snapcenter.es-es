@@ -18,21 +18,19 @@ Antes de usar SnapCenter para realizar un backup de los recursos de la base de d
 . En la página Configuración, haga clic en *Directivas*.
 . Haga clic en *Nuevo*.
 . En la página Name, escriba el nombre de la política y una descripción.
-. En la página Settings, realice los siguientes pasos:
+. En la página Policy type, realice los siguientes pasos:
 +
-.. Seleccione el tipo de backup.
+.. Seleccione *Azure NetApp Files* como tipo de almacenamiento.
+.. Seleccione *Basado en archivos* si desea realizar una comprobación de integridad de la base de datos.
+.. Seleccione *Basado en Snapshot* si desea crear una copia de seguridad utilizando la tecnología Snapshot.
+
+
+. En la página Snapshot and backup, realice los siguientes pasos:
 +
-... Seleccione *Copia de seguridad basada en archivos* si desea realizar una comprobación de integridad de la base de datos.
-... Seleccione *Basado en Snapshot* si desea crear una copia de seguridad utilizando la tecnología Snapshot.
+.. Seleccione la frecuencia del backup programado.
+.. Especifique la configuración de retención.
+.. Si desea habilitar la copia de seguridad de Azure NetApp Files, seleccione *Habilitar copia de seguridad* y especifique la configuración de retención.
 
-
-.. Especifique el tipo de programación.
-
-
-. En la página Retention, especifique la configuración de retención para el tipo de backup y el tipo de programación seleccionados.
-+
-
-NOTE: No se admite la replicación a almacenamiento secundario.
 
 . Revise el resumen y haga clic en *Finalizar*.
 

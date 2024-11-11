@@ -13,7 +13,7 @@ summary: Puede ejecutar el ejecutable del instalador del servidor SnapCenter par
 [role="lead"]
 Puede ejecutar el ejecutable del instalador del servidor SnapCenter para instalar el servidor SnapCenter.
 
-De forma opcional, puede ejecutar diversos procedimientos de instalación y configuración mediante cmdlets de PowerShell.
+De forma opcional, puede ejecutar diversos procedimientos de instalación y configuración mediante cmdlets de PowerShell. Debe utilizar PowerShell 7.4.2 o posterior.
 
 
 NOTE: No se admite la instalación silenciosa del servidor SnapCenter desde la línea de comandos.

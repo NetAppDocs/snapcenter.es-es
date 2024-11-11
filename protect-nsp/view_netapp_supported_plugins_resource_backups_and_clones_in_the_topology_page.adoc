@@ -68,5 +68,5 @@ NOTE: Los backups que figuran en el sistema de almacenamiento secundario no pued
 
 NOTE: Los backups que figuran en el sistema de almacenamiento principal no pueden cambiar de nombre.
 
-. Si desea eliminar un clon, selecciónelo en la tabla y haga clic en image:../media/delete_icon.gif[""] para eliminar el clon.
+. Si desea eliminar un clon, selecciónelo en la tabla y haga clic en image:../media/delete_icon.gif["icono de eliminar"] para eliminar el clon.
 

@@ -10,6 +10,7 @@ summary: Un grupo de recursos es el contenedor al que debe añadir los recursos 
 :imagesdir: ../media/
 
 
+[role="lead"]
 Un grupo de recursos es el contenedor al que debe añadir los recursos que desea proteger e incluir en un backup. Permite realizar un backup en simultáneo con todos los datos que están asociados con una aplicación determinada. También debe añadir una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar.
 
 .Pasos

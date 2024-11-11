@@ -25,6 +25,6 @@ Si desea localizar el espacio de almacenamiento de los clones ocultos, ejecute e
 Se muestra la página con el resumen.
 
 . En la vista Manage Copies, seleccione los clones de los sistemas de almacenamiento principal o secundario (reflejado o replicado).
-. Seleccione los clones y, a continuación, haga clic en image:../media/delete_icon.gif[""] para eliminar clones o haga clic en image:../media/split_cone.gif[""] para dividir los clones.
+. Seleccione los clones y, a continuación, haga clic image:../media/delete_icon.gif["icono de eliminar"] en para eliminar clones o en image:../media/split_cone.gif["icono dividir"] para dividir los clones.
 . Haga clic en *Aceptar*.
 

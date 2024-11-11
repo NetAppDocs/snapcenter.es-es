@@ -7,7 +7,7 @@ summary: 'Es posible generar una solicitud de firma de certificación (CSR) e im
 = Genere un archivo CSR de certificado de CA
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media
+:imagesdir: ../media/
 
 
 [role="lead"]

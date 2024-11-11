@@ -18,10 +18,9 @@ Es posible usar SnapCenter para clonar un backup. Es posible clonar desde un bac
 * Debe asegurarse de que los agregados donde se alojan los volúmenes deben estar en la lista de agregados asignados de la máquina virtual de almacenamiento (SVM).
 * Para los comandos previos o posteriores a la clonado, debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin desde las rutas siguientes:
 +
-Para Windows: _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc\allowed_Commands_list.txt_
+** Ubicación predeterminada en el host de Windows: _C:\Archivos de programa\NetApp\SnapCenter\SnapCenter Plug-in Creator\etc\allowed_commands.config_
+** Ubicación predeterminada en el host Linux: _/opt/NetApp/SnapCenter/scc/etc/allowed_commands.config_
 
-+
-Para Linux: _/var/opt/snapcenter/scc/allowed_Commands_list.txt_
 
 
 
@@ -31,7 +30,7 @@ NOTE: Si no hay comandos en la lista de comandos, se producirá un error en la o
 .Acerca de esta tarea
 * No es posible proteger las instancias de MySQL clonadas.
 * Para obtener más información sobre las limitaciones de las operaciones de división de clones, consulte http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["Guía de gestión de almacenamiento lógico de ONTAP 9"^].
-* Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+* Para ONTAP 9.12,1 y versiones anteriores, los clones creados a partir de las snapshots de SnapLock Vault como parte de la restauración heredarán el tiempo de caducidad del almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 
 [role="tabbed-block"]
@@ -96,13 +95,7 @@ NOTE: Los scripts se ejecutan en el host del plugin.
 Comando de montaje para un volumen o qtree en un equipo Linux:
 
 +
-Ejemplo para NFS:
-
-+
- mount VSERVER_DATA_IP:%VOLUME_NAME_Clone /mnt
-+
-
-NOTE: Para los comandos previos y posteriores para operaciones de inactividad, Snapshot y reanudación, debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin en la ruta _/opt/snapcenter/snapenter/scc/allowed_commands.config_ para Linux y _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc\allowed_commands_list.txt_ para Windows.
+Ejemplo para NFS: `mount VSERVER_DATA_IP:%VOLUME_NAME_Clone /mnt`
 
 
 

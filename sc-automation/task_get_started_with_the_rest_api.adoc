@@ -7,7 +7,7 @@ summary: El acceso a la API ofrece una cierta perspectiva antes de comenzar a ut
 = Comience con la API DE REST
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

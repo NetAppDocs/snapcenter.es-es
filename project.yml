@@ -21,7 +21,7 @@ settings:
     url: "/snapcenter-46"
   - version-number: '4.5'
     url: "/snapcenter-45"
-  langs: es-es,us-en,de-de,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
+  langs: es-es,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,fr-fr,it-it
 sidebar:
   entries:
   - title: Documentos del software SnapCenter 6,0
@@ -38,9 +38,9 @@ sidebar:
   - section: protect-db2
   - section: protect-postgresql
   - section: protect-mysql
+  - section: protect-nsp
   - section: protect-scu
   - section: protect-azure
-  - section: protect-nsp
   - section: admin
   - section: upgrade
   - section: tech-refresh

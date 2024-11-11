@@ -20,7 +20,7 @@ Los siguientes iconos aparecen en la página Jobs e indican el estado correspond
 . En la página Monitor, haga clic en *Jobs*.
 . En la página Jobs, realice los siguientes pasos:
 +
-.. Haga clic en image:../media/filter_icon.png[""] para filtrar la lista de modo que solo se muestren las operaciones de backup.
+.. Haga clic en image:../media/filter_icon.png["icono de filtro"] para filtrar la lista de modo que solo se muestren las operaciones de backup.
 .. Especifique las fechas de inicio y finalización.
 .. En la lista desplegable *Tipo*, seleccione *copia de seguridad*.
 .. En la lista desplegable *Estado*, seleccione el estado de copia de seguridad.

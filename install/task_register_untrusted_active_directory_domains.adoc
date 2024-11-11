@@ -48,7 +48,7 @@ link:task_configure_CA_client_certificate_for_LDAPS.html["Configure el certifica
 . En el panel de navegación de la izquierda, haga clic en *Configuración*.
 . En la página Configuración, haga clic en *Configuración global*.
 . En la página Global Settings (Configuración global), haga clic en *Configuración de dominio*.
-. Haga clic en image:../media/add_policy_from_resourcegroup.gif[""] para registrar un nuevo dominio.
+. Haga clic image:../media/add_policy_from_resourcegroup.gif["añada una política"] para registrar un nuevo dominio.
 . En la página Registrar nuevo dominio, seleccione *LDAP* o *LDAPS*.
 +
 .. Si selecciona *LDAP*, especifique la información necesaria para registrar el dominio que no es de confianza para LDAP:

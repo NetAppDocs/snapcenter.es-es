@@ -106,7 +106,7 @@ NOTE: Debe configurar la política de retención de SnapMirror en ONTAP para el 
 . En la página Script, introduzca la ruta y los argumentos del script previo o script posterior que desea ejecutar antes o después de la operación de backup, según corresponda.
 +
 
-NOTE: Debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin en la ruta _/opt/NetApp/snapcenter/scc/etc/allowed_commands.config_.
+NOTE: Debe comprobar si los comandos existen en la lista de comandos disponible en el host del plugin desde la ruta _ /opt/NetApp/SnapCenter/scc/etc/allowed_commands.config_.
 
 +
 También puede especificar el valor de tiempo de espera del script. El valor predeterminado es 60 segundos.
