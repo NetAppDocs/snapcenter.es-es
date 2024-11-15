@@ -1,0 +1,94 @@
+---
+permalink: protect-scc/add_resources_to_snapcenter_custom_plug_ins.html 
+sidebar: sidebar 
+keywords: custom plug-in, resources, snapcenter 
+summary: Debe añadir los recursos que desee incluir en un backup o clonar. En función de su entorno, los recursos pueden ser instancias de una base de datos o recopilaciones que desee clonar o incluir en un backup. 
+---
+= Añada recursos a los plugins personalizados de SnapCenter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe añadir los recursos que desee incluir en un backup o clonar. En función de su entorno, los recursos pueden ser instancias de una base de datos o recopilaciones que desee clonar o incluir en un backup.
+
+.Antes de empezar
+* Debe haber completado ciertas tareas, como instalar el servidor SnapCenter, añadir hosts, crear conexiones con el sistema de almacenamiento y añadir credenciales.
+* Usted debe tener link:develop_a_plug_in_for_your_application.html["se ha creado un plugin personalizado para la aplicación"].
+* Debe haber cargado los plugins en SnapCenter Server.
+
+
+.Pasos
+. En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
+. En la página Recursos, selecciona *Agregar recurso*.
+. En la página Provide Resource Details, realice las siguientes acciones:
++
+|===
+| Para este campo... | Realice lo siguiente... 
+
+
+ a| 
+Nombre
+ a| 
+Escriba el nombre del recurso.
+
+
+
+ a| 
+Nombre de host
+ a| 
+Seleccione el host.
+
+
+
+ a| 
+Tipo
+ a| 
+Seleccione el tipo. El usuario define el tipo según el archivo de descripción del plugin. Por ejemplo, base de datos e instancia.
+
+Si el tipo seleccionado tiene un elemento principal, escriba los detalles de dicho elemento. Por ejemplo, si el tipo es una base de datos y el elemento principal es una instancia, escriba los detalles de la instancia.
+
+
+
+ a| 
+Nombre de credencial
+ a| 
+Seleccione Credential o cree una credencial nueva.
+
+
+
+ a| 
+Monte las rutas
+ a| 
+Escriba las rutas de montaje en el punto donde se monta el recurso. Solo corresponde a un host Windows.
+
+|===
+. En la página Provide Storage Footprint, seleccione un sistema de almacenamiento y elija uno o más volúmenes, LUN y qtrees y, a continuación, seleccione *Save*.
++
+Opcional: Seleccione la image:../media/add_policy_from_resourcegroup.gif["Icono más"] Icono para añadir más volúmenes, LUN y qtrees desde otros sistemas de almacenamiento.
+
++
+image::../media/storage_footprint.gif[Espacio de almacenamiento]
+
+. En la página Resource Settings, proporcione pares personalizados de clave-valor para el recurso.
++
+
+NOTE: Asegúrese de que el nombre de las claves personalizadas está en mayúsculas.
+
++
+image::../media/resource_settings.gif[configuración de recursos]
+
+. Revisa el resumen y luego selecciona *Finalizar*.
+
+
+.Resultado
+Los recursos se muestran junto con cierta información, como el tipo, el host o el nombre de clúster, las políticas y los grupos de recursos asociados, y el estado general.
+
+
+IMPORTANT: Es necesario actualizar los recursos si se cambia el nombre de las bases de datos fuera de SnapCenter.
+
+.Después de terminar
+Si desea proporcionar acceso a los activos a otros usuarios, el administrador de SnapCenter debe realizar la asignación. De este modo, los usuarios pueden realizar las acciones para las cuales tienen permisos sobre los activos que les asignaron.
+
+Después de añadir los recursos, puede modificar sus detalles.

@@ -1,7 +1,7 @@
 ---
 permalink: protect-nsp/netapp_supported_plugins_overview.html 
 sidebar: sidebar 
-keywords: NetApp supported plug-ins 
+keywords: NetApp supported plug-ins, MongoDB, ORASCPM, Oracle Applications, SAP ASE, SAP MaxDB, Storage plug-in 
 summary: Es posible crear plugins compatibles con NetApp para las aplicaciones que se usan y emplear SnapCenter para el backup, la restauración o la clonado de tales aplicaciones. Al igual que otros plugins de SnapCenter, los plugins compatibles con NetApp funcionan como componentes del host en el software NetApp SnapCenter y permiten la protección de datos para aplicaciones y la gestión de recursos. 
 ---
 = Información general sobre los plugins compatibles de NetApp
@@ -11,7 +11,7 @@ summary: Es posible crear plugins compatibles con NetApp para las aplicaciones q
 
 
 [role="lead"]
-Es posible utilizar los plugins compatibles con NetApp o desarrollar plugins personalizados para las aplicaciones que se usen y luego usar SnapCenter para realizar backups, restaurar o clonar tales aplicaciones. Los plugins compatibles con NetApp funcionan como componentes del host del software NetApp SnapCenter y permiten la protección de datos para aplicaciones y la gestión de recursos.
+Es posible usar los complementos compatibles con NetApp, como MongoDB, ORASCPM (aplicaciones Oracle), SAP ASE, SAP MaxDB y el complemento de almacenamiento para aplicaciones que se usen y, a continuación, utilizar SnapCenter para realizar backups, restaurar o clonar tales aplicaciones. Los plugins compatibles con NetApp funcionan como componentes del host del software NetApp SnapCenter y permiten la protección de datos para aplicaciones y la gestión de recursos.
 
 Cuando se instalan plugins compatibles con NetApp, es posible utilizar SnapCenter con la tecnología SnapMirror de NetApp para crear mirrors de conjuntos de backups en otro volumen, y la tecnología NetApp SnapVault para la replicación de backup de disco a disco. Los plugins compatibles con NetApp se pueden utilizar tanto en entornos de Windows como de Linux.
 
@@ -20,13 +20,9 @@ NOTE: SnapCenterCLI no admite comandos de plugins compatibles con NetApp.
 
 NetApp proporciona el complemento de almacenamiento para realizar operaciones de protección de datos del volumen de datos en el almacenamiento de ONTAP mediante el marco de trabajo de complementos personalizados integrado en SnapCenter.
 
-Es posible instalar los plugins, los plugins personalizados y los plugins de almacenamiento compatibles con NetApp desde la página Add Host.
+Puede instalar los plugins compatibles con NetApp desde la página Add Host.
 
 link:add_hosts_and_install_plug_in_packages_on_remote_hosts.html["Añada hosts e instale paquetes de plugins en hosts remotos."^]
 
-NetApp también proporciona MongoDB, MySQL, PostgreSQL, almacenamiento, MaxDB, Complementos Sybase ASE, ORASCPM, MongoDB y DPGlue.
-
 
 NOTE: La política de soporte de SnapCenter cubrirá la compatibilidad con el marco de complementos personalizados de SnapCenter, el motor principal y las API asociadas. El soporte técnico no cubrirá el código fuente del complemento ni los scripts asociados incluidos en el marco de complementos personalizados.
-
-Para crear sus propios plugins personalizados, consulte link:develop_a_plug_in_for_your_application.html["Desarrolle un complemento para la aplicación"^] la guía.

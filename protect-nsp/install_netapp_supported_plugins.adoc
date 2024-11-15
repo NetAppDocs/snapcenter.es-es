@@ -13,6 +13,4 @@ summary: Deber instalar y configurar plugins compatibles con SnapCenter NetApp s
 [role="lead"]
 Deber instalar y configurar plugins compatibles con SnapCenter NetApp si desea proteger los recursos de plugins compatibles con NetApp.
 
-image::../media/scc_install_configure_workflow.png[Flujo de trabajo de complementos compatibles con SnapCenter NetApp]
-
-link:develop_a_plug_in_for_your_application.html["Desarrolle un complemento para la aplicación"]
+image::../media/sap_hana_install_configure_workflow.png[][Flujo de trabajo de SnapCenter NetApp plug-ins admitidos]

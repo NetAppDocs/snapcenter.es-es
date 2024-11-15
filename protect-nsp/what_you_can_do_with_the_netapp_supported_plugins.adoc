@@ -4,16 +4,14 @@ sidebar: sidebar
 keywords: NetApp supported plug-ins 
 summary: Es posible usar los plugins compatibles con NetApp para las operaciones de protección de datos. 
 ---
-= Tareas que pueden llevarse a cabo con los complementos y complementos de almacenamiento compatibles con NetApp
+= Tareas que pueden llevarse a cabo con los plugins compatibles con NetApp
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Es posible usar el plugin compatible con NetApp para las operaciones de protección de datos.
-
-*NetApp soporta plug-ins*
+Es posible usar los complementos compatibles con NetApp, como MongoDB, ORASCPM, aplicaciones Oracle, SAP ASE, SAP MaxDB y el complemento de almacenamiento para operaciones de protección de datos.
 
 * Añadir recursos como bases de datos, instancias, documentos o espacios de tablas.
 * Crear backups.
@@ -24,9 +22,7 @@ Es posible usar el plugin compatible con NetApp para las operaciones de protecci
 * Ver informes para operaciones de backup, restauración y clonado.
 
 
-*Complemento de almacenamiento*
-
-Es posible usar el plugin de almacenamiento para operaciones de protección de datos.
+Es posible usar los plugins compatibles con NetApp para las operaciones de protección de datos.
 
 * Realice copias Snapshot de grupo de coherencia de los volúmenes de almacenamiento en los clústeres de ONTAP.
 * Realice copias de seguridad de aplicaciones personalizadas mediante el marco incorporado de secuencias de comandos previas y posteriores

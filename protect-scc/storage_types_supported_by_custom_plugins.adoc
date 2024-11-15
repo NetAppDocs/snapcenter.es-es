@@ -1,0 +1,48 @@
+---
+permalink: protect-scc/storage_types_supported_by_custom_plugins.html 
+sidebar: sidebar 
+keywords: SnapCenter Custom Plug-ins 
+summary: SnapCenter admite una amplia variedad de tipos de almacenamiento en máquinas físicas y virtuales. Debe comprobar la compatibilidad de su tipo de almacenamiento antes de instalar los plugins personalizados de SnapCenter. 
+---
+= Tipos de almacenamiento compatibles con los plugins personalizados de SnapCenter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapCenter admite una amplia variedad de tipos de almacenamiento en máquinas físicas y virtuales. Debe comprobar la compatibilidad de su tipo de almacenamiento antes de instalar los plugins personalizados de SnapCenter.
+
+|===
+| Máquina | Tipo de almacenamiento 
+
+
+ a| 
+Montajes físicos y directos de NFS en los hosts de máquinas virtuales (no se admiten VMDK y LUN de RDM).
+ a| 
+LUN conectados a FC
+
+
+
+ a| 
+Montajes físicos y directos de NFS en los hosts de máquinas virtuales (no se admiten VMDK y LUN de RDM).
+ a| 
+LUN conectados a iSCSI
+
+
+
+ a| 
+Montajes físicos y directos de NFS en los hosts de máquinas virtuales (no se admiten VMDK y LUN de RDM).
+ a| 
+Volúmenes conectados en NFS
+
+
+
+ a| 
+VMware ESXi
+ a| 
+Almacenes de datos VVOL en NFS y SAN
+
+El almacén de datos VVOL solo se puede aprovisionar con ONTAP Tools para VMware vSphere.
+
+|===

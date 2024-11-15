@@ -50,13 +50,13 @@ SnapCenter incluye las siguientes funciones clave:
 
 * Protección de datos centralizada y coherente con las aplicaciones
 +
-La protección de datos es compatible con Microsoft Exchange Server, Microsoft SQL Server, bases de datos de Oracle en Linux o AIX, base de datos SAP HANA, IBM DB2 y sistemas de archivos host de Windows que se ejecutan en sistemas ONTAP.
+La protección de datos es compatible con Microsoft Exchange Server, Microsoft SQL Server, bases de datos de Oracle en Linux o AIX, base de datos SAP HANA, IBM DB2, PostgreSQL, MySQL y sistemas de archivos host de Windows que se ejecutan en sistemas ONTAP.
 
 +
-La protección de datos también es compatible con otras aplicaciones y bases de datos estándar o personalizadas, ya que proporciona un marco de trabajo para crear plugins de SnapCenter definidos por el usuario. Esto permite proteger datos para otras aplicaciones y bases de datos desde el mismo panel único. Al aprovechar este marco de trabajo, NetApp ha lanzado plug-ins de SnapCenter para MongoDB, MySQL, PostgreSQL, almacenamiento, MaxDB, Sybase ASE, ORASCPM, MongoDB y DPGlue. Aparte de esto, puede crear su propio plug-in usando la guía del desarrollador.
+La protección de datos también es compatible con otras aplicaciones y bases de datos estándar o personalizadas, ya que proporciona un marco de trabajo para crear plugins de SnapCenter definidos por el usuario. Esto permite proteger datos para otras aplicaciones y bases de datos desde el mismo panel único. Al aprovechar este marco de trabajo, NetApp ha lanzado complementos de SnapCenter para MongoDB, almacenamiento, MaxDB, Sybase ASE y ORASCPM. Aparte de esto, puede crear su propio plug-in usando la guía del desarrollador.
 
 +
-link:../protect-nsp/develop_a_plug_in_for_your_application.html["Desarrolle un complemento para la aplicación"]
+link:../protect-scc/develop_a_plug_in_for_your_application.html["Desarrolle un complemento para la aplicación"]
 
 * Backups basados en normativas
 +
@@ -176,6 +176,11 @@ SnapCenter consiste en los plugins de SnapCenter Server y SnapCenter. Debe insta
 ** Complemento de SnapCenter para IBM DB2
 ** Complemento de SnapCenter para PostgreSQL
 ** Complemento de SnapCenter para MySQL
+** Plugin de SnapCenter para MongoDB
+** Complemento SnapCenter para ORASCPM (Aplicaciones Oracle)
+** Complemento de SnapCenter para SAP ASE
+** Complemento de SnapCenter para SAP MaxDB
+** Plugin de SnapCenter para plugin de almacenamiento
 
 
 * Paquete de plugins de SnapCenter para Linux, que incluye los siguientes plugins:
@@ -186,15 +191,20 @@ SnapCenter consiste en los plugins de SnapCenter Server y SnapCenter. Debe insta
 ** Complemento de SnapCenter para IBM DB2
 ** Complemento de SnapCenter para PostgreSQL
 ** Complemento de SnapCenter para MySQL
+** Plugin de SnapCenter para MongoDB
+** Complemento SnapCenter para ORASCPM (Aplicaciones Oracle)
+** Complemento de SnapCenter para SAP ASE
+** Complemento de SnapCenter para SAP MaxDB
+** Plugin de SnapCenter para plugin de almacenamiento
 
 
 * Paquete de plugins de SnapCenter para AIX, incluido los siguientes plugins:
 +
 ** Plugin de SnapCenter para base de datos de Oracle
 ** Complemento de SnapCenter para sistemas de archivos UNIX
+** Complemento de SnapCenter para IBM DB2
 
 
-* Complementos compatibles con SnapCenter NetApp
 
 
 El plugin de SnapCenter para VMware vSphere, anteriormente conocido como Data Broker de NetApp, es un dispositivo virtual independiente que admite operaciones de protección de datos de SnapCenter en sistemas de archivos y bases de datos virtualizadas.
@@ -351,6 +361,71 @@ Db2MySQL host
  a| 
 Linux o Windows
 
+
+
+ a| 
+Plugin para MongoDB
+ a| 
+Paquete de plugins para Linux y paquete de plugins para Windows
+ a| 
+Plugin para UNIX o plugin para Windows
+ a| 
+Host MongoDB
+ a| 
+Linux o Windows
+
+
+
+ a| 
+Complemento para ORASCPM (Aplicaciones Oracle)
+ a| 
+Paquete de plugins para Linux y paquete de plugins para Windows
+ a| 
+Plugin para UNIX o plugin para Windows
+ a| 
+Host Oracle
+ a| 
+Linux o Windows
+
+
+
+ a| 
+Plugin para SAP ASE
+ a| 
+Paquete de plugins para Linux y paquete de plugins para Windows
+ a| 
+Plugin para UNIX o plugin para Windows
+ a| 
+Host SAP
+ a| 
+Linux o Windows
+
+
+
+ a| 
+Plugin para SAP MaxDB
+ a| 
+Paquete de plugins para Linux y paquete de plugins para Windows
+ a| 
+Plugin para UNIX o plugin para Windows
+ a| 
+Host SAP MaxDB
+ a| 
+Linux o Windows
+
+
+
+ a| 
+Plugin para el plugin de almacenamiento
+ a| 
+Paquete de plugins para Linux y paquete de plugins para Windows
+ a| 
+Plugin para UNIX o plugin para Windows
+ a| 
+Host de almacenamiento
+ a| 
+Linux o Windows
+
 |===
 
 NOTE: El plugin de SnapCenter para VMware vSphere admite operaciones de backup y restauración consistentes con los fallos y consistentes con las máquinas virtuales (VM), almacenes de datos y discos de máquina virtual (VMDK), y admite los plugins específicos para aplicaciones de SnapCenter para proteger operaciones de backup y restauración consistentes con las aplicaciones para bases de datos y sistemas de archivos virtualizados.
@@ -421,14 +496,12 @@ Automatiza el backup, la restauración y la clonado de bases de datos de SAP HAN
 
 === Las funciones de los plugins compatibles con NetApp
 
+Los complementos compatibles con NetApp son MongoDB, ORASCPM (Aplicaciones Oracle), SAP ASE, SAP MaxDB y plug-in de almacenamiento.
+
 * Admite otros plugins para gestionar aplicaciones o bases de datos que otros plugins de SnapCenter no admiten. Los plugins compatibles con NetApp no se incluyen como parte de la instalación de SnapCenter.
 * Admite la creación de copias reflejadas de conjuntos de backup en otro volumen y la ejecución de la replicación de backup de disco a disco.
 * Es compatible con entornos Windows y Linux. En los entornos de Windows, las aplicaciones personalizadas a través de plugins personalizados pueden utilizar, opcionalmente, el plugin de SnapCenter para Microsoft Windows con el fin de realizar backups consistentes del sistema de archivos.
 
-
-NetApp admite la funcionalidad de crear y utilizar los plugins compatibles; sin embargo, los plugins que usted crea no son compatibles con NetApp.
-
-Para obtener más información, consulte link:../protect-nsp/develop_a_plug_in_for_your_application.html["Desarrolle un complemento para la aplicación"]
 
 
 

@@ -1,0 +1,28 @@
+---
+permalink: protect-scc/snapcenter_custom_plug_ins_overview.html 
+sidebar: sidebar 
+keywords: custom plug-ins 
+summary: Es posible crear plugins personalizados para las aplicaciones que se usan y emplear SnapCenter para el backup, la restauración o la clonado de tales aplicaciones. Al igual que otros plugins de SnapCenter, los plugins personalizados funcionan como componentes del host en el software SnapCenter de NetApp y permiten la protección de datos para aplicaciones y la gestión de recursos. 
+---
+= Información general sobre los plugins personalizados de SnapCenter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible crear plugins personalizados para las aplicaciones que se usan y emplear SnapCenter para el backup, la restauración o la clonado de tales aplicaciones. Los plugins personalizados funcionan como componentes del host del software NetApp SnapCenter y permiten la protección de datos para aplicaciones y la gestión de recursos.
+
+Cuando se instalan plugins personalizados, es posible usar SnapCenter con la tecnología NetApp SnapMirror para crear mirrors de conjuntos de backups en otro volumen, y la tecnología NetApp SnapVault para la replicación de backup de disco a disco. Los plugins personalizados se pueden utilizar tanto en entornos de Windows como de Linux.
+
+
+NOTE: SnapCenterCLI no admite comandos de plugins personalizados.
+
+Puede instalar el plugin personalizado desde la página Add Host.
+
+link:add_hosts_and_install_plug_in_packages_on_remote_hosts.html["Añada hosts e instale paquetes de plugins en hosts remotos."^]
+
+
+NOTE: La política de soporte de SnapCenter cubrirá la compatibilidad con el marco de complementos personalizados de SnapCenter, el motor principal y las API asociadas. El soporte técnico no cubrirá el código fuente del complemento ni los scripts asociados incluidos en el marco de complementos personalizados.
+
+Para crear sus propios plugins personalizados, consulte link:develop_a_plug_in_for_your_application.html["Desarrolle un complemento para la aplicación"^] la guía.

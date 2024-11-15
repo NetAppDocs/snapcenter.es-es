@@ -1,17 +1,17 @@
 ---
-permalink: protect-nsp/netapp_supported_plugins_features.html 
+permalink: protect-scc/snapcenter_custom_plug_ins_features.html 
 sidebar: sidebar 
-keywords: NetApp supported plug-ins features, MongoDB, ORASCPM, Oracle Applications, SAP ASE, SAP MaxDB, Storage plug-in 
-summary: SnapCenter se integra con la aplicación de plugins y con tecnologías de NetApp en el sistema de almacenamiento. Para trabajar con complementos compatibles con NetApp, se utiliza la interfaz gráfica de usuario de SnapCenter. 
+keywords: custom plug-ins features 
+summary: SnapCenter se integra con la aplicación de plugins y con tecnologías de NetApp en el sistema de almacenamiento. Para trabajar con plugins personalizados, se utiliza la interfaz gráfica de usuario de SnapCenter. 
 ---
-= Las funciones de los plugins compatibles con NetApp
+= Funciones de los plugins personalizados de SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-SnapCenter se integra con la aplicación de plugins y con tecnologías de NetApp en el sistema de almacenamiento. Para trabajar con los complementos compatibles con NetApp, como MongoDB, ORASCPM (Aplicaciones Oracle), SAP ASE, SAP MaxDB y el complemento de almacenamiento, se utiliza la interfaz gráfica de usuario de SnapCenter.
+SnapCenter se integra con la aplicación de plugins y con tecnologías de NetApp en el sistema de almacenamiento. Para trabajar con plugins personalizados, se utiliza la interfaz gráfica de usuario de SnapCenter.
 
 * *Interfaz gráfica de usuario unificada*
 +
@@ -23,11 +23,11 @@ Es posible programar operaciones de backup, configurar la retención de backup b
 
 * *Tecnología NetApp instantánea no disruptiva*
 +
-SnapCenter utiliza la tecnología Snapshot de NetApp con los complementos compatibles con NetApp para realizar backups de recursos. Las snapshots consumen un espacio de almacenamiento mínimo.
+SnapCenter utiliza la tecnología Snapshot de NetApp con los plugins personalizados para realizar backups de recursos. Las snapshots consumen un espacio de almacenamiento mínimo.
 
 
 
-Los complementos compatibles con NetApp además ofrecen los siguientes beneficios:
+Usar la función de los plugins personalizados ofrece además los siguientes beneficios:
 
 * Compatibilidad con flujos de trabajo de backup, restauración y clonado
 * Seguridad compatible con RBAC y delegación de roles centralizada

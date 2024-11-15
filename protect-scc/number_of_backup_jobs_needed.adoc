@@ -1,0 +1,16 @@
+---
+permalink: protect-scc/number_of_backup_jobs_needed.html 
+sidebar: sidebar 
+keywords: backup jobs 
+summary: 'Algunos factores que determinan la cantidad de trabajos de backup que se necesitan son el tamaño del recurso, la cantidad de volúmenes que se usan, la tasa de cambio del recurso y el acuerdo de nivel de servicio \(SLA\).' 
+---
+= Cantidad de trabajos de backup necesarios
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Algunos factores que determinan la cantidad de trabajos de backup que se necesitan son el tamaño del recurso, la cantidad de volúmenes que se usan, la tasa de cambio del recurso y el acuerdo de nivel de servicio.
+
+La cantidad de trabajos de backup que se selecciona depende de la cantidad de volúmenes en los que se colocaron los recursos. Por ejemplo, si se colocó un grupo de recursos pequeños en un volumen y un recurso grande en otro volumen, puede ser necesario crear un trabajo de backup para los recursos pequeños y otro trabajo para el recurso grande.

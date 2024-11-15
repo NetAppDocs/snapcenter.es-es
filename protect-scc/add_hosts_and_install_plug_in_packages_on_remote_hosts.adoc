@@ -1,7 +1,7 @@
 ---
-permalink: protect-nsp/add_hosts_and_install_plug_in_packages_on_remote_hosts.html 
+permalink: protect-scc/add_hosts_and_install_plug_in_packages_on_remote_hosts.html 
 sidebar: sidebar 
-keywords: add hostsNetApp supported plug-ins, MongoDB, ORASCPM, Oracle Applications, SAP ASE, SAP MaxDB, Storage plug-in 
+keywords: add hosts, custom plug-in 
 summary: Es necesario usar la página SnapCenterAdd Host para añadir hosts y, a continuación, instalar los paquetes de plugins. Los plugins se instalan automáticamente en hosts remotos. Puede añadir un host e instalar los paquetes de los plugins para un host individual o para un clúster. 
 ---
 = Añada hosts e instale paquetes de plugins en hosts remotos
@@ -11,7 +11,7 @@ summary: Es necesario usar la página SnapCenterAdd Host para añadir hosts y, a
 
 
 [role="lead"]
-Debe usar la página SnapCenter Add Host para añadir hosts y, a continuación, instalar los paquetes de los plugins. Los plugins se instalan automáticamente en hosts remotos. Puede añadir un host e instalar los paquetes de los plugins para un host individual o para un clúster.
+Es necesario usar la página SnapCenterAdd Host para añadir hosts y, a continuación, instalar los paquetes de plugins. Los plugins se instalan automáticamente en hosts remotos. Puede añadir un host e instalar los paquetes de los plugins para un host individual o para un clúster.
 
 .Antes de empezar
 * Debe ser un usuario al que se ha asignado una función que tenga permisos de instalación y desinstalación de plugins, como el rol de administrador de SnapCenter.
@@ -20,13 +20,12 @@ Debe usar la página SnapCenter Add Host para añadir hosts y, a continuación, 
 +
 link:configure_gMSA_on_windows_server_2012_or_later.html["Configurar la cuenta de servicio administrado de grupo en Windows Server 2016 o posterior para aplicaciones personalizadas"]
 
-* Para el host de Windows, debe asegurarse de seleccionar el plugin de SnapCenter para Windows.
 
 
 .Acerca de esta tarea
-* No es posible añadir un servidor SnapCenter como host de plugins a otro servidor SnapCenter.
-* Si instala plugins en un clúster (WSFC), los plugins se instalan en todos los nodos del clúster.
+No es posible añadir un servidor SnapCenter como host de plugins a otro servidor SnapCenter.
 
+Si instala plugins en un clúster (WSFC), los plugins se instalan en todos los nodos del clúster.
 
 .Pasos
 . En el panel de navegación izquierdo, seleccione *hosts*.
@@ -45,14 +44,10 @@ Seleccione el tipo de host:
 
 ** Windows
 ** Linux
-** AIX
 
 
 
-NOTE: Los plugins compatibles con NetApp se pueden utilizar en entornos de Windows, Linux y AIX.
-
-
-NOTE: El almacenamiento y las aplicaciones de Oracle son compatibles con AIX.
+NOTE: Los plugins personalizados se pueden utilizar tanto en entornos de Windows como de Linux.
 
 
 
@@ -85,17 +80,6 @@ NOTE: El modo de autenticación de las credenciales se determina por el tipo de 
 
 |===
 . En la sección *Seleccione Plug-ins to Install*, seleccione los plugins que desee instalar.
-+
-Puede instalar los siguientes plugins de la lista:
-
-+
-** MongoDB
-** ORASCPM (se muestra como Aplicaciones Oracle)
-** SAP ASE
-** MaxDB de SAP
-** Reducida
-
-
 . (Opcional) Seleccione *Más opciones* para instalar los otros plug-ins.
 +
 |===
@@ -117,15 +101,33 @@ NOTE: Si ha instalado plugins manualmente y ha especificado un puerto personaliz
  a| 
 Ruta de instalación
  a| 
-Los plugins compatibles con NetApp pueden instalarse en sistemas Windows o Linux.
+Los plugins personalizados de SnapCenter pueden instalarse en sistemas Windows o Linux.
 
 ** En el caso del paquete de plugins de SnapCenter para Windows, la ruta predeterminada es C:\Program Files\NetApp\SnapCenter.
 +
 Opcionalmente, puede personalizar la ruta.
 
-** Para el paquete de plugins de SnapCenter para Linux y el paquete de plugins de SnapCenter para AIX, la ruta predeterminada es `/opt/NetApp/snapcenter`.
+** Para el paquete de plugins de SnapCenter para Linux, la ruta predeterminada es `/opt/NetApp/snapcenter`.
 +
 Opcionalmente, puede personalizar la ruta.
+
+** Para los plugins personalizados de SnapCenter:
++
+... En la sección Custom Plug-ins, seleccione *Browse* y seleccione la carpeta del plugin personalizado comprimida.
++
+La carpeta comprimida contiene el código del plugin y el archivo .xml del descriptor.
+
++
+Para el plugin de almacenamiento, desplácese a. `_C:\ProgramData\NetApp\SnapCenter\Package Repository_` y seleccione `Storage.zip` carpeta.
+
+... Selecciona *Cargar*.
++
+El archivo .xml del descriptor en la carpeta del plugin personalizado comprimida se valida antes de cargar el paquete.
+
++
+Aparece la lista de los plugins personalizados que se cargan en el servidor de SnapCenter.
+
+
 
 
 
@@ -155,17 +157,11 @@ NOTE: GMSA se utilizará como cuenta de servicio de inicio de sesión solo en el
 Si no ha seleccionado la casilla de comprobación *Skip prechecks, el host se valida para comprobar si cumple con los requisitos para la instalación del plugin. El espacio en disco, RAM, versión de PowerShell, versión de .NET, ubicación (para plugins de Windows) y versión de Java (para plugins de Linux) se validan frente a los requisitos mínimos. Si no se satisfacen los requisitos mínimos, se muestran los mensajes de error o advertencia correspondientes.
 
 +
-Si el error está relacionado con el espacio en disco o RAM, puede actualizar el archivo web.config ubicado en `C:\Program Files\NetApp\SnapCenter WebApp` para modificar los valores predeterminados. Si el error está relacionado con otros parámetros, primero debe solucionar el problema.
+Si el error está relacionado con el espacio en disco o RAM, es posible actualizar el archivo web.config ubicado en C:\Program Files\NetApp\SnapCenter WebApp para modificar los valores predeterminados. Si el error está relacionado con otros parámetros, primero debe solucionar el problema.
 
 +
 
-NOTE: En una configuración de alta disponibilidad, si actualiza SnapManager.web.ui.dll.config, debe actualizar el archivo en ambos nodos y reiniciar el grupo de aplicaciones de SnapCenter.
-
-+
-La ruta predeterminada de Windows es `C:\Program Files\NetApp\SnapCenter WebApp\SnapManager.Web.UI.dll.config`
-
-+
-La ruta predeterminada de Linux es `/opt/NetApp/snapcenter/SnapManagerWeb/SnapManager.Web.UI.dll.config`
+NOTE: En una configuración de alta disponibilidad, si actualiza el archivo web.config, debe actualizar el archivo en ambos nodos.
 
 . Si el tipo de host es Linux, verifique la huella dactilar y, a continuación, seleccione *Confirmar y Enviar*.
 +

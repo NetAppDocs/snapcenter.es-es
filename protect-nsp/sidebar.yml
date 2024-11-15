@@ -28,18 +28,6 @@ entries:
   - title: Tipos de estrategias de restauración compatibles con los recursos de plugins
       compatibles con NetApp añadidos manualmente
     url: "/protect-nsp/types_of_restore_strategies_supported_for_manually_added_netapp_supported_plugins_resources.html"
-- title: Desarrolle un complemento para la aplicación
-  entries:
-  - title: Descripción general
-    url: "/protect-nsp/develop_a_plug_in_for_your_application.html"
-  - title: Desarrollo basado en PERL
-    url: "/protect-nsp/perl.html"
-  - title: Estilo nativo
-    url: "/protect-nsp/native.html"
-  - title: Estilo Java
-    url: "/protect-nsp/java.html"
-  - title: Plugins personalizados en SnapCenter
-    url: "/protect-nsp/custom_plugins_in_snapcenter.html"
 - title: Preparar la instalación de complementos compatibles con NetApp
   entries:
   - title: Flujo de trabajo de instalación de plugins compatibles con NetApp
@@ -124,8 +112,6 @@ entries:
     url: "/protect-nsp/restore_netapp_supported_plugins_resources.html"
   - title: Restaurar un backup de recursos
     url: "/protect-nsp/restore_a_resource_backup.html"
-  - title: Restaurar recursos mediante los cmdlets de PowerShell
-    url: "/protect-nsp/restore_and_recover_resources_using_powershell_cmdlets.html"
   - title: Supervisar operaciones de restauración
     url: "/protect-nsp/monitor_resources_restore_operations.html"
 - title: Backups de recursos de plugins admitidos por Clone NetApp

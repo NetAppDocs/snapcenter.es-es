@@ -1,0 +1,28 @@
+---
+permalink: protect-scc/clone_custom_plug_in_resource_backups.html 
+sidebar: sidebar 
+keywords: clone, custom plug-ins 
+summary: El flujo de trabajo de clonado incluye realizar la operación de clonado y supervisarla. 
+---
+= Clone backups de recursos de los plugins personalizados de SnapCenter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El flujo de trabajo de clonado incluye realizar la operación de clonado y supervisarla.
+
+.Acerca de esta tarea
+Es posible clonar backups de recursos por los siguientes motivos:
+
+* Para probar la funcionalidad que debe implementarse mediante la estructura de recursos actuales y el contenido durante los ciclos de desarrollo de aplicaciones
+* Para herramientas de manipulación y extracción de datos cuando se rellenan almacenes de datos
+* Para recuperar datos que se eliminaron o se modificaron por error
+
+
+Los siguientes flujos de trabajo muestran la secuencia que debe seguirse para realizar la operación de clonado:
+
+image::../media/sco_scc_wfs_clone_workflow.png[Flujo de trabajo de clonado]
+
+También puede usar los cmdlets de PowerShell manualmente o en scripts para realizar operaciones de backup, restauración y clonado. Para obtener información detallada sobre los cmdlets de PowerShell, use la ayuda de cmdlets de SnapCenter o consulte https://docs.netapp.com/us-en/snapcenter-cmdlets/index.html["Guía de referencia de cmdlets de SnapCenter Software"^].
