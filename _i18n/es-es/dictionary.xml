@@ -8141,10 +8141,6 @@ ONTAP gestiona la configuración de SnapLock.</block>
   <block id="dcc66de93aefa3105fda8cbdb3cdc2cf" category="list-text">Seleccione el backup y, a continuación, haga clic en *<block ref="11ec183c45ca833d0220ddbf2e2e1d98" category="inline-image-macro-rx" type="image"></block>*.</block>
   <block id="13bc47d703b82b962d33b3cf47bf64fb" category="list-text">En la página Nombre, seleccione *PDB Clone* y especifique los otros detalles.</block>
   <block id="92336218cb59d91f7080fee85c60b95f" category="list-text">En la página Post-Ops, se selecciona *Until Cancel* de forma predeterminada para realizar la recuperación de la base de datos clonada.</block>
-  <block id="82a14f04b2bdde64af5a7a694ab98bba" category="section-title">Dividir el clon de una base de datos de Oracle</block>
-  <block id="787b61c3679ebc574f4962a1f5aebb0c" category="list-text">Seleccione el recurso clonado (por ejemplo, la base de datos o el LUN) y haga clic en *<block ref="11ec183c45ca833d0220ddbf2e2e1d98" category="inline-image-macro-rx" type="image"></block>*.</block>
-  <block id="562ffa91cb05be38d306e7ac7ab12d9c" category="list-text">En la vista Administrar copias, seleccione *Clones* en los sistemas de almacenamiento primarios.</block>
-  <block id="62ef6c6e852eca46dfc82fdc6ad386b2" category="list-text">Seleccione el clon de PDB (targetCDB:PDBClone) y, a continuación, haga clic en *<block ref="11ec183c45ca833d0220ddbf2e2e1d98" category="inline-image-macro-rx" type="image"></block>*.</block>
   <block id="06297b8a736154148ec90e3788831eaa" category="doc">Restaurar y recuperar bases de datos de SQL Server</block>
   <block id="b01943524a657671dfae0f3f1f0948e5" category="paragraph">Puede utilizar SnapCenter para restaurar bases de datos de SQL Server con backup. La restauración de bases de datos es un proceso multifásico que copia todos los datos y las páginas de registro de un backup de SQL Server en una base de datos especificada.</block>
   <block id="ddec2d3a4d88b9b7250ed10e6ef19f3f" category="list-text">En la vista Administrar copias, seleccione *Copias de seguridad* del sistema de almacenamiento.</block>
@@ -8480,7 +8476,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="58184ed57b20efbfac17064f1bc0e4f4" category="list-text">Seleccione la copia de seguridad y haga clic en *Eliminar protección*.</block>
   <block id="ad569cc1cca820033bb20ffe1d5bc4a5" category="paragraph">AIX 7,1 o posterior</block>
   <block id="6b139c8a52407032a30a5d0cbb7c1438" category="list-text">modificación de snapshot de volumen: snaplock: tiempo de caducidad</block>
-  <block id="ce67e9a5c3006b689a5f150a9c30d732" category="list-text">. Núcleo NETO 8.0.5</block>
   <block id="4a58751c57809081912e30803a16d52e" category="list-text">PowerShell Core 7.4.2</block>
   <block id="b7ccd7f577996dd33bde8070db971b93" category="list-text">Java 11 Oracle Java y OpenJDK</block>
   <block id="9b722cfab4d80b751e95d2565746573a" category="paragraph">Almacenes de datos VVOL en NFS y SAN</block>
@@ -8628,7 +8623,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="2ac5f63d0bb2ab4a9898d18445391caf" category="list-text">RabbitMQ</block>
   <block id="62e0b5b350c9e3d2c19aa801d9442ba9" category="list-text">Nginx</block>
   <block id="f7e853158b776246c53345b938159cc1" category="list-text">Erlang</block>
-  <block id="4b895fbdf0b21e04dc01c9b2f52bd5ee" category="list-text">.NET Framework 8.0.5</block>
   <block id="21624173efc06090951170116cd13563" category="list-text">PAM-devel</block>
   <block id="3d265b4e1eeef0ddf17881fa003b18cc" category="list-text">PowerShell</block>
   <block id="6e3da1e6c4de3ddc55b5442f3d8fbf10" category="summary">Puede instalar el servidor de SnapCenter en el host Linux.</block>
@@ -8714,9 +8708,7 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="b0ca30368b247fa738c8bdba36dd4d73" category="paragraph">NET predeterminado. El plugin para Windows utiliza el puerto TCP para conectarse a las devoluciones de llamadas VSS de Exchange.</block>
   <block id="accc958f08cd768c04d4e40292acd632" category="paragraph">Para personalizar el puerto, consulte <block ref="db95a9150e60a9ea9da8200975d83e74" category="inline-link-macro-rx"></block>.</block>
   <block id="cc0974b8a511f2e4b4d021cda6e5e820" category="paragraph">Complementos compatibles con NetApp para SnapCenter</block>
-  <block id="77e6d1d743590f1944df090df04f64fb" category="list-text">ASP. NET Core Hosting Bundle (8.0.5 o posterior)</block>
   <block id="628b02e3b9750945ce37b6d84682cd2b" category="paragraph">+.NET Framework 8.0.5 Features+</block>
-  <block id="aaf9b73d8f0e71b5b8ed41944e56091d" category="list-text">ASP.NET 8.0.5</block>
   <block id="7eaa993723e57b3bfc99923c196e2e17" category="list-text">RabbitMQ</block>
   <block id="6905661e5d7f8f3e6a4faffbbab0f627" category="cell">Requisitos del host de Windows</block>
   <block id="e7074f744b12e993cbdc6c77ee980b3e" category="list-text">Red Hat Enterprise Linux (RHEL) 8 y 9</block>
@@ -8726,7 +8718,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="9f101c0e6e5929a04c9e7663fdf91eda" category="paragraph">15 GB</block>
   <block id="d6874413f4fac004d1cb83f02eccc33c" category="admonition">NOTA: Si tiene el servidor SnapCenter en la misma unidad en la que está instalado el repositorio de SnapCenter, se recomienda tener 15 GB.</block>
   <block id="4c6ec01f6ae03e08c146fe6865423a4b" category="list-text">PowerShell 7.4.2 o posterior</block>
-  <block id="43e185b7580feec0acd79569efc4e099" category="list-text">ASP. NET Core Runtime 8.0.5 o posterior</block>
   <block id="149d1be25c7d76696b875863179ac66d" category="list-text">Nginx es un servidor web que se puede utilizar como proxy inverso</block>
   <block id="6d4ed4face9b51c5caae12208e47fa1e" category="paragraph">PAM (Pluggable Authentication Modules) es una herramienta de seguridad del sistema que permite a los administradores del sistema establecer la política de autenticación sin tener que volver a compilar programas que hacen autenticación.</block>
   <block id="e49b0f86241cddbd59f6488d104741df" category="list-text">Chrome versión 125 y posteriores</block>
@@ -8786,7 +8777,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="7e5dacddaaa8672290ea4564cf1c41ad" category="paragraph">Si no ha seleccionado la casilla de comprobación Skip prechecks, el host se valida para comprobar si cumple con los requisitos para la instalación del plugin. El espacio en disco, RAM, versión de PowerShell, . La versión de NET, la ubicación (para plugins de Windows) y Java 11 (tanto para plugins de Windows como de Linux) se validan frente a los requisitos mínimos. Si no se satisfacen los requisitos mínimos, se muestran los mensajes de error o advertencia correspondientes.</block>
   <block id="0fcc0f3a2dace0457cd9db71bb8bfef8" category="list-text">Para el plugin de Windows, los registros de instalación y actualización se encuentran en: _C:\Windows\SnapCenter plugin\Install_&lt;JOBID&gt;\</block>
   <block id="4921a99bb14e7c74ffbcbc45df56f359" category="list-text">Para el plugin de Linux, los registros de instalación se encuentran en: _/var/opt/snapcenter/logs/SnapCenter_Linux_Host_Plug-in_Install_&lt;JOBID&gt;.log y los registros de actualización se encuentran en: _/var/opt/snapcenter/logs/SnapCenter_Linux_Host_Plug-in_Upgrade_&lt;JOBID&gt;.log</block>
-  <block id="0a14114e3ff4a5d760adcf058a9a4579" category="paragraph">Si desea actualizar a la versión SnapCenter 6,0, el plugin basado en PERL existente para DB2 se desinstalará del servidor de plugin remoto.</block>
   <block id="f55d81a07e6e0581f3e19eff0a932069" category="summary">No se admite la detección automática en algunas instancias de DB2. Debe añadir estos recursos manualmente.</block>
   <block id="48f6b76a211d0c32945a6f4c2a082f3c" category="paragraph">El host Windows no admite la detección automática. Debe añadir manualmente las instancias y los recursos de la base de datos de DB2.</block>
   <block id="66fe54fa4e213e520e33fab0de4829f3" category="list-text">Debe haber completado tareas como instalar SnapCenter Server, añadir hosts y configurar conexiones del sistema de almacenamiento.</block>
@@ -9049,7 +9039,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="5960f7331fcbdec5c21642b1d51cc972" category="list-text">El plugin de SnapCenter para MySQL no es compatible con la detección automática de los recursos que residen en los entornos virtuales de RDM/VMDK. Debe proporcionar la información de almacenamiento para entornos virtuales al mismo tiempo que añade las bases de datos de forma manual.</block>
   <block id="d6e5affbef5f3cc4e984ce8bcf594a94" category="list-text">En el panel de navegación de la izquierda, haga clic en *Resources* y, a continuación, seleccione el plugin para MySQL de la lista.</block>
   <block id="f09ef27e0279c131a669a6a13b1cbb6a" category="admonition">Debe actualizar los recursos si se cambia el nombre de las instancias fuera de SnapCenter.</block>
-  <block id="533bfd13df04fd1382b86a2d79550e09" category="list-text">DOTNET Core 8.0.5</block>
   <block id="abb388d4926d485f81269db2a3f0891f" category="summary">SnapCenter gestiona el mantenimiento de los backups de registros y de datos en los niveles de sistema de almacenamiento y sistema de archivos, y dentro del catálogo de backup MySQL.</block>
   <block id="62fded2795270fcd11011954ceeb813b" category="doc">Cómo hace SnapCenter para gestionar el mantenimiento de backups de registros</block>
   <block id="a44bea300ebfa8b4240129a005791668" category="doc">Cómo se utilizan los recursos, los grupos de recursos y las políticas para proteger MySQL</block>
@@ -9803,7 +9792,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="31152c60a83a3da780e5073389e4b747" category="inline-image-macro">añada una política desde el grupo de recursos</block>
   <block id="80594268749f867035de9885db91d7c7" category="list-text">En la sección Configure schedules for selected policies, haga clic en <block ref="fb07bcf88c7c1b46f6236382e5e0ff22" category="inline-image-macro-rx" type="image"></block> en la columna Configure Schedules de la política para la cual desea configurar la programación.</block>
   <block id="583e42a8940ae8003094ff152460e62b" category="inline-link">Notas de la versión de software SnapCenter 6,0 y 6.0.1</block>
-  <block id="5c515af353439e417dd1d3ff4a8a8714" category="paragraph">Para obtener más información, consulte la<block ref="96c6a9ad961cdb98d787b7b13bc5a289" category="inline-link-rx"></block>.</block>
   <block id="4d6b1749d463347a1b3df01a9e8b0ea5" category="list-text">Antes de iniciar la operación de actualización, si ha colocado manualmente el host del servidor en modo de mantenimiento, después de la actualización, debe sacar manualmente el host del servidor del modo de mantenimiento haciendo clic en * Hosts * &gt; * Activar programación *.</block>
   <block id="490e9071957ca8b80f7019e9cb2a8b99" category="list-text">Debe ejecutar una detección nueva de los recursos que hay en el host del servidor.</block>
   <block id="06eee3caed57cb295b8ae731bc4b8dce" category="paragraph">Si el estado del host del servidor se muestra como detenido, puede esperar un momento y realizar una detección nueva. También puede cambiar el valor del parámetro *HostRefreshInterval* (el valor predeterminado es 3600 segundos) a cualquier valor superior a 10 minutos.</block>
@@ -9944,4 +9932,67 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="33e8da2f20646df222fc0acf35201fe4" category="sidebar">Realice backup de recursos de plugins personalizados</block>
   <block id="8ffa4ba0dd2df5995fd397c72a149679" category="sidebar">Realice backup de recursos de plugins individuales</block>
   <block id="e734e6e2e702d38ebab6ed3c050a5e72" category="sidebar">Clonar backups de recursos de plugins personalizados</block>
+  <block id="305e2d6826371134136661ce4869e554" category="list-text">.NET Core que comienza con la versión 8.0.5 e incluye todos los parches posteriores de .NET 8</block>
+  <block id="52498505b3fc927f491c9b006eecae92" category="list-text">.NET Framework que comienza con la versión 8.0.5 e incluye todos los parches posteriores de .NET 8</block>
+  <block id="76ab71a79937e997e9cf1c7dc354e025" category="list-text">ASP.NET Core Hosting Bundle que comienza con la versión 8.0.5 e incluye todos los parches posteriores de .NET 8</block>
+  <block id="3728d48973e3d053d0a862af7bf6c785" category="list-text">ASP.NET Empezando con la versión 8.0.5 e incluyendo todos los parches posteriores de .NET 8</block>
+  <block id="c1de3dacba751659ff9e6c8833e5f903" category="list-text">ASP.NET Core Runtime que comienza con la versión 8.0.5 e incluye todos los parches posteriores de .NET 8</block>
+  <block id="881a29d62175189b1872a856fce933da" category="paragraph">Es posible utilizar SnapCenter para clonar una base de datos de Oracle con el backup de esa base de datos. Los clones creados son clones gruesos y se crean en el pool de capacidad primario.</block>
+  <block id="57507899dd312cf4de9c076e90990d6a" category="paragraph">Puede utilizar SnapCenter para clonar una base de datos SAP HANA con el backup de esa base de datos. Los clones creados son clones gruesos y se crean en el pool de capacidad primario.</block>
+  <block id="73c291e6ad930a577bf1c1d0267ecd80" category="paragraph">Es posible utilizar SnapCenter para clonar una base de datos de SQL con el backup de esa base de datos. Los clones creados son clones gruesos y se crean en el pool de capacidad primario.</block>
+  <block id="c606038e9f060e87fd33c813592804d3" category="list-text">No se admite la división de clones.</block>
+  <block id="30d32a0f164bac6778a1be0b6bbad3d1" category="paragraph">Seleccione el nombre de credencial que ha creado o cree nuevas credenciales. Las credenciales deben tener derechos de administrador en el host remoto. Para obtener más detalles, consulte la información acerca de crear credenciales.</block>
+  <block id="0d09fd1c49f1d2d9fdc72b9e6af179ff" category="paragraph">Si desea actualizar a SnapCenter 6,0 o posterior, el plugin basado en PERL para DB2 existente se desinstala del servidor de plugins remoto.</block>
+  <block id="8bd5c68a1ade9c22f98424902eb6b969" category="admonition">El entorno pureScale DB2 y los sistemas de varios nodos (DPF) DB2 no son compatibles.</block>
+  <block id="2d2b303d961d395bd777f5532d182df1" category="list-text">DOTNET Core que comienza con la versión 8.0.5 e incluye todos los parches posteriores de .NET 8</block>
+  <block id="d26271179537201ce6d4270b088e3629" category="paragraph">Descubra las nuevas y mejoradas funciones de SnapCenter 6,0 y 6,0.1.</block>
+  <block id="e26065304cca26ac94a12ba286943668" category="inline-link-macro">Novedades de SnapCenter 6.0.1</block>
+  <block id="1389d6b3bba6a06a7cec4120c31b52b7" category="inline-link-macro">Novedades de SnapCenter 6,0</block>
+  <block id="a63ea5d9f72525ae37d941e9bc5ecbc7" category="paragraph">Para obtener una lista completa de las nuevas funciones y mejoras, consulte <block ref="2b7c5d00a49e44d91d9f881dc992a4a5" category="inline-link-macro-rx"></block> y <block ref="e9409363ebf38833c42f0fa2ec48a387" category="inline-link-macro-rx"></block>.</block>
+  <block id="e9d4ea3f0c1b4cd9e879f1519fb60c79" category="paragraph">Para obtener más información sobre los problemas conocidos, las limitaciones, los problemas solucionados y los comandos nuevos y modificados, consulte la<block ref="96c6a9ad961cdb98d787b7b13bc5a289" category="inline-link-rx"></block>. Debe iniciar sesión con su cuenta de NetApp o crear una cuenta para acceder a las Notas de la versión.</block>
+  <block id="89f4d38108821acdbf6cd6b780454397" category="summary">Las rutas de actualización compatibles con SnapCenter.</block>
+  <block id="5097f966477870c178d6885558d88ef0" category="doc">Rutas de actualización admitidas para SnapCenter</block>
+  <block id="917e552e8290664f15e1332b2d723ec0" category="paragraph">La ruta de actualización le ayuda a comprender desde qué versiones anteriores de SnapCenter puede actualizar a las versiones más recientes de SnapCenter y qué versiones de los plugins son compatibles.</block>
+  <block id="ab3e1b5fbcd7c46009ad34f096e65d30" category="admonition">Por ejemplo, si utiliza la versión de SnapCenter 4,9 y quiere actualizar a la versión 6,0.1, primero debe actualizar a la versión 5,0 y, a continuación, realizar una actualización gradual a la versión 6,0.1.</block>
+  <block id="430bb58f6ef28c742787a646394cc85d" category="summary">La versión 6,0 del software SnapCenter incluye varias funciones y mejoras nuevas.</block>
+  <block id="c93a09afa54abf05ddd4770e3b2343a1" category="doc">Novedades del software SnapCenter 6,0</block>
+  <block id="5864c825e06c8214939d2a9d0894bf16" category="inline-link-macro">Compatibilidad con el complemento de cargas de trabajo empresariales compatible con NetApp</block>
+  <block id="b378547eb64b7be3e2ffe67d84149895" category="cell"><block ref="b378547eb64b7be3e2ffe67d84149895" category="inline-link-macro-rx"></block></block>
+  <block id="3be8c0bcb79f27206e60c05521a2483c" category="paragraph">SnapCenter proporciona complementos para gestionar cargas de trabajo como PostgreSQL, MySQL e IBM DB2. Es posible detectar automáticamente, realizar un backup, restaurar, montar y clonar las cargas de trabajo.</block>
+  <block id="1fa76ac55ad0967716ac4dfee12b4407" category="paragraph">SnapCenter también proporciona complementos para gestionar cargas de trabajo como SAP ASE, SAP MaxDB, MongoDB, aplicaciones Oracle y almacenamiento de ONTAP. Es posible realizar backup, restaurar y clonar las cargas de trabajo.</block>
+  <block id="2e267d83f08284f9047134b3c074b19b" category="inline-link-macro">Compatibilidad con la versión de Linux de SnapCenter tanto para cargas de trabajo en la nube como en las instalaciones</block>
+  <block id="ca5b1ab4090623818a4fec6b963d13f9" category="cell"><block ref="ca5b1ab4090623818a4fec6b963d13f9" category="inline-link-macro-rx"></block></block>
+  <block id="7daff1874dce5a11aba2586028b0c18f" category="list-text">Admite almacenamiento Azure NetApp Files, Amazon FSx para NetApp ONTAP, Cloud Volumes ONTAP y ONTAP.</block>
+  <block id="762100fcdd1477c85af12beef8cd62c3" category="list-text">Binarios separados para los tipos de Linux, como Red Hat Enterprise Linux (RHEL), Oracle Linux y SUSE Linux Enterprise Server (SLES).</block>
+  <block id="13600e1a28d7c26b057fc84f30416618" category="list-text">Admite bases de datos clásicas como SAP HANA, Oracle, IBM DB2, SAP ASE y SAP MaxDB.</block>
+  <block id="1dbcbbe14ef1a2328b3e7e8b86a02d30" category="list-text">Admite cargas de trabajo modernas como PostgreSQL, MySQL y MongoDB.</block>
+  <block id="42e9bb4040dfb564c8bc793490bd7ba6" category="list-text">Admite complementos para volúmenes ONTAP y sistemas de archivos Linux para proteger cualquier aplicación no compatible o de expansión interna.</block>
+  <block id="95c6ebe4e9f4b874b3476bd9c75d257b" category="inline-link-macro">Compatibilidad con Active Sync de SnapMirror</block>
+  <block id="8440547858789da7c3b2feb37f16cb25" category="cell"><block ref="8440547858789da7c3b2feb37f16cb25" category="inline-link-macro-rx"></block></block>
+  <block id="d318b0578f25b54d744e21d30b035e8a" category="paragraph">Capacidad para realizar backups, restauraciones y clones sin problemas cargas de trabajo SAN (bases de datos y equipos virtuales de VMware) configuradas para ofrecer conmutación al respaldo transparente de aplicaciones y continuidad empresarial.</block>
+  <block id="e030f85ea3742a8498cd3f4ce5f26a2f" category="inline-link-macro">Compatibilidad con Microsoft SQL Server en SMB3</block>
+  <block id="c550e496e988fba14212cef600247fed" category="cell"><block ref="c550e496e988fba14212cef600247fed" category="inline-link-macro-rx"></block></block>
+  <block id="661984b66e3a7f72fbbda59c35c7aa92" category="paragraph">Las bases de datos de Microsoft SQL Server puestas en marcha en el protocolo SMB3 en ONTAP, Azure NetApp Files, Amazon FSx para NetApp ONTAP y Cloud Volumes de ONTAP ahora pueden protegerse con SnapCenter.</block>
+  <block id="534b29f3d774d1d19d1dc1030cdc4b3d" category="inline-link-macro">Compatibilidad con NVMe/TCP</block>
+  <block id="98d7af4aa50fe1e0cd7013f44cc2cebc" category="cell"><block ref="98d7af4aa50fe1e0cd7013f44cc2cebc" category="inline-link-macro-rx"></block></block>
+  <block id="6b4fa7a607a45ee2985d38d057ed95a1" category="paragraph">Si va a migrar cargas de trabajo cruciales a NVMe/TCP para obtener un mejor rendimiento, puede utilizar SnapCenter para realizar backup y recuperar aplicaciones y sistemas de archivos.</block>
+  <block id="64727e12025200ba369f3ba7c0682081" category="cell">Compatibilidad con VMware vVols</block>
+  <block id="8717c0ac7cfbe6d918d19dd574d63e73" category="paragraph">Si ha implementado sus bases de datos y sistemas de archivos en VMware vVols, puede usar SnapCenter para protegerlas.</block>
+  <block id="180a2e8c671bfb57b670570970b59480" category="summary">La versión 6.0.1 del software SnapCenter incluye varias funciones y mejoras nuevas.</block>
+  <block id="f5db6e0b0a7608b32dd00dbb85353e53" category="doc">Novedades del software SnapCenter 6.0.1</block>
+  <block id="0ee351a583abf7baa869129519adaddb" category="inline-link-macro">Compatibilidad con backups de Azure NetApp Files</block>
+  <block id="62c2d7366772786ca345ac877bf79c4a" category="cell"><block ref="62c2d7366772786ca345ac877bf79c4a" category="inline-link-macro-rx"></block></block>
+  <block id="4cc6d2996939fe7970c652728017b3e9" category="paragraph">SnapCenter admite la función de backup de Azure NetApp Files, que amplía las funcionalidades de protección de datos de Azure NetApp Files al proporcionar una solución de backup totalmente gestionada para la recuperación, el archivado y el cumplimiento de normativas a largo plazo.</block>
+  <block id="f47390dbd7bff67c8e4d16001f8c4395" category="inline-link-macro">Compatibilidad con alta disponibilidad de SnapCenter ejecutándose en Linux</block>
+  <block id="fa7aa08aceadadc58383fc01281330d1" category="cell"><block ref="fa7aa08aceadadc58383fc01281330d1" category="inline-link-macro-rx"></block></block>
+  <block id="8951fc15a429c65f620e89da09c5240e" category="paragraph">Configure la alta disponibilidad en SnapCenter ejecutándose en Windows o Linux usando el balanceador de carga de F5 GbE, el balanceo de carga de red (NLB) de Microsoft, Elastic Load Balancing (ELB) de Amazon Web Services (AWS) o el balanceador de carga de Azure.</block>
+  <block id="1810fc343d328f63ca20580898910abc" category="inline-link-macro">Soporte para gestionar las tareas de backup programadas</block>
+  <block id="a9e5aa37b3dc50c95040bd19f911000b" category="cell"><block ref="a9e5aa37b3dc50c95040bd19f911000b" category="inline-link-macro-rx"></block></block>
+  <block id="6775f2c837a6e0d211c88415495a3ca3" category="paragraph">Permite definir un umbral para el número de trabajos programados que se pueden ejecutar en un momento determinado. Esto le permite controlar el número de copias de seguridad que desea ejecutar en función de la configuración de hardware de su sistema.</block>
+  <block id="6c1303e3667436380323a8f91aeeb3b1" category="inline-link-macro">Soporte para la gestión de trabajos obsoletos</block>
+  <block id="0f16714fed95f3a4b2ef5ba9724d3658" category="cell"><block ref="0f16714fed95f3a4b2ef5ba9724d3658" category="inline-link-macro-rx"></block></block>
+  <block id="4b6d2450b6badef80cca9ba40b34bd88" category="paragraph">Permite limpiar los trabajos obsoletos que están atascados durante más de 72 horas.</block>
+  <block id="70e43ac38d4ee9a77d2476513c883d81" category="cell">Compatibilidad con IBM DB2, aplicación de Oracle y plugin de almacenamiento en AIX</block>
+  <block id="9b37c223b27baf9481210cc34272107f" category="paragraph">Admite la protección de datos de IBM DB2, aplicaciones de Oracle y el plugin de almacenamiento en AIX</block>
+  <block id="5dd03e8d039863e563e049be198c3fd3" category="sidebar">Notas de la versión</block>
 </blocks>

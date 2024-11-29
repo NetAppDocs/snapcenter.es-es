@@ -155,4 +155,4 @@ NOTE: La verificación de huellas digitales es obligatoria aunque se haya añadi
 
 
 .Después de terminar
-Si desea actualizar a la versión SnapCenter 6,0, el plugin basado en PERL existente para DB2 se desinstalará del servidor de plugin remoto.
+Si desea actualizar a SnapCenter 6,0 o posterior, el plugin basado en PERL para DB2 existente se desinstala del servidor de plugins remoto.

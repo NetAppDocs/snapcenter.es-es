@@ -11,7 +11,7 @@ summary: Es posible usar SnapCenter para clonar un backup.
 
 
 [role="lead"]
-Es posible usar SnapCenter para clonar un backup.
+Puede utilizar SnapCenter para clonar una base de datos SAP HANA con el backup de esa base de datos. Los clones creados son clones gruesos y se crean en el pool de capacidad primario.
 
 .Pasos
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.

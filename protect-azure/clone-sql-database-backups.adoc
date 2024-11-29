@@ -11,7 +11,7 @@ summary: Es posible usar SnapCenter para clonar un backup.
 
 
 [role="lead"]
-Puede utilizar SnapCenter para clonar un backup de base de datos de SQL Server. Si desea acceder a o restaurar una versión anterior de los datos, puede clonar backups de base de datos bajo demanda.
+Es posible utilizar SnapCenter para clonar una base de datos de SQL con el backup de esa base de datos. Los clones creados son clones gruesos y se crean en el pool de capacidad primario.
 
 .Acerca de esta tarea
 Debe asegurarse de que la instancia de destino para el clon esté configurada con un usuario de Active Directory que pertenezca al dominio de directorio SMB ADactive y que tenga permisos para establecer los permisos de archivo adecuadamente. Debe configurar las credenciales en SnapCenter a nivel de instancia.

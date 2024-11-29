@@ -16,7 +16,7 @@ El servidor de SnapCenter se instala a continuación de los paquetes de software
 * RabbitMQ
 * Nginx
 * Erlang
-* .NET Framework 8.0.5
+* .NET Framework que comienza con la versión 8.0.5 e incluye todos los parches posteriores de .NET 8
 * PAM-devel
 * PowerShell
 

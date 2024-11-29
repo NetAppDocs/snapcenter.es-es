@@ -37,7 +37,7 @@ NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de alm
  a| 
 Paquetes de software obligatorios
  a| 
-* . Núcleo NETO 8.0.5
+* .NET Core que comienza con la versión 8.0.5 e incluye todos los parches posteriores de .NET 8
 * PowerShell Core 7.4.2
 * Java 11 Oracle Java y OpenJDK
 
