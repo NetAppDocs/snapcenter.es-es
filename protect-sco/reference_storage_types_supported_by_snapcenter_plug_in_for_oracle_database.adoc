@@ -32,7 +32,7 @@ Servidor físico
 * LUN conectados a iSCSI
 * Volúmenes conectados en NFS
 * NVMe-FC
-* NVMe-TCP
+* NVMe/TCP
 
 
 
@@ -46,7 +46,7 @@ Puede editar el archivo *LinuxConfig.pm* ubicado en _/opt/NetApp/snapcenter/spl/
 
 * LUN iSCSI conectados directamente al sistema invitado por el iniciador de iSCSI
 * VMDK en almacenes de datos NFS
-* VMDK en VMFS creado a través de NVMe-TCP
+* VMDK en VMFS creado a través de NVMe/TCP
 +
 
 NOTE: RAC es compatible con ESX 8.0U2, que es compatible con VMDK compartido
