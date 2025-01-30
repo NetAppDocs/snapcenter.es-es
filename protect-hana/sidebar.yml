@@ -139,6 +139,9 @@ entries:
     url: "/protect-hana/task_create_backup_policies_for_sap_hana_databases.html"
   - title: Crear grupos de recursos y añadir políticas
     url: "/protect-hana/task_create_resource_groups_and_attach_policies.html"
+  - title: Cree grupos de recursos y habilite la protección secundaria para recursos
+      SAP HANA en sistemas ASA R2
+    url: "/protect-hana/create-resource-groups-secondary-protection-for-asa-r2-hana-resources.html"
   - title: Cree una conexión del sistema de almacenamiento y una credencial mediante
       cmdlets de PowerShell para la base de datos SAP HANA
     url: "/protect-hana/task_create_a_storage_system_connection_and_a_run_as_account_using_powershell_cmdlets_for_sap_hana_database.html"

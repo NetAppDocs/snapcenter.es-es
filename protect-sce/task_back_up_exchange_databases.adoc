@@ -34,14 +34,14 @@ Si una base de datos no pertenece a ningún grupo de recursos, es posible realiz
 . En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione el *plug-in de Microsoft Exchange Server* en la lista.
 . En la página Resources, seleccione *Database* o *Database Availability Group* en la lista *View*.
 +
-En la página Resources, image:../media/not_supported_icon.png["almacenamiento no compatible"] el icono indica que la base de datos está en un almacenamiento de terceros.
+En la página Resources, image:../media/not_supported_icon.gif["icono no soportado"] el icono indica que la base de datos está en un almacenamiento de terceros.
 
 +
 
 NOTE: En un DAG, si una copia activa de la base de datos se encuentra en un almacenamiento de terceros y al menos una copia pasiva de ella reside en un almacenamiento de NetApp, puede proteger la base de datos.
 
 +
-Haga clic en *image:../media/filter_icon.png[""]* y luego seleccione el nombre de host y el tipo de base de datos para filtrar los recursos. A continuación, puede hacer clic en *image:../media/filter_icon.png[""]* para cerrar el panel de filtros.
+Haga clic enimage:../media/filter_icon.gif["icono de filtro"]* * y, a continuación, seleccione el nombre de host y el tipo de base de datos para filtrar los recursos. A continuación, puede hacer clic en *image:../media/filter_icon.gif["icono de filtro"]* para cerrar el panel de filtros.
 
 +
 ** Para realizar el backup de una base de datos, se debe hacer clic en el nombre de la base de datos.
@@ -62,7 +62,7 @@ Por ejemplo, _customtext_policy_hostname_ o _resource_hostname_. De forma predet
 .. Seleccione una o varias políticas de la lista desplegable.
 +
 
-NOTE: También puede crear una directiva haciendo clic en *image:../media/add_policy_from_resourcegroup.gif[""]*.
+NOTE: También puede crear una política haciendo clic en *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]*.
 
 +
 
@@ -74,7 +74,7 @@ NOTE: Si una directiva contiene la opción *copia de seguridad de copias en los 
 En la sección Configure schedules for selected policies, se muestran las políticas seleccionadas.
 
 +
-.. Haga clic en *image:../media/add_policy_from_resourcegroup.gif[""]* En la columna Configurar programaciones de la directiva para la que desea configurar una programación.
+.. Haga clic enimage:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]* en la columna Configure Schedules correspondiente a la política para la cual desea configurar una programación.
 .. En la ventana Add schedules for policy _policy_name_, configure la programación y haga clic en *OK*.
 +
 Donde, _policy_name_ es el nombre de la directiva seleccionada.

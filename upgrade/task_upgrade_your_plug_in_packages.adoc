@@ -48,7 +48,7 @@ En la página *Detalles del trabajo*, un mensaje de advertencia recomienda que e
 ... Haga clic en *Actualizar*.
 
 
-** Si desea actualizar varios hosts de plugin, seleccione todos los hosts, haga clic en image:../media/more_icon.gif[""]y, a continuación, haga clic en *Actualizar* > *Aceptar*.
+** Si desea actualizar varios hosts, seleccione todos los hosts, haga clic en y, a continuación, haga clic image:../media/more_icon.gif["icono más"]en *Actualizar* > *Aceptar*.
 +
 Todos los servicios relacionados se reinician durante la actualización del plugin.
 

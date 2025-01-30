@@ -281,6 +281,21 @@ No aplicable
 
 
  a| 
+Protección secundaria
+ a| 
+No
+ a| 
+No
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
 Monitor de trabajos
  a| 
 Sí
@@ -545,6 +560,21 @@ No aplicable
 
 
  a| 
+Protección secundaria
+ a| 
+No
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
 Monitor de trabajos
  a| 
 Sí
@@ -795,6 +825,21 @@ No aplicable
 
  a| 
 Restaurar volumen completo
+ a| 
+No
+ a| 
+No
+ a| 
+No aplicable
+ a| 
+No aplicable
+ a| 
+No aplicable
+
+
+
+ a| 
+Protección secundaria
  a| 
 No
  a| 

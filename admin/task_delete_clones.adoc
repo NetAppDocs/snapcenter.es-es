@@ -28,7 +28,7 @@ Por ejemplo, si la base de datos de producción es db1, el clon 1 de la base de 
 Se muestra la página con el resumen o grupo de recursos.
 
 . En la vista Manage Copies (Administrar copias), seleccione *Clones* ya sea en los sistemas de almacenamiento principal o secundario (reflejado o replicado).
-. Seleccione el clon y, a continuación, haga clic en image:../media/delete_icon.gif[""].
+. Seleccione el clon y, a continuación, haga clic en image:../media/delete_icon.gif["icono de eliminar"].
 +
 Si elimina clones de bases de datos SAP HANA, en la página Delete Clone, lleve a cabo las acciones siguientes:
 

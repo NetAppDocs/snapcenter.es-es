@@ -1,0 +1,141 @@
+---
+permalink: protect-hana/create-resource-groups-secondary-protection-for-asa-r2-hana-resources.html 
+sidebar: sidebar 
+keywords: asa r2, secondary protection, consistency group, primary consistency group, secondary consistency group 
+summary: Un grupo de recursos es un contenedor donde se añaden recursos que se quieren proteger e incluir en un backup. Permite realizar un backup en simultáneo con todos los datos que están asociados con una determinada aplicación. 
+---
+= Cree grupos de recursos y habilite la protección secundaria para recursos SAP HANA en sistemas ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe crear el grupo de recursos para añadir los recursos que están en los sistemas ASA R2. También puede aprovisionar la protección secundaria al crear el grupo de recursos.
+
+.Antes de empezar
+* Debe asegurarse de no añadir recursos de ONTAP 9.x y recursos de ASA R2 al mismo grupo de recursos.
+* Debe asegurarse de que no dispone de una base de datos con recursos de ONTAP 9.x y recursos de ASA R2.
+
+
+.Acerca de esta tarea
+* La protección secundaria solo está disponible si el usuario que ha iniciado sesión está asignado al rol que tiene habilitada la capacidad *SecondaryProtection*.
+* Si habilitó la protección secundaria, el grupo de recursos se pone en modo de mantenimiento mientras crea los grupos de coherencia primario y secundario. Una vez creados los grupos de coherencia primario y secundario, el grupo de recursos se queda sin modo de mantenimiento.
+* SnapCenter no admite la protección secundaria para un recurso clonado.
+
+
+.Pasos
+. En el panel de navegación de la izquierda, seleccione *Recursos* y el plug-in apropiado de la lista.
+. En la página Resources, haga clic en *New Resource Group*.
+. En la página Name, realice los siguientes pasos:
++
+.. Escriba un nombre para el grupo de recursos en el campo Name.
++
+
+NOTE: El nombre del grupo de recursos no debe superar los 250 caracteres.
+
+.. Escriba una o más etiquetas en el campo Etiqueta para que le ayude a buscar el grupo de recursos más adelante.
++
+Por ejemplo, si añadió HR como etiqueta a varios grupos de recursos, más adelante encontrará todos los grupos de recursos asociados usando esa etiqueta.
+
+.. Marque esta casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de Snapshot.
++
+Por ejemplo, customtext_resource group_policy_hostname o resource group_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la Snapshot.
+
+.. Especifique los destinos de los archivos de registro de archivos que no desea incluir en el backup.
++
+
+NOTE: Debe utilizar exactamente el mismo destino que se estableció en la aplicación, incluido el prefijo, si es necesario.
+
+
+
+. En la página Recursos, seleccione el nombre del host de la base de datos en la lista desplegable *Host*.
++
+
+NOTE: Los recursos aparecen en la sección Available Resources solo si se detectan correctamente. Si agregó recursos recientemente, aparecerán en la lista de recursos disponibles únicamente después de actualizar la lista de recursos.
+
+. Seleccione los recursos de ASA R2 de la sección Available Resources y muévalos a la sección Selected Resources.
+. En la página Application Settings, seleccione la opción de backup.
+. En la página Policies, realice los siguientes pasos:
++
+.. Seleccione una o varias políticas de la lista desplegable.
++
+
+NOTE: También puede crear una política haciendo clic en image:../media/add_policy_from_resourcegroup.gif["agregar símbolo"].
+
++
+En la sección Configure schedules for selected policies, se muestran las políticas seleccionadas.
+
+.. Haga clic en image:../media/add_policy_from_resourcegroup.gif["agregar símbolo"] En la columna Configure Schedules correspondiente a la política para la cual se desea configurar una programación.
+.. En la ventana Add schedules for policy _policy_name_, configure la programación y haga clic en *OK*.
++
+Donde, _policy_name_ es el nombre de la directiva seleccionada.
+
++
+Las programaciones configuradas figuran en la columna Applied Schedules.
+
+
+
++
+No se admiten programas de backup de terceros cuando se solapan con los programas de backup de SnapCenter.
+
+. Si la protección secundaria está habilitada para la política seleccionada, se muestra la página Secondary Protection y debe realizar los siguientes pasos:
++
+.. Seleccione el tipo de política de replicación.
++
+
+NOTE: No se admite la política de replicación síncrona.
+
+.. Especifique el sufijo del grupo de consistencia que desea utilizar.
+.. En los menús desplegables Cluster de destino y SVM de destino, seleccione el clúster con relaciones entre iguales y la SVM que desee utilizar.
++
+
+NOTE: SnapCenter no admite la relación entre iguales de los clústeres ni de SVM. Debe usar System Manager o CLI de ONTAP para realizar relaciones entre iguales de clústeres y SVM.
+
+
+
+
+
+
+NOTE: Si los recursos ya están protegidos fuera de SnapCenter, esos recursos aparecerán en la sección Secondary Protected Resources.
+
+. En la página Verification, realice los siguientes pasos:
++
+.. Haga clic en *Load locators* para cargar los volúmenes de SnapMirror o SnapVault y realizar la verificación en el almacenamiento secundario.
+.. Haga clic en image:../media/add_policy_from_resourcegroup.gif["agregar símbolo"] En la columna Configure Schedules para configurar la programación de verificación de todos los tipos de programación de la política.
+.. En el cuadro de diálogo Add Verification Schedules policy_name, realice las siguientes acciones:
++
+|===
+| Si desea... | Realice lo siguiente... 
+
+
+ a| 
+Ejecutar la verificación después del backup
+ a| 
+Seleccione *Ejecutar verificación después de la copia de seguridad*.
+
+
+
+ a| 
+Programar una verificación
+ a| 
+Seleccione *Ejecutar verificación programada* y, a continuación, seleccione el tipo de programa en la lista desplegable.
+
+|===
+.. Seleccione *verificar en la ubicación secundaria* para verificar las copias de seguridad en el sistema de almacenamiento secundario.
+.. Haga clic en *Aceptar*.
++
+Las programaciones de verificación configuradas aparecerán en la columna Applied Schedules.
+
+
+
+. En la página Notification, en la lista desplegable *Email preference*, seleccione los escenarios en los que desea enviar los correos electrónicos.
++
+También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. Si desea adjuntar el informe de la operación realizada en el grupo de recursos, seleccione *Adjuntar informe de trabajo*.
+
++
+
+NOTE: Para las notificaciones de correo electrónico, se deben haber especificado los detalles del servidor SMTP desde la interfaz gráfica de usuario o desde el comando de PowerShell Set-SmSmtpServer.
+
+. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+

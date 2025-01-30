@@ -43,7 +43,7 @@ Página Monitor
  a| 
 Panel de actividades
  a| 
-.. Tras iniciar la operación de backup, haga clic en *image:../media/activity_pane_icon.gif[""]* En el panel Activity para ver las cinco operaciones más recientes.
+.. Tras iniciar la operación de copia de seguridad, haga clic en *image:../media/activity_pane_icon.gif["icono del panel actividad"]* en el panel Activity para ver las cinco operaciones más recientes.
 .. Seleccione la operación.
 .. En la página Detalles del trabajo, haga clic en *Cancelar trabajo*.
 

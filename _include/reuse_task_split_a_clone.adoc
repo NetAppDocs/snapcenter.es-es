@@ -42,7 +42,7 @@ Seleccione *Ruta* en la lista Ver.
 +
 Se muestra la página con el resumen.
 
-. En la vista *Administrar copias*, seleccione el recurso clonado (por ejemplo, la base de datos o LUN) y, a continuación, haga clic en *image:../media/split_cone.gif["Icono de división de clones"]*.
+. En la vista *Administrar copias*, seleccione el recurso clonado (por ejemplo, la base de datos o LUN) y, a continuación, haga clic en *image:../media/split_clone.gif["Icono de división de clones"]*.
 . Revise el tamaño estimado del clon que se va a dividir y el espacio necesario disponible en el agregado y, a continuación, haga clic en *Inicio*.
 . Supervise el progreso de la operación haciendo clic en *Monitor* > *Jobs*.
 +

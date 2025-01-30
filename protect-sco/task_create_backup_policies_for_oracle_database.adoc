@@ -32,11 +32,6 @@ Si se especifica un período de bloqueo de Snapshot, se evita la eliminación de
 +
 Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
-+
-
-NOTE: La configuración principal de SnapLock se gestiona en la política de backup de SnapCenter y el secundario
-ONTAP gestiona la configuración de SnapLock.
-
 
 
 
@@ -47,32 +42,28 @@ ONTAP gestiona la configuración de SnapLock.
 . En la página Configuración, haga clic en *Directivas*.
 . Seleccione *Oracle Database* en la lista desplegable.
 . Haga clic en *Nuevo*.
-. En la página Name, escriba el nombre de la política y una descripción.
-. En la página Backup Type, realice los siguientes pasos:
+. En la página Name, escriba el nombre de la política y sus detalles.
+. En la página Policy type, realice los siguientes pasos:
 +
-** Si desea *crear una copia de seguridad en línea*, seleccione *copia de seguridad en línea*.
+.. Seleccione el tipo de almacenamiento.
+.. Seleccionar ámbito de política:
++
+*** Si desea *crear una copia de seguridad en línea*, seleccione *copia de seguridad en línea*.
 +
 Debe especificar si desea realizar un backup de todos los archivos de datos, los archivos de control y los archivos de registro de archivos, solo de los archivos de datos y los archivos de control, o solo de los archivos de registro de archivos.
 
-** Si desea *crear una copia de seguridad sin conexión*, seleccione *copia de seguridad sin conexión* y, a continuación, seleccione una de las siguientes opciones:
+*** Si desea *crear una copia de seguridad sin conexión*, seleccione *copia de seguridad sin conexión* y, a continuación, seleccione una de las siguientes opciones:
 +
-*** Si desea crear una copia de seguridad sin conexión cuando la base de datos está en estado montado, seleccione *Mount*.
-*** Si desea crear una copia de seguridad de apagado sin conexión cambiando el estado de la base de datos a apagado, seleccione *Apagar*.
+**** Si desea crear una copia de seguridad sin conexión cuando la base de datos está en estado montado, seleccione *Mount*.
+**** Si desea crear una copia de seguridad de apagado sin conexión cambiando el estado de la base de datos a apagado, seleccione *Apagar*.
 +
 Si tiene bases de datos conectables (PDB) y desea guardar el estado de las PDB antes de crear el backup, debe seleccionar *Guardar estado de PDB*. Esto permite que las PDB regresen a su estado original después de la creación del backup.
 
 
 
-** Especifique la frecuencia de programación seleccionando *a petición*, *hora*, *Diario*, *Semanal* o *Mensual*.
-+
 
-NOTE: Es posible especificar la programación (fecha de inicio y fecha de finalización) para la operación de backup mientras se crea un grupo de recursos. De este modo, puede crear grupos de recursos que compartan la misma política y la misma frecuencia de backup, pero también asignar diferentes programaciones de backup a cada política.
 
-+
-
-NOTE: Si ha programado para las 2:00 a.m., la programación no se activará durante el horario de verano.
-
-** Si desea catalogar la copia de seguridad con Oracle Recovery Manager (RMAN), seleccione *Catalog backup with Oracle Recovery Manager (RMAN)*.
+.. Si desea catalogar la copia de seguridad con Oracle Recovery Manager (RMAN), seleccione *Catalog backup with Oracle Recovery Manager (RMAN)*.
 +
 Puede realizar una catalogación diferida de un backup a la vez con la interfaz gráfica de usuario o con el comando Catalog-SmBackupWithOracleRMAN de la CLI de SnapCenter.
 
@@ -80,7 +71,7 @@ Puede realizar una catalogación diferida de un backup a la vez con la interfaz 
 
 NOTE: Si desea catalogar backups de una base de datos de RAC, asegúrese de que no exista otro trabajo en ejecución para esa base de datos. Si existe otro trabajo en ejecución, la operación de catalogación genera un error se interrumpe tras generar un error y no se colocar en cola.
 
-** Si desea reducir los registros de archivos después de la copia de seguridad, seleccione *Prune archive logs after backup*.
+.. Si desea reducir los registros de archivos después de la copia de seguridad, seleccione *Prune archive logs after backup*.
 +
 
 NOTE: Se omitirá la eliminación de registros de archivo desde el destino del registro de archivos que no esté configurado en la base de datos.
@@ -89,7 +80,8 @@ NOTE: Se omitirá la eliminación de registros de archivo desde el destino del r
 
 IMPORTANT: Si está utilizando Oracle Standard Edition, puede utilizar los parámetros LOG_ARCHIVE_DEST y LOG_ARCHIVE_DUPLEX_DEST al realizar una copia de seguridad del registro de archivos.
 
-** Puede eliminar los registros de archivos únicamente si seleccionó los archivos de registro de archivos como parte del backup.
++
+*** Puede eliminar los registros de archivos únicamente si seleccionó los archivos de registro de archivos como parte del backup.
 +
 
 NOTE: Debe asegurarse de que todos los nodos en el entorno RAC puedan acceder a todas las ubicaciones del registro de archivos para que la operación de eliminación se complete correctamente.
@@ -127,11 +119,24 @@ Seleccione *Eliminar registros de archivo de los destinos que forman parte de co
 
 |===
 +
-image:../media/sco_backuppolicy_prunning.gif["política de backup"]
+image:../media/sco_backuppolicy_prunning.gif["política de reclamación"]
 
 
 
-. En la página Retention, especifique la configuración de retención para el tipo de backup y el tipo de programación seleccionados en la página Backup Type:
+
+
+. En la página Snapshot and Replication, realice los siguientes pasos:
++
+.. Especifique la frecuencia de programación seleccionando *a petición*, *hora*, *Diario*, *Semanal* o *Mensual*.
++
+
+NOTE: Es posible especificar la programación (fecha de inicio y fecha de finalización) para la operación de backup mientras se crea un grupo de recursos. De este modo, puede crear grupos de recursos que compartan la misma política y la misma frecuencia de backup, pero también asignar diferentes programaciones de backup a cada política.
+
++
+
+NOTE: Si ha programado para las 2:00 a.m., la programación no se activará durante el horario de verano.
+
+.. En la sección Data snapshot retention settings, especifique la configuración de retención para el tipo de backup y el tipo de programación seleccionados en la página Backup Type:
 +
 |===
 
@@ -142,7 +147,7 @@ image:../media/sco_backuppolicy_prunning.gif["política de backup"]
  a| 
 Mantenga un cierto número de Snapshots
  a| 
-Seleccione *Total Snapshot copies to keep* y, a continuación, especifique el número de instantáneas que desea conservar.
+Seleccione *Copias para guardar* y, a continuación, especifique el número de instantáneas que desea conservar.
 
 Si la cantidad de snapshots supera el número especificado, las snapshots se eliminan empezando por las más antiguas.
 
@@ -157,23 +162,105 @@ IMPORTANT: Debe establecer el número de retención en 2 o un valor más alto si
  a| 
 Mantenga los Snapshots durante una cierta cantidad de días
  a| 
-Seleccione *Mantener copias snapshot para* y, a continuación, especifique el número de días durante los cuales desea conservar las instantáneas antes de eliminarlas.
+Seleccione *Retener copias para* y, a continuación, especifique el número de días durante los cuales desea conservar las instantáneas antes de eliminarlas.
 
 
 
  a| 
-Período de bloqueo de instantánea
+Período de bloqueo de la copia snapshot primaria
  a| 
-Seleccione Snapshot copy locking period y seleccione días, meses o años.
+Si desea especificar el Período de bloqueo de copia de instantánea primaria, seleccione *Período de bloqueo de copia de instantánea primaria* y seleccione Días, meses o años.
 
 El período de retención de SnapLock debe ser inferior a 100 años.
+
+
+
+ a| 
+Período de bloqueo de copia de snapshot secundaria
+ a| 
+Si desea especificar el período de bloqueo de copia de instantánea secundaria, seleccione *Periodo de bloqueo de copia de instantánea secundaria* y seleccione Días, Meses o Años.
+
+Para que esta opción sea efectiva, debe realizar las siguientes tareas:
+
+*** Seleccione el *Periodo de bloqueo de copia de instantánea primaria*.
+*** Seleccione una de las opciones de replicación secundaria o ambas.
+
 
 |===
 +
 
 NOTE: Puede retener los backups de registros de archivos únicamente si seleccionó los archivos de registro de archivos como parte del backup.
 
-. En la página Replication, especifique la configuración de replicación:
+.. En la sección Archive Log snapshot retention settings, especifique la configuración de retención para el tipo de backup y el tipo de programación seleccionados en la página Backup Type:
++
+|===
+
+
+| Si desea... | Realice lo siguiente... 
+
+
+ a| 
+Mantenga un cierto número de Snapshots
+ a| 
+Seleccione *Copias para guardar* y, a continuación, especifique el número de instantáneas que desea conservar.
+
+Si la cantidad de snapshots supera el número especificado, las snapshots se eliminan empezando por las más antiguas.
+
+
+NOTE: El valor de retención máximo es 1018 para recursos en ONTAP 9.4 o posterior, y 254 para recursos en ONTAP 9.3 o anterior. Se producirá un error en los backups si la retención se establece en un valor superior a la versión de ONTAP subyacente.
+
+
+IMPORTANT: Debe establecer el número de retención en 2 o un valor más alto si tiene pensado habilitar la replicación de SnapVault. Si establece el número de retención en 1, la operación puede generar un error, ya que la primera Snapshot es la de referencia para la relación de SnapVault hasta que se replica una nueva Snapshot en el destino.
+
+
+
+ a| 
+Mantenga los Snapshots durante una cierta cantidad de días
+ a| 
+Seleccione *Retener copias para* y, a continuación, especifique el número de días durante los cuales desea conservar las instantáneas antes de eliminarlas.
+
+
+
+ a| 
+Período de bloqueo de la copia snapshot primaria
+ a| 
+Si desea especificar el Período de bloqueo de copia de instantánea primaria, seleccione *Período de bloqueo de copia de instantánea primaria* y seleccione Días, meses o años.
+
+El período de retención de SnapLock debe ser inferior a 100 años.
+
+
+
+ a| 
+Período de bloqueo de copia de snapshot secundaria
+ a| 
+Si desea especificar el período de bloqueo de copia de instantánea secundaria, seleccione *Periodo de bloqueo de copia de instantánea secundaria* y seleccione Días, Meses o Años.
+
+Para que esta opción sea efectiva, debe realizar las siguientes tareas:
+
+*** Seleccione el *Periodo de bloqueo de copia de instantánea primaria*.
+*** Seleccione una de las opciones de replicación secundaria o ambas.
+
+
+|===
++
+
+NOTE: Puede retener los backups de registros de archivos únicamente si seleccionó los archivos de registro de archivos como parte del backup.
+
+.. Seleccione la etiqueta de política.
++
+Según la etiqueta de Snapshot que seleccione, ONTAP aplicará la política de retención de Snapshot secundaria que corresponda a esa etiqueta.
+
++
+
+NOTE: Si ha seleccionado *Actualizar SnapMirror después de crear una copia Snapshot local*, puede especificar opcionalmente la etiqueta de la directiva secundaria. Sin embargo, si ha seleccionado *Actualizar SnapVault después de crear una copia Snapshot local*, debe especificar la etiqueta de la directiva secundaria.
+
+
+
+. En la sección Select secondary replication options, seleccione una de las siguientes opciones de replicación secundaria o ambas:
++
+
+NOTE: Debe seleccionar las opciones de replicación secundarias para que el *Periodo de bloqueo de copia de instantánea secundaria* sea efectivo.
+
 +
 |===
 | Para este campo... | Realice lo siguiente... 
@@ -202,18 +289,6 @@ Cuando SnapLock se configura solo en el secundario desde ONTAP conocido como Alm
 Para obtener más información sobre el Almacén SnapLock, consulte https://docs.netapp.com/us-en/ontap/snaplock/commit-snapshot-copies-worm-concept.html["Confirmar copias Snapshot a WORM en un destino de almacén"]
 
 Consulte link:../protect-sco/task_view_oracle_databse_backups_and_clones_in_the_topology_page.html["Consulte los backups y los clones de las bases de datos de Oracle en la página Topology"].
-
-
-
- a| 
-Etiqueta de la política secundaria
- a| 
-Seleccione una etiqueta de Snapshot.
-
-Según la etiqueta de Snapshot que seleccione, ONTAP aplicará la política de retención de Snapshot secundaria que corresponda a esa etiqueta.
-
-
-NOTE: Si ha seleccionado *Actualizar SnapMirror después de crear una copia Snapshot local*, puede especificar opcionalmente la etiqueta de la directiva secundaria. Sin embargo, si ha seleccionado *Actualizar SnapVault después de crear una copia Snapshot local*, debe especificar la etiqueta de la directiva secundaria.
 
 
 

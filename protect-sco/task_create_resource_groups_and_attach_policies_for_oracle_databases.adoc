@@ -64,6 +64,7 @@ NOTE: Los recursos aparecen en la sección Available Resources solo si se detect
 
 NOTE: Puede agregar bases de datos desde hosts Linux y AIX en un solo grupo de recursos.
 
+. En la página Application Settings, seleccione la opción de backup.
 . En la página Policies, realice los siguientes pasos:
 +
 .. Seleccione una o varias políticas de la lista desplegable.

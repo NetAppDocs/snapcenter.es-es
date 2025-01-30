@@ -78,12 +78,12 @@ NOTE: Si recientemente añadió recursos, aparecerán en la lista Available Reso
 .. Seleccione una o varias políticas de la lista desplegable.
 +
 
-NOTE: También puede crear una directiva haciendo clic en *image:../media/add_policy_from_resourcegroup.gif[""]*.
+NOTE: También puede crear una política haciendo clic en *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]*.
 
 +
 En la sección Configure schedules for selected policies, se muestran las políticas seleccionadas.
 
-.. En la sección Configure schedules for selected policies, haga clic en *image:../media/add_policy_from_resourcegroup.gif[""]* En la columna Configure Schedules correspondiente a la directiva para la que desea configurar la programación.
+.. En la sección Configure schedules for selected policies, haga clic en *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]en la columna Configure Schedules de la política para la cual desea configurar la programación.
 .. En el cuadro de diálogo Add schedules for policy _policy_name_, configure la programación especificando la fecha de inicio, la fecha de caducidad y la frecuencia y, a continuación, haga clic en *Aceptar*.
 +
 Debe hacerlo con cada frecuencia que figure en la política. Los horarios configurados se enumeran en la columna Applied Schedules en la sección *Configure schedules for selected policies*.
@@ -111,7 +111,7 @@ La lista incluye todos los servidores SQL agregados en SnapCenter. Puede selecci
 NOTE: La versión del servidor de verificación debe coincidir con la versión y edición del servidor SQL que aloja la base de datos principal.
 
 .. Haga clic en *Load locators* para cargar los volúmenes de SnapMirror y SnapVault y realizar la verificación en el almacenamiento secundario.
-.. Seleccione la política para la que desea configurar la programación de verificación y haga clic en *image:../media/add_policy_from_resourcegroup.gif[""]*.
+.. Seleccione la política para la que desea configurar la programación de verificación y haga clic enimage:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]* *.
 .. En el cuadro de diálogo Add Verification Schedules policy_name, realice las siguientes acciones:
 +
 |===

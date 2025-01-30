@@ -30,7 +30,6 @@ NOTE: No es posible modificar ni quitar permisos del rol de administrador de Sna
 . En el panel de navegación de la izquierda, haga clic en *Configuración*.
 . En la página Configuración, haga clic en *roles*.
 . En el campo de nombre Role, haga clic en el rol que desea modificar.
-. En la página Role Details, modifique los permisos o anule la asignación de los miembros según sea necesario.
 . Seleccione *todos los miembros de esta función pueden ver los objetos de otros miembros* para permitir que otros miembros de la función vean recursos como volúmenes y hosts después de actualizar la lista de recursos.
 +
 Anule la selección de esta opción si no desea que los miembros del rol vean los objetos a los que se asignaron otros miembros.
@@ -39,6 +38,7 @@ Anule la selección de esta opción si no desea que los miembros del rol vean lo
 
 NOTE: Cuando se habilita esta opción, no es necesario asignar a los usuarios acceso a los objetos o recursos si los usuarios pertenecen al mismo rol que el usuario que creó los objetos o recursos.
 
+. En la página Role Details, modifique los permisos o anule la asignación de los miembros según sea necesario.
 . Haga clic en *Enviar*.
 
 

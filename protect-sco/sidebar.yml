@@ -73,6 +73,9 @@ entries:
     url: "/protect-sco/task_create_backup_policies_for_oracle_database.html"
   - title: Crear grupos de recursos
     url: "/protect-sco/task_create_resource_groups_and_attach_policies_for_oracle_databases.html"
+  - title: Crear grupos de recursos y habilitar la protección secundaria para recursos
+      de Oracle en sistemas ASA R2
+    url: "/protect-sco/create-resource-groups-secondary-protection-for-asa-r2-oracle-resources.html"
   - title: Realice backup de recursos de Oracle
     url: "/protect-sco/task_back_up_oracle_resources.html"
   - title: Realice un backup de los grupos de recursos

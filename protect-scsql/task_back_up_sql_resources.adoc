@@ -14,6 +14,7 @@ summary: Si un recurso aún no es parte de ningún grupo de recursos, es posible
 Si un recurso aún no es parte de ningún grupo de recursos, es posible realizar backups del recurso desde la página Resources.
 
 .Acerca de esta tarea
+* Para optimizar la operación de copia de seguridad, debe crear un registro de búsqueda inversa de nombres de clúster de Windows y direcciones IP en el servidor DNS.
 * Para la autenticación de credenciales de Windows, debe configurar la credencial antes de instalar los plugins.
 * Para la autenticación de la instancia de SQL Server, debe añadir la credencial después de instalar los plugins.
 * Para la autenticación GMSA, debe configurar GMSA mientras registra el host con SnapCenter en la página *Agregar host* o *Modificar host* para activar y utilizar el GMSA.
@@ -51,12 +52,12 @@ Por ejemplo, customtext_policy_hostname o resource_hostname. De forma predetermi
 +
 .. En la sección Policies, seleccione una o más políticas de la lista desplegable.
 +
-Puede crear una política seleccionando *image:../media/add_policy_from_resourcegroup.gif[""]* para iniciar el asistente de políticas.
+Puede crear una política seleccionando *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]* para iniciar el asistente de políticas.
 
 +
 En la sección *Configurar horarios para directivas seleccionadas*, se muestran las directivas seleccionadas.
 
-.. Seleccione *image:../media/add_policy_from_resourcegroup.gif[""]* En la columna Configurar programaciones de la directiva para la que desea configurar una programación.
+.. Seleccione *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]* en la columna Configure Schedules correspondiente a la política para la cual desea configurar una programación.
 .. En la sección *Agregar horarios para la directiva* `policy_name` Cuadro de diálogo, configure la programación y, a continuación, seleccione * Aceptar *.
 +
 Aquí `policy_name` es el nombre de la política seleccionada.
@@ -78,7 +79,7 @@ Puede seleccionar varios servidores de verificación (host local o remoto).
 NOTE: La versión del servidor de verificación debe ser igual o superior a la versión de la edición del servidor SQL que aloja la base de datos principal.
 
 .. Seleccione *cargar localizadores secundarios para verificar copias de seguridad en secundario* para verificar las copias de seguridad en el sistema de almacenamiento secundario.
-.. Seleccione la política para la que desea configurar la programación de verificación y, a continuación, seleccione *image:../media/add_policy_from_resourcegroup.gif[""]*.
+.. Seleccione la política para la que desea configurar la programación de verificación y, a continuación, seleccione * *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"].
 .. En el cuadro de diálogo Add Verification Schedules _policy_name_, realice las siguientes acciones:
 +
 |===

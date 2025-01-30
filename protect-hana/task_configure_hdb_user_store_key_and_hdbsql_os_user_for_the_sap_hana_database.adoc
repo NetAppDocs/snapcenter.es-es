@@ -22,9 +22,9 @@ Debe configurar la clave de almacenamiento de usuario HDB y el usuario del siste
 .Pasos
 . En el panel de navegación de la izquierda, haga clic en *Resources* y seleccione SnapCenter Plug-in for SAP HANA Database en la lista.
 . En la página Resources, seleccione el tipo de recurso en la lista *View*.
-. (Opcional) Haga clic en image:../media/filter_icon.png["icono de filtro"] y seleccione el nombre de host.
+. (Opcional) Haga clic en image:../media/filter_icon.gif["icono de filtro"] y seleccione el nombre de host.
 +
-A continuación, puede hacer clic en image:../media/filter_icon.png["icono de filtro"] para cerrar el panel de filtros.
+A continuación, puede hacer clic en image:../media/filter_icon.gif["icono de filtro"] para cerrar el panel de filtros.
 
 . Seleccione la base de datos y, a continuación, haga clic en *Configurar base de datos*.
 . En la sección Configure database settings, introduzca una clave de almacenamiento de usuario seguro HDB.

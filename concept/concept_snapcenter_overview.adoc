@@ -29,6 +29,7 @@ SnapCenter puede implementarse de las siguientes maneras:
 ** Datos en sistemas principales de cabinas ONTAP FAS, AFF o All SAN (ASA) y replicados a sistemas secundarios ONTAP FAS, AFF o ASA
 ** Datos en sistemas principales ONTAP Select
 ** Datos en sistemas principales y secundarios de ONTAP FAS, AFF o ASA, y protegidos en el almacenamiento de objetos local de StorageGRID
+** Datos en sistemas primarios y secundarios de ONTAP ASA R2
 
 
 * En las instalaciones, en un cloud híbrido para proteger lo siguiente:
@@ -89,7 +90,7 @@ Para obtener más información sobre las API de REST, consulte https://docs.neta
 Para obtener más información sobre cmdlets de Windows, consulte https://docs.netapp.com/us-en/snapcenter-cmdlets/index.html["Guía de referencia de cmdlets de SnapCenter Software"^].
 
 +
-Para obtener más información sobre los comandos de UNIX, consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP3323470["Guía de referencia de comandos del software SnapCenter"^].
+Para obtener más información sobre los comandos de UNIX, consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP3337666["Guía de referencia de comandos del software SnapCenter"^].
 
 * Consola de protección de datos y generación de informes centralizadas
 * Control de acceso basado en roles (RBAC) para seguridad y delegación.
@@ -111,10 +112,10 @@ Puede recuperar el servidor SnapCenter en caso de desastres como daños en los r
 
 * SnapLock
 +
-SnapLock es una solución de cumplimiento de alto rendimiento para organizaciones que utilizan almacenamiento WORM para conservar los ficheros en un formato sin modificar para cumplir las normativas y el gobierno.
+SnapLock es una solución de cumplimiento de alto rendimiento para organizaciones que utilizan almacenamiento WORM para conservar los ficheros en un formato sin modificar para cumplir las normativas y el gobierno. Para obtener más información sobre SnapLock, consulte https://docs.netapp.com/us-en/ontap/snaplock/["Qué es SnapLock"].
 
 +
-Para obtener más información sobre SnapLock, consulte https://docs.netapp.com/us-en/ontap/snaplock/["Qué es SnapLock"]
+El bloqueo de instantáneas garantiza que no se puedan eliminar por accidente o de forma malintencionada. SnapCenter permite especificar el período de bloqueo para las instantáneas primarias y secundarias.
 
 * SnapMirror, sincronización activa (lanzado inicialmente como SnapMirror Business Continuity [SM-BC])
 +

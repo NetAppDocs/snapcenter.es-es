@@ -31,7 +31,7 @@ Los siguientes iconos aparecen en la página Jobs e indican el estado de la oper
 . En la página *Monitor*, haga clic en *trabajos*.
 . En la página *trabajos*, realice los siguientes pasos:
 +
-.. Haga clic en image:../media/filter_icon.png["Icono de filtro"] para filtrar la lista de modo que solo figuren las operaciones de restauración.
+.. Haga clic image:../media/filter_icon.gif["icono de filtro"] en para filtrar la lista de modo que solo figuren las operaciones de restauración.
 .. Especifique las fechas de inicio y finalización.
 .. En la lista desplegable *Tipo*, seleccione *Restaurar*.
 .. En la lista desplegable *Estado*, seleccione el estado de restauración.

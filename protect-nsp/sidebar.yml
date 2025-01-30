@@ -92,6 +92,9 @@ entries:
     url: "/protect-nsp/create_policies_for_netapp_supported_plugins_resources.html"
   - title: Crear grupos de recursos y añadir políticas
     url: "/protect-nsp/create_resource_groups_and_attach_policies.html"
+  - title: Cree grupos de recursos y habilite la protección secundaria para los recursos
+      en sistemas R2 de ASA
+    url: "/protect-nsp/create-resource-groups-secondary-protection-for-asa-r2-resources.html"
   - title: Crear una conexión del sistema de almacenamiento y una credencial mediante
       cmdlets de PowerShell
     url: "/protect-nsp/create_a_storage_system_connection_and_a_credential_using_powershell_cmdlets.html"

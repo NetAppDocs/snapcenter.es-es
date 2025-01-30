@@ -16,7 +16,7 @@ Si un recurso no es parte de ningún grupo de recursos, es posible realizar back
 .Pasos
 . En el panel de navegación de la izquierda, seleccione *Recursos* y el plug-in apropiado de la lista.
 . En la página Recursos, seleccione *Ruta* en la lista Ver.
-. Haga clic en image:../media/filter_icon.png["Icono de filtro"], Y, a continuación, seleccione el nombre de host y los sistemas de archivos Unix para filtrar los recursos.
+. Haga clic en image:../media/filter_icon.gif["icono de filtro"]y, a continuación, seleccione el nombre de host y los sistemas de archivos Unix para filtrar los recursos.
 . Seleccione el sistema de archivos del que desea realizar un backup.
 . En la página Resources, puede realizar los siguientes pasos:
 +

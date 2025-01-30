@@ -19,7 +19,7 @@ No se pueden ejecutar en simultáneo operaciones de backup y restauración en el
 
 El siguiente flujo de trabajo muestra la secuencia que debe seguirse para realizar la operación de backup:
 
-image::../media/scsql_backup_workflow.png[Flujo de trabajo de backup de SCSQL]
+image::../media/scsql_backup_workflow.gif[Flujo de trabajo de backup de SCSQL]
 
 
 NOTE: Las opciones Backup Now, Restore, Manage backups y Clone de la página Resources están deshabilitadas si selecciona un LUN que no pertenece a NetApp, una base de datos dañada o una base de datos que se está restaurando.

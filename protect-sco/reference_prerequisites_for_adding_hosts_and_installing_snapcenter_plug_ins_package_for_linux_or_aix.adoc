@@ -403,9 +403,9 @@ NOTE: Si especifica detalles incorrectos al crear una credencial, se muestra un 
 
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . En la página Resources, seleccione *Database* en la lista *View*.
-. Haga clic en image:../media/filter_icon.png["icono de filtro"]y, a continuación, seleccione el nombre de host y el tipo de base de datos para filtrar los recursos.
+. Haga clic en image:../media/filter_icon.gif["icono de filtro"]y, a continuación, seleccione el nombre de host y el tipo de base de datos para filtrar los recursos.
 +
-A continuación, puede hacer clic en image:../media/filter_icon.png["icono de filtro"] para cerrar el panel de filtros.
+A continuación, puede hacer clic en image:../media/filter_icon.gif["icono de filtro"] para cerrar el panel de filtros.
 
 . Seleccione la base de datos y, a continuación, haga clic en *Configuración de base de datos* > *Configurar base de datos*.
 . En la sección Configure database settings, en la lista desplegable *Use existing Credential*, seleccione la credencial que debe utilizarse para realizar trabajos de protección de datos en la base de datos Oracle.

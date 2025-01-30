@@ -70,7 +70,7 @@ Esto es opcional.
 |===
 . En la página Provide Storage Footprint, seleccione un tipo de almacenamiento y elija uno o más volúmenes, LUN y qtrees y, a continuación, haga clic en *Save*.
 +
-Opcional: Puede hacer clic en el *image:../media/add_policy_from_resourcegroup.gif[""]* Icono para añadir más volúmenes, LUN y qtrees desde otros sistemas de almacenamiento.
+Opcional: Puede hacer clic en el icono *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]* para añadir más volúmenes, LUN y qtrees desde otros sistemas de almacenamiento.
 
 . Opcional: En la página Resource Settings, en el caso de los recursos del host de Windows, introduzca pares de clave-valor personalizados para el plugin de PostgreSQL
 . Revise el resumen y, a continuación, haga clic en *Finalizar*.

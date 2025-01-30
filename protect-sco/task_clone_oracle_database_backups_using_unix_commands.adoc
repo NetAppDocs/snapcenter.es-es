@@ -17,7 +17,7 @@ El flujo de trabajo de clonado incluye planificar, realizar la operación de clo
 
 Debe ejecutar los siguientes comandos para crear el archivo de especificación del clon de la base de datos de Oracle e iniciar la operación de clonado.
 
-La información relativa a los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando Get-Help _command_name_. Alternativamente, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP3323470["Guía de referencia de comandos del software SnapCenter"^].
+La información relativa a los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando Get-Help _command_name_. Alternativamente, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP3337666["Guía de referencia de comandos del software SnapCenter"^].
 
 * Pasos*
 

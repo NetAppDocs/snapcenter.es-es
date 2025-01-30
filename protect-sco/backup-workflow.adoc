@@ -15,7 +15,7 @@ Es posible crear un backup de un recurso (base de datos) o un grupo de recursos.
 
 Los siguientes flujos de trabajo muestran la secuencia que debe seguirse para realizar la operación de backup:
 
-image::../media/sco_backup_workflow.png[Flujo de trabajo de backup para Oracle]
+image::../media/sco_backup_workflow.gif[Flujo de trabajo de backup para Oracle]
 
 Al crear un backup para bases de datos de Oracle, se crea un archivo de bloqueo operativo (_.sm_lock_dbsid_) en el host de la base de datos de Oracle, en el directorio _/var/opt/snapcenter/sco/lock_, para evitar que se ejecuten varias operaciones en la base de datos. Después de realizar el backup de la base de datos, se elimina automáticamente el archivo de bloqueo operativo.
 

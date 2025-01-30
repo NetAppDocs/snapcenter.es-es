@@ -39,7 +39,7 @@ Las bases de datos no están en estado normal cuando están en estado pendiente 
 Todas las bases de datos y los DAG se muestran con sus nombres de DAG o host en formato FQDN, por lo que es posible distinguir entre varias bases de datos.
 
 +
-Haga clic en image:../media/filter_icon.png["Icono de filtro"] Y seleccione el nombre de host y el servidor de Exchange para filtrar los recursos. A continuación, puede hacer clic en image:../media/filter_icon.png["Icono de filtro"] para cerrar el panel de filtros.
+Haga clic image:../media/filter_icon.gif["icono de filtro"] en y seleccione el nombre de host y el servidor de Exchange para filtrar los recursos. A continuación, puede hacer clic en image:../media/filter_icon.gif["icono de filtro"] para cerrar el panel de filtros.
 
 . Haga clic en *Actualizar recursos*.
 +

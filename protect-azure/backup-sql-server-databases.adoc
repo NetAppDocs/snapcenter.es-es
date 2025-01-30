@@ -23,7 +23,7 @@ Debe crear un balanceador de carga si el clúster de conmutación por error de A
 . En la página Policies, realice los siguientes pasos:
 +
 .. Seleccione una o varias políticas de la lista desplegable.
-.. Seleccione *image:../media/add_policy_from_resourcegroup.gif[""]* En la columna Configurar programaciones de la directiva para la que desea configurar una programación.
+.. Seleccione *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]* en la columna Configure Schedules correspondiente a la política para la cual desea configurar una programación.
 .. En el cuadro de diálogo Add schedules for policy _policy_name_, configure la programación y, a continuación, seleccione *OK*.
 +
 _policy_name_ es el nombre de la directiva seleccionada.
@@ -34,7 +34,7 @@ _policy_name_ es el nombre de la directiva seleccionada.
 . En la página Verification, realice los siguientes pasos:
 +
 .. Seleccione el servidor de verificación.
-.. Seleccione la política para la que desea configurar la programación de verificación y haga clic en *image:../media/add_policy_from_resourcegroup.gif[""]*.
+.. Seleccione la política para la que desea configurar la programación de verificación y haga clic enimage:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]* *.
 .. Seleccione *Ejecutar verificación después de copia de seguridad* o *Ejecutar verificación programada*.
 .. Haga clic en Aceptar.
 

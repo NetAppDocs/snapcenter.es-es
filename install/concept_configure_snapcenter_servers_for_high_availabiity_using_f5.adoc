@@ -13,7 +13,7 @@ summary: Configure la alta disponibilidad en SnapCenter usando F5, balanceo de c
 [role="lead"]
 Para admitir la alta disponibilidad (HA) en SnapCenter que se ejecuta en Windows o en Linux, puede instalar el equilibrador de carga F5. F5 permite al servidor SnapCenter admitir configuraciones activo-pasivo en hasta dos hosts que se encuentran en la misma ubicación. Para utilizar el equilibrador de carga F5 en SnapCenter, debe configurar SnapCenter Server y el equilibrador de carga F5.
 
-También es posible configurar balanceo de carga de red (NLB) de Microsoft para configurar la alta disponibilidad de SnapCenter. Debe configurar manualmente NLB fuera de la instalación de SnapCenter para tener alta disponibilidad.
+También es posible configurar balanceo de carga de red (NLB) para configurar la alta disponibilidad de SnapCenter. Debe configurar manualmente NLB fuera de la instalación de SnapCenter para tener alta disponibilidad.
 
 Para un entorno de nube, puede configurar alta disponibilidad usando Elastic Load Balancing (ELB) de Amazon Web Services (AWS) y el balanceador de carga de Azure.
 
@@ -23,7 +23,7 @@ Para un entorno de nube, puede configurar alta disponibilidad usando Elastic Loa
 --
 La imagen del flujo de trabajo enumera los pasos para configurar SnapCenter Server para una alta disponibilidad utilizando el equilibrador de carga F5. Para obtener instrucciones detalladas, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_configure_SnapCenter_Servers_for_high_availability_using_F5_Load_Balancer["Cómo configurar instancias de SnapCenter Server para obtener una alta disponibilidad mediante el balanceador de carga F5"^] .
 
-image::../media/sc-F5-configure-workflow.png[CONFIGURACIÓN DE ALTA DISPONIBILIDAD con F5]
+image::../media/sc-F5-configure-workflow.gif[Flujo de trabajo de configuración de F5]
 
 Debe ser miembro del grupo de administradores locales en SnapCenter Server (además de tener la asignación del rol de administrador de SnapCenter) para usar los siguientes cmdlets con el fin de agregar y quitar clústeres de F5:
 
@@ -47,7 +47,7 @@ Información adicional
 --
 .Configurar alta disponibilidad mediante el balanceo de carga de red (NLB)
 --
-Es posible configurar el balanceo de carga de red de Microsoft (NLB) para configurar la función de alta disponibilidad de SnapCenter. Debe configurar manualmente NLB fuera de la instalación de SnapCenter para tener alta disponibilidad.
+Es posible configurar NLB para configurar SnapCenter High Availability. Debe configurar manualmente NLB fuera de la instalación de SnapCenter para tener alta disponibilidad.
 
 Para obtener información acerca de cómo configurar el balanceo de carga de red (NLB) con SnapCenter, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_configure_NLB_and_ARR_with_SnapCenter["Cómo configurar NLB con SnapCenter"^] .
 

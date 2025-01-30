@@ -17,22 +17,7 @@ La ruta de actualización le ayuda a comprender desde qué versiones anteriores 
 | Si se encuentra en la versión de SnapCenter Server... | Puede actualizar directamente el servidor de SnapCenter a... | Versiones de plugins compatibles 
 
 
-.2+| 4,9 | 5,0  a| 
-* 4,9
-* 5,0
-
-
-
-
-| 6,0  a| 
-* 6,0
-
-
-
-
-.2+| 5,0  a| 
-6,0
- a| 
+.3+| 5,0 | 6,0  a| 
 * 5,0
 * 6,0
 
@@ -45,13 +30,31 @@ La ruta de actualización le ayuda a comprender desde qué versiones anteriores 
 
 
 
-| 6,0 | 6.0.1  a| 
+| 6,1  a| 
+* 6,1
+
+
+
+
+.2+| 6,0  a| 
+6.0.1
+ a| 
 * 6,0
 * 6.0.1
 
 
+
+
+| 6,1  a| 
+* 6,1
+
+
+
+
+| 6.0.1 | 6,1  a| 
+* 6.0.1
+* 6,1
+
+
 |===
-
-IMPORTANT: Por ejemplo, si utiliza la versión de SnapCenter 4,9 y quiere actualizar a la versión 6,0.1, primero debe actualizar a la versión 5,0 y, a continuación, realizar una actualización gradual a la versión 6,0.1.
-
 Para obtener información sobre cómo actualizar el plugin de SnapCenter para VMware vSphere, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_upgrade.html["Actualice el plugin de SnapCenter para VMware vSphere"^].

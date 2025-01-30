@@ -26,7 +26,7 @@ Debe usar la página SnapCenter Add Host para añadir hosts y, a continuación, 
 * La documentación de administración contiene información sobre la gestión de los hosts.
 * Si está utilizando la cuenta de servicio gestionado en grupo (GMSA), debe configurar GMSA con privilegios administrativos.
 +
-link:../protect-postgresql/configure-gMSA-on-windows-server-2012-or-later.html["Configure la cuenta de servicio administrada de grupo en Windows Server 2016 o posterior para PostgreSQL"^]
+link:../protect-postgresql/configure-gMSA-on-windows-server-2012-or-later.html["Configure la cuenta de servicio administrada de grupo en Windows Server 2016 o posterior para PostgreSQL"]
 
 
 

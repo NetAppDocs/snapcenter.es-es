@@ -49,7 +49,7 @@ Marque esta casilla de comprobación e introduzca un formato de nombre personali
 . En la página Policies, realice los siguientes pasos:
 +
 .. Seleccione una o varias políticas de la lista desplegable.
-.. En la columna Configure Schedules, haga clic en *image:../media/add_policy_from_resourcegroup.gif[""]* para la directiva que desea configurar.
+.. En la columna Configure Schedules, haga clic en *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]* en la política que desea configurar.
 .. En el cuadro de diálogo Agregar programas para la directiva _policy_name_ , configure la programación y, a continuación, haga clic en *Aceptar*.
 
 

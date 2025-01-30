@@ -31,10 +31,10 @@ La información relativa a los parámetros que se pueden utilizar con el cmdlet 
 
 El host de la pestaña Managed hosts muestra un candado y el color del candado indica el estado de la conexión entre SnapCenter Server y el host del plugin.
 
-* *image:../media/enable_ca_issues_icon.png[""]* Indica que no hay ningún certificado de CA habilitado o asignado al host del plugin.
-* *image:../media/enable_ca_good_icon.png[""]* Indica que el certificado de CA se ha validado correctamente.
-* *image:../media/enable_ca_failed_icon.png[""]* Indica que el certificado de CA no se ha podido validar.
-* *image:../media/enable_ca_undefined_icon.png[""]* indica que no se pudo recuperar la información de conexión.
+* image:../media/enable_ca_issues_icon.png["icono problemas"]* * Indica que no hay ningún certificado de CA habilitado o asignado al host del plugin.
+* image:../media/enable_ca_good_icon.png["buen icono"]* * Indica que el certificado CA se ha validado correctamente.
+* image:../media/enable_ca_failed_icon.png["icono de error"]* * Indica que el certificado CA no se pudo validar.
+* image:../media/enable_ca_undefined_icon.png["icono no definido"]* * indica que no se ha podido recuperar la información de conexión.
 
 
 

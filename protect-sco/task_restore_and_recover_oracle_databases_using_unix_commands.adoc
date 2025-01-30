@@ -17,7 +17,7 @@ El flujo de trabajo de restauración y recuperación incluye la planificación, 
 
 * Debe ejecutar los siguientes comandos para establecer la conexión con SnapCenter Server, enumerar los backups y recuperar su información, y restaurar el backup.
 +
-La información relativa a los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando Get-Help _command_name_. Alternativamente, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP3323470["Guía de referencia de comandos del software SnapCenter"^].
+La información relativa a los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando Get-Help _command_name_. Alternativamente, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP3337666["Guía de referencia de comandos del software SnapCenter"^].
 
 * Para la operación de restauración de sincronización activa de SnapMirror, debe seleccionar el backup de la ubicación principal.
 

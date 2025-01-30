@@ -17,6 +17,8 @@ Es posible programar varios backups para que se realicen simultáneamente en dif
 
 El siguiente flujo de trabajo muestra la secuencia que debe seguirse para realizar la operación de backup:
 
+image::../media/sce_backup_workflow.gif[flujo de trabajo de backup]
+
 image::../media/sce_backup_workflow.gif[Flujo de trabajo de backup de base de datos de Exchange]
 
 También puede usar los cmdlets de PowerShell manualmente o en scripts para realizar operaciones de backup, restauración y clonado. La ayuda sobre cmdlet de SnapCenter y el https://docs.netapp.com/us-en/snapcenter-cmdlets/index.html["Guía de referencia de cmdlets de SnapCenter Software"^] contienen información detallada sobre los cmdlets de PowerShell.

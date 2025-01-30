@@ -47,7 +47,7 @@ NOTE: Si no hay comandos en la lista de comandos, se producirá un error en la o
 . En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
 . En la página Recursos, filtre los recursos de la lista desplegable *Ver* en función del tipo de recurso.
 +
-image:../media/filter_icon.png["icono de filtro"]Seleccione , y, a continuación, seleccione el nombre de host y el tipo de recurso para filtrar los recursos. A continuación, puede seleccionar image:../media/filter_icon.png["icono de filtro"] cerrar el panel de filtros.
+Seleccioneimage:../media/filter_icon.gif["icono de filtro"]* * y, a continuación, seleccione el nombre de host y el tipo de recurso para filtrar los recursos. A continuación, puede seleccionar image:../media/filter_icon.gif["icono de filtro"] cerrar el panel de filtros.
 
 . Seleccione el recurso que desea incluir en el backup.
 . En la página Recursos, seleccione *Use custom name format for Snapshot copy* y, a continuación, escriba el formato del nombre personalizado que desee usar para el nombre de Snapshot.
@@ -119,12 +119,12 @@ image:../media/application_settings.gif["configuración de la aplicación"]
 .. Seleccione una o varias políticas de la lista desplegable.
 +
 
-NOTE: También puede crear una directiva haciendo clic en *image:../media/add_policy_from_resourcegroup.gif[""]*.
+NOTE: También puede crear una política haciendo clic en *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]*.
 
 +
 En la sección Configure schedules for selected policies, se muestran las políticas seleccionadas.
 
-.. Seleccione *image:../media/add_policy_from_resourcegroup.gif[""]* En la columna Configurar programaciones de la directiva para la que desea configurar una programación.
+.. Seleccione *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]* en la columna Configure Schedules correspondiente a la política para la cual desea configurar una programación.
 .. En el cuadro de diálogo Add schedules for policy _policy_name_, configure la programación y, a continuación, seleccione *OK*.
 +
 _policy_name_ es el nombre de la directiva seleccionada.

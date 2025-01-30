@@ -7,12 +7,12 @@ indexpage:
     que proporciona protección de datos consistente con las aplicaciones para aplicaciones,
     bases de datos, sistemas de archivos host y máquinas virtuales que se ejecutan
     en sistemas ONTAP en cualquier parte del cloud híbrido. Esta biblioteca de documentación
-    incluye información para las versiones 6,0 y 6,0.1.
+    incluye información para la versión 6,1.
   tiles:
   - title: Manos a la obra
     links:
     - title: Notas de la versión
-      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP3323468
+      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP3337665
     - title: Más información sobre SnapCenter
       url: "/concept/concept_snapcenter_overview.html"
     - title: Actualice SnapCenter Server y los plugins de SnapCenter
@@ -90,7 +90,7 @@ indexpage:
     - title: Guía de referencia de cmdlet
       url: https://docs.netapp.com/us-en/snapcenter-cmdlets/index.html
     - title: Guía de referencia de comandos
-      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP3323470
+      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP3337666
     - title: Documentación de versiones anteriores de SnapCenter
       url: https://www.netapp.com/data-protection/backup-recovery/snapcenter-backup-management/documentation/#ProseArticleLinkList13
     - title: 'Base de conocimientos de NetApp: SnapCenter'

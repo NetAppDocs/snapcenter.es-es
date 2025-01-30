@@ -23,6 +23,6 @@ NOTE: Los clones de las PDB no se muestran en la vista de inventario o recursos.
 . En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
 . Seleccione la base de datos del contenedor de origen (CDB) en la vista del recurso o grupo de recursos.
 . En la vista Manage Copies (Administrar copias), seleccione *Clones* ya sea en los sistemas de almacenamiento principal o secundario (reflejado o replicado).
-. Seleccione el clon de la PDB (targetCDB:PDBClone) y, a continuación, haga clic en image:../media/delete_icon.gif[""].
+. Seleccione el clon de PDB (targetCDB:PDBClone) y, a continuación, haga clic en image:../media/delete_icon.gif["icono de eliminar"].
 . Haga clic en *Aceptar*.
 

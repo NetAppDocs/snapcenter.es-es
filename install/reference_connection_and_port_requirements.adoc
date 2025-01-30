@@ -33,47 +33,61 @@ Puede cambiar un puerto de plugin después de la instalación usando el asistent
 En la tabla siguiente se enumeran los distintos puertos y sus valores predeterminados.
 
 |===
-| Tipo de puerto | Puerto predeterminado 
+| Nombre de puerto | Números de puerto | Protocolo | Dirección | Descripción 
 
 
  a| 
 Puerto SnapCenter
  a| 
-8146 (HTTPS), bidireccional, personalizable, como en la URL _\https://server:8146_
+8146
+ a| 
+HTTPS
+ a| 
+Bidireccional
+ a| 
+Este puerto se usa para establecer la comunicación entre el cliente SnapCenter (el usuario SnapCenter) y el servidor SnapCenter, y también se utiliza para establecer la comunicación de los hosts del plugin con el servidor SnapCenter.
 
-Se usa para la comunicación entre el cliente SnapCenter (el usuario de SnapCenter) y el servidor SnapCenter. También se utiliza para establecer la comunicación de los hosts del plugin con SnapCenter Server.
-
-Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/install/task_install_the_snapcenter_server_using_the_install_wizard.html["Instale el servidor SnapCenter con el asistente de instalación."]
+Puede personalizar el número de puerto.
 
 
 
  a| 
 Puerto de comunicación SMCore de SnapCenter
  a| 
-8145 (HTTPS), bidireccional, personalizable
+8145
+ a| 
+HTTPS
+ a| 
+Bidireccional
+ a| 
+Este puerto se utiliza para establecer la comunicación entre SnapCenter Server y los hosts en los que se han instalado los plugins de SnapCenter.
 
-El puerto se utiliza para establecer la comunicación entre SnapCenter Server y los hosts en los que se han instalado los plugins de SnapCenter.
-
-Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/install/task_install_the_snapcenter_server_using_the_install_wizard.html["Instale el servidor SnapCenter con el asistente de instalación."]
+Puede personalizar el número de puerto.
 
 
 
  a| 
 Puerto de servicio del programador
  a| 
-8154 (HTTPS)
-
+8154
+ a| 
+HTTPS
+ a| 
+ a| 
 Este puerto se utiliza para orquestar los flujos de trabajo del programador de SnapCenter para todos los plugins gestionados dentro del host del servidor SnapCenter de forma centralizada.
 
-Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/install/task_install_the_snapcenter_server_using_the_install_wizard.html["Instale el servidor SnapCenter con el asistente de instalación."]
+Puede personalizar el número de puerto.
 
 
 
  a| 
 Puerto RabbitMQ
  a| 
-5672 gbe (tcp)
-
+5672
+ a| 
+TCP
+ a| 
+ a| 
 Este es el puerto predeterminado en el que RabbitMQ escucha y se utiliza para la comunicación del modelo editor-suscriptor entre el servicio Programador y SnapCenter.
 
 
@@ -81,78 +95,85 @@ Este es el puerto predeterminado en el que RabbitMQ escucha y se utiliza para la
  a| 
 Puerto MySQL
  a| 
-3306 (HTTPS), bidireccional, personalizable
-
-El puerto se utiliza para establecer la comunicación entre SnapCenter y la base de datos del repositorio MySQL.
-
-Puede crear conexiones seguras desde el servidor SnapCenter al servidor MySQL. link:../install/concept_configure_secured_mysql_connections_with_snapcenter_server.html["Leer más"]
-
-Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/install/task_install_the_snapcenter_server_using_the_install_wizard.html["Instale el servidor SnapCenter con el asistente de instalación."]
+3306
+ a| 
+HTTPS
+ a| 
+ a| 
+El puerto se utiliza para comunicarse con la base de datos del repositorio de SnapCenter. Puede crear conexiones seguras desde el servidor SnapCenter al servidor MySQL. link:../install/concept_configure_secured_mysql_connections_with_snapcenter_server.html["Leer más"]
 
 
 
  a| 
 Hosts de plugins de Windows
  a| 
-135 DE FEBRERO DE 445 (TCP)
-
-Además de los puertos 135 y 445, el intervalo de puertos dinámico especificado por Microsoft también debería estar abierto. Operaciones de instalación remota Utilice el servicio Instrumental de administración de Windows (WMI), que busca dinámicamente este intervalo de puertos.
-
-Para obtener información sobre el intervalo de puertos dinámicos admitido, consulte https://support.microsoft.com/kb/832017["Descripción general del servicio y requisitos de puertos de red para Windows"^]
-
-Los puertos se utilizan para establecer la comunicación entre SnapCenter Server y el host en el que se está instalando el plugin. Para insertar los archivos binarios de paquetes de plugins en los hosts de plugin de Windows, los puertos deben abrirse con cuidado en el host del plugin y se pueden cerrar después de su instalación.
+135, 445
+ a| 
+TCP
+ a| 
+ a| 
+Este puerto se utiliza para establecer la comunicación entre el servidor de SnapCenter y el host en el que se está instalando el plugin. El rango de puertos dinámicos adicional especificado por Microsoft también debe estar abierto.
 
 
 
  a| 
 Hosts de plugins de Linux o AIX
  a| 
-22 (SSH)
-
-Los puertos se utilizan para establecer la comunicación entre SnapCenter Server y el host en el que se está instalando el plugin. Los puertos los utiliza SnapCenter para copiar archivos binarios de paquetes de plugin en los hosts de plugin de Linux o AIX y se deben abrir o ejecutar desde el firewall o las iptables.
+22
+ a| 
+SSH
+ a| 
+Unidireccional
+ a| 
+Este puerto se utiliza para establecer la comunicación entre el servidor de SnapCenter y el host, iniciado desde el servidor al host del cliente.
 
 
 
  a| 
-Paquete de plugins de SnapCenter para Windows, paquete de plugins de SnapCenter para Linux o paquete de plugins de SnapCenter para AIX
+Paquete de plugins de SnapCenter para Windows, Linux o AIX
  a| 
-8145 (HTTPS), bidireccional, personalizable
+8145
+ a| 
+HTTPS
+ a| 
+Bidireccional
+ a| 
+Este puerto se utiliza para establecer la comunicación entre SMCore y los hosts en los que está instalado el paquete de plugins. Personalizable.
 
-El puerto se utiliza para establecer la comunicación entre SMCore y los hosts en los que se ha instalado el paquete de plugins.
-
-La ruta de comunicación también debe estar abierta entre el LIF de gestión de SVM y el servidor SnapCenter.
-
-Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/protect-scw/task_add_hosts_and_install_snapcenter_plug_in_for_microsoft_windows.html["Añada hosts e instale el plugin de SnapCenter para Microsoft Windows"] o. https://docs.netapp.com/us-en/snapcenter/protect-sco/task_add_hosts_and_installing_the_snapcenter_plug_ins_package_for_linux_or_aix.html["Añada hosts e instale el paquete de plugins de SnapCenter para Linux o AIX."]
+Puede personalizar el número de puerto.
 
 
 
  a| 
 Plugin de SnapCenter para base de datos de Oracle
  a| 
-27216, personalizable
-
+27216
+ a| 
+ a| 
+ a| 
 El puerto de JDBC predeterminado, lo utiliza el plugin para Oracle para conectarse a la base de datos de Oracle.
-
-Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/protect-sco/task_add_hosts_and_installing_the_snapcenter_plug_ins_package_for_linux_or_aix.html["Añada hosts e instale el paquete de plugins de SnapCenter para Linux o AIX."]
 
 
 
  a| 
 Plugin de SnapCenter para base de datos de Exchange
  a| 
-909, personalizable
-
+909
+ a| 
+ a| 
+ a| 
 NET predeterminado. El plugin para Windows utiliza el puerto TCP para conectarse a las devoluciones de llamadas VSS de Exchange.
-
-Para personalizar el puerto, consulte link:../protect-sce/task_add_hosts_and_install_plug_in_for_exchange.html["Añada hosts e instale el plugin para Exchange"].
 
 
 
  a| 
 Complementos compatibles con NetApp para SnapCenter
  a| 
-9090 (HTTPS), fija
-
+9090
+ a| 
+HTTPS
+ a| 
+ a| 
 Se trata de un puerto interno que se usa solo en el host del plugin personalizado; no son obligatorias las excepciones de firewall.
 
 La comunicación entre SnapCenter Server y los plugins personalizados pasa a través del puerto 8145.
@@ -162,31 +183,49 @@ La comunicación entre SnapCenter Server y los plugins personalizados pasa a tra
  a| 
 Puerto de comunicación del clúster de ONTAP o de SVM
  a| 
-443 (HTTPS), bidirectional80 (HTTP), bidireccional
+* 443 (HTTPS)
+* 80 (HTTP)
 
+ a| 
+* HTTPS
+* HTTP
+
+ a| 
+Bidireccional
+ a| 
 El puerto se utiliza en SAL (capa de abstracción del almacenamiento) para establecer la comunicación entre el host que ejecuta SnapCenter Server y SVM. Actualmente, el puerto también se utiliza en SAL en SnapCenter para los hosts del plugin de Windows para establecer la comunicación entre el host del plugin de SnapCenter y SVM.
 
 
 
  a| 
-Plugin de SnapCenter para base de datos SAP HANA vCode Spell Checkports
+Plugin de SnapCenter para base de datos SAP HANA
  a| 
-3instance_number13 o 3instance_number15, HTTP o HTTPS, bidireccional y personalizable
+* 3instance_number13
+* 3instance_number15
 
+ a| 
+* HTTPS
+* HTTP
+
+ a| 
+Bidireccional
+ a| 
 Para un tenant único de un contenedor de base de datos multitenant (MDC), el número del puerto termina en 13; para los que no son MDC, el número de puerto termina en 15.
 
-Por ejemplo, 32013 es el número de puerto para la instancia 20 y 31015 es el número de puerto para la instancia 10.
-
-Para personalizar el puerto, consulte https://docs.netapp.com/us-en/snapcenter/protect-hana/task_add_hosts_and_install_plug_in_packages_on_remote_hosts_sap_hana.html["Añada hosts e instale paquetes de plugins en hosts remotos."]
+Puede personalizar el número de puerto.
 
 
 
  a| 
-Puerto de comunicación del controlador de dominio
+Complemento de SnapCenter para PostgreSQL
  a| 
-Consulte la documentación de Microsoft para identificar los puertos que se deben abrir en el firewall de un controlador de dominio para que la autenticación funcione correctamente.
+5432
+ a| 
+ a| 
+ a| 
+Este puerto es el puerto PostgreSQL predeterminado utilizado para la comunicación del plugin para PostgreSQL con el clúster PostgreSQL.
 
-Es necesario abrir los puertos requeridos por Microsoft en el controlador de dominio para que SnapCenter Server, los hosts del plugin u otro cliente de Windows puedan autenticar los usuarios.
+Puede personalizar el número de puerto.
 
 |===
 Para modificar los detalles del puerto, consulte link:../admin/concept_manage_hosts.html#modify-plug-in-hosts["Modifique los hosts de plugins"].

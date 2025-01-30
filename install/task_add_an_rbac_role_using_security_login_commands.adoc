@@ -64,7 +64,7 @@ NOTE: Para salvaguardar la consistencia, la documentación de SnapCenter se refi
 NOTE: Debe repetir este comando para cada permiso. Recuerde que los comandos de acceso total deben enumerarse antes que los comandos de solo lectura.
 
 +
-Para obtener más información sobre la lista de permisos, consulte link:task_create_an_ontap_cluster_role_with_minimum_privileges.html#ontap-cli-commands-for-creating-cluster-roles-and-assigning-permissions["Comandos de la CLI de ONTAP para crear roles y asignar permisos"^].
+Para obtener más información sobre la lista de permisos, consulte link:../install/task_create_an_ontap_cluster_role_with_minimum_privileges.html#ontap-cli-commands-for-creating-cluster-roles-and-assigning-permissions["Comandos de la CLI de ONTAP para crear roles y asignar permisos"^].
 
 
 

@@ -28,9 +28,9 @@ Los recursos de detección automática no se pueden modificar ni eliminar.
 .Pasos
 . En el panel de navegación de la izquierda, haga clic en *Resources* y, a continuación, seleccione el plugin para PostgreSQL de la lista.
 . En la página Resources, seleccione el tipo de recurso en la lista View.
-. (Opcional) haga clic en *image:../media/filter_icon.png["icono de filtro"]* y, a continuación, seleccione el nombre de host.
+. (Opcional) Haga clic en *image:../media/filter_icon.gif["icono de filtro"]* y seleccione el nombre de host.
 +
-A continuación, puede hacer clic en *image:../media/filter_icon.png["icono de filtro"]* para cerrar el panel de filtros.
+A continuación, puede hacer clic en *image:../media/filter_icon.gif["icono de filtro"]* para cerrar el panel de filtros.
 
 . Haga clic en *Actualizar recursos* para descubrir los recursos disponibles en el host.
 +

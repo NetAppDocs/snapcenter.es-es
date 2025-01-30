@@ -15,4 +15,4 @@ El flujo de trabajo de restauración incluye la planificación, la realización 
 
 El siguiente flujo de trabajo muestra la secuencia que debe seguirse para realizar la operación de restauración:
 
-image::../media/all_plug_ins_restore_workflow.png[flujo de trabajo_all_plug-ins_restore_workflow]
+image::../media/all_plug_ins_restore_workflow.gif[flujo de trabajo_all_plug-ins_restore_workflow]

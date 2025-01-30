@@ -62,7 +62,7 @@ Se muestra la página con el resumen o grupo de recursos.
 +
 No puede eliminar los backups que están en el sistema de almacenamiento secundario.
 
-. Seleccione el backup y, a continuación, haga clic en image:../media/delete_icon.gif[""].
+. Seleccione el backup y haga clic en image:../media/delete_icon.gif["icono de eliminar"].
 +
 Si va a eliminar un backup de base de datos SAP HANA, los catálogos SAP HANA asociados del backup también se eliminan.
 

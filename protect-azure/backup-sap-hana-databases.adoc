@@ -32,7 +32,7 @@ La opción *File System Consistency* solo se aplica a las aplicaciones que se ej
 . En la página Policies, realice los siguientes pasos:
 +
 .. Seleccione una o varias políticas de la lista desplegable.
-.. Seleccione *image:../media/add_policy_from_resourcegroup.gif[""]* En la columna Configurar programaciones de la directiva para la que desea configurar una programación.
+.. Seleccione *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]* en la columna Configure Schedules correspondiente a la política para la cual desea configurar una programación.
 .. En el cuadro de diálogo Add schedules for policy _policy_name_, configure la programación y, a continuación, seleccione *OK*.
 +
 _policy_name_ es el nombre de la directiva seleccionada.

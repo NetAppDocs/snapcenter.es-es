@@ -48,16 +48,14 @@ No puede crear un backup para el volumen de datos SAP HANA, pero SnapCenter sigu
 
 
 
-
-NOTE: La configuración principal de SnapLock se gestiona en la política de backup de SnapCenter y la configuración secundaria de SnapLock se gestiona mediante ONTAP.
-
 .Pasos
 . En el panel de navegación de la izquierda, haga clic en *Configuración*.
 . En la página Configuración, haga clic en *Directivas*.
 . Haga clic en *Nuevo*.
-. En la página Name, escriba el nombre de la política y una descripción.
-. En la página Settings, realice los siguientes pasos:
+. En la página Name, escriba el nombre de la política y sus detalles.
+. En la página Policy type, realice los siguientes pasos:
 +
+** Elija el tipo de almacenamiento
 ** Elija el tipo de backup:
 +
 |===
@@ -65,37 +63,34 @@ NOTE: La configuración principal de SnapLock se gestiona en la política de bac
 
 
  a| 
-Realice una comprobación de integridad de la base de datos
- a| 
-Seleccione *copia de seguridad basada en archivos*. Solo se realiza un backup de los inquilinos activos.
-
-
-
- a| 
 Crear un backup mediante la tecnología Snapshot
  a| 
 Seleccione *Snapshot Based*.
 
+
+
+ a| 
+Realice una comprobación de integridad de la base de datos
+ a| 
+Seleccione *copia de seguridad basada en archivos*. Solo se realiza un backup de los inquilinos activos.
+
 |===
+
+
+. En la página Snapshot and Replication, realice los siguientes pasos:
++
 ** Especifique el tipo de programa seleccionando *a petición*, *hora*, *Diario*, *Semanal* o *Mensual*.
 +
 
 NOTE: Puede especificar la programación (fecha de inicio, fecha de finalización y frecuencia) para la operación de backup mientras crea un grupo de recursos. Esto le permite crear grupos de recursos que comparten la misma política y frecuencia de backup, pero también le permite asignar diferentes programaciones de backup a cada política.
 
 +
-image::../media/backup_settings.gif[configuración de copia de seguridad]
-
-+
 
 NOTE: Si ha programado para las 2:00 a.m., la programación no se activará durante el horario de verano.
 
-** En la sección *Configuración de copia de seguridad personalizada*, proporcione cualquier configuración de copia de seguridad específica que tenga que pasarse al plugin en formato de clave-valor.
-+
-Puede pasar varios pares de clave-valor al plugin.
 
 
-
-. En la página Retention, especifique la configuración de retención para el tipo de backup y el tipo de programación seleccionados en la página Backup Type:
+. En la página Snapshot and Replication, especifique la configuración de retención para el tipo de backup y el tipo de programación seleccionados en la página Backup Type:
 +
 |===
 | Si desea... | Realice lo siguiente... 
@@ -104,7 +99,7 @@ Puede pasar varios pares de clave-valor al plugin.
  a| 
 Mantenga un cierto número de Snapshots
  a| 
-Seleccione *Total Snapshot copies to keep* y, a continuación, especifique el número de instantáneas que desea conservar.
+Seleccione *Copias para guardar* y, a continuación, especifique el número de instantáneas que desea conservar.
 
 Si la cantidad de snapshots supera el número especificado, las snapshots se eliminan empezando por las más antiguas.
 
@@ -126,19 +121,44 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
  a| 
 Mantenga los Snapshots durante una cierta cantidad de días
  a| 
-Seleccione *Mantener copias snapshot para* y, a continuación, especifique el número de días durante los cuales desea conservar las instantáneas antes de eliminarlas.
+Seleccione *Retener copias para* y, a continuación, especifique el número de días durante los cuales desea conservar las instantáneas antes de eliminarlas.
 
 
 
  a| 
-Período de bloqueo de copia de snapshot
+Período de bloqueo de la copia snapshot primaria
  a| 
 Seleccione Snapshot copy locking period y seleccione días, meses o años.
 
 El período de retención de SnapLock debe ser inferior a 100 años.
 
+
+
+ a| 
+Período de bloqueo de copia de snapshot secundaria
+ a| 
+Seleccione *Periodo de bloqueo de copia de instantánea secundaria* y seleccione Días, Meses o Años.
+
+Para que esta opción sea efectiva, debe realizar las siguientes tareas:
+
+** Seleccione el *Periodo de bloqueo de copia de instantánea primaria*.
+** Seleccione una de las opciones de replicación secundaria o ambas.
+
+
 |===
-. Para los backups basados en copias de Snapshot, especifique la configuración de replicación en la página Replication:
+. Seleccione una etiqueta de Snapshot.
++
+Según la etiqueta de Snapshot que seleccione, ONTAP aplicará la política de retención de Snapshot secundaria que corresponda a esa etiqueta.
+
++
+
+NOTE: Si ha seleccionado *Actualizar SnapMirror después de crear una copia Snapshot local*, puede especificar opcionalmente la etiqueta de la directiva secundaria. Sin embargo, si ha seleccionado *Actualizar SnapVault después de crear una copia Snapshot local*, debe especificar la etiqueta de la directiva secundaria.
+
+. Para los backups basados en copias de Snapshot, en la sección Select secondary replication options, seleccione una o ambas de las siguientes opciones de replicación secundaria:
++
+
+NOTE: Debe seleccionar las opciones de replicación secundarias para que el *Periodo de bloqueo de copia de instantánea secundaria* sea efectivo.
+
 +
 |===
 | Para este campo... | Realice lo siguiente... 
@@ -172,19 +192,7 @@ Cuando SnapLock se configura solo en el secundario desde ONTAP conocido como Alm
 
 Para obtener más información sobre el Almacén SnapLock, consulte https://docs.netapp.com/us-en/ontap/snaplock/commit-snapshot-copies-worm-concept.html["Confirmar copias Snapshot a WORM en un destino de almacén"]
 
-Consulte link:task_view_sap_hana_database_backups_and_clones_in_the_topology_page_sap_hana.html["Consulte los backups y los clones de la base de datos SAP HANA en la página Topology"].
-
-
-
- a| 
-*Etiqueta de política secundaria*
- a| 
-Seleccione una etiqueta de Snapshot.
-
-Según la etiqueta de Snapshot que seleccione, ONTAP aplicará la política de retención de Snapshot secundaria que corresponda a esa etiqueta.
-
-
-NOTE: Si ha seleccionado *Actualizar SnapMirror después de crear una copia Snapshot local*, puede especificar opcionalmente la etiqueta de la directiva secundaria. Sin embargo, si ha seleccionado *Actualizar SnapVault después de crear una copia Snapshot local*, debe especificar la etiqueta de la directiva secundaria.
+Consulte link:../protect-hana/task_view_sap_hana_database_backups_and_clones_in_the_topology_page_sap_hana.html["Consulte los backups y los clones de la base de datos SAP HANA en la página Topology"].
 
 
 

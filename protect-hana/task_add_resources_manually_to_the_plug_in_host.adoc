@@ -90,7 +90,7 @@ Introduzca el nombre de usuario para el que se configuró la clave de almacenami
 |===
 . En la página Provide Storage Footprint, seleccione un sistema de almacenamiento y elija uno o más volúmenes, LUN y qtrees; a continuación, haga clic en *Save*.
 +
-Opcional: Puede hacer clic en el *image:../media/add_policy_from_resourcegroup.gif[""]* Icono para añadir más volúmenes, LUN y qtrees desde otros sistemas de almacenamiento.
+Opcional: Puede hacer clic en el icono *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]* para añadir más volúmenes, LUN y qtrees desde otros sistemas de almacenamiento.
 
 . Revise el resumen y, a continuación, haga clic en *Finalizar*.
 +
