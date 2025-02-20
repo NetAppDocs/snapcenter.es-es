@@ -31,12 +31,6 @@ La actualización tecnológica de almacenamiento es compatible para sustituir el
 * Actualización del almacenamiento secundario
 
 
-Los demás escenarios admitidos son:
-
-* Cambio de nombre de SVM
-* Cambio del nombre del volumen
-
-
 
 
 == Actualice las copias de seguridad del almacenamiento primario
