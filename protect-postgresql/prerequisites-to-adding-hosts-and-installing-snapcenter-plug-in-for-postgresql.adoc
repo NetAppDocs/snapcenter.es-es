@@ -86,7 +86,7 @@ NOTE: No debe utilizar una entrada comodín (*) para permitir todos los comandos
 
 == Configure privilegios sudo para usuarios que no son raíz para el host Linux
 
-SnapCenter 2.0 y versiones posteriores permiten que un usuario no raíz instale el paquete de plugins de SnapCenter para Linux e inicie el proceso del plugin. Los procesos del plug-in se ejecutan como un usuario efectivo que no es raíz. Tiene que configurar los privilegios sudo para el usuario que no sea raíz con el fin de ofrecer acceso a varias rutas.
+SnapCenter permite que un usuario no raíz instale el paquete de plugins de SnapCenter para Linux e inicie el proceso del plugin. Los procesos del plug-in se ejecutan como un usuario efectivo que no es raíz. Tiene que configurar los privilegios sudo para el usuario que no sea raíz con el fin de ofrecer acceso a varias rutas.
 
 *Lo que necesitará*
 

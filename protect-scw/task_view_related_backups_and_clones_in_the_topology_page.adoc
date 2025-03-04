@@ -25,7 +25,6 @@ NOTE: Los clones de un backup de un reflejo de versión flexible en un volumen d
 * image:../media/topology_vault_secondary_storage.gif["icono de almacén secundario"] Muestra la cantidad de backups y clones que se replican en el almacenamiento secundario mediante la tecnología SnapVault.
 +
 ** La cantidad de backups que se muestra incluye los backups eliminados del almacenamiento secundario. Por ejemplo, si creó 6 backups con una política para retener solamente 4 backups, se muestran 6 backups.
-** Si actualizó desde SnapCenter 1.1, los clones en el secundario (reflejo o almacén) no se muestran en las secciones Mirror Copies o Vault copies de la página Topology. Todos los clones creados con SnapCenter 1.1 se muestran en la sección local copies en SnapCenter 3.0.
 
 
 

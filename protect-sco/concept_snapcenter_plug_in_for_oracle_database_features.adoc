@@ -55,7 +55,7 @@ Habilitada de forma predeterminada, la función SLM detecta periódicamente los 
 
 +
 ** Para deshabilitar esto, debe configurarse el valor del parámetro ENABLE_LUNPATH_MONITORING como false.
-** Es posible especificar la frecuencia en la cual se corrigen automáticamente las rutas de LUN mediante la asignación del valor (en horas) como el parámetro LUNPATH_MONITORING_INTERVAL. Para obtener más información sobre SLM, consulte http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sanag/home.html["Guía de administración de SAN de ONTAP 9"^].
+** Es posible especificar la frecuencia en la cual se corrigen automáticamente las rutas de LUN mediante la asignación del valor (en horas) como el parámetro LUNPATH_MONITORING_INTERVAL. Para obtener información sobre SLM, consulte la https://docs.netapp.com/us-en/ontap/san-admin/index.html["Sección Administración de SAN de ONTAP 9"^].
 
 
 * Compatibilidad con memoria no volátil exprés (NVMe) en Linux

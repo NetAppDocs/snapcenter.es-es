@@ -221,7 +221,7 @@ Las opciones que se muestren dependerán del tipo de backup y de frecuencia prev
 
 +
 
-NOTE: El valor de retención máximo es 1018 para recursos en ONTAP 9.4 o posterior, y 254 para recursos en ONTAP 9.3 o anterior. Se producirá un error en los backups si la retención se establece en un valor superior a la versión de ONTAP subyacente.
+NOTE: El valor de retención máximo es 1018. Se producirá un error en los backups si la retención se establece en un valor superior a la versión de ONTAP subyacente.
 
 +
 
@@ -304,12 +304,6 @@ El período de retención de SnapLock debe ser inferior a 100 años.
 Período de bloqueo de instantánea secundaria
  a| 
 Seleccione *Periodo de bloqueo de copia de instantánea secundaria* y seleccione Días, Meses o Años.
-
-Para que esta opción sea efectiva, debe realizar las siguientes tareas:
-
-*** Seleccione el *Periodo de bloqueo de copia de instantánea primaria*.
-*** Seleccione una de las opciones de replicación secundaria o ambas.
-
 
 |===
 +

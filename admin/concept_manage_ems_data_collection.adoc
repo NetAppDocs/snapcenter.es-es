@@ -22,8 +22,7 @@ NOTE: La utilización de la CPU del sistema es alta cuando la tarea de recopilac
 
 La recogida de datos de EMS se encuentra habilitada de forma predeterminada, y se ejecuta cada siete días después de la fecha de instalación. Es posible deshabilitar la recogida de datos en cualquier momento con el cmdlet de PowerShell _Disable-SmDataCollectionEMS_.
 
-* Pasos*
-
+.Pasos
 . Desde una línea de comandos de PowerShell, establezca una sesión con SnapCenter introduciendo _Open-SmConnection_.
 . Deshabilite la recogida de datos de EMS. Para ello, introduzca _Disable-SmDataCollectionEms_.
 
@@ -34,10 +33,9 @@ La recogida de datos de EMS se encuentra habilitada de forma predeterminada, y s
 
 De forma predeterminada, la recogida de datos de EMS se encuentra habilitada y programada para ejecutarse cada siete días desde la fecha de instalación. Si la deshabilitó, puede iniciar nuevamente la recogida de datos de EMS con el cmdlet _Enable-SmDataCollectionEMS_.
 
-Se otorgó el permiso event generate-autosupport-log de Data ONTAP al usuario de la máquina virtual de almacenamiento (SVM).
+Se otorgó el permiso event generate-AutoSupport-log de NetApp ONTAP al usuario de la máquina virtual de almacenamiento (SVM).
 
-* Pasos*
-
+.Pasos
 . Desde una línea de comandos de PowerShell, establezca una sesión con SnapCenter introduciendo _Open-SmConnection_.
 . Habilite la recogida de datos de EMS. Para ello, introduzca _Enable-SmDataCollectionEMS_.
 
@@ -48,8 +46,7 @@ Se otorgó el permiso event generate-autosupport-log de Data ONTAP al usuario de
 
 Es posible utilizar cmdlets de PowerShell para cambiar la programación de recogida de datos de EMS o las máquinas virtuales de almacenamiento (SVM) de destino.
 
-* Pasos*
-
+.Pasos
 . Desde una línea de comandos de PowerShell, para establecer una sesión con SnapCenter, introduzca el cmdlet _Open-SmConnection_.
 . Para cambiar el destino de recogida de datos de EMS, introduzca el cmdlet _Set-SmDataCollectionEmsTarget_.
 . Para cambiar la programación de recogida de datos de EMS, introduzca el cmdlet _Set-SmDataCollectionEmsSchedule_.
@@ -61,8 +58,7 @@ Es posible utilizar cmdlets de PowerShell para cambiar la programación de recog
 
 Es posible supervisar el estado de la recogida de datos de EMS mediante varios cmdlets de PowerShell. Se puede obtener información sobre la programación, la SVM, el destino y el estado.
 
-* Pasos*
-
+.Pasos
 . Desde una línea de comandos de PowerShell, establezca una sesión con SnapCenter introduciendo _Open-SmConnection_.
 . Recupere información sobre la programación de recogida de datos de EMS. Para ello, introduzca _Get-SmDataCollectionEmsSchedule_.
 . Recupere información sobre el estado de la recogida de datos de EMS. Para ello, introduzca _Get-SmDataCollectionEmsStatus_.

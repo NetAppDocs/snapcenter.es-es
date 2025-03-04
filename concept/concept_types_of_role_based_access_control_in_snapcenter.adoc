@@ -65,7 +65,7 @@ Del mismo modo, si se desean ejecutar operaciones de protección de datos en una
 
 == Control de acceso basado en roles del plugin de SnapCenter para VMware vSphere
 
-Cuando se utiliza el plugin de SnapCenter VMware para protección de datos coherente con máquinas virtuales, vCenter Server ofrece un nivel adicional de control de acceso basado en roles. El plugin de SnapCenter de VMware es compatible con el control de acceso basado en roles de vCenter Server y de Data ONTAP.
+Cuando se utiliza el plugin de SnapCenter VMware para protección de datos coherente con máquinas virtuales, vCenter Server ofrece un nivel adicional de control de acceso basado en roles. El plugin de VMware de SnapCenter es compatible con el control de acceso basado en roles de vCenter Server y de NetApp ONTAP.
 
 Para obtener más información, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_role_based_access_control.html["Control de acceso basado en roles del plugin de SnapCenter para VMware vSphere"^]
 

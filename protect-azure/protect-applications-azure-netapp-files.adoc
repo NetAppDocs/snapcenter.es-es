@@ -21,7 +21,7 @@ Cuando se habilita una política con el backup de Azure NetApp Files y se asocia
 
 == Limitaciones
 
-* No se admiten las funcionalidades de almacenamiento de objetos para sistemas de almacenamiento FAS o AFF ONTAP y FSxN.
+* No se admiten las funcionalidades de almacenamiento de objetos para los sistemas de almacenamiento FAS, ASA o AFF ONTAP y Amazon FSx para NetApp ONTAP.
 * Los flujos de trabajo de montaje y catálogo de Oracle y SAP HANA no son compatibles con los backups de almacenamiento de objetos, pero sí con las copias Snapshot.
 * No se admiten los clones de Oracle PDB para los backups de almacenamiento de objetos, pero sí para las Snapshot.
 * No se admite la verificación de backups en el almacenamiento de objetos, la compatibilidad con API DE REST, la gestión del ciclo de vida de clones desde el almacenamiento de objetos e las funciones de generación de informes para los backups de almacenamiento de objetos.

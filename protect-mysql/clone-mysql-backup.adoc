@@ -29,7 +29,7 @@ NOTE: Si no hay comandos en la lista de comandos, se producirá un error en la o
 
 .Acerca de esta tarea
 * No es posible proteger las instancias de MySQL clonadas.
-* Para obtener más información sobre las limitaciones de las operaciones de división de clones, consulte http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["Guía de gestión de almacenamiento lógico de ONTAP 9"^].
+* Para obtener más información sobre las operaciones de división de volúmenes de FlexClone, consulte, https://docs.netapp.com/us-en/ontap/volumes/split-flexclone-from-parent-task.html["Divida un volumen FlexClone de su volumen principal"].
 * Para ONTAP 9.12,1 y versiones anteriores, los clones creados a partir de las snapshots de SnapLock Vault como parte de la restauración heredarán el tiempo de caducidad del almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
 
 

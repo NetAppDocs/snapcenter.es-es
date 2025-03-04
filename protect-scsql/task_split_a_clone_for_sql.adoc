@@ -22,7 +22,7 @@ Por ejemplo, después de crear el clon 1 a partir de un backup de la base de dat
 Después de dividir el clon 2, puede ejecutar la operación de división de clones con el clon 1, ya que este deja de ser el clon intermedio.
 
 * Cuando divide un clon, se eliminan las copias de backup y los trabajos de clonado del clon.
-* Para obtener más información sobre las limitaciones de las operaciones de división de clones, consulte http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["Guía de gestión de almacenamiento lógico de ONTAP 9"^].
+* Para obtener más información sobre las operaciones de división de volúmenes de FlexClone, consulte, https://docs.netapp.com/us-en/ontap/volumes/split-flexclone-from-parent-task.html["Divida un volumen FlexClone de su volumen principal"^].
 * Asegúrese de que el volumen o el agregado del sistema de almacenamiento estén en línea.
 
 

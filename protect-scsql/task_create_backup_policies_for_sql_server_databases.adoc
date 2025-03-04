@@ -224,7 +224,7 @@ Retener las copias de backup por una cantidad determinada de días.
 IMPORTANT: De forma predeterminada, el valor del número de retención se establece en 2. Si establece el número de retención en 1, la operación puede generar un error, ya que la primera snapshot es la de referencia para la relación de SnapVault hasta que se replica una nueva snapshot en el destino.
 
 
-NOTE: El valor de retención máximo es 1018 para recursos en ONTAP 9.4 o posterior, y 254 para recursos en ONTAP 9.3 o anterior. Se producirá un error en los backups si la retención se establece en un valor superior a la versión de ONTAP subyacente.
+NOTE: El valor de retención máximo es 1018. Se producirá un error en los backups si la retención se establece con un valor superior al admitido por la versión de NetApp ONTAP subyacente.
 
 . El tiempo que se conservan las snapshots
 +
@@ -237,13 +237,7 @@ El período de retención de SnapLock debe ser inferior a 100 años.
 
 . Si desea especificar el período de bloqueo de copia de instantánea secundaria, seleccione *Periodo de bloqueo de copia de instantánea secundaria* y seleccione Días, Meses o Años.
 +
-Para que esta opción sea efectiva, debe realizar las siguientes tareas:
-
-+
-** Seleccione el *Periodo de bloqueo de copia de instantánea primaria*.
-** Seleccione una de las opciones de replicación secundaria o ambas.
-+
-En este ejemplo, se establece la retención de Snapshot de registro en 2:
+En este ejemplo, se establece la retención de instantáneas de registro en 2:
 
 +
 .Muestra el ejemplo
@@ -254,8 +248,6 @@ Set-SmPolicy -PolicyName 'newpol' -PolicyType 'Backup' -PluginPolicyType 'SCSQL'
 ====
 +
 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/SnapCenter_retains_Snapshot_copies_of_the_database["SnapCenter conserva copias Snapshot de la base de datos"]
-
-
 
 . Seleccione una etiqueta de Snapshot
 +

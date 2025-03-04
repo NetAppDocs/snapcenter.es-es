@@ -4,7 +4,7 @@
 
 Los privilegios mínimos requeridos de ONTAP varían en función de los plugins de SnapCenter que utilice para la protección de datos.
 
-* Comandos de acceso total: Privilegios mínimos requeridos para ONTAP 8.3.0 y versiones posteriores
+* Comandos de acceso total: Privilegios mínimos requeridos para ONTAP 9.12.1 y versiones posteriores
 +
 ** event generate-autosupport-log
 ** se muestra el historial del trabajo

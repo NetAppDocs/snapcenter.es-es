@@ -64,7 +64,7 @@ NOTE: Para una configuración de Flex ASM (donde la cardinalidad es inferior al 
 
 Aunque se haya habilitado una restauración sin movimiento forzada, SnapCenter ejecuta la restauración por conexión y copia en las siguientes situaciones:
 
-* Restauración desde el sistema de almacenamiento secundario, si Data ONTAP corresponde a una versión anterior a 8.3
+* Restauración desde el sistema de almacenamiento secundario
 * Restauración de grupos de discos de ASM en nodos de una configuración de Oracle RAC en la cual no está configurada la instancia de base de datos
 * En una configuración de Oracle RAC, en cualquiera de los nodos del mismo nivel si la instancia de ASM o del clúster no están en ejecución o si el nodo del mismo nivel está inactivo
 * Restauración de los archivos de control únicamente
@@ -81,7 +81,7 @@ Aunque se haya habilitado una restauración sin movimiento forzada, SnapCenter e
 Si el diseño de la base de datos es similar al backup y no hubo ningún cambio de configuración en el almacenamiento ni en la pila de base de datos, se ejecuta una restauración sin movimiento, en la cual se restauran el archivo o el LUN en ONTAP. SnapCenter es compatible únicamente con SnapRestore de archivo único (SFSR) como parte del método de restauración sin movimiento.
 
 
-NOTE: Data ONTAP 8.3 o y versiones posteriores son compatibles con la restauración sin movimiento desde una ubicación secundaria.
+NOTE: NetApp ONTAP es compatible con la restauración sin movimiento desde una ubicación secundaria.
 
 Si se desea ejecutar una restauración sin movimiento en la base de datos, es necesario confirmar que solo haya archivos de datos en el grupo de discos de ASM. Se debe crear un backup cada vez que se hacen cambios en el grupo de discos de ASM o en la estructura física de la base de datos. Después de ejecutar una restauración sin movimiento, el grupo de discos contendrá la misma cantidad de archivos de datos que había en el momento del backup.
 

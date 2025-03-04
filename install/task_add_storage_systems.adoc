@@ -130,9 +130,6 @@ Si se añade una nueva SVM al clúster de ONTAP mediante la GUI de ONTAP, haga c
 
 
 
-
-NOTE: Si actualizó los sistemas de almacenamiento FAS o AFF a All SAN Array (ASA), debe actualizar la conexión de almacenamiento en el servidor SnapCenter para reflejar el nuevo tipo de almacenamiento en SnapCenter.
-
 *Después de terminar*
 
 Un administrador de clúster debe habilitar AutoSupport en cada nodo del sistema de almacenamiento para enviar notificaciones por correo electrónico desde todos los sistemas de almacenamiento a los que tiene acceso SnapCenter. Para ello, ejecute el siguiente comando desde la línea de comandos del sistema de almacenamiento:

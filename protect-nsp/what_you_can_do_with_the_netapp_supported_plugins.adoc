@@ -31,7 +31,7 @@ Es posible realizar backups de un volumen de ONTAP, LUN o un qtree.
 
 * Actualice las snapshots creadas del almacenamiento primario a un secundario de ONTAP aprovechando la relación de replicación existente (SnapVault/SnapMirror/replicación unificada) mediante la normativa de SnapCenter
 +
-ONTAP principal y secundario puede ser ONTAP FAS, AFF, cabina All SAN (ASA), Select o Cloud ONTAP.
+ONTAP primario y secundario puede ser ONTAP FAS, AFF, ASA, ONTAP Select o Cloud Volumes ONTAP.
 
 * Recupere volúmenes, LUN o archivos ONTAP completos.
 +

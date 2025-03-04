@@ -6,8 +6,6 @@ summary: La información relacionada con las diversas operaciones que se ejecuta
 ---
 = Gestione el repositorio del servidor SnapCenter
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
 
 [role="lead"]

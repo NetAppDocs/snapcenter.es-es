@@ -14,6 +14,9 @@ summary: Debe conocer cuáles son los sistemas de almacenamiento, las aplicacion
 Debe conocer cuáles son los sistemas de almacenamiento, las aplicaciones y las bases de datos compatibles.
 
 * SnapCenter admite ONTAP 9.12.1 y versiones posteriores para proteger sus datos.
++
+Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+
 * SnapCenter 6,1 es compatible con sistemas NetApp ASA R2 que ejecutan ONTAP 9.16.1.
 +
 Los sistemas R2 de ASA ofrecen una solución unificada de hardware y software para entornos SAN basados en plataformas all-flash.
@@ -21,7 +24,7 @@ Los sistemas R2 de ASA ofrecen una solución unificada de hardware y software pa
 +
 Para obtener información sobre los sistemas ASA R2, consulte https://docs.netapp.com/us-en/asa-r2/index.html["Documentación de ASA r2"^].
 
-* SnapCenter es compatible con Amazon FSX para ONTAP de NetApp y proteger sus datos de la versión de revisión P1 del software SnapCenter 4.5.
+* SnapCenter es compatible con Amazon FSx para NetApp ONTAP para proteger tus datos.
 +
 Si utiliza Amazon FSX para ONTAP de NetApp, asegúrese de que los plugins del host del servidor SnapCenter se actualicen a 4.5 P1 o una versión posterior para realizar operaciones de protección de datos.
 

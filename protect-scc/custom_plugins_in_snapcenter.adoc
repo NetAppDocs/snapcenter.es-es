@@ -42,7 +42,7 @@ Para los plugins creados con un estilo NATIVO, asegúrese de no proporcionar la 
  a| 
 Versión
  a| 
-Versión de plugin. Puede incluir tanto la versión principal como la secundaria. Por ejemplo, 1.0, 1.1, 2.0, 2.1
+Versión de plugin. Puede incluir tanto la versión principal como la secundaria. Por ejemplo, 5,0, 6,0, 6,1
 
 
 

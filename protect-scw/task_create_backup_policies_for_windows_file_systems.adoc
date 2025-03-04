@@ -171,12 +171,6 @@ Período de bloqueo de copia de snapshot secundaria
  a| 
 Seleccione *Periodo de bloqueo de copia de instantánea secundaria* y seleccione Días, Meses o Años.
 
-Para que esta opción sea efectiva, debe realizar las siguientes tareas:
-
-** Seleccione el *Periodo de bloqueo de copia de instantánea primaria*.
-** Seleccione una de las opciones de replicación secundaria o ambas.
-
-
 |===
 +
 
@@ -184,7 +178,7 @@ IMPORTANT: Debe establecer el número de retención en 2 o superior. El valor m�
 
 +
 
-NOTE: El valor de retención máximo es 1018 para recursos en ONTAP 9.4 o posterior, y 254 para recursos en ONTAP 9.3 o anterior. Se producirá un error en los backups si la retención se establece en un valor superior a la versión de ONTAP subyacente.
+NOTE: El valor de retención máximo es 1018. Se producirá un error en los backups si la retención se establece en un valor superior a la versión de ONTAP subyacente.
 
 . En la página Script, introduzca la ruta del script previo o script posterior que desea que el servidor SnapCenter ejecute antes o después de la operación de backup respectivamente, y el límite de tiempo que SnapCenter espera para que se ejecute el script.
 +
