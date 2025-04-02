@@ -2176,7 +2176,6 @@
   <block id="f367d650e57088caf7b808e01235016d" category="inline-link">Cómo restaurar desde el almacenamiento secundario en SMBR con SnapCenter</block>
   <block id="41b4c689a8b0e3ba8bfecb2a1e608e46" category="list-text"><block ref="41b4c689a8b0e3ba8bfecb2a1e608e46" category="inline-link-rx"></block></block>
   <block id="f004280f6db6ea5f9302c9851388d751" category="inline-link">Recuperación de Microsoft Exchange Mail desde SnapVault mediante SMBR</block>
-  <block id="1b0fb59a5bc951f7dc82cb43fe362145" category="list-text"><block ref="00a76af185a73b84e54e96058031aef5" category="inline-link-rx"></block></block>
   <block id="28b4b7e6162ba7285f066beb06fc6f83" category="summary">Un grupo de recursos es necesario para cualquier trabajo de protección de datos. También deben añadir una o varias políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que se quiere realizar y la programación de protección.</block>
   <block id="5bd6b169e9e0ed64f898dc3a02bd5dc0" category="doc">Crear grupos de recursos y añadir políticas para Exchange Server</block>
   <block id="60fa9fd8411bf39b1b035ddbdb6f8543" category="list-text">En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione el complemento de Microsoft Exchange Server en la lista.</block>
@@ -6976,7 +6975,6 @@
   <block id="a8d03bc12fa704a66e02c6802c0766f8" category="summary">Cuando el plugin de SnapCenter para SQL Server está inactivo, realice los siguientes pasos manuales para recuperar el plugin.</block>
   <block id="112fa4c1243fe1af31b4cf57c26ced23" category="list-text">Inserte el complemento SnapCenter para SQL Server en un host alternativo utilizando la página *Agregar host* o *Modificar host*. Consulte <block ref="fc11fadbfb2b2b87f8c260a133d75ad2" category="inline-link-macro-rx"></block> si quiere más información.</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">Pasos</block>
-  <block id="ab9238ca6f628634f6f6f2cf63502cdb" category="paragraph">Consulte <block ref="44de5c9fafab2e4e76e19e3717abc2e2" category="inline-link-macro-rx"></block> vídeo.</block>
   <block id="94c4200231b3891f27561beda5d4e31f" category="doc">Recuperación ante desastres de SnapCenter</block>
   <block id="1da5a00a663269fc81a2098b0d91e4d6" category="paragraph">Es posible recuperar el servidor de SnapCenter en caso de desastres como daños en los recursos o fallos del servidor mediante la función de recuperación ante desastres (DR) de SnapCenter. Es posible recuperar el repositorio de SnapCenter, las programaciones de servidores y los componentes de configuración del servidor. También puede recuperar el plugin de SnapCenter para SQL Server y el plugin de SnapCenter para el almacenamiento de SQL Server.</block>
   <block id="68e856b5be6554a8e4ee8b393b327b0b" category="paragraph">En esta sección se describen los dos tipos de recuperación ante desastres (DR) de SnapCenter:</block>
@@ -10076,4 +10074,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="ee69fc7e193d5b369d8bd7792465c781" category="list-text">La clave secreta de cliente también se conoce como valor secreto. Puede crear este secreto de cliente en Azure Portal navegando a *Registros de aplicaciones* bajo Entra ID. Después de seleccionar la aplicación empresarial que creó, navegue a *Certificados y secretos* y luego a *Nuevo secreto de cliente*.</block>
   <block id="732f79401041a0ecc8df586c30756a84" category="admonition">Solo se puede acceder al valor secreto cuando se crea. No podrá acceder a él más tarde.</block>
   <block id="f221207f0adcd828979d33693cf006d5" category="list-text">Se deben otorgar permisos al principal de servicio. La función de Contributor permitirá al director de servicio realizar las acciones necesarias en Azure. Esto se puede otorgar desde la página Control de Acceso (IAM) de la página Suscripción.</block>
+  <block id="c23d56866a5b11fd0d8dc189fcf21298" category="list-text"><block ref="341e3fddad4b27511133b6917a75bb8a" category="inline-link-rx"></block></block>
+  <block id="57cf9c4ee485623172a5c60cbee423a4" category="paragraph">Vea <block ref="96716f545c5cf1a209bf10c1a798ce38" category="inline-link-macro-rx"></block> el vídeo.</block>
 </blocks>
