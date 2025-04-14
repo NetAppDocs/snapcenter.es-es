@@ -26,4 +26,4 @@ Cuando se instala el plugin para bases de datos de IBM DB2, es posible utilizar 
 
 El complemento SnapCenter para DB2 es compatible con NFS y SAN en distribuciones de almacenamiento de archivos de ONTAP y Azure NetApp.
 
-No se admite la distribución de almacenamiento virtual o VMDK.
+Se admite la distribución de almacenamiento virtual VMDK, VVol y RDM.

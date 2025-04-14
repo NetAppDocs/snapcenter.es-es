@@ -19,4 +19,4 @@ Cuando se instala el clúster del plugin para PostgreSQL, es posible utilizar Sn
 
 El complemento de SnapCenter para PostgreSQL es compatible con NFS y SAN en distribuciones de almacenamiento de archivos de ONTAP y Azure NetApp.
 
-Se admite la distribución de almacenamiento virtual o VMDK.
+Se admite la distribución de almacenamiento virtual VMDK, VVol y RDM.

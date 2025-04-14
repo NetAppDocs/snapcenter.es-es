@@ -19,6 +19,6 @@ Cuando se instala el plugin para bases de datos de MySQL, es posible utilizar Sn
 
 El complemento de SnapCenter para MySQL es compatible con NFS y SAN en distribuciones de almacenamiento de archivos de ONTAP y Azure NetApp.
 
-Se admite la distribución de almacenamiento virtual o VMDK.
+Se admite la distribución de almacenamiento virtual VMDK, VVol y RDM.
 
 No se admiten enlaces simbólicos.
