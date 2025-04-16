@@ -763,7 +763,6 @@
   <block id="3d687b72d27aa3959c593b27cbc44d4c" category="paragraph">La MFA solo se aplica a los inicios de sesión de la interfaz de usuario del servidor de SnapCenter. Los inicios de sesión se autentican a través de los servicios de Federación de Active Directory (AD FS) de IDP. Puede configurar varios factores de autenticación en AD FS. SnapCenter es el proveedor de servicios y debe configurar SnapCenter como parte de confianza en AD FS. Para habilitar la MFA en SnapCenter, necesitará los metadatos de AD FS.</block>
   <block id="12da929293795e5d446c469a5f49440f" category="inline-link-macro">Active la autenticación multifactor</block>
   <block id="ead2412064891fbb9b123e509e3e73da" category="paragraph">Para obtener información sobre cómo habilitar la MFA, consulte <block ref="5ec6b0ec41fc91e8184fa478c63adb14" category="inline-link-macro-rx"></block>.</block>
-  <block id="0344fda8fff2d8c5a125ffa5ba5f19a7" category="summary">El software SnapCenter es una plataforma sencilla, centralizada y escalable que proporciona protección de datos consistente con las aplicaciones para aplicaciones, bases de datos, sistemas de archivos host y máquinas virtuales que se ejecutan en sistemas ONTAP en cualquier parte del cloud híbrido.</block>
   <block id="6309043436d4e7e5bad9a81c89ff15e4" category="doc">Información general de SnapCenter</block>
   <block id="edaafea0543ae64ebb79a2ed2e7a055b" category="paragraph">SnapCenter aprovecha las tecnologías Snapshot, SnapRestore, FlexClone, SnapMirror y SnapVault de NetApp para proporcionar lo siguiente:</block>
   <block id="6d02db19251dfec578c356202bfb1bdc" category="list-text">Backup a disco rápido, con gestión eficiente del espacio y consistente con las aplicaciones</block>
@@ -3793,7 +3792,6 @@
   <block id="965ce51f9bc27fb5826629845a0368cb" category="paragraph">Los activos solo aparecen si el usuario ha añadido los activos a SnapCenter.</block>
   <block id="994b4bd5e17452cd36f1c413715e9b54" category="list-text">Repita este procedimiento para todos los activos necesarios.</block>
   <block id="7a94136f80a88afa27fcebdcd0e728a6" category="paragraph">Después de agregar usuarios o grupos y asignar roles, actualice la lista de recursos.</block>
-  <block id="14c90652b0a2e523d6e8630706107e75" category="summary">El software SnapCenter se puede usar en diversos exploradores.</block>
   <block id="6d84e3718084e0db779da4ff8791a2f2" category="doc">Exploradores compatibles</block>
   <block id="57cb4604cb5a08f7df53f4664acf802c" category="summary">Puede configurar Servicios de Internet Information Server \(IIS\) en el servidor de Windows para crear una cuenta personalizada del grupo de aplicaciones cuando necesite habilitar los permisos de lectura de Active Directory para SnapCenter.</block>
   <block id="852f965b48b17a73b0751ade963c60d7" category="doc">Configure los grupos de aplicaciones de IIS para habilitar los permisos de lectura de Active Directory</block>
@@ -5935,7 +5933,6 @@
   <block id="24a2e65207c09cf282d93673b4d914e6" category="list-text">Para descargar el último archivo CRL del certificado de CA relacionado, consulte<block ref="1355b024e4e4799b05a4da32dd5811b2" category="inline-link-rx"></block>.</block>
   <block id="078b96147129ddd471a2936a85c4743b" category="list-text">El directorio predeterminado de los archivos CRL de los plugins personalizados de SnapCenter es _'C:\Archivos de programa\NetApp\SnapCenter\Snapcenter Plug-in Creator\ etc\crl'_.</block>
   <block id="30a5a3b4225672f77174a7923dcd20be" category="list-text">Puede modificar y actualizar el directorio predeterminado del archivo _agent.properties_ en función de la CLAVE CRL_PATH.</block>
-  <block id="7608e75619cff3eeb4e8bce40481b456" category="doc">Documentación sobre el software SnapCenter</block>
   <block id="ff0708dbc029ffc456a4dec0d739ddc0" category="summary">El flujo de trabajo de clonado incluye realizar la operación de clonado y supervisarla.</block>
   <block id="845774eebc04e21e75686a7a609647f8" category="paragraph">Es posible clonar backups de recursos por los siguientes motivos:</block>
   <block id="6bcef561864efa1c7ae10f464c2a27e7" category="list-text">Para probar la funcionalidad que debe implementarse mediante la estructura de recursos actuales y el contenido durante los ciclos de desarrollo de aplicaciones</block>
@@ -9996,8 +9993,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="4a3f09c73e2dacacbebddfd96cac1948" category="inline-link">Notas de la versión de software SnapCenter 6,1</block>
   <block id="77400fe4524142ac29310162939726cb" category="paragraph">Para obtener más información sobre los problemas conocidos, las limitaciones, los problemas solucionados y los comandos nuevos y modificados, consulte la<block ref="5c68c6454568b27710c4196bb910da4f" category="inline-link-rx"></block>. Debe iniciar sesión con su cuenta de NetApp o crear una cuenta para acceder a las Notas de la versión.</block>
   <block id="d6eb82c324cab2f36e345863fad95090" category="cell">6,1</block>
-  <block id="e62d168588d6c1af2fbd37668a7343da" category="summary">La versión 6,1 del software SnapCenter incluye varias funciones y mejoras nuevas.</block>
-  <block id="0220307da5eec95fc03c435ffbbc2bfa" category="doc">Novedades del software SnapCenter 6,1</block>
   <block id="1e095c69621645fccc8f12cd7f35f6fc" category="inline-link-macro">Compatibilidad con los sistemas ASA R2</block>
   <block id="cf1b0e66e5b65c6a3b32f92fdc6552c4" category="cell"><block ref="cf1b0e66e5b65c6a3b32f92fdc6552c4" category="inline-link-macro-rx"></block></block>
   <block id="cc753d144910e12701641281c8cb88ed" category="paragraph">SnapCenter es ahora compatible con sistemas ASA R2 que crean una experiencia más simplificada específica para las necesidades de clientes solo SAN.</block>
@@ -10006,8 +10001,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="92d37724657724129ae0451584c728aa" category="inline-link">Quite el plugin de SnapCenter para VMware vSphere</block>
   <block id="79cfb9f00fa8ea603f631e679e453fad" category="paragraph">Para obtener información sobre cómo desinstalar el plugin de SnapCenter para VMware vSphere, consulte<block ref="cae8a6db54fa4da6d80207fee61e78d1" category="inline-link-rx"></block>.</block>
   <block id="9792c7ba1a8a833a1c75e11c4a7b46c3" category="list-text">Si desea actualizar varios hosts, seleccione todos los hosts, haga clic en y, a continuación, haga clic <block ref="725f4bf2ffc300942027282d0182533f" category="inline-image-macro-rx" type="image"></block>en *Actualizar* &gt; *Aceptar*.</block>
-  <block id="eafbda6a16d2997896c70ba8ded3db33" category="sidebar">El software SnapCenter es una plataforma sencilla, centralizada y escalable que proporciona protección de datos consistente con las aplicaciones para aplicaciones, bases de datos, sistemas de archivos host y máquinas virtuales que se ejecutan en sistemas ONTAP en cualquier parte del cloud híbrido. Esta biblioteca de documentación incluye información para la versión 6,1.</block>
-  <block id="888e5b40ea166427f96db1a9c08af7fc" category="sidebar">Documentos del software SnapCenter 6,1</block>
   <block id="fc8e535c7339f77157a0f93f32cb1f80" category="list-text">Los flujos de trabajo de montaje y catálogo de Oracle y SAP HANA no son compatibles con los backups de almacenamiento de objetos, pero sí con las copias Snapshot.</block>
   <block id="2128757ca4207f5d5000cd4894d8c58f" category="list-text">No se admiten los clones de Oracle PDB para los backups de almacenamiento de objetos, pero sí para las Snapshot.</block>
   <block id="6eec14240810faadbd60c3ec98b543e7" category="paragraph">El disco compartido no se crea mediante el plugin para Windows. Debe crear y luego agregar el LUN compartido a cada máquina virtual del clúster. Para obtener más información, consulte<block ref="0564b16166a6e24aa234d21e5bcdc18a" category="inline-link-rx"></block>.</block>
@@ -10075,4 +10068,11 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="c23d56866a5b11fd0d8dc189fcf21298" category="list-text"><block ref="341e3fddad4b27511133b6917a75bb8a" category="inline-link-rx"></block></block>
   <block id="57cf9c4ee485623172a5c60cbee423a4" category="paragraph">Vea <block ref="96716f545c5cf1a209bf10c1a798ce38" category="inline-link-macro-rx"></block> el vídeo.</block>
   <block id="5c8b8bc332cb41802ffbe6c5cda258ab" category="paragraph">Se admite la distribución de almacenamiento virtual VMDK, VVol y RDM.</block>
+  <block id="e5385a9de21528bfedd644f4c0331eb1" category="summary">El software SnapCenter es una plataforma sencilla, centralizada y escalable que proporciona protección de datos consistente con las aplicaciones para aplicaciones, bases de datos, sistema de archivos host y máquinas virtuales que se ejecutan en sistemas ONTAP en cualquier parte del cloud híbrido.</block>
+  <block id="0d391616b89aaac354c13202aaccb4ba" category="summary">El software SnapCenter se puede usar en diversos exploradores.</block>
+  <block id="68578ccfcf5117ca8a9a2d7d884e320f" category="summary">La versión 6,1 del software SnapCenter incluye varias funciones y mejoras nuevas.</block>
+  <block id="600ede45d5c4a07242a73e3a5a885e15" category="doc">Novedades del software 6,1 de SnapCenter</block>
+  <block id="8f13c7650e8ef95e186d64196ea879a5" category="sidebar">El software SnapCenter es una plataforma sencilla, centralizada y escalable que proporciona protección de datos consistente con las aplicaciones para aplicaciones, bases de datos, sistemas de archivos host y máquinas virtuales que se ejecutan en sistemas ONTAP en cualquier parte del cloud híbrido. Esta biblioteca de documentación incluye información para la versión 6,1.</block>
+  <block id="8127605cde4cee83a23b35f1207c7572" category="sidebar">Documentación de software SnapCenter</block>
+  <block id="f3e84c2e19a0aa80c716ba1fc7f07e0e" category="sidebar">Documentos del software SnapCenter 6,1</block>
 </blocks>
