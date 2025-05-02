@@ -133,7 +133,7 @@ Sí
 
 
  a| 
-Inicie servicios de plugin
+Iniciar servicios de plugins (solo aplicable a los plugins que se ejecutan en el host de Windows)
  a| 
 Sí
  a| 
@@ -141,7 +141,7 @@ Sí
  a| 
 Sí
  a| 
-Sí
+No
  a| 
 Sí
  a| 

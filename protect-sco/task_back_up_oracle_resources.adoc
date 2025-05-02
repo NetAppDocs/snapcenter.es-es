@@ -24,7 +24,7 @@ A continuación, puede hacer clic en image:../media/filter_icon.gif["icono de fi
 +
 Aparece la página Database-Protect.
 
-. En la página Resources, puede realizar los siguientes pasos:
+. En la página Resources, realice los siguientes pasos:
 +
 .. Marque la casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de Snapshot.
 +
@@ -37,8 +37,7 @@ Por ejemplo: `customtext_policy_hostname` o. `resource_hostname`. De forma prede
 +
 .. Seleccione una o varias políticas de la lista desplegable.
 +
-
-NOTE: Puede crear una política haciendo clic en image:../media/add_policy_from_resourcegroup.gif["agregar símbolo"].
+Puede crear una política haciendo clic en image:../media/add_policy_from_resourcegroup.gif["agregar símbolo"].
 
 +
 En la sección Configure schedules for selected policies, se muestran las políticas seleccionadas.

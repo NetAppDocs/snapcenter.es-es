@@ -390,7 +390,7 @@ Es necesario configurar las credenciales que se usan para realizar operaciones d
 
 *Acerca de esta tarea*
 
-Debe revisar los diferentes métodos de autenticación compatibles con las bases de datos de Oracle. Para obtener más información, consultelink:../install/concept_authentication_methods_for_your_credentials.html["Métodos de autenticación para las credenciales"^].
+Debe revisar los diferentes métodos de autenticación compatibles con las bases de datos de Oracle. Para obtener más información, consulte link:../get-started/concept_authentication_methods_for_your_credentials.html["Métodos de autenticación para las credenciales"^].
 
 Si se configuran credenciales para grupos de recursos individuales y el nombre de usuario no tiene privilegios de administrador completos, el nombre de usuario debe tener al menos privilegios de grupo de recursos y backup.
 

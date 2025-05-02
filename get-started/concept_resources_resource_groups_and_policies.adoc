@@ -1,0 +1,114 @@
+---
+permalink: get-started/concept_resources_resource_groups_and_policies.html 
+sidebar: sidebar 
+keywords: resource, resource group, policy 
+summary: Antes de usar SnapCenter, es necesariol comprender ciertos conceptos básicos vinculados con las operaciones de backup, clonado y restauración que se ejecutan. 
+---
+= Conceptos clave de la protección de datos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de usar SnapCenter, entienda conceptos clave para el backup, el clonado y la restauración.
+
+
+
+== Recursos
+
+Los recursos incluyen bases de datos, sistemas de archivos Windows o recursos compartidos de archivos incluidos en un backup o clonados con SnapCenter. En función del entorno, los recursos también pueden ser instancias de bases de datos, grupos de disponibilidad de SQL Server, bases de datos de Oracle, base de datos RAC o grupos de aplicaciones personalizados.
+
+
+
+== Grupo de recursos
+
+Un grupo de recursos es una agrupacion de recursos en un host o un clúster, potencialmente de varios hosts y clústeres. Las operaciones realizadas en un grupo de recursos se aplican a todos sus recursos en función de la programación especificada. Puede ejecutar backups bajo demanda o programados para recursos o grupos individuales.
+
+
+NOTE: Si un host de un grupo de recursos compartidos entra en modo de mantenimiento, todas las operaciones programadas de ese grupo se suspenden en todos los hosts.
+
+Use plugins relevantes para realizar el backup de recursos específicos: Plugins de bases de datos para bases de datos, plugins del sistema de archivos para sistemas de archivos y plugin de SnapCenter para VMware vSphere para máquinas virtuales y almacenes de datos.
+
+
+
+== Normativas
+
+Las políticas especifican la frecuencia de backup, la retención de copias, la replicación, los scripts y otras características de las operaciones de protección de datos.
+
+Se pueden seleccionar una o varias políticas al crear un grupo de recursos o al ejecutar un backup bajo demanda.
+
+Un grupo de recursos define qué es necesario proteger y cuándo debe protegerse en términos de día y hora. Una política describe cómo se llevará a cabo la protección. Por ejemplo, si se necesita realizar un backup de todas las bases de datos o los sistemas de archivos de un host, puede crearse un grupo de recursos que incluya todas las bases de datos o los sistemas de archivos del host. Luego, se podrían vincular dos políticas al grupo de recursos: Una diaria y una horaria.
+
+Al crear el grupo de recursos y añadir las políticas, es posible configurarlo para que se realice un backup completo todos los días, y agregar programaciones para backups de registros por hora.
+
+Se pueden usar scripts previos y posteriores en operaciones de protección de datos. Estos scripts permiten la automatización antes o después del trabajo de protección de datos. Por ejemplo, un script podría notificar automáticamente cuando hay errores o advertencias en un trabajo de protección de datos. Comprender los requisitos para la creación de estos scripts es esencial antes de configurar scripts previos y posteriores.
+
+
+
+== Uso de scripts previos y posteriores
+
+Los scripts previos y posteriores pueden automatizar las tareas de protección de datos antes o después del trabajo. Por ejemplo, puede agregar un script para notificarle los fallos o advertencias del trabajo. Antes de configurarlos, asegúrese de comprender los requisitos de estos scripts.
+
+
+
+=== Tipos de scripts compatibles
+
+Los siguientes tipos de scripts son compatibles con Windows:
+
+* Archivos de lotes
+* Scripts de PowerShell
+* Scripts Perl
+
+
+Los siguientes tipos de scripts se admiten para UNIX:
+
+* Scripts Perl
+* Scripts Python
+* Scripts de shell
++
+
+NOTE: Junto con el shell bash predeterminado, también se admiten otros shell como sh-shell, k-shell y c-shell.
+
+
+
+
+
+=== Ruta del script
+
+Todos los scripts previos y posteriores que se ejecutan como parte de las operaciones de SnapCenter tanto en sistemas de almacenamiento no virtualizados como en los virtualizados, se ejecutan en el host del plugin.
+
+* Los scripts de Windows deben encontrarse en el host del plugin.
+
+
+
+NOTE: La ruta scripts previos o posteriores no debe incluir unidades o recursos compartidos. La ruta debe ser relativa a LA RUTA DE ACCESO_SCRIPTS.
+
+* Los scripts de UNIX deben encontrarse en el host del plugin.
+
+
+
+NOTE: La ruta de acceso del script se valida en el momento de la ejecución.
+
+
+
+=== Dónde especificar scripts
+
+Los scripts se especifican en las políticas de backup. Cuando se inicia una tarea de backup, la política asocia automáticamente el script con los recursos que se incluirán en el backup. Al crear una política de backup, se pueden especificar los argumentos de script previo y script posterior.
+
+
+NOTE: No puede especificar varios scripts.
+
+
+
+=== Tiempo de espera de scripts
+
+De forma predeterminada, el tiempo de espera se establece en 60 segundos. Puede modificar el valor del tiempo de espera.
+
+
+
+=== Salida de script
+
+El directorio predeterminado para los archivos de salida scripts previos y posteriores de Windows es Windows\System32.
+
+No hay una ubicación predeterminada para los scripts previos y posteriores de UNIX. Puede redirigir el archivo de salida a cualquier ubicación preferida.

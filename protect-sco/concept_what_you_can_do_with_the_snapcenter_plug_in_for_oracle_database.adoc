@@ -34,4 +34,6 @@ La clonado solo puede usarse en el nivel de la base de datos de contenedor.
 * Programar operaciones de backup y verificación.
 * Supervisar todas las operaciones.
 * Ver informes para operaciones de backup, restauración y clonado.
+* Automatiza los backups, las restauraciones, la recuperación, la verificación, el montaje Operaciones de desmontaje y clonado de bases de datos de Oracle en el entorno de SnapCenter
+* Sin embargo, no se proporciona integración con BR*Tools de SAP admite bases de datos Oracle para SAP
 

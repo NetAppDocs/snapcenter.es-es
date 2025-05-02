@@ -1,0 +1,75 @@
+---
+permalink: get-started/reference_supported_storage_systems_and_applications.html 
+sidebar: sidebar 
+keywords: storage system, ONTAP version, ASA r2 systems 
+summary: Debe conocer cuáles son los sistemas de almacenamiento, las aplicaciones y las bases de datos compatibles. 
+---
+= Aplicaciones y sistemas de almacenamiento compatibles con SnapCenter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe conocer los sistemas de almacenamiento, aplicaciones y bases de datos que admite SnapCenter.
+
+
+
+== Sistemas de almacenamiento compatibles
+
+* NetApp ONTAP 9.12.1 y versiones posteriores
+* Azure NetApp Files
+* Amazon FSX para ONTAP de NetApp
++
+Admite memoria no volátil rápida (NVMe) con protocolo de control de transporte (TCP).
+
++
+Para obtener más información sobre Amazon FSX para ONTAP de NetApp, consulte https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["Documentación de Amazon FSX para ONTAP de NetApp"^].
+
+* Sistemas R2 de NetApp ASA que ejecutan NetApp ONTAP 9.16.1.
++
+Los sistemas R2 de ASA ofrecen una solución unificada de hardware y software para entornos SAN basados en plataformas all-flash. https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["Obtenga más información sobre los sistemas R2 de ASA"].
+
++
+
+NOTE: SnapCenter admite únicamente el sistema de archivos de máquina virtual (VMFS) VMware en sistemas ASA R2.
+
++
+|===
+| Operaciones admitidas | Operaciones no admitidas 
+
+
+ a| 
+** Crear backups primarios de aplicaciones en VMDK
+** Transferir snapshots de grupo de coherencia a sistema de almacenamiento secundario
+** Restaurar los backups y restaurar a partir de una ubicación alternativa
++
+*** Restauración sin movimiento desde almacenamiento primario y secundario mediante VMware vMotion
+*** Conecte y restaure copias de almacenamiento primario y secundario
+
+
+** Clona los backups y también los clona a una ubicación alternativa
+
+ a| 
+** Asignación de dispositivo sin formato (RDM)
+** Volúmenes de aplicaciones para Oracle
+** NDV DE SAP HANA
+** Vault
+** Instantánea a prueba de manipulaciones
+** Grupo Flexible
+** Grupo de coherencia jerárquico
+** Migración de sistemas ONTAP 9.x a ASA R2
+** Cambio de nombre de instantáneas
+** SnapCenter no admite el aprovisionamiento secundario del directorio de registro del host del plugin de SQL. Debe configurar manualmente mediante la interfaz de línea de comandos de ONTAP o System Manager.
+
+
+|===
+
+
+
+
+== Aplicaciones y bases de datos compatibles
+
+SnapCenter admite la protección de distintas aplicaciones y bases de datos. Para obtener información detallada sobre las aplicaciones y bases de datos soportadas, consulte https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+
+SnapCenter admite la protección de las cargas de trabajo de Oracle y Microsoft SQL en entornos de centro de datos definido por software (SDDC) de VMware Cloud on Amazon Web Services (AWS). https://community.netapp.com/t5/Tech-ONTAP-Blogs/Protect-Oracle-MS-SQL-workloads-using-NetApp-SnapCenter-in-VMware-Cloud-on-AWS/ba-p/449168["Más información"^].

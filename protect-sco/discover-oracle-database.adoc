@@ -45,7 +45,7 @@ Si se reubica la base de datos, debe realizar los siguientes pasos:
 
 
 
-== Para las versiones de Oracle 12cR2 a 18c
+== Para las versiones de Oracle 12cR2 a 18c, 19C o 21c
 
 .Base de datos RAC
 Las bases de datos de RAC se detectan mediante el comando srvctl config. Deben tener las entradas de la base de datos en el archivo /etc/oratab.

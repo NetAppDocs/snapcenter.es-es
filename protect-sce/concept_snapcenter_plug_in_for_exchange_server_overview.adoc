@@ -23,3 +23,7 @@ Single Mailbox Recovery de NetApp es un producto de partner que proporciona Ontr
 El complemento para Exchange es compatible con la sincronización activa de SnapMirror (inicialmente lanzada como SnapMirror Business Continuity [SM-BC]), lo que permite que los servicios empresariales continúen funcionando incluso si se produce un fallo completo del sitio; de este modo, las aplicaciones pueden recuperarse tras fallos de forma transparente usando una copia secundaria. No se requiere intervención manual ni secuencias de comandos adicionales para activar una recuperación tras fallos con SnapMirror sincronización activa.
 
 Es compatible con el modo asimétrico, de conmutación por error o no doble de SnapMirror Active Sync. Esto se refiere a la solución en la que la ruta optimizada es solo desde el nodo propietario de LUN del lado primario. Todas las operaciones de I/O que aparezcan en las rutas del clúster secundario reciben el servicio de proxy al clúster primario. La replicación síncrona es unidireccional, en la dirección del almacenamiento primario al secundario.
+
+* Automatiza las operaciones de backup y restauración para aplicaciones en el entorno de SnapCenter para bases de datos y grupos de disponibilidad de bases de datos (DAG) de Microsoft Exchange Server
+* Compatible con Exchange Server virtualizados en LUN de RDM cuando se pone en marcha el plugin de SnapCenter para VMware vSphere y se registra el plugin con SnapCenter.
+

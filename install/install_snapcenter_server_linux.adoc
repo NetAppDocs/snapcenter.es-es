@@ -15,8 +15,6 @@ Puede ejecutar el ejecutable del instalador del servidor SnapCenter para instala
 
 .Antes de empezar
 * Si desea instalar SnapCenter Server con usuarios que no sean raíz y no tengan suficientes privilegios para instalar SnapCenter, obtenga el archivo de suma de comprobación sudoers del sitio de soporte de NetApp. Debe utilizar el archivo de suma de comprobación adecuado basado en la versión de Linux.
-* Durante la instalación de . Tiempo de ejecución DE RED, si la instalación no resuelve las dependencias de _libicu_ library, instale _libicu_ ejecutando el comando: `yum install -y libicu`
-* Si la instalación del servidor SnapCenter falla debido a la no disponibilidad de _PERL_, instale _PERL_ ejecutando el comando: `yum install -y perl`
 * Si el paquete sudo no está disponible en SUSE Linux, instale el paquete sudo para evitar errores de autenticación.
 * Para SUSE Linux, configure el nombre de host para evitar el fallo de instalación.
 * Compruebe el estado seguro de Linux ejecutando el comando `sestatus`. Si el estado _SELinux_ está activado y el modo _CURRENT_ es forzado, realice lo siguiente:
@@ -66,6 +64,8 @@ Si el comando devuelve nada que hacer, vuelva a ejecutar el comando después de 
 ** Autenticación basada en claves para iniciar sesión en SnapCenter
 
 
+* Durante la instalación de . Tiempo de ejecución DE RED, si la instalación no resuelve las dependencias de _libicu_ library, instale _libicu_ ejecutando el comando: `yum install -y libicu`
+* Si la instalación del servidor SnapCenter falla debido a la no disponibilidad de _PERL_, instale _PERL_ ejecutando el comando: `yum install -y perl`
 
 
 .Pasos
@@ -140,23 +140,4 @@ Parámetros que se deben transferir para instalar el servidor SnapCenter:
 .. Ejecutar `setsebool -P httpd_can_network_connect on`
 
 
-
-
-
-
-== Registre el producto para habilitar la asistencia
-
-Si es nuevo en NetApp y no tiene una cuenta de NetApp existente, debe registrar el producto para habilitar el soporte.
-
-.Pasos
-. Después de instalar SnapCenter, vaya a *Ayuda > Acerca de*.
-. En el cuadro de diálogo _About SnapCenter_, anote la instancia de SnapCenter, un número de 20 dígitos que comienza por 971.
-. Haga clic en https://register.netapp.com[].
-. Haga clic en *no soy un cliente registrado de NetApp*.
-. Especifique sus datos para registrarse.
-. Deje en blanco el campo Número de serie de referencia de NetApp.
-. Seleccione *SnapCenter* en la lista desplegable Línea de productos.
-. Seleccione el proveedor de facturación.
-. Introduzca el identificador de instancia de SnapCenter de 20 dígitos.
-. Haga clic en *Enviar*.
 

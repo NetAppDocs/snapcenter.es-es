@@ -95,3 +95,18 @@ Sin embargo, puede realizar manualmente una restauración en el nivel de archivo
 * No se admite NVMe.
 * No se admite el aprovisionamiento.
 
+
+
+
+== Funciones
+
+* Permite al plugin para bases de datos de Oracle realizar operaciones de protección de datos en bases de datos de Oracle manejar la pila de almacenamiento del host subyacente en sistemas Linux o AIX
+* Admite los protocolos de sistema de archivos de red (NFS) y red de área de almacenamiento (SAN) en un sistema de almacenamiento que ejecuta ONTAP.
+* En el caso de los sistemas Linux, las bases de datos de Oracle en LUN de VMDK y RDM se admiten cuando se implementa el plugin de SnapCenter para VMware vSphere y se registra el plugin con SnapCenter.
+* Admite Mount Guard para AIX en sistemas DE archivos SAN y diseño de LVM.
+* Admite el sistema de archivos mejorado Journaled (JFS2) con registro en línea en sistemas DE archivos SAN y diseño LVM sólo para sistemas AIX.
++
+Se admiten los dispositivos nativos DE SAN, sistemas de archivos y diseños de LVM creados en dispositivos SAN.
+
+* Automatiza las operaciones de backup, restauración y clonado para sistemas de archivos UNIX en el entorno de SnapCenter
+

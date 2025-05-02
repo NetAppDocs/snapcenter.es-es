@@ -25,7 +25,7 @@ NOTE: No se introduce ninguna información de licencia en la interfaz gráfica d
 * Se bloqueó en el número de serie de la controladora
 
 
-Para obtener información sobre las licencias necesarias, consulte link:../install/concept_snapcenter_licenses.html["Licencias SnapCenter"^].
+Para obtener información sobre las licencias necesarias, consulte link:../get-started/concept_snapcenter_licenses.html["Licencias SnapCenter"].
 
 
 
