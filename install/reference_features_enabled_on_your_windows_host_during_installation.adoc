@@ -111,6 +111,7 @@ Cola de mensajes
 NOTE: Asegúrese de que ninguna otra aplicación utiliza el servicio MSMQ que SnapCenter crea y administra.
 
 * RabbitMQ
+* Erlang
 
 
 

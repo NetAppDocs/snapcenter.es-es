@@ -143,14 +143,9 @@ Defaults: _LINUX_USER_ !visiblepw
 Defaults: _LINUX_USER_ !requiretty
 ----
 +
-
-NOTE: Si tiene una configuración de RAC, junto con otros comandos permitidos, debe agregar lo siguiente al archivo /etc/sudoers: '/<crs_home>/bin/olsnodes'
-
-
-
-Puede obtener el valor de _crs_home_ del archivo _/etc/oracle/olr.loc_.
-
 _LINUX_USER_ es el nombre del usuario que no es raíz que ha creado.
+
+
 
 Puede obtener el _checksum_value_ del archivo *sc_unix_plugins_checksum.txt*, que se encuentra en:
 
