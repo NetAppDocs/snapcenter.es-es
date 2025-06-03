@@ -17,8 +17,7 @@ Los registros de auditoría se protegen mediante la generación de resumen firma
 
 Inició sesión con el rol de administrador de SnapCenter.
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 * Las alertas se envían en las siguientes situaciones:
 +
 ** La programación de comprobación de integridad del registro de auditoría o el servidor de syslog están habilitados o deshabilitados
@@ -40,8 +39,7 @@ La información relativa a los parámetros que se pueden utilizar con el cmdlet 
 
 
 
-* Pasos*
-
+.Pasos
 . En la página *Configuración*, vaya a *Configuración* > *Configuración global* > *Configuración del registro de auditoría*.
 . En la sección Registro de auditoría, introduzca los detalles.
 . Introduzca el directorio *Registro de auditoría* y el directorio *Registro de suma de comprobación de auditoría*

@@ -13,17 +13,16 @@ summary: Además de usar los roles de SnapCenter existentes, es posible crear ro
 [role="lead"]
 Además de usar los roles de SnapCenter existentes, es posible crear roles propios y personalizar los permisos.
 
-Inició sesión con el rol de administrador de SnapCenter.
+Para crear sus propios roles, es necesario iniciar sesión como el rol "SnapCenterAdmin".
 
-* Pasos*
-
+.Pasos
 . En el panel de navegación de la izquierda, haga clic en *Configuración*.
 . En la página Configuración, haga clic en *roles*.
 . Haga clic en image:../media/add_icon_configure_database.gif["el icono de añadir de la pantalla de configuración de la base de datos"].
-. En la página Add Role, especifique un nombre y una descripción para el nuevo rol.
+. Especifique un nombre y una descripción para el nuevo rol.
 +
 
-NOTE: Sólo puede incluir los siguientes caracteres especiales en nombres de usuario y nombres de grupo: Espacio ( ), guión (-), subrayado (_) y dos puntos (:).
+NOTE: Solo se pueden utilizar los siguientes caracteres especiales en los nombres de usuario y de grupo: espacio ( ), guion (-), guión bajo (_) y dos puntos (:).
 
 . Seleccione *todos los miembros de esta función pueden ver los objetos de otros miembros* para permitir que otros miembros de la función vean recursos como volúmenes y hosts después de actualizar la lista de recursos.
 +

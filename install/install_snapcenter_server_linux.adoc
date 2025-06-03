@@ -141,3 +141,13 @@ Parámetros que se deben transferir para instalar el servidor SnapCenter:
 
 
 
+
+
+
+== Funciones habilitadas en el host Linux durante la instalación
+
+El servidor SnapCenter instala los siguientes paquetes de software que pueden ayudar a solucionar problemas y realizar el mantenimiento del sistema host.
+
+* RabbitMQ
+* Erlang
+

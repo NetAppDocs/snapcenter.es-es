@@ -55,6 +55,80 @@ Se muestra una lista de los discos.
 
 
 
+== Establecer una sesión iSCSI
+
+Si se utiliza iSCSI para conectarse a un LUN, es necesario establecer una sesión iSCSI para poder crear el LUN y habilitar la comunicación.
+
+*Antes de empezar*
+
+* Definió el nodo del sistema de almacenamiento como un destino iSCSI.
+* Inició el servicio iSCSI en el sistema de almacenamiento. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sanag/home.html["Leer más"^]
+
+
+*Acerca de esta tarea*
+
+Solo es posible establecer una sesión iSCSI entre las mismas versiones de IP, ya sea de IPv6 a IPv6 o de IPv4 a IPv4.
+
+Es posible usar una dirección IPv6 local de vínculo para la gestión de sesiones iSCSI y la comunicación entre un host y un destino únicamente cuando ambos se encuentran en la misma subred.
+
+El cambio de nombre de un iniciador de iSCSI afecta el acceso a los destinos iSCSI. Después de cambiar el nombre, es posible que sea necesario volver a configurar los destinos a los que accede el iniciador para que puedan reconocer el nuevo nombre. Es necesario reiniciar el host después de cambiar el nombre de un iniciador de iSCSI.
+
+Si el host tiene más de una interfaz de iSCSI, una vez que se establece una sesión iSCSI con SnapCenter mediante una dirección IP en la primera interfaz, no se puede establecer una sesión iSCSI desde otra interfaz con una dirección IP diferente.
+
+* Pasos*
+
+. En el panel de navegación de la izquierda, haga clic en *hosts*.
+. En la página hosts, haga clic en *iSCSI Session*.
+. En la lista desplegable *Storage Virtual Machine*, seleccione la máquina virtual de almacenamiento (SVM) para el destino iSCSI.
+. En la lista desplegable *Host*, seleccione el host para la sesión.
+. Haga clic en *establecer sesión*.
++
+Se mostrará el asistente Establish Session.
+
+. En el asistente Establish Session, identifique el destino:
++
+|===
+| En este campo... | Introduzca... 
+
+
+ a| 
+Nombre del nodo de destino
+ a| 
+El nombre de nodo del destino iSCSI
+
+Si ya existe un nombre de nodo de destino, el nombre se muestra en formato de solo lectura.
+
+
+
+ a| 
+Dirección del portal de destino
+ a| 
+La dirección IP del portal de red de destino
+
+
+
+ a| 
+Puerto del portal de destino
+ a| 
+El puerto TCP del portal de red de destino
+
+
+
+ a| 
+Dirección del portal del iniciador
+ a| 
+La dirección IP del portal de red del iniciador
+
+|===
+. Cuando esté satisfecho con las entradas, haga clic en *conectar*.
++
+SnapCenter establecerá la sesión iSCSI.
+
+. Repita este procedimiento para establecer una sesión para cada destino.
+
+
+
+
 == Crear LUN o discos conectados mediante FC o iSCSI
 
 El host de Windows ve los LUN en el sistema de almacenamiento como discos virtuales. Es posible usar SnapCenter para crear y configurar un LUN conectado a FC o conectado a iSCSI.

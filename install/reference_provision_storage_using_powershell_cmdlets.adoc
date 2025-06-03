@@ -11,7 +11,7 @@ summary: Si no desea utilizar la interfaz gráfica de usuario de SnapCenter para
 
 
 [role="lead"]
-Si no desea utilizar la interfaz gráfica de usuario de SnapCenter para realizar trabajos de aprovisionamiento de hosts y reclamación de espacio, puede utilizar los cmdlets de PowerShell que ofrece el plugin de SnapCenter para Microsoft Windows. Puede usar los cmdlets directamente o añadirlos a scripts.
+Si no desea utilizar la GUI de SnapCenter para realizar trabajos de aprovisionamiento de host y recuperación de espacio, puede usar los cmdlets de PowerShell. Puede usar los cmdlets directamente o añadirlos a scripts.
 
 Si ejecuta los cmdlets en el host de un plugin remoto, debe ejecutar el cmdlet SnapCenter Open-SMConnection para abrir una conexión con el servidor SnapCenter.
 
