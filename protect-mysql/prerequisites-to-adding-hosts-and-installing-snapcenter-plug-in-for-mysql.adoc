@@ -16,7 +16,7 @@ Antes de añadir un host e instalar los paquetes de plugins, debe cumplir con to
 * Debe haber instalado Java 11 en el host.
 +
 
-NOTE: IBM Java no es compatible.
+NOTE: IBM Java no es compatible con el host Windows y Linux.
 
 * Para Windows, el plugin Creator Service debe ejecutarse con el usuario de Windows '`LocalSystem`', que es el comportamiento predeterminado cuando el plugin para MySQL se instala como administrador de dominio.
 * Al instalar un plugin en un host de Windows, si especifica una credencial que no está integrada o si el usuario pertenece a un usuario de grupo de trabajo local, debe deshabilitar UAC en el host. El plugin de SnapCenter para Microsoft Windows se pondrá en marcha de forma predeterminada con el plugin MySQL en hosts de Windows.
@@ -33,7 +33,7 @@ NOTE: IBM Java no es compatible.
 * Debe haber habilitado la conexión SSH por contraseña para el usuario raíz o no raíz.
 * Debe haber instalado Java 11 en el host de Windows.
 +
-http://www.java.com/en/download/manual.jsp["Descargas de Java para todos los sistemas operativos"]
+http://www.java.com/en/download/manual.jsp["Descargar JAVA para todos los sistemas operativos"]
 
 +
 https://imt.netapp.com/matrix/imt.jsp?components=121071;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"]
@@ -47,7 +47,7 @@ https://imt.netapp.com/matrix/imt.jsp?components=121071;&solution=1259&isHWU&src
 * Debe haber habilitado la conexión SSH por contraseña para el usuario raíz o no raíz.
 * Debe haber instalado Java 11 en el host Linux.
 +
-http://www.java.com/en/download/manual.jsp["Descargas de Java para todos los sistemas operativos"]
+http://www.java.com/en/download/manual.jsp["Descargar JAVA para todos los sistemas operativos"]
 
 +
 https://imt.netapp.com/matrix/imt.jsp?components=121071;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"]
