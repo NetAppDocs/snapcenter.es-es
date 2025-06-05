@@ -198,5 +198,5 @@ Configuración del recurso:
 * ORACLE_HOME especifica el directorio en el que está instalado el software de Oracle.
 * ARCHIVE_LOG_ONLY especifica si se realizará o no el backup de los registros de archivos.
 * ORACLE_BACKUPMODE especifica si se debe realizar una copia de seguridad en línea o fuera de línea.
-* ORACLE_EXPORT_PARAMETERS especifica si se pueden exportar variables de entorno mientras se ejecuta _bin/su_. El valor de ORACLE_EXPORT_PARAMETERS debe establecerse en *y*.
+* ORACLE_EXPORT_PARAMETERS especifica si las variables de entorno definidas anteriormente deben reexportarse al ejecutar _/bin/su <user running sqlplus> -c sqlplus /nolog <cmd>_. Esto suele ocurrir cuando el usuario que ejecuta sqlplus no ha configurado todas las variables de entorno necesarias para conectarse a la base de datos mediante _connect / as sysdba_.
 
