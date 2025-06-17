@@ -38,7 +38,6 @@ link:task_configure_gMSA_on_windows_server_2012_or_later.html["Configurar la cue
 ** Servidor de Microsoft Exchange
 ** Microsoft SQL Server
 ** SAP HANA
-** Plugins personalizados
 
 
 * Instalar plugins en un clúster

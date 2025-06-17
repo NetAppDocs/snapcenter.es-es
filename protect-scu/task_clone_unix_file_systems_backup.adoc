@@ -15,7 +15,7 @@ Puede utilizar SnapCenter para clonar el sistema de archivos Unix mediante la co
 
 .Antes de empezar
 * Para omitir la actualización del archivo fstab, debe configurarse el valor de _SKIP_FSTAB_UPDATE_ como *true* en el archivo _agent.properties_ ubicado en _/opt/NetApp/snapcenter/scc/etc_.
-* Puede contar con un nombre de volumen de clon estático y una ruta de unión si se configura el valor de _USE_CUSTOM_CLONE_VOLUME_NAME_FORMAT_ a *true* en el archivo _agent.properties_ ubicado en _/opt/NetApp/snapcenter/scc/etc_. Después de actualizar el archivo, debe reiniciar SnapCenter para el servicio de plugins personalizados mediante la ejecución del comando: `/opt/NetApp/snapcenter/scc/bin/scc restart`.
+* Puede contar con un nombre de volumen de clon estático y una ruta de unión si se configura el valor de _USE_CUSTOM_CLONE_VOLUME_NAME_FORMAT_ a *true* en el archivo _agent.properties_ ubicado en _/opt/NetApp/snapcenter/scc/etc_. Después de actualizar el archivo, debe reiniciar el servicio creador del complemento SnapCenter ejecutando el comando:  `/opt/NetApp/snapcenter/scc/bin/scc restart` .
 +
 Ejemplo: Sin esta propiedad, el nombre del volumen clonado y la ruta de unión serán como <Source_volume_name>_Clone_<Timestamp>, pero ahora serán <Source_volume_name>_Clone_<Clone_Name>
 

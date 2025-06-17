@@ -2,7 +2,7 @@
 permalink: protect-db2/configure-CA-certificate-for-ibm-db2-on-Linux-host.html 
 sidebar: sidebar 
 keywords: SnapCenter 
-summary: Configure el certificado de CA para el servicio de plugins personalizados de SnapCenter en el host Linux 
+summary: Configurar el certificado CA para el servicio IBM Db2Plug-ins de SnapCenter en el host Linux 
 ---
 = Configure el certificado de CA para el servicio de plugins de SnapCenter IBM DB2 en el host Linux
 :allow-uri-read: 
@@ -11,16 +11,16 @@ summary: Configure el certificado de CA para el servicio de plugins personalizad
 
 
 [role="lead"]
-Debe gestionar la contraseña del almacén de claves de los plugins personalizados y su certificado, configurar el certificado de CA, configurar los certificados raíz o intermedios en el almacén de confianza de plugins personalizados y configurar la pareja de claves firmada de CA en el almacén de confianza de plugins personalizados con el servicio de plugins personalizados de SnapCenter para activar el certificado digital instalado.
+Debe administrar la contraseña del almacén de claves de los complementos y su certificado, configurar el certificado de CA, configurar los certificados raíz o intermedios para el almacén de confianza de los complementos y configurar el par de claves firmadas de CA para el almacén de confianza de los complementos con el servicio de complementos de SnapCenter para activar el certificado digital instalado.
 
-Los plugins personalizados utilizan el archivo 'keystore.jks', que se encuentra en _/opt/NetApp/snapcenter/scc/etc_ tanto como en su almacén de confianza como en su almacén de claves.
+Los complementos utilizan el archivo 'keystore.jks', que se encuentra en _/opt/NetApp/snapcenter/scc/etc_ como almacén de confianza y almacén de claves.
 
 
 
-== Gestionar contraseña para el almacén de claves del plugin personalizado y el alias de la pareja de claves firmada de CA en uso
+== Administrar la contraseña para el almacén de claves del complemento y el alias del par de claves firmadas por la CA en uso
 
 .Pasos
-. Puede recuperar la contraseña predeterminada del almacén de claves del plugin personalizado desde el archivo de propiedades del agente del plugin personalizado.
+. Puede recuperar la contraseña predeterminada del almacén de claves del complemento desde el archivo de propiedades del agente del complemento.
 +
 Es el valor correspondiente a la clave 'KEYSTORE_PASS'.
 
@@ -37,16 +37,16 @@ Actualice lo mismo para el archivo key KEYSTORE_PASS en _agent.properties_.
 
 
 
-NOTE: La contraseña para el almacén de claves de plugin personalizado y para toda la contraseña de alias asociada de la clave privada debe ser la misma.
+NOTE: La contraseña para el almacén de claves del complemento y para todas las contraseñas de alias asociadas de la clave privada deben ser las mismas.
 
 
 
-== Configure los certificados intermedios o de raíz para el almacén de confianza del plugin personalizado
+== Configurar certificados raíz o intermedios para conectar el almacén de confianza
 
-Debe configurar los certificados intermedios o de raíz sin la clave privada para personalizar el almacén de confianza del plugin.
+Debe configurar los certificados raíz o intermedios sin la clave privada para conectar el almacén de confianza.
 
 .Pasos
-. Desplácese hasta la carpeta que contiene el almacén de claves del plugin personalizado: /Opt/NetApp/snapcenter/scc/etc.
+. Navegue a la carpeta que contiene el almacén de claves del complemento: /opt/NetApp/snapcenter/scc/etc.
 . Busque el archivo 'keystore.jks'.
 . Enumere los certificados añadidos al almacén de claves:
 +
@@ -55,7 +55,7 @@ Debe configurar los certificados intermedios o de raíz sin la clave privada par
 . Añada un certificado raíz o intermedio:
 +
  keytool -import -trustcacerts -alias myRootCA -file /root/USERTrustRSA_Root.cer -keystore keystore.jks
-. Reinicie el servicio después de configurar los certificados raíz o intermedios en el almacén de confianza del plugin personalizado.
+. Reinicie el servicio después de configurar los certificados raíz o intermedios para complementar el almacén de confianza.
 
 
 
@@ -63,12 +63,12 @@ NOTE: Debe añadir el certificado de CA raíz y luego los certificados de CA int
 
 
 
-== Configure el par de claves firmadas de CA para el almacén de confianza del plugin personalizado
+== Configurar el par de claves firmadas por CA para el complemento de almacén de confianza
 
-Debe configurar la pareja de claves firmadas de CA en el almacén de confianza del plugin personalizado.
+Debe configurar el par de claves firmadas por CA en el almacén de confianza del complemento.
 
 .Pasos
-. Desplácese hasta la carpeta que contiene el almacén de claves del plugin personalizado /opt/NetApp/snapcenter/scc/etc.
+. Navegue a la carpeta que contiene el almacén de claves del complemento /opt/NetApp/snapcenter/scc/etc.
 . Busque el archivo 'keystore.jks'.
 . Enumere los certificados añadidos al almacén de claves:
 +
@@ -85,7 +85,7 @@ Debe configurar la pareja de claves firmadas de CA en el almacén de confianza d
 . Compruebe que el almacén de claves contiene el alias correspondiente al nuevo certificado de CA, que se añadió al almacén de claves.
 . Cambie la contraseña de clave privada añadida para el certificado de CA a la contraseña del almacén de claves.
 +
-La contraseña predeterminada del plugin personalizado keystore es el valor de key KEYSTORE_PASS en el archivo agent.properties.
+La contraseña del almacén de claves del complemento predeterminado es el valor de la clave KEYSTORE_PASS en el archivo agent.properties.
 
 +
  keytool -keypasswd -alias "alias_name_in_CA_cert" -keystore keystore.jks
@@ -96,16 +96,16 @@ La contraseña predeterminada del plugin personalizado keystore es el valor de k
 +
 Actualice este valor con la clave SCC_CERTIFICATE_ALIAS.
 
-. Reinicie el servicio después de configurar el par de claves firmado de CA en el almacén de confianza del plugin personalizado.
+. Reinicie el servicio después de configurar el par de claves firmadas por CA para complementar el almacén de confianza.
 
 
 
 
-== Configurar la lista de revocación de certificados (CRL) para los plugins personalizados de SnapCenter
+== Configurar la lista de revocación de certificados (CRL) para complementos
 
 .Acerca de esta tarea
-* Los complementos personalizados de SnapCenter buscarán los archivos CRL en un directorio preconfigurado.
-* El directorio predeterminado de los archivos CRL de los plugins personalizados de SnapCenter es ' opt/NetApp/snapcenter/scc/etc/crl'.
+* Los complementos de SnapCenter buscarán los archivos CRL en un directorio preconfigurado.
+* El directorio predeterminado para los archivos CRL de los complementos de SnapCenter es ' opt/NetApp/snapcenter/scc/etc/crl'.
 
 
 .Pasos

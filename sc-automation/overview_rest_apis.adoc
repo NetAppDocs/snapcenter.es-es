@@ -17,7 +17,6 @@ Los plugins compatibles con las API DE REST son:
 
 * Plugin para Microsoft SQL Server
 * Plugin para base de datos SAP HANA
-* Plugins personalizados
 * Plugin para base de datos de Oracle
 
 

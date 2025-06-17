@@ -20,7 +20,7 @@ Si desea realizar un backup de un recurso que tenga una relación de SnapMirror 
 NOTE: Al realizar el backup de un sistema de archivos, SnapCenter no hace backups de los LUN montados en un punto de montaje de volumen (VMP) en el sistema de archivos del que se está haciendo backup.
 
 
-IMPORTANT: Si va a trabajar en un contexto de sistema de archivos de Windows, no realice backup de archivos de la base de datos. Si lo hace, se crea un backup incoherente y una posible pérdida de datos al restaurar. Para proteger los archivos de la base de datos, debe usar el plugin de SnapCenter adecuado para la base de datos (por ejemplo, plugin de SnapCenter para Microsoft SQL Server, plugin de SnapCenter para Microsoft Exchange Server o un plugin personalizado para archivos de base de datos).
+IMPORTANT: Si va a trabajar en un contexto de sistema de archivos de Windows, no realice backup de archivos de la base de datos. Si lo hace, se crea un backup incoherente y una posible pérdida de datos al restaurar. Para proteger los archivos de base de datos, debe utilizar el complemento de SnapCenter adecuado para la base de datos (por ejemplo, Complemento de SnapCenter para Microsoft SQL Server o Complemento de SnapCenter para Microsoft Exchange Server).
 
 [role="tabbed-block"]
 ====

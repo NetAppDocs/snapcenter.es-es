@@ -305,9 +305,9 @@ Complementos compatibles con NetApp para SnapCenter
 HTTPS
  a| 
  a| 
-Se trata de un puerto interno que se usa solo en el host del plugin personalizado; no son obligatorias las excepciones de firewall.
+Este es un puerto interno que se utiliza solo en el host del complemento; no se requiere excepción de firewall.
 
-La comunicación entre SnapCenter Server y los plugins personalizados pasa a través del puerto 8145.
+La comunicación entre el servidor SnapCenter y los complementos se enruta a través del puerto 8145.
 
 
 

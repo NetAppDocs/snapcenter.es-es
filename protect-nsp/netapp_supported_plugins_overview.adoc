@@ -18,11 +18,11 @@ Cuando se instalan plugins compatibles con NetApp, es posible utilizar SnapCente
 
 NOTE: SnapCenterCLI no admite comandos de plugins compatibles con NetApp.
 
-NetApp proporciona el complemento de almacenamiento para realizar operaciones de protección de datos del volumen de datos en el almacenamiento de ONTAP mediante el marco de trabajo de complementos personalizados integrado en SnapCenter.
+NetApp proporciona el complemento de almacenamiento para realizar operaciones de protección de datos del volumen de datos en el almacenamiento ONTAP utilizando el marco de complemento integrado en SnapCenter.
 
 Puede instalar los plugins compatibles con NetApp desde la página Add Host.
 
 link:add_hosts_and_install_plug_in_packages_on_remote_hosts.html["Añada hosts e instale paquetes de plugins en hosts remotos."^]
 
 
-NOTE: La política de soporte de SnapCenter cubrirá la compatibilidad con el marco de complementos personalizados de SnapCenter, el motor principal y las API asociadas. El soporte técnico no cubrirá el código fuente del complemento ni los scripts asociados incluidos en el marco de complementos personalizados.
+NOTE: La política de soporte de SnapCenter abarcará la compatibilidad con el framework de complementos, el motor principal y las API asociadas. No se incluirá el código fuente del complemento ni los scripts asociados creados en el framework de complementos.

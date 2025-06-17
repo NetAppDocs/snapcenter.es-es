@@ -1,0 +1,58 @@
+---
+permalink: get-started/learn-about-snapcenter-support-for-asa-r2-systems.html 
+sidebar: sidebar 
+keywords: storage system, ONTAP version, ASA r2 systems 
+summary: Debe conocer cuáles son los sistemas de almacenamiento, las aplicaciones y las bases de datos compatibles. 
+---
+= Operaciones de SnapCenter compatibles con sistemas ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Los sistemas de almacenamiento ASA r2 son compatibles a partir de SnapCenter 6.1.  https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["Obtenga más información sobre los sistemas R2 de ASA"]
+
+SnapCenter aprovecha las API REST para realizar todas las operaciones en sistemas ASA r2, que no admiten ZAPI.
+
+*Operaciones compatibles con SnapCenter para sistemas ASA r2*
+
+* Crear backups primarios de aplicaciones en VMDK
+* Transferir snapshots de grupo de coherencia a sistema de almacenamiento secundario
+* Restaurar las copias de seguridad de los sistemas de almacenamiento primario y secundario al host original o al host alternativo
++
+** Restauración en el lugar desde sistemas de almacenamiento primarios y secundarios mediante VMware vMotion
+** Conectar y copiar la restauración desde los sistemas de almacenamiento primario y secundario
+
+
+* Clonación de las copias de seguridad en el host original o en el host alternativo
+
+
+SnapCenter puede descubrir o crear grupos de consistencia de ONTAP. También puede aprovisionar e inicializar relaciones de SnapMirror con el clúster de destino para protección secundaria.
+
+Para obtener información sobre cómo habilitar la protección secundaria en los sistemas ASA r2 para su aplicación, consulte:
+
+* https://docs.netapp.com/us-en/snapcenter/protect-scsql/create-resource-groups-secondary-protection-for-asa-r2-mssql-resources.html["Habilitar la protección secundaria para los recursos de Microsoft SQL Server"]
+* https://docs.netapp.com/us-en/snapcenter/protect-hana/create-resource-groups-secondary-protection-for-asa-r2-hana-resources.html["Habilitar la protección secundaria para los recursos de SAP HANA"]
+* https://docs.netapp.com/us-en/snapcenter/protect-sco/create-resource-groups-secondary-protection-for-asa-r2-oracle-resources.html["Habilitar la protección secundaria para los recursos de Oracle"]
+* https://docs.netapp.com/us-en/snapcenter/protect-scw/create-resource-groups-secondary-protection-for-asa-r2-windows-file-systems.html["Habilitar la protección secundaria para los sistemas de archivos de Windows"]
+* https://docs.netapp.com/us-en/snapcenter/protect-db2/create-resource-groups-secondary-protection-for-asa-r2-db2-resources.html["Habilitar la protección secundaria para los recursos de IBM Db2"]
+* https://docs.netapp.com/us-en/snapcenter/protect-postgresql/create-resource-groups-secondary-protection-for-asa-r2-postgresql-resources.html["Habilitar la protección secundaria para los recursos de PostgreSQL"]
+* https://docs.netapp.com/us-en/snapcenter/protect-mysql/create-resource-groups-secondary-protection-for-asa-r2-mysql-resources.html["Habilitar la protección secundaria para los recursos de MySQL"]
+* https://docs.netapp.com/us-en/snapcenter/protect-scu/create-resource-groups-secondary-protection-for-asa-r2-unix-resources.html["Habilitar la protección secundaria para los sistemas de archivos Unix"]
+
+
+*Operaciones no compatibles con SnapCenter para sistemas ASA r2*
+
+* Asignación de dispositivo sin formato (RDM)
+* Volúmenes de aplicaciones para Oracle
+* NDV DE SAP HANA
+* Vault
+* Snapshots a prueba de manipulación
+* Volúmenes de FlexGroup
+* Grupo de coherencia jerárquico
+* Migración de sistemas de almacenamiento ASA, AFF o FAS a sistemas de almacenamiento ASA r2
+* Protección de bases de datos que tienen una combinación de recursos ASA, AFF o FAS y recursos ASA r2
+* Cambio de nombre de instantáneas
+* Aprovisionamiento secundario del directorio de registro del host del complemento SQL
+

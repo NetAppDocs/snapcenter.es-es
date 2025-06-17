@@ -27,43 +27,6 @@ Admite memoria no volátil rápida (NVMe) con protocolo de control de transporte
 Para obtener más información sobre Amazon FSX para ONTAP de NetApp, consulte https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["Documentación de Amazon FSX para ONTAP de NetApp"^].
 
 * Sistemas R2 de NetApp ASA que ejecutan NetApp ONTAP 9.16.1.
-+
-Los sistemas R2 de ASA ofrecen una solución unificada de hardware y software para entornos SAN basados en plataformas all-flash. https://docs.netapp.com/us-en/asa-r2/get-started/learn-about.html["Obtenga más información sobre los sistemas R2 de ASA"].
-
-+
-
-NOTE: SnapCenter admite únicamente el sistema de archivos de máquina virtual (VMFS) VMware en sistemas ASA R2.
-
-+
-|===
-| Operaciones admitidas | Operaciones no admitidas 
-
-
- a| 
-** Crear backups primarios de aplicaciones en VMDK
-** Transferir snapshots de grupo de coherencia a sistema de almacenamiento secundario
-** Restaurar los backups y restaurar a partir de una ubicación alternativa
-+
-*** Restauración sin movimiento desde almacenamiento primario y secundario mediante VMware vMotion
-*** Conecte y restaure copias de almacenamiento primario y secundario
-
-
-** Clona los backups y también los clona a una ubicación alternativa
-
- a| 
-** Asignación de dispositivo sin formato (RDM)
-** Volúmenes de aplicaciones para Oracle
-** NDV DE SAP HANA
-** Vault
-** Instantánea a prueba de manipulaciones
-** Grupo Flexible
-** Grupo de coherencia jerárquico
-** Migración de sistemas ONTAP 9.x a ASA R2
-** Cambio de nombre de instantáneas
-** SnapCenter no admite el aprovisionamiento secundario del directorio de registro del host del plugin de SQL. Debe configurar manualmente mediante la interfaz de línea de comandos de ONTAP o System Manager.
-
-
-|===
 
 
 

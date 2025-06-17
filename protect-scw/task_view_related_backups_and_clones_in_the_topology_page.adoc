@@ -76,9 +76,6 @@ Estos detalles se muestran en forma de tabla.
 
 NOTE: Los backups que figuran en el sistema de almacenamiento secundario no pueden eliminarse ni cambiar de nombre.
 
-+
-Si utiliza los plugins de personalizados de SnapCenter, no puede cambiar el nombre de los backups que están en el sistema de almacenamiento principal.
-
 . Si desea eliminar un clon, selecciónelo en la tabla y haga clic en image:../media/delete_icon.gif["icono de eliminar"] para eliminar el clon.
 
 

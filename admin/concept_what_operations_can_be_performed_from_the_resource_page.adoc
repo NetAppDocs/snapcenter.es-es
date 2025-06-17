@@ -16,13 +16,11 @@ Es posible detectar recursos y realizar operaciones de protección de datos desd
 En la página Resources, es posible realizar las siguientes tareas:
 
 |===
-| Puede ejecutar estas tareas... | Para Microsoft Exchange Server | Para Microsoft SQL Server | Para Microsoft Windows | Para bases de datos de Oracle | Para base de datos SAP HANA | Para plugins personalizados 
+| Puede ejecutar estas tareas... | Para Microsoft Exchange Server | Para Microsoft SQL Server | Para Microsoft Windows | Para bases de datos de Oracle | Para base de datos SAP HANA 
 
 
  a| 
 Determine si hay recursos disponibles para backup
- a| 
-Sí
  a| 
 Sí
  a| 
@@ -48,15 +46,11 @@ Sí
 Sí
  a| 
 Sí
- a| 
-Sí
 
 
 
  a| 
 Restaurar desde backups
- a| 
-Sí
  a| 
 Sí
  a| 
@@ -82,15 +76,11 @@ Sí
 Sí
  a| 
 Sí
- a| 
-Sí
 
 
 
  a| 
 Gestionar backups
- a| 
-Sí
  a| 
 Sí
  a| 
@@ -116,15 +106,11 @@ Sí
 Sí
  a| 
 Sí
- a| 
-Sí
 
 
 
  a| 
 Gestionar políticas
- a| 
-Sí
  a| 
 Sí
  a| 
@@ -150,8 +136,6 @@ Sí
 Sí
  a| 
 Sí
- a| 
-Sí
 
 
 
@@ -165,8 +149,6 @@ No
 No
  a| 
 Sí
- a| 
-No
  a| 
 No
 
@@ -184,15 +166,11 @@ No
 Sí
  a| 
 No
- a| 
-No
 
 
 
  a| 
 Ver detalles
- a| 
-Sí
  a| 
 Sí
  a| 

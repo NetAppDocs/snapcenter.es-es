@@ -57,7 +57,6 @@
   <block id="f3442009cf8c0e228473ba15a66ac563" category="paragraph">Puede quitar hosts y desinstalar plugins individuales o paquetes de plugins por medio de la interfaz gráfica de usuario de SnapCenter. También puede desinstalar plugins individuales o paquetes de plugins de hosts remotos por medio de la interfaz de línea de comandos (CLI) en el host SnapCenter Server o usar la opción Windows *Desinstalar un programa* localmente en cualquier host.</block>
   <block id="bf3d95dececb2ee8a103358b2c9b04f2" category="paragraph">Antes de quitar un host de servidor SnapCenter, debe completar los requisitos previos.</block>
   <block id="af429d236566c534d6dc055192e779cf" category="list-text">Debe iniciar sesión como administrador.</block>
-  <block id="50f2247c873481cfb368dd204a79a45d" category="list-text">Si utiliza plugins de SnapCenter personalizados, debe eliminar todos los clones de SnapCenter que están asociados con el host.</block>
   <block id="9030d3b6bdc2b1e3d07fcc87c359b081" category="list-text">Debe asegurarse de que no existan trabajos de detección en ejecución en el host.</block>
   <block id="7cf2b1be955f9e0063c5ff9339bec7a6" category="list-text">Debe asignarse un rol con los permisos necesarios para eliminar todos los objetos asociados con el host. De lo contrario, la operación de eliminación fallará.</block>
   <block id="58577ea8db4fe9fa7618604aa126c15d" category="list-text">Debe confirmar la huella digital si la clave SSH se modificó después de añadir el host a SnapCenter.</block>
@@ -107,7 +106,6 @@
   <block id="6fda2f87af8e800dc50fc786018c1415" category="cell">Para Microsoft Windows</block>
   <block id="f97144a19325ae2c28181b14dbfc9c09" category="cell">Para bases de datos de Oracle</block>
   <block id="9a25c2912d576f11de7680d7fd2769c7" category="cell">Para base de datos SAP HANA</block>
-  <block id="f8bad27d582beaf32e0a7dd92962e679" category="cell">Para plugins personalizados</block>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="doc"></block>
   <block id="19a9d9cc3f765deef85b382b8bac0c2c" category="paragraph">Añada los hosts e instale el paquete de plugins</block>
   <block id="93cba07454f06a4a960172bbd6e2a435" category="paragraph">Sí</block>
@@ -744,8 +742,6 @@
   <block id="d2d37741a3c204436d78ca699e0e7154" category="paragraph">Plugin para UNIX o plugin para Windows</block>
   <block id="5d5cde1005f814f00d44032094a9a04f" category="paragraph">Host del cliente HDBSQL</block>
   <block id="4abb41aae1dfe9c81afb3c3672df559c" category="paragraph">Linux o Windows</block>
-  <block id="98c5825b9b497a5e2a61777325ed802f" category="paragraph">Plugins personalizados</block>
-  <block id="0c6a45824d8aa208ef88a943b710cb80" category="paragraph">Host de aplicación personalizada</block>
   <block id="a364132418180f0b14b5eb7db8b87808" category="admonition">El plugin de SnapCenter para VMware vSphere admite operaciones de backup y restauración consistentes con los fallos y consistentes con las máquinas virtuales (VM), almacenes de datos y discos de máquina virtual (VMDK), y admite los plugins específicos para aplicaciones de SnapCenter para proteger operaciones de backup y restauración consistentes con las aplicaciones para bases de datos y sistemas de archivos virtualizados.</block>
   <block id="8c3d0c00ea667e3e0723e5cdc6473a09" category="inline-link">Documentación del plugin de SnapCenter para VMware vSphere</block>
   <block id="043833147a39840644f2ff01a835f90d" category="section-title">Funciones del plugin de SnapCenter para Microsoft SQL Server</block>
@@ -766,7 +762,6 @@
   <block id="1743a1db6e40cf42ac060e518112deca" category="list-text">Admite el sistema de archivos mejorado Journaled (JFS2) con registro en línea en sistemas DE archivos SAN y diseño LVM sólo para sistemas AIX.</block>
   <block id="cfabe0d0cba6624b9b2e7f3035476fac" category="paragraph">Se admiten los dispositivos nativos DE SAN, sistemas de archivos y diseños de LVM creados en dispositivos SAN.</block>
   <block id="d7fdaf85ee16b5bdacd134994a4bb218" category="section-title">Funciones del plugin de SnapCenter para base de datos SAP HANA</block>
-  <block id="07af457ed5409f58b0d5ca2b41b5ec39" category="inline-link-macro">Desarrolle un complemento para la aplicación</block>
   <block id="3012455ba6e0ba02dfa333bdecc83c57" category="section-title">Repositorio de SnapCenter</block>
   <block id="cc1d85843af98a2ce08e58f1408e6364" category="paragraph">El repositorio de SnapCenter, que a veces se denomina base de datos NSM, almacena información y metadatos para cada operación SnapCenter.</block>
   <block id="b795272c033653aa88e12f8f4fd442ca" category="paragraph">La base de datos del repositorio de MySQL Server se instala de manera predeterminada cuando se instala el servidor SnapCenter. Si MySQL Server ya está instalado y está realizando una instalación nueva de SnapCenter Server, deberá desinstalar MySQL Server.</block>
@@ -783,7 +778,6 @@
   <block id="d88f90a93bba2698d4e7ca23f96f027d" category="paragraph">Puede acceder a la API DE REST de SnapCenter directamente desde cualquier lenguaje de programación que admita un cliente REST. Entre las opciones de idiomas populares se incluyen Python, PowerShell y Java.</block>
   <block id="0e8b55402d6627c0f8102010e3494744" category="inline-link-macro">Cómo acceder a las API de REST con la página web de la API swagger</block>
   <block id="3ded167f4ad4afb85c6ace5862e27ba0" category="cell">Método HTTP</block>
-  <block id="c4ca4238a0b923820dcc509a6f75849b" category="paragraph">1</block>
   <block id="7528035a93ee69cedb1dbddb2f0bfcc8" category="paragraph">OBTENGA</block>
   <block id="a02439ec229d8be0e74b0c1602392310" category="paragraph">PUBLICAR</block>
   <block id="32f68a60cef40faedbc6af20298c1a1e" category="paragraph">ELIMINAR</block>
@@ -925,7 +919,6 @@
   <block id="d4c6b8eab0d95c64db4fab0b39d86dca" category="list-text">Restaurar un backup de base de datos de SQL</block>
   <block id="7b55eb37603aaec85de642c9761138e1" category="list-text">Restaurar el backup de una base de datos de Oracle</block>
   <block id="b2a27804c27c83e05c725b342e1b42b3" category="list-text">restaurar un backup de aplicación personalizada</block>
-  <block id="1f99ce4c7ce86789f3d81cc35f531f17" category="list-text">crear un recurso de plugins personalizados</block>
   <block id="b867b97647a809df3c6e5231f0bef598" category="list-text">Cree un recurso SAP HANA</block>
   <block id="cbc56a4c2ad51ccea1242d4d4d348ae1" category="list-text">proteger un recurso personalizado mediante el plugin para aplicaciones personalizadas</block>
   <block id="2b42cb8c0a099907ef8a3de2f16f80a4" category="list-text">Proteger un recurso de Microsoft SQL Server mediante el plugin para Microsoft SQL Server</block>
@@ -1325,7 +1318,6 @@
   <block id="c808fe33c523c6c0014718e7feeac182" category="list-text">Si desea realizar un backup de un recurso que tenga una relación de SnapMirror con un almacenamiento secundario, la función asignada al usuario de almacenamiento debería incluir el privilegio «incluir toda la copia reflejada». Sin embargo, si usted está utilizando el rol "'vsadmin'", entonces no se requiere el privilegio "nnapmirror all".</block>
   <block id="bf27fad69812da8f1ea6b50d511517e0" category="list-text">Si un grupo de recursos tiene varias bases de datos de diferentes hosts, la operación de backup en algunos hosts puede activarse tarde debido a problemas de red. Debe configurar el valor de MaxRetryForUninitializedHosts en web.config mediante el cmdlet Set-SmConfigSettings de PowerShell</block>
   <block id="cd56c631927fec23fdd13a60faf10217" category="admonition">Al realizar el backup de un sistema de archivos, SnapCenter no hace backups de los LUN montados en un punto de montaje de volumen (VMP) en el sistema de archivos del que se está haciendo backup.</block>
-  <block id="22f16e8b28f69b96450fdb879b633af1" category="admonition">Si va a trabajar en un contexto de sistema de archivos de Windows, no realice backup de archivos de la base de datos. Si lo hace, se crea un backup incoherente y una posible pérdida de datos al restaurar. Para proteger los archivos de la base de datos, debe usar el plugin de SnapCenter adecuado para la base de datos (por ejemplo, plugin de SnapCenter para Microsoft SQL Server, plugin de SnapCenter para Microsoft Exchange Server o un plugin personalizado para archivos de base de datos).</block>
   <block id="6c22568aa6116c11fda42febcf7b796a" category="list-text">En la página Resource Groups, seleccione el grupo de recursos que desea incluir en un backup y, a continuación, haga clic en *Back up Now*.</block>
   <block id="757701cec0ed310dbf31948edd1073df" category="admonition">Para el plugin de SnapCenter para base de datos Oracle, si tiene un grupo de recursos federados con dos bases de datos y una de ellas tiene un archivo de datos en un almacenamiento de terceros, la operación de backup se interrumpirá aunque la otra base de datos esté en un almacenamiento NetApp.</block>
   <block id="4a1c51520bfb3d170a967d4c218b52bf" category="list-text">En la página Backup, realice los siguientes pasos:</block>
@@ -1619,7 +1611,6 @@
   <block id="e1a7771495dc1fe7824ecbb848144f84" category="paragraph">Estos detalles se muestran en forma de tabla.</block>
   <block id="652adaef4ef8ab71be391a952ace680c" category="list-text">Seleccione el backup en la tabla y haga clic en los iconos de protección de datos para realizar operaciones de restauración, clonado, cambio de nombre y eliminación.</block>
   <block id="53ad3fdb1526bfd9b033d7e9b88ea6e2" category="admonition">Los backups que figuran en el sistema de almacenamiento secundario no pueden eliminarse ni cambiar de nombre.</block>
-  <block id="80c82fe3ce8c148b5edc714385f5f5b1" category="paragraph">Si utiliza los plugins de personalizados de SnapCenter, no puede cambiar el nombre de los backups que están en el sistema de almacenamiento principal.</block>
   <block id="890d45c40e49f2dabb2c7635de46d483" category="inline-image-macro">Vista de topología de backup y clones en almacenamiento principal.</block>
   <block id="1a8413b6d25d17625bc85e11bb87aaa7" category="paragraph"><block ref="1a8413b6d25d17625bc85e11bb87aaa7" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2a14698c3a18b1800683bb1310ae1313" category="summary">Es posible generar una solicitud de firma de certificación (CSR) e importar el certificado.</block>
@@ -1647,7 +1638,6 @@
   <block id="a561a8020c6cf9c0bfcf2c0057ac1550" category="list-text">Servidor de Microsoft Exchange</block>
   <block id="78898e52fcbdc5337204a384f2456d4f" category="list-text">Microsoft SQL Server</block>
   <block id="86083f3ea21c2385b4f013aae3c57858" category="list-text">SAP HANA</block>
-  <block id="9633d377e08af5a450ec353928e1d24b" category="list-text">Plugins personalizados</block>
   <block id="f66a5076dc4b38e6e6f6d1850002d8e7" category="list-text">Instalar plugins en un clúster</block>
   <block id="d5567ab77d3010f86325ff6576826879" category="paragraph">Si instala plugins en un clúster (WSFC, Oracle RAC o DAG de Exchange), se instalan en todos los nodos del clúster.</block>
   <block id="6b138857d259637a1bf0819ec12805f4" category="list-text">Almacenamiento E-series</block>
@@ -2778,8 +2768,6 @@
   <block id="4abc501abe98e95144eba2c4d17174ad" category="paragraph">Hosts de plugins de Windows</block>
   <block id="31287d49a8a96de2e8d195c76a865396" category="paragraph">Hosts de plugins de Linux o AIX</block>
   <block id="7d75ac58eb57fae611a633f5e57d62d0" category="paragraph">El puerto de JDBC predeterminado, lo utiliza el plugin para Oracle para conectarse a la base de datos de Oracle.</block>
-  <block id="8274b92467b904471dd368868a40cf7c" category="paragraph">Se trata de un puerto interno que se usa solo en el host del plugin personalizado; no son obligatorias las excepciones de firewall.</block>
-  <block id="640e1e1057328dc7a71ff3efe908fb8c" category="paragraph">La comunicación entre SnapCenter Server y los plugins personalizados pasa a través del puerto 8145.</block>
   <block id="48552dce4d9810446c70f66f21f08120" category="paragraph">Puerto de comunicación del clúster de ONTAP o de SVM</block>
   <block id="a26bff28c23606c7396b4619af8af1bd" category="paragraph">El puerto se utiliza en SAL (capa de abstracción del almacenamiento) para establecer la comunicación entre el host que ejecuta SnapCenter Server y SVM. Actualmente, el puerto también se utiliza en SAL en SnapCenter para los hosts del plugin de Windows para establecer la comunicación entre el host del plugin de SnapCenter y SVM.</block>
   <block id="5afe34fece774db451a111901841c2f9" category="paragraph">Para un tenant único de un contenedor de base de datos multitenant (MDC), el número del puerto termina en 13; para los que no son MDC, el número de puerto termina en 15.</block>
@@ -5705,48 +5693,26 @@
   <block id="10344402be0db5fed4bdb763360d91a4" category="list-text">Se puede agotar el tiempo de espera de la operación de restauración si el tamaño de la base de datos está en terabytes (TB).</block>
   <block id="b4681b9eaef5652378ef9426e99a8f63" category="paragraph">Aumente el valor del parámetro RESTTimeout de SnapCenter Server a 20000000 ms. Para ello, ejecute el siguiente comando: Set-SmConfigSettings -Agent -configSettings @{"RESTTimeout" = "20000000"}. Según el tamaño de la base de datos, el valor del tiempo de espera puede cambiarse y el valor máximo que puede configurarse es de 86400000 ms.</block>
   <block id="67758aec18021f6235b6a5ed9330f493" category="paragraph">Si desea restaurar mientras las bases de datos están en línea, la opción de restauración en línea debe estar habilitada en la página Restore.</block>
-  <block id="9da463b2b61e23d3fe7ab13642c5e3aa" category="doc">Gestionar contraseña para el almacén de claves del plugin personalizado y el alias de la pareja de claves firmada de CA en uso</block>
-  <block id="e585ba53f75038fd8dca93c08078885c" category="paragraph">Debe gestionar la contraseña del almacén de claves de los plugins personalizados y su certificado, configurar el certificado de CA, configurar los certificados raíz o intermedios en el almacén de confianza de plugins personalizados y configurar la pareja de claves firmada de CA en el almacén de confianza de plugins personalizados con el servicio de plugins personalizados de SnapCenter para activar el certificado digital instalado.</block>
-  <block id="cf47054fd8ae4e335b6638a86a798a1a" category="paragraph">Los plugins personalizados utilizan el archivo 'keystore.jks', que se encuentra en _/opt/NetApp/snapcenter/scc/etc_ tanto como en su almacén de confianza como en su almacén de claves.</block>
-  <block id="b741c1960e79b37abf87bc732960670f" category="list-text">Puede recuperar la contraseña predeterminada del almacén de claves del plugin personalizado desde el archivo de propiedades del agente del plugin personalizado.</block>
   <block id="98da4d648a6b6a09c02dc4412d8c0e0f" category="paragraph">Es el valor correspondiente a la clave 'KEYSTORE_PASS'.</block>
   <block id="d4cf07e2f6f2f8f14d91659efdc82d0f" category="paragraph">Actualice lo mismo para el archivo key KEYSTORE_PASS en _agent.properties_.</block>
-  <block id="1746a736dc1a04cee7ebe7c17449348d" category="admonition">La contraseña para el almacén de claves de plugin personalizado y para toda la contraseña de alias asociada de la clave privada debe ser la misma.</block>
-  <block id="256bd726c5c8cab1c5ea0f9e796f5965" category="section-title">Configure los certificados intermedios o de raíz para el almacén de confianza del plugin personalizado</block>
-  <block id="155033ac3710d50f11dcf73b23618ff9" category="paragraph">Debe configurar los certificados intermedios o de raíz sin la clave privada para personalizar el almacén de confianza del plugin.</block>
-  <block id="e7d98cce277602959c429147cc1b190e" category="list-text">Desplácese hasta la carpeta que contiene el almacén de claves del plugin personalizado: /Opt/NetApp/snapcenter/scc/etc.</block>
   <block id="4713a041a2807fdb6a09974cfc241836" category="paragraph"><block ref="e8068ca056ca63060cbe1fc5c3b7e50a" prefix="" category="inline-code"></block></block>
-  <block id="9712b66959e53dd56caee0b446a4b341" category="list-text">Reinicie el servicio después de configurar los certificados raíz o intermedios en el almacén de confianza del plugin personalizado.</block>
-  <block id="fa022a8acd4a44b539e8d7e8455ffe19" category="section-title">Configure el par de claves firmadas de CA para el almacén de confianza del plugin personalizado</block>
-  <block id="9d74dd7b3f156596731e7aa28b4bb608" category="paragraph">Debe configurar la pareja de claves firmadas de CA en el almacén de confianza del plugin personalizado.</block>
-  <block id="8b671385ba9f578c2d4665cf8a08dacb" category="list-text">Desplácese hasta la carpeta que contiene el almacén de claves del plugin personalizado /opt/NetApp/snapcenter/scc/etc.</block>
   <block id="3cd11cc425dd94ba261d4cd011a9f11e" category="paragraph"><block ref="85ed7d9d20abb8cfcdef8583cba4ef35" prefix="" category="inline-code"></block></block>
-  <block id="da4bc7b82286be276a29a9685b0b51a1" category="paragraph">La contraseña predeterminada del plugin personalizado keystore es el valor de key KEYSTORE_PASS en el archivo agent.properties.</block>
   <block id="35f7e8cf7bad794e99c08792680394bd" category="list-text">Configure el nombre del alias del certificado de CA en el archivo agent.properties.</block>
   <block id="56362f2790b041340e92aa3c79fb1cf8" category="paragraph">Actualice este valor con la clave SCC_CERTIFICATE_ALIAS.</block>
-  <block id="c3600e2dd0c2139061208ea301e0862e" category="list-text">Reinicie el servicio después de configurar el par de claves firmado de CA en el almacén de confianza del plugin personalizado.</block>
-  <block id="a6d1b1f70aba7a076e87d9ee31c17824" category="section-title">Configurar la lista de revocación de certificados (CRL) para los plugins personalizados de SnapCenter</block>
-  <block id="64b09f6e0509cd50f9f53e4d3b8816dc" category="list-text">Los complementos personalizados de SnapCenter buscarán los archivos CRL en un directorio preconfigurado.</block>
-  <block id="26e84c8fe3deb08970e1f17fbc4649f5" category="list-text">El directorio predeterminado de los archivos CRL de los plugins personalizados de SnapCenter es ' opt/NetApp/snapcenter/scc/etc/crl'.</block>
   <block id="4f1ac502e9d4dc79e3c307cd196d50fb" category="list-text">Puede modificar y actualizar el directorio predeterminado del archivo agent.properties en función de la CLAVE CRL_PATH.</block>
-  <block id="51a29df7437c4fa534c9d8e3649160c0" category="paragraph">Debe gestionar la contraseña del almacén de claves de los plugins personalizados y su certificado, configurar el certificado de CA, configurar los certificados raíz o intermedios en el almacén de confianza de plugins personalizados y configurar la pareja de claves firmada de CA en el almacén de confianza de plugins personalizados con el servicio de plugins personalizados de SnapCenter para activar el certificado digital instalado.</block>
-  <block id="1b212b031e5ee4eaf1c77f008a7bd0b9" category="paragraph">Los plugins personalizados utilizan el archivo _keystore.jks_, que se encuentra en _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc_, tanto como su almacén de confianza como su almacén de claves.</block>
   <block id="4f2ba1a9b499a3443a6a6c444cbd8466" category="paragraph">Es el valor que corresponde a la clave _KEYSTORE_PASS_.</block>
   <block id="19dced36a23aa4c7507c49068eb2c03e" category="paragraph">_keytool -storepasswd -keystore.jks_</block>
   <block id="2538e30b14698ab0bf9957f2d5adcee5" category="admonition">Si el comando "keytool" no se reconoce en el símbolo del sistema de Windows, reemplace el comando keytool por su ruta completa.</block>
   <block id="66a51628c6dd933a877f720913f2b927" category="paragraph">_C:\Archivos de programa\Java\&lt;jdk_version&gt;\bin\keytool.exe" -storepasswd -keystore.jks_</block>
   <block id="fae24c68746428bc01a6976996e11eb6" category="paragraph">_keytool -keypasswd -alias "alias_name_in_cert" -keystore keystore.jks_</block>
-  <block id="ce01b951440a84341498063a416262a0" category="list-text">Desplácese hasta la carpeta que contiene el almacén de claves del plugin personalizado _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc_</block>
   <block id="40fdd302087eb1ad5eb70b4d6ab94188" category="paragraph">_keytool -list -v -keystore.jks_</block>
   <block id="c9e96240b81287a92a56796f491e6a47" category="paragraph">_Keytool -import -trustcacerts -alias myRootCA -file /root/USERTrustRSA_Root.cer -keystore.jks_</block>
-  <block id="da800a422c568642a01c09610b340ea4" category="list-text">Desplácese hasta la carpeta que contiene el almacén de claves del plugin personalizado _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc_</block>
   <block id="86970546fa51f1a9590e947c5a0e3735" category="list-text">Busque el archivo _keystore.jks_.</block>
   <block id="7814f27ab5a9368264f40840cdf8b5bc" category="paragraph">_Keytool -importkeystore -srckeystore /root/snapcenter.ssl.test.netapp.com.pfx -srcstoretype pkcs12 -destkeystore.jks -deststoretype JKS_</block>
   <block id="008f667e8b400f4409460460559f3b36" category="paragraph">_Keytool -keypasswd -alias "alias_name_in_CA_cert" -keystore.jks_</block>
   <block id="78fbcacb199632d7e1e185a59b3d6969" category="list-text">Configure el nombre del alias del certificado de CA en el archivo _agent.properties_.</block>
   <block id="f754813b7455488818507c1642b87112" category="inline-link">Cómo actualizar el archivo de lista de revocación de certificados en el certificado de CA de SnapCenter</block>
   <block id="24a2e65207c09cf282d93673b4d914e6" category="list-text">Para descargar el último archivo CRL del certificado de CA relacionado, consulte<block ref="1355b024e4e4799b05a4da32dd5811b2" category="inline-link-rx"></block>.</block>
-  <block id="078b96147129ddd471a2936a85c4743b" category="list-text">El directorio predeterminado de los archivos CRL de los plugins personalizados de SnapCenter es _'C:\Archivos de programa\NetApp\SnapCenter\Snapcenter Plug-in Creator\ etc\crl'_.</block>
   <block id="30a5a3b4225672f77174a7923dcd20be" category="list-text">Puede modificar y actualizar el directorio predeterminado del archivo _agent.properties_ en función de la CLAVE CRL_PATH.</block>
   <block id="ff0708dbc029ffc456a4dec0d739ddc0" category="summary">El flujo de trabajo de clonado incluye realizar la operación de clonado y supervisarla.</block>
   <block id="845774eebc04e21e75686a7a609647f8" category="paragraph">Es posible clonar backups de recursos por los siguientes motivos:</block>
@@ -5793,21 +5759,10 @@
   <block id="d278818a36e5f43a96b7082ec24a25e0" category="paragraph">En este ejemplo, se añaden recursos:</block>
   <block id="d51b1b50a87024de88cbdf1b6d828c21" category="paragraph">En este ejemplo, se crea una nueva política de backup:</block>
   <block id="25ed9c6e16af89ac645d6b0eddc3a334" category="paragraph">En este ejemplo, se crea un nuevo grupo de recursos con la política y los recursos especificados:</block>
-  <block id="e26fb7c625f4366f8f4f984c45ecd6fc" category="list-text">Debe haber creado un plugin personalizado. Para obtener detalles, consulte la información para el desarrollador.</block>
   <block id="0db377921f4ce762c62526131097968f" category="section-title">Generales</block>
   <block id="3c8f1b708d97734299340f633acf1b28" category="paragraph">Si utiliza iSCSI, el servicio iSCSI debe estar en ejecución.</block>
-  <block id="9415aa73bf3f3a2a034e0e07c5d506cf" category="section-title">Hash SHA512</block>
-  <block id="c0d35e9a1cb18fc944b55e22f446f2b2" category="list-text">Para el host Linux, el hash SHA512 está ubicado en _/var/opt/snapcenter/scc/custom_plugin_checksum_list.txt_</block>
-  <block id="d0f01849d252d5215ffa795d5e7a4791" category="list-text">Para el host Windows, el hash SHA512 está en _C:\Program Files\NetApp\SnapCenter Plug-in Creator\etc\custom_plugin_checksum_list.txt_</block>
-  <block id="f362104a88b92368af76c609011528ab" category="paragraph">Para la ruta de instalación personalizada, el hash SHA512 se encuentra en _&lt;custom path&gt;\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc\custom_plugin_checksum_list.txt_</block>
-  <block id="f550adf3d7f52f3afc0e6e45b71e2055" category="list-text">Se ha generado el hash SHA512 del archivo zip del plug-in.</block>
-  <block id="9e4265226dcf4f703d217f82220d17ea" category="paragraph">Puede utilizar herramientas en línea como<block ref="4aa52332da75b2ec4912a713935bc342" category="inline-link-rx"></block>.</block>
-  <block id="94e0e32bde2e2ee99521f81221ceee7a" category="list-text">Se ha agregado el hash SHA512 generado al archivo custom_plugin_checksum_list en una línea nueva.</block>
-  <block id="17bc29e04b5123febcd35bdbc90142b4" category="paragraph">Los comentarios comienzan con el símbolo # para identificar el plugin al que pertenece el hash.</block>
-  <block id="7867996900fccc9a8502aad8682cccfe" category="paragraph">A continuación se muestra un ejemplo de una entrada de hash SHA512 en el archivo de suma de comprobación:</block>
   <block id="bd5ca81744f222d9b9a956e81e4db9d4" category="section-title">Host Windows</block>
   <block id="cfe19b0ae08454358fbe515d88fd6095" category="section-title">Hosts Linux</block>
-  <block id="9226092112d9484949841b47e3b0500e" category="paragraph"><block ref="9226092112d9484949841b47e3b0500e" category="inline-link-rx"></block></block>
   <block id="8cab0b64f941cd66c63c70f6dcc91d69" category="list-text">Tiene que configurar los privilegios sudo para el usuario que no sea raíz con el fin de ofrecer acceso a varias rutas. Añada las siguientes líneas al archivo /etc/sudoers mediante la función visudo de Linux.</block>
   <block id="2cae85768532ad729badbc9d82df69b0" category="admonition">Asegúrese de utilizar sudo versión 1.8.7 o posterior.</block>
   <block id="992f38bde8f2d7155c3cdabe41a08043" category="paragraph">Puede acceder a esta ruta desde el host en el que está instalado el servidor SnapCenter.</block>
@@ -5831,41 +5786,6 @@
   <block id="55a53eb527ea9a38aa9fa376dd1b6884" category="paragraph">El SLA define el nivel de servicio que se espera y aborda varios problemas vinculados con el servicio, como su disponibilidad y rendimiento. El RPO define la estrategia respecto de la antigüedad de los archivos que se deben recuperar del almacenamiento de backup para reanudar las operaciones regulares después de un fallo. El SLA y RPO ayudan a establecer una estrategia de protección de datos.</block>
   <block id="2dfac6a9e055d01cbdff5af6e3ac4c33" category="paragraph">La frecuencia de backup (cada cuánto se deben realizar los backups), también denominada tipo de programación para algunos plugins, es parte de una configuración de políticas. Por ejemplo, se puede configurar una frecuencia de backup horaria, diaria, semanal o mensual. Puede acceder a las directivas en la interfaz gráfica de usuario de SnapCenter haciendo clic en *Configuración* &gt; *Directivas*.</block>
   <block id="4fce9b40dcfa287df9c2cd63375d8561" category="paragraph">Las programaciones de backup (el momento exacto en que se realiza el backup) forman parte de la configuración de un recurso o un grupo de recursos. Por ejemplo, si hay un grupo de recursos con una política configurada para realizar un backup semanal, es posible configurar la programación para que se realice un backup todos los jueves a las 00:10 Para acceder a las programaciones de grupos de recursos en la interfaz gráfica de usuario de SnapCenter, haga clic en *Recursos*, seleccione el complemento adecuado y haga clic en *Ver* &gt; *Grupo de recursos*.</block>
-  <block id="75358aefb0b5382303d826391e171b80" category="summary">Desarrolle el plugin usando el estilo NATIVO.</block>
-  <block id="a53167d736047727cea2a026673cbf9c" category="doc">Estilo NATIVO</block>
-  <block id="b61671fc72387581a19e7fa9168cddd9" category="paragraph">SnapCenter admite lenguajes que no SEAN DE programación PERL o lenguajes de scripting para crear complementos. Esto se conoce como programación DE estilo NATIVO, que puede ser un archivo de secuencia de comandos o LOTE.</block>
-  <block id="9e1d95a32a87ab7a7016653485b2c883" category="paragraph">Los plugins DE estilo NATIVO deben seguir ciertas convenciones indicadas a continuación:</block>
-  <block id="9105be47cce360c85333e7099eb4c750" category="paragraph">El plugin debe ser ejecutable</block>
-  <block id="fd0fc4f6fd59d6453ab6ed576feea21e" category="list-text">Para los sistemas Unix, el usuario que ejecuta el agente debe tener privilegios de ejecución en el plug-in</block>
-  <block id="cf193b9eadc1f00e9060d96e39debdf8" category="list-text">En los sistemas Windows, los complementos de PowerShell deben tener el sufijo .ps1, los demás scripts de Windows deben tener el sufijo .cmd o .bat y el usuario debe ser ejecutable</block>
-  <block id="c5e258fd4d379f7ee29c2741de49c400" category="list-text">Los complementos deben reaccionar a los argumentos de la línea de comandos, como "-QUIESCE", "-unQUIESCE"</block>
-  <block id="7f57e2af384da47f51bbde01334bdb02" category="list-text">Los plug-ins deben devolver código de salida 99 en caso de que no se haya implementado una operación o función</block>
-  <block id="7f3d3a1e6ed5d85b534a958e89ca7425" category="list-text">Los plugins deben utilizar una sintaxis específica para devolver los resultados al servidor</block>
-  <block id="375c26c661581c12f82c94065d73be46" category="section-title">Manejo general del plug-in</block>
-  <block id="930c14b6cb69ee7acceefefc56797566" category="section-title">Mensajes de error de registro</block>
-  <block id="b17bab2e169e781f68778276e3c1ff06" category="paragraph">Cada operación puede enviar mensajes al servidor, que muestra y almacena el contenido. Un mensaje contiene el nivel de mensaje, una Marca de tiempo y un texto de mensaje. Se admiten mensajes multilínea.</block>
-  <block id="fb2ea703b13d059f6b7ea5da806021df" category="paragraph">Formato:</block>
-  <block id="125c7bffe5ed1068b5bc10027f14f7b4" category="section-title">Uso de los espárragos del plug-in</block>
-  <block id="ef7349bf7e64c5812dde44dfe1ea9ed5" category="paragraph">Los complementos de SnapCenter deben implementar espárragos de complemento. Estos son métodos a los que el servidor SnapCenter llama en función de un flujo de trabajo específico.</block>
-  <block id="5081968c60b2b22a3c3a6539101eab58" category="cell">Muñón de complemento</block>
-  <block id="27a8a8bedafd19538124ce3fdb309e4e" category="cell">Opcional/obligatorio</block>
-  <block id="261addf78c7b2c961032b3dd08ba0b1f" category="cell">Específico</block>
-  <block id="80f9d1ce28ebdbb90f6e6b35c5c789ad" category="paragraph">modo de inactividad</block>
-  <block id="ac67ede5a84eb5a1add7ff4440e9a485" category="paragraph">obligatorio</block>
-  <block id="aa092af188e3be05b1a73b3b230ec735" category="paragraph">inactivación</block>
-  <block id="6cf49b275e3f780958fd8f3a3d44acb5" category="paragraph">clone_pre</block>
-  <block id="d57c24f3fe52d16e7169b912dd647f0d" category="paragraph">opcional</block>
-  <block id="f7eeb12c0ae87e1a428729d93636f705" category="paragraph">Este archivo stub es responsable de realizar tareas previas a la clonación. Esto supone que se utiliza la interfaz de clonado de SnapCenter incorporada y que solo se activa mientras se realiza la acción "clone_vol o clone_lun".</block>
-  <block id="ee2aa59563c4e74a0c51b3581f20083e" category="paragraph">clone_post</block>
-  <block id="ebb061953c0454b2c8ee7b0ac615ebcd" category="paragraph">Opcional</block>
-  <block id="7d08df91908649fc980c6e4561c46d42" category="paragraph">Este archivo stub es responsable de realizar tareas posteriores a la clonación. Esto supone que utiliza la interfaz de clonado de SnapCenter integrada y que solo se activa mientras se realizan operaciones de «clone_vol o clone_lun».</block>
-  <block id="a407f96cd552cb223b9e4711ef984ed7" category="paragraph">restaurar_pre</block>
-  <block id="aadbc30f9f18452d76bb86a523d4013d" category="paragraph">Este archivo stub es responsable de realizar tareas previas a la restauración. Esto supone que se utiliza la interfaz de restauración de SnapCenter integrada y que solo se activa durante la operación de restauración.</block>
-  <block id="bb2ac0b8da1f64a3498af147ba43fc10" category="paragraph">restaurar</block>
-  <block id="2403fd80c93c90b1c0cd4c37ae4a7227" category="paragraph">Este código auxiliar es responsable de realizar todas las acciones de restauración. Esto supone que no está utilizando la interfaz de restauración integrada. Se activa durante la operación de restauración.</block>
-  <block id="ff7c0fcd6a31e735a61c001f75426961" category="section-title">Ejemplos</block>
-  <block id="bf448b76d11422f4a518bec20eb47937" category="section-title">Windows PowerShell</block>
-  <block id="39607e626df161fbad55aa17c0d5c725" category="paragraph">Compruebe si la secuencia de comandos se puede ejecutar en el sistema. Si no puede ejecutar la secuencia de comandos, defina el desvío de Set-ExecutionPolicy para la secuencia de comandos y vuelva a intentar la operación.</block>
   <block id="15672c6e3417ee4aa0cd7381b560f34d" category="summary">Es posible usar SnapCenter para restaurar recursos. Las capacidades de las operaciones de restauración dependen del plugin que se use.</block>
   <block id="d697fbdd5eef7a80e3797fe363484b61" category="doc">Restaurar un backup de recursos</block>
   <block id="fc2b6e19a895939771bd04f9bc9f7af2" category="list-text">Debe tener un backup de los recursos o del grupo de recursos.</block>
@@ -5886,64 +5806,7 @@
   <block id="f8ea625073f716b15f3e5f9e95cfb620" category="list-text">En la página Pre OPS, escriba los comandos previos a la restauración y los comandos de desmontaje que se ejecutarán antes de realizar un trabajo de restauración.</block>
   <block id="2e9892fdbfed0b91269baed4bcb0a87e" category="list-text">En la página Post OPS, escriba los comandos de montaje y los comandos posteriores a la restauración que se ejecutarán después de realizar un trabajo de restauración.</block>
   <block id="53582adf49551bf81650e7c9447e3a03" category="paragraph">También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. SMTP también debe configurarse en la página *Ajustes* &gt; *Ajustes globales*.</block>
-  <block id="6edd2daf14dde352ee9ebb9ecbfb2fc4" category="summary">Desarrolle el complemento usando PERL.</block>
-  <block id="3f272cbd9f3d98a46dc5be01d6d1c28f" category="doc">Desarrollo basado en PERL</block>
-  <block id="11190b0b920a84adaeb302d40a45ce80" category="paragraph">Debe seguir ciertas convenciones mientras desarrolla el plugin con PERL.</block>
-  <block id="1a5265d73355a139c4fc8415f55a7a75" category="list-text">El contenido debe ser legible</block>
-  <block id="c355814a69aed5dc3c7043e4e911e1b7" category="list-text">Debe implementar la configuración de operaciones obligatorias, el modo de inactividad y la reanudación</block>
-  <block id="24217546d978eb20d25b4a8e23476c5e" category="list-text">Debe utilizar una sintaxis específica para devolver los resultados al agente</block>
-  <block id="7e8a9233aabfc19acbe7c8db2f6496b8" category="list-text">El contenido debe guardarse como archivo &lt;PLUGIN_NAME&gt;.pm</block>
-  <block id="ffbd4f869a45a0eb33f8c5a8782dd924" category="paragraph">Las operaciones disponibles son</block>
-  <block id="702ca092b068045e4b2a46bde0a6b8ae" category="list-text">Setenv</block>
-  <block id="b7c58211de9baee1e71f10e4d6beb2de" category="list-text">clone_pre, clone_post</block>
-  <block id="547c4772ea7f61438244cb3b06eb4c00" category="list-text">restaurar_pre, restaurar</block>
-  <block id="ecfb9f08f09baba9587e427bc8a820b1" category="list-text">limpieza</block>
-  <block id="23470f65b59c12a53de5d619a2341725" category="section-title">Uso del objeto Results</block>
-  <block id="8a394f3ff75e356a00bc923e2d3a24bb" category="paragraph">Todas las operaciones de plugin personalizado deben definir el objeto Results. Este objeto envía mensajes, código de salida, stdout y stderr de vuelta al agente host.</block>
-  <block id="baab955e25314f23a1e534211ed3c5ef" category="paragraph">Objeto resultados:</block>
-  <block id="d27ee45005dfdaf4349666580bb9be73" category="paragraph">Devolver el objeto Results:</block>
-  <block id="f820ed664a4b8487fe2f25ae4bcb8cb9" category="section-title">Conservación de la coherencia de los datos</block>
-  <block id="e972893c09832e7d698c9f7367e2dfae" category="paragraph">Es posible conservar datos entre operaciones (excepto limpieza) como parte de la misma ejecución del flujo de trabajo. Esto se logra usando pares clave-valor. Los pares clave-valor de los datos se establecen como parte del objeto de resultado y se conservan y están disponibles en las operaciones posteriores del mismo flujo de trabajo.</block>
-  <block id="6cf3334937a25069e083aa3194d19562" category="paragraph">En el ejemplo de código siguiente se establecen los datos que se van a conservar:</block>
-  <block id="79baca2ff9e61f20978b854c76a89ef4" category="paragraph">El código anterior establece dos pares clave-valor, que están disponibles como entrada en la operación posterior. Los dos pares clave-valor se pueden acceder mediante el siguiente código:</block>
-  <block id="1a433a5ec4d06561757ffdd94aec551b" category="paragraph">Cada operación puede enviar mensajes al agente host, que muestra y almacena el contenido. Un mensaje contiene el nivel de mensaje, una Marca de tiempo y un texto de mensaje. Se admiten mensajes multilínea.</block>
-  <block id="d24d2a5d893e94e9391c84ea41254a56" category="paragraph">Utilice el método msgObj para capturar un mensaje mediante el método Collect.</block>
-  <block id="d865f2a752b423058b8d44eb74362907" category="paragraph">Aplicar mensajes al objeto resultados:</block>
-  <block id="2507f897ba239023fb34486297f3f9e4" category="paragraph">Los plugins personalizados deben exponer los talones del plug-in. Estos son métodos a los que llama el servidor SnapCenter, en función de un flujo de trabajo.</block>
-  <block id="84ad2bc533ff1fd26e84106c755353ec" category="paragraph">Este código auxiliar establece el entorno y el objeto de configuración.</block>
-  <block id="1d7698b4eaa4207bc437a7978e65fe43" category="paragraph">Aquí se debe realizar cualquier análisis o manejo del entorno. Cada vez que se llama un archivo stub, el archivo stub setenv se llama justo antes. Solo es necesario para complementos DE tipo PERL.</block>
-  <block id="a8a94f37b262c1f49012caf671d0c45b" category="paragraph">Este código auxiliar se utiliza para obtener la versión de la aplicación.</block>
-  <block id="abfc3a65538a6ec86502b2b498b6b4a6" category="paragraph">Detección</block>
-  <block id="e0a2f30f2f2475916ba71c6ad7a65096" category="paragraph">Este archivo stub se utiliza para detectar objetos de aplicación como la instancia o la base de datos alojada en el agente o host.</block>
-  <block id="f4cd43f678664ff68fad4028fb6a40c4" category="paragraph">Se espera que el complemento devuelva los objetos de aplicación detectados en un formato específico como parte de la respuesta. Este código auxiliar sólo se utiliza en caso de que la aplicación esté integrada con SnapDrive para Unix.</block>
-  <block id="34c6a8e1099863a52dbf55536f87b658" category="admonition">Sistema de archivos Linux (Linux Flavors) es compatible. AIX/Solaris (Unix Flavors) no son compatibles.</block>
-  <block id="8cf57b0816d44a1b975402b721da2725" category="paragraph">discovery_complete</block>
-  <block id="ce9d724a7186956382a6ad763f302ffc" category="admonition">Sistema de archivos Linux (Linux Flavors) es compatible. AIX y Solaris (versiones Unix) no son compatibles.</block>
-  <block id="b55904d7759e5a6f24d4ca0dbdafd019" category="paragraph">Modo de inactividad</block>
-  <block id="b52dd62394b28fe653e8d770689ea60c" category="paragraph">Inactivación</block>
-  <block id="34db83eb305843e804a58cb6bd2946a1" category="paragraph">Este archivo stub es responsable de realizar tareas previas a la clonación. Se supone que se utiliza la interfaz de clonación del servidor de SnapCenter integrada y se activa al realizar la operación de clonación.</block>
-  <block id="91ebd6a2af6dffd236dfae9ec811613c" category="paragraph">Este archivo stub es responsable de realizar tareas posteriores a la clonación. Esto supone que se utiliza la interfaz de clonación del servidor de SnapCenter integrada y se activa solo al realizar una operación de clonado.</block>
-  <block id="04aa63c67e2110767959dc93267c3482" category="paragraph">Este archivo stub es responsable de realizar tareas prerestore. Esto supone que se utiliza la interfaz de restauración de servidor de SnapCenter incorporada y se activa al realizar una operación de restauración.</block>
-  <block id="b436cb5751d3f78735122bbbbc5fbcae" category="paragraph">Este código auxiliar es responsable de realizar tareas de restauración de aplicaciones. Esto supone que se utiliza la interfaz de restauración de servidor de SnapCenter incorporada y que solo se activa al realizar una operación de restauración.</block>
-  <block id="8c6384dda98d8864d00e29dc96179970" category="paragraph">Limpieza</block>
-  <block id="627a1357fb9b62d60cc9248505d3e500" category="paragraph">Este archivo stub es responsable de realizar una limpieza después de las operaciones de backup, restauración o clonado. La limpieza puede realizarse durante la ejecución normal del flujo de trabajo o en caso de que se produzca un error en el mismo. Puede inferir el nombre del flujo de trabajo bajo el cual se llama a la limpieza haciendo referencia a LA ACCIÓN de parámetro de configuración, que puede ser copia de seguridad, clonVolAndLun o archivoOrVolRestore. El parámetro DE configuración ERROR_MESSAGE indica si se produjo algún error al ejecutar el flujo de trabajo. Si ERROR_MESSAGE está definido y NO es NULL, se llama a la limpieza durante la ejecución de un fallo de flujo de trabajo.</block>
-  <block id="5e603fe8549380dcb8b43465eef93edd" category="paragraph">versión_aplicación</block>
-  <block id="e55578a72ee7d0d6a8dd80db1eadc9de" category="paragraph">SnapCenter utiliza este archivo stub para que el complemento gestione el detalle de la versión de la aplicación.</block>
-  <block id="b931464c4daac142af5d9024d181308d" category="section-title">Información sobre el paquete de plugins</block>
-  <block id="53bb9f86994f54a34977830fee345c0b" category="paragraph">Cada plugin debe tener la siguiente información:</block>
-  <block id="456d0deba6a86c9585590550c797502d" category="section-title">Operaciones</block>
-  <block id="4d57719f8e32047d1cae3a5ddb0172f7" category="paragraph">Puede codificar varias operaciones, como setenv, Version, Quiesce y UnQUIESCE, que son compatibles con los plug-ins personalizados.</block>
-  <block id="4f8f149ca6bb5234a087b671085eeaf4" category="section-title">Funcionamiento de setenv</block>
-  <block id="3eee7d4df3f419567cb503c91871613e" category="paragraph">La operación setenv es necesaria para los complementos creados con PERL. Puede ajustar el ENV y acceder fácilmente a los parámetros del plug-in.</block>
-  <block id="7b7666de772bf908b0fe869a75e4f8dd" category="section-title">Operación de versión</block>
-  <block id="0a6e6f5e5a5a02cca44ae7aade91bf90" category="paragraph">La operación de versión devuelve la información de la versión de la aplicación.</block>
-  <block id="ecf480bc589751647a8416a2af91ddb1" category="section-title">Operaciones de inactivación</block>
-  <block id="64443c9749b5ec77960e18487a9628cc" category="paragraph">La operación de inactividad realiza una operación de inactividad de la aplicación en los recursos que se enumeran en el parámetro RESOURCES.</block>
-  <block id="9061e762662985a3ffadd9af623ea433" category="section-title">Funcionamiento de la reanudación</block>
-  <block id="96ebe9d14f194daa158da373ecb5b686" category="paragraph">La operación de inactividad es necesaria para desactivar la activación de la aplicación. La lista de recursos está disponible en el parámetro RESOURCES.</block>
-  <block id="49ee0af5f7bb584f9569b5628fd1170e" category="paragraph">NetApp proporciona el complemento de almacenamiento para realizar operaciones de protección de datos del volumen de datos en el almacenamiento de ONTAP mediante el marco de trabajo de complementos personalizados integrado en SnapCenter.</block>
   <block id="a344a2fc65197b27dcccc38ac1ef85a3" category="inline-link-macro">Añada hosts e instale paquetes de plugins en hosts remotos.</block>
-  <block id="022c56789408e44b04cf1944babfa527" category="admonition">La política de soporte de SnapCenter cubrirá la compatibilidad con el marco de complementos personalizados de SnapCenter, el motor principal y las API asociadas. El soporte técnico no cubrirá el código fuente del complemento ni los scripts asociados incluidos en el marco de complementos personalizados.</block>
   <block id="65c7bdc0c946f828cd443cfb3a30afb1" category="summary">Puede instalar los paquetes de plugins de SnapCenter para Linux o Windows en varios hosts a la vez mediante el cmdlet de PowerShell Install-SmHostPackage.</block>
   <block id="85e03b5aac12ea0d7a83ca6e7fa64654" category="doc">Instale paquetes de plugins de SnapCenter para Linux o Windows en varios hosts remotos mediante cmdlets</block>
   <block id="6728b4a43abbebd3cc07a2cacc5e0c06" category="paragraph">El usuario que agrega un host debe tener derechos administrativos en el host.</block>
@@ -5979,170 +5842,8 @@
   <block id="0930cbd774389ffda4b953dfada42944" category="list-text">Recupere volúmenes, LUN o archivos ONTAP completos.</block>
   <block id="01416c60ab0c357d59811f108a67d5bd" category="paragraph">Debe proporcionar la ruta de archivo correspondiente manualmente, ya que las funciones de exploración o indexación no están integradas en el producto.</block>
   <block id="17f0138477115892c87d600e535c1ed0" category="paragraph">No se admite la restauración de qtree o directorio, pero solo se puede clonar y exportar el qtree si el alcance de backup se define en el nivel de Qtree.</block>
-  <block id="56e9f299379f1f27ee946b3cc5197ca7" category="summary">Configure el certificado de CA para el servicio de plugins personalizados de SnapCenter en el host de Windows</block>
   <block id="0dd1baa389f6493ff89ba4f1d23f127b" category="list-text">Si desea realizar un backup de un recurso que tenga una relación de SnapMirror con un almacenamiento secundario, la función ONTAP asignada al usuario de almacenamiento debería incluir el privilegio «incluir toda la copia reflejada». Sin embargo, si usted está utilizando el rol "'vsadmin'", entonces no se requiere el privilegio "nnapmirror all".</block>
-  <block id="8c1af9a95c5ff9086ee5697a78397ae5" category="summary">El servidor de SnapCenter permite poner en marcha y gestionar sus aplicaciones como complementos en SnapCenter.</block>
   <block id="3b878279a04dc47d60932cb294d96259" category="doc">Descripción general</block>
-  <block id="72631a8144cabf57a431e307c720be4b" category="paragraph">El servidor de SnapCenter permite poner en marcha y gestionar sus aplicaciones como complementos en SnapCenter. Las aplicaciones de su elección pueden conectarse al servidor de SnapCenter para disfrutar de funcionalidades de protección y gestión de datos.</block>
-  <block id="3e4caa3106c658c78cb8f07a8040c65b" category="paragraph">SnapCenter le permite desarrollar complementos personalizados utilizando diferentes lenguajes de programación. Puede desarrollar un complemento personalizado utilizando Perl, Java, BATCH u otros lenguajes de scripting.</block>
-  <block id="9849d87f4a93f5d4014f828811411be7" category="paragraph">Para utilizar plugins personalizados en SnapCenter, debe realizar las siguientes tareas:</block>
-  <block id="b8b5e387feaa3019653b29082e61092a" category="list-text">Cree un complemento para su aplicación siguiendo las instrucciones de esta guía</block>
-  <block id="fb254bad9756ac882a9a0ba12cc7f1a3" category="list-text">Cree un archivo de descripción</block>
-  <block id="79b97ed047d15d26a3a56e559a6ee5c1" category="list-text">Exporte el plugin personalizado para instalarlo en el host de SnapCenter</block>
-  <block id="eb433b0d697c578418f0cd3d4afc4c2b" category="list-text">Cargue el archivo zip del plugin en el servidor de SnapCenter</block>
-  <block id="e496e0539b9dd2e96430fc87371ed61a" category="section-title">Gestión de complementos genérica en todas las llamadas API</block>
-  <block id="8f666ea75217f50d6b8e5b63ca8751e2" category="paragraph">Para cada llamada a la API, utilice la siguiente información:</block>
-  <block id="ae72a628ad181d8f535ebd38c3104e8a" category="list-text">Parámetros del plugin</block>
-  <block id="25fa01d9ae5853b4c852556532e7eb4b" category="list-text">códigos de salida</block>
-  <block id="3630b6a87abf72b5c44dff83a2dea610" category="list-text">Registrar mensajes de error</block>
-  <block id="78e3ac100920c9872e08c76930a7e91d" category="list-text">Coherencia de datos</block>
-  <block id="bfe440282107a24a7f07fb7cde8d910e" category="section-title">Utilice los parámetros del plugin</block>
-  <block id="35db931c36efc6fd97acd3861031f51b" category="paragraph">Se pasa un conjunto de parámetros al plug-in como parte de cada llamada API realizada. En la siguiente tabla, se muestra información específica de los parámetros.</block>
-  <block id="e58a1b00942e66d8b4abc960da7877ab" category="paragraph">ACCIÓN</block>
-  <block id="c34381ed69c7f02b4dfb02bf8b48cbd2" category="paragraph">Determina el nombre del flujo de trabajo. Por ejemplo, descubra, copia de seguridad, archivoOrVolRestore o cloneVolAndLun</block>
-  <block id="85132af6b5f14319cb4c91ec6ddffe43" category="paragraph">RECURSOS</block>
-  <block id="33d565acf954a6f64930fc8a33b8887e" category="paragraph">Enumera los recursos que se deben proteger. UID y tipo identifican un recurso. La lista se presenta al plugin con el siguiente formato:</block>
-  <block id="5bcb0da9a36a1c572d065a30f8bf053e" category="paragraph">“&lt;UID&gt;,&lt;TYPE&gt;;&lt;UID&gt;,&lt;TYPE&gt;”. Por ejemplo, “Instance1,instancia;Instance2\\DB1,base de datos”</block>
-  <block id="73ac956100d167ecf25451e02d702abf" category="paragraph">NOMBRE_APLICACIÓN</block>
-  <block id="d98b83ea9db8d1b781f919f903e371d2" category="paragraph">Determina qué plugin se está utilizando. Por ejemplo, DB2, MYSQL. El servidor SnapCenter cuenta con compatibilidad integrada para las aplicaciones de la lista. Este parámetro distingue mayúsculas de minúsculas.</block>
-  <block id="bf0c17384b9ca428972bdedc4d300472" category="paragraph">APP_IGNORE_ERROR</block>
-  <block id="58ddfd237075f98aaf9a2d3ce090ba23" category="paragraph">(Y o N) esto hace que SnapCenter salga o no salga cuando se encuentra un error de aplicación. Esto es útil cuando se realiza el backup de varias bases de datos y no se desea que un solo fallo detenga la operación de backup.</block>
-  <block id="a6c02d2ac0e23234c7d73d00796cf9ca" category="paragraph">&lt;RESOURCE_NAME&gt;__APP_INSTANCE_USERNAME</block>
-  <block id="571d40fbca77d57e458825ee9fec7d81" category="paragraph">Se han establecido las credenciales de SnapCenter para el recurso.</block>
-  <block id="ac12b35e15b7bf0fe21aedd97341ea12" category="paragraph">&lt;RESOURCE_NAME&gt;_APP_INSTANCE_PASSWORD</block>
-  <block id="69fb88b801201290c49c951f3495b0fc" category="paragraph">&lt;CUSTOM_PARAM&gt;_&lt;RESOURCE_NAME&gt;</block>
-  <block id="78b0bbec6424e6db00f54a699cf409f7" category="paragraph">Todos los valores de clave personalizada de nivel de recursos están disponibles para los plug-ins con “&lt;RESOURCE_NAME&gt;_”. Por ejemplo, si una clave personalizada es “MASTER_SLAVE” para un recurso llamado “MySQLDB”, estará disponible como MySQLDB_MASTER_SLAVE</block>
-  <block id="9a3e4e66558b9e88155f13dabd069d1b" category="section-title">Utilice los códigos de salida</block>
-  <block id="47133f388993d841298613bc6cb0c588" category="paragraph">El plugin devuelve el estado de la operación a su host mediante códigos de salida. Cada código tiene un significado específico y el plug-in utiliza el código de salida derecho para indicar lo mismo.</block>
-  <block id="027d514221d3a080cc31a97eca829e35" category="paragraph">En la siguiente tabla se muestran los códigos de error y su significado.</block>
-  <block id="4e1209f3613deab3181eef2bb07b5abf" category="cell">Código de salida</block>
-  <block id="cfcd208495d565ef66e7dff9f98764da" category="paragraph">0</block>
-  <block id="3cdc0e6cbe36c89d83cc097e8eb9ae0e" category="paragraph">Funcionamiento correcto.</block>
-  <block id="ac627ab1ccbdb62ec96e702f07f6425b" category="paragraph">99</block>
-  <block id="531ad89069f8f8f15f4fbe6b5106144d" category="paragraph">La operación solicitada no es compatible o está implementada.</block>
-  <block id="f899139df5e1059396431415e770c6dd" category="paragraph">100</block>
-  <block id="a02c5c002d95db500c8de596769f3b32" category="paragraph">Error en la operación, omita la pausa y salga. La función de inactividad está predeterminada.</block>
-  <block id="38b3eff8baf56627478ec76a704e9b52" category="paragraph">101</block>
-  <block id="5fd968dddc0f547ae55ad643501730f9" category="paragraph">Error en la operación, continúe con la operación de backup.</block>
-  <block id="795f3202b17cb6bc3d4b771d8c6c9eaf" category="paragraph">otros</block>
-  <block id="cf6768b0593033ad3660ef5d8ec95ab1" category="paragraph">Error en la operación, ejecución de la reanudación y salida.</block>
-  <block id="6c09649d97d8d1b80bdcd8b29909efa0" category="paragraph">Los mensajes de error pasan del plugin al servidor de SnapCenter. El mensaje incluye el mensaje, el nivel de registro y la Marca de hora.</block>
-  <block id="b6586b3851e09c9af6725f25ffaefa5f" category="paragraph">En la tabla siguiente se enumeran los niveles y sus propósitos.</block>
-  <block id="551b723eafd6a31d444fcb2f5920fbd3" category="paragraph">INFORMACIÓN</block>
-  <block id="6905d11030694877d5bd1b6fc5418232" category="paragraph">mensaje informativo</block>
-  <block id="32bd8a1db2275458673903bdb84cb277" category="paragraph">ADVERTIR</block>
-  <block id="9b3ec49fce0de74c3bf44404f9ff5fed" category="paragraph">mensaje de advertencia</block>
-  <block id="bb1ca97ec761fc37101737ba0aa2e7c5" category="paragraph">ERROR</block>
-  <block id="c5bbc13af6039ac4cf215911e482b5d4" category="paragraph">mensaje de error</block>
-  <block id="dc30ec20708ef7b0f641ef78b7880a15" category="paragraph">DEPURAR</block>
-  <block id="d42e0a7293390bdb767f2ef26688c1dd" category="paragraph">depurar mensaje</block>
-  <block id="2d3e4144aa384b18849ab9a8abad74d6" category="paragraph">TRAZA</block>
-  <block id="55c8a5aea70abd0da5bad464b4622442" category="paragraph">mensaje de seguimiento</block>
-  <block id="1b767ffb7a06925c6ffafd5f616d41d9" category="section-title">Conserve la consistencia de datos</block>
-  <block id="e7ad26b22ddd01feb4792581738bc23a" category="paragraph">Los plugins personalizados conservan datos entre operaciones de la misma ejecución del flujo de trabajo. Por ejemplo, un plugin puede almacenar datos al final de la inactividad, que se puede utilizar durante la operación de inactivación.</block>
-  <block id="4cf477198b533ad0884bbb1836790433" category="paragraph">Los datos que se van a conservar se establecen como parte del objeto de resultado mediante el complemento. Sigue un formato específico y se describe con detalle en cada estilo de desarrollo de complementos.</block>
-  <block id="3c67b94e6822d49d50263c7db382c071" category="summary">Desarrolle el plugin utilizando el estilo Java.</block>
-  <block id="731641b378060335e231f40a61efb08e" category="doc">Estilo Java</block>
-  <block id="8a01447d4257ebcaab42390ee2f4240d" category="paragraph">Un complemento personalizado de Java interactúa directamente con una aplicación como base de datos, instancia, etc.</block>
-  <block id="19560bbbab2877a2271992ff54c2acf6" category="paragraph">Existen ciertas limitaciones que debe tener en cuenta al desarrollar un plug-in utilizando el lenguaje de programación Java.</block>
-  <block id="109df424c58b79c2ecda4d66296b6c11" category="cell">Característica de plug-in</block>
-  <block id="18c21c5db5968d04ad5d182fe7fa9835" category="cell">Plugin de Java</block>
-  <block id="7971813474da107714e72f8fd7b40a67" category="paragraph">Complejidad</block>
-  <block id="63bcaffdaf5f82923762b545238b463d" category="paragraph">De bajo a mediano</block>
-  <block id="5feb6a47efae7a2d8887389df8701873" category="paragraph">Huella de la memoria</block>
-  <block id="e6044c19b3a51182a3d4997958319ec9" category="paragraph">Hasta 10-20 MB</block>
-  <block id="47fafe578fde976b0ee978115a8d193b" category="paragraph">Dependencias con otras bibliotecas</block>
-  <block id="ae048ccf4cb143d7894ff3509eed7c9e" category="paragraph">Bibliotecas para la comunicación de aplicaciones</block>
-  <block id="5906becd36463d6d7a26b280f6afaa5e" category="paragraph">Número de subprocesos</block>
-  <block id="a23d40c086cc8a7ddcc39dd3d7747fd5" category="paragraph">Tiempo de ejecución de subprocesos</block>
-  <block id="d69f265ea27772294d467d9ce2f7c976" category="paragraph">Menos de una hora</block>
-  <block id="70709e4ff5198c12de87c5bb1ef4d7e1" category="section-title">Motivo de las limitaciones de Java</block>
-  <block id="95c0a67d0cfd35b1a8a48578d91c0495" category="paragraph">El objetivo del agente SnapCenter es garantizar una integración de aplicaciones sólida, segura y continua. Al admitir plug-ins de Java, es posible que los plug-ins introduzcan fugas de memoria y otros problemas no deseados. Esas cuestiones son difíciles de abordar, especialmente cuando el objetivo es mantener las cosas fáciles de usar. Si la complejidad de un complemento no es demasiado compleja, es mucho menos probable que los desarrolladores hubieran introducido los errores. El peligro del plug-in Java es que se ejecuten en la misma JVM que el propio agente de SnapCenter. Cuando el plug-in se bloquea o pierde memoria, también puede afectar negativamente al agente.</block>
-  <block id="5516fae9f196982df00a03b33d90be7d" category="section-title">Métodos admitidos</block>
-  <block id="4c3880bb027f159e801041b1021e88e8" category="cell">Método</block>
-  <block id="b651efdb98a5d6bd2b3935d0c3f4a5e2" category="cell">Obligatorio</block>
-  <block id="a9e54eef51002049412033909783cd2f" category="cell">¿Cuándo y por quién?</block>
-  <block id="6034a2219adc98364247fafa6c7ac86e" category="paragraph">Necesita obtener la versión del plugin.</block>
-  <block id="158432aca9b72e6906771c2e2fddbb8c" category="paragraph">El servidor o el agente de SnapCenter para solicitar la versión del plugin.</block>
-  <block id="15f6d11fd1f65efe57d9b506c0e06313" category="paragraph">Antes de que el servidor de SnapCenter cree una copia de Snapshot o realice un backup en general.</block>
-  <block id="09ed5f9b77aca4b8dd337f525d41ea4c" category="paragraph">Necesita realizar una reanudación de la aplicación. En la mayoría de los casos, esto significa volver a poner la aplicación en un estado de funcionamiento normal.</block>
-  <block id="ff36b404767cd635ab945ad85f4f04b9" category="paragraph">Responsable de la limpieza de cualquier cosa que el plug-in necesite limpiar.</block>
-  <block id="5c34b664bab5b91f3ebdcd206cf4d801" category="paragraph">Cuando termina un flujo de trabajo en el servidor SnapCenter (correctamente o con un error).</block>
-  <block id="2dba998b900ac4660779ce6a046d48b2" category="paragraph">ClonPree</block>
-  <block id="47f24b1cf1e23bb722f60f453ffd948b" category="paragraph">Debe realizar las acciones que deben realizarse antes de realizar una operación de clonado.</block>
-  <block id="dc3a3a59937dce595851a0e3c9e62ed8" category="paragraph">Cuando un usuario activa una acción "clonVol" o "clonLun" y utiliza el asistente de clonación integrado (GUI/CLI).</block>
-  <block id="42db709c3bb49ea37396262616eeac0b" category="paragraph">ClonPost</block>
-  <block id="f7e930c0ca4b6495b9a8cb8417e2f98c" category="paragraph">Debe realizar las acciones que deben realizarse después de realizar una operación de clonado.</block>
-  <block id="359714a793ff358ab1a5390adaa15c7f" category="paragraph">RestauradoPre</block>
-  <block id="5690bc55e76e08851a976d18b9bc3459" category="paragraph">Debe ejecutar acciones que deben realizarse antes de solicitar la operación de restauración.</block>
-  <block id="cfb841a76e5c0388b7181075bba9ada0" category="paragraph">Cuando un usuario activa una operación de restauración.</block>
-  <block id="d063ebca2216dedd83b697b745d3372e" category="paragraph">Responsable de la restauración/recuperación de una aplicación.</block>
-  <block id="b64c136408bbb80dfa6717a62d239726" category="paragraph">Versión de appVersion</block>
-  <block id="34baf03c93a4a627f25d6fc913b37041" category="paragraph">Para recuperar la versión de la aplicación que gestiona el plugin.</block>
-  <block id="665d60e7553e146d8e88c2b9877fa0e0" category="paragraph">Como parte de la recogida de datos de ASUP en cada flujo de trabajo, como Backup/Restore/Clone.</block>
-  <block id="368fe771261fcb18f7988833c9294a20" category="section-title">Tutorial</block>
-  <block id="1cecf8d2916dc8f549c641e76e5c659a" category="paragraph">En esta sección se describe cómo crear un complemento personalizado mediante el lenguaje de programación Java.</block>
-  <block id="dd2ea46cec759c9daa1731186a69847a" category="section-title">Configuración de eclipse</block>
-  <block id="5059336e047b64e5cc20bd336d53cded" category="list-text">Cree un nuevo proyecto Java "TutorialPlugin" en Eclipse</block>
-  <block id="b978a7bf524628221c941358ed3b236b" category="list-text">Haga clic en *Finalizar*</block>
-  <block id="da571635edcc3b6941bcbb47f042963f" category="list-text">Haga clic con el botón derecho del ratón en *nuevo proyecto* -&gt; *Propiedades* -&gt; *Java Build Path* -&gt; *Bibliotecas* -&gt; *Añadir tarros externos*</block>
-  <block id="afce1d4d057bf9e937eca261048a8a7d" category="list-text">Desplácese a la carpeta ../lib/ del agente anfitrión y seleccione Jarras scAgent-5.0-core.jar y common-5.0.jar</block>
-  <block id="4c2d5f28ee3c2d47fa766db121601ccc" category="list-text">Seleccione el proyecto y haga clic con el botón derecho del ratón en la carpeta *src* -&gt; *Nuevo* -&gt; *paquete* y cree un nuevo paquete con el nombre com.netapp.snapcreator.agent.plugin.TutorialPlugin</block>
-  <block id="9aa678f69b6fbd924a453ac88be2da01" category="list-text">Haga clic con el botón derecho del ratón en el nuevo paquete y seleccione Nuevo -&gt; clase Java.</block>
-  <block id="cc5b6288914bdaaf663a91781a25ff9e" category="list-text">Introduzca el nombre como TutorialPlugin.</block>
-  <block id="8a5763cf603724a39de4260b78d1c6ef" category="list-text">Haga clic en el botón de exploración de la superclase y busque "*AbstractPlugin". Sólo debe aparecer un resultado:</block>
-  <block id="8c7e2b6bfd819565c59f2b392665abef" category="list-text">Clase Java:</block>
-  <block id="27b2b5799cd8f27199a041f901952b56" category="section-title">Implementación de los métodos necesarios</block>
-  <block id="ee5587e793308a8685469da87916cd09" category="paragraph">La función de inactividad, la reanudación y la versión son métodos obligatorios que cada plugin de Java personalizado debe implementar.</block>
-  <block id="a385e5de06fb17f83d17b95cff5edd39" category="paragraph">A continuación, se muestra un método de versión para obtener la versión del plugin.</block>
-  <block id="cf7c15f920ccc654c43c2a5340be404e" category="paragraph">El método se pasa en un objeto de contexto. Contiene varios asistentes, por ejemplo, un registrador y un almacén de contexto, así como información sobre la operación actual (Workflow-ID, Job-ID). Podemos obtener el registrador llamando al registrador de registros final = context.getLogger();. El objeto logger proporciona métodos similares conocidos por otros marcos de registro, por ejemplo, logback. En el objeto Result, también puede especificar el código de salida. En este ejemplo, se devuelve cero, ya que no hubo ningún problema. Otros códigos de salida pueden asignar a diferentes situaciones de fallo.</block>
-  <block id="61880f414ea2ba4bed74bf724a7efde5" category="section-title">Utilizando el objeto Resultado</block>
-  <block id="d15e98368b4822d2679ffe319f70bca0" category="paragraph">El objeto Result contiene los parámetros siguientes:</block>
-  <block id="7a1920d61156abc05a60135aefe8bc67" category="cell">Predeterminado</block>
-  <block id="fa535ffb25e1fd20341652f9be21e06e" category="paragraph">Gestión de</block>
-  <block id="84c917becdd45097d9cc6311fe2d384c" category="paragraph">Configuración vacía</block>
-  <block id="91c257476f447587fd9c6bbc2d3fd998" category="paragraph">Este parámetro se puede utilizar para enviar parámetros de configuración al servidor. Puede ser parámetros que el plugin desea actualizar. Si este cambio se refleja realmente en la configuración del servidor SnapCenter depende del parámetro APP_CONF_PERSISTENCY=y o N de la configuración.</block>
-  <block id="dc64d90dcdc95c2383f1db1b60ae0079" category="paragraph">ExitCode</block>
-  <block id="04b19c92f619855670b011d1450a3753" category="paragraph">Indica el estado de la operación. Un "0" significa que la operación se ejecutó correctamente. Otros valores indican errores o advertencias.</block>
-  <block id="21d983484658a89e3070776fae2261f5" category="paragraph">Apedrear</block>
-  <block id="7314d91688d87d3e5c9b52feb712ab26" category="paragraph">Lista vacía</block>
-  <block id="655ca11c9140ec6288b58b79c6bb4a09" category="paragraph">Esto se puede utilizar para transmitir mensajes stdout al servidor SnapCenter.</block>
-  <block id="8c475733023face864f545eeca057033" category="paragraph">Stderr</block>
-  <block id="21ef94ba119907117f364df896f3dec8" category="paragraph">Esto se puede utilizar para transmitir mensajes stderr de nuevo al servidor SnapCenter.</block>
-  <block id="41de6d6cfb8953c021bbe4ba0701c8a1" category="paragraph">Mensajes</block>
-  <block id="987747103127b1269c03daef522318fe" category="paragraph">Esta lista contiene todos los mensajes que un plug-in desea volver al servidor. El servidor SnapCenter muestra esos mensajes en la CLI o en la GUI.</block>
-  <block id="99753828b61fb11a098d17cc40833de4" category="inline-link">Patrón de creación</block>
-  <block id="3950454679ab5b1fb320d0285a746f19" category="paragraph">El agente de SnapCenter proporciona constructores <block ref="3144c223957296a77caf645e6d0ca2e0" category="inline-link-rx"></block>) para todos sus tipos de resultados. Esto hace que su uso sea muy sencillo:</block>
-  <block id="f16224a7d2e117c1c6004388a38e5a1f" category="paragraph">Por ejemplo, establezca el código de salida en 0, establezca las listas para stdout y stderr, defina los parámetros de configuración y también agregue los mensajes de registro que se enviarán de nuevo al servidor. Si no necesita todos los parámetros, envíe sólo los que necesite. Como cada parámetro tiene un valor predeterminado, si quita .witEExitCode(0) del código siguiente, el resultado no se verá afectado:</block>
-  <block id="8860923af296bdac25a4497406b57662" category="section-title">VersionResult</block>
-  <block id="5e2c436a0c1116523458920900625aa7" category="paragraph">VersionResult informa a SnapCenter Server de la versión del plugin. Como también hereda del resultado, contiene los parámetros config, exitCode, stdout, stderr y messages.</block>
-  <block id="3b329734e45b57e60f3df64c2cf412a9" category="paragraph">Importante</block>
-  <block id="e9fe51210c5ecbbdc30bc9326fa943b1" category="paragraph">Campo de versión principal del plugin.</block>
-  <block id="6fed0c378a4b4e8c1e7dc5c16dabb388" category="paragraph">Menor</block>
-  <block id="3550287ffc4359734a0031c175193fdd" category="paragraph">Campo de versión secundaria del plugin.</block>
-  <block id="156e10596fdc76ee5300bab931d89c0f" category="paragraph">Parche</block>
-  <block id="76e77e1098ad643957d7c5c9df22f01b" category="paragraph">Campo de versión de revisión del plugin.</block>
-  <block id="c74c1f42f141c011ca6bd8b1114fc3d0" category="paragraph">Cree</block>
-  <block id="04feeef72aa7060480f2ff21cb04404b" category="paragraph">Cree el campo de versión del plugin.</block>
-  <block id="fdd378ed98ea7cd4f7a8bd10d40352b3" category="section-title">Uso del objeto de contexto</block>
-  <block id="1d2371f72c4ef61cbb3e573ca275f8f3" category="paragraph">El objeto Context proporciona los siguientes métodos:</block>
-  <block id="237c5740526e5a5fabdce09eb2155078" category="cell">Método de contexto</block>
-  <block id="ed90d972be4b4cc0150929cd58469816" category="paragraph">String getWorkflowId();</block>
-  <block id="df1e3aa8600b8512002fe0822a7d768d" category="paragraph">Devuelve el ID de flujo de trabajo que utiliza el servidor SnapCenter para el flujo de trabajo actual.</block>
-  <block id="bdb6c277ff6a1becf6660510785d77b3" category="paragraph">Config getconfig();</block>
-  <block id="0ed8b4c7dca05c28c63be3280f70e3d7" category="paragraph">Devuelve la configuración que se envía desde el servidor SnapCenter al agente.</block>
-  <block id="04b3c4ea531620d4fc4ced9c79e3dfb0" category="section-title">ID del flujo de trabajo</block>
-  <block id="9654c976940a07a77d7f08ca8e9ca7c7" category="paragraph">El ID de flujo de trabajo es el ID que utiliza el servidor de SnapCenter para hacer referencia a un flujo de trabajo en ejecución específico.</block>
-  <block id="37d64f01ccd77885519f2a946af921e6" category="paragraph">Este objeto contiene (la mayoría) los parámetros que un usuario puede establecer en la configuración del servidor SnapCenter. Sin embargo, debido a razones de seguridad, algunos de esos parámetros pueden filtrarse en el servidor. A continuación figura un ejemplo de cómo acceder a la configuración y recuperar un parámetro:</block>
-  <block id="fb4b95f7efbccbc9f673de67cb4a063c" category="paragraph">""// MyParameter" contiene ahora el parámetro leído en la configuración del servidor SnapCenter Si no existe una clave de parámetro config, devolverá un valor de tipo String vacío ("").</block>
-  <block id="308a084b70c4908d42de7192cbf8efe1" category="section-title">Exportando el plugin</block>
-  <block id="7cac39bd02f3b909f147bea7e251deba" category="paragraph">Debe exportar el plugin para instalarlo en el host de SnapCenter.</block>
-  <block id="ff0741643ca10baccfc83aad90426d28" category="paragraph">En Eclipse, realice las siguientes tareas:</block>
-  <block id="9b3f778b7349e7c6a31e5dd3a35d16f3" category="list-text">Haga clic con el botón derecho en el paquete básico del complemento (en nuestro ejemplo com.netapp.snapcreator.agent.plugin.TutorialPlugin).</block>
-  <block id="37233c4c635b4449c6d038a07e100c20" category="list-text">Seleccione *Exportar* -&gt; *Java* -&gt; *Archivo Jar*</block>
-  <block id="8167729e48b2ebf78082747fb306ad04" category="list-text">En la siguiente ventana, especifique la ruta de acceso de archivo JAR de destino: tutorial_plugin.jar la clase base del plugin se denomina TutorialPlugin.class, el plug-in debe agregarse a una carpeta con el mismo nombre.</block>
-  <block id="956dcc9eb4dcc7a9760461455f0c02d3" category="paragraph">Si el plugin depende de bibliotecas adicionales, puede crear la siguiente carpeta: Lib/</block>
-  <block id="bc60c50c66a380f1b4c5ad98a8a84f77" category="paragraph">Puede agregar archivos JAR en los que depende el plugin (por ejemplo, un controlador de base de datos). Cuando SnapCenter carga el plug-in, asocia automáticamente todos los archivos JAR de esta carpeta y los añade a la classpath.</block>
   <block id="83a4564a02eccf5fe52d1422b54a7171" category="paragraph">Debe configurar credenciales para instalar plugins en hosts Linux.</block>
   <block id="8a431247dd76d9921db1fa03a1d9fc2f" category="paragraph">Debe configurar las credenciales para el usuario raíz o un usuario que no sea raíz que tenga privilegios sudo para instalar e iniciar el proceso del plugin.</block>
   <block id="32349c7043aa51a208b72c7154d6265d" category="cell">*Práctica recomendada:* aunque se permite crear credenciales para Linux después de implementar hosts e instalar plugins, la práctica recomendada es crear credenciales después de añadir SVM, antes de implementar hosts e instalar plugins.</block>
@@ -6180,10 +5881,6 @@
   <block id="25f06c6f9512ed4db8b25ec97fe6f874" category="paragraph">Conserve el número de puerto predeterminado o especifique el número de puerto.</block>
   <block id="379d6944e6fc810a2d3e6719a4897b18" category="list-text">En el caso del paquete de plugins de SnapCenter para Windows, la ruta predeterminada es C:\Program Files\NetApp\SnapCenter.</block>
   <block id="d71af843d2746ce96eb5d7b9a854feec" category="paragraph">Opcionalmente, puede personalizar la ruta.</block>
-  <block id="dbd5f1a081ee2b60f9256f0d615c8572" category="list-text">Para los plugins personalizados de SnapCenter:</block>
-  <block id="908b8e036ea9ce39ce7b1ef72289d440" category="paragraph">La carpeta comprimida contiene el código del plugin y el archivo .xml del descriptor.</block>
-  <block id="14c63a85dc0d2eb17d6a4de481e630f9" category="paragraph">El archivo .xml del descriptor en la carpeta del plugin personalizado comprimida se valida antes de cargar el paquete.</block>
-  <block id="22b9c22ece0544103d4ef5fde3f3591c" category="paragraph">Aparece la lista de los plugins personalizados que se cargan en el servidor de SnapCenter.</block>
   <block id="8fcead60ab027b22fe363a8f3f8135b4" category="paragraph">En el caso de host de Windows, seleccione esta casilla de comprobación si desea utilizar una cuenta de servicio gestionado de grupo (GMSA) para ejecutar los servicios de plugin.</block>
   <block id="ab443ca6692007d7b4d66d4e3044cbd8" category="paragraph">Si no ha seleccionado la casilla de comprobación *Skip prechecks, el host se valida para comprobar si cumple con los requisitos para la instalación del plugin. El espacio en disco, RAM, versión de PowerShell, versión de .NET, ubicación (para plugins de Windows) y versión de Java (para plugins de Linux) se validan frente a los requisitos mínimos. Si no se satisfacen los requisitos mínimos, se muestran los mensajes de error o advertencia correspondientes.</block>
   <block id="c72e421659f98c50e18a18d8f905b1d6" category="list-text">Si el tipo de host es Linux, verifique la huella digital y, a continuación, haga clic en *Confirmar y enviar*.</block>
@@ -6206,58 +5903,7 @@
   <block id="f5568337c8feae7a044bdfdfc53b4769" category="paragraph">*Actualizar SnapVault después de crear una copia Snapshot local*</block>
   <block id="e14f71eb0e90d4bbfc5445a42a5c2a4c" category="paragraph">*Número de reintentos de error*</block>
   <block id="dd5f630f41cdfc02249f05e881feeef5" category="summary">El flujo de trabajo de restauración y recuperación incluye planificar, realizar las operaciones de restauración y supervisarlas.</block>
-  <block id="a761057277bd72c46a263ca5ddd62742" category="summary">Configure el certificado de CA para el servicio de plugins personalizados de SnapCenter en el host Linux</block>
   <block id="ac33edef4526164e3c7c9a4df9986310" category="doc">Requisitos del host para instalar el paquete de plugins de SnapCenter para Linux</block>
-  <block id="2ed40d52224af2dfedf93c8eb0550f77" category="summary">El plugin personalizado creado se puede instalar en el host mediante SnapCenter Server para permitir la protección de datos de la aplicación.</block>
-  <block id="3a08617a6dcc882e91018fc505870b76" category="doc">Plugin personalizado en SnapCenter</block>
-  <block id="b5c77f66454d4e3d57521e8099507412" category="paragraph">El complemento personalizado creado con Java, PERL o estilo NATIVO puede instalarse en el host utilizando SnapCenter Server para permitir la protección de datos de su aplicación. Debe haber exportado el plugin para instalarlo en el host SnapCenter mediante el procedimiento proporcionado en este tutorial.</block>
-  <block id="def6cbe35e3566226b7c54e977f98930" category="section-title">Crear un archivo de descripción del plugin</block>
-  <block id="976aa48091e83c884b1bc20161aa0e8d" category="paragraph">Para cada plugin creado, debe tener un archivo de descripción. El archivo de descripción describe los detalles del plugin. El nombre del archivo debe ser Plugin_descriptor.xml.</block>
-  <block id="2a858e5af94e1d82cb7fd1f759d4baca" category="section-title">Usar atributos del archivo descriptor del plugin y su importancia</block>
-  <block id="f2bbdf9f72c085adc4d0404e370f0f4c" category="cell">Atributo</block>
-  <block id="ee951528ab77b8d58d90d5ab615dd4aa" category="paragraph">Nombre del plugin. Se permiten caracteres alfanuméricos. Por ejemplo, DB2, MYSQL, MongoDB</block>
-  <block id="ff1642648bf25086a549307da08e818d" category="paragraph">Para los plugins creados con un estilo NATIVO, asegúrese de no proporcionar la extensión del archivo. Por ejemplo, si el nombre del plugin es MongoDB.sh, especifique el nombre como MongoDB.</block>
-  <block id="3b868ced6f60acf5ee565ac021d42941" category="paragraph">DisplayName</block>
-  <block id="0c5cf3f9437d836d57e97dfa37ce8453" category="paragraph">El nombre del plugin que se mostrará en SnapCenter Server. Si se escriben varias versiones del mismo complemento, asegúrese de que el nombre para mostrar es el mismo en todas las versiones.</block>
-  <block id="54d2dab039ee358ddca7d63d0f413e56" category="paragraph">PluginType</block>
-  <block id="326b513459a506fbe18fb4f520147f3a" category="paragraph">Idioma utilizado para crear el plug-in. Los valores admitidos son Perl, Java y Native. El tipo de complemento nativo incluye scripts de shell de Unix/Linux, scripts de Windows, Python o cualquier otro lenguaje de scripting.</block>
-  <block id="fa1a5da2f5e6077f069628887da13577" category="paragraph">OSNAME</block>
-  <block id="17c0dd84a508c3b3e37bfd914e437f4e" category="paragraph">El nombre del sistema operativo del host donde se ha instalado el plugin. Los valores válidos son Windows y Linux. Es posible que un único complemento esté disponible para su puesta en marcha en varios tipos de sistemas operativos, como el complemento DE tipo PERL.</block>
-  <block id="3c25d129875719f5f76e5fa54f1b1eb6" category="paragraph">OSVersion</block>
-  <block id="2f3304349b38afaa2855ab50c05c0003" category="paragraph">La versión del sistema operativo del host donde se instaló el plugin.</block>
-  <block id="68754c5409cf75557f589988d16e70a8" category="paragraph">ResourceName</block>
-  <block id="45ca72149d5299e90bdfd0611fdaef0a" category="paragraph">Nombre del tipo de recurso que admite el plugin. Por ejemplo, base de datos, instancia, colecciones.</block>
-  <block id="30269022e9d8f51beaabb52e5d0de2b7" category="paragraph">Padre</block>
-  <block id="6e8218f013ee42d0412f9d978960d8a0" category="paragraph">En caso de que el ResourceName dependa jerárquicamente de otro tipo de recurso y, a continuación, Parent determina el atributo resourcetype primario.</block>
-  <block id="356fa51a18abd3979458137c245e26dd" category="paragraph">Por ejemplo, el complemento DB2, ResourceName “Database” tiene una “instancia” principal.</block>
-  <block id="2d1c51425a11058cd7d38ce3e170cac2" category="paragraph">RequireFileSystemPlugin</block>
-  <block id="12e4a7a7f5584eca1707daff9799ddcb" category="paragraph">Sí o no Determina si la pestaña Recovery se muestra en el asistente Restore.</block>
-  <block id="99d7049aa2436fc0274fe8143ee9980d" category="paragraph">ResourceRequiresAuthentication</block>
-  <block id="682ea36f3e6a876888f478562923ef91" category="paragraph">Sí o no Determina si los recursos, que se detectan automáticamente o no se detectan automáticamente necesitan credenciales para realizar las operaciones de protección de datos después de detectar el almacenamiento.</block>
-  <block id="3b6e31accf8f7d471ccede19bef9c46e" category="paragraph">RequireFileSystemClone</block>
-  <block id="12ddbad8eb62f87e7653d4724c724ae8" category="paragraph">Sí o no Determina si el plugin requiere la integración del plugin del sistema de archivos para el flujo de trabajo de clonado.</block>
-  <block id="08468ea67deda9eabf4c738efb3e0a08" category="paragraph">A continuación, se muestra un ejemplo del archivo Plugin_descriptor.xml para el plugin personalizado DB2:</block>
-  <block id="8594c7cccef100e5c0eb21345360ebac" category="section-title">Creación de un archivo ZIP</block>
-  <block id="3f3dfb2bed1ad4a9c0c24a5f9d35ee33" category="paragraph">Después de desarrollar un plugin y crear un archivo descriptor, es necesario añadir los archivos del plugin y el archivo Plugin_descriptor.xml a una carpeta y zip.</block>
-  <block id="5eb723e8c62415c9fa399f579b9e3a0c" category="paragraph">Debe tener en cuenta lo siguiente antes de crear un archivo ZIP:</block>
-  <block id="97b7d14580cb5042f27c97545e119962" category="list-text">El nombre de script debe ser el mismo que el del plugin.</block>
-  <block id="8294fc13032dd7dea44bf40d376c0536" category="list-text">Para el plugin PERL, la carpeta ZIP debe contener una carpeta con el archivo de script y el archivo descriptor debe estar fuera de esta carpeta. El nombre de la carpeta debe ser el mismo que el del plugin.</block>
-  <block id="24058605bd3c5f43ac3119235935f3dd" category="list-text">Para los plugins distintos al plugin PERL, la carpeta ZIP debe contener el descriptor y los archivos de script.</block>
-  <block id="0b09ff35492353da9faf3a44ec77f0b1" category="list-text">La versión de SO debe ser un número.</block>
-  <block id="14f6f665a52b2f183f6d5b54aed98391" category="list-text">DB2 plug-in: Agregue el archivo DB2.pm y Plugin_descriptor.xml a “DB2.zip”.</block>
-  <block id="caa156f24a82b8a7670c99f131312f67" category="list-text">Plug-in desarrollado con Java: Añada archivos JAR, archivos JAR dependientes y archivo Plugin_descriptor.xml a una carpeta y zip.</block>
-  <block id="bd4678e87b1f9d0f9ca2818993233e7b" category="section-title">Cargando el archivo ZIP del plugin</block>
-  <block id="82c8db559767b2ba0d057500c849d4ef" category="paragraph">Es necesario cargar el archivo ZIP del plugin en el servidor de SnapCenter para que el plugin se pueda implementar en el host deseado.</block>
-  <block id="c99cbda86a0df9c85a90522320e83b3c" category="paragraph">Puede cargar el plugin mediante la interfaz de usuario o cmdlets de.</block>
-  <block id="0bbe49164732887d91aedfbb7323cd9f" category="paragraph">*UI:*</block>
-  <block id="ff266e0a81aeb28d8bd639d0e6747ca5" category="list-text">Cargue el archivo ZIP del plug-in como parte del asistente de flujo de trabajo *Add* o *Modify Host*</block>
-  <block id="b1ce1fadb8885384867d388e4cb04034" category="list-text">Haga clic en *“Seleccionar para cargar el complemento personalizado”*</block>
-  <block id="d903a152f577e4c5d7d652897f5b1937" category="paragraph">*PowerShell:*</block>
-  <block id="55b8e92bcb8dde8186cf4ceac6338bce" category="list-text">Cmdlet Upload-SmPluginPackage</block>
-  <block id="3b1bcb11ca95b8e7cac83075102f8b18" category="paragraph">Por ejemplo, PS&gt; Upload-SmPluginPackage -AbsolutePath c:\DB2_1.zip</block>
-  <block id="30b91011e7233366bf6fe72b9e39581e" category="paragraph">Para obtener información detallada sobre los cmdlets de PowerShell, use la ayuda de cmdlets de SnapCenter o consulte la información de referencia sobre cmdlets.</block>
-  <block id="fdd90a3a6fddb98b5af79243529077e9" category="section-title">Implementación de los plugins personalizados</block>
-  <block id="22a9a756176e1eda572d9437ffccee0c" category="paragraph">El complemento personalizado cargado ahora está disponible para su implementación en el host deseado como parte del flujo de trabajo *Add* y *Modify Host*. Es posible cargar varias versiones de plugins en SnapCenter Server y seleccionar la versión deseada para implementarla en un host específico.</block>
   <block id="48f5a315d78b006c306e66d7b35fa6f4" category="summary">Debe añadir los recursos que desee incluir en un backup o clonar. En función de su entorno, los recursos pueden ser instancias de una base de datos o recopilaciones que desee clonar o incluir en un backup.</block>
   <block id="797f1e031962d70e46335925184febf4" category="list-text">Debe haber cargado los plugins en SnapCenter Server.</block>
   <block id="14fdd328e53552c727d0f36c3d306b64" category="list-text">En la página Provide Resource Details, realice las siguientes acciones:</block>
@@ -6754,7 +6400,6 @@
   <block id="01f97c83c1f349ab154ea4e7fed85418" category="sidebar">Restaure recursos de SQL Server</block>
   <block id="c53965a1bce6ec0b6c1fa17e3314a375" category="sidebar">Clone recursos de bases de datos de SQL Server</block>
   <block id="5cb6a75832518fd27c8d399ca2772808" category="sidebar">Supervisar las operaciones de clonado en SnapCenter</block>
-  <block id="eada736bfcfe3be151f853e6f08f6d26" category="sidebar">Estilo nativo</block>
   <block id="0e1b3005c7d7fef8012117ae579df248" category="sidebar">Realizar un backup del flujo de trabajo</block>
   <block id="e62a99d48b4d9b1ce6eb1be8cdf44cca" category="sidebar">Plugin de SnapCenter para base de datos SAP HANA</block>
   <block id="883135fe64e6d1e34b5f9e436f840927" category="sidebar">Estrategia de backup para las bases de datos SAP HANA</block>
@@ -6960,7 +6605,6 @@
   <block id="f389a38ece1c258dbc71da8826870236" category="paragraph">Donde policy_name es el nombre de la política seleccionada.</block>
   <block id="7444cb400c788a3d3aad71fb264fbbee" category="list-text">Revisa el resumen y luego selecciona *Finalizar*.</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="list-title">Antes de empezar</block>
-  <block id="be2d786365162f9949969e2f176ef13a" category="inline-link-macro">se ha creado un plugin personalizado para la aplicación</block>
   <block id="b828f6db4e08909e879dfbf229208eff" category="list-text">En la página Recursos, selecciona *Agregar recurso*.</block>
   <block id="20fc40c342831a6dee50cd66efb74566" category="list-text">En la página Provide Storage Footprint, seleccione un sistema de almacenamiento y elija uno o más volúmenes, LUN y qtrees y, a continuación, seleccione *Save*.</block>
   <block id="1e5544d55f6c9334a30e6a4bef8c3c4a" category="inline-image-macro">Icono más</block>
@@ -7305,8 +6949,6 @@ NetApp® Single Mailbox Recovery ha llegado al final de la disponibilidad (EOA) 
   <block id="d40040f6fe85caa89878dd7a41e7b55b" category="list-text">En la lista desplegable *Preferencias de correo* de la página *Notificación*, selecciona los escenarios en los que deseas enviar los correos electrónicos.</block>
   <block id="6e495826070e65e2f969743716fcc30b" category="list-text">En el panel de navegación izquierdo, seleccione *hosts*.</block>
   <block id="fa12509cfb8e8ccded16e2a254e988c4" category="list-text">Seleccione *Agregar*.</block>
-  <block id="7b8c46b7e7cbdb1b301a0eea6904e6e8" category="list-text">En la sección Custom Plug-ins, seleccione *Browse* y seleccione la carpeta del plugin personalizado comprimida.</block>
-  <block id="3268d25ce0e47e87022d19706bd20155" category="list-text">Selecciona *Cargar*.</block>
   <block id="b623e6ded9a852f4e7cd9765578d0c08" category="list-text">Seleccione *Enviar*.</block>
   <block id="8fa2fcad4f9983d73cc8cf50dc7850bb" category="list-text">Si el tipo de host es Linux, verifique la huella dactilar y, a continuación, seleccione *Confirmar y Enviar*.</block>
   <block id="c2726cace6e0f9e9086903f875043343" category="list-text">En la página Configuración, selecciona *Credencial*.</block>
@@ -7389,8 +7031,6 @@ NetApp® Single Mailbox Recovery ha llegado al final de la disponibilidad (EOA) 
   <block id="1343db4284f9e4d2640bb43d96c2b68b" category="list-text">En la sección Configure schedules for selected policies, haga clic en *<block ref="b45fdb91c5c7d010bf6dc162ec4fd533" category="inline-image-macro-rx" type="image"></block>* En la columna Configure Schedules correspondiente a la directiva para la que desea configurar la programación.</block>
   <block id="82df92bf63205eb90f0513c131abc2dd" category="list-text">Si desea eliminar un clon, selecciónelo en la tabla y haga clic en <block ref="f790bf9188cee374d2bb1f3790c6a393" category="inline-image-macro-rx" type="image"></block> para eliminar el clon.</block>
   <block id="8d0f784440712961abfe38c36944b52a" category="paragraph-title">Ejemplo que muestra backups y clones en el almacenamiento principal</block>
-  <block id="1737705dbef82bb547572b98803f1837" category="list-text">Para el paquete de plugins de SnapCenter para Linux, la ruta predeterminada es<block ref="ad6569b575c0a3830082f4336038186a" prefix=" " category="inline-code"></block>.</block>
-  <block id="f32c4686d8ce92964750c998b8d606a6" category="paragraph">Para el plugin de almacenamiento, desplácese a.<block ref="b674835168d7ff13979b400c993ce08f" prefix=" " category="inline-code"></block> y seleccione<block ref="1ae0ec02713418737a2965bdbb97e689" prefix=" " category="inline-code"></block> carpeta.</block>
   <block id="31b463f293ed77bac56a34d46826de49" category="paragraph">Los archivos de registro específicos de la instalación se encuentran en<block ref="beb5ec5a83e557b91eccba92e6ac85e2" prefix=" " category="inline-code"></block> registros.</block>
   <block id="24bd2a51bea1471986ab3ac20960699e" category="summary">Debe crear una conexión del sistema de almacenamiento y una credencial antes de usar cmdlets de PowerShell para ejecutar operaciones de protección de datos.</block>
   <block id="ee5dc0e4ad2a255f15e5b8206b5f42e1" category="inline-image-macro">Página de configuración de la aplicación</block>
@@ -7478,7 +7118,6 @@ NetApp® Single Mailbox Recovery ha llegado al final de la disponibilidad (EOA) 
   <block id="a5ca52319667a9026b1bc2e22f2beb97" category="doc">Clonar backup de sistema de archivos Unix</block>
   <block id="e9c28603a5457f192761e9b2f99dbd6f" category="paragraph">Puede utilizar SnapCenter para clonar el sistema de archivos Unix mediante la copia de seguridad del sistema de archivos.</block>
   <block id="c047b1e4cdd418f78d9226b059701f24" category="list-text">Para omitir la actualización del archivo fstab, debe configurarse el valor de _SKIP_FSTAB_UPDATE_ como *true* en el archivo _agent.properties_ ubicado en _/opt/NetApp/snapcenter/scc/etc_.</block>
-  <block id="89085a9fdaa76a7c7b97a098e68225e5" category="list-text">Puede contar con un nombre de volumen de clon estático y una ruta de unión si se configura el valor de _USE_CUSTOM_CLONE_VOLUME_NAME_FORMAT_ a *true* en el archivo _agent.properties_ ubicado en _/opt/NetApp/snapcenter/scc/etc_. Después de actualizar el archivo, debe reiniciar SnapCenter para el servicio de plugins personalizados mediante la ejecución del comando:<block ref="f4da0aeb9d91444725fc84b066ea329b" prefix=" " category="inline-code"></block>.</block>
   <block id="acd9911e42880fa2170c4c68b4e0559a" category="paragraph">Ejemplo: Sin esta propiedad, el nombre del volumen clonado y la ruta de unión serán como &lt;Source_volume_name&gt;_Clone_&lt;Timestamp&gt;, pero ahora serán &lt;Source_volume_name&gt;_Clone_&lt;Clone_Name&gt;</block>
   <block id="b3881d2c47f92a4fc24d4bd513af4d3a" category="paragraph">Esto mantiene el nombre constante para que pueda mantener el archivo fstab actualizado manualmente si no prefiere actualizar el fstab por SnapCenter.</block>
   <block id="6fefea88d23f9f3cedd5fd8b05ce984f" category="list-text">En la página Recursos, seleccione *Ruta* o *Grupo de recursos* en la lista *Ver*.</block>
@@ -7887,11 +7526,6 @@ NetApp® Single Mailbox Recovery ha llegado al final de la disponibilidad (EOA) 
   <block id="af3d150952bdf0ab3693bd9da33bd032" category="list-text">Crear backups de bases de datos de Oracle junto con volúmenes de aplicación.</block>
   <block id="39240126e5a114efbf72c14cc21a7094" category="list-text">Crear clones de bases de datos junto con volúmenes de aplicaciones hasta un momento específico.</block>
   <block id="c3f918653f9d61e3b2472e16235d9f90" category="list-text">Ver informes de operaciones de backup y clonado.</block>
-  <block id="726d39dceafdcf2a244cb0bcdb262380" category="paragraph">Este código auxiliar es responsable de realizar una pausa. Coloca el
-Aplicación en un estado en el que podemos crear una copia snapshot. Esto se denomina antes de una operación de Snapshot del almacenamiento.</block>
-  <block id="2b8b2c493b09b013588a02ac57204e14" category="paragraph">Este código auxiliar es responsable de realizar una pausa. En lugar
-la aplicación en un estado normal. Esto se denomina después del almacenamiento
-Operación de Snapshot.</block>
   <block id="e337fc3b0c344eaa85525958668d8591" category="admonition">Si el recurso contiene volúmenes o qtrees, las snapshots realizadas después de la Snapshot seleccionada para restaurar en los volúmenes o qtrees se eliminan y no pueden recuperarse. Además, si hay algún otro recurso alojado en los mismos volúmenes o qtrees, también se lo elimina.</block>
   <block id="ad8d3fc8faebdc68585dd1240b9fc90c" category="paragraph">Marque esta casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de Snapshot.</block>
   <block id="f73a752fef5027614ec32183c0ee993b" category="paragraph">Por ejemplo, _customtext_resource group_policy_hostname o resource group_hostname_. De forma predeterminada, se añade una fecha/hora al nombre de la Snapshot.</block>
@@ -7932,14 +7566,9 @@ destino</block>
   <block id="4cdad3fc327406a192cf8fddec7132e3" category="paragraph">SnapCenter utilice el plugin para Windows y coloque el sistema de archivos en estado coherente para luego crear una copia Snapshot</block>
   <block id="d03489d8edb47ae534fd09e8de3121c2" category="paragraph">Para escribir el comando para crear una snapshot</block>
   <block id="60c069fc0d03d8cbfeabe67ca031a729" category="paragraph">Seleccione *Otro* y luego ingrese el comando para crear una instantánea.</block>
-  <block id="0fd08e22cd8a21cd901e68b42968c2e6" category="paragraph">Este stub es responsable de realizar una pausa, lo que significa colocar la aplicación en un estado donde se puede crear una instantánea. Esto se denomina antes de la operación de snapshot. Los metadatos de la aplicación que se van a conservar deben definirse como parte de la respuesta, que se devolverá durante las siguientes operaciones de clonado o restauración en la copia Snapshot de almacenamiento correspondiente, en forma de parámetros de configuración.</block>
-  <block id="7371795f7797164be99265838bc9b9fa" category="paragraph">Este código auxiliar es responsable de realizar un modo de inactividad, lo que significa poner la aplicación en un estado normal. Esto se denomina después de crear una snapshot.</block>
   <block id="b57d7f6c59e14cd0c1b2ec157185a6bc" category="paragraph">Cuando el recurso de la aplicación se distribuya entre varios volúmenes, el tiempo de caducidad de SnapLock para el backup será el tiempo de caducidad de SnapLock más largo que se establezca para una snapshot en un volumen. El tiempo de caducidad de SnapLock más largo se recupera de ONTAP.</block>
   <block id="433b97b9fd0c63b0de421dea32bde9c2" category="list-text">Realice copias Snapshot de grupo de coherencia de los volúmenes de almacenamiento en los clústeres de ONTAP.</block>
   <block id="b24c71863603f1e22b9646ccb63beac7" category="list-text">Actualice las snapshots creadas del almacenamiento primario a un secundario de ONTAP aprovechando la relación de replicación existente (SnapVault/SnapMirror/replicación unificada) mediante la normativa de SnapCenter</block>
-  <block id="7a7937f1bd01629dfc078d9cfaca3c7f" category="paragraph">Necesita realizar una pausa en la aplicación. En la mayoría de los casos, esto implica colocar la aplicación en un estado en el que el servidor de SnapCenter pueda crear un backup (por ejemplo, una copia Snapshot).</block>
-  <block id="2de9454fcd2f1befcb26b81a260ae3c9" category="paragraph">Después de que el servidor de SnapCenter haya creado una instantánea o tiene
-realización de una copia de seguridad en general.</block>
   <block id="2033dc98d1198d5069b9ced87c4c15a3" category="list-text">El administrador de SnapCenter asignó SVM para los volúmenes de origen y los volúmenes de destino si va a replicar Snapshots a un reflejo o un almacén.</block>
   <block id="5c2dc81500d1cc825407033c35b56981" category="paragraph">Si el recurso contiene volúmenes o qtrees como Storage Footprint, entonces los snapshots más recientes, como los volúmenes o qtrees, se eliminan y no pueden recuperarse. Además, si hay algún otro recurso alojado en los mismos volúmenes o qtrees, también se lo elimina.</block>
   <block id="970623891ebb3c641166d7ce5d32a406" category="paragraph">SnapCenter realiza las actualizaciones a SnapMirror y SnapVault después de que finaliza la operación de Snapshot. Las actualizaciones de SnapMirror y SnapVault se realizan como parte del trabajo de SnapCenter; no cree una programación de ONTAP aparte.</block>
@@ -8673,7 +8302,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="70c702908f3d7b1a5e1c952c1cddbde7" category="list-text">MaxDB de SAP</block>
   <block id="f10287c6f08b8cd9f2eb337e2b486270" category="list-text">(Opcional) Seleccione *Más opciones* para instalar los otros plug-ins.</block>
   <block id="fdadbc4689c75884565947c7d9c98734" category="doc">Añada recursos a los plugins compatibles con NetApp</block>
-  <block id="2f1bb1e2ce78c864a4c44750e9b9b27c" category="list-text">Usted debe tener <block ref="e6320dc4470de75ec154297543865168" category="inline-link-macro-rx"></block>.</block>
   <block id="5b31c6defa650e8eede236c9a524ad39" category="admonition">Los plugins compatibles con NetApp no admiten la detección automática de los recursos. Los detalles de almacenamiento de entornos físicos y virtuales también no se detectan automáticamente. Debe proporcionar la información de almacenamiento de los entornos físico y virtual durante la creación de los recursos.</block>
   <block id="5c2c5b6203d8891127217c96e3fbe1b9" category="admonition">Asegúrese de que el nombre de las claves personalizadas está en mayúsculas.</block>
   <block id="908ce55b9da44ee27d03ed171ddea2e7" category="inline-link-macro">Parámetros para configurar el recurso</block>
@@ -8736,12 +8364,10 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="c8decdbf430021dfc0d8d243973909b6" category="summary">Antes de usar SnapCenter para realizar un backup de recursos específicos de un plugin compatible con NetApp, debe crear una política de backup para el recurso o el grupo de recursos que incluirá en el backup.</block>
   <block id="3dd6642ca499d1f7ea549635f37b1c82" category="doc">Crear políticas para los recursos de plugins compatibles con NetApp</block>
   <block id="19648bb3ed0d97dbf793f0f414a626a8" category="paragraph">Para obtener detalles, consulte la información sobre cómo definir una estrategia de protección de datos para los plugins compatibles con NetApp.</block>
-  <block id="cba124a80c7364b61d7d348bd9115983" category="paragraph">Para obtener más información sobre cómo cargar el plugin, consulte: <block ref="f72fab5b6c914bbb8d5e6637ea3f5a3f" category="inline-link-macro-rx"></block></block>
   <block id="8e3a492a9b736283405d7d14febefe64" category="paragraph">Java 11 Oracle Java u OpenJDK</block>
   <block id="3d409e4955bb3de9bcf0382e6ed02f3c" category="doc">Cómo se usan los recursos, los grupos de recursos y las políticas para proteger los recursos de plugins compatibles con NetApp</block>
   <block id="041c2bc239865621fefddc8c25a37009" category="summary">Deber instalar y configurar plugins compatibles con SnapCenter NetApp si desea proteger los recursos de plugins compatibles con NetApp.</block>
   <block id="51810f5f2de2f019cb898ee5bb825600" category="doc">Flujo de trabajo de instalación de plugins compatibles con SnapCenter NetApp</block>
-  <block id="935a5e63802feb7c41be8f11c154dcc4" category="paragraph"><block ref="935a5e63802feb7c41be8f11c154dcc4" category="inline-link-macro-rx"></block></block>
   <block id="d3b3bbe44f365266410ca923ecee56a6" category="summary">Debe instalar los plugins compatibles de SnapCenter NetApp mediante la interfaz de usuario (UI) de SnapCenter. Si el entorno no permite la instalación remota del plugin desde la interfaz de usuario de SnapCenter, puede instalar el complemento compatible con NetApp en el modo de consola o en el modo silencioso mediante la interfaz de línea de comandos (CLI).</block>
   <block id="d2c5b20234fc44c2f17c36b2966fd013" category="doc">Instale los plugins compatibles con NetApp en los hosts Linux mediante la interfaz de línea de comandos</block>
   <block id="b521e7c0d833ea4b54c3d92cf04ae64b" category="paragraph">Debe instalar los plugins compatibles de NetApp mediante la interfaz de usuario (UI) de SnapCenter. Si el entorno no permite la instalación remota del plugin desde la interfaz de usuario de SnapCenter, puede instalar los complementos compatibles con NetApp en el modo de consola o en el modo silencioso mediante la interfaz de línea de comandos (CLI).</block>
@@ -8760,14 +8386,12 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="0ef428737d69052be8c7b16e117c7af7" category="paragraph">Cuando se instalan plugins compatibles con NetApp, es posible utilizar SnapCenter con la tecnología SnapMirror de NetApp para crear mirrors de conjuntos de backups en otro volumen, y la tecnología NetApp SnapVault para la replicación de backup de disco a disco. Los plugins compatibles con NetApp se pueden utilizar tanto en entornos de Windows como de Linux.</block>
   <block id="051fcccc818f247e161e5bd9fe65741b" category="admonition">SnapCenterCLI no admite comandos de plugins compatibles con NetApp.</block>
   <block id="5c02c38860d64c515a98f74285c5e9af" category="paragraph"><block ref="5c02c38860d64c515a98f74285c5e9af" category="inline-link-macro-rx"></block></block>
-  <block id="858560511f7cf57cf79818f39ae5e7e5" category="paragraph">Para crear sus propios plugins personalizados, consulte <block ref="07744b4146eed8737957be4236ad4ea6" category="inline-link-macro-rx"></block> la guía.</block>
   <block id="031130cc740dce019fe31437829d3261" category="doc">Preparar los sistemas de almacenamiento para la replicación de SnapMirror y de SnapVault para complementos compatibles con NetApp</block>
   <block id="b5d24747e2254cd74a278959e55db769" category="summary">Antes de usar plugins compatibles con SnapCenter NetApp, el administrador de SnapCenter debe instalar y configurar SnapCenter Server, así como ejecutar las tareas especificadas en los requisitos previos.</block>
   <block id="6f9abdf4e6349ffead799b7fe0fb5848" category="doc">Requisitos previos para usar los plugins compatibles de NetApp</block>
   <block id="b64964f7c6cb3e2d0ad50647f28415f4" category="list-text">Si corresponde, instale Java 11 en el host del plugin.</block>
   <block id="70470fa292d95a8fc9a82053e4e3efc0" category="paragraph">El uso del puerto 9090 debe reservarse a los plugins compatibles con NetApp, junto con los otros puertos requeridos por SnapCenter.</block>
   <block id="db39871b690a95f007f3b71acd6533d2" category="doc">Requisitos previos para añadir hosts e instalar plugins compatibles con NetApp</block>
-  <block id="896f53a1228bbdd8ed2cd52ad89184a3" category="list-text">Debe haber instalado Java 11 en el host Linux o de Windows.</block>
   <block id="1bd7b03e9e6f0b21298c8109c8f483ce" category="paragraph">Si utiliza Windows Server 2019 o Windows Server 2016 para el host de SnapCenter Server, debe instalar Java 11. La herramienta de matriz de interoperabilidad (IMT) contiene la información más actualizada sobre requisitos.</block>
   <block id="06489e5a01873cf102f78c0da703ea59" category="list-text">La operación de restauración predeterminada solo restaura objetos del almacenamiento. Las operaciones de restauración en el nivel de la aplicación solo pueden realizarse si el plugin NetApp compatible incluye dicha capacidad.</block>
   <block id="67d899b4318f9296298e7c4bb8999573" category="doc">Restaurar recursos de plugins admitidos por NetApp</block>
@@ -9272,7 +8896,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="f4bbec82b72e54df820fc15b640e3b5d" category="paragraph">Si no ha seleccionado la casilla de verificación *Skip prechecks*, el host del plugin se valida para ver si cumple con los requisitos para instalar el plugin. Si no se cumplen los requisitos mínimos, se muestran los mensajes de error o advertencia correspondientes. Después de solucionar el problema, haga clic en *Actualizar*.</block>
   <block id="a24cb0112e51902b6b3ed4606a7cd727" category="cell">6.0.1</block>
   <block id="db1c2c3cb6f2d1f2978caf1a4dce483c" category="sidebar">Proteger aplicaciones mediante los complementos compatibles con NetApp</block>
-  <block id="e66b727df529163e059dccac755199b5" category="paragraph">La protección de datos es compatible con Microsoft Exchange Server, Microsoft SQL Server, bases de datos de Oracle en Linux o AIX, base de datos SAP HANA, IBM DB2, PostgreSQL, MySQL y sistemas de archivos host de Windows que se ejecutan en sistemas ONTAP.</block>
   <block id="309dab896f56b3d37ea98a7bf810fbfa" category="paragraph">Host MongoDB</block>
   <block id="5cee7b6aa7ee8f8137a525779101e458" category="paragraph">Plugin para SAP ASE</block>
   <block id="a1ed78eb846876547dbbead9faf94c49" category="paragraph">Host SAP</block>
@@ -9308,84 +8931,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="7327f5f0e2968d1fa35822d7d6f788aa" category="paragraph">Seleccione el tipo de autenticación que desea usar.</block>
   <block id="43cc85c69233f4440d07f2e3061c15a5" category="admonition">Aplicable únicamente a usuarios Linux y AIX.</block>
   <block id="d2359afa8132d4e27ade60817ab1a816" category="paragraph">Es posible usar los complementos compatibles con NetApp, como MongoDB, ORASCPM, aplicaciones Oracle, SAP ASE, SAP MaxDB y el complemento de almacenamiento para operaciones de protección de datos.</block>
-  <block id="14aee625cd152256e849c1aa7031d871" category="admonition">Los plugins personalizados se pueden utilizar tanto en entornos de Windows como de Linux.</block>
-  <block id="e535346a3db70ff385fc97189dce883d" category="paragraph">Los plugins personalizados de SnapCenter pueden instalarse en sistemas Windows o Linux.</block>
-  <block id="5acceba2cee4fe40d121e90d997fa439" category="doc">Añada recursos a los plugins personalizados de SnapCenter</block>
-  <block id="1f3ce8cb4c6bb4bf02aa0b3d1e189ae7" category="paragraph">Después de añadir los recursos, puede modificar sus detalles.</block>
-  <block id="a426ad547c71e321ba843cef964120d7" category="doc">Realice un backup de los recursos de los plugins personalizados de SnapCenter</block>
-  <block id="9378c23d00fd78b8947bd7e11f09030a" category="summary">Si un recurso individual de los plugins personalizados de SnapCenter no forma parte de ningún grupo de recursos, puede incluirlo en el backup mediante la página Resources. Puede realizar el backup del recurso bajo demanda, o bien, si el recurso tiene una política anexada y una programación configurada, el backup se realiza automáticamente según esa programación.</block>
-  <block id="08b954c361c2ce7b23e572ce828859aa" category="doc">Realice backup de recursos de plugins personalizados de SnapCenter</block>
-  <block id="a37b4d82e3dae7c24db9d5162f48fd96" category="paragraph">Si un recurso de plugins individuales no forma parte de ningún grupo de recursos, puede incluirlo en el backup mediante la página Resources. Puede realizar el backup del recurso bajo demanda, o bien, si el recurso tiene una política anexada y una programación configurada, el backup se realiza automáticamente según esa programación.</block>
-  <block id="665e27cacd5b140b3ca5a518bbd41724" category="doc">Realice un backup de grupos de recursos de plugins personalizados</block>
-  <block id="e4e0cadac57fe2f7fc1d76c019a73967" category="doc">Programaciones de backup de recursos de plugins personalizados</block>
-  <block id="79db142fcc9311cc0f07d756c08b4ca0" category="doc">Cancelar las operaciones de backup para los plugins personalizados de SnapCenter</block>
-  <block id="f574c5c8b76c4ae3d8e59b1478323386" category="doc">Clone backups de recursos de los plugins personalizados de SnapCenter</block>
-  <block id="89f4fce6715ddef3315f9c412063572c" category="list-text">La operación de clonado predeterminada solo clona objetos del almacenamiento. Las operaciones de clonado en el nivel de la aplicación solo pueden realizarse si el plugin personalizado incluye dicha capacidad.</block>
-  <block id="15af88bae18a779b0123b601ed1f33b1" category="summary">Antes de usar SnapCenter para realizar un backup de recursos específicos de un plugin personalizado, debe crear una política de backup para el recurso o el grupo de recursos que incluirá en el backup.</block>
-  <block id="45ff3f433bdb1ede8743b649a4ecb7c3" category="doc">Crear políticas para recursos de plugins personalizados</block>
-  <block id="90de5bc1543ef2c832e0acbf4e27cc39" category="paragraph">Para obtener detalles, consulte la información sobre cómo definir una estrategia de protección de datos para plugins personalizados.</block>
-  <block id="75b3f5ccaa0a432666656554ea274cd8" category="inline-link-macro">Consulte los clones y backups relacionados con los recursos de plugins personalizados en la página Topology</block>
-  <block id="f14c7af4999f47dba1e2a191fea8c11f" category="paragraph">Consulte <block ref="0bc29e24db2bfeb522f90f83680fcdb4" category="inline-link-macro-rx"></block>.</block>
-  <block id="6ad653f84eed0c76647686ab11205da7" category="doc">Cómo se usan los recursos, los grupos de recursos y las políticas para proteger los recursos de los plugins personalizados</block>
-  <block id="2fc5c212a0ba7f3f442fe029d893a845" category="summary">Deber instalar y configurar plugins personalizados de SnapCenter si desea proteger los recursos de plugins personalizados.</block>
-  <block id="d9ac41630ae6a20177466403e2d328d8" category="doc">Flujo de trabajo de instalación de plugins personalizados de SnapCenter</block>
-  <block id="caef6d3f9e7cdd9ed1d3eaabe29db549" category="paragraph">Deber instalar y configurar plugins personalizados de SnapCenter si desea proteger los recursos de plugins personalizados.</block>
-  <block id="8f328255df3c97c90d7cfcc63b284018" category="image-alt">Flujo de trabajo de los plugins personalizados de SnapCenter</block>
-  <block id="0d137907411e77ba81a3c7f3193d7c4a" category="summary">Debe instalar los plugins personalizados de SnapCenter mediante la interfaz de usuario de SnapCenter. Si el entorno no permite la instalación remota del plugin desde la interfaz de usuario de SnapCenter, puede instalar el plugin personalizado en el modo de consola o en el modo silencioso mediante la interfaz de línea de comandos (CLI).</block>
-  <block id="b5c24629ead5c583e2208216205af10a" category="doc">Instale los plugins personalizados de SnapCenter en hosts Linux mediante la interfaz de la línea de comandos</block>
-  <block id="0f18e8aaa7478aae88b697e6b89d15f0" category="paragraph">Debe instalar los plugins personalizados de SnapCenter mediante la interfaz de usuario (UI) de SnapCenter. Si el entorno no permite la instalación remota del plugin desde la interfaz de usuario de SnapCenter, puede instalar los plugins personalizados en el modo consola o en el modo silencioso mediante la interfaz de línea de comandos (CLI).</block>
-  <block id="ef5b54514d2bc2cec099dbe31b43d400" category="list-text">Copie el paquete de plugins de SnapCenter para el archivo de instalación de Linux (snapcenter_linux_host_plugin.bin) desde C:\ProgramData\NetApp\SnapCenter\Package Repository en el host en el que desea instalar los plugins personalizados.</block>
-  <block id="f96e2a1e803fa28017557015321ddb3a" category="list-text">Inicie sesión en SnapCenter y cargue el plugin personalizado desde la interfaz de usuario o mediante cmdlets de PowerShell.</block>
-  <block id="bdc72ebb02dfcda19f5dd85c44715b14" category="paragraph">En la sección, puede cargar el plugin personalizado desde la interfaz de usuario <block ref="f72fab5b6c914bbb8d5e6637ea3f5a3f" category="inline-link-macro-rx"></block> .</block>
-  <block id="301724bd950c161b79552d6f655df446" category="doc">Privilegios mínimos de ONTAP requeridos para el plugin personalizado</block>
-  <block id="322752ebdea85a56b4a5d899f24c4325" category="doc">Supervisar las operaciones de clonado de recursos de plugins personalizados</block>
-  <block id="ea74c30d0b14b0ca9fd30f2713505fb0" category="doc">Supervisar las operaciones de backup de los recursos de plugins personalizados</block>
-  <block id="78d6b4b75546fc8aa5983130521da2da" category="doc">Supervisar las operaciones de restauración de recursos de plugins personalizados</block>
-  <block id="36c1f2ec62294c41aad60383fd84873d" category="doc">Supervise el estado de la instalación de plugins personalizados</block>
-  <block id="6af1ebe4d54e4d359cfda12fdfc23a05" category="doc">Prepare los sistemas de almacenamiento para la replicación de SnapMirror y SnapVault para los plugins personalizados</block>
-  <block id="c338295edd6028b8881fc2e030e0af4c" category="summary">Antes de usar los plugins personalizados de SnapCenter, el administrador de SnapCenter debe instalar y configurar SnapCenter Server, así como ejecutar las tareas especificadas en los requisitos previos.</block>
-  <block id="2f2b7315a3ee2bd24ebcb2968f2d7471" category="doc">Requisitos previos para usar los plugins personalizados de SnapCenter</block>
-  <block id="563eeaf2ba85a493983bca82e8f08302" category="paragraph">El uso del puerto 9090 debe reservarse a los plugins personalizados, junto con los otros puertos requeridos por SnapCenter.</block>
-  <block id="cfc5bf454b40740731ed76f94a8f970c" category="summary">Antes de añadir un host e instalar los paquetes de plugins, debe satisfacer todos los requisitos. Los plugins personalizados se pueden utilizar tanto en entornos de Windows como de Linux.</block>
-  <block id="d4a7ff82c08a07473e6db99d099607ac" category="doc">Requisitos previos para añadir hosts e instalar plugins personalizados de SnapCenter</block>
-  <block id="af0b5aed7941c6f843b87c68b201035e" category="paragraph">Antes de añadir un host e instalar los paquetes de plugins, debe satisfacer todos los requisitos. Los plugins personalizados se pueden utilizar tanto en entornos de Windows como de Linux.</block>
-  <block id="f6435544e19487a5d349a72241d6531d" category="list-text">Los plugins personalizados deben estar disponibles en el host del cliente desde el que se ejecuta la operación de añadir host.</block>
-  <block id="d0304f4e107917a8451ca9cbb3d3b342" category="list-text">Para los plugins personalizados, debe asegurarse de haber añadido el hash SHA512 del archivo del plugin personalizado en el archivo _custom_plugin_checksum_list_.</block>
-  <block id="a05404237ea51ddb4ea1e7c6debd0079" category="paragraph">SnapCenter forma parte de la instalación de plugins personalizados en el host.</block>
-  <block id="8af2774827e3e07de108382c962be1a0" category="list-text">Para los plugins personalizados creados para la aplicación, es necesario haber realizado los siguientes pasos:</block>
-  <block id="2124f96b55bd8bcfe23c27d4d7c30129" category="list-text">La operación de restauración predeterminada solo restaura objetos del almacenamiento. Las operaciones de restauración en el nivel de la aplicación solo pueden realizarse si el plugin personalizado incluye dicha capacidad.</block>
-  <block id="d586cfbb655ff9a83e5820c52931584f" category="doc">Restaure recursos de plugins personalizados</block>
-  <block id="08bd15b8d89877f65879f0e9486f22f7" category="doc">Configure credenciales para los plugins personalizados de SnapCenter</block>
-  <block id="4f0a79bbbb1c2f86716f750b2620d7ca" category="list-text">Aplicaciones de plugins personalizados</block>
-  <block id="eaa33d42e6fa75d8b2d8dabc59d645aa" category="summary">SnapCenter se integra con la aplicación de plugins y con tecnologías de NetApp en el sistema de almacenamiento. Para trabajar con plugins personalizados, se utiliza la interfaz gráfica de usuario de SnapCenter.</block>
-  <block id="7e2dbe0ceba88df5406b9c6925b9b55b" category="doc">Funciones de los plugins personalizados de SnapCenter</block>
-  <block id="be729a6539659c901e8d8721dbd4263d" category="paragraph">SnapCenter utiliza la tecnología Snapshot de NetApp con los plugins personalizados para realizar backups de recursos. Las snapshots consumen un espacio de almacenamiento mínimo.</block>
-  <block id="15b52e4150617b0308c95562aaf68617" category="paragraph">Usar la función de los plugins personalizados ofrece además los siguientes beneficios:</block>
-  <block id="f5f43eea7e5881f7c06831585bdf5df3" category="summary">Es posible crear plugins personalizados para las aplicaciones que se usan y emplear SnapCenter para el backup, la restauración o la clonado de tales aplicaciones. Al igual que otros plugins de SnapCenter, los plugins personalizados funcionan como componentes del host en el software SnapCenter de NetApp y permiten la protección de datos para aplicaciones y la gestión de recursos.</block>
-  <block id="d30c90ed422af36347bce4755fe70260" category="doc">Información general sobre los plugins personalizados de SnapCenter</block>
-  <block id="caa41de91fb5b317c8ea619089e3c365" category="paragraph">Es posible crear plugins personalizados para las aplicaciones que se usan y emplear SnapCenter para el backup, la restauración o la clonado de tales aplicaciones. Los plugins personalizados funcionan como componentes del host del software NetApp SnapCenter y permiten la protección de datos para aplicaciones y la gestión de recursos.</block>
-  <block id="cb5170fba0d79e8f77791b01b65474cb" category="paragraph">Cuando se instalan plugins personalizados, es posible usar SnapCenter con la tecnología NetApp SnapMirror para crear mirrors de conjuntos de backups en otro volumen, y la tecnología NetApp SnapVault para la replicación de backup de disco a disco. Los plugins personalizados se pueden utilizar tanto en entornos de Windows como de Linux.</block>
-  <block id="612ec908f9242be88271aff279afcb8c" category="admonition">SnapCenterCLI no admite comandos de plugins personalizados.</block>
-  <block id="ac1853e1b8c52dcd72090686ddcea0a4" category="paragraph">Puede instalar el plugin personalizado desde la página Add Host.</block>
-  <block id="83aeb7b594481ad598eb0b519836777b" category="summary">SnapCenter admite una amplia variedad de tipos de almacenamiento en máquinas físicas y virtuales. Debe comprobar la compatibilidad de su tipo de almacenamiento antes de instalar los plugins personalizados de SnapCenter.</block>
-  <block id="c48a2f5430d3aff55420b834363bcc46" category="doc">Tipos de almacenamiento compatibles con los plugins personalizados de SnapCenter</block>
-  <block id="c646559470c5e7c2ce007b2f588217ce" category="summary">Para poder ejecutar correctamente las operaciones de restauración, es necesario definir una estrategia mediante SnapCenter. Existen dos tipos de estrategias de restauración para añadir manualmente los recursos de plugins personalizados. No es posible recuperar recursos de plugins personalizados añadidos manualmente.</block>
-  <block id="74f3688654489538321178bb35e0308a" category="doc">Tipos de estrategias de restauración compatibles con los recursos de plugins personalizados añadidos manualmente</block>
-  <block id="d09f169f58ca3636a49dbb1d90c5ccb2" category="paragraph">Para poder ejecutar correctamente las operaciones de restauración, es necesario definir una estrategia mediante SnapCenter. Existen dos tipos de estrategias de restauración para añadir manualmente los recursos de plugins personalizados.</block>
-  <block id="10b4ebc3af3b43078bbe14cbd2f856b5" category="admonition">No es posible recuperar recursos de plugins personalizados añadidos manualmente.</block>
-  <block id="068e66f9f630e931ca9256c9d49a4894" category="doc">Consulte los clones y backups relacionados con los recursos de plugins personalizados en la página Topology</block>
-  <block id="ffcbfe2535c5e409d12457d03945597a" category="summary">Los plugins personalizados para las operaciones de protección de datos.</block>
-  <block id="91ed5f58b9ed12fe9c0ba6ac5fbaa1b7" category="doc">Tareas que pueden llevarse a cabo con los plugins personalizados de SnapCenter</block>
-  <block id="5bb2f9bf573dcbada2bc999d2acc3d80" category="paragraph">Es posible usar el plugin personalizado para las operaciones de protección de datos.</block>
-  <block id="f130b1c1614c0136264ae62249141b2f" category="sidebar">Proteger aplicaciones personalizadas</block>
-  <block id="ad41f7a9e85843a998743e132424a395" category="sidebar">Plugins personalizados de SnapCenter</block>
-  <block id="27a900f1a63545d14b71e4b2d44fc8a9" category="sidebar">Tareas que pueden llevarse a cabo con los plugins personalizados de SnapCenter</block>
-  <block id="3d8a9e359cdf4b956d6850836e03a25e" category="sidebar">Estrategia de backup para plugins personalizados</block>
-  <block id="08759ac851b4d644eddfd819f2b366e9" category="sidebar">Prepare la instalación de los plugins personalizados de SnapCenter</block>
-  <block id="834849dd07442651b1ce8092c92186f0" category="sidebar">Instale los plugins personalizados de SnapCenter</block>
-  <block id="33e8da2f20646df222fc0acf35201fe4" category="sidebar">Realice backup de recursos de plugins personalizados</block>
-  <block id="8ffa4ba0dd2df5995fd397c72a149679" category="sidebar">Realice backup de recursos de plugins individuales</block>
-  <block id="e734e6e2e702d38ebab6ed3c050a5e72" category="sidebar">Clonar backups de recursos de plugins personalizados</block>
   <block id="881a29d62175189b1872a856fce933da" category="paragraph">Es posible utilizar SnapCenter para clonar una base de datos de Oracle con el backup de esa base de datos. Los clones creados son clones gruesos y se crean en el pool de capacidad primario.</block>
   <block id="57507899dd312cf4de9c076e90990d6a" category="paragraph">Puede utilizar SnapCenter para clonar una base de datos SAP HANA con el backup de esa base de datos. Los clones creados son clones gruesos y se crean en el pool de capacidad primario.</block>
   <block id="73c291e6ad930a577bf1c1d0267ecd80" category="paragraph">Es posible utilizar SnapCenter para clonar una base de datos de SQL con el backup de esa base de datos. Los clones creados son clones gruesos y se crean en el pool de capacidad primario.</block>
@@ -9465,24 +9010,15 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="8c4149a5e3a16e71c373cac16eab56eb" category="list-text"><block ref="8031b6dd89dc17bc568c9124170bb66a" prefix="" category="inline-code"></block></block>
   <block id="1f46b6eec6f3def165a94aea4fbd2de8" category="list-text"><block ref="d873942b6f54bbecd97eb915c6e95c45" prefix="" category="inline-code"></block></block>
   <block id="73c050ddeaec2b5e5a856c81666f8026" category="list-text">Haga clic en <block ref="725f4bf2ffc300942027282d0182533f" category="inline-image-macro-rx" type="image"></block> el icono y, a continuación, haga clic en *Habilitar validación de certificado*.</block>
-  <block id="233125590fad11d81c05c1b0279c56f1" category="admonition">SnapCenter admite únicamente el sistema de archivos de máquina virtual (VMFS) VMware en sistemas ASA R2.</block>
   <block id="989977a18a476a92018e04dd60ec37c1" category="inline-link">Obtenga más información sobre los sistemas R2 de ASA</block>
   <block id="b3c78f6e772922673e6d35ae6df26cbd" category="list-text">Crear backups primarios de aplicaciones en VMDK</block>
   <block id="7e358fa759baa4f70a96f79cf29b4c61" category="list-text">Transferir snapshots de grupo de coherencia a sistema de almacenamiento secundario</block>
-  <block id="e4cc11f5ac51267a510e423fca1a6266" category="list-text">Restaurar los backups y restaurar a partir de una ubicación alternativa</block>
-  <block id="eaf84a062a0d8e38f825a0f02f3d1272" category="list-text">Restauración sin movimiento desde almacenamiento primario y secundario mediante VMware vMotion</block>
-  <block id="74307ec7ea96b1aa508fc7b092900aec" category="list-text">Conecte y restaure copias de almacenamiento primario y secundario</block>
-  <block id="9b0e5d4aa3544e7e2154f18fb865684a" category="list-text">Clona los backups y también los clona a una ubicación alternativa</block>
   <block id="a0f3e47cc5179a026d7b861797055f6d" category="list-text">Asignación de dispositivo sin formato (RDM)</block>
   <block id="b47dab3c647bba9b7ad0a8fc0cde81dc" category="list-text">Volúmenes de aplicaciones para Oracle</block>
   <block id="7236f926bc1402ad0d847fd55a34001d" category="list-text">NDV DE SAP HANA</block>
   <block id="da612433b3e7d1bdc94a92a26f362677" category="list-text">Vault</block>
-  <block id="32003f26ce5a5c05fba8d25bec258e4d" category="list-text">Instantánea a prueba de manipulaciones</block>
-  <block id="b4bc3604610d39195e11a5ae303f5af1" category="list-text">Grupo Flexible</block>
   <block id="425514993f273b658b0218c334836b26" category="list-text">Grupo de coherencia jerárquico</block>
-  <block id="4e8cbbcd8088f634c6f45af755c363c9" category="list-text">Migración de sistemas ONTAP 9.x a ASA R2</block>
   <block id="980869fd79cd78a3682752206f149791" category="list-text">Cambio de nombre de instantáneas</block>
-  <block id="63d730ecaee7f6e096a0f2026e24241b" category="list-text">SnapCenter no admite el aprovisionamiento secundario del directorio de registro del host del plugin de SQL. Debe configurar manualmente mediante la interfaz de línea de comandos de ONTAP o System Manager.</block>
   <block id="bc3c828cce582fafd1e35e77b8c84327" category="cell">Nombre de puerto</block>
   <block id="f78fb51edae6a69d5e1e911a2b6fc268" category="cell">Números de puerto</block>
   <block id="02674a4ef33e11c879283629996c8ff8" category="cell">Dirección</block>
@@ -9590,7 +9126,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="a01b7da75a123f67d2bd092bd390357b" category="inline-link-macro">Consulte los backups y los clones relacionados con los recursos de PostgreSQL en la página Topology</block>
   <block id="8cc434d6a6795129514dec808d2a0b5f" category="paragraph">Consulte <block ref="ba5835b9b929a25573989def442b6620" category="inline-link-macro-rx"></block>.</block>
   <block id="74bf63bf6d2c3ea39571d20c69e750c5" category="doc">Cree grupos de recursos y habilite la protección secundaria para recursos de PostgreSQL en sistemas R2 de ASA</block>
-  <block id="2fa3565e934ce96d4dfda01caf5687f0" category="paragraph">Haga clic en <block ref="ef7fd6a62d3d2e73b9eef702ebac01ef" category="inline-image-macro-rx" type="image"></block>y, a continuación, seleccione el nombre de host y el tipo de recurso para filtrar los recursos. A continuación, puede hacer clic en <block ref="5daa1c5d91da80c848b68dcd336ec220" category="inline-image-macro-rx" type="image"></block> para cerrar el panel de filtros.</block>
   <block id="049723d2545fe83b1346dfc8b0e73157" category="inline-image-macro">base de datos del servidor intercambiador de flujo de trabajo de backup</block>
   <block id="17867b811722d46682fd65b7a3aa094d" category="paragraph"><block ref="17867b811722d46682fd65b7a3aa094d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="11347fc37982208b4dafefd65b23ac33" category="paragraph"><block ref="11347fc37982208b4dafefd65b23ac33" category="inline-image-macro-rx" type="image"></block></block>
@@ -9721,7 +9256,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="41fbf2c9674d14c871b1a98dff345ddd" category="paragraph">Se otorgó el permiso event generate-AutoSupport-log de NetApp ONTAP al usuario de la máquina virtual de almacenamiento (SVM).</block>
   <block id="251c52ce7ef8b529e63b81a2f40b7a26" category="paragraph">El siguiente cmdlet restaura la base de datos MySQL de SnapCenter cuando se eliminan accidentalmente los archivos de backup del LUN de iSCSI. Para VMDK, restaure manualmente desde snapshots de ONTAP.</block>
   <block id="b9832b10a87d0c3793ed3b413ee1d839" category="section-title">Soporte PARA API REST</block>
-  <block id="bc9f5cd1669f71a2b0bd213a944d8fdb" category="paragraph">De manera predeterminada, todas las conexiones de almacenamiento a los sistemas de almacenamiento ONTAP y ASA R2 pasarán a través de ZAPI. La API de REST se puede habilitar para versiones de ONTAP seleccionadas.</block>
   <block id="421f02448bcd1490276fcd375668a6be" category="paragraph">Puede modificar las claves de configuración en los siguientes archivos de configuración:</block>
   <block id="94b74299dc7f33d5bf8e4fc497c26334" category="list-text">IsRestEnabledForStorageConnection</block>
   <block id="cbd8678f4d2dba6d97b2ccfc54882755" category="paragraph">El valor predeterminado es FALSE.</block>
@@ -9751,7 +9285,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="02cf8992ec066e2a6c94ef201a56fde4" category="list-text">Para obtener más información sobre las operaciones de división de volúmenes de FlexClone, consulte, <block ref="a740171a60876518d945f2e24ddd79f9" category="inline-link-rx"></block>.</block>
   <block id="d664b55967efa51159bf2dcaad494f28" category="admonition">El valor de retención máximo es 1018. Se producirá un error en los backups si la retención se establece en un valor superior a la versión de ONTAP subyacente.</block>
   <block id="45674f4fab4d30d82c5e48053de84a2d" category="paragraph">ONTAP primario y secundario puede ser ONTAP FAS, AFF, ASA, ONTAP Select o Cloud Volumes ONTAP.</block>
-  <block id="5809b9053ee07314ee267cf4861e2fe2" category="paragraph">Versión de plugin. Puede incluir tanto la versión principal como la secundaria. Por ejemplo, 5,0, 6,0, 6,1</block>
   <block id="04421acf26388af407e2e444d1d9a4ea" category="paragraph">+ Para evitar la demora entre nodos, puede crear una nueva copia de seguridad antes de realizar una operación de propagación o elegir el host con la última copia de seguridad.</block>
   <block id="0002a57eb89728985300757fccb645db" category="inline-link">Sección Administración de SAN de ONTAP 9</block>
   <block id="9b84e6db97d84dfea46f94fa87561146" category="list-text">Es posible especificar la frecuencia en la cual se corrigen automáticamente las rutas de LUN mediante la asignación del valor (en horas) como el parámetro LUNPATH_MONITORING_INTERVAL. Para obtener información sobre SLM, consulte la<block ref="791bce609970821d75a70463f2e5a4f8" category="inline-link-rx"></block>.</block>
@@ -9816,7 +9349,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="be01a357ae2c9752875b5385c732b017" category="section-title">Principales características</block>
   <block id="167ec2cbfb2138b492dfdc49a527d301" category="paragraph">SnapCenter ofrece las siguientes funciones clave:</block>
   <block id="8cf888c772c03c3d648b58558da6e63e" category="list-text">Protección de datos centralizada y coherente con las aplicaciones de diferentes aplicaciones</block>
-  <block id="969aec922664277bd496cc9933e20159" category="paragraph">La protección de datos también es compatible con otras aplicaciones y bases de datos estándar o personalizadas, ya que proporciona un marco de trabajo para crear plugins de SnapCenter definidos por el usuario. Esto permite proteger datos para otras aplicaciones y bases de datos desde el mismo panel único. Al aprovechar este marco de trabajo, NetApp ha lanzado complementos de SnapCenter para MongoDB, almacenamiento, MaxDB, Sybase ASE y ORASCPM. También puede crear su propio plug-in utilizando la guía del desarrollador.</block>
   <block id="fbe4c82f71e9d38697b35f4a20991f38" category="paragraph">SnapCenter proporciona una GUI que es una interfaz única e integral para gestionar backups y clones de un recurso en cualquier destino en el cloud híbrido.</block>
   <block id="7c3bb00618d034ac43cb570a8e2d7a19" category="paragraph">SnapCenter proporciona API REST para la mayoría de las funcionalidades para la integración con cualquier software de orquestación, y el uso de cmdlets de Windows PowerShell y la interfaz de la línea de comandos.</block>
   <block id="14b689a9c9a340e9114e5ea589110eca" category="list-text">Consola e informes centralizados para la protección de datos</block>
@@ -9839,7 +9371,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="8ec3dce9728ccf15c37266b6c382c785" category="paragraph">Plugin de SnapCenter para base de datos SAP HANA</block>
   <block id="aabe8e5d9d24c243240731f0310c18bb" category="paragraph">Paquete de plugins para Linux y paquete de plugins para Windows</block>
   <block id="d28c7359652d719e6982acbdc3c49f95" category="paragraph">Plugin para UNIX o plugin para Windows</block>
-  <block id="889c03fdc6c55696632723dd9c7bd2b3" category="paragraph">Para backups del sistema de archivos, plugin para Windows</block>
   <block id="ce9bfd38dcbd5fc4c9c9c8f23dfe195b" category="paragraph">Complemento de SnapCenter para IBM DB2</block>
   <block id="c6a2afa4c0921c400b8b7c2be39a338e" category="paragraph">Paquete de plugins para Linux y paquete de plugins para Windows</block>
   <block id="8ab4d821b694c7a4a2ccc5b89c6bb24e" category="paragraph">Linux, AIX o Windows</block>
@@ -9906,9 +9437,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="7450cfde7058dc5e1f7909d0280fd7ae" category="list-text">Azure NetApp Files</block>
   <block id="4d82a1ec1af02725042c8c785564ee7a" category="list-text">Amazon FSX para ONTAP de NetApp</block>
   <block id="ababa124e254733f565e62afc357fc79" category="list-text">Sistemas R2 de NetApp ASA que ejecutan NetApp ONTAP 9.16.1.</block>
-  <block id="c00f42dba6437d6e7cbff9b51cdc87bf" category="paragraph">Los sistemas R2 de ASA ofrecen una solución unificada de hardware y software para entornos SAN basados en plataformas all-flash.<block ref="b840388ca7e01a42ddc42d721bbbf472" category="inline-link-rx"></block>.</block>
-  <block id="8f01bf34bec2cec23a4702e931ee94b0" category="cell">Operaciones admitidas</block>
-  <block id="ff887f516fdd30d87fb1832af91506bf" category="cell">Operaciones no admitidas</block>
   <block id="0b4e0166878acdd36f882f2270445c06" category="section-title">Aplicaciones y bases de datos compatibles</block>
   <block id="29756d78461f8a62cb986dc97f47496b" category="paragraph">SnapCenter admite la protección de distintas aplicaciones y bases de datos. Para obtener información detallada sobre las aplicaciones y bases de datos soportadas, consulte<block ref="734369dbdcbe00444fc7be843d617a6c" category="inline-link-rx"></block>.</block>
   <block id="ee0febdaba6d4c618d2cca84b2c49df1" category="paragraph">SnapCenter admite la protección de las cargas de trabajo de Oracle y Microsoft SQL en entornos de centro de datos definido por software (SDDC) de VMware Cloud on Amazon Web Services (AWS). <block ref="95513dc65edb533209d1910ac5e4b37d" category="inline-link-rx"></block>.</block>
@@ -9990,4 +9518,72 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="230f7d0fc162c3a559cd8b29556f41f4" category="paragraph"><block ref="230f7d0fc162c3a559cd8b29556f41f4" category="inline-link-rx"></block></block>
   <block id="17103b09b3247a2b39032b11b995b325" category="list-text">ORACLE_BACKUPMODE especifica si se debe realizar una copia de seguridad en línea o fuera de línea.</block>
   <block id="e787bc810fe0c9919da5538cad8cb1f1" category="list-text">ORACLE_EXPORT_PARAMETERS especifica si las variables de entorno definidas anteriormente deben reexportarse al ejecutar _/bin/su &lt;user running sqlplus&gt; -c sqlplus /nolog &lt;cmd&gt;_. Esto suele ocurrir cuando el usuario que ejecuta sqlplus no ha configurado todas las variables de entorno necesarias para conectarse a la base de datos mediante _connect / as sysdba_.</block>
+  <block id="a6f6a01605d225b6eccb8bc600198254" category="doc">Administrar la contraseña para el almacén de claves del complemento y el alias del par de claves firmadas por la CA en uso</block>
+  <block id="177f575b5a8eadec287bb6d168449027" category="paragraph">Debe administrar la contraseña del almacén de claves de los complementos y su certificado, configurar el certificado de CA, configurar los certificados raíz o intermedios para el almacén de confianza de los complementos y configurar el par de claves firmadas de CA para el almacén de confianza de los complementos con el servicio de complementos de SnapCenter para activar el certificado digital instalado.</block>
+  <block id="8593559b9e887ff645a2a050b5b8f36c" category="paragraph">Los complementos utilizan el archivo 'keystore.jks', que se encuentra en _/opt/NetApp/snapcenter/scc/etc_ como almacén de confianza y almacén de claves.</block>
+  <block id="181646988f2fcb9185be86e172665b21" category="list-text">Puede recuperar la contraseña predeterminada del almacén de claves del complemento desde el archivo de propiedades del agente del complemento.</block>
+  <block id="65ae86cb8ec34e4ba158707d94c60dfb" category="admonition">La contraseña para el almacén de claves del complemento y para todas las contraseñas de alias asociadas de la clave privada deben ser las mismas.</block>
+  <block id="d02bf6c91e930dd1afe81c8526ca7b7f" category="section-title">Configurar certificados raíz o intermedios para conectar el almacén de confianza</block>
+  <block id="c95c637d3299603ad3c7196bc054ae99" category="paragraph">Debe configurar los certificados raíz o intermedios sin la clave privada para conectar el almacén de confianza.</block>
+  <block id="8b71edfb7cf1a59a74ff54b086516e28" category="list-text">Navegue a la carpeta que contiene el almacén de claves del complemento: /opt/NetApp/snapcenter/scc/etc.</block>
+  <block id="983edb30b4dfb1a2ba42f9f9cc14950e" category="list-text">Reinicie el servicio después de configurar los certificados raíz o intermedios para complementar el almacén de confianza.</block>
+  <block id="00abca26ff8eb112359137dcfb9ea01a" category="section-title">Configurar el par de claves firmadas por CA para el complemento de almacén de confianza</block>
+  <block id="45731a3aa52bf1909e9e9dc6161cc898" category="paragraph">Debe configurar el par de claves firmadas por CA en el almacén de confianza del complemento.</block>
+  <block id="d1d422661c78b9eab46b9f8b1765e58e" category="list-text">Navegue a la carpeta que contiene el almacén de claves del complemento /opt/NetApp/snapcenter/scc/etc.</block>
+  <block id="f992e83f751357f9d9ccabefb7ab5af0" category="paragraph">La contraseña del almacén de claves del complemento predeterminado es el valor de la clave KEYSTORE_PASS en el archivo agent.properties.</block>
+  <block id="3755aa47db20dfb4e7857d21af35c6f3" category="list-text">Reinicie el servicio después de configurar el par de claves firmadas por CA para complementar el almacén de confianza.</block>
+  <block id="202758a186edfc5ecc21db45129fcefb" category="section-title">Configurar la lista de revocación de certificados (CRL) para complementos</block>
+  <block id="1448a860ca909fe5a4b713898b4d9e26" category="list-text">Los complementos de SnapCenter buscarán los archivos CRL en un directorio preconfigurado.</block>
+  <block id="c3c1d60ea5e2b53ad2638c5cdea5f89c" category="list-text">El directorio predeterminado para los archivos CRL de los complementos de SnapCenter es ' opt/NetApp/snapcenter/scc/etc/crl'.</block>
+  <block id="60e92bca5961a0f4e81c024688a1272c" category="paragraph">Debe administrar la contraseña del almacén de claves de los complementos y su certificado, configurar el certificado de CA, configurar los certificados raíz o intermedios para el almacén de confianza de los complementos y configurar el par de claves firmadas de CA para el almacén de confianza de los complementos con el servicio de complementos de SnapCenter para activar el certificado digital instalado.</block>
+  <block id="4ee0dfdd2373ec8e5a3ddda3da0957dc" category="paragraph">Los complementos utilizan el archivo _keystore.jks_, que se encuentra en _C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc_ como almacén de confianza y almacén de claves.</block>
+  <block id="8800bf627a6fbf38d58c52773ec76fe4" category="list-text">Navegue hasta la carpeta que contiene el almacén de claves del complemento _C:\Archivos de programa\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc_</block>
+  <block id="6a9186e5073444d4dfe469c0ec025eeb" category="list-text">Navegue hasta la carpeta que contiene el almacén de claves del complemento _C:\Archivos de programa\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc_</block>
+  <block id="c32f72f0e4fef5bd690d9026e9a2280f" category="section-title">Configurar la lista de revocación de certificados (CRL) para los complementos de SnapCenter</block>
+  <block id="75ef750cae4cd63d012437bf3a7d1602" category="list-text">Los complementos de SnapCenter buscarán los archivos CRL en un directorio preconfigurado.</block>
+  <block id="0e3a5e9fc260fc0d407d8321dcc8003b" category="list-text">El directorio predeterminado para los archivos CRL de los complementos de SnapCenter es _'C:\Archivos de programa\NetApp\SnapCenter\Snapcenter Plug-in Creator\ etc\crl'_.</block>
+  <block id="2fad35de9dcd671455c9e72f29a4b223" category="paragraph">Todas las conexiones de los sistemas ASA, AFF o FAS a ONTAP se realizarán a través de ZAPI de forma predeterminada. La API REST se puede habilitar para versiones específicas de ONTAP.</block>
+  <block id="599bdb9ade4d424c1d0e46738185a553" category="paragraph">SnapCenter aprovecha las API REST para realizar todas las operaciones en sistemas ASA r2, que no admiten ZAPI.</block>
+  <block id="c2ecaf82710b87f701c30b03217ce358" category="paragraph">La protección de datos es compatible con Microsoft Exchange Server, Microsoft SQL Server, bases de datos de Oracle en Linux o AIX, base de datos SAP HANA, IBM DB2, PostgreSQL, MySQL y sistemas de archivos host de Windows que se ejecutan en sistemas ONTAP. SnapCenter también admite la protección de aplicaciones como MongoDB, Storage, MaxDB, Sybase ASE, ORASCPM.</block>
+  <block id="856b104aa0e600cd87dcca68d37108cd" category="doc">Operaciones de SnapCenter compatibles con sistemas ASA r2</block>
+  <block id="b7e8225960284afe2c6e37957709cd90" category="paragraph">Los sistemas de almacenamiento ASA r2 son compatibles a partir de SnapCenter 6.1. <block ref="b840388ca7e01a42ddc42d721bbbf472" category="inline-link-rx"></block></block>
+  <block id="9495c0bfae580f7cd9a35b1c4bda619f" category="paragraph">*Operaciones compatibles con SnapCenter para sistemas ASA r2*</block>
+  <block id="48a4a4a55c074d578a28288306965ebc" category="list-text">Restaurar las copias de seguridad de los sistemas de almacenamiento primario y secundario al host original o al host alternativo</block>
+  <block id="88f032fba4d12f7f4fad32b78d6163d7" category="list-text">Restauración en el lugar desde sistemas de almacenamiento primarios y secundarios mediante VMware vMotion</block>
+  <block id="5eaeee1ce928de977b68a25b9c1b1a94" category="list-text">Conectar y copiar la restauración desde los sistemas de almacenamiento primario y secundario</block>
+  <block id="2ac74f7e56e1eda352b17c65251f4a20" category="list-text">Clonación de las copias de seguridad en el host original o en el host alternativo</block>
+  <block id="1ad6d2de484cb785da5c2ff1e4e68a57" category="paragraph">SnapCenter puede descubrir o crear grupos de consistencia de ONTAP. También puede aprovisionar e inicializar relaciones de SnapMirror con el clúster de destino para protección secundaria.</block>
+  <block id="6f04bce7ee68a94f8a7107a6ec8f82ef" category="paragraph">Para obtener información sobre cómo habilitar la protección secundaria en los sistemas ASA r2 para su aplicación, consulte:</block>
+  <block id="1cc48bfa9deb8cbe9ac86aa7814eafc2" category="inline-link">Habilitar la protección secundaria para los recursos de Microsoft SQL Server</block>
+  <block id="6a7bda8e55fec33c0e84308f3a7487d9" category="list-text"><block ref="6a7bda8e55fec33c0e84308f3a7487d9" category="inline-link-rx"></block></block>
+  <block id="5c1b83640f350debd19233ccd7049769" category="inline-link">Habilitar la protección secundaria para los recursos de SAP HANA</block>
+  <block id="d131b0bb4a16e5b8478497ccfbef33c2" category="list-text"><block ref="d131b0bb4a16e5b8478497ccfbef33c2" category="inline-link-rx"></block></block>
+  <block id="efbcba99976e07d78be176f7a90cf7c3" category="inline-link">Habilitar la protección secundaria para los recursos de Oracle</block>
+  <block id="762704371851ac78abed72b308f150fd" category="list-text"><block ref="762704371851ac78abed72b308f150fd" category="inline-link-rx"></block></block>
+  <block id="0f7bcbbc798cf4cdc39bcef282b498c5" category="inline-link">Habilitar la protección secundaria para los sistemas de archivos de Windows</block>
+  <block id="fcb42b4cc88ab54bad8c728c28ce5cf1" category="list-text"><block ref="fcb42b4cc88ab54bad8c728c28ce5cf1" category="inline-link-rx"></block></block>
+  <block id="08afd0e5f77c43d4c319bd80bc5b8c42" category="inline-link">Habilitar la protección secundaria para los recursos de IBM Db2</block>
+  <block id="d4ff69210257038e91bba291abba0cf1" category="list-text"><block ref="d4ff69210257038e91bba291abba0cf1" category="inline-link-rx"></block></block>
+  <block id="9c0d7b7516b5687a46d05b9ace283b3c" category="inline-link">Habilitar la protección secundaria para los recursos de PostgreSQL</block>
+  <block id="4849562b6b637f3d2719b247874cc4be" category="list-text"><block ref="4849562b6b637f3d2719b247874cc4be" category="inline-link-rx"></block></block>
+  <block id="3944a1fa201376f3d60be17195d11a58" category="inline-link">Habilitar la protección secundaria para los recursos de MySQL</block>
+  <block id="3e9349ede03e4e736f3e3c2ecdd0127c" category="list-text"><block ref="3e9349ede03e4e736f3e3c2ecdd0127c" category="inline-link-rx"></block></block>
+  <block id="0a056b3a2b95775025d0fee578294c1f" category="inline-link">Habilitar la protección secundaria para los sistemas de archivos Unix</block>
+  <block id="e0c95c8b145fa66da52032a54146f332" category="list-text"><block ref="e0c95c8b145fa66da52032a54146f332" category="inline-link-rx"></block></block>
+  <block id="9ce9bd6fed2b4f30097bcf0873565710" category="paragraph">*Operaciones no compatibles con SnapCenter para sistemas ASA r2*</block>
+  <block id="c4bf0f56feeec9a45e973768fbc4f47e" category="list-text">Snapshots a prueba de manipulación</block>
+  <block id="ee1ef6cf0f3971b44eb2abcac958fb8d" category="list-text">Volúmenes de FlexGroup</block>
+  <block id="29a720af33d29332fae31060b6910f77" category="list-text">Migración de sistemas de almacenamiento ASA, AFF o FAS a sistemas de almacenamiento ASA r2</block>
+  <block id="7abee40aa1933e637766c0d692411a73" category="list-text">Protección de bases de datos que tienen una combinación de recursos ASA, AFF o FAS y recursos ASA r2</block>
+  <block id="dbc2c133826d732ac86927b2062c928d" category="list-text">Aprovisionamiento secundario del directorio de registro del host del complemento SQL</block>
+  <block id="e29e29246a71235f47845c88c4a61f52" category="paragraph">Este es un puerto interno que se utiliza solo en el host del complemento; no se requiere excepción de firewall.</block>
+  <block id="225b299c2a6edae75ebfaff049e07f4e" category="paragraph">La comunicación entre el servidor SnapCenter y los complementos se enruta a través del puerto 8145.</block>
+  <block id="0b30312a6625cb4a7b0de67a44ddd45a" category="summary">Configurar el certificado CA para el servicio IBM Db2Plug-ins de SnapCenter en el host Linux</block>
+  <block id="65acd7dc10bede8dffde6b75a88e10ce" category="summary">Configurar el certificado CA para el servicio de complementos MySQL de SnapCenter en el host Linux</block>
+  <block id="755c3af5dacbed1425beceef56b811a7" category="paragraph">NetApp proporciona el complemento de almacenamiento para realizar operaciones de protección de datos del volumen de datos en el almacenamiento ONTAP utilizando el marco de complemento integrado en SnapCenter.</block>
+  <block id="4d76fbc52a6896285d31894d4b91bb5a" category="admonition">La política de soporte de SnapCenter abarcará la compatibilidad con el framework de complementos, el motor principal y las API asociadas. No se incluirá el código fuente del complemento ni los scripts asociados creados en el framework de complementos.</block>
+  <block id="1cf1276b6cea0875fbd56150cf88c2ad" category="list-text">Puede contar con un nombre de volumen de clon estático y una ruta de unión si se configura el valor de _USE_CUSTOM_CLONE_VOLUME_NAME_FORMAT_ a *true* en el archivo _agent.properties_ ubicado en _/opt/NetApp/snapcenter/scc/etc_. Después de actualizar el archivo, debe reiniciar el servicio creador del complemento SnapCenter ejecutando el comando: <block ref="f4da0aeb9d91444725fc84b066ea329b" prefix=" " category="inline-code"></block> .</block>
+  <block id="a537fd276cd3fe8ae075cca47114fd6a" category="admonition">Si va a trabajar en un contexto de sistema de archivos de Windows, no realice backup de archivos de la base de datos. Si lo hace, se crea un backup incoherente y una posible pérdida de datos al restaurar. Para proteger los archivos de base de datos, debe utilizar el complemento de SnapCenter adecuado para la base de datos (por ejemplo, Complemento de SnapCenter para Microsoft SQL Server o Complemento de SnapCenter para Microsoft Exchange Server).</block>
+  <block id="6fea498808c5d97bb251d0bdbc3943eb" category="sidebar">Configurar el certificado CA para el servicio de complementos de SnapCenter en el host Linux</block>
+  <block id="5c1418af1ce8eeaeb3745b659e1fcfe8" category="sidebar">Configurar el certificado CA para el servicio de complementos de SnapCenter en el host de Windows</block>
 </blocks>
