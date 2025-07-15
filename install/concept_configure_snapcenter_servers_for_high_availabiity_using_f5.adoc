@@ -21,9 +21,9 @@ Para un entorno de nube, puede configurar alta disponibilidad usando Elastic Loa
 ====
 .Configurar la alta disponibilidad con F5
 --
-La imagen del flujo de trabajo enumera los pasos para configurar SnapCenter Server para una alta disponibilidad utilizando el equilibrador de carga F5. Para obtener instrucciones detalladas, consulte https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_configure_SnapCenter_Servers_for_high_availability_using_F5_Load_Balancer["Cómo configurar instancias de SnapCenter Server para obtener una alta disponibilidad mediante el balanceador de carga F5"^] .
+Para obtener instrucciones sobre cómo configurar los servidores SnapCenter para alta disponibilidad mediante el balanceador de carga F5, consulte  https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_configure_SnapCenter_Servers_for_high_availability_using_F5_Load_Balancer["Cómo configurar instancias de SnapCenter Server para obtener una alta disponibilidad mediante el balanceador de carga F5"^] .
 
-image::../media/sc-F5-configure-workflow.gif[Flujo de trabajo de configuración de F5]
+imagen
 
 Debe ser miembro del grupo de administradores locales en SnapCenter Server (además de tener la asignación del rol de administrador de SnapCenter) para usar los siguientes cmdlets con el fin de agregar y quitar clústeres de F5:
 
