@@ -41,6 +41,8 @@ Microsoft Windows
 
 Para obtener la información más reciente sobre las versiones compatibles, consulte la https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
 
+Si está en una configuración de clúster de Windows, también debe instalar y configurar la Administración remota de Windows (WinRM).
+
 
 
  a| 
