@@ -25,7 +25,7 @@ NOTE: Debe repetir este comando para cada permiso.
 
 . Cree un usuario y asigne el rol a ese usuario.
 +
-`security login create -user <user_name\> -vserver <cluster_name\> -application ontapi -authmethod password -role <role_name\>`
+`security login create -user <user_name\> -vserver <cluster_name\> -application ontapi http -authmethod password -role <role_name\>`
 
 . Desbloquee el usuario.
 +

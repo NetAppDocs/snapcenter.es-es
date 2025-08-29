@@ -11,18 +11,18 @@ summary: El software SnapCenter es una plataforma sencilla, centralizada y escal
 
 
 [role="lead"]
-El software SnapCenter es una plataforma sencilla, centralizada y escalable que ofrece protección de datos consistente con las aplicaciones para aplicaciones, bases de datos, sistemas de archivos host y máquinas virtuales que funcionan en sistemas ONTAP en el cloud híbrido.
+El SnapCenter software es una plataforma simple, centralizada y escalable para la protección de datos consistente con todas las aplicaciones.  Protege aplicaciones, bases de datos, sistemas de archivos de host y máquinas virtuales en sistemas ONTAP en la nube híbrida.
 
-SnapCenter aprovecha las tecnologías Snapshot, SnapRestore, FlexClone, SnapMirror y SnapVault de NetApp para proporcionar lo siguiente:
+SnapCenter utiliza tecnologías NetApp Snapshot, SnapRestore, FlexClone, SnapMirror y SnapVault para proporcionar:
 
 * Backup a disco rápido, con gestión eficiente del espacio y consistente con las aplicaciones
-* Restauración rápida y granular, y recuperación consistente con las aplicaciones
+* Restauración rápida y detallada, y recuperación consistente con la aplicación
 * Clonado rápido y con un uso eficiente del espacio
 
 
-SnapCenter incluye tanto SnapCenter Server como plugins individuales ligeros. Puede automatizar la implementación del plugin en hosts de aplicaciones remotas, programar operaciones de backup, verificación y clonado, y supervisar todas las operaciones de protección de datos.
+SnapCenter incluye SnapCenter Server y complementos livianos.  Puede automatizar la implementación de complementos en hosts de aplicaciones remotas, programar operaciones de respaldo, verificación y clonación, y monitorear operaciones de protección de datos.
 
-SnapCenter se puede instalar en las instalaciones o en un cloud público para proteger los datos.
+Puede instalar SnapCenter en sus instalaciones o en una nube pública para proteger los datos.
 
 * En las instalaciones para proteger lo siguiente:
 +
@@ -32,7 +32,7 @@ SnapCenter se puede instalar en las instalaciones o en un cloud público para pr
 ** Datos en sistemas primarios y secundarios de ONTAP ASA R2
 
 
-* En las instalaciones, en un cloud híbrido para proteger lo siguiente:
+* Local en una nube híbrida para proteger lo siguiente:
 +
 ** Datos en sistemas principales ONTAP FAS, AFF o ASA replicados a Cloud Volumes ONTAP
 ** Datos en sistemas principales y secundarios de ONTAP FAS, AFF o ASA y protegidos para el almacenamiento de objetos y archivos en el cloud (mediante la integración de backup y recuperación de datos de BlueXP).
@@ -59,11 +59,11 @@ La protección de datos es compatible con Microsoft Exchange Server, Microsoft S
 
 * Backups basados en normativas
 +
-Los backups basados en políticas aprovechan la tecnología Snapshot de NetApp para crear backups a disco rápidos, con gestión eficiente del espacio y consistentes con las aplicaciones. De manera opcional, puede automatizar la protección de estos backups en el almacenamiento secundario mediante las actualizaciones de las relaciones de protección existentes.
+Las copias de seguridad basadas en políticas aprovechan la tecnología Snapshot de NetApp para crear copias de seguridad basadas en disco, rápidas, eficientes en términos de espacio y consistentes con las aplicaciones.  También puede configurar la protección automática de estas copias de seguridad en un almacenamiento secundario actualizando las relaciones de protección existentes.
 
-* Realice backups para varios recursos
+* Copias de seguridad para múltiples recursos
 +
-Puede realizar el backup de varios recursos (aplicaciones, bases de datos o sistemas de archivos de host) del mismo tipo, al mismo tiempo, mediante grupos de recursos de SnapCenter.
+Puede realizar copias de seguridad de varios recursos (aplicaciones, bases de datos o sistemas de archivos de host) del mismo tipo a la vez utilizando los grupos de recursos de SnapCenter .
 
 * Restauración y recuperación
 +
@@ -71,11 +71,11 @@ SnapCenter ofrece restauraciones rápidas y granulares de backups y recuperació
 
 * Clonado
 +
-SnapCenter proporciona un clonado rápido y coherente con las aplicaciones que gestiona el espacio de manera eficiente, lo que permite un desarrollo de software acelerado. Puede clonar en cualquier destino en el cloud híbrido.
+SnapCenter proporciona una clonación rápida, que ahorra espacio y es consistente con las aplicaciones.  Puede clonar en cualquier destino en la nube híbrida.
 
-* Interfaz gráfica de usuario (GUI) de gestión de usuario única
+* Interfaz gráfica de usuario para la gestión de un solo usuario
 +
-SnapCenter proporciona una GUI que es una interfaz única e integral para gestionar backups y clones de un recurso en cualquier destino en el cloud híbrido.
+SnapCenter proporciona una única interfaz para administrar copias de seguridad y clones en cualquier destino de nube híbrida.
 
 * API DE REST, cmdlets de Windows, comandos de UNIX
 +
@@ -96,7 +96,7 @@ SnapCenter proporciona API REST para la mayoría de las funcionalidades para la 
 
 == Arquitectura y componentes de SnapCenter
 
-La plataforma SnapCenter se basa en una arquitectura de varios niveles que incluye un servidor de gestión centralizado y un host de complemento. SnapCenter admite centros de datos multisitio. El host del servidor SnapCenter y el host del plugin pueden estar en diferentes ubicaciones geográficas.
+SnapCenter utiliza un diseño en capas con un servidor de administración central y hosts de complementos.  Los hosts del servidor y del complemento pueden estar en ubicaciones diferentes.
 
 image::../media/saphana-br-scs-image6.png[Figura que muestra el cuadro de diálogo de entrada/salida o que representa el contenido escrito]
 
@@ -108,7 +108,7 @@ SnapCenter incluye el servidor de SnapCenter, el paquete de plugins de SnapCente
 
 El servidor SnapCenter es compatible con los sistemas operativos Microsoft Windows y Linux (RHEL 8.x, RHEL 9.x, SLES 15 SP5). El servidor SnapCenter incluye un servidor web, una interfaz de usuario centralizada basada en HTML5, cmdlets de PowerShell, API DE REST y el repositorio de SnapCenter.
 
-SnapCenter Server y los plugins se comunican con el agente del host mediante HTTPS. La información sobre las operaciones de SnapCenter se almacena en el repositorio de SnapCenter.
+SnapCenter almacena información sobre sus operaciones en el repositorio de SnapCenter .
 
 
 
@@ -287,9 +287,9 @@ Host de almacenamiento
 Linux o Windows
 
 |===
-El plugin de SnapCenter para VMware vSphere admite operaciones de backup y restauración consistentes con los fallos y consistentes con las máquinas virtuales (VM), almacenes de datos y discos de máquina virtual (VMDK), y admite los plugins específicos para aplicaciones de SnapCenter para proteger operaciones de backup y restauración consistentes con las aplicaciones para bases de datos y sistemas de archivos virtualizados.
+El SnapCenter Plug-in for VMware vSphere admite operaciones de copia de seguridad y restauración consistentes con fallas y con máquinas virtuales para máquinas virtuales (VM), almacenes de datos y discos de máquinas virtuales (VMDK).  También admite operaciones de copia de seguridad y restauración consistentes con la aplicación para bases de datos y sistemas de archivos virtualizados.
 
-Si su base de datos o sistema de archivos están almacenados en máquinas virtuales o si desea proteger máquinas virtuales y almacenes de datos, debe implementar el dispositivo virtual del plugin de SnapCenter para VMware vSphere. Para obtener más información, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/index.html["Documentación del plugin de SnapCenter para VMware vSphere"^].
+Para proteger bases de datos, sistemas de archivos, máquinas virtuales o almacenes de datos en máquinas virtuales, implemente el SnapCenter Plug-in for VMware vSphere .  Para obtener información, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/index.html["Documentación del plugin de SnapCenter para VMware vSphere"^] .
 
 
 
@@ -297,9 +297,9 @@ Si su base de datos o sistema de archivos están almacenados en máquinas virtua
 
 El repositorio de SnapCenter, que a veces se denomina base de datos NSM, almacena información y metadatos para cada operación SnapCenter.
 
-La base de datos del repositorio de MySQL Server se instala de manera predeterminada cuando se instala el servidor SnapCenter. Si MySQL Server ya está instalado y está realizando una instalación nueva de SnapCenter Server, deberá desinstalar MySQL Server.
+La instalación de SnapCenter Server instala la base de datos del repositorio de MySQL Server de forma predeterminada.  Si ya ha instalado MySQL Server y desea realizar una nueva instalación de SnapCenter Server, debe desinstalar MySQL Server.
 
-SnapCenter admite MySQL Server 8.0.37 o posterior como base de datos del repositorio SnapCenter. Si utilizaba una versión anterior de MySQL Server con una versión anterior de SnapCenter, durante una actualización de SnapCenter, MySQL Server se actualiza a la versión 8.0.37 o posterior.
+SnapCenter admite MySQL Server 8.0.37 o posterior como base de datos del repositorio de SnapCenter .  Si utiliza una versión anterior de MySQL Server con una versión anterior de SnapCenter, el proceso de actualización de SnapCenter actualiza MySQL Server a la versión 8.0.37 o posterior.
 
 El repositorio de SnapCenter almacena la siguiente información y metadatos:
 
