@@ -98,35 +98,21 @@ Seleccione *Retener copias para* y, a continuación, especifique el número de d
 
 
  a| 
-Período de bloqueo de la copia snapshot primaria
+Período de bloqueo de copia de instantánea
  a| 
-Seleccione Período de bloqueo de instantáneas y seleccione Días, Meses o Años.
+Seleccione *Período de bloqueo de copia de instantánea* y especifique días, meses o años.
 
 El período de retención de SnapLock debe ser inferior a 100 años.
-
-
-
- a| 
-Período de bloqueo de copia de snapshot secundaria
- a| 
-Seleccione *Periodo de bloqueo de copia de instantánea secundaria* y seleccione Días, Meses o Años.
 
 |===
 .. Seleccione una etiqueta de política.
 +
-Según la etiqueta de la política que seleccione, ONTAP aplicará la política de retención de Snapshot secundaria que corresponda a esa etiqueta.
 
-+
-
-NOTE: Si ha seleccionado *Actualizar SnapMirror después de crear una copia Snapshot local*, puede especificar opcionalmente la etiqueta de la directiva secundaria. Sin embargo, si ha seleccionado *Actualizar SnapVault después de crear una copia Snapshot local*, debe especificar la etiqueta de la directiva secundaria.
+NOTE: Puede asignar etiquetas SnapMirror a instantáneas principales para replicación remota, lo que permite que las instantáneas principales descarguen la operación de replicación de instantáneas de SnapCenter a los sistemas secundarios de ONTAP .  Esto se puede hacer sin habilitar la opción SnapMirror o SnapVault en la página de políticas.
 
 
 
 . En la sección Select secondary replication options, seleccione una de las siguientes opciones de replicación secundaria o ambas:
-+
-
-NOTE: Debe seleccionar las opciones de replicación secundarias para que el *Periodo de bloqueo de copia de instantánea secundaria* sea efectivo.
-
 +
 |===
 | Para este campo... | Realice lo siguiente... 

@@ -93,10 +93,6 @@ NOTE: Si ha seleccionado *Actualizar SnapMirror después de crear una copia Snap
 
 . En la sección Select secondary replication options, seleccione una de las siguientes opciones de replicación secundaria o ambas:
 +
-
-NOTE: Debe seleccionar las opciones de replicación secundarias para que el *Periodo de bloqueo de copia de instantánea secundaria* sea efectivo.
-
-+
 |===
 | Para este campo... | Realice lo siguiente... 
 
@@ -158,18 +154,11 @@ Elija esta opción si desea especificar el número de días que SnapCenter retie
 
 
  a| 
-Período de bloqueo de la copia snapshot primaria
+Período de bloqueo de copia de instantánea
  a| 
-Seleccione Período de bloqueo de instantáneas y seleccione Días, Meses o Años.
+Seleccione el período de bloqueo de la instantánea y especifique la duración en días, meses o años.
 
 El período de retención de SnapLock debe ser inferior a 100 años.
-
-
-
- a| 
-Período de bloqueo de copia de snapshot secundaria
- a| 
-Seleccione *Periodo de bloqueo de copia de instantánea secundaria* y seleccione Días, Meses o Años.
 
 |===
 +
@@ -178,7 +167,7 @@ IMPORTANT: Debe establecer el número de retención en 2 o superior. El valor m�
 
 +
 
-NOTE: El valor de retención máximo es 1018. Se producirá un error en los backups si la retención se establece en un valor superior a la versión de ONTAP subyacente.
+NOTE: El valor máximo de retención es 1018.  Las copias de seguridad fallarán si la retención se establece en un valor superior al que admite la versión de ONTAP .
 
 . En la página Script, introduzca la ruta del script previo o script posterior que desea que el servidor SnapCenter ejecute antes o después de la operación de backup respectivamente, y el límite de tiempo que SnapCenter espera para que se ejecute el script.
 +
