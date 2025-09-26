@@ -46,6 +46,12 @@ Se pueden usar scripts previos y posteriores en operaciones de protección de da
 
 
 
+== Grupo de consistencia (GC)
+
+Un grupo de consistencia es una colección de volúmenes administrados como una sola unidad.  Los CG están sincronizados para garantizar la coherencia de los datos en todas las unidades de almacenamiento y volúmenes.  En ONTAP, proporcionan una gestión sencilla y una garantía de protección para una carga de trabajo de aplicaciones que abarca múltiples volúmenes. Obtenga más información sobre link:https://docs.netapp.com/us-en/ontap/consistency-groups["grupos de consistencia"^] .
+
+
+
 == Uso de scripts previos y posteriores
 
 Los scripts previos y posteriores pueden automatizar las tareas de protección de datos antes o después del trabajo. Por ejemplo, puede agregar un script para notificarle los fallos o advertencias del trabajo. Antes de configurarlos, asegúrese de comprender los requisitos de estos scripts.

@@ -26,9 +26,15 @@ NOTE: Los volúmenes de aplicaciones solo admiten conexiones iSCSI directas y NF
 ** En el campo Host Name, introduzca el nombre del host.
 
 
-. En la página Storage Footprint, introduzca el nombre del sistema de almacenamiento, seleccione uno o volúmenes y especifique los LUN o qtree asociados.
+. En la página Huella de almacenamiento, realice las siguientes acciones:
 +
-Puede añadir varios sistemas de almacenamiento.
+** Seleccione el tipo de almacenamiento.
+** Introduzca el nombre del sistema de almacenamiento.
+** Seleccione las unidades de almacenamiento.
++
+Puede agregar varias unidades de almacenamiento.
+
+
 
 . Revise el resumen y, a continuación, haga clic en *Finalizar*.
 . En la página Resources, seleccione *volumen de aplicación* en la lista *View* para ver todos los volúmenes de aplicación que ha agregado.
@@ -60,5 +66,5 @@ Si es necesario, SnapCenter permite deshacer la operación de eliminación.
 
 . En el panel de navegación izquierdo, haga clic en *Recursos* y, a continuación, seleccione el complemento Oracle Database en la lista.
 . En la página Resources, seleccione *volumen de aplicación* en la lista *View*.
-. Haga clic en image:../media/delete_icon.gif["icono de eliminar"]el icono de elete] para modificar los valores.
+. Hacer clicimage:../media/delete_icon.gif["icono de eliminar"] para eliminar el volumen de la aplicación.
 

@@ -87,4 +87,4 @@ Si el valor asignado a SnapmirrorStatusUpdateWaitTime es menor, las copias de ba
 
 La información relativa a los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando Get-Help _command_name_.
 
-Alternativamente, también puede consultar el https://library.netapp.com/ecm/ecm_download_file/ECMLP3337666["Guía de referencia de comandos del software SnapCenter"^] o https://docs.netapp.com/us-en/snapcenter-cmdlets/index.html["Guía de referencia de cmdlets de SnapCenter Software"^].
+Alternativamente, también puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP3359469["Guía de referencia de comandos del software SnapCenter"^] o https://docs.netapp.com/us-en/snapcenter-cmdlets/index.html["Guía de referencia de cmdlets de SnapCenter Software"^] .

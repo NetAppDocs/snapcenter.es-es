@@ -11,7 +11,7 @@ summary: Debe crear roles de SVM si configura SVM en sistemas ASA R2 para su uso
 
 
 [role="lead"]
-Hay varios comandos de la CLI de ONTAP que debe ejecutar para crear un rol para un usuario de SVM nuevo en los sistemas ASA R2. Este rol es obligatorio si configura SVM en sistemas ASA R2 para su uso con SnapCenter y no desea utilizar el rol vsadmin.
+Hay varios comandos CLI de ONTAP que debe ejecutar para crear una función para un nuevo usuario de SVM en sistemas ASA r2.  Esta función es necesaria si configura SVM en sistemas ASA r2 para usar con SnapCenter y no desea utilizar la función vsadmin.
 
 * Pasos*
 

@@ -68,4 +68,4 @@ Después de modificar el valor del parámetro, reinicie SnapCenter el servicio d
 
 `/opt/NetApp/snapcenter/spl/bin/spl restart`
 
-La información relativa a los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando Get-Help nombre_comando. Alternativamente, puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP3337666["Guía de referencia de comandos del software SnapCenter"^].
+La información sobre los parámetros que se pueden utilizar con el comando y sus descripciones se puede obtener ejecutando Get-Help command_name.  Alternativamente, puede consultar la https://library.netapp.com/ecm/ecm_download_file/ECMLP3359469["Guía de referencia de comandos del software SnapCenter"^] .

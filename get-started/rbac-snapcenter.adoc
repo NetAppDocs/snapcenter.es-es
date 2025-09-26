@@ -11,18 +11,18 @@ summary: El RBAC de SnapCenter y los permisos de ONTAP permiten que los administ
 
 
 [role="lead"]
-El control de acceso basado en roles (RBAC) de SnapCenter y los permisos de ONTAP permiten que los administradores de SnapCenter delegen el control de los recursos de SnapCenter a diferentes usuarios o grupos de usuarios. Este acceso con gestión central otorga a los administradores de aplicaciones la posibilidad de trabajar con seguridad dentro de entornos delegados.
+El control de acceso basado en roles (RBAC) de SnapCenter y los permisos de ONTAP permiten a los administradores de SnapCenter asignar acceso a recursos a usuarios o grupos.  Este acceso administrado centralmente permite a los administradores de aplicaciones trabajar de forma segura dentro de entornos designados.
 
-Es posible crear y modificar roles, así como añadir acceso a recursos para los usuarios en cualquier momento. Sin embargo, cuando configura SnapCenter por primera vez, debe añadir al menos usuarios o grupos de Active Directory a roles, y luego otorgar acceso a recursos a esos usuarios o grupos.
+Debe crear o modificar roles y agregar acceso a recursos a los usuarios.  Al configurar SnapCenter por primera vez, agregue usuarios o grupos de Active Directory a los roles y asigne recursos a esos usuarios o grupos.
 
 
-NOTE: No se puede usar SnapCenter para cuentas de usuarios o grupos. Creó cuentas de usuario o de grupo en Active Directory mediante el sistema operativo o la base de datos.
+NOTE: SnapCenter no crea cuentas de usuarios o grupos.  Crear cuentas de usuario o grupo en el Directorio Activo del sistema operativo o de la base de datos.
 
 
 
 == Tipos de RBAC en SnapCenter
 
-SnapCenter usa los siguientes tipos de control de acceso basado en roles:
+SnapCenter admite los siguientes tipos de control de acceso basado en roles:
 
 * RBAC de SnapCenter
 * RBAC en el nivel de aplicaciones
@@ -34,7 +34,7 @@ SnapCenter usa los siguientes tipos de control de acceso basado en roles:
 
 === RBAC de SnapCenter
 
-SnapCenter tiene roles predefinidos y es posible asignar usuarios o grupos de usuarios a estos roles. Los roles predefinidos son:
+SnapCenter tiene roles predefinidos y usted puede asignar usuarios o grupos a estos roles.
 
 * SnapCenter Admin
 * App Backup and Clone Admin
@@ -42,16 +42,16 @@ SnapCenter tiene roles predefinidos y es posible asignar usuarios o grupos de us
 * Infrastructure Admin
 
 
-Cuando se asigna un rol a un usuario, solo los trabajos relevantes para ese usuario son visibles en la página Jobs, a menos que se haya asignado el rol SnapCenterAdmin.
+Cuando se asigna un rol a un usuario, SnapCenter muestra los trabajos que son relevantes para ese usuario en la página Trabajos, a menos que el usuario tenga el rol SnapCenterAdmin.
 
 También es posible crear nuevos roles y gestionar los permisos y los usuarios. Es posible asignar permisos a usuarios o grupos para que tengan acceso a objetos de SnapCenter, como hosts, conexiones de almacenamiento y grupos de recursos.
 
 Se pueden asignar permisos de RBAC a usuarios y grupos dentro del mismo bosque y a usuarios de distintos bosques. No es posible asignar permisos de RBAC a usuarios que pertenecen a grupos anidados en diferentes bosques.
 
 
-NOTE: Si se crea un rol personalizado, este debe contener todos los permisos del rol SnapCenterAdmin. Si solo se copian algunos de los permisos, como Host add o Host remove, no se pueden ejecutar tales operaciones.
+NOTE: Al crear un rol personalizado, asegúrese de que incluya todos los permisos del rol SnapCenterAdmin.  Si copia solo algunos permisos, SnapCenter le impedirá realizar todas las operaciones.
 
-Los usuarios deben proporcionar autenticación durante el inicio de sesión, ya sea desde la interfaz gráfica de usuario o mediante cmdlets de PowerShell. Si un usuario es parte de más de un rol, después de introducir las credenciales de inicio de sesión, se le solicita que especifique el rol que desea usar. Los usuarios también deben proporcionar autenticación para ejecutar las API.
+Los usuarios deben autenticarse al iniciar sesión a través de la interfaz de usuario o los cmdlets de PowerShell.  Si los usuarios tienen varios roles, seleccionan un rol después de iniciar sesión. También se requiere autenticación para ejecutar API.
 
 
 
@@ -59,9 +59,9 @@ Los usuarios deben proporcionar autenticación durante el inicio de sesión, ya 
 
 SnapCenter usa credenciales para verificar que los usuarios de SnapCenter autorizados también tengan permisos en el nivel de aplicaciones.
 
-Por ejemplo, para ejecutar operaciones de protección de datos en un entorno de SQL Server, se deben configurar las credenciales con las credenciales de Windows o SQL correspondientes. El servidor de SnapCenter autentica el conjunto de credenciales con cualquiera de estos métodos. Para realizar operaciones de protección de datos en un entorno de sistema de archivos de Windows en almacenamiento de ONTAP, el rol SnapCenter admin debe tener Privileges de administrador en el host de Windows.
+Por ejemplo, para realizar operaciones de protección de datos en un entorno de SQL Server, configure las credenciales de Windows o SQL correctas.  Si desea realizar operaciones de protección de datos en un entorno de sistema de archivos de Windows en el almacenamiento ONTAP , el rol de administrador de SnapCenter debe tener privilegios de administrador en el host de Windows.
 
-Del mismo modo, si se desean ejecutar operaciones de protección de datos en una base de datos de Oracle y la autenticación del sistema operativo está deshabilitada en el host de base de datos, se deben configurar las credenciales con la base de datos de Oracle o las credenciales de ASM de Oracle. El servidor de SnapCenter autentica el conjunto de credenciales mediante uno de estos métodos, según la operación.
+De manera similar, si desea realizar operaciones de protección de datos en una base de datos Oracle y si la autenticación del sistema operativo (SO) está deshabilitada en el host de la base de datos, debe configurar las credenciales con la base de datos Oracle o las credenciales de Oracle ASM.  El servidor SnapCenter autentica las credenciales establecidas utilizando uno de estos métodos según la operación.
 
 
 
@@ -69,24 +69,21 @@ Del mismo modo, si se desean ejecutar operaciones de protección de datos en una
 
 Cuando se utiliza el plugin de SnapCenter VMware para protección de datos coherente con máquinas virtuales, vCenter Server ofrece un nivel adicional de control de acceso basado en roles. El plugin de VMware de SnapCenter es compatible con el control de acceso basado en roles de vCenter Server y de ONTAP. https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_types_of_rbac_for_snapcenter_users.html["Más información"^]
 
-|===
+NOTA: NetApp recomienda crear una función de ONTAP para las operaciones del SnapCenter Plug-in for VMware vSphere y asignarle todos los privilegios necesarios.
 
-
-| *Mejor práctica:* NetApp recomienda crear un rol de ONTAP para las operaciones del plugin de SnapCenter para VMware vSphere y asignarle todos los privilegios necesarios. 
-|===
 
 
 === Permisos de ONTAP
 
-Debe crear una cuenta vsadmin con los permisos requeridos para tener acceso al sistema de almacenamiento. link:../install/task_add_a_user_or_group_and_assign_role_and_assets.html["Más información"]
+Debe crear una cuenta vsadmin con los permisos necesarios para acceder al sistema de almacenamiento.link:../install/task_add_a_user_or_group_and_assign_role_and_assets.html["Más información"]
 
 
 
 == Permisos asignados a los roles predefinidos de SnapCenter
 
-Cuando se agrega un usuario a un rol, se le debe asignar el permiso StorageConnection para permitir la comunicación con Storage Virtual Machine (SVM) o asignarle una SVM al usuario para habilitar su uso. El permiso Storage Connection permite que los usuarios creen conexiones de SVM.
+Cuando agrega un usuario a un rol, asigne el permiso StorageConnection para habilitar la comunicación de la máquina virtual de almacenamiento (SVM) o asigne una SVM al usuario para otorgarle permiso para usar la SVM.  El permiso de Conexión de almacenamiento permite a los usuarios crear conexiones SVM.
 
-Por ejemplo, un usuario con el rol SnapCenter Admin puede crear conexiones de SVM y asignarlas a un usuario con el rol App Backup and Clone Admin, cuyos permisos predeterminados no incluyen la creación o edición de SVM. Si no hay una conexión de SVM, los usuarios no pueden ejecutar ninguna operación de backup, clonado o restauración.
+Por ejemplo, un administrador de SnapCenter puede crear conexiones SVM y asignarlas a usuarios administradores de App Backup y Clone, quienes no pueden crear ni editar conexiones SVM.  Sin una conexión SVM, los usuarios no pueden realizar operaciones de copia de seguridad, clonación o restauración.
 
 
 
@@ -376,7 +373,7 @@ No aplicable
 
 === Backup and Clone Viewer
 
-El rol Backup and Clone Viewer tiene una vista de solo lectura de todos los permisos. Este rol también tiene permisos habilitados para detección, generación de informes y acceso a la consola.
+La función Visor de copias de seguridad y clones tiene una vista de solo lectura de todos los permisos.  Esta función también tiene permisos habilitados para descubrimiento, informes y acceso al Panel de Control.
 
 |===
 | Permisos | Activado | Cree | Lea | Actualizar | Eliminar 

@@ -13,7 +13,7 @@ summary: Puede usar un plugin de SnapCenter con las tecnologías SnapMirror y Sn
 [role="lead"]
 Es posible utilizar un complemento de SnapCenter con la tecnología SnapMirror de ONTAP para crear copias de reflejo de conjuntos de backups en otro volumen, y con la tecnología ONTAP SnapVault para realizar replicaciones de backup disco a disco para cumplimiento de normativas y otros fines relacionados con la gobernanza. Antes de ejecutar estas tareas, debe configurar una relación de protección de datos entre los volúmenes de origen y de destino, e inicializar la relación.
 
-SnapCenter realiza las actualizaciones a SnapMirror y SnapVault después de que finaliza la operación de Snapshot. Las actualizaciones de SnapMirror y SnapVault se realizan como parte del trabajo de SnapCenter; no cree una programación de ONTAP aparte.
+SnapCenter realiza las actualizaciones de SnapMirror y SnapVault después de completar la operación de instantánea.  Las actualizaciones de SnapMirror y SnapVault se realizan como parte del trabajo de SnapCenter .  Si está utilizando la sincronización activa de SnapMirror , utilice las programaciones predeterminadas de SnapMirror o SnapVault tanto para la sincronización activa de SnapMirror como para las relaciones asincrónicas.
 
 
 NOTE: Si llegó a SnapCenter desde un producto NetApp SnapManager y está satisfecho con las relaciones de protección de datos que ha configurado, puede omitir esta sección.
