@@ -2720,7 +2720,6 @@
   <block id="718d9231009edb9654b9f6f52346a835" category="list-text">Firewalls, proxies u otros dispositivos de red no deben interferir con las conexiones.</block>
   <block id="eceb61ca100437ca326b49341fc1f909" category="list-text">Si especifica un puerto personalizado al instalar SnapCenter, tendrá que añadir un regla de firewall en el host del plugin para dicho puerto en el cargador del plugin de SnapCenter.</block>
   <block id="29e256a27c9d420cee02c5cda005de01" category="paragraph">En la tabla siguiente se enumeran los distintos puertos y sus valores predeterminados.</block>
-  <block id="ed00b70cc595a411eff2cc42510a291f" category="paragraph">Puerto SnapCenter</block>
   <block id="18622e175ff22b2375f9cbc2314b3285" category="paragraph">Puerto de comunicación SMCore de SnapCenter</block>
   <block id="91ca015b30de2a05aff2f16ec93231dd" category="paragraph">Puerto MySQL</block>
   <block id="4abc501abe98e95144eba2c4d17174ad" category="paragraph">Hosts de plugins de Windows</block>
@@ -9612,4 +9611,5 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="995c8f79a8e07fbd8d519e45d03d6004" category="paragraph">La consola NetApp , construida sobre la base BlueXP mejorada y reestructurada, proporciona una gestión centralizada del almacenamiento NetApp y de los servicios de datos NetApp en entornos locales y en la nube a nivel empresarial, brindando información en tiempo real, flujos de trabajo más rápidos y una administración simplificada, que es altamente segura y compatible.</block>
   <block id="2ef9d641d45afe99b74ad6f9a9f797ad" category="inline-link-macro">Notas de la versión de la consola de NetApp</block>
   <block id="1e3eeac5409758903bc21870184a640a" category="paragraph">Para obtener más detalles sobre lo que ha cambiado, consulte la<block ref="06d876b9fcdfcba8772d93beac1ca38b" category="inline-link-macro-rx"></block> .</block>
+  <block id="e6f36a956625505e0a3733e3e0073fa0" category="paragraph">Puerto web de SnapCenter</block>
 </blocks>
