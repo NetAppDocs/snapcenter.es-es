@@ -156,14 +156,13 @@ Para EMS, consulte https://docs.netapp.com/us-en/snapcenter/admin/concept_manage
 
 . Revisa el resumen y luego selecciona *Finalizar*.
 . Supervise el progreso de la operación seleccionando *Monitor* > *Trabajos*.
++
+
+NOTE: Después de crear el clon, no debe cambiar nunca el nombre.
 
 
-.Después de terminar
-Después de crear el clon, no debe cambiar nunca el nombre.
 
 .Información relacionada
-https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Clone_operation_might_fail_or_take_longer_time_to_complete_with_default_TCP_TIMEOUT_value["Es posible que la operación de clonado produzca errores o tarde más tiempo en finalizar con el valor TCP_TIMEOUT predeterminado"]
-
 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/The_failover_cluster_instance_database_clone_fails["Se produce un error en el clon de la base de datos de la instancia de clúster"]
 
 --

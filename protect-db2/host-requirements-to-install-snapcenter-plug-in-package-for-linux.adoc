@@ -22,9 +22,10 @@ Sistemas operativos
  a| 
 * Red Hat Enterprise Linux
 * SUSE Linux Enterprise Server (SLES)
++
+Para obtener la información más reciente sobre las versiones compatibles, consulte la https://imt.netapp.com/imt/imt.jsp?components=180320;180338;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"] .
 
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte la https://imt.netapp.com/matrix/imt.jsp?components=121073;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"].
 
 
 
@@ -51,7 +52,5 @@ Paquetes de software obligatorios
 Java 11 Oracle Java y OpenJDK
 
 Si ha actualizado JAVA a la versión más reciente, debe asegurarse de que la opción JAVA_HOME ubicada en /var/opt/snapcenter/spl/etc/spl.properties esté configurada en la versión DE JAVA correcta y en la ruta de acceso correcta.
-
-Para obtener la información más reciente sobre las versiones compatibles, consulte la https://imt.netapp.com/matrix/imt.jsp?components=121073;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"].
 
 |===

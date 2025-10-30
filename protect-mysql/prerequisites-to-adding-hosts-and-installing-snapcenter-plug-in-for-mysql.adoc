@@ -35,9 +35,6 @@ NOTE: IBM Java no es compatible con el host Windows y Linux.
 +
 http://www.java.com/en/download/manual.jsp["Descargar JAVA para todos los sistemas operativos"]
 
-+
-https://imt.netapp.com/matrix/imt.jsp?components=121071;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"]
-
 
 
 
@@ -48,9 +45,6 @@ https://imt.netapp.com/matrix/imt.jsp?components=121071;&solution=1259&isHWU&src
 * Debe haber instalado Java 11 en el host Linux.
 +
 http://www.java.com/en/download/manual.jsp["Descargar JAVA para todos los sistemas operativos"]
-
-+
-https://imt.netapp.com/matrix/imt.jsp?components=121071;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"]
 
 * Para bases de datos MySQL que se ejecutan en un host Linux, cuando se instala el plugin para MySQL, el plugin de SnapCenter para UNIX se instala de forma automática.
 * Debe tener *bash* como shell por defecto para la instalación del plug-in.

@@ -17,10 +17,7 @@ Debe instalar el plugin de SnapCenter para base de datos MySQL mediante la inter
 * Debe instalar el plugin para base de datos MySQL en cada host Linux donde se debe proteger la instancia de MySQL.
 * El host Linux en el que se instala el plugin de SnapCenter para base de datos MySQL debe cumplir con los requisitos dependientes de software, base de datos y sistema operativo.
 +
-La herramienta de matriz de interoperabilidad (IMT) contiene la última información sobre las configuraciones soportadas.
-
-+
-https://imt.netapp.com/matrix/imt.jsp?components=121070;&solution=1259&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"]
+El https://imt.netapp.com/imt/imt.jsp?components=180320;180330;180338;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad (IMT)"] Contiene la información más reciente sobre las configuraciones compatibles.
 
 * El plugin de SnapCenter para base de datos MySQL forma parte del paquete de plugins de SnapCenter para Linux. Antes de instalar el paquete de plugins de SnapCenter para Linux, debe haber instalado SnapCenter en un host de Windows.
 

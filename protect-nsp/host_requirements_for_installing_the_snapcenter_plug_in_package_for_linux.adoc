@@ -56,8 +56,3 @@ Si ha actualizado JAVA a la versión más reciente, debe asegurarse de que la op
 
 |===
 Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=121073;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"]
-
-[]
-====
-
-====

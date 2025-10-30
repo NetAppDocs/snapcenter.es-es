@@ -31,8 +31,6 @@ Admite controladoras SCSI paravirtual de VMware. Los discos RDM pueden admitir 2
 
 
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte https://imt.netapp.com/matrix/imt.jsp?components=121034;&solution=1517&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
-
 
 
 === Limitaciones relacionadas con el servidor ESXi de VMware

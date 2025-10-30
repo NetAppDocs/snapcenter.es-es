@@ -17,10 +17,7 @@ Debe instalar el plugin de SnapCenter para base de datos SAP HANA mediante la in
 * Debe instalar el plugin para base de datos SAP HANA en cada host Linux en el que resida el cliente HDBSQL.
 * El host Linux en el que se instala el plugin de SnapCenter para base de datos SAP HANA debe cumplir con los requisitos dependientes de software, base de datos y sistema operativo.
 +
-La herramienta de matriz de interoperabilidad (IMT) contiene la última información sobre las configuraciones soportadas.
-
-+
-https://imt.netapp.com/matrix/imt.jsp?components=121029;&solution=1259&isHWU&src=IMT[]
+El https://imt.netapp.com/imt/imt.jsp?components=180320;180336;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad (IMT)"] Contiene la información más reciente sobre las configuraciones compatibles.
 
 * El plugin de SnapCenter para base de datos SAP HANA forma parte del paquete de plugins de SnapCenter para Linux. Antes de instalar el paquete de plugins de SnapCenter para Linux, debe haber instalado SnapCenter en un host de Windows.
 

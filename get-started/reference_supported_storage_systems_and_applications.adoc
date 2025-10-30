@@ -36,6 +36,6 @@ Debe utilizar ONTAP 9.17.1 si está utilizando SnapCenter Server 6.2 y los compl
 
 == Aplicaciones y bases de datos compatibles
 
-SnapCenter admite la protección de distintas aplicaciones y bases de datos. Para obtener información detallada sobre las aplicaciones y bases de datos soportadas, consulte https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"^].
+SnapCenter admite la protección de diferentes aplicaciones y bases de datos.
 
 SnapCenter admite la protección de las cargas de trabajo de Oracle y Microsoft SQL en entornos de centro de datos definido por software (SDDC) de VMware Cloud on Amazon Web Services (AWS). https://community.netapp.com/t5/Tech-ONTAP-Blogs/Protect-Oracle-MS-SQL-workloads-using-NetApp-SnapCenter-in-VMware-Cloud-on-AWS/ba-p/449168["Más información"^].
