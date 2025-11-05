@@ -168,6 +168,7 @@ No se admiten las siguientes operaciones de restauración y recuperación:
 * Restauración y recuperación de espacios de tablas en la base de datos del CDB raíz
 * Restauración de espacios de tablas temporales y asociados con PDB
 * Restauración y recuperación de espacios de tablas de varios PDB simultáneamente
+* Restauración de archivos temporales porque el complemento para Oracle no realiza copias de seguridad de los archivos temporales.
 * Restauración de backups de registros
 * Restauración de backups en otra ubicación
 * Restauración de archivos de registro de recuperación en cualquier configuración, excepto bases de datos en espera de Data Guard o de Active Data Guard

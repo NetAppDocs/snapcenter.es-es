@@ -22,6 +22,7 @@ NOTE: IBM Java no es compatible con el host Windows y Linux.
 * Al instalar un plugin en un host de Windows, si especifica una credencial que no está integrada o si el usuario pertenece a un usuario de grupo de trabajo local, debe deshabilitar UAC en el host. El plugin de SnapCenter para Microsoft Windows se pondrá en marcha de forma predeterminada con el plugin MySQL en hosts de Windows.
 * El servidor de SnapCenter debe tener acceso al puerto 8145 o un puerto personalizado de plugin para el host de MySQL.
 * Para MySQL 5,7, binlog debe especificarse en el archivo mysql config (my.cnf o mysql-server.cnf).
+* Si utiliza una versión de MySQL anterior a la 8.0, deberá instalar y habilitar manualmente el complemento MySQLX. El complemento MySQLX viene instalado y habilitado de forma predeterminada en MySQL 8.0 y versiones posteriores.
 
 
 

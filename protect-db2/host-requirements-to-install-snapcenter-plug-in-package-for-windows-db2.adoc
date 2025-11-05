@@ -22,7 +22,7 @@ Sistemas operativos
  a| 
 Microsoft Windows
 
-Para obtener la información más reciente sobre las versiones compatibles, consulte la https://imt.netapp.com/imt/imt.jsp?components=180321;180339;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"].
+Para obtener la información más reciente sobre las versiones compatibles, consulte la https://imt.netapp.com/imt/imt.jsp?components=180321;180339;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"] .
 
 
 

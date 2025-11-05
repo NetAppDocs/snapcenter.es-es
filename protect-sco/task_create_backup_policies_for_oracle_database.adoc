@@ -25,9 +25,9 @@ Antes de usar SnapCenter para realizar backups de recursos de base de datos de O
 .Acerca de esta tarea
 Si se selecciona la opción 'Retain the backup copies for a specific number of days', el período de retención de SnapLock debe ser menor o igual que los días de retención mencionados.
 
-+ Especificar un período de bloqueo de instantáneas evita la eliminación de las instantáneas hasta que expire el período de retención.  Esto podría llevar a retener una cantidad mayor de instantáneas que la cantidad especificada en la política.
+Si se especifica un período de bloqueo de Snapshot, se evita la eliminación de las snapshots hasta que caduque el período de retención. Esto podría llevar a retener un número mayor de instantáneas que el recuento especificado en la política.
 
-+ Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de SnapLock Vault como parte de la restauración heredarán el tiempo de vencimiento de SnapLock Vault.  El administrador de almacenamiento debe limpiar manualmente los clones después del tiempo de vencimiento de SnapLock .
+Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de SnapLock Vault como parte de la restauración heredarán el tiempo de vencimiento de SnapLock Vault. El administrador de almacenamiento debe limpiar manualmente los clones después del tiempo de vencimiento de SnapLock .
 
 * Pasos*
 
