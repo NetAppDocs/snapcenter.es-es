@@ -160,24 +160,9 @@ Para obtener información específica sobre la solución de problemas de .NET, c
 
 
  a| 
-Cola de mensajes
- a| 
-* Servicios de Message Queue Server
-+
-
-NOTE: Asegúrese de que ninguna otra aplicación utiliza el servicio MSMQ que SnapCenter crea y administra.
-
-* RabbitMQ
-* Erlang
-
-
-
-
- a| 
 Servicio de activación de procesos de Windows
  a| 
-* Modelo de proceso
-
+Modelo de proceso
 
 
 

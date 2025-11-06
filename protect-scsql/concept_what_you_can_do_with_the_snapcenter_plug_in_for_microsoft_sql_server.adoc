@@ -37,6 +37,3 @@ No se admite la verificación de la base de datos del sistema SQL Server. SnapCe
 * Programar operaciones de backup y de clonado
 * Supervisar operaciones de backup, de restauración y de clonado
 
-
-
-NOTE: El plugin para SQL Server no es compatible con el backup y la recuperación de las bases de datos de SQL Server en los recursos compartidos SMB.
