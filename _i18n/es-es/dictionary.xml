@@ -729,7 +729,6 @@
   <block id="043833147a39840644f2ff01a835f90d" category="section-title">Funciones del plugin de SnapCenter para Microsoft SQL Server</block>
   <block id="50e95eafa6faf8d2ee3f01921820b42b" category="list-text">Automatiza las operaciones de backup, restauración y clonado para aplicaciones en bases de datos de Microsoft SQL Server en el entorno SnapCenter.</block>
   <block id="e40237d2b53363bc373f8134071d1be1" category="list-text">Admite bases de datos de Microsoft SQL Server en VMDK y LUN de asignación de dispositivo sin formato (RDM) cuando se implementa el plugin de SnapCenter para VMware vSphere y se registra el plugin con SnapCenter</block>
-  <block id="a7e3ff2bca34971756f1600032ff8b61" category="list-text">Admite el aprovisionamiento de solo recursos compartidos SMB. No se ofrece compatibilidad para realizar backups de bases de datos de SQL Server en recursos compartidos de SMB.</block>
   <block id="6bff10ef4d0d0d6d7ed28de9adc0169d" category="list-text">Admite importar backups desde SnapManager para Microsoft SQL Server a SnapCenter.</block>
   <block id="1b789581aeaa48640561ebae3b263a76" category="list-text">Posibilita la protección de datos para aplicaciones de otros plugins que se ejecutan en hosts Windows en el entorno de SnapCenter</block>
   <block id="d764b7be86ece9a7b21fa445a8e1493c" category="list-text">Automatiza las operaciones de backup, restauración y clonado para aplicaciones en sistemas de archivos de Microsoft en su entorno SnapCenter</block>
@@ -2703,9 +2702,6 @@
   <block id="623ef35114e69633221d2c9bf99f6cab" category="list-text">Activación HTTP de Windows Communication Foundation (WCF) 45</block>
   <block id="c38d32373eca3e6335e44b42893f0034" category="list-text">Activación de TCP</block>
   <block id="cb6ddd90b08469e2479460ec34538fe2" category="list-text">Activación HTTP</block>
-  <block id="c3dbd8c35d4829310dd57365a749f10f" category="paragraph">Cola de mensajes</block>
-  <block id="9c7750973d73f078f45c6bfd80cbfc85" category="list-text">Servicios de Message Queue Server</block>
-  <block id="be0efd214f0b56cf8372d18ec1837f53" category="admonition">Asegúrese de que ninguna otra aplicación utiliza el servicio MSMQ que SnapCenter crea y administra.</block>
   <block id="a8e1305e0c86caf1fec261807b3362ef" category="paragraph">Servicio de activación de procesos de Windows</block>
   <block id="494ecde4fb6ee77e99799902ed23cd14" category="list-text">Modelo de proceso</block>
   <block id="293616622aeda675821b42e39b4d4e7b" category="paragraph">API de configuración</block>
@@ -5604,7 +5600,6 @@
   <block id="c48d82f0b1e5949ce3d34dc8ac74b4b5" category="paragraph">No se admite la verificación de la base de datos del sistema SQL Server. SnapCenter clona las bases de datos para realizar una operación de verificación. SnapCenter no puede clonar bases de datos del sistema SQL Server y, por lo tanto, no se admite la verificación de estas bases de datos.</block>
   <block id="c27ceb4a4892c429a975a62841762540" category="list-text">Programar operaciones de backup y de clonado</block>
   <block id="aa71cd3a5a90a32aafb3072b19a68b09" category="list-text">Supervisar operaciones de backup, de restauración y de clonado</block>
-  <block id="c343d8ab7af87f16e58b8e8040d7813a" category="admonition">El plugin para SQL Server no es compatible con el backup y la recuperación de las bases de datos de SQL Server en los recursos compartidos SMB.</block>
   <block id="03aec48a1392a75e035647bb7b9f190b" category="summary">De forma predeterminada, se asignan modelos de recuperación específicos a cada tipo de base de datos. El administrador de la base de datos de SQL Server puede reasignar cada base de datos a otro modelo de recuperación.</block>
   <block id="4be39d40645ee3666c8949ae4f085dd9" category="doc">Modelos de recuperación de SQL Server admitidos por SnapCenter</block>
   <block id="628e7a9f62e25a7947450f9f3f0712d6" category="paragraph">SnapCenter admite tres tipos de modelos de recuperación de SQL Server:</block>
@@ -7827,7 +7822,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="10dbf6dc6b3b30fd58efded1253516d8" category="paragraph">Plugin de SnapCenter para base de datos de Exchange</block>
   <block id="b0ca30368b247fa738c8bdba36dd4d73" category="paragraph">NET predeterminado. El plugin para Windows utiliza el puerto TCP para conectarse a las devoluciones de llamadas VSS de Exchange.</block>
   <block id="cc0974b8a511f2e4b4d021cda6e5e820" category="paragraph">Complementos compatibles con NetApp para SnapCenter</block>
-  <block id="7eaa993723e57b3bfc99923c196e2e17" category="list-text">RabbitMQ</block>
   <block id="6905661e5d7f8f3e6a4faffbbab0f627" category="cell">Requisitos del host de Windows</block>
   <block id="e7074f744b12e993cbdc6c77ee980b3e" category="list-text">Red Hat Enterprise Linux (RHEL) 8 y 9</block>
   <block id="447430d602cceb081264e037425cd96e" category="list-text">SUSE Linux Enterprise Server (SLES) 15</block>
@@ -9608,4 +9602,6 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="9ece03be74b25dcc59b19ce7d0ef2dfb" category="list-text">Realice una copia de seguridad de todos los archivos de configuración de SnapCenter modificados (como SnapDriveService.exe.config, SMCoreServiceHost.exe.config, etc.) en el host del servidor SnapCenter o en el host del complemento.</block>
   <block id="def9934ca3f718accf65ee67850cf9eb" category="list-text">Si la columna Estado general muestra "Actualización disponible" para uno de los hosts de complementos, haga clic en el nombre del host del complemento y realice lo siguiente:</block>
   <block id="25c5cc506d7be2c3d358fc8fd23f0e8f" category="admonition">Si no selecciona *Omitir comprobaciones previas*, SnapCenter comprueba si el host del complemento cumple los requisitos.  Si no se cumplen los requisitos, aparecerán mensajes de error o advertencia.  Si el error está relacionado con el espacio en disco o la RAM, puede actualizar el archivo web.config ubicado en _C:\Program Files\ NetApp\ SnapCenter WebApp_ o los archivos de configuración de PowerShell ubicados en _C:\Windows\System32\WindowsPowerShell\v1.0\Modules\ SnapCenter\_ para modificar los valores predeterminados. Si el error está relacionado con los parámetros restantes, deberá solucionar el problema y luego validar los requisitos nuevamente.</block>
+  <block id="ef99553115dfc1718a9b51a970da1ae9" category="paragraph">Especifica la extensión del archivo de registro de archivo.</block>
+  <block id="7f051ce525ea23f09ed6b21ec49fa590" category="paragraph">Por ejemplo, si el registro de archivo es log_backup_0_1.log, especifique .log como la extensión del archivo.</block>
 </blocks>

@@ -128,9 +128,9 @@ ARCHIVO_LOG_EXT
  a| 
 extensión_archivo
  a| 
-Especifica la longitud de la extensión del archivo de registro de archivos.
+Especifica la extensión del archivo de registro de archivo.
 
-Por ejemplo, si el registro de archivos es log_backup_0_0_0_0.161518551942 9 y si el valor file_extension es 5, la extensión del registro conservará 5 dígitos, que son 16151.
+Por ejemplo, si el registro de archivo es log_backup_0_1.log, especifique .log como la extensión del archivo.
 
 
 
