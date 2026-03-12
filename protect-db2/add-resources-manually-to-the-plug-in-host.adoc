@@ -25,7 +25,7 @@ La detección manual no es compatible con las siguientes configuraciones:
 
 .Pasos
 . En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin de SnapCenter para IBM DB2 en la lista desplegable.
-. En la página Recursos, haga clic en *Agregar recurso de IBM DB2*.
+. En la página Recursos, selecciona *Add IBM DB2 Resource*.
 . En la página Provide Resource Details, realice las siguientes acciones:
 +
 |===
@@ -61,21 +61,28 @@ Especifique el nombre de la instancia, que es el elemento principal de la base d
 
 
  a| 
+Rutas de montaje
+ a| 
+Introduce las rutas de montaje donde está montado el recurso. Esto solo es aplicable a hosts Windows.
+
+
+
+ a| 
 Credenciales
  a| 
 Seleccione las credenciales o agregue información para la credencial.
 
-Esto es opcional.
+Este campo es opcional.
 
 |===
 . En la página Provide Storage Footprint, seleccione un tipo de almacenamiento y elija uno o más volúmenes, LUN y qtrees y, a continuación, haga clic en *Save*.
 +
 Opcional: Puede hacer clic en el icono *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]* para añadir más volúmenes, LUN y qtrees desde otros sistemas de almacenamiento.
 
-. Opcional: En la página Resource Settings, en el caso de los recursos del host de Windows, introduzca pares de clave-valor personalizados para el plugin de IBM DB2
+. Opcional: en la página Resource Settings, para recursos en hosts Linux donde esté instalado el SnapCenter Plug-in for IBM Db2, introduce pares clave-valor personalizados para el IBM Db2 plug-in. Los pares clave-valor personalizados no son compatibles con bases de datos IBM Db2 que estén registradas como un Windows plug-in centralizado.
 . Revise el resumen y, a continuación, haga clic en *Finalizar*.
 +
-Las bases de datos se muestran junto con información como el nombre del host, las políticas y los grupos de recursos asociados y el estado general
+Las bases de datos se muestran junto con información como el nombre de host, los grupos de recursos y políticas asociados, y el estado general.
 
 
 

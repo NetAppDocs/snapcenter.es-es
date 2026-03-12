@@ -32,7 +32,7 @@ NOTE: IBM Java no es compatible con el host Windows y Linux.
 * Debe haber habilitado la conexión SSH por contraseña para el usuario raíz o no raíz.
 * Debe haber instalado Java 11 en el host de Windows.
 +
-http://www.java.com/en/download/manual.jsp["Descargar JAVA para Windows"]
+link:https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html["Descargar JAVA para Windows"^]
 
 
 
@@ -41,12 +41,12 @@ http://www.java.com/en/download/manual.jsp["Descargar JAVA para Windows"]
 == Hosts Linux y AIX
 
 * Debe haber habilitado la conexión SSH por contraseña para el usuario raíz o no raíz.
-* Debe haber instalado Java 11 en el host Linux.
+* Debes haber instalado Java 11 en tus hosts Linux o AIX.
 +
-http://www.java.com/en/download/manual.jsp["Descargar JAVA para Linux"]
+link:https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html["Descargar JAVA para Linux"^]
 
 +
-https://developer.ibm.com/languages/java/semeru-runtimes/downloads/?license=IBM["Descargar JAVA para AIX"]
+link:https://developer.ibm.com/languages/java/semeru-runtimes/downloads/?license=IBM["Descargar JAVA para AIX"^]
 
 * Para bases de datos IBM DB2 que se ejecutan en un host Linux, cuando se instala el plugin para IBM DB2, el plugin de SnapCenter para UNIX se instala automáticamente.
 * Debe tener *bash* como shell por defecto para la instalación del plug-in.

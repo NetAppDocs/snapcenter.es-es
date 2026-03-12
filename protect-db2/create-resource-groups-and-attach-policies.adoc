@@ -14,12 +14,12 @@ summary: Un grupo de recursos es el contenedor al que debe añadir los recursos 
 Un grupo de recursos es el contenedor al que debe añadir los recursos que desea proteger e incluir en un backup. Permite realizar un backup en simultáneo con todos los datos que están asociados con una determinada aplicación. Un grupo de recursos es necesario para cualquier trabajo de protección de datos. También debe añadir una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar.
 
 .Acerca de esta tarea
-* Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+* Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de SnapLock Vault como parte de la restauración heredarán el tiempo de caducidad de SnapLock Vault. Los administradores de almacenamiento deben limpiar manualmente los clones después del tiempo de caducidad de SnapLock.
 
 
 .Pasos
-. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
-. En la página Resources, haga clic en *New Resource Group*.
+. En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
+. En la página Recursos, selecciona *Nuevo grupo de recursos*.
 . En la página Name, realice los siguientes pasos:
 +
 |===
@@ -46,7 +46,7 @@ Por ejemplo, si añadió HR como etiqueta a varios grupos de recursos, más adel
 
 
  a| 
-Use un formato de nombre personalizado para la copia de Snapshot
+Usa un formato de nombre personalizado para las instantáneas
  a| 
 Marque esta casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de snapshot.
 
@@ -60,7 +60,7 @@ Esto permite filtrar información en la pantalla.
 . Seleccione los recursos de la sección *Recursos disponibles* y, a continuación, haga clic en la flecha derecha para moverlos a la sección *Recursos seleccionados*.
 . En la página Application Settings, realice lo siguiente:
 +
-.. Haga clic en la flecha *copias de seguridad* para establecer las opciones de copia de seguridad adicionales:
+.. Seleccione la flecha *backups* para establecer opciones de copia de seguridad adicionales:
 +
 Habilite el backup del grupo de consistencia y realice las siguientes tareas:
 
@@ -87,8 +87,8 @@ Seleccione este campo para evitar forzar un punto de coherencia de WAFL.
 +
 image:../media/application_settings.gif["configuración de la aplicación"]
 
-.. Haga clic en la flecha *Scripts* e introduzca los comandos PRE y POST para las operaciones de inactividad, instantánea y desactivación. También puede escribir los comandos previos para que se ejecuten antes de salir en caso de un fallo.
-.. Haga clic en la flecha *configuraciones personalizadas* e introduzca los pares personalizados clave-valor requeridos para todas las operaciones de protección de datos que utilizan este recurso.
+.. Selecciona la flecha *Scripts* e ingresa los comandos pre y post para las operaciones de quiesce, snapshot y unquiesce. También puedes ingresar los comandos pre que se ejecutarán antes de salir en caso de fallo.
+.. Selecciona la flecha *Custom Configurations* e ingresa los pares clave-valor personalizados que se necesitan para todas las operaciones de protección de datos usando este recurso.
 +
 |===
 | Parámetro | Ajuste | Descripción 
@@ -148,7 +148,7 @@ Debe utilizar este parámetro si los registros de archivo se encuentran en subdi
 
 NOTE: Los pares de clave-valor personalizados son compatibles con los sistemas de plugins de Linux IBM DB2 y no son compatibles con la base de datos IBM DB2 registrada como un plugin de Windows centralizado.
 
-.. Haga clic en la flecha * Herramienta de copia de instantáneas * para seleccionar la herramienta para crear instantáneas:
+.. Selecciona la flecha *Snapshot Copy Tool* para seleccionar la herramienta para crear instantáneas:
 +
 |===
 | Si desea que... | Realice lo siguiente... 
@@ -169,7 +169,7 @@ Seleccione *SnapCenter sin coherencia del sistema de archivos*.
 
 
  a| 
-Se escriba el comando que se ejecutará en el host a fin de crear copias de Snapshot.
+Para introducir el comando que se debe ejecutar en el host para crear instantáneas.
  a| 
 Seleccione *Otro* y, a continuación, introduzca el comando que se ejecutará en el host para crear una instantánea.
 
@@ -187,7 +187,7 @@ NOTE: También puede crear una política haciendo clic en *image:../media/add_po
 Las políticas figuran en la sección Configure schedules for selected policies.
 
 .. En la columna Configure Schedules, haga clic en *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]* en la política que desea configurar.
-.. En el cuadro de diálogo Agregar programas para la directiva _policy_name_ , configure la programación y, a continuación, haga clic en *Aceptar*.
+.. En el cuadro de diálogo Add schedules for policy _policy_name_, configure la programación y, a continuación, seleccione *OK*.
 +
 Policy_name es el nombre de la política seleccionada.
 
