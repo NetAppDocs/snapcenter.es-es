@@ -15,14 +15,14 @@ Un grupo de recursos es el contenedor al que debe añadir los recursos que desea
 
 .Acerca de esta tarea
 * Para crear backups de replicación del sistema SAP HANA, se recomienda añadir todos los recursos del sistema SAP HANA a un grupo de recursos. Esto garantiza una copia de seguridad sin problemas durante el modo de recuperación tras fallos.
-* Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las instantáneas de almacén de SnapLock como parte de la restauración heredarán el tiempo de caducidad de almacén de SnapLock. El administrador de almacenamiento debe limpiar manualmente los clones después de la hora de caducidad de SnapLock.
+* Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las snapshots de SnapLock Vault como parte de la restauración heredan el tiempo de caducidad de SnapLock Vault. El administrador de almacenamiento debe limpiar manualmente los clones después del tiempo de caducidad de SnapLock Vault.
 * No se admite la adición de bases de datos nuevas sin sincronización activa de SnapMirror a un grupo de recursos existente que contiene recursos con sincronización activa de SnapMirror.
 * No se admite la adición de bases de datos nuevas a un grupo de recursos existente en el modo de conmutación por error de la sincronización activa de SnapMirror. Puede añadir recursos al grupo de recursos solo en estado normal o de conmutación por error.
 
 
 .Pasos
-. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
-. En la página Resources, haga clic en *New Resource Group*.
+. En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
+. En la página Recursos, selecciona *Nuevo grupo de recursos*.
 . En la página Name, realice los siguientes pasos:
 +
 |===
@@ -49,21 +49,21 @@ Por ejemplo, si añadió HR como etiqueta a varios grupos de recursos, más adel
 
 
  a| 
-Utilice un formato de nombre personalizado para la copia de Snapshot
+Usa un formato de nombre personalizado para las instantáneas.
  a| 
-Marque esta casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de Snapshot.
+Marque esta casilla de comprobación e introduzca un formato de nombre personalizado que desee usar para el nombre de snapshot.
 
-Por ejemplo, customtext_resource group_policy_hostname o resource group_hostname. De forma predeterminada, se añade una fecha/hora al nombre de la Snapshot.
+Por ejemplo, customtext_resourcegroup_policy_hostname o resource group_hostname. Por defecto, se añade una marca de tiempo al nombre de la instantánea.
 
 |===
 . En la página Resources, seleccione un nombre de host de la lista desplegable *Host* y un tipo de recurso de la lista desplegable *Tipo de recurso*.
 +
 Esto permite filtrar información en la pantalla.
 
-. Seleccione los recursos de la sección *Recursos disponibles* y, a continuación, haga clic en la flecha derecha para moverlos a la sección *Recursos seleccionados*.
+. Seleccione los recursos de la sección *Recursos disponibles* y, a continuación, seleccione la flecha derecha para moverlos a la sección *Recursos seleccionados*.
 . En la página Application Settings, realice lo siguiente:
 +
-.. Haga clic en la flecha *copias de seguridad* para establecer las opciones de copia de seguridad adicionales:
+.. Seleccione la flecha *backups* para establecer opciones de copia de seguridad adicionales:
 +
 Habilite el backup del grupo de consistencia y realice las siguientes tareas:
 
@@ -73,9 +73,9 @@ Habilite el backup del grupo de consistencia y realice las siguientes tareas:
 
 
  a| 
-Permitir que se complete la operación de snapshot del grupo de consistencia
+Espere tiempo a que finalice la operación de snapshot de grupo de consistencia
  a| 
-Seleccione *Urgente*, *Medio* o *Relacionado* para especificar el tiempo de espera para completar la operación de instantánea.
+Seleccione *Urgente*, *Medio* o *Relacionado* para especificar el tiempo de espera para que se complete la operación de instantánea.
 
 Urgent = 5 segundos, Medium = 7 segundos y Relaxed = 20 segundos.
 
@@ -90,8 +90,8 @@ Seleccione este campo para evitar forzar un punto de coherencia de WAFL.
 +
 image:../media/application_settings.gif["configuración de la aplicación"]
 
-.. Haga clic en la flecha *Scripts* e introduzca los comandos PRE y POST para las operaciones de inactividad, instantánea y desactivación. También puede escribir los comandos previos para que se ejecuten antes de salir en caso de un fallo.
-.. Haga clic en la flecha *configuraciones personalizadas* e introduzca los pares personalizados clave-valor requeridos para todas las operaciones de protección de datos que utilizan este recurso.
+.. Selecciona la flecha *Scripts* e ingresa los comandos pre y post para las operaciones de quiesce, snapshot y unquiesce. También puedes ingresar los comandos pre que se ejecutarán antes de salir en caso de fallo.
+.. Selecciona la flecha *Custom Configurations* e ingresa los pares clave-valor personalizados que se necesitan para todas las operaciones de protección de datos usando este recurso.
 +
 |===
 | Parámetro | Ajuste | Descripción 
@@ -111,9 +111,9 @@ RETENCIÓN_LOG_ARCHIVO
  a| 
 número_de_días
  a| 
-Especifica la cantidad de días que se conservan los registros de archivo.
+Especifica el número de días que se retienen los registros de archivo.
 
-Este valor debe ser igual o mayor que las RETENTIONS NTAP_SNAPSHOT_.
+Esta configuración debe ser igual o mayor que NTAP_SNAPSHOT_RETENTIONS.
 
 
 
@@ -122,7 +122,7 @@ ARCHIVE_LOG_DIR
  a| 
 change_info_directory/logs
  a| 
-Especifica la ruta de acceso al directorio que contiene los registros de archivo.
+Especifica la ruta al directorio que contiene los archive logs.
 
 
 
@@ -131,34 +131,34 @@ ARCHIVO_LOG_EXT
  a| 
 extensión_archivo
  a| 
-Especifica la longitud de la extensión del archivo de registro de archivos.
+Especifica una expresión regular que coincide con las extensiones de nombre de archivo de los archivos de registro.
 
-Por ejemplo, si el registro de archivos es log_backup_0_0_0_0.161518551942 9 y si el valor file_extension es 5, la extensión del registro conservará 5 dígitos, que son 16151.
+Para los archivos de registro que terminan en un número de dígitos, usa una expresión regular, como  `[0-9+]` o (desde 6.0)  `\d+` (cualquier longitud de dígitos de al menos un carácter) como valor para el parámetro, que representa cualquier número de secuencia de registro en SAP HANA.
 
 
 
  a| 
-ARCO ARCHIVE_LOG_RECURSIVE_SE
+ARCHIVE_LOG_RECURSIVE_SEARCH
  a| 
 (S/N)
  a| 
-Permite la gestión de registros de ficheros en subdirectorios.
+Permite la gestión de archive logs dentro de subdirectorios.
 
-Debe utilizar este parámetro si los registros de archivo se encuentran en subdirectorios.
+Deberías usar este parámetro si los registros de archivo están en subdirectorios.
 
 |===
 +
 
-NOTE: Los pares personalizados de clave-valor son compatibles con los sistemas del plugin de SAP HANA Linux y no son compatibles con la base de datos SAP HANA registrada como un plugin de Windows centralizado.
+NOTE: Se admiten pares clave-valor personalizados para el SnapCenter Plug-in for SAP HANA Database en sistemas Linux, pero no para bases de datos SAP HANA registradas con el SnapCenter Plug-in for Microsoft Windows.
 
-.. Haga clic en la flecha * Herramienta de copia de instantáneas * para seleccionar la herramienta para crear instantáneas:
+.. Selecciona la flecha *Snapshot Copy Tool* para seleccionar la herramienta para crear instantáneas:
 +
 |===
 | Si desea que... | Realice lo siguiente... 
 
 
  a| 
-SnapCenter utilice el plugin para Windows y coloque el sistema de archivos en estado coherente antes de crear una Snapshot. En el caso de recursos de Linux, esta opción no es aplicable.
+SnapCenter utilice el plugin para Windows y coloque el sistema de archivos en estado coherente antes de crear una copia de Snapshot. En el caso de recursos de Linux, esta opción no es aplicable.
  a| 
 Seleccione *SnapCenter with File System Consistency*.
 
@@ -167,7 +167,7 @@ Esta opción no es aplicable para el plugin de SnapCenter para la base de datos 
 
 
  a| 
-SnapCenter creará una snapshot a nivel del almacenamiento
+SnapCenter para crear una snapshot a nivel del almacenamiento
  a| 
 Seleccione *SnapCenter sin coherencia del sistema de archivos*.
 
@@ -186,13 +186,13 @@ Seleccione *Otro* y, a continuación, introduzca el comando que se ejecutará en
 .. Seleccione una o varias políticas de la lista desplegable.
 +
 
-NOTE: También puede crear una política haciendo clic en *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]*.
+NOTE: También puedes crear una política seleccionando *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]*.
 
 +
 Las políticas figuran en la sección Configure schedules for selected policies.
 
-.. En la columna Configure Schedules, haga clic en *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]* en la política que desea configurar.
-.. En el cuadro de diálogo Agregar programas para la directiva _policy_name_ , configure la programación y, a continuación, haga clic en *Aceptar*.
+.. En la columna Configurar horarios, selecciona *image:../media/add_policy_from_resourcegroup.gif["agregue un grupo de recursos de formulario de política"]* para la política que quieres configurar.
+.. En el cuadro de diálogo Add schedules for policy _policy_name_, configure la programación y, a continuación, seleccione *OK*.
 +
 Policy_name es el nombre de la política seleccionada.
 
@@ -208,5 +208,5 @@ No se admiten programas de backup de terceros cuando se solapan con los programa
 +
 También debe especificar las direcciones de correo electrónico del remitente y los destinatarios, así como el asunto del correo. El servidor SMTP debe configurarse en *Ajustes* > *Ajustes globales*.
 
-. Revise el resumen y, a continuación, haga clic en *Finalizar*.
+. Revisa el resumen y luego selecciona *Finalizar*.
 
