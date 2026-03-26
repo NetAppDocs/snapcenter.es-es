@@ -58,6 +58,21 @@ El almacén de datos VVOL solo se puede aprovisionar con ONTAP Tools para VMware
 
 
 
+
+
+ a| 
+Otros hipervisores
+ a| 
+Se admite la ejecución de Linux bajo KVM, Xen, Hyper-V e hipervisores hyperscaler cuando el sistema operativo invitado tiene acceso directo TCP/IP a los recursos de almacenamiento ONTAP necesarios usando los siguientes métodos:
+
+* LUN conectados a iSCSI
+* Volúmenes conectados en NFS
+* NVMe/TCP
+
+
+
+NOTE: Los datastores y las presentaciones de dispositivos sin procesar no son compatibles fuera de VMware.
+
 |===
 
 

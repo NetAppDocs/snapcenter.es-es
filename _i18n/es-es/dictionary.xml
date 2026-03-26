@@ -9637,4 +9637,7 @@ Por ejemplo, la retención se establece en 7 para un grupo de recursos con la re
   <block id="8d3b5ad5b9f27b4f9781e490487c376e" category="paragraph">Para ver la lista completa de nuevas funciones y mejoras, consulta <block ref="333326639e0f94ceb693906a79235ec5" category="inline-link-macro-rx"></block>.</block>
   <block id="2f1352033f9cdf5dbec684bea0d87ee5" category="summary">La versión 6.2 del SnapCenter software incluye varias novedades y mejoras.</block>
   <block id="f4090871da1ea3c21c90ff0a2bfe77db" category="paragraph">La versión 6.2 del SnapCenter software incluye la siguiente función ampliada.</block>
+  <block id="e8210c34cf4a643a11f3bfc4c0fd905f" category="paragraph">Otros hipervisores</block>
+  <block id="ff968c11eab0f01c02347241d47d4a25" category="paragraph">Se admite la ejecución de Linux bajo KVM, Xen, Hyper-V e hipervisores hyperscaler cuando el sistema operativo invitado tiene acceso directo TCP/IP a los recursos de almacenamiento ONTAP necesarios usando los siguientes métodos:</block>
+  <block id="19228485fa8108fc9a8c5a7a0e681742" category="admonition">Los datastores y las presentaciones de dispositivos sin procesar no son compatibles fuera de VMware.</block>
 </blocks>
