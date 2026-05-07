@@ -27,7 +27,7 @@ SnapCenter no admite varios sistemas de almacenamiento con el mismo nombre en cl
 
 
 .Pasos
-. Inicie una sesión de conexión de PowerShell Core mediante el cmdlet Open-SmConnection.
+. Inicie una sesión de conexión de PowerShell con mediante el cmdlet Open-SmConnection.
 +
 [listing]
 ----

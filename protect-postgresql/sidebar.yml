@@ -108,6 +108,8 @@ entries:
   entries:
   - title: Realizar un backup del flujo de trabajo
     url: "/protect-postgresql/back-up-postgresql-resources.html"
+  - title: Configura credenciales para el clúster PostgreSQL
+    url: "/protect-postgresql/configure-credentials-for-postgresql-cluster.html"
   - title: Detecte los clústeres automáticamente
     url: "/protect-postgresql/discover-the-clusters-automatically.html"
   - title: Añada recursos manualmente al host del plugin

@@ -23,13 +23,13 @@ El plugin de SnapCenter para base de datos Oracle puede ser instalado por un usu
 El paquete de plugins de SnapCenter para AIX resuelve automáticamente el enlace simbólico del nivel de archivo, pero no los enlaces simbólicos del nivel de directorio para obtener la ruta absoluta DE JAVA_HOME.
 
 * Cree credenciales con el modo de autenticación como Linux o AIX para el usuario de instalación.
-* Debe haber instalado Java 11 en el host Linux o AIX.
+* Debes tener instalado Java 17 en tu host Linux o AIX.
 +
-** Java de Oracle y OpenJDK es compatible con Linux
-** IBM Java para AIX. Puede realizar la descarga en https://developer.ibm.com/languages/java/semeru-runtimes/downloads/?version=11&os=AIX["Descargas de IBM Semeru Runtimes"]
+** Java de Oracle y OpenJDK son compatibles con Linux.
+** IBM Java para AIX. Puedes descargarlo de https://developer.ibm.com/languages/java/semeru-runtimes/downloads/?version=17&os=AIX["Descargas de IBM Semeru Runtimes"^].
 +
 
-NOTE: Asegúrese de haber instalado únicamente la edición certificada de JAVA 11 en el host Linux.
+NOTE: Asegúrate de haber instalado únicamente la edición certificada de Java 17 en el host Linux.
 
 
 
@@ -91,12 +91,12 @@ NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de alm
  a| 
 Paquetes de software obligatorios
  a| 
-Java 11 Oracle y OpenJDK
+Java 17 (Oracle u OpenJDK)
 
 
-NOTE: Asegúrese de haber instalado únicamente la edición certificada de JAVA 11 en el host Linux.
+NOTE: Asegúrate de haber instalado únicamente la edición certificada de Java 17 en el host Linux.
 
-Si ha actualizado JAVA a la versión más reciente, debe asegurarse de que la opción JAVA_HOME ubicada en /var/opt/snapcenter/spl/etc/spl.properties esté configurada en la versión DE JAVA correcta y en la ruta de acceso correcta.
+Si has actualizado Java a la última versión, debes asegurarte de que la opción JAVA_HOME ubicada en /var/opt/snapcenter/spl/etc/spl.properties esté configurada con la versión correcta de Java y la ruta correcta.
 
 |===
 Para obtener la información más reciente sobre las versiones compatibles, consulte la https://imt.netapp.com/imt/imt.jsp?components=180320;180338;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"] .
@@ -107,12 +107,11 @@ Para obtener la información más reciente sobre las versiones compatibles, cons
 
 SnapCenter 2.0 y versiones posteriores permiten que un usuario no raíz instale el paquete de plugins de SnapCenter para Linux e inicie el proceso del plugin. Los procesos del plug-in se ejecutan como un usuario efectivo que no es raíz. Tiene que configurar los privilegios sudo para el usuario que no sea raíz con el fin de ofrecer acceso a varias rutas.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Sudo versión 1.8.7 o posterior.
 * Si la umask es 0027, asegúrese de que la carpeta java y todos los archivos dentro deben tener permiso de 555. De lo contrario, se puede producir un error en la instalación del plugin.
 * Para el usuario que no es root, asegúrese de que el nombre del usuario que no es root y del grupo del usuario debe ser el mismo.
-* Edite el archivo _/etc/ssh/sshd_config_ para configurar los algoritmos de código de autenticación de mensajes: Macs hmac-sha2-256 y MACs hmac-sha2-512.
+* Edita el archivo `/etc/ssh/sshd_config` para configurar los algoritmos de código de autenticación de mensajes: MACs hmac-sha2-256 y MACs hmac-sha2-512.
 +
 Reinicie el servicio sshd después de actualizar el archivo de configuración.
 
@@ -136,8 +135,7 @@ MACs hmac-sha2-256
 ----
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 Tiene que configurar los privilegios sudo para usuarios que no son raíz con el fin de ofrecer acceso a las rutas siguientes:
 
 * /Home/_LINUX_USER_/.sc_netapp/snapcenter_linux_host_plugin.bin
@@ -145,8 +143,7 @@ Tiene que configurar los privilegios sudo para usuarios que no son raíz con el 
 * /Custom_location/NetApp/snapcenter/spl/bin/spl
 
 
-* Pasos*
-
+.Pasos
 . Inicie sesión en el host Linux en el que desee instalar el paquete de plugins de SnapCenter para Linux.
 . Añada las siguientes líneas al archivo /etc/sudoers mediante la función visudo de Linux.
 +
@@ -222,9 +219,9 @@ NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de alm
  a| 
 Paquetes de software obligatorios
  a| 
-Java 11 IBM Java
+Java 17 IBM Java
 
-Si ha actualizado JAVA a la versión más reciente, debe asegurarse de que la opción JAVA_HOME ubicada en /var/opt/snapcenter/spl/etc/spl.properties esté configurada en la versión DE JAVA correcta y en la ruta de acceso correcta.
+Si has actualizado Java a la última versión, debes asegurarte de que la opción JAVA_HOME ubicada en /var/opt/snapcenter/spl/etc/spl.properties esté configurada con la versión correcta de Java y la ruta correcta.
 
 |===
 Para obtener la información más reciente sobre las versiones compatibles, consulte la https://imt.netapp.com/imt/imt.jsp?components=180320;180338;&solution=1257&isHWU&src=IMT["Herramienta de matriz de interoperabilidad de NetApp"] .
@@ -235,8 +232,7 @@ Para obtener la información más reciente sobre las versiones compatibles, cons
 
 SnapCenter 4.4 y versiones posteriores permiten que un usuario no raíz instale el paquete de plugins de SnapCenter para AIX e inicie el proceso del plugin. Los procesos del plug-in se ejecutan como un usuario efectivo que no es raíz. Tiene que configurar los privilegios sudo para el usuario que no sea raíz con el fin de ofrecer acceso a varias rutas.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Sudo versión 1.8.7 o posterior.
 * Si la umask es 0027, asegúrese de que la carpeta java y todos los archivos dentro deben tener permiso de 555. De lo contrario, se puede producir un error en la instalación del plugin.
 * Edite el archivo _/etc/ssh/sshd_config_ para configurar los algoritmos de código de autenticación de mensajes: Macs hmac-sha2-256 y MACs hmac-sha2-512.
@@ -263,8 +259,7 @@ MACs hmac-sha2-256
 ----
 
 
-*Acerca de esta tarea*
-
+.Acerca de esta tarea
 Tiene que configurar los privilegios sudo para usuarios que no son raíz con el fin de ofrecer acceso a las rutas siguientes:
 
 * /Home/_AIX_USER_/.sc_netapp/snapcenter_aix_host_plugin.bsx
@@ -272,8 +267,7 @@ Tiene que configurar los privilegios sudo para usuarios que no son raíz con el 
 * /Custom_location/NetApp/snapcenter/spl/bin/spl
 
 
-* Pasos*
-
+.Pasos
 . Inicie sesión en el host AIX en el que desee instalar el paquete de plugins de SnapCenter para AIX.
 . Añada las siguientes líneas al archivo /etc/sudoers mediante la función visudo de Linux.
 +
@@ -315,22 +309,18 @@ IMPORTANT: Se debe utilizar el ejemplo solo como referencia para crear sus propi
 
 SnapCenter utiliza credenciales para autenticar usuarios para las operaciones de SnapCenter. Debe crear credenciales para instalar el paquete de plugins en hosts Linux o AIX.
 
-*Acerca de esta tarea*
-
+.Antes de empezar
 Las credenciales se crean para el usuario raíz o para un usuario que no es raíz que tiene privilegios sudo para instalar e iniciar el proceso del plugin.
 
 Para obtener más información, consulte: <<Configure privilegios sudo para usuarios que no son raíz para el host Linux>> o. <<Configure privilegios sudo para usuarios que no son raíz para el host AIX>>
 
-|===
 
+CAUTION: Aunque se te permite crear credenciales después de desplegar hosts e instalar plug-ins, la *mejor práctica* es crear credenciales después de haber añadido SVMs y antes de desplegar hosts e instalar plug-ins.
 
-| *Práctica recomendada:* aunque se le permite crear credenciales después de implementar hosts e instalar plugins, la práctica recomendada es crear credenciales después de añadir SVM, antes de implementar hosts e instalar plugins. 
-|===
-* Pasos*
-
-. En el panel de navegación de la izquierda, haga clic en *Configuración*.
-. En la página Settings, haga clic en *Credential*.
-. Haga clic en *Nuevo*.
+.Pasos
+. En el panel de navegación izquierdo, selecciona *Configuración*.
+. En la página Configuración, selecciona *Credencial*.
+. Selecciona *Nuevo*.
 . En la página Credential, introduzca la información de la credencial:
 +
 |===
@@ -381,7 +371,7 @@ Use privilegios sudo
 Seleccione la casilla de verificación *Use sudo Privileges* si va a crear credenciales para usuarios que no son raíz.
 
 |===
-. Haga clic en *Aceptar*.
+. Seleccione *OK*.
 
 
 Después de terminar de configurar las credenciales, puede que desee asignar mantenimiento de credenciales a un usuario o grupo de usuarios en la página *Usuario y acceso*.
@@ -392,8 +382,7 @@ Después de terminar de configurar las credenciales, puede que desee asignar man
 
 Es necesario configurar las credenciales que se usan para realizar operaciones de protección de datos en bases de datos de Oracle.
 
-*Acerca de esta tarea*
-
+.Antes de empezar
 Debe revisar los diferentes métodos de autenticación compatibles con las bases de datos de Oracle. Para obtener más información, consulte link:../get-started/concept_authentication_methods_for_your_credentials.html["Métodos de autenticación para las credenciales"^].
 
 Si se configuran credenciales para grupos de recursos individuales y el nombre de usuario no tiene privilegios de administrador completos, el nombre de usuario debe tener al menos privilegios de grupo de recursos y backup.
@@ -401,17 +390,16 @@ Si se configuran credenciales para grupos de recursos individuales y el nombre d
 Si habilitó la autenticación de base de datos de Oracle, se muestra un icono de candado rojo en la vista de recursos. Es necesario configurar las credenciales de la base de datos para poder proteger la base de datos, o bien añadirla al grupo de recursos para realizar operaciones de protección de datos.
 
 
-NOTE: Si especifica detalles incorrectos al crear una credencial, se muestra un mensaje de error. Debe hacer clic en *Cancelar* y luego volver a intentarlo.
+NOTE: Si especificas detalles incorrectos al crear una credencial, aparecerá un mensaje de error. Debes seleccionar *Cancelar* y luego volver a intentarlo.
 
-* Pasos*
-
-. En el panel de navegación de la izquierda, haga clic en *Recursos* y, a continuación, seleccione el plugin adecuado en la lista.
+.Pasos
+. En el panel de navegación izquierdo, seleccione *Recursos* y, a continuación, seleccione el plugin apropiado de la lista.
 . En la página Resources, seleccione *Database* en la lista *View*.
-. Haga clic en image:../media/filter_icon.gif["icono de filtro"]y, a continuación, seleccione el nombre de host y el tipo de base de datos para filtrar los recursos.
+. Selecciona image:../media/filter_icon.gif["icono de filtro"] y luego selecciona el nombre de host y el tipo de base de datos para filtrar los recursos.
 +
-A continuación, puede hacer clic en image:../media/filter_icon.gif["icono de filtro"] para cerrar el panel de filtros.
+A continuación, puedes seleccionar image:../media/filter_icon.gif["icono de filtro"] para cerrar el panel de filtrado.
 
-. Seleccione la base de datos y, a continuación, haga clic en *Configuración de base de datos* > *Configurar base de datos*.
+. Selecciona la base de datos y luego selecciona *Database Settings* > *Configure Database*.
 . En la sección Configure database settings, en la lista desplegable *Use existing Credential*, seleccione la credencial que debe utilizarse para realizar trabajos de protección de datos en la base de datos Oracle.
 +
 
@@ -446,7 +434,7 @@ En RAC One Node, sólo un nodo aparece en los nodos preferidos y este nodo prefe
 Después de la conmutación por error o la reubicación de la base de datos de RAC One Node, la actualización de recursos en la página Recursos de SnapCenter eliminará el host de la lista *nodos de RAC preferidos* donde se alojó la base de datos anteriormente. El nodo RAC en el que se reubica la base de datos aparecerá en *nodos RAC* y deberá configurarse manualmente como el nodo RAC preferido.
 
 +
-Para obtener más información, consulte link:../protect-sco/task_define_a_backup_strategy_for_oracle_databases.html#preferred-nodes-in-rac-setup["Nodos preferidos en la configuración de RAC"^].
+Para más información, consulta link:../protect-sco/task_define_a_backup_strategy_for_oracle_databases.html#preferred-nodes-in-rac-setup["Nodos preferidos en la configuración de RAC"^].
 
-. Haga clic en *Aceptar*.
+. Seleccione *OK*.
 

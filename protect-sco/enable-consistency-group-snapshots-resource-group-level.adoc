@@ -1,0 +1,28 @@
+---
+permalink: protect-sco/enable-consistency-group-snapshots-resource-group-level.html 
+sidebar: sidebar 
+keywords: consistency group, enable, create, resource group level 
+summary: Un grupo de recursos es un contenedor donde se añaden recursos que se quieren proteger e incluir en un backup. Permite realizar un backup en simultáneo con todos los datos que están asociados con una determinada aplicación. 
+---
+= Habilita instantáneas de grupo de coherencia a nivel de grupo de recursos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+De forma predeterminada, el SnapCenter Plug-in para Oracle Database crea instantáneas de grupos de coherencia a nivel de grupo de discos de Automatic Storage Management (ASM) o grupo de volúmenes de Logical Volume Management (LVM). Como práctica recomendada, las bases de datos dentro de un solo grupo de recursos no deben compartir volúmenes de ONTAP entre grupos de discos ASM o grupos de volúmenes LVM.
+
+Sin embargo, si los grupos de discos ASM o los grupos de volúmenes LVM comparten volúmenes ONTAP subyacentes, la instantánea del grupo de consistencia puede fallar debido a conflictos de instantáneas duplicadas. En estos casos, SnapCenter vuelve automáticamente a las instantáneas a nivel de volumen.
+
+.Acerca de esta tarea
+En situaciones en las que los volúmenes se comparten entre grupos de discos ASM o grupos de volúmenes LVM, SnapCenter admite la activación de instantáneas de grupos de coherencia a nivel de grupo de recursos. Esto garantiza que todos los grupos de discos ASM o grupos de volúmenes LVM asociados con bases de datos dentro del grupo de recursos se capturen en una única instantánea de grupo de coherencia. Los siguientes pasos describen cómo utilizar esta función.
+
+.Pasos
+. Navega hasta el siguiente archivo de configuración en el servidor SnapCenter:
++
+`C:\Program Files\NetApp\SMCore\SMCoreServiceHost.dll.config`.
+
+. Localiza el parámetro `isCgSnapshotForRg` y cambia su valor de *false* a *true*.
+. Reinicia el servicio `SMCoreService` para que el cambio surta efecto.
+

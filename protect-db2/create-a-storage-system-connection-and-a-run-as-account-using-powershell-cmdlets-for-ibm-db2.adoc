@@ -27,7 +27,7 @@ SnapCenter no admite varios sistemas de almacenamiento con el mismo nombre en cl
 
 
 .Pasos
-. Haga clic en *SnapCenterPS* para iniciar PowerShell Core.
+. Selecciona *SnapCenterPS* para lanzar el PowerShell.
 . Cree una nueva conexión con el sistema de almacenamiento mediante el cmdlet Add-SmStorageConnection.
 +
 [listing]

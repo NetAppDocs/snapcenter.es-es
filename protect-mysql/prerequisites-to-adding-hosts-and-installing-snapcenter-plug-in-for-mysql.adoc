@@ -13,7 +13,7 @@ summary: Antes de añadir un host e instalar los paquetes de plugins, debe cumpl
 [role="lead"]
 Antes de añadir un host e instalar los paquetes de plugins, debe cumplir con todos los requisitos. Plugin SnapCenter para MySQL está disponible en entornos Windows y Linux.
 
-* Debe haber instalado Java 11 en el host.
+* Debes tener instalado Java 17 en tu host.
 +
 
 NOTE: IBM Java no es compatible con el host Windows y Linux.
@@ -32,9 +32,9 @@ NOTE: IBM Java no es compatible con el host Windows y Linux.
 * Debe tener un usuario de dominio con privilegios de administrador local y permisos locales para iniciar sesión en el host remoto.
 * Mientras se instala el plugin para MySQL en un host de Windows, el plugin de SnapCenter para Microsoft Windows se instala automáticamente.
 * Debe haber habilitado la conexión SSH por contraseña para el usuario raíz o no raíz.
-* Debe haber instalado Java 11 en el host de Windows.
+* Debes tener instalado Java 17 en tu host Windows.
 +
-http://www.java.com/en/download/manual.jsp["Descargar JAVA para todos los sistemas operativos"]
+link:https://www.oracle.com/java/technologies/downloads/#java17["Descargar Java para todos los sistemas operativos"]
 
 
 
@@ -43,9 +43,9 @@ http://www.java.com/en/download/manual.jsp["Descargar JAVA para todos los sistem
 == Hosts Linux
 
 * Debe haber habilitado la conexión SSH por contraseña para el usuario raíz o no raíz.
-* Debe haber instalado Java 11 en el host Linux.
+* Debes tener instalado Java 17 en tu host Linux.
 +
-http://www.java.com/en/download/manual.jsp["Descargar JAVA para todos los sistemas operativos"]
+link:https://www.oracle.com/java/technologies/downloads/#java17["Descargar Java para todos los sistemas operativos"]
 
 * Para bases de datos MySQL que se ejecutan en un host Linux, cuando se instala el plugin para MySQL, el plugin de SnapCenter para UNIX se instala de forma automática.
 * Debe tener *bash* como shell por defecto para la instalación del plug-in.
