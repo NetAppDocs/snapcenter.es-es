@@ -18,7 +18,7 @@ El sistema selecciona todos los complementos del paquete, pero actualiza solo lo
 .Antes de empezar
 * Si es usted un usuario que no tiene categoría de usuario raíz pero sí tiene acceso a equipos Linux, debe actualizar el archivo _/etc/sudoers_ con los valores de la suma de verificación más recientes antes de ejecutar la operación de actualización.
 * Asegúrate de que PowerShell 7.4.13 está instalado en el host del plug-in de Windows.
-* Asegúrate de que Java 17 (Oracle Java y OpenJDK) está instalado en los hosts de plug-in de Windows y Linux.
+* Asegúrate de que Java 17 (Oracle Java u OpenJDK) está instalado en los hosts de plug-in de Windows y Linux (o Java 11 solo para SnapCenter 6.2).
 * De forma predeterminada, SnapCenter detecta JAVA_HOME del entorno. Si desea utilizar UN JAVA_HOME fijo y si va a actualizar los plugins en un host Linux, debe añadir manualmente el parámetro SKIP_JAVAHOME_UPDATE en el archivo _spl.properties_ ubicado en _/var/opt/snapcenter/spl/etc/_ y establecer el valor en TRUE.
 +
 El valor de JAVA_HOME se actualiza cuando se actualiza el plugin o cuando se reinicia el servicio del cargador de plugins de SnapCenter (SPL). Antes de actualizar o reiniciar el SPL, si añade el parámetro SKIP_JAVAHOME_UPDATE y establece el valor en TRUE, el valor de JAVA_HOME no se actualiza.

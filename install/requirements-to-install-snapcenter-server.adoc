@@ -105,7 +105,7 @@ No aplicable
  a| 
 Paquetes de software obligatorios
  a| 
-* ASP.NET Core Runtime 8.0.12 (y todos los parches 8,0.x posteriores) Hosting Bundle
+* ASP.NET Core Runtime 8.0.24 (y todos los parches 8.0.x posteriores) Hosting Bundle
 * PowerShell 7.4.2 o posterior
 
 

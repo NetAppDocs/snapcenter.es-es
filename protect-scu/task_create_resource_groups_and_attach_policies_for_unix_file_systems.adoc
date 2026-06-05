@@ -63,12 +63,12 @@ NOTE: Los recursos aparecen en la sección Available Resources solo si se detect
 *** Seleccione *Sistema de archivos consistente* si desea asegurarse de que los datos almacenados en caché de los sistemas de archivos se vacían antes de crear la copia de seguridad y no se permiten operaciones de entrada o salida en el sistema de archivos durante la creación de la copia de seguridad.
 +
 
-NOTE: Para la consistencia del sistema de archivos, se tomarán snapshots de grupo de consistencia para las LUN involucradas en el grupo de volúmenes.
+NOTE: Para File System Consistent, se toman instantáneas de grupo de consistencia para los LUNs involucrados en el grupo de volúmenes.
 
 *** Seleccione *Consistente al bloqueo* si desea asegurarse de que los datos almacenados en caché de los sistemas de archivos se vacían antes de crear la copia de seguridad.
 +
 
-NOTE: Si añadió diferentes sistemas de archivos en el grupo de recursos, todos los volúmenes de diferentes sistemas de archivos del grupo de recursos se colocarán en un grupo de consistencia.
+NOTE: Si has añadido diferentes sistemas de archivos en el grupo de recursos, entonces todos los volúmenes de los diferentes sistemas de archivos en el grupo de recursos se colocan en un grupo de Consistencia. Para las copias de seguridad coherentes con fallos, se toma por defecto una instantánea del grupo de Consistencia aunque solo haya un sistema de archivos o un volumen.
 
 
 

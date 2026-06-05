@@ -16,7 +16,7 @@ Antes de añadir un host e instalar los paquetes de plugins, debe satisfacer tod
 
 NOTE: El almacenamiento y las aplicaciones de Oracle son compatibles con AIX.
 
-* Debes tener instalado Java 17 en tu host Linux, Windows o AIX.
+* Debes tener instalado Java 17, Java 11 (solo para SnapCenter 6.2) en tu host Linux, Windows o AIX.
 +
 
 NOTE: IBM Java no es compatible con el host Windows y Linux.
@@ -51,9 +51,9 @@ link:https://www.oracle.com/java/technologies/downloads/#java17["Descargar Java 
 NOTE: El almacenamiento y las aplicaciones de Oracle son compatibles con AIX.
 
 * Debe haber habilitado la conexión SSH por contraseña para el usuario raíz o no raíz.
-* Debes tener instalado Java 17 en tu host Linux.
+* Debes tener instalado Java 17, Java 11 (solo para SnapCenter 6.2) en tu host Linux.
 +
-Si utilizas Windows Server 2019 o Windows Server 2016 para el host de SnapCenter Server, debes instalar Java 17.
+Si utilizas Windows Server 2019 o Windows Server 2016 para el host de SnapCenter Server, debes instalar Java 17, Java 11 (solo para SnapCenter 6.2).
 
 +
 link:https://www.oracle.com/java/technologies/downloads/#java17["Descargar Java para Linux"]
@@ -140,7 +140,7 @@ NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de alm
  a| 
 Paquetes de software obligatorios
  a| 
-Java 17 IBM Java
+Java 17, Java 11 (solo para SnapCenter 6.2), IBM Java
 
 Si has actualizado Java a la última versión, debes asegurarte de que la opción JAVA_HOME ubicada en /var/opt/snapcenter/spl/etc/spl.properties esté configurada con la versión correcta de Java y la ruta correcta.
 
