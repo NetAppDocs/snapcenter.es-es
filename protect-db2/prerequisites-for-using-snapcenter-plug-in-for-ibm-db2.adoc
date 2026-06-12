@@ -16,7 +16,8 @@ Antes de utilizar el plugin de SnapCenter para IBM DB2, el administrador de Snap
 * Instalar y configurar SnapCenter Server.
 * Inicie sesión en el servidor SnapCenter.
 * Configure el entorno de SnapCenter añadiendo conexiones con el sistema de almacenamiento y creando credenciales, si es necesario.
-* Instala Java 17, Java 11 (solo para SnapCenter 6.2) en tu host Linux o Windows.
+* Instala Java 17 (Oracle Java u OpenJDK) para SnapCenter 6.2.1 y versiones posteriores o
+* Java 11 para SnapCenter 6.2 y anteriores en tu host Linux o Windows.
 +
 Debe configurar la ruta de Java en la variable de rutas del entorno del equipo host.
 

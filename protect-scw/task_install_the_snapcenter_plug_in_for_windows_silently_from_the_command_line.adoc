@@ -15,7 +15,7 @@ Puede instalar el plugin de SnapCenter para Microsoft Windows localmente en un h
 
 .Antes de empezar
 * Debes tener instalado ASP.NET Core Runtime 8.0.24 (y todos los parches 8.0.x posteriores) Hosting Bundle.
-* Debe haber instalado PowerShell 7.4.2 o posterior.
+* Debes tener instalado PowerShell 7.4.13 o posterior.
 * Debe ser un administrador local en el host.
 
 

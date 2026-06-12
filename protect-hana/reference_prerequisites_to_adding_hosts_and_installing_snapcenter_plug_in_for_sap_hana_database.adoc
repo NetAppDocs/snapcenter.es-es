@@ -13,7 +13,8 @@ summary: Antes de añadir un host e instalar los paquetes de plugins, debe cumpl
 [role="lead"]
 Antes de añadir un host e instalar los paquetes de plugins, debe cumplir con todos los requisitos. Plugin SnapCenter para base de datos SAP HANA está disponible en entornos Windows y Linux.
 
-* Debes tener instalado Java 17, Java 11 (solo para SnapCenter 6.2) en tu host.
+* Debes tener instalado Java 17 (Oracle Java u OpenJDK) para SnapCenter 6.2.1 y versiones posteriores o
+* Java 11 para SnapCenter 6.2 y anteriores en tu host.
 +
 
 NOTE: IBM Java no es compatible con el host Windows y Linux.
@@ -33,7 +34,8 @@ NOTE: IBM Java no es compatible con el host Windows y Linux.
 * Debe tener un usuario de dominio con privilegios de administrador local y permisos locales para iniciar sesión en el host remoto.
 * Cuando se instala el plugin para base de datos SAP HANA en un host Windows, el plugin de SnapCenter para Microsoft Windows se instala automáticamente.
 * Debe haber habilitado la conexión SSH por contraseña para el usuario raíz o no raíz.
-* Debes tener instalado Java 17, Java 11 (solo para SnapCenter 6.2) en tu host Windows.
+* Debes tener instalado Java 17 (Oracle Java u OpenJDK) para SnapCenter 6.2.1 y versiones posteriores o
+* Java 11 para SnapCenter 6.2 y anteriores en tu host de Windows.
 +
 link:https://www.oracle.com/java/technologies/downloads/#java17["Descargar Java para todos los sistemas operativos"]
 
@@ -44,7 +46,8 @@ link:https://www.oracle.com/java/technologies/downloads/#java17["Descargar Java 
 == Hosts Linux
 
 * Debe haber habilitado la conexión SSH por contraseña para el usuario raíz o no raíz.
-* Debes tener instalado Java 17, Java 11 (solo para SnapCenter 6.2) en tu host Linux.
+* Debes tener instalado Java 17 (Oracle Java u OpenJDK) para SnapCenter 6.2.1 y versiones posteriores o
+* Java 11 para SnapCenter 6.2 y anteriores en tu host Linux.
 +
 link:https://www.oracle.com/java/technologies/downloads/#java17["Descargar Java para todos los sistemas operativos"]
 

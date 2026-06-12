@@ -14,13 +14,13 @@ summary: SnapCenter se comunica de forma periódica con el sitio de soporte de N
 SnapCenter se comunica de forma periódica con el sitio de soporte de NetApp para notificar acerca de las actualizaciones de software disponibles. También puede crear una programación para especificar el intervalo en el que desea recibir información acerca de las actualizaciones disponibles.
 
 .Pasos
-. En el panel de navegación de la izquierda, haga clic en *Configuración*.
-. En la página *Configuración*, haz clic en *Software*.
+. En el panel de navegación izquierdo, selecciona *Configuración*.
+. En la página *Settings*, selecciona *Software*.
 +
 La página Available Software muestra los paquetes de plugins y las versiones disponibles, así como su estado de instalación.
 
-. Haga clic en *Buscar actualizaciones* para ver si hay alguna versión más reciente de los paquetes de complementos disponibles.
-. Haga clic en *programar actualizaciones* para crear un programa que especifique el intervalo en el que desea recibir información acerca de las actualizaciones disponibles:
+. Selecciona *Buscar actualizaciones* para comprobar si hay versiones más recientes de los paquetes de complementos disponibles.
+. Selecciona *Programar actualizaciones* para crear una programación y especificar la frecuencia con la que deseas recibir información sobre las actualizaciones disponibles:
 +
 .. Seleccione el intervalo en *Buscar actualizaciones*.
 .. Seleccione la credencial de administración de servidor SnapCenter para Windows y haga clic en *Aceptar*.

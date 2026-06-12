@@ -23,10 +23,11 @@ NOTE: La clave RSA es el único formato de clave SSH compatible con SnapCenter. 
 El complemento de SnapCenter para sistemas de archivos Unix puede ser instalado por un usuario que no sea root. Sin embargo, debe configurar los privilegios sudo para el usuario no raíz para instalar e iniciar el proceso del plugin. Después de instalar el plugin, los procesos se ejecutan como un usuario efectivo que no es raíz.
 
 * Cree credenciales con modo de autenticación como Linux para el usuario de instalación.
-* Debes tener instalado Java 17, Java 11 (solo para SnapCenter 6.2) en tu host Linux.
+* Debes tener instalado Java 17 para SnapCenter 6.2.1 y versiones posteriores o
+* Java 11 para SnapCenter 6.2 y anteriores en tu host Linux.
 +
 
-NOTE: Asegúrate de haber instalado únicamente la edición certificada de Java 17, Java 11 (solo para SnapCenter 6.2) en el host Linux.
+NOTE: Asegúrate de haber instalado únicamente la edición certificada de Java 17 para SnapCenter 6.2.1 y posteriores o Java 11 para SnapCenter 6.2 y anteriores en el host Linux.
 
 +
 Para obtener información sobre las descargas de Java, consulta link:https://www.oracle.com/java/technologies/downloads/#java17["Descargar Java para todos los sistemas operativos"^].
@@ -74,10 +75,12 @@ NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de alm
  a| 
 Paquetes de software obligatorios
  a| 
-Java 17 (Oracle Java u OpenJDK), Java 11 (solo para SnapCenter 6.2)
+* Java 17 (Oracle Java u OpenJDK) para SnapCenter 6.2.1 y posteriores o
+* Java 11 para SnapCenter 6.2 y anteriores
 
 
-NOTE: Asegúrate de haber instalado únicamente la edición certificada de Java 17, Java 11 (solo para SnapCenter 6.2) en el host Linux.
+
+NOTE: Asegúrate de haber instalado únicamente la edición certificada de Java 17 para SnapCenter 6.2.1 y posteriores o Java 11 para SnapCenter 6.2 y anteriores en el host Linux.
 
 Si has actualizado Java a la última versión, debes asegurarte de que la opción JAVA_HOME ubicada en /var/opt/snapcenter/spl/etc/spl.properties esté configurada con la versión correcta de Java y la ruta correcta.
 
