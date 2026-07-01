@@ -23,10 +23,9 @@ El plugin de SnapCenter para base de datos Oracle puede ser instalado por un usu
 El paquete de plugins de SnapCenter para AIX resuelve automáticamente el enlace simbólico del nivel de archivo, pero no los enlaces simbólicos del nivel de directorio para obtener la ruta absoluta DE JAVA_HOME.
 
 * Cree credenciales con el modo de autenticación como Linux o AIX para el usuario de instalación.
-* Debes tener instalado Java 17 (para SnapCenter 6.2.1 y versiones posteriores) o
-* Java 11 (para SnapCenter 6.2 y anteriores) en tu host Linux o AIX.
+* Debes haber instalado Java 17 (para SnapCenter 6.2.1 y posteriores) o Java 11 (para SnapCenter 6.2 y anteriores) en tu host Linux o AIX.
 +
-** Java de Oracle y OpenJDK son compatibles con Linux.
+** Java de Oracle, OpenJDK o SAP JDK es compatible con Linux.
 ** IBM Java para AIX. Puedes descargarlo de https://developer.ibm.com/languages/java/semeru-runtimes/downloads/?version=17&os=AIX["Descargas de IBM Semeru Runtimes"^].
 +
 
@@ -92,8 +91,7 @@ NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de alm
  a| 
 Paquetes de software obligatorios
  a| 
-* Java 17 (Oracle u OpenJDK) para SnapCenter 6.2.1 y posteriores o
-* Java 11 para SnapCenter 6.2 y anteriores
+* Java 17 (Oracle Java, OpenJDK o SAP JDK) para SnapCenter 6.2.1 y posteriores o Java 11 para SnapCenter 6.2 y anteriores
 
 
 
@@ -222,8 +220,7 @@ NOTE: Debe asignar el espacio en disco suficiente y supervisar el consumo de alm
  a| 
 Paquetes de software obligatorios
  a| 
-* IBM Java 17 para SnapCenter 6.2.1 y posteriores o
-* IBM Java 11 para SnapCenter 6.2 y anteriores
+* IBM Java 17 para SnapCenter 6.2.1 y versiones posteriores o IBM Java 11 para SnapCenter 6.2 y versiones anteriores
 
 
 Si has actualizado Java a la última versión, debes asegurarte de que la opción JAVA_HOME ubicada en /var/opt/snapcenter/spl/etc/spl.properties esté configurada con la versión correcta de Java y la ruta correcta.

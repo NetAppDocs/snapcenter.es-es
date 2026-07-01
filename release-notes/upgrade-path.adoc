@@ -20,7 +20,7 @@ NOTE: Si actualiza SnapCenter Server a 6.2, actualice también los complementos 
 | Si se encuentra en la versión de SnapCenter Server... | Puede actualizar directamente el servidor de SnapCenter a... | Versiones de plugins compatibles 
 
 
-.3+| 6.0.1 | 6,1  a| 
+.4+| 6.0.1 | 6,1  a| 
 * 6.0.1
 * 6,1
 
@@ -39,7 +39,13 @@ NOTE: Si actualiza SnapCenter Server a 6.2, actualice también los complementos 
 
 
 
-.2+| 6,1  a| 
+| 6.2.2  a| 
+* 6.2.2
+
+
+
+
+.3+| 6,1  a| 
 6,2
  a| 
 * 6,1
@@ -54,7 +60,19 @@ NOTE: Si actualiza SnapCenter Server a 6.2, actualice también los complementos 
 
 
 
-| 6,2 | 6.2.1  a| 
+| 6.2.2  a| 
+* 6.2.2
+
+
+
+
+.2+| 6,2 | 6.2.1  a| 
+* 6,2
+
+
+
+
+| 6.2.2  a| 
 * 6,2
 
 

@@ -17,8 +17,11 @@ El sistema selecciona todos los complementos del paquete, pero actualiza solo lo
 
 .Antes de empezar
 * Si es usted un usuario que no tiene categoría de usuario raíz pero sí tiene acceso a equipos Linux, debe actualizar el archivo _/etc/sudoers_ con los valores de la suma de verificación más recientes antes de ejecutar la operación de actualización.
-* Asegúrate de que ASP.NET Core Runtime 8.0.24 (y todos los parches posteriores 8.0.x) Hosting Bundle y PowerShell 7.4.13 o posterior estén instalados en el host del complemento de Windows.
-* Asegúrate de que Java 17 (Oracle Java u OpenJDK) para SnapCenter 6.2.1 y posteriores, o Java 11 para SnapCenter 6.2 y anteriores, esté instalado en los hosts de complementos de Windows y Linux.
+* Asegúrate de que ASP.NET Core Runtime 10.0.7 Hosting Bundle (o una versión posterior) y PowerShell 7.6.1 (o una versión posterior) estén instalados en el host del complemento de Windows.
++
+Consulta el link:https://library.netapp.com/ecm/ecm_download_file/ECMLP3359467["SnapCenter software Notas de la versión"^] para conocer las últimas versiones certificadas de ASP.NET Core y PowerShell para tu versión específica de SnapCenter.
+
+* Asegúrate de que Java 17 (Oracle Java, OpenJDK o SAP JDK) para SnapCenter 6.2.1 y versiones posteriores, o Java 11 para SnapCenter 6.2 y anteriores, esté instalado en los hosts de plug-ins de Windows y Linux.
 * De forma predeterminada, SnapCenter detecta JAVA_HOME del entorno. Si desea utilizar UN JAVA_HOME fijo y si va a actualizar los plugins en un host Linux, debe añadir manualmente el parámetro SKIP_JAVAHOME_UPDATE en el archivo _spl.properties_ ubicado en _/var/opt/snapcenter/spl/etc/_ y establecer el valor en TRUE.
 +
 El valor de JAVA_HOME se actualiza cuando se actualiza el plugin o cuando se reinicia el servicio del cargador de plugins de SnapCenter (SPL). Antes de actualizar o reiniciar el SPL, si añade el parámetro SKIP_JAVAHOME_UPDATE y establece el valor en TRUE, el valor de JAVA_HOME no se actualiza.
