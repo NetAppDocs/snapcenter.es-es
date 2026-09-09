@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Manage policies 
 summary: Es posible desvincular políticas de un recurso o grupo de recursos, y modificar, eliminar, ver y copiar. 
 ---
-= Gestionar políticas
+= Gestiona políticas en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,6 +15,7 @@ Es posible desvincular políticas de un recurso o grupo de recursos, y modificar
 
 
 
+[[modify-policies]]
 == Modificar políticas
 
 Puede modificar las opciones de replicación, la configuración de retención de Snapshot, el número de reintentos o la información de scripts mientras se asocia una política a un recurso o grupo de recursos. Puede modificar el tipo de programación (frecuencia) solo después de desvincular una política.
@@ -59,6 +60,7 @@ Por ejemplo, si una política especifica backups por hora y quiere cambiarla a b
 
 
 
+[[detach-policies]]
 == Desvincular políticas
 
 Es posible desvincular en cualquier momento políticas que ya no quiera que rijan la protección de datos de un recurso o de un grupo de recursos. Debe desvincular la política para poder eliminarla o para poder modificar el tipo de programación.
@@ -74,6 +76,7 @@ Es posible desvincular en cualquier momento políticas que ya no quiera que rija
 
 
 
+[[delete-policies]]
 == Eliminar políticas
 
 Si ya no se requieren políticas, es posible eliminarlas.

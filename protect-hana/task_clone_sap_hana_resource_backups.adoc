@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for SAP HANA Database 
 summary: El flujo de trabajo de clonado incluye realizar la operación de clonado y supervisarla. 
 ---
-= Flujo de trabajo de clonado
+= SnapCenter flujo de trabajo para clonar una base de datos SAP HANA
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

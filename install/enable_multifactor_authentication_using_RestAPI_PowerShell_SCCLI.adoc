@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: mfa, authentication, multifactor authentication 
 summary: Es posible utilizar las interfaces de API de REST, PowerShell y SCCLI para gestionar la MFA. 
 ---
-= Gestione la autenticación multifactor (MFA) con la API de REST, PowerShell y SCCLI
+= Gestiona MFA en SnapCenter usando API de REST, PowerShell y SCCLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,6 +15,7 @@ El inicio de sesión de MFA es compatible con el explorador, la API de REST, Pow
 
 
 
+[[setup-ad-fs-as-oauthoidc]]
 == Configure AD FS como OAuth/OIDC
 
 * Configurar AD FS usando el asistente de la GUI de Windows*
@@ -95,6 +96,7 @@ Configure OpenID Connect para proporcionar un nombre de usuario como reclamacion
 
 
 
+[[create-application-group-using-powershell-commands]]
 == Crear grupo de aplicaciones con comandos de PowerShell
 
 Puede crear el grupo de aplicaciones, la API web y agregar el alcance y las reclamaciones mediante comandos de PowerShell. Estos comandos están disponibles en formato de script automatizado. Para obtener más información, consulte <link to KB article>.
@@ -174,6 +176,7 @@ Puede crear el grupo de aplicaciones, la API web y agregar el alcance y las recl
 
 
 
+[[update-access-token-expiry-time]]
 == Actualizar tiempo de caducidad del token de acceso
 
 Puede actualizar el tiempo de caducidad del token de acceso mediante el comando PowerShell.
@@ -193,6 +196,7 @@ Para actualizar el tiempo de caducidad del token de acceso para un grupo de apli
 
 
 
+[[get-the-bearer-token-from-ad-fs]]
 == Obtenga el token portador de AD FS
 
 Debe rellenar los parámetros mencionados a continuación en cualquier cliente REST (como Postman) y le pedirá que rellene las credenciales de usuario. Además, debe introducir la autenticación de segundo factor (algo que tiene y algo que es) para obtener el token de portador.

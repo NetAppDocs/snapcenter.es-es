@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for mysql 
 summary: Cuando el plugin para MySQL está instalado en el entorno, es posible usar SnapCenter para realizar backup, restaurar y clonar MySQL y sus recursos. También es posible ejecutar tareas complementarias a estas operaciones. 
 ---
-= Tareas que pueden llevarse a cabo con el plugin de SnapCenter para MySQL
+= Conoce las capacidades del complemento SnapCenter para MySQL
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

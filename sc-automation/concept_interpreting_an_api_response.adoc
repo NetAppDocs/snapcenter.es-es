@@ -4,7 +4,7 @@ permalink: sc-automation/concept_interpreting_an_api_response.html
 keywords: http status code, error code 
 summary: Cada solicitud de API genera una respuesta al cliente. Debe examinar la respuesta para determinar si ha tenido éxito y recuperar datos adicionales según sea necesario. 
 ---
-= Interpretación de una respuesta API
+= Interpretar una respuesta de la API de REST de SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,6 +15,7 @@ Cada solicitud de API genera una respuesta al cliente. Debe examinar la respuest
 
 
 
+[[http-status-code]]
 == Código de estado HTTP
 
 A continuación se describen los códigos de estado HTTP utilizados por la API DE REST de SnapCenter.
@@ -54,66 +55,77 @@ A continuación se describen los códigos de estado HTTP utilizados por la API D
 |===
 
 
+[[response-headers]]
 == Encabezados de respuesta
 
 Se incluyen varios encabezados en la respuesta HTTP generada por SnapCenter.
 
 
 
+[[location]]
 === Ubicación
 
 Cuando se crea un objeto, el encabezado de ubicación incluye la dirección URL completa del nuevo objeto, incluido el identificador único asignado al objeto.
 
 
 
+[[content-type]]
 === Tipo de contenido
 
 Esto será normalmente `application/json`.
 
 
 
+[[response-body]]
 == Cuerpo de respuesta
 
 El contenido del cuerpo de respuesta que resulta de una solicitud API varía en función del objeto, el tipo de procesamiento y el éxito o el fallo de la solicitud. La respuesta siempre se representa en JSON.
 
 
 
+[[single-object]]
 === Un solo objeto
 
 Un solo objeto se puede devolver con un conjunto de campos basados en la solicitud. Por ejemplo, se puede usar GET para recuperar las propiedades seleccionadas de un clúster mediante el identificador único.
 
 
 
+[[multiple-objects]]
 === Varios objetos
 
 Se pueden devolver varios objetos de una colección de recursos. En todos los casos, existe un formato coherente utilizado, con `num_records` indica el número de registros y registros que contienen una matriz de las instancias de objeto. Por ejemplo, puede recuperar los nodos definidos en un clúster específico.
 
 
 
+[[job-object]]
 === Objeto de trabajo
 
 Si una llamada API se procesa de forma asíncrona, se devuelve un objeto Job que ancla la tarea en segundo plano. Por ejemplo, la solicitud DE REVISIÓN utilizada para actualizar la configuración del clúster se procesa de forma asíncrona y devuelve un objeto Job.
 
 
 
+[[error-object]]
 === Objeto de error
 
 Si se produce un error, siempre se devuelve un objeto error. Por ejemplo, recibirá un error al intentar cambiar un campo no definido para un clúster.
 
 
 
+[[empty]]
 === Vacío
 
 En ciertos casos, no se devuelven datos y el cuerpo de respuesta incluye un objeto JSON vacío.
 
 
 
+[[errors]]
 == Errores
 
 Si se produce un error, se devuelve un objeto de error en el cuerpo de respuesta.
 
 
 
+[[format]]
 === Formato
 
 Un objeto de error tiene el siguiente formato:
@@ -129,6 +141,7 @@ Puede utilizar el valor del código para determinar el tipo o la categoría de e
 
 
 
+[[common-error-codes]]
 === códigos de error comunes
 
 Los códigos de error comunes se describen en la siguiente tabla. Las llamadas API específicas pueden incluir códigos de error adicionales.

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: availability 
 summary: Los recursos son los LUN y componentes similares del sistema de archivos que se mantienen mediante los plugins instalados. Puede añadir esos recursos a grupos de recursos para que pueda realizar trabajos de protección de datos en múltiples recursos, pero primero debe identificar qué recursos tiene disponible. Al detectar los recursos disponibles también se verifica que la instalación de plugins se realizó correctamente. 
 ---
-= Determinar la disponibilidad de recursos para los sistemas de archivos Windows
+= Determina la disponibilidad de recursos de SnapCenter para los sistemas de archivos de Windows
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for postgresql 
 summary: Puede utilizar SnapCenter para restaurar y recuperar datos de uno o varios backups. 
 ---
-= Restaurar y recuperar un backup de recurso añadido manualmente
+= Restaura y recupera una copia de seguridad de un recurso añadido manualmente con el complemento SnapCenter para PostgreSQL
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

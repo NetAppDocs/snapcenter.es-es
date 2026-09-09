@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: retain transaction log backups 
 summary: El plugin de SnapCenter para Microsoft SQL Server necesita backups de registros de transacciones para ejecutar operaciones de restauración de último minuto, que restauran la base de datos a un momento entre dos backups completos. 
 ---
-= Cuánto tiempo se retienen los backups de registros de transacciones en el sistema de almacenamiento de origen
+= ¿Durante cuánto tiempo hay que conservar las copias de seguridad del registro de transacciones en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

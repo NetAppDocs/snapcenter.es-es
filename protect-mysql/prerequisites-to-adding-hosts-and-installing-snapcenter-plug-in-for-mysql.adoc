@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: credentials 
 summary: Antes de añadir un host e instalar los paquetes de plugins, debe cumplir con todos los requisitos. Plugin SnapCenter para MySQL está disponible en entornos Windows y Linux. 
 ---
-= Requisitos previos para añadir hosts e instalar el plugin de SnapCenter para MySQL
+= Requisitos previos para añadir hosts e instalar el complemento SnapCenter para MySQL
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -27,6 +27,7 @@ NOTE: IBM Java no es compatible con el host Windows y Linux.
 
 
 
+[[windows-hosts]]
 == Host Windows
 
 * Debe tener un usuario de dominio con privilegios de administrador local y permisos locales para iniciar sesión en el host remoto.
@@ -40,6 +41,7 @@ link:https://www.oracle.com/java/technologies/downloads/#java17["Descargar Java 
 
 
 
+[[linux-hosts]]
 == Hosts Linux
 
 * Debe haber habilitado la conexión SSH por contraseña para el usuario raíz o no raíz.
@@ -53,6 +55,7 @@ link:https://www.oracle.com/java/technologies/downloads/#java17["Descargar Java 
 
 
 
+[[supplemental-commands]]
 == Comandos suplementarios
 
 Para ejecutar un comando complementario en el plugin de SnapCenter para MySQL, debe incluirlo en el archivo _allowed_commands.config_.
@@ -80,6 +83,7 @@ NOTE: No debe utilizar una entrada comodín (*) para permitir todos los comandos
 
 
 
+[[configure-sudo-privileges-for-non-root-users-for-linux-host]]
 == Configure privilegios sudo para usuarios que no son raíz para el host Linux
 
 SnapCenter permite que un usuario no raíz instale el paquete de plugins de SnapCenter para Linux e inicie el proceso del plugin. Los procesos del plug-in se ejecutan como un usuario efectivo que no es raíz. Tiene que configurar los privilegios sudo para el usuario que no sea raíz con el fin de ofrecer acceso a varias rutas.

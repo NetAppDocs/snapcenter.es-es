@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: credentials 
 summary: Debe usar la página SnapCenter Add Host para añadir hosts y, a continuación, instalar los paquetes de los plugins. Los plugins se instalan automáticamente en hosts remotos. Puede añadir un host e instalar paquetes de plugins para un host individual o para un clúster. 
 ---
-= Añada hosts e instale paquetes de plugins en hosts remotos
+= Agrega hosts e instala el complemento SnapCenter para IBM Db2 en hosts remotos
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

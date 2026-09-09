@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: credentials 
 summary: Los recursos son clústeres PostgreSQL en el host Linux que administra SnapCenter. Es posible añadir estos recursos a grupos de recursos para realizar operaciones de protección de datos después de detectar los clústeres de PostgreSQL disponibles. 
 ---
-= Detecte los clústeres automáticamente
+= Descubre automáticamente los clústeres de PostgreSQL en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

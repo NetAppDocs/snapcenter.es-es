@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: prerequisites, iSCSI, host requirement for Linux, sudo privileges, non-root user, credentials, authenticate, domain administrator, local administrator, workgroup, sudo, root user 
 summary: Antes de añadir un host e instalar los paquetes de plugins, debe satisfacer todos los requisitos. 
 ---
-= Requisitos previos para añadir hosts e instalar el paquete de plugins para Linux
+= Requisitos previos para añadir hosts e instalar el paquete de complementos SnapCenter para Linux
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -36,6 +36,7 @@ Para obtener información sobre las descargas de Java, consulta link:https://www
 
 
 
+[[linux-host-requirements]]
 == Requisitos del host Linux
 
 Debe asegurarse de que el host cumpla con los requisitos antes de instalar el paquete de plugins de SnapCenter para Linux.

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for IBM Db2 
 summary: El plugin de SnapCenter para IBM DB2 es un componente en el lado del host de NetApp SnapCenter Software que permite la gestión de protección de datos para aplicaciones de bases de datos IBM DB2. El plugin para bases de datos de IBM DB2 automatiza el backup, la restauración y la clonado de bases de datos de IBM DB2 en el entorno de SnapCenter. 
 ---
-= Información general sobre el plugin de SnapCenter para IBM DB2
+= Conoce el complemento SnapCenter para IBM Db2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

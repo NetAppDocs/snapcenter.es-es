@@ -15,6 +15,7 @@ El repositorio de SnapCenter Server a veces se denomina base de datos NSM. Consu
 
 
 
+[[prerequisites-for-protecting-the-snapcenter-repository]]
 == Requisitos previos para proteger el repositorio de SnapCenter
 
 El entorno debe cumplir con ciertos requisitos previos para proteger el repositorio de SnapCenter.
@@ -38,6 +39,7 @@ Para la configuración de alta disponibilidad, puede aprovisionar un LUN de iSCS
 
 
 
+[[back-up-the-snapcenter-repository]]
 == Realice un backup del repositorio de SnapCenter
 
 Realizar una copia de seguridad del repositorio de SnapCenter Server ayuda a protegerlo frente a la pérdida de datos. Puedes hacer una copia de seguridad del repositorio ejecutando el  `Protect-SmRepository` cmdlet.
@@ -64,6 +66,7 @@ El `Protect-SmRepository` cmdlet realiza las siguientes tareas:
 
 
 
+[[view-backups-of-the-snapcenter-repository]]
 == Ver los backups del repositorio de SnapCenter
 
 Puedes mostrar una lista de las copias de seguridad del repositorio de bases de datos de SnapCenter Server ejecutando el cmdlet `Get-SmRepositoryBackups`. Consulta el https://docs.netapp.com/us-en/snapcenter-cmdlets/Get-SmRepositoryBackups.html["Guía de referencia de cmdlets del software SnapCenter - Get-SmRepositoryBackups"^] para más detalles.
@@ -78,6 +81,7 @@ Las copias de seguridad del repositorio se crean según la programación especif
 
 
 
+[[restore-the-snapcenter-database-repository]]
 == Restaurar el repositorio de la base de datos de SnapCenter
 
 Puedes restaurar el repositorio de SnapCenter ejecutando el cmdlet `Restore-SmRepositoryBackup`.
@@ -111,6 +115,7 @@ NOTE: El backup que se utilizó para realizar la operación de restauración de 
 
 
 
+[[migrate-the-snapcenter-repository]]
 == Migre el repositorio de SnapCenter
 
 Es posible migrar el repositorio de la base de datos del servidor de SnapCenter de la ubicación predeterminada a otro disco. El repositorio puede migrarse cuando se desea reubicarlo en un disco con más espacio.
@@ -135,6 +140,7 @@ Normalmente, puede encontrar el directorio de datos en C:\ProgramData\MySQL\MySQ
 
 
 
+[[reset-the-snapcenter-repository-password]]
 == Restablecer la contraseña del repositorio de SnapCenter
 
 La contraseña de la base de datos del repositorio del servidor MySQL se genera automáticamente durante la instalación del servidor SnapCenter desde SnapCenter 4.2. El usuario de SnapCenter no conoce esta contraseña generada automáticamente en ningún momento. Si se desea acceder a la base de datos del repositorio, se debe restablecer la contraseña.

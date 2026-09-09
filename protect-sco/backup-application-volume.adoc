@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: application volume, back up 
 summary: Es posible realizar un backup del volumen de aplicaciones desde la página Resources si el volumen de aplicaciones no forma parte de ningún grupo de recursos. 
 ---
-= Realice un backup del volumen de la aplicación
+= Haz una copia de seguridad de un volumen de aplicación en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

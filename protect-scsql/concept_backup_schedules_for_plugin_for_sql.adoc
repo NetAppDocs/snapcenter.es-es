@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Backup schedules 
 summary: 'La frecuencia de los backups \(tipo de programación\) se especifica en las políticas; la programación de los backups se especifica en la configuración del grupo de recursos.' 
 ---
-= Programaciones de backups para el plugin para SQL Server
+= Programaciones de copias de seguridad para el complemento SnapCenter para SQL Server
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

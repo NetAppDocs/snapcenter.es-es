@@ -8,6 +8,7 @@ Los complementos utilizan el archivo 'keystore.jks', que se encuentra en _/opt/N
 
 
 
+[[manage-password-for-plug-in-keystore-and-alias-of-the-ca-signed-key-pair-in-use]]
 == Administrar la contraseña para el almacén de claves del complemento y el alias del par de claves firmadas por la CA en uso
 
 .Pasos
@@ -32,6 +33,7 @@ NOTE: La contraseña para el almacén de claves del complemento y para todas las
 
 
 
+[[configure-root-or-intermediate-certificates-to-plug-in-trust-store]]
 == Configurar certificados raíz o intermedios para conectar el almacén de confianza
 
 Debe configurar los certificados raíz o intermedios sin la clave privada para conectar el almacén de confianza.
@@ -54,6 +56,7 @@ NOTE: Debe añadir el certificado de CA raíz y luego los certificados de CA int
 
 
 
+[[configure-ca-signed-key-pair-to-plug-in-trust-store]]
 == Configurar el par de claves firmadas por CA para el complemento de almacén de confianza
 
 Debe configurar el par de claves firmadas por CA en el almacén de confianza del complemento.
@@ -92,6 +95,7 @@ Actualice este valor con la clave SCC_CERTIFICATE_ALIAS.
 
 
 
+[[configure-certificate-revocation-list-crl-for-plug-ins]]
 == Configurar la lista de revocación de certificados (CRL) para complementos
 
 .Acerca de esta tarea

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: uninstall, prerequisites, plug-in, plug-in packages 
 summary: Es posible quitar un host si ya no desea usar SnapCenter para gestionar sus trabajos de protección de datos. Por ejemplo, puede quitar un host si no cuenta más con datos que necesiten protegerse. Antes de quitar un host de SnapCenter Server, debe realizar las siguientes tareas como requisitos previos. 
 ---
-= Requisitos previos para quitar un host
+= Requisitos previos para eliminar un host de SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -24,6 +24,7 @@ Antes de quitar un host de servidor SnapCenter, debe completar los requisitos pr
 
 
 
+[[prerequisites-to-remove-a-host-using-role-based-access-control]]
 == Requisitos previos para quitar un host mediante el control de acceso basado en roles
 
 * Debe haber iniciado sesión mediante un rol de RBAC que tenga permisos de lectura, eliminación de hosts, instalación, desinstalación de plugins y eliminación de objetos.
@@ -37,6 +38,7 @@ Los objetos pueden ser de clonado, backup, grupos de recursos, sistema de almace
 
 
 
+[[prerequisites-to-remove-a-host-with-clones-created-from-clone-lifecycle-operation]]
 == Requisitos previos para quitar un host con clones asociados de la operación de ciclo de vida de clones
 
 * Debe haber creado trabajos de clonado mediante la gestión del ciclo de vida de clones para las bases de datos de SQL.

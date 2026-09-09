@@ -2,9 +2,9 @@
 section: tech-refresh
 title: Actualización tecnológica
 entries:
-- title: Actualización tecnológica del host de servidor de SnapCenter
+- title: Realiza una actualización técnica del host del servidor SnapCenter
   url: "/tech-refresh/task_tech_refresh_server_host.html"
-- title: Actualización tecnológica de los hosts de complementos de SnapCenter
+- title: Realiza una actualización técnica de los hosts del plug-in de SnapCenter
   url: "/tech-refresh/task_tech_refresh_plugin_host.html"
-- title: Actualización tecnológica del sistema de almacenamiento
+- title: Realiza una actualización técnica de un sistema de almacenamiento en SnapCenter
   url: "/tech-refresh/task_tech_refresh_storage_system.html"

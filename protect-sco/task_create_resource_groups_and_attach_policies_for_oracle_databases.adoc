@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: run as, resource groups, policies, Oracle database 
 summary: Un grupo de recursos es un contenedor donde se añaden recursos que se quieren proteger e incluir en un backup. Permite realizar un backup en simultáneo con todos los datos que están asociados con una determinada aplicación. 
 ---
-= Crear grupos de recursos y vincular políticas para bases de datos de Oracle
+= Crear grupos de recursos y asociar políticas para bases de datos Oracle en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

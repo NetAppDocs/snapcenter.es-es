@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Type of backups 
 summary: 'El backup de bases de datos SQL Server del sistema y del usuario con SnapCenter requiere seleccionar el tipo de recurso, como bases de datos, instancias de SQL Server y grupos de disponibilidad \(AG\). Se aprovecha la tecnología de Snapshot para crear copias en línea y de solo lectura de los volúmenes donde residen los recursos.' 
 ---
-= Tipo de backups admitido
+= Tipos de copias de seguridad compatibles con SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

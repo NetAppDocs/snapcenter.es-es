@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter 
 summary: 'Es posible generar una solicitud de firma de certificación (CSR) e importar el certificado.' 
 ---
-= Genere un archivo CSR de certificado de CA
+= Archivos CSR de certificados CA para SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

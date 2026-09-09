@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: backup type, preferred nodes, catalog backups, schedules, backup name format, retention, verification 
 summary: SnapCenter admite el backup de diferentes configuraciones de bases de datos de Oracle. 
 ---
-= Configuraciones de bases de datos de Oracle para backups admitidas
+= Configuraciones de bases de datos Oracle compatibles para realizar copias de seguridad en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for PostgreSQL 
 summary: 'El factor más importante para determinar una programación de backup es la tasa de cambio del recurso. Puede ser recomendable realizar el backup de un recurso muy utilizado una vez por hora, mientras que, en el caso de un recurso de poco uso, es suficiente hacerlo una vez por día. Otros factores que se deben tener en cuenta son la importancia del recurso para la organización, el SLA y el objetivo de punto de recuperación \(RPO\).' 
 ---
-= Consideraciones para determinar programaciones de backup para PostgreSQL
+= SnapCenter factores a tener en cuenta en la programación de copias de seguridad con el complemento para PostgreSQL
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for SQL Server 
 summary: Puede realizar un backup del grupo de recursos bajo demanda en la página Resources. Si un grupo de recursos tiene una política anexada y una programación configurada, los backups se realizan automáticamente según esa programación. 
 ---
-= Realizar un backup de grupos de recursos de SQL Server
+= Haz una copia de seguridad de los grupos de recursos de SQL Server en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

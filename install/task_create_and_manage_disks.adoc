@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: disks, create, manage, clustered disks, view 
 summary: El host de Windows ve los LUN en el sistema de almacenamiento como discos virtuales. Es posible usar SnapCenter para crear y configurar un LUN conectado a FC o conectado a iSCSI. 
 ---
-= Crear y gestionar discos
+= Crear y gestionar discos en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -23,6 +23,7 @@ NOTE: SnapCenter no admite cambiar el nombre de un disco. Si se cambia el nombre
 
 
 
+[[view-the-disks-on-a-host]]
 == Ver los discos en un host
 
 Es posible ver los discos en cada host Windows que administra con SnapCenter.
@@ -39,6 +40,7 @@ Se muestra una lista de los discos.
 
 
 
+[[view-clustered-disks]]
 == Vea los discos en clúster
 
 Puede ver los discos en clúster en el clúster que gestiona con SnapCenter. Los discos en clúster solo se muestran cuando selecciona el clúster en el menú desplegable hosts.
@@ -55,6 +57,7 @@ Se muestra una lista de los discos.
 
 
 
+[[establish-an-iscsi-session]]
 == Establecer una sesión iSCSI
 
 Si se utiliza iSCSI para conectarse a un LUN, es necesario establecer una sesión iSCSI para poder crear el LUN y habilitar la comunicación.
@@ -129,6 +132,7 @@ SnapCenter establecerá la sesión iSCSI.
 
 
 
+[[create-fc-connected-or-iscsi-connected-luns-or-disks]]
 == Crear LUN o discos conectados mediante FC o iSCSI
 
 El host de Windows ve los LUN en el sistema de almacenamiento como discos virtuales. Es posible usar SnapCenter para crear y configurar un LUN conectado a FC o conectado a iSCSI.
@@ -359,6 +363,7 @@ SnapCenter creará el LUN y lo conectará a la unidad o la ruta de unidad especi
 
 
 
+[[resize-a-disk]]
 == Cambiar el tamaño de un disco
 
 Es posible aumentar o reducir el tamaño de un disco a medida que el sistema de almacenamiento necesite cambiar.
@@ -398,6 +403,7 @@ SnapCenter cambiará el tamaño del disco.
 
 
 
+[[connect-a-disk]]
 == Conectar un disco
 
 Es posible usar el asistente Connect Disk para conectar un LUN existente a un host o volver a conectar un LUN que se ha desconectado.
@@ -580,6 +586,7 @@ SnapCenter conecta el LUN a la unidad o la ruta de unidad especificada en el hos
 
 
 
+[[disconnect-a-disk]]
 == Desconectar un disco
 
 Es posible desconectar un LUN de un host sin afectar el contenido del LUN, con una excepción: Si se desconecta un clon antes de haberlo dividido, se pierde el contenido del clon.
@@ -613,6 +620,7 @@ SnapCenter desconectará el disco.
 
 
 
+[[delete-a-disk]]
 == Eliminar un disco
 
 Es posible eliminar un disco cuando ya no se necesita. Después de eliminar un disco, no se puede recuperar.

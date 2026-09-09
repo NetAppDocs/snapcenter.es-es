@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter plug-in for Exchange Server 
 summary: Si una base de datos no pertenece a ningún grupo de recursos, es posible realizar backups de la base de datos o del grupo de disponibilidad de base de datos desde la página Resources. 
 ---
-= Realizar backup de bases de datos de Exchange
+= Realiza copias de seguridad de las bases de datos de Exchange con SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

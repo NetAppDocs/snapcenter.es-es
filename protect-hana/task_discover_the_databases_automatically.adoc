@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: credentials 
 summary: Los recursos son bases de datos de SAP HANA y volumen de datos no data en el host Linux que gestiona SnapCenter. Puede añadir estos recursos a grupos de recursos para realizar operaciones de protección de datos después de detectar las bases de datos SAP HANA disponibles. 
 ---
-= Detectar las bases de datos automáticamente
+= Descubre automáticamente las bases de datos SAP HANA en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

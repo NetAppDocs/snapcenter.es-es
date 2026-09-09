@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Manage backups 
 summary: Es posible cambiar el nombre de los backups y eliminarlos. También es posible eliminar varios backups simultáneamente. 
 ---
-= Gestionar backups
+= Administra las copias de seguridad en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,6 +15,7 @@ Es posible cambiar el nombre de los backups y eliminarlos. También es posible e
 
 
 
+[[rename-backups]]
 == Cambiar el nombre de los backups
 
 Es posible cambiar el nombre de los backups si se desea usar un nombre que facilite la búsqueda.
@@ -40,6 +41,7 @@ Si catalogó los backups de bases de datos de Oracle con Oracle Recovery Manager
 
 
 
+[[delete-backups]]
 == Eliminar backups
 
 Es posible eliminar backups si ya no los requiere para otras operaciones de protección de datos.
@@ -79,6 +81,7 @@ NOTE: Si tiene algunos backups obsoletos de bases de datos en SnapCenter que no 
 
 
 
+[[remove-protection]]
 == Quitar la protección
 
 Eliminar protección elimina todos los backups y desvincula todas las políticas. Antes de quitar la protección, debe asegurarse de que los backups no estén montados y que no haya clones asociados con el backup.

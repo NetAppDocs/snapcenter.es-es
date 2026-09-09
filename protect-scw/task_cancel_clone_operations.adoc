@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cancel clone 
 summary: Es posible cancelar los trabajos de clonado que se encuentran en cola. 
 ---
-= Cancele las operaciones de clonado
+= Cancelar operaciones de clonación en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

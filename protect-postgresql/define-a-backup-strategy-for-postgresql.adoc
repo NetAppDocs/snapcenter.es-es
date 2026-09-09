@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for PostgreSQL 
 summary: 'Definir una estrategia de backup antes de crear las tareas de backup ayuda a garantizar que se cuente con todos los backups necesarios para restaurar o clonar correctamente los recursos. La estrategia de backup queda determinada principalmente por el acuerdo de nivel de servicio \(SLA\), el objetivo de tiempo de recuperación \(RPO\) y el objetivo de punto de recuperación \(RPO\).' 
 ---
-= Defina una estrategia de backup para PostgreSQL
+= Define una estrategia de copias de seguridad de PostgreSQL en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

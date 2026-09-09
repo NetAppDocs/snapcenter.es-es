@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for Exchange Server 
 summary: Es posible supervisar el progreso de diferentes operaciones de backup mediante la página Jobs de SnapCenter. Se recomienda comprobar el progreso para determinar cuándo se completó la tarea o si existe un problema. 
 ---
-= Supervisar las operaciones de backup
+= Supervisa las operaciones de copia de seguridad en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -49,6 +49,7 @@ El botón *Ver registros* muestra los registros detallados para la operación se
 
 
 
+[[monitor-operations-in-the-activity-pane]]
 == Supervise las operaciones en el panel Activity
 
 El panel Activity muestra las cinco operaciones más recientes que se ejecutaron. También muestra el momento en que se inició la operación y su estado.

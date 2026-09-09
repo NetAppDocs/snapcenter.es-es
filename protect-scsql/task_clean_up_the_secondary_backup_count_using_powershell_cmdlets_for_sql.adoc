@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: backups 
 summary: Puede utilizar el cmdlet Remove-SmBackup para borrar el número de backups de backups secundarios que no tienen Snapshots. Se recomienda utilizar este cmdlet cuando el total de las Snapshot que se muestran en la topología Manage Copies no corresponde al valor de retención de Snapshot del almacenamiento secundario. 
 ---
-= Borre el número de backup secundario con cmdlets de PowerShell
+= Limpia el recuento de copias de seguridad secundarias de SQL Server en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

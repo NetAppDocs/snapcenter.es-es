@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, PDB, clone PDB 
 summary: 'Es posible eliminar el clon de una base de datos conectables \(PDB\) si ya no se necesita.' 
 ---
-= Eliminar el clon de una base de datos conectables
+= Eliminar un clon de una base de datos conectable en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

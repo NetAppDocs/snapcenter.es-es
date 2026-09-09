@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Active Directory 
 summary: Debe registrar Active Directory en el servidor de SnapCenter para administrar hosts, usuarios y grupos de varios dominios de Active Directory que no son de confianza. 
 ---
-= Registrar dominios de Active Directory que no son de confianza
+= Registra dominios de Active Directory no fiables con SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

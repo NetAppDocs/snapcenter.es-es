@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter plug-in for Exchange Server 
 summary: Es posible cancelar los trabajos de restauración que se encuentran en cola. 
 ---
-= Cancelar las operaciones de restauración para base de datos de Exchange
+= Cancelar operaciones de restauración de bases de datos de Exchange en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

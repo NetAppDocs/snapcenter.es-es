@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for SQL Server Database, restore, recover 
 summary: Puede utilizar SnapCenter para restaurar y recuperar datos de uno o varios backups. 
 ---
-= Restaurar y recuperar bases de datos de SQL Server
+= Restaura y recupera bases de datos de SQL Server con SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

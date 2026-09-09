@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: install workflow, NetApp supported plug-in 
 summary: Deber instalar y configurar plugins compatibles con SnapCenter NetApp si desea proteger los recursos de plugins compatibles con NetApp. 
 ---
-= Flujo de trabajo de instalación de plugins compatibles con SnapCenter NetApp
+= Flujo de instalación para los complementos compatibles con SnapCenter NetApp
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: NetApp supported plug-ins 
 summary: Es posible usar los plugins compatibles con NetApp para las operaciones de protección de datos. 
 ---
-= Tareas que pueden llevarse a cabo con los plugins compatibles con NetApp
+= Conoce los complementos compatibles con NetApp en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

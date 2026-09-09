@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SAP HANA, NetApp supported plug-in 
 summary: Antes de instalar el paquete de plugins de SnapCenter para Windows, debe estar familiarizado con algunos requisitos básicos de espacio y tamaño del sistema host. 
 ---
-= Requisitos del host para instalar el paquete de plugins de SnapCenter para Windows
+= Requisitos del host para el paquete de complementos de SnapCenter para Windows
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

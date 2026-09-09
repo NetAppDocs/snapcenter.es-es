@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: installing 
 summary: Tendrá que instalar y configurar el plugin de SnapCenter para IBM DB2 si desea proteger IBM DB2. 
 ---
-= Flujo de trabajo de instalación del plugin de SnapCenter para IBM DB2
+= SnapCenter Plug-in para el flujo de trabajo de instalación y configuración de IBM Db2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

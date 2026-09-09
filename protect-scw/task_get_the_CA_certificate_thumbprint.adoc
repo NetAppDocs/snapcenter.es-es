@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter 
 summary: Obtenga la huella digital del certificado de CA. 
 ---
-= Obtenga la huella digital del certificado de CA
+= Obtén la huella digital del certificado de la CA para SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: audit, log, configure 
 summary: Puede configurar para registrar los eventos de seguridad de las plataformas de software y todo el software que se ejecuta en dichas plataformas. 
 ---
-= Configure los ajustes del registro de auditoría
+= Configura los ajustes del registro de auditoría en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

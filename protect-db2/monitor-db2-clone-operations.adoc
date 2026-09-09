@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: monitor, IBM Db2 database, clone operations 
 summary: Es posible supervisar el progreso de las operaciones de clonado de SnapCenter mediante la página Jobs. El progreso de una operación puede revisarse para determinar cuándo está completa o si hay un problema. 
 ---
-= Supervisar las operaciones de clonación de IBM DB2
+= Supervisa las operaciones de clonación de IBM Db2 en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

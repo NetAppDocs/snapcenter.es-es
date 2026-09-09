@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for IBM Db2 
 summary: Antes de usar SnapCenter para realizar un backup de los recursos de la base de datos IBM DB2, debe crear una política de backup para el recurso o grupo de recursos que desea incluir en el backup. Una política de backup es un conjunto de reglas que rigen cómo gestionar, programar y retener backups. 
 ---
-= Crear políticas de backup para IBM DB2
+= Crea políticas de backup para IBM Db2 en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

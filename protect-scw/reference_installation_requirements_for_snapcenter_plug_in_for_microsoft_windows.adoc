@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: requirements 
 summary: Debe estar al tanto de determinados requisitos de instalación antes de instalar el plugin para Windows. 
 ---
-= Requisitos de instalación del plugin de SnapCenter para Microsoft Windows
+= Requisitos de instalación del complemento SnapCenter para Microsoft Windows
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -26,6 +26,7 @@ La función de administrador de SnapCenter debe tener privilegios de administrac
 
 
 
+[[host-requirements-to-install-snapcenter-plug-ins-package-for-windows]]
 == Requisitos del host para instalar el paquete de plugins de SnapCenter para Windows
 
 Antes de instalar el paquete de plugins de SnapCenter para Windows, debe estar familiarizado con algunos requisitos básicos de espacio y tamaño del sistema host.
@@ -76,6 +77,7 @@ Para obtener información específica sobre la solución de problemas de .NET, c
 |===
 
 
+[[set-up-your-credentials-for-the-plug-in-for-windows]]
 == Configure sus credenciales para el plugin para Windows
 
 SnapCenter utiliza credenciales para autenticar usuarios para las operaciones de SnapCenter. Debe crear credenciales para instalar los plugins de SnapCenter, y credenciales adicionales para realizar operaciones de protección de datos en sistemas de archivos Windows.
@@ -145,6 +147,7 @@ Después de terminar de configurar las credenciales, es posible que desee asigna
 
 
 
+[[configure-gmsa-on-windows-server-2016-or-later]]
 == Configurar GMSA en Windows Server 2016 o posterior
 
 Windows Server 2016 o posterior le permite crear una cuenta de servicio administrado de grupo (GMSA) que proporciona gestión automatizada de contraseñas de cuenta de servicio desde una cuenta de dominio administrado.

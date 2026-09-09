@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resource groups, attach policies, snapcenter, sql, backup polices, schedule 
 summary: Un grupo de recursos es el contenedor al que debe añadir los recursos que desea proteger e incluir en un backup. 
 ---
-= Cree grupos de recursos y asocie las políticas de backup de SQL
+= Crea grupos de recursos de SnapCenter y asígnales políticas de backup de SQL Server
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

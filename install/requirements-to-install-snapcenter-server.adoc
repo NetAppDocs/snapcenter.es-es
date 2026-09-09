@@ -15,6 +15,7 @@ Antes de instalar SnapCenter Server en el host de Windows o Linux, debe revisar 
 
 
 
+[[domain-and-workgroup-requirements-for-windows-host]]
 == Requisitos del dominio y grupos de trabajo para el host Windows
 
 El servidor de SnapCenter puede instalarse en un host de Windows que esté en un dominio o en un grupo de trabajo.
@@ -32,6 +33,7 @@ NOTE: Tras instalar el servidor SnapCenter, no debe cambiar el dominio en el que
 
 
 
+[[space-and-sizing-requirements]]
 == Requisitos de espacio y de tamaño
 
 Debería estar familiarizado con los requisitos de espacio y tamaño.
@@ -129,6 +131,7 @@ NOTE: El núcleo ASP.NET necesita IIS_IUSRS para acceder al sistema de archivos 
 
 
 
+[[san-host-requirements]]
 == Requisitos del host SAN
 
 SnapCenter no incluye utilidades de host ni un DSM. Si el host de SnapCenter forma parte de un entorno SAN (FC/iSCSI), puede que tenga que instalar y configurar software adicional en el host de SnapCenter.
@@ -143,12 +146,14 @@ NOTE: Si estaba utilizando ONTAP DSM, debe migrar a Microsoft DSM. Para obtener 
 
 
 
+[[browser-requirements]]
 == Requisitos de navegador
 
 El software SnapCenter es compatible con Chrome 125 y versiones posteriores, y Microsoft Edge 110.0.1587.17 y versiones posteriores.
 
 
 
+[[port-requirements]]
 == Requisitos de puertos
 
 El software SnapCenter requiere diferentes puertos para la comunicación entre diferentes componentes.

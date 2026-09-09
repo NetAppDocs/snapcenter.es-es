@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: IIS application pool, active directory, enable 
 summary: 'Puede configurar Servicios de Internet Information Server \(IIS\) en el servidor de Windows para crear una cuenta personalizada del grupo de aplicaciones cuando necesite habilitar los permisos de lectura de Active Directory para SnapCenter.' 
 ---
-= Configure los grupos de aplicaciones de IIS para habilitar los permisos de lectura de Active Directory
+= Configura los grupos de aplicaciones de IIS para Active Directory en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

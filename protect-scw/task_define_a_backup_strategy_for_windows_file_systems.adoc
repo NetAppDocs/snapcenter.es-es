@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: backup strategy 
 summary: Definir una estrategia de backup antes de crear backups garantiza que se cuente con todos los backups necesarios para restaurar o clonar correctamente los sistemas de archivos. La estrategia de backup queda determinada principalmente por el SLA, el RTO y el RPO. 
 ---
-= Defina una estrategia de backup para sistemas de archivos de Windows
+= Estrategia de copias de seguridad para sistemas de archivos de Windows en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -17,6 +17,7 @@ Un acuerdo de nivel de servicio define el nivel de servicio que se espera y abor
 
 
 
+[[backup-schedules-for-windows-file-systems]]
 == Programaciones de backup para sistemas de archivos Windows
 
 La frecuencia de los backups se especifica en las políticas; la programación de los backups se especifica en la configuración del grupo de recursos. El factor más crítico para determinar la frecuencia o la programación de los backups es la tasa de cambio del recurso y la importancia de los datos. Puede ser recomendable realizar el backup de un recurso muy utilizado una vez por hora, mientras que, en el caso de un recurso de poco uso, es suficiente hacerlo una vez por día. Otros factores son la importancia del recurso para la organización, el SLA y el RPO.
@@ -39,12 +40,14 @@ Las programaciones de los backups (el momento exacto en que se realizan los back
 
 
 
+[[number-of-backups-needed-for-windows-file-systems]]
 == Cantidad de tareas de backup necesarias para sistemas de archivos Windows
 
 Algunos factores que determinan la cantidad de backups que se necesitan son el tamaño del sistema de archivos Windows, la cantidad de volúmenes que se usan, la tasa de cambio del recurso y el acuerdo de nivel de servicio.
 
 
 
+[[backup-naming-convention-for-windows-file-systems]]
 == Convención de nomenclatura de backups para sistemas de archivos Windows
 
 Los backups del sistema de archivos Windows usan la convención de nomenclatura de Snapshot predeterminada. la convención de nomenclatura de backups predeterminada añade la fecha/hora a los nombres de Snapshot, lo cual ayuda a identificar cuándo se crearon las copias.
@@ -68,6 +71,7 @@ Al crear un backup, también se puede añadir una etiqueta descriptiva que ayude
 
 
 
+[[backup-retention-options]]
 == Opciones de retención de backups
 
 Es posible elegir la cantidad de días durante los cuales se retendrán las copias de backup o especificar la cantidad de copias de backup que se desean retener, con un máximo de 255 copias en ONTAP. Por ejemplo, una organización puede necesitar retener 10 días de copias de backup o 130 copias de backup.

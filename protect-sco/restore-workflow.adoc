@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: restore, workflow 
 summary: El flujo de trabajo de restauración incluye la planificación, la realización de operaciones de restauración y la supervisión de las operaciones. 
 ---
-= Restaure el flujo de trabajo
+= Flujo de trabajo de restauración de bases de datos Oracle en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

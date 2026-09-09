@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: restore, PITR, point-in-time recovery, RMAN, tablespaces 
 summary: 'Se puede restaurar un subconjunto de espacios de tablas que se han dañado o eliminado sin afectar a los otros espacios de tablas de la base de datos. SnapCenter utiliza RMAN para realizar una recuperación puntual \(PITR\) de los tablespaces.' 
 ---
-= Restauración y recuperación de espacios de tablas mediante la recuperación de un momento específico
+= Restaurar espacios de tabla usando la recuperación a un momento específico en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

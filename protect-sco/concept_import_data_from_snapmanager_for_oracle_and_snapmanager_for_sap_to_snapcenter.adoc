@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: import, SnapManager for Oracle, SnapManager for SAP 
 summary: Importar datos desde SnapManager para Oracle y SnapManager para SAP a SnapCenter le permite continuar usando sus datos de las versiones anteriores. 
 ---
-= Importe datos desde SnapManager para Oracle y SnapManager para SAP a SnapCenter
+= Cómo SnapCenter importa datos de SnapManager para Oracle y SAP
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -31,6 +31,7 @@ SnapCenter no es compatible con Data ONTAP operando en 7-Mode. Puede utilizar la
 
 
 
+[[configurations-supported-for-importing-data]]
 == Configuraciones compatibles para la importación de datos
 
 Antes de importar datos desde SnapManager 3.4.x para Oracle y SnapManager 3.4.x para SAP hacia SnapCenter, debe tener en cuenta cuáles son las configuraciones compatibles con el plugin de SnapCenter para base de datos de Oracle.
@@ -39,6 +40,7 @@ Las configuraciones compatibles con el complemento SnapCenter para Oracle Databa
 
 
 
+[[what-gets-imported-to-snapcenter]]
 == Qué elementos se importan en SnapCenter
 
 Es posible usar los perfiles para importar perfiles, programas y operaciones ejecutados.
@@ -195,6 +197,7 @@ Sin embargo, debe actualizar manualmente el servidor SMTP con la interfaz gráfi
 |===
 
 
+[[what-does-not-get-imported-to-snapcenter]]
 == Qué elementos no se importan en SnapCenter
 
 La herramienta de importación no importa todos los elementos en SnapCenter.
@@ -216,6 +219,7 @@ Después de la importación, debe editar manualmente la política correspondient
 
 
 
+[[prepare-to-import-data]]
 == Prepare la importación de datos
 
 Antes de importar datos en SnapCenter, debe ejecutar determinadas tareas para ejecutar la operación de importación con éxito.
@@ -268,6 +272,7 @@ Si no se muestra un FQDN, debe modificar /etc/hosts para indicar el FQDN del hos
 
 
 
+[[import-data]]
 == Importar datos
 
 Puede importar datos ejecutando la herramienta de importación desde el host de la base de datos.

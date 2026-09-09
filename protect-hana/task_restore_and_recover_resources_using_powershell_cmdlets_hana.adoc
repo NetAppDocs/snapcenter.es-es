@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: restore resources, snapcenter 
 summary: La restauración de un backup de recursos incluye el inicio de una sesión de conexión con el servidor SnapCenter, el listado de los backups y la recuperación de información de los backups, y la restauración de un backup. 
 ---
-= Restaurar recursos mediante los cmdlets de PowerShell
+= Restaura recursos de SnapCenter usando los cmdlets de PowerShell
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

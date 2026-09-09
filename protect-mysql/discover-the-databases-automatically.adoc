@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: credentials 
 summary: Los recursos son bases de datos MySQL en el host Linux gestionados por SnapCenter. Es posible añadir estos recursos a grupos de recursos para realizar operaciones de protección de datos después de detectar las bases de datos MySQL disponibles. 
 ---
-= Detectar las bases de datos automáticamente
+= Detecta automáticamente las bases de datos MySQL en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

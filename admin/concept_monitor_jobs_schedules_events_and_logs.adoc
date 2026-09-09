@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Monitor jobs, schedules, events, logs 
 summary: Es posible supervisar el progreso de los trabajos, obtener información sobre los trabajos programados, y revisar eventos y registros en la página Monitor. 
 ---
-= Supervisar trabajos, programaciones, eventos y registros
+= Supervisa los trabajos, las programaciones, los eventos y los registros de SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,6 +15,7 @@ Es posible supervisar el progreso de los trabajos, obtener información sobre lo
 
 
 
+[[monitor-jobs]]
 == Supervisar trabajos
 
 Es posible ver información de los trabajos de backup, clonado, restauración y verificación de SnapCenter. Puede filtrar esta vista en función de la fecha de inicio y de finalización, el tipo de trabajo, el grupo de recursos, la política o el plugin de SnapCenter. También se pueden obtener más detalles y archivos de registro de los trabajos especificados.
@@ -33,6 +34,7 @@ Puede ejecutar las siguientes tareas relacionadas con los trabajos de supervisi�
 
 
 
+[[manage-scheduled-backup-jobs]]
 === Gestionar tareas de backup programadas
 
 A partir de la versión SnapCenter 6.0.1, se ha introducido un nuevo parámetro *JobConcurrencyThreshold* que establece un umbral para el número de trabajos programados que se pueden ejecutar en un momento dado. Esto le permite controlar el número de copias de seguridad que desea ejecutar en función de la configuración de hardware de su sistema.
@@ -50,6 +52,7 @@ NOTE: Si habilita *JobConcurrencyThreshold* para administrar trabajos simultáne
 
 
 
+[[manage-stale-jobs]]
 === Gestionar trabajos obsoletos
 
 Los trabajos obsoletos se crean a partir de interrupciones en SnapCenter o a partir de actualizaciones de trabajos incorrectas. A partir de la versión SnapCenter 6.0.1, se incorpora una programación predefinida para borrar estos trabajos obsoletos que se han atascado durante más de 72 horas. Puede cambiar la frecuencia de programación editando el parámetro configurable *CleanUpStaleJobsIntervalHours*.
@@ -64,6 +67,7 @@ Puede activar la limpieza a petición ejecutando el programa desde *Monitor* > *
 
 
 
+[[monitor-schedules]]
 == Supervisar programaciones
 
 Es posible ver las programaciones actuales para determinar cuándo se iniciará la operación, cuándo se ejecutó por última vez y cuándo será la próxima ejecución. También se puede determinar el host donde se ejecutará la operación, junto con la información de la política y el grupo de recursos de la operación.
@@ -78,6 +82,7 @@ Es posible ver las programaciones actuales para determinar cuándo se iniciará 
 
 
 
+[[monitor-events]]
 == Supervisar eventos
 
 Es posible ver una lista de eventos de SnapCenter en el sistema, como cuando un usuario crea un grupo de recursos o cuando el sistema inicia actividades, por ejemplo, la creación de un backup programado. Los eventos pueden verse para determinar si una operación de backup o restauración está actualmente en curso.
@@ -96,6 +101,7 @@ Toda la información sobre eventos se muestra en la página Events. Por ejemplo,
 
 
 
+[[monitor-logs]]
 == Supervisar registros
 
 Es posible ver y descargar registros del servidor de SnapCenter, registros del agente de host de SnapCenter y registros de plugins. Los registros pueden verse para facilitar la solución de problemas.
@@ -146,6 +152,7 @@ NOTE: Para acceder a la información de estado o de configuración después de q
 
 
 
+[[remove-jobs-and-logs-from-snapcenter]]
 == Quite los trabajos y los registros de SnapCenter
 
 Es posible quitar registros y trabajos de backup, restauración, clonado y verificación de SnapCenter. SnapCenter almacena los registros de los trabajos con errores y aquellos completados correctamente a menos que se los elimine. Puede quitarlos para reaprovisionar el almacenamiento.

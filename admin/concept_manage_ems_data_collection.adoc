@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: EMS data collection 
 summary: 'Es posible programar y gestionar la recogida de datos de Event Management System (EMS) mediante cmdlets de PowerShell. La recogida de datos de EMS implica recopilar datos sobre SnapCenter Server, los paquetes de plugins de SnapCenter instalados, los hosts y datos similares y, posteriormente, enviarlos a una máquina virtual de almacenamiento ONTAP específica \(SVM\).' 
 ---
-= Gestione la recogida de datos de EMS
+= Gestiona la recopilación de datos EMS en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -18,6 +18,7 @@ NOTE: La utilización de la CPU del sistema es alta cuando la tarea de recopilac
 
 
 
+[[stop-ems-data-collection]]
 == Detenga la recogida de datos de EMS
 
 La recogida de datos de EMS se encuentra habilitada de forma predeterminada, y se ejecuta cada siete días después de la fecha de instalación. Es posible deshabilitar la recogida de datos en cualquier momento con el cmdlet de PowerShell _Disable-SmDataCollectionEMS_.
@@ -29,6 +30,7 @@ La recogida de datos de EMS se encuentra habilitada de forma predeterminada, y s
 
 
 
+[[start-ems-data-collection]]
 == Inicie la recogida de datos de EMS
 
 De forma predeterminada, la recogida de datos de EMS se encuentra habilitada y programada para ejecutarse cada siete días desde la fecha de instalación. Si la deshabilitó, puede iniciar nuevamente la recogida de datos de EMS con el cmdlet _Enable-SmDataCollectionEMS_.
@@ -42,6 +44,7 @@ Se otorgó el permiso event generate-AutoSupport-log de NetApp ONTAP al usuario 
 
 
 
+[[change-ems-data-collection-schedule-and-target-svm]]
 == Cambie la programación de recogida de datos de EMS y SVM de destino
 
 Es posible utilizar cmdlets de PowerShell para cambiar la programación de recogida de datos de EMS o las máquinas virtuales de almacenamiento (SVM) de destino.
@@ -54,6 +57,7 @@ Es posible utilizar cmdlets de PowerShell para cambiar la programación de recog
 
 
 
+[[monitor-ems-data-collection-status]]
 == Supervise el estado de recogida de datos de EMS
 
 Es posible supervisar el estado de la recogida de datos de EMS mediante varios cmdlets de PowerShell. Se puede obtener información sobre la programación, la SVM, el destino y el estado.

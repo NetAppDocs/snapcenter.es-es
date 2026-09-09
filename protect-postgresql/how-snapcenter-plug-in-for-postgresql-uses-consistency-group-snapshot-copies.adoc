@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for PostgreSQL 
 summary: Es posible usar el plugin para crear copias Snapshot de grupos de coherencia para los grupos de recursos. Un grupo de consistencia es un contenedor que puede albergar varios volúmenes para que se gestionen como una misma entidad. Un grupo de coherencia es un conjunto de snapshots simultáneas de varios volúmenes, que ofrece copias consistentes de un grupo de volúmenes. 
 ---
-= Cómo usa el plugin de SnapCenter para PostgreSQL las snapshots de grupos de consistencia
+= Cómo usa el plugin de SnapCenter para PostgreSQL las copias de Snapshot de grupos de consistencia
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

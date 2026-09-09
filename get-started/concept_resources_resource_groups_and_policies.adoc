@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resource, resource group, policy 
 summary: Antes de usar SnapCenter, es necesariol comprender ciertos conceptos básicos vinculados con las operaciones de backup, clonado y restauración que se ejecutan. 
 ---
-= Conceptos clave de la protección de datos
+= Recursos, grupos de recursos y políticas en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,12 +15,14 @@ Antes de usar SnapCenter, entienda conceptos clave para el backup, el clonado y 
 
 
 
+[[resources]]
 == Recursos
 
 Los recursos incluyen bases de datos, sistemas de archivos Windows o recursos compartidos de archivos incluidos en un backup o clonados con SnapCenter. En función del entorno, los recursos también pueden ser instancias de bases de datos, grupos de disponibilidad de SQL Server, bases de datos de Oracle, base de datos RAC o grupos de aplicaciones personalizados.
 
 
 
+[[resource-group]]
 == Grupo de recursos
 
 Un grupo de recursos es una agrupacion de recursos en un host o un clúster, potencialmente de varios hosts y clústeres. Las operaciones realizadas en un grupo de recursos se aplican a todos sus recursos en función de la programación especificada. Puede ejecutar backups bajo demanda o programados para recursos o grupos individuales.
@@ -32,6 +34,7 @@ Use plugins relevantes para realizar el backup de recursos específicos: Plugins
 
 
 
+[[policies]]
 == Normativas
 
 Las políticas especifican la frecuencia de backup, la retención de copias, la replicación, los scripts y otras características de las operaciones de protección de datos.
@@ -46,18 +49,21 @@ Se pueden usar scripts previos y posteriores en operaciones de protección de da
 
 
 
+[[consistency-group-cg]]
 == Grupo de consistencia (GC)
 
 Un grupo de consistencia es una colección de volúmenes administrados como una sola unidad.  Los CG están sincronizados para garantizar la coherencia de los datos en todas las unidades de almacenamiento y volúmenes.  En ONTAP, proporcionan una gestión sencilla y una garantía de protección para una carga de trabajo de aplicaciones que abarca múltiples volúmenes. Obtenga más información sobre link:https://docs.netapp.com/us-en/ontap/consistency-groups["grupos de consistencia"^] .
 
 
 
+[[usage-of-prescripts-and-postscripts]]
 == Uso de scripts previos y posteriores
 
 Los scripts previos y posteriores pueden automatizar las tareas de protección de datos antes o después del trabajo. Por ejemplo, puede agregar un script para notificarle los fallos o advertencias del trabajo. Antes de configurarlos, asegúrese de comprender los requisitos de estos scripts.
 
 
 
+[[supported-script-types]]
 === Tipos de scripts compatibles
 
 Los siguientes tipos de scripts son compatibles con Windows:
@@ -80,6 +86,7 @@ NOTE: Junto con el shell bash predeterminado, también se admiten otros shell co
 
 
 
+[[script-path]]
 === Ruta del script
 
 Todos los scripts previos y posteriores que se ejecutan como parte de las operaciones de SnapCenter tanto en sistemas de almacenamiento no virtualizados como en los virtualizados, se ejecutan en el host del plugin.
@@ -98,6 +105,7 @@ NOTE: La ruta de acceso del script se valida en el momento de la ejecución.
 
 
 
+[[where-to-specify-scripts]]
 === Dónde especificar scripts
 
 Los scripts se especifican en las políticas de backup. Cuando se inicia una tarea de backup, la política asocia automáticamente el script con los recursos que se incluirán en el backup. Al crear una política de backup, se pueden especificar los argumentos de script previo y script posterior.
@@ -107,12 +115,14 @@ NOTE: No puede especificar varios scripts.
 
 
 
+[[script-timeouts]]
 === Tiempo de espera de scripts
 
 De forma predeterminada, el tiempo de espera se establece en 60 segundos. Puede modificar el valor del tiempo de espera.
 
 
 
+[[script-output]]
 === Salida de script
 
 El directorio predeterminado para los archivos de salida scripts previos y posteriores de Windows es Windows\System32.

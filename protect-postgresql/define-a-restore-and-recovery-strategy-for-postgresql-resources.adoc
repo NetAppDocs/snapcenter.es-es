@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: restore and recovery strategy, postgresql resources, snapcenter 
 summary: Para poder ejecutar operaciones de restauración y recuperación correctamente, es necesario definir una estrategia antes de restaurar y recuperar un clúster. 
 ---
-= Defina una estrategia de restauración y recuperación para recursos PostgreSQL
+= Define una estrategia de restauración y recuperación para PostgreSQL en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

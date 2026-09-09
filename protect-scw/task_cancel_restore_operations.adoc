@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cancel restore 
 summary: Es posible cancelar los trabajos de restauración que se encuentran en cola. 
 ---
-= Cancele las operaciones de restauración
+= Cancelar operaciones de restauración en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

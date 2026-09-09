@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: requirements 
 summary: Es posible utilizar un complemento de SnapCenter con la tecnología SnapMirror de ONTAP para crear copias de reflejo de conjuntos de backups en otro volumen, y con la tecnología ONTAP SnapVault para realizar replicaciones de backup disco a disco para cumplimiento de normativas y otros fines relacionados con la gobernanza. Antes de ejecutar estas tareas, debe configurar una relación de protección de datos entre los volúmenes de origen y de destino, e inicializar la relación. 
 ---
-= Preparar los sistemas de almacenamiento para la replicación con SnapMirror y SnapVault
+= Preparación del sistema de almacenamiento SnapCenter para SnapMirror y SnapVault
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

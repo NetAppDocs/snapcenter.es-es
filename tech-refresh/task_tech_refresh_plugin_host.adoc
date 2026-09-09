@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: tech refresh, plug-in host, supported plug-ins, prerequisites to refresh plug-in hosts, application hosts, limitations for tech refresh of plug-in hosts 
 summary: Mueva los recursos del host antiguo al nuevo host para realizar la actualización tecnológica de los hosts del plugin. 
 ---
-= Actualización tecnológica de los hosts de complementos de SnapCenter
+= Realiza una actualización técnica de los hosts del plug-in de SnapCenter
 :allow-uri-read: 
 
 

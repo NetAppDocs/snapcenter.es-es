@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter plug-in for Exchange Server 
 summary: Definir una estrategia de restauración para servidor de Exchange permite restaurar correctamente la base de datos. 
 ---
-= Definir una estrategia de restauración para bases de datos de Exchange
+= Define una estrategia de restauración para las bases de datos de Exchange en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,6 +15,7 @@ Definir una estrategia de restauración para servidor de Exchange permite restau
 
 
 
+[[sources-for-a-restore-operation-in-exchange-server]]
 == Orígenes para una operación de restauración en Exchange Server
 
 Es posible restaurar una base de datos de Exchange Server desde una copia de backup en el almacenamiento primario.
@@ -23,6 +24,7 @@ Es posible restaurar bases de datos solo desde el almacenamiento primario.
 
 
 
+[[types-of-restore-operations-supported-for-exchange-server]]
 == Tipos de operaciones de restauración compatibles con Exchange Server
 
 Es posible usar SnapCenter para ejecutar diferentes tipos de operaciones de restauración de los recursos de Exchange.
@@ -33,6 +35,7 @@ Es posible usar SnapCenter para ejecutar diferentes tipos de operaciones de rest
 
 
 
+[[restore-up-to-the-minute]]
 === Restauración de último minuto
 
 En una operación de restauración de último minuto, se recuperan las bases de datos hasta el punto de error. SnapCenter usa la siguiente secuencia para este proceso:
@@ -64,6 +67,7 @@ Si no se necesita la funcionalidad de restauración de último minuto para todos
 
 
 
+[[restore-to-a-previous-point-in-time]]
 === Restauración a un momento específico
 
 En una operación de restauración a un momento específico, las bases de datos se restauran únicamente a un punto específico. Esta operación se ejecuta en las siguientes situaciones:

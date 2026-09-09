@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter plug-in for Exchange Server 
 summary: Definir una estrategia de backup antes de crear las tareas de backup ayuda a garantizar que se cuente con todos los backups necesarios para restaurar correctamente las bases de datos. La estrategia de backup queda determinada principalmente por el SLA, el RTO y el RPO. 
 ---
-= Defina una estrategia de backup para recursos de servidor de Exchange
+= Define una estrategia de copias de seguridad para los recursos del servidor de Exchange en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -17,6 +17,7 @@ Un acuerdo de nivel de servicio define el nivel de servicio que se espera y abor
 
 
 
+[[types-of-backups-supported-for-exchange-database]]
 == Tipos de backups compatibles con la base de datos de Exchange
 
 Los backups de buzones de correo de Exchange que usan SnapCenter requieren elegir el tipo de recurso, como bases de datos y DAG. Se aprovecha la tecnología de Snapshot para crear copias en línea y de solo lectura de los volúmenes donde residen los recursos.
@@ -55,6 +56,7 @@ Los registros acortados que ya están confirmados en la base de datos no se resp
 |===
 
 
+[[backup-schedules-for-database-plug-ins]]
 == Programaciones de backups para plugins de bases de datos
 
 La frecuencia de los backups (tipo de programación) se especifica en las políticas; la programación de los backups se especifica en la configuración del grupo de recursos. El factor más crítico para determinar la frecuencia o la programación de los backups es la tasa de cambio del recurso y la importancia de los datos. Puede ser recomendable realizar el backup de un recurso muy utilizado una vez por hora, mientras que, en el caso de un recurso de poco uso, es suficiente hacerlo una vez por día. Otros factores son la importancia del recurso para la organización, el SLA y el RPO.
@@ -77,12 +79,14 @@ Las programaciones de los backups (el momento exacto en que se realizan los back
 
 
 
+[[number-of-backup-jobs-needed-for-databases]]
 == Cantidad de tareas de backup necesarias para bases de datos
 
 Algunos factores que determinan la cantidad de trabajos de backup que se necesitan son el tamaño del recurso, la cantidad de volúmenes que se usan, la tasa de cambio del recurso y el acuerdo de nivel de servicio.
 
 
 
+[[backup-naming-conventions]]
 == Convenciones de nomenclatura de backups
 
 Es posible usar la convención de nomenclatura de Snapshot predeterminada o usar una convención de nomenclatura personalizada. la convención de nomenclatura de backups predeterminada añade la fecha/hora a los nombres de Snapshot, lo cual ayuda a identificar cuándo se crearon las copias.
@@ -108,6 +112,7 @@ Como alternativa, es posible especificar el formato del nombre de Snapshot y pro
 
 
 
+[[backup-retention-options]]
 == Opciones de retención de backups
 
 Es posible elegir la cantidad de días durante los cuales se retendrán las copias de backup o especificar la cantidad de copias de backup que se desean retener, con un máximo de 255 copias en ONTAP. Por ejemplo, una organización puede necesitar retener 10 días de copias de backup o 130 copias de backup.
@@ -123,6 +128,7 @@ NOTE: Para la retención a largo plazo de copias de backup, es conveniente usar 
 
 
 
+[[how-long-to-retain-transaction-log-backups-on-the-source-storage-volume-for-exchange-server]]
 == Cuánto tiempo se retienen los backups de registros de transacciones en el volumen de almacenamiento de origen para Exchange Server
 
 El plugin de SnapCenter para Microsoft Exchange Server necesita backups de registros de transacciones para ejecutar operaciones de restauración de último minuto, que restauran la base de datos a un momento entre dos backups completos.

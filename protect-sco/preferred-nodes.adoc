@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: oracle databases discover 
 summary: Cómo SnapCenter descubre las bases de datos de Oracle. 
 ---
-= Nodos preferidos en la configuración de RAC
+= Cómo SnapCenter utiliza los nodos preferidos en una configuración RAC
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -26,12 +26,14 @@ El nodo 3 no se usará para el backup, ya que no es parte de la lista de nodos p
 
 
 
+[[flex-asm-setup]]
 == Configuración de ASM Flex
 
 En una configuración de Flex ASM, los nodos de hoja no se mostrarán como nodos preferidos si la cardinalidad es inferior al número de nodos del clúster de RAC. Si hay algún cambio en las funciones del nodo del clúster de ASM de Flex, debe detectar manualmente para que se actualicen los nodos preferidos.
 
 
 
+[[required-database-state]]
 == Estado de la base de datos necesario
 
 Las instancias de base de datos de RAC de los nodos preferidos deben tener el estado necesario para que el backup se ejecute correctamente:

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for postgresql 
 summary: El flujo de trabajo de restauración y recuperación incluye planificar, realizar las operaciones de restauración y supervisarlas. 
 ---
-= Restaure el flujo de trabajo
+= SnapCenter complemento para el flujo de trabajo de restauración de PostgreSQL
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

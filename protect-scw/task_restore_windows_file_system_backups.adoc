@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: restore 
 summary: Puede utilizar SnapCenter para restaurar backups de sistemas de archivos. La restauración de sistema de archivos es un proceso multifase que copia todos los datos de un backup especificado en la ubicación original del sistema de archivos. 
 ---
-= Restaurar backups de sistemas de archivos Windows
+= Restaura las copias de seguridad del sistema de archivos de Windows con SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reseed 
 summary: 'La propagación es una opción para restaurar las bases de datos de grupos de disponibilidad \(AG\). Si una base de datos secundaria deja de estar sincronizada con la base de datos principal de un AG, puede propagar la base de datos secundaria.' 
 ---
-= Propagación de bases de datos de grupos de disponibilidad
+= Volver a sembrar las bases de datos del grupo de disponibilidad en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

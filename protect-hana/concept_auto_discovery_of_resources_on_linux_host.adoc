@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for SAP HANA Database 
 summary: Los recursos son bases de datos de SAP HANA y volumen de datos no data en el host Linux que gestiona SnapCenter. Después de instalar el plugin de SnapCenter para el plugin de base de datos SAP HANA, las bases de datos SAP HANA en ese host Linux se detectan automáticamente y se muestran en la página Resources. 
 ---
-= Detección automática de recursos en el host Linux
+= Detección automática de recursos en un host Linux en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

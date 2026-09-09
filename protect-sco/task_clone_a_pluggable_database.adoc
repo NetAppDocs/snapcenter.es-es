@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clone, pluggable database, PDB 
 summary: 'Es posible clonar una base de datos conectables \(PDB\) en una base de datos de destino diferente o la misma en el mismo host o alternativo. También es posible recuperar la PDB clonada en un SCN o la fecha y la hora que desee.' 
 ---
-= Clonar una base de datos conectable
+= Clonar una base de datos conectable de Oracle con SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

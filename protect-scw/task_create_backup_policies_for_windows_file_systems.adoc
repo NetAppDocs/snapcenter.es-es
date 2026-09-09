@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: backup policy 
 summary: Puede crear una nueva política de backup para recursos antes de usar SnapCenter para realizar backups de sistemas de archivos Windows, o bien puede crear una nueva política de backup en el momento de crear un grupo de recursos o al realizar el backup de un recurso. 
 ---
-= Crear políticas de backup para sistemas de archivos Windows
+= Crea políticas de backup de SnapCenter para sistemas de archivos de Windows
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: backup, Oracle database, policy, schedule, verification, resources 
 summary: Si un recurso no es parte de ningún grupo de recursos, es posible realizar backups del recurso desde la página Resources. 
 ---
-= Realice backup de recursos de Oracle
+= Haz una copia de seguridad de los recursos de Oracle en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

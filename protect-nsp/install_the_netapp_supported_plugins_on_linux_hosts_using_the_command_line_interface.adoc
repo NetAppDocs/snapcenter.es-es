@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: install, NetApp supported plug-in 
 summary: 'Debe instalar los plugins compatibles de SnapCenter NetApp mediante la interfaz de usuario (UI) de SnapCenter. Si el entorno no permite la instalación remota del plugin desde la interfaz de usuario de SnapCenter, puede instalar el complemento compatible con NetApp en el modo de consola o en el modo silencioso mediante la interfaz de línea de comandos (CLI).' 
 ---
-= Instale los plugins compatibles con NetApp en los hosts Linux mediante la interfaz de línea de comandos
+= Instala los complementos compatibles con NetApp en hosts Linux usando la CLI de SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

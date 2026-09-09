@@ -19,6 +19,7 @@ En este caso, los LUN pueden incluir discos VMware RDM y LUN iSCSI de conexión 
 
 
 
+[[lun-and-vmdk-requirements]]
 == Requisitos de LUN y VMDK
 
 Opcionalmente, puede utilizar LUN o VMDK específicos para optimizar el rendimiento y la gestión de las siguientes bases de datos:
@@ -36,6 +37,7 @@ Para el directorio de registro, deber crear un LUN o un VMDK por separado para q
 
 
 
+[[lun-and-vmdk-sample-layouts]]
 == Ejemplos de distribución de LUN y VMDK
 
 El gráfico siguiente muestra cómo puede configurar la distribución almacenamiento para bases de datos grandes en LUN:

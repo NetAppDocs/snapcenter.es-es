@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for postgresql 
 summary: 'Algunos factores que determinan la cantidad de trabajos de backup que se necesitan son el tamaño del recurso, la cantidad de volúmenes que se usan, la tasa de cambio del recurso y el acuerdo de nivel de servicio \(SLA\).' 
 ---
-= Cantidad de tareas de backup necesarias para PostgreSQL
+= SnapCenter número de tareas de copia de seguridad necesarias para el complemento de PostgreSQL
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

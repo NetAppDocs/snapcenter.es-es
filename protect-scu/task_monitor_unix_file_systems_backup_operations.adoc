@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Server, monitor, backup, activity pane, data protection 
 summary: Es posible supervisar el progreso de diferentes operaciones de backup mediante la página Jobs de SnapCenter. Se recomienda comprobar el progreso para determinar cuándo se completó la tarea o si existe un problema. 
 ---
-= Supervisar la copia de seguridad de sistemas de archivos Unix
+= Supervisa las operaciones de copia de seguridad de los sistemas de archivos UNIX en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,6 +15,7 @@ Descubra cómo supervisar el progreso de las operaciones de backup y las operaci
 
 
 
+[[monitor-unix-file-systems-backup-operations]]
 == Supervisar las operaciones de copia de seguridad de sistemas de archivos Unix
 
 Es posible supervisar el progreso de diferentes operaciones de backup mediante la página Jobs de SnapCenter. Se recomienda comprobar el progreso para determinar cuándo se completó la tarea o si existe un problema.
@@ -55,6 +56,7 @@ El botón *Ver registros* muestra los registros detallados para la operación se
 
 
 
+[[monitor-data-protection-operations-in-the-activity-pane]]
 == Supervise las operaciones de protección de datos en el panel Activity
 
 El panel Activity muestra las cinco operaciones más recientes que se ejecutaron. También muestra el momento en que se inició la operación y su estado.

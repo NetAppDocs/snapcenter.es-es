@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: overview, unix file system, plug-in for unix file system, backup, restore, clone 
 summary: El plugin para sistemas de archivos Unix admite backup, restauración y clonado de sistemas de archivos Unix de tof. 
 ---
-= Tareas que pueden llevarse a cabo con el plugin de SnapCenter para sistemas de archivos Unix
+= Conoce el complemento SnapCenter para sistemas de archivos UNIX
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -23,6 +23,7 @@ Cuando el plugin para sistemas de archivos Unix está instalado en el entorno, e
 
 
 
+[[supported-configurations]]
 == Configuraciones admitidas
 
 |===
@@ -84,6 +85,7 @@ sí
 |===
 
 
+[[limitations]]
 == Limitaciones
 
 * No se admite la combinación de RDM y discos virtuales en un grupo de volúmenes.
@@ -98,6 +100,7 @@ Sin embargo, puede realizar manualmente una restauración en el nivel de archivo
 
 
 
+[[features]]
 == Funciones
 
 * Permite al plugin para bases de datos de Oracle realizar operaciones de protección de datos en bases de datos de Oracle manejar la pila de almacenamiento del host subyacente en sistemas Linux o AIX

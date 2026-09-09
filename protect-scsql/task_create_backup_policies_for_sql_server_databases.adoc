@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: backup policy 
 summary: Es posible crear una política de backup para el recurso o el grupo de recursos antes de usar SnapCenter con el fin de realizar un backup de los recursos de SQL Server. También es posible crear una política de backup en el momento de crear un grupo de recursos o realizar un backup de un único recurso. 
 ---
-= Crear políticas de backup para bases de datos de SQL Server
+= Crea políticas de backup para bases de datos de SQL Server en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -58,6 +58,7 @@ Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las ins
 
 
 
+[[step-1-create-policy-name]]
 == Paso 1: Crear nombre de política
 
 . En el panel de navegación izquierdo, selecciona *Configuración*.
@@ -68,6 +69,7 @@ Para ONTAP 9.12.1 y versiones anteriores, los clones creados a partir de las ins
 
 
 
+[[step-2-configure-policy-options]]
 == Paso 2: Configure las opciones de política
 
 . En la página Policy type, realice los siguientes pasos:
@@ -129,6 +131,7 @@ NOTE: Microsoft SQL no es compatible con la opción *copia de seguridad sólo* j
 
 
 
+[[step-3-configure-availability-group-settings]]
 == Paso 3: Configure los ajustes del grupo de disponibilidad
 
 . En la sección Availability Group Settings, realice las siguientes acciones:
@@ -158,6 +161,7 @@ NOTE: En las configuraciones de clúster, los backups se conservan en cada nodo 
 
 
 
+[[step-4-configure-snapshot-and-replication-settings]]
 == Paso 4: Configure los ajustes de Snapshot y replicación
 
 . En la página Snapshot and Replication, realice los siguientes pasos:
@@ -180,6 +184,7 @@ NOTE: Si ha programado para las 2:00 a.m., la programación no se activará dura
 
 
 
+[[step-5-configure-up-to-the-minute-retention-settings]]
 == Paso 5: Configure los ajustes de retención actualizados al minuto
 
 . En la sección Up-to-the minute retention settings, según el tipo de backup seleccionado en la página de tipo de backup, realice una o más de las siguientes acciones:
@@ -206,6 +211,7 @@ Retener las copias de backup por una cantidad determinada de días.
 ====
 
 
+[[step-6-configure-snapshot-settings]]
 == Paso 6: Configurar los ajustes de la instantánea
 
 . Para la configuración de retención de backup completo, realice las siguientes acciones:
@@ -246,6 +252,7 @@ NOTE: Puede asignar etiquetas SnapMirror a instantáneas principales para replic
 
 
 
+[[step-7-configure-secondary-replication-options]]
 == Paso 7: Configure las opciones de replicación secundaria
 
 . En la sección Select secondary replication options, seleccione una de las siguientes opciones de replicación secundaria o ambas:
@@ -299,6 +306,7 @@ Consulte link:../protect-scsql/task_view_sql_server_backups_and_clones_in_the_to
 ====
 
 
+[[step-8-configure-script-settings]]
 == Paso 8: Configurar los ajustes de script
 
 . En la página Script, introduzca la ruta y los argumentos del script previo o script posterior que se deben ejecutar antes o después de la operación de backup, según corresponda.
@@ -317,6 +325,7 @@ NOTE: Debe configurar la política de retención de SnapMirror en ONTAP para que
 
 
 
+[[step-9-configure-verification-settings]]
 == Paso 9: Configure los ajustes de verificación
 
 En la página Verification, realice los siguientes pasos:
@@ -361,6 +370,7 @@ NOTE: La ruta scripts previos o posteriores no debe incluir unidades o recursos 
 
 
 
+[[step-10-review-summary]]
 == Paso 10: Resumen de la revisión
 
 . Revisa el resumen y luego selecciona *Finalizar*.

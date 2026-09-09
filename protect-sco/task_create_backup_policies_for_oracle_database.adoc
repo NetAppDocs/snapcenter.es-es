@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: backup policies, policies 
 summary: Antes de usar SnapCenter para realizar backups de recursos de base de datos de Oracle, debe crear una política de backup para el recurso o el grupo de recursos que se respaltendrá. Una política de backup es un conjunto de reglas que rigen cómo gestionar, programar y retener backups. También puede especificar la configuración de replicación, script y tipo de backup. Crear una política permite ahorrar tiempo cuando se desea volver a utilizar esa política en otro recurso o grupo de recursos. 
 ---
-= Crear políticas de backup para bases de datos de Oracle
+= Crear políticas de backup para bases de datos Oracle en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

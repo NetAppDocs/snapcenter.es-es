@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: monitor, install, snapCenter plug-in for SAP HANA 
 summary: Puede supervisar el progreso de la instalación del paquete de plugins de SnapCenter mediante la página Jobs. Tal vez desee comprobar el progreso de la instalación para determinar si está completo o si hay algún problema. 
 ---
-= Supervise el estado de la instalación del plugin para SAP HANA
+= Supervisa el estado de instalación del complemento SnapCenter para la base de datos SAP HANA
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

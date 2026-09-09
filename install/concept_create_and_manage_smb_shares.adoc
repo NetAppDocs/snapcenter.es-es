@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SMB shares 
 summary: 'Para configurar un recurso compartido de SMB3 en una máquina virtual de almacenamiento (SVM), se puede usar la interfaz de usuario de SnapCenter o cmdlets de PowerShell.' 
 ---
-= Cree y gestione recursos compartidos de SMB
+= Crear y gestionar recursos compartidos SMB en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -25,6 +25,7 @@ TIP: Si se siente cómodo, puede seguir los modelos proporcionados para crear su
 
 
 
+[[create-an-smb-share]]
 == Cree un recurso compartido de SMB
 
 Puede usar la página SnapCenter Shares para crear un recurso compartido de SMB3 en una máquina virtual de almacenamiento (SVM).
@@ -84,6 +85,7 @@ SnapCenter creará el recurso compartido de SMB en la SVM.
 
 
 
+[[delete-an-smb-share]]
 == Eliminar un recurso compartido de SMB
 
 Es posible eliminar un recurso compartido de SMB cuando ya no se necesita.

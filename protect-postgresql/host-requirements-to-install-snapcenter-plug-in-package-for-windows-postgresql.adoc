@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: postgresql 
 summary: Antes de instalar el paquete de plugins de SnapCenter para Windows, debe estar familiarizado con algunos requisitos básicos de espacio y tamaño del sistema host. 
 ---
-= Requisitos del host para instalar el paquete de plugins de SnapCenter para Windows
+= SnapCenter requisitos del host de Windows para el complemento de PostgreSQL
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

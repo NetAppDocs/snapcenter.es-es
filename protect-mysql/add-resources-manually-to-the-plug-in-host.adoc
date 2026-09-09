@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for MySQL 
 summary: La detección automática no es compatible con ciertas instancias de MySQL. Debe añadir estos recursos manualmente. 
 ---
-= Añada recursos manualmente al host del plugin
+= Agrega manualmente los recursos de MySQL al host del complemento
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

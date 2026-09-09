@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cluster role, privileges, asa r2 systems 
 summary: Debe crear roles de clúster de ONTAP para los sistemas ASA R2 de modo que no tenga que usar el rol de administrador de ONTAP para realizar operaciones en SnapCenter. 
 ---
-= Cree roles de clúster de ONTAP para sistemas ASA R2
+= Crear roles de clúster ONTAP para sistemas ASA r2 en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -35,6 +35,7 @@ NOTE: Debe repetir este comando para cada permiso.
 
 
 
+[[ontap-cli-commands-for-creating-cluster-roles-and-assigning-permissions]]
 == Comandos de la CLI de ONTAP para crear roles de clúster y asignar permisos
 
 Hay varios comandos de la CLI de ONTAP que debe ejecutarse para crear roles de clúster y asignar permisos.

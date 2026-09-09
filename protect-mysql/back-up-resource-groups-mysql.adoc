@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for MySQL 
 summary: Un grupo de recursos es una agrupacion de recursos en un host. Se realiza una operación de backup del grupo de recursos con todos los recursos definidos en el grupo. 
 ---
-= Realice un backup de los grupos de recursos
+= Haz una copia de seguridad de los grupos de recursos de MySQL con SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

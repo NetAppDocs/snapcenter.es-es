@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for SAP HANA Database 
 summary: La detección automática no es compatible con determinadas instancias de HANA. Debe añadir estos recursos manualmente. 
 ---
-= Añada recursos manualmente al host del plugin
+= Agrega recursos manualmente al host del complemento SnapCenter para SAP HANA
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

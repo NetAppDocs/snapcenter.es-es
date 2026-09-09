@@ -49,6 +49,7 @@ El botón *Ver registros* muestra los registros detallados para la operación se
 
 
 
+[[monitor-data-protection-operations-on-sql-resources-in-the-activity-pane]]
 == Supervise las operaciones de protección de datos en recursos de SQL en el panel Activity
 
 El panel Activity muestra las cinco operaciones más recientes que se ejecutaron. También muestra el momento en que se inició la operación y su estado.

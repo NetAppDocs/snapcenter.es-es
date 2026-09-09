@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: uninstall, snapcenter server, windows 
 summary: Si ya no desea utilizar el servidor SnapCenter para administrar los trabajos de protección de datos, puede desinstalar el servidor SnapCenter mediante el Panel de control de programas y características del host del servidor SnapCenter. Al desinstalar el servidor SnapCenter se quitan todos sus componentes. 
 ---
-= Desinstale el servidor SnapCenter en el host de Windows
+= Desinstala el servidor SnapCenter en un host con Windows
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

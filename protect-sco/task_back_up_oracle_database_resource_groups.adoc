@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: backup, resource group 
 summary: Un grupo de recursos es una agrupacion de recursos en un host o un clúster. Se realiza una operación de backup del grupo de recursos con todos los recursos definidos en el grupo. 
 ---
-= Realice backups de grupos de recursos de bases de datos de Oracle
+= Realiza copias de seguridad de los grupos de recursos de la base de datos Oracle en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

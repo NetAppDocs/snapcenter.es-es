@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: backup policies, policies, unix file systems, file systems 
 summary: Cree una política de copia de seguridad para los sistemas de archivos Unix de los que desea realizar la copia de seguridad. 
 ---
-= Crear directivas de backup para sistemas de archivos Unix
+= Crear políticas de backup para sistemas de archivos UNIX en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

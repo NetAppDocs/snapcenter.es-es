@@ -15,12 +15,14 @@ Los recursos disponibles a través de la API DE REST de SnapCenter están organi
 
 
 
+[[auth]]
 == Autor
 
 Puede usar esta API para iniciar sesión en el servidor SnapCenter. Esta API devuelve un token de autorización de usuario que se utiliza para autenticar solicitudes posteriores.
 
 
 
+[[domains]]
 == Dominios
 
 Puede usar las API para realizar diferentes operaciones.
@@ -33,6 +35,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[jobs]]
 == Trabajos
 
 Puede usar las API para realizar diferentes operaciones.
@@ -44,6 +47,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[settings]]
 == Configuración
 
 Puede usar las API para realizar diferentes operaciones.
@@ -59,6 +63,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[hosts]]
 == Hosts
 
 Puede usar las API para realizar diferentes operaciones.
@@ -89,6 +94,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[resources]]
 == Recursos
 
 Puede usar las API para realizar diferentes operaciones.
@@ -143,6 +149,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[backups]]
 == Completos
 
 Puede usar las API para realizar diferentes operaciones.
@@ -160,6 +167,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[clones]]
 == Clones
 
 Puede usar las API para realizar diferentes operaciones.
@@ -176,6 +184,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[clone-split]]
 == División de clones
 
 Puede usar las API para realizar diferentes operaciones.
@@ -187,6 +196,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[resource-groups]]
 == Grupos de recursos
 
 Puede usar las API para realizar diferentes operaciones.
@@ -207,6 +217,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[policies]]
 == Normativas
 
 Puede usar las API para realizar diferentes operaciones.
@@ -223,6 +234,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[storage]]
 == Reducida
 
 Puede usar las API para realizar diferentes operaciones.
@@ -239,6 +251,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[share]]
 == Share
 
 Puede usar las API para realizar diferentes operaciones.
@@ -251,6 +264,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[plugins]]
 == Complementos
 
 Puede usar las API para realizar diferentes operaciones.
@@ -293,6 +307,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[reports]]
 == Leídos
 
 Puede usar las API para realizar diferentes operaciones.
@@ -304,6 +319,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[alerts]]
 == Alertas
 
 Puede usar las API para realizar diferentes operaciones.
@@ -315,6 +331,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[rbac]]
 == RBAC
 
 Puede usar las API para realizar diferentes operaciones.
@@ -333,6 +350,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[configuration]]
 == Configuración
 
 Puede usar las API para realizar diferentes operaciones.
@@ -343,6 +361,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[certificatesettings]]
 == CertificadosConfiguración
 
 Puede usar las API para realizar diferentes operaciones.
@@ -353,6 +372,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[repository]]
 == Repositorio
 
 Puede usar las API para realizar diferentes operaciones.
@@ -366,6 +386,7 @@ Puede usar las API para realizar diferentes operaciones.
 
 
 
+[[version]]
 == Versión
 
 Puede usar esta API para ver la versión de SnapCenter.

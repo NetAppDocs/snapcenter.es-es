@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter 
 summary: Antes de instalar el paquete de plugins de SnapCenter para Linux, tiene que conocer bien algunos requisitos básicos de espacio y tamaño del sistema host. 
 ---
-= Requisitos del host para instalar el paquete de plugins de SnapCenter para Linux
+= Requisitos del host antes de instalar el paquete de complementos de SnapCenter para Linux
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary: El flujo de trabajo de restauración y recuperación incluye planificar, realizar las operaciones de restauración y supervisarlas. 
 ---
-= Restaurar recursos de plugins admitidos por NetApp
+= NetApp flujo de trabajo de restauración de complementos compatibles en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

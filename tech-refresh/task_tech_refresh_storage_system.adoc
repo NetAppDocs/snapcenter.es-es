@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: tech refresh, storage system, 
 summary: Realizar una actualización tecnológica del sistema de almacenamiento moviendo los datos del almacenamiento antiguo al nuevo, montando el nuevo almacenamiento en los hosts respectivos y, a continuación, trayendo las bases de datos. 
 ---
-= Actualización tecnológica del sistema de almacenamiento
+= Realiza una actualización técnica de un sistema de almacenamiento en SnapCenter
 :allow-uri-read: 
 
 
@@ -33,6 +33,7 @@ La actualización tecnológica de almacenamiento es compatible para sustituir el
 
 
 
+[[update-the-backups-of-the-primary-storage]]
 == Actualice las copias de seguridad del almacenamiento primario
 
 Cuando se actualiza la tecnología del almacenamiento, es conveniente ejecutar la API o el cmdlet de actualización técnica del almacenamiento para actualizar los backups antiguos en SnapCenter con los nuevos detalles del almacenamiento.
@@ -104,6 +105,7 @@ Esto realizará la comprobación de existencia de instantáneas en el nuevo alma
 
 
 
+[[update-the-backups-of-the-secondary-storage]]
 == Actualice los backups del almacenamiento secundario
 
 Cuando se actualiza la tecnología del almacenamiento, es conveniente ejecutar la API o el cmdlet de actualización técnica del almacenamiento para actualizar los backups antiguos en SnapCenter con los nuevos detalles del almacenamiento.

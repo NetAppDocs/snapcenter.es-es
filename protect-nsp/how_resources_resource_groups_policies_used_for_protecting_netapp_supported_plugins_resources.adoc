@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: NetApp supported plug-in 
 summary: Antes de usar SnapCenter, es necesariol comprender ciertos conceptos básicos vinculados con las operaciones de backup, clonado y restauración que se ejecutan. El usuario interactúa con recursos, grupos de recursos y políticas para diferentes operaciones. 
 ---
-= Cómo se usan los recursos, los grupos de recursos y las políticas para proteger los recursos de plugins compatibles con NetApp
+= Cómo SnapCenter protege los recursos de los complementos compatibles con NetApp
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

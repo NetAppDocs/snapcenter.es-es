@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Credentials, alternate host, clone, FRA, OMF 
 summary: Es posible utilizar SnapCenter para clonar una base de datos de Oracle con el backup de esa base de datos. 
 ---
-= Clonar el backup de una base de datos de Oracle
+= Clona una copia de seguridad de una base de datos Oracle con SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -358,6 +358,7 @@ El bloqueo o cambio de nombre de dispositivos no afectará a la operación de el
 
 
 
+[[update-the-preferred-ip-on-the-host]]
 == Actualice la IP preferida en el host
 
 Una vez completada la operación de clonado, la ruta que proporciona la capa de acceso a almacenamiento (SAL) al clon tendrá el formato _<nfs_lif_IP>:<JunctionPath>_. Para proporcionar la IP preferida, debe configurarla en el host mediante los comandos SCCLI.

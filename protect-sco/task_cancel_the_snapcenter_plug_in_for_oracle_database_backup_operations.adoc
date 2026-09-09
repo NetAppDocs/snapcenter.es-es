@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary: Es posible cancelar las operaciones de backup que se estén ejecutando, en cola o no respondan. 
 ---
-= Cancelar las operaciones de backup de las bases de datos de Oracle
+= Cancelar las operaciones de copia de seguridad de la base de datos Oracle en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

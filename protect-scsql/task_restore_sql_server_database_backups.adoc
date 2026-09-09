@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: restore operation 
 summary: Puede utilizar SnapCenter para restaurar bases de datos de SQL Server con backup. La restauración de bases de datos es un proceso multifásico que copia todos los datos y las páginas de registro de un backup de SQL Server en una base de datos especificada. 
 ---
-= Restaurar backups de base de datos de SQL Server
+= Restaurar copias de seguridad de bases de datos de SQL Server en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

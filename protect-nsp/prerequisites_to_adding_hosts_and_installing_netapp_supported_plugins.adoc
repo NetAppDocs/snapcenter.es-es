@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: credentials 
 summary: Antes de añadir un host e instalar los paquetes de plugins, debe satisfacer todos los requisitos. Los plugins compatibles con NetApp se pueden utilizar en entornos Windows, Linux o AIX. 
 ---
-= Requisitos previos para añadir hosts e instalar el paquete de plugins para Windows, Linux o AIX
+= Requisitos previos para añadir hosts e instalar los complementos de SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -27,12 +27,14 @@ NOTE: IBM Java no es compatible con el host Windows y Linux.
 
 
 
+[[general]]
 == Generales
 
 Si utiliza iSCSI, el servicio iSCSI debe estar en ejecución.
 
 
 
+[[windows-hosts]]
 == Host Windows
 
 * Debe tener un usuario de dominio con privilegios de administrador local y permisos locales para iniciar sesión en el host remoto.
@@ -45,6 +47,7 @@ link:https://www.oracle.com/java/technologies/downloads/#java17["Descargar Java 
 
 
 
+[[linux-and-aix-hosts]]
 == Hosts Linux y AIX
 
 
@@ -99,6 +102,7 @@ IMPORTANT: Se debe utilizar el ejemplo solo como referencia para crear sus propi
 
 
 
+[[aix-host-requirements]]
 == Requisitos del host AIX
 
 Debe asegurarse de que el host cumpla los requisitos antes de instalar el paquete de plugins de SnapCenter para AIX.
@@ -148,6 +152,7 @@ Si has actualizado Java a la última versión, debes asegurarte de que la opció
 |===
 
 
+[[configure-sudo-privileges-for-non-root-users-for-aix-host]]
 === Configure privilegios sudo para usuarios que no son raíz para el host AIX
 
 SnapCenter 4.4 y versiones posteriores permiten que un usuario no raíz instale el paquete de plugins de SnapCenter para AIX e inicie el proceso del plugin. Los procesos del plug-in se ejecutan como un usuario efectivo que no es raíz. Tiene que configurar los privilegios sudo para el usuario que no sea raíz con el fin de ofrecer acceso a varias rutas.

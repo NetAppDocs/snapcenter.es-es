@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for SQL Server 
 summary: Es posible usar SnapCenter para ejecutar diferentes tipos de operaciones de restauración de los recursos de SQL Server. 
 ---
-= Tipos de operaciones de restauración
+= Tipos de operaciones de restauración de SQL Server en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -28,6 +28,7 @@ NOTE: SnapCenter no es compatible con SnapRestore basado en volúmenes.
 
 
 
+[[restore-up-to-the-minute]]
 == Restauración de último minuto
 
 En una operación de restauración de último minuto (seleccionada de forma predeterminada), se recuperan las bases de datos hasta el punto de error. SnapCenter usa la siguiente secuencia para este proceso:
@@ -48,12 +49,14 @@ Si no se necesita la funcionalidad de restauración de último minuto para todos
 
 
 
+[[example-of-an-up-to-the-minute-restore-operation]]
 == Ejemplo de una operación de restauración de último minuto
 
 Supongamos que se ejecuta un backup de SQL Server todos los días al mediodía, y un miércoles a las 4:00 es necesario hacer una restauración desde un backup. Por algún motivo, el backup del miércoles al mediodía no pasó la verificación, por lo que se decide restaurar desde el backup del martes al mediodía. Después de eso, si se restaura el backup, todos los registros de transacciones se mueven hacia adelante y se aplican a las bases de datos restauradas, a partir de las que no se confirmaron al crear el backup del martes y continuar con el último registro de transacciones escrito el miércoles a las 4:00 (si se realizó el backup de los registros de transacciones).
 
 
 
+[[restore-to-a-previous-point-in-time]]
 == Restauración a un momento específico
 
 En una operación de restauración a un momento específico, las bases de datos se restauran únicamente a un punto específico. Esta operación se ejecuta en las siguientes situaciones:
@@ -75,6 +78,7 @@ Si se aplican backups de registros de transacciones, también es posible especif
 
 
 
+[[example-of-a-point-in-time-restore-operation]]
 == Ejemplo de una operación de restauración a un momento específico
 
 Supongamos que se realiza un backup completo de las bases de datos a la medianoche y un backup de los registros de transacciones cada hora. La base de datos falla a las 9:45, pero igual se realiza el backup de los registros de transacciones de la base de datos con errores. Es posible elegir entre las siguientes situaciones de restauración a un momento específico:

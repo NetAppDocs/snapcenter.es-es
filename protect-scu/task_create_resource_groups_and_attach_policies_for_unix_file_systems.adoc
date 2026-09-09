@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: unix file systems, resource group, policy 
 summary: Un grupo de recursos es un contenedor donde se añaden recursos que se quieren proteger e incluir en un backup. 
 ---
-= Cree grupos de recursos y adjunte políticas para sistemas de archivos Unix
+= Crear grupos de recursos y asociar políticas a los sistemas de archivos UNIX en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

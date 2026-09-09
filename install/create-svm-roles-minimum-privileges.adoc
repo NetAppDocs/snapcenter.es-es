@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: svm role, privileges 
 summary: Debe crear roles de SVM si configura SVM en ONTAP para su uso con SanpCenter y no desea utilizar el rol vsadmin. 
 ---
-= Cree roles de SVM con privilegios mínimos
+= Crea roles de SVM con privilegios mínimos en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -35,6 +35,7 @@ NOTE: Debe repetir este comando para cada permiso.
 
 
 
+[[ontap-cli-commands-for-creating-svm-roles-and-assigning-permissions]]
 == Comandos de la CLI de ONTAP para crear roles de SVM y asignar permisos
 
 Hay varios comandos de la CLI de ONTAP que debe ejecutar para crear roles de SVM y asignar permisos.

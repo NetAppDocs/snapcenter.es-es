@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: NetApp supported plug-in 
 summary: El factor más importante para determinar una programación de backup es la tasa de cambio del recurso. Mientras más frecuentes sean los backups de los recursos, menos archivos de registro necesitará SnapCenter para la restauración, lo cual puede acelerar las operaciones de restauración. 
 ---
-= Programaciones de backup de recursos de plugins compatibles con NetApp
+= Programaciones de copias de seguridad de SnapCenter para los recursos de complementos compatibles con NetApp
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

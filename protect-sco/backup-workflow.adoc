@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: backup, workflow 
 summary: 'Es posible crear un backup de un recurso (base de datos) o un grupo de recursos.' 
 ---
-= Descripción general del procedimiento de copia de seguridad
+= SnapCenter flujo de trabajo de copias de seguridad para bases de datos Oracle
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

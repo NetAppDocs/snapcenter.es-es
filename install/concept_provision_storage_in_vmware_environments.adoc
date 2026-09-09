@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: guest OS, VMware ESXi server, limitations, RDM, Microsoft cluster 
 summary: Es posible usar el plugin de SnapCenter para Microsoft Windows en entornos de VMware para crear y gestionar LUN, así como para gestionar copias de backup de Snapshot. 
 ---
-= Aprovisione almacenamiento en entornos VMware
+= SnapCenter aprovisionamiento de almacenamiento en entornos VMware
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,6 +15,7 @@ Es posible usar el plugin de SnapCenter para Microsoft Windows en entornos de VM
 
 
 
+[[supported-vmware-guest-os-platforms]]
 == Plataformas de sistemas operativos invitados compatibles con VMware
 
 * Versiones compatibles de Windows Server
@@ -33,6 +34,7 @@ Admite controladoras SCSI paravirtual de VMware. Los discos RDM pueden admitir 2
 
 
 
+[[vmware-esxi-server-related-limitations]]
 === Limitaciones relacionadas con el servidor ESXi de VMware
 
 * No se admite la instalación del plugin para Windows en un clúster de Microsoft de máquinas virtuales donde se utilizan credenciales de ESXi.
@@ -46,6 +48,7 @@ Al instalar el plugin para Windows en máquinas virtuales almacenadas en clúste
 
 
 
+[[minimum-vcenter-privileges-required-for-snapcenter-rdm-operations]]
 === Privilegios mínimos de vCenter requeridos para operaciones de RDM en SnapCenter
 
 Debe tener los siguientes privilegios de vCenter en el host para ejecutar operaciones de RDM en un sistema operativo invitado:
@@ -61,6 +64,7 @@ Después de asignar estos privilegios, puede instalar el plugin para Windows en 
 
 
 
+[[manage-fc-rdm-luns-in-a-microsoft-cluster]]
 == Gestione LUN de RDM FC en un clúster de Microsoft
 
 Es posible utilizar el plugin para Windows para gestionar un clúster de Microsoft mediante LUN de RDM FC, pero primero es necesario crear el quórum de RDM compartido y el almacenamiento compartido fuera del plugin, para luego añadir los discos a las máquinas virtuales del clúster.
@@ -69,6 +73,7 @@ A partir de ESXi 5.5, también es posible utilizar hardware ESX iSCSI y FCoE par
 
 
 
+[[requirements]]
 === Requisitos
 
 El plugin para Windows ofrece compatibilidad con clústeres de Microsoft que utilizan LUN de RDM FC en dos máquinas virtuales distintas que pertenecen a dos servidores ESX o ESXi diferentes, también denominadas clústeres en todos los cuadros, cuando se satisfacen requisitos de configuración específicos.
@@ -111,6 +116,7 @@ Cuando se crea un LUN de RDM, se crea un iGroup con ALUA.
 
 
 
+[[limitations]]
 === Limitaciones
 
 El plugin para Windows admite clústeres de Microsoft cuando se utilizan LUN de RDM FC/iSCSI en máquinas virtuales diferentes pertenecientes a servidores ESX o ESXi diferentes.
@@ -130,6 +136,7 @@ Los iniciadores deben ser FC o Microsoft iSCSI, pero no ambos.
 
 
 
+[[create-a-shared-fc-rdm-lun]]
 === Cree un LUN de RDM FC compartido
 
 Para poder utilizar LUN de RDM FC a fin de compartir almacenamiento entre los nodos de un clúster de Microsoft, primero es necesario crear el disco de quórum compartido y el disco de almacenamiento compartido, y añadirlos a las dos máquinas virtuales en el clúster.
@@ -138,6 +145,7 @@ El disco compartido no se crea utilizando el Plug-in for Windows. Debes crear y 
 
 
 
+[[related-information]]
 == Información relacionada
 
 Consulta link:https://techdocs.broadcom.com["Documentación técnica de Broadcom"^] y busca documentación sobre la agrupación en clúster de máquinas virtuales entre hosts físicos y la creación de LUN compartidas FC RDM para clústeres de Microsoft.

@@ -15,6 +15,7 @@ Es posible generar certificados de capa de sockets seguros (SSL) y archivos de c
 
 
 
+[[configure-secured-mysql-connections-for-standalone-snapcenter-server-configurations]]
 == Configure conexiones MySQL protegidas para configuraciones de servidor SnapCenter independientes
 
 Es posible generar certificados de capa de sockets seguros (SSL) y archivos de claves para proteger la comunicación entre SnapCenter Server y MySQL Server. Los certificados y los archivos de claves se deben configurar en MySQL Server y SnapCenter Server.
@@ -128,6 +129,7 @@ En el siguiente ejemplo, se muestran las rutas actualizadas en la sección [clie
 
 
 
+[[configure-secured-mysql-connections-for-ha-configurations]]
 == Configure conexiones MySQL protegidas para configuraciones de alta disponibilidad
 
 Es posible generar certificados de capa de sockets seguros (SSL) y archivos de claves para los dos nodos de alta disponibilidad (ha) a fin de proteger la comunicación entre SnapCenter Server y los servidores MySQL. Los certificados y los archivos de claves se deben configurar en las instancias de MySQL Server y en los nodos ha.

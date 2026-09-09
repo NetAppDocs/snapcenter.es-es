@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Server, NetApp supported plug-in 
 summary: Es posible supervisar el progreso de diferentes operaciones de backup mediante la página Jobs de SnapCenter. Se recomienda comprobar el progreso para determinar cuándo se completó la tarea o si existe un problema. 
 ---
-= Supervise operaciones de backup de recursos de plugins compatibles con NetApp
+= Supervisa las operaciones de copia de seguridad de los recursos de complementos compatibles con NetApp en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: backing up 
 summary: Un grupo de recursos es una agrupacion de recursos en un host o un clúster. Se realiza una operación de backup del grupo de recursos con todos los recursos definidos en el grupo. Puede realizar un backup del grupo de recursos bajo demanda en la página Resources. Si un grupo de recursos tiene una política anexada y una programación configurada, los backups se realizan automáticamente según esa programación. 
 ---
-= Realizar un backup de grupos de recursos para sistemas de archivos Windows
+= Realiza una copia de seguridad de los grupos de recursos del sistema de archivos de Windows en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

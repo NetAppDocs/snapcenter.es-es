@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: credentials,SnapCenter Plug-in for Oracle Databases, non-database entries, oratab 
 summary: Los recursos son bases de datos de Oracle en el host gestionado por SnapCenter. Es posible añadir estas bases de datos a grupos de recursos para realizar operaciones de protección de datos después de detectar las bases de datos disponibles. 
 ---
-= Detectar las bases de datos de Oracle disponibles para backup
+= Descubre las bases de datos Oracle disponibles para realizar copias de seguridad en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -25,6 +25,7 @@ Para obtener más información, consulte https://docs.netapp.com/us-en/sc-plugin
 
 
 
+[[step-1-prevent-snapcenter-from-discovering-non-database-entries]]
 == Paso 1: Evitar que SnapCenter detecte entradas que no son de base de datos
 
 Es posible evitar que SnapCenter descubra entradas que no forman parte de una base de datos añadidas en el archivo oratab.
@@ -66,6 +67,7 @@ IMPORTANT: Siempre se recomienda realizar un backup del archivo sc_oratab.config
 
 
 
+[[step-2-discover-resources]]
 == Paso 2: Descubrir recursos
 
 Después de instalar el plugin, todas las bases de datos en ese host se detectan de forma automática y se muestran en la página Resources.

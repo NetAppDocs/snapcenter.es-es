@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for PostgreSQL 
 summary: 'Es posible crear un backup de un recurso \(clúster\) o un grupo de recursos. El flujo de trabajo de backup incluye planificar, identificar los clústeres para backup, gestionar las políticas de backup, crear grupos de recursos y añadir políticas, crear backups y supervisar las operaciones.' 
 ---
-= Hacer backup de recursos de PostgreSQL
+= Flujo de trabajo de copias de seguridad para los recursos de PostgreSQL de SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

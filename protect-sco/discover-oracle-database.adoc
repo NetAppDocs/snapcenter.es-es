@@ -17,6 +17,7 @@ En las siguientes secciones se describe el proceso que utiliza SnapCenter para d
 
 
 
+[[for-oracle-versions-11g-to-12cr1]]
 == Para las versiones de Oracle 11__g__ a 12__c__R1
 
 .Base de datos RAC
@@ -45,6 +46,7 @@ Si se reubica la base de datos, debe realizar los siguientes pasos:
 
 
 
+[[for-oracle-versions-12cr2-to-18c-19c-or-21c]]
 == Para las versiones de Oracle 12cR2 a 18c, 19C o 21c
 
 .Base de datos RAC

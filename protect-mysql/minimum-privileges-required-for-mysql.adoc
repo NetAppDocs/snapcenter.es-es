@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Minimum ONTAP privileges 
 summary: Los privilegios mínimos requeridos de ONTAP varían en función de los plugins de SnapCenter que utilice para la protección de datos. 
 ---
-= Privilegios mínimos de ONTAP requeridos para el plugin de MySQL
+= Privilegios mínimos de ONTAP requeridos por el complemento SnapCenter para MySQL
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

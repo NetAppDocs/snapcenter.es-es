@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for mysql 
 summary: Para poder ejecutar correctamente las operaciones de restauración, es necesario definir una estrategia mediante SnapCenter. Existen dos tipos de estrategias de restauración para las bases de datos MySQL detectadas automáticamente. 
 ---
-= Tipo de estrategia de restauración compatible con MySQL detectado automáticamente
+= Estrategias de restauración para bases de datos MySQL detectadas automáticamente en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

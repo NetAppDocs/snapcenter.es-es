@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: restore and recovery strategy, SAP HANA resources, snapcenter 
 summary: Para poder ejecutar operaciones de restauración y recuperación correctamente, es necesario definir una estrategia antes de restaurar y recuperar una base de datos. 
 ---
-= Defina una estrategia de restauración y recuperación para recursos de SAP HANA
+= Define una estrategia de restauración y recuperación para los recursos de SAP HANA en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

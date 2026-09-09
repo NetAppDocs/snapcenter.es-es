@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: consistency group, enable, create, resource group level 
 summary: Un grupo de recursos es un contenedor donde se añaden recursos que se quieren proteger e incluir en un backup. Permite realizar un backup en simultáneo con todos los datos que están asociados con una determinada aplicación. 
 ---
-= Habilita instantáneas de grupo de coherencia a nivel de grupo de recursos
+= Habilita las instantáneas de grupos de consistencia de SnapCenter a nivel de grupo de recursos
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

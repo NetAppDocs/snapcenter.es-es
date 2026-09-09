@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: RBAC roles, add, NetApp ONTAP RBAC role, storage system 
 summary: Puede utilizar los comandos security login para añadir un rol de RBAC de NetApp ONTAP si los sistemas de almacenamiento ejecutan NetApp ONTAP almacenado en clúster. 
 ---
-= Añada un rol de RBAC de NetApp ONTAP mediante comandos de inicio de sesión de seguridad
+= Agrega un rol RBAC de ONTAP para SnapCenter usando los comandos de inicio de sesión de seguridad
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

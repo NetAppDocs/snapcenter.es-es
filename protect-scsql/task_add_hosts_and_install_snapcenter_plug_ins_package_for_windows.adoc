@@ -34,7 +34,7 @@ No es posible añadir un servidor SnapCenter como host de plugins a otro servido
 
 Puede añadir un host e instalar los paquetes de los plugins para un host individual o para un clúster. Si está instalando los plugins en un clúster o clustering de conmutación al nodo de respaldo de Windows Server (WSFC), los plugins se instalan en todos los nodos del clúster.
 
-Para obtener información sobre la gestión de los hosts, consulte link:../admin/concept_manage_hosts.html["Gestionar hosts"^].
+Para obtener información sobre la gestión de hosts, consulta link:../admin/concept_manage_hosts.html["Gestiona hosts en SnapCenter"^].
 
 .Pasos
 . En el panel de navegación izquierdo, seleccione *hosts*.

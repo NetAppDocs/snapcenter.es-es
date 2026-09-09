@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter plug-in for Exchange Server 
 summary: 'Es posible restaurar una base de datos de Exchange Server con backup a partir de un almacenamiento secundario (reflejo o almacén).' 
 ---
-= Restaurar una base de datos de servidor de Exchange desde un almacenamiento secundario
+= Restaurar una base de datos de Exchange desde un almacenamiento secundario en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter, certificate thumbprint 
 summary: Una huella digital de certificado es una cadena hexadecimal que identifica un certificado. La huella digital se calcula a partir del contenido del certificado mediante un algoritmo de huella digital. 
 ---
-= Obtenga la huella digital del certificado de CA
+= Obtén la huella digital del certificado de la CA en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

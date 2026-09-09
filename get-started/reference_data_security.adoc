@@ -37,6 +37,7 @@ Después de 20 minutos de inactividad, SnapCenter cierra la sesión, que debe vo
 
 
 
+[[ca-certificate-overview]]
 == Descripción general del certificado CA
 
 El instalador de SnapCenter Server activa la compatibilidad centralizada con certificados SSL durante la instalación. Para mejorar la comunicación segura entre el servidor y el plugin, SnapCenter admite el uso de certificados de CA autorizados proporcionados por el cliente.
@@ -47,18 +48,21 @@ También puede implementar el certificado de CA para el plugin de SnapCenter par
 
 
 
+[[two-way-ssl-communication]]
 == Comunicación SSL bidireccional
 
 La comunicación SSL bidireccional protege la comunicación mutua entre el servidor de SnapCenter y los plugins.
 
 
 
+[[certificate-based-authentication-overview]]
 == Descripción general de la autenticación basada en certificados
 
 La autenticación basada en certificado verifica la autenticidad de los usuarios respectivos que intentan acceder al host del plugin de SnapCenter. El usuario debe exportar el certificado de servidor de SnapCenter sin clave privada e importarlo en el almacén de confianza del host del plugin. La autenticación basada en certificado solo funciona si la función SSL bidireccional está activada.
 
 
 
+[[multi-factor-authentication-mfa]]
 == Autenticación multifactor (MFA)
 
 La MFA usa un proveedor de identidades (IDP) de terceros a través del lenguaje de marcado de aserción de seguridad (SAML) para gestionar las sesiones de los usuarios. Esta funcionalidad mejora la seguridad de la autenticación al tener la opción de utilizar varios factores, como TOTP, biometría, notificaciones de inserción, etc. junto con el nombre de usuario y la contraseña existentes. Además, permite al cliente utilizar sus propios proveedores de identidades de usuario para obtener un inicio de sesión unificado (SSO) en toda su cartera.

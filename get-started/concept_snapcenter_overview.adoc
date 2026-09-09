@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter overview 
 summary: El software SnapCenter es una plataforma sencilla, centralizada y escalable que proporciona protección de datos consistente con las aplicaciones para aplicaciones, bases de datos, sistema de archivos host y máquinas virtuales que se ejecutan en sistemas ONTAP en cualquier parte del cloud híbrido. 
 ---
-= Información general de SnapCenter
+= Obtenga más información sobre el software SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -49,6 +49,7 @@ Puede instalar SnapCenter en sus instalaciones o en una nube pública para prote
 
 
 
+[[key-features]]
 == Principales características
 
 SnapCenter ofrece las siguientes funciones clave:
@@ -94,6 +95,7 @@ SnapCenter proporciona API REST para la mayoría de las funcionalidades para la 
 
 
 
+[[snapcenter-architecture-and-components]]
 == Arquitectura y componentes de SnapCenter
 
 SnapCenter utiliza un diseño en capas con un servidor de administración central y hosts de complementos.  Los hosts del servidor y del complemento pueden estar en ubicaciones diferentes.
@@ -104,6 +106,7 @@ SnapCenter incluye el servidor de SnapCenter, el paquete de plugins de SnapCente
 
 
 
+[[snapcenter-server]]
 === Servidor SnapCenter
 
 El servidor SnapCenter es compatible con los sistemas operativos Microsoft Windows y Linux (RHEL 8.x, RHEL 9.x, SLES 15 SP5). El servidor SnapCenter incluye un servidor web, una interfaz de usuario centralizada basada en HTML5, cmdlets de PowerShell, API DE REST y el repositorio de SnapCenter.
@@ -112,6 +115,7 @@ SnapCenter almacena información sobre sus operaciones en el repositorio de Snap
 
 
 
+[[snapcenter-plug-ins]]
 === Plugins de SnapCenter
 
 Cada plugin de SnapCenter admite entornos, bases de datos y aplicaciones específicas.
@@ -293,6 +297,7 @@ Para proteger bases de datos, sistemas de archivos, máquinas virtuales o almace
 
 
 
+[[snapcenter-repository]]
 === Repositorio de SnapCenter
 
 El repositorio de SnapCenter, que a veces se denomina base de datos NSM, almacena información y metadatos para cada operación SnapCenter.

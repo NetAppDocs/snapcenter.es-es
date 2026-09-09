@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: monitor clone 
 summary: Es posible supervisar el progreso de las operaciones de clonado de SnapCenter mediante la página Jobs. El progreso de una operación puede revisarse para determinar cuándo está completa o si hay un problema. 
 ---
-= Supervise las operaciones de clonación
+= Supervisar las operaciones de clonado en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

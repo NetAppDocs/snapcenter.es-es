@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clone 
 summary: Puede utilizar SnapCenter para clonar un backup de sistema de archivos Windows. Si desea copiar un archivo que se eliminó o modificó por error, puede clonar un backup y acceder a dicho archivo en el clon. 
 ---
-= Clonar desde un backup de sistema de archivos Windows
+= Clonar una copia de seguridad del sistema de archivos de Windows con SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

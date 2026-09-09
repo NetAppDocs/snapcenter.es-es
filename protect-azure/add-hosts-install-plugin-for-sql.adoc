@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add host, install, install plug-in, SQL 
 summary: Añada hosts y, a continuación, instale los paquetes de plugins. 
 ---
-= Añadir hosts e instalar el plugin de SnapCenter para base de datos de SQL Server
+= Agrega hosts e instala el complemento SnapCenter para Microsoft SQL Server
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

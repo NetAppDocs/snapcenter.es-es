@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Backup naming conventions 
 summary: Es posible usar la convención de nomenclatura de Snapshot predeterminada o usar una convención de nomenclatura personalizada. la convención de nomenclatura de backups predeterminada añade la fecha/hora a los nombres de Snapshot, lo cual ayuda a identificar cuándo se crearon las copias. 
 ---
-= Convenciones de nomenclatura de backups para bases de datos del plugin para SAP HANA
+= Convenciones de nomenclatura de backup para el complemento SnapCenter para bases de datos SAP HANA
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: restore operation 
 summary: 'Puede restaurar bases de datos de SQL Server con backup a partir de LUN físicos \(RDM, iSCSI o FCP\) en un sistema de almacenamiento secundario. La función de restauración es un proceso multifásico que copia todos los datos y las páginas de registro a partir de un backup de SQL Server especificado que reside en el sistema de almacenamiento secundario en una base de datos especificada.' 
 ---
-= Restaurar una base de datos de SQL Server a partir de almacenamiento secundario
+= Restaurar una base de datos de SQL Server desde almacenamiento secundario en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Backup naming conventions 
 summary: Es posible usar la convención de nomenclatura de Snapshot predeterminada o usar una convención de nomenclatura personalizada. la convención de nomenclatura de backups predeterminada añade la fecha/hora a los nombres de las Snapshot, lo cual ayuda a identificar cuándo se crearon las copias. 
 ---
-= Convenciones de nomenclatura de backups para clústeres del plugin para PostgreSQL
+= SnapCenter complemento para las convenciones de nomenclatura de las copias de seguridad de PostgreSQL
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

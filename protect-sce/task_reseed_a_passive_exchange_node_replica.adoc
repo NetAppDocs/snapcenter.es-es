@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary: Si necesita realimentar una copia de réplica, por ejemplo, cuando una copia está dañada, puede realimentar el backup más reciente con la función de propagación en SnapCenter. 
 ---
-= Propagación de una réplica pasiva del nodo de Exchange
+= Volver a sembrar una réplica pasiva de un nodo de Exchange en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

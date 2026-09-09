@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Server 
 summary: Es posible supervisar el progreso de diferentes operaciones de backup mediante la página Jobs de SnapCenter. Se recomienda comprobar el progreso para determinar cuándo se completó la tarea o si existe un problema. 
 ---
-= Supervisar las operaciones de backup de las bases de datos SAP HANA
+= Supervisa las operaciones de backup de SnapCenter para bases de datos SAP HANA
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -49,6 +49,7 @@ El botón *Ver registros* muestra los registros detallados para la operación se
 
 
 
+[[monitor-data-protection-operations-on-sap-hana-databases-in-the-activity-pane]]
 == Supervise las operaciones de protección de datos en bases de datos SAP HANA en el panel Activity
 
 El panel Activity muestra las cinco operaciones más recientes que se ejecutaron. También muestra el momento en que se inició la operación y su estado.

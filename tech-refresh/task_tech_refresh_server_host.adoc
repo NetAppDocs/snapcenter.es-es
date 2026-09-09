@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: tech refresh, SnapCenter Server, cmdlet, APIs, F5, rollback, decommission, disaster recovery, standalone 
 summary: Instale la misma versión de SnapCenter Server en el nuevo host y, a continuación, ejecute las API o ejecute cmdlets de para realizar un backup de SnapCenter desde el servidor antiguo y restaurarlo en el servidor nuevo. 
 ---
-= Actualización tecnológica del host de servidor de SnapCenter
+= Realiza una actualización técnica del host del servidor SnapCenter
 :allow-uri-read: 
 
 
@@ -55,6 +55,7 @@ NOTE: Si actualizó manualmente el archivo web.config en el antiguo host de Snap
 
 
 
+[[tech-refresh-of-a-node-in-f5-cluster]]
 == Actualización tecnológica de un nodo en un clúster F5
 
 Puede realizar una actualización tecnológica de cualquier nodo del clúster F5 quitando el nodo y añadiendo el nodo nuevo. Si el nodo que necesita actualizarse está activo, convierta otro nodo del clúster como activo y a continuación quite el nodo.
@@ -66,22 +67,26 @@ NOTE: Si cambia la url del clúster F5, la url se puede actualizar en todos los 
 
 
 
+[[decommissioning-the-old-snapcenter-server-host]]
 == Desmantelamiento del antiguo host del servidor de SnapCenter
 
 Es posible quitar el antiguo host de servidor de SnapCenter después de verificar que el nuevo servidor SnapCenter esté activo y en ejecución, y todos los hosts de plugins pueden comunicarse con el nuevo host de servidor de SnapCenter.
 
 
 
+[[rollback-to-the-old-snapcenter-server-host]]
 == Realice una reversión al antiguo host del servidor de SnapCenter
 
 En caso de cualquier problema, puede recuperar el antiguo host del servidor SnapCenter actualizando la URL del servidor SnapCenter en todos los hosts a través de la API: `/<snapcenter_version>/server/configureurl` O el cmdlet: _Set-SmServerConfig_.
 
 
 
+[[disaster-recovery]]
 == Recuperación tras siniestros
 
 
 
+[[disaster-recovery-of-standalone-snapcenter-host]]
 === Recuperación ante desastres en un host SnapCenter independiente
 
 Puede realizar la recuperación ante desastres restaurando el backup del servidor en el nuevo host.
@@ -115,6 +120,7 @@ NOTE: Las entradas _etc/host_ del servidor no se restaurarán. Puede restaurarlo
 
 
 
+[[disaster-recovery-of-snapcenter-f5-cluster]]
 === Recuperación ante desastres del clúster SnapCenter F5
 
 Puede realizar la recuperación ante desastres mediante la restauración del backup del servidor en el nuevo host y, a continuación, convirtiendo el host independiente en un clúster.

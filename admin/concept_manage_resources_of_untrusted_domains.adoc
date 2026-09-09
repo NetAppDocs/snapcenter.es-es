@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Manage resources 
 summary: 'Además de administrar hosts en dominios de confianza de Active Directory \(AD\), SnapCenter también administra hosts de varios dominios de AD que no son de confianza. Los dominios AD que no son de confianza deben registrarse en el servidor SnapCenter. SnapCenter admite usuarios y grupos de varios dominios AD que no son de confianza.' 
 ---
-= Gestione recursos de dominios que no son de confianza
+= Gestiona los recursos de SnapCenter en dominios no confiables
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -19,6 +19,7 @@ No se admiten los grupos de Active Directory (AD) que pertenecen a dominios no r
 
 
 
+[[modify-untrusted-domains]]
 == Modificar dominios que no son de confianza
 
 Puede modificar un dominio que no es de confianza cuando desea actualizar las direcciones IP del controlador de dominio o el nombre de dominio completo (FQDN).
@@ -58,6 +59,7 @@ Si el dominio FQDN no es resoluble, especifique una o más direcciones IP de con
 
 
 
+[[unregister-untrusted-active-directory-domains]]
 == Cancele el registro de dominios de Active Directory que no son de confianza
 
 Puede cancelar el registro de un dominio de Active Directory que no sea de confianza si no desea utilizar los activos asociados a ese dominio.

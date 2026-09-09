@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resource groups, attach policies, snapcenter 
 summary: Un grupo de recursos es el contenedor al que debe añadir los recursos que desea proteger e incluir en un backup. Permite realizar un backup en simultáneo con todos los datos que están asociados con una determinada aplicación. Un grupo de recursos es necesario para cualquier trabajo de protección de datos. También debe añadir una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar. 
 ---
-= Crear grupos de recursos y añadir políticas
+= Crea grupos de recursos y asocia políticas para SnapCenter PostgreSQL
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

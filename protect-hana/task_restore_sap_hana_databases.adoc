@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for SAP HANA Database 
 summary: El flujo de trabajo de restauración y recuperación incluye planificar, realizar las operaciones de restauración y supervisarlas. 
 ---
-= Restaure el flujo de trabajo
+= Flujo de trabajo de restauración y recuperación de la base de datos SAP HANA en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

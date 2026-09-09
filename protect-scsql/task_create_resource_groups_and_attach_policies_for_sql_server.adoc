@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: run as 
 summary: Un grupo de recursos es un contenedor al cual se añaden recursos que se quieren incluir en un backup y proteger en su conjunto. Un grupo de recursos permite realizar un backup en simultáneo de todos los datos que están asociados con una determinada aplicación. Un grupo de recursos es necesario para cualquier trabajo de protección de datos. También debe añadir una o más políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que desea realizar. 
 ---
-= Crear grupos de recursos y asociar políticas para SQL Server
+= Crear grupos de recursos y asociar políticas para SQL Server en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: failback, snapcenter 
 summary: Una vez que el almacenamiento primario del plugin de SnapCenter para SQL Server vuelve a estar en línea, debe recuperar el almacenamiento principal. 
 ---
-= Conmutación tras recuperación del plugin de SnapCenter para almacenamiento secundario de SQL Server al almacenamiento principal
+= Recupera al almacenamiento principal para el complemento SnapCenter Plug-in for SQL Server
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

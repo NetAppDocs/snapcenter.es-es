@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: backup, NetApp supported plug-ins 
 summary: Puede realizar un backup del grupo de recursos bajo demanda en la página Resources. Si un grupo de recursos tiene una política anexada y una programación configurada, los backups se realizan automáticamente según esa programación. 
 ---
-= Realizar backup de grupos de recursos de plugins admitidos por NetApp
+= Realiza una copia de seguridad de los grupos de recursos de los complementos compatibles con NetApp en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

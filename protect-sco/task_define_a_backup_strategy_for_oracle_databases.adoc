@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: backup type, preferred nodes, catalog backups, schedules, backup name format, retention, verification 
 summary: Definir una estrategia de backup garantiza que se cuente con los medios para restaurar o clonar correctamente las bases de datos. 
 ---
-= Definir una estrategia de backup para bases de datos de Oracle
+= Define una estrategia de copias de seguridad para las bases de datos Oracle en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -22,6 +22,7 @@ La estrategia de backup queda determinada principalmente por el SLA, el RTO y el
 
 
 
+[[supported-oracle-database-configurations-for-backups]]
 == Configuraciones de bases de datos de Oracle para backups admitidas
 
 SnapCenter admite el backup de diferentes configuraciones de bases de datos de Oracle.
@@ -64,12 +65,14 @@ Para obtener la información más reciente sobre las versiones de Oracle compati
 
 
 
+[[types-of-backup-supported-for-oracle-databases]]
 == Tipos de backup compatibles con las bases de datos de Oracle
 
 El tipo de backup especifica el tipo de backup que desea crear. SnapCenter admite los tipos backup en línea y sin conexión para bases de datos de Oracle.
 
 
 
+[[online-backup]]
 === Backup en línea
 
 Un backup que se crea cuando la base de datos está en estado en línea se denomina backup en línea. También denominado backup dinámico, un backup en línea permite crear un backup de la base de datos sin apagarlo.
@@ -83,6 +86,7 @@ Como parte del backup en línea, es posible crear un backup de los siguientes ar
 
 
 
+[[offline-backup]]
 === Backup sin conexión
 
 Un backup creado cuando la base de datos está en estado montado o apagado se denomina backup sin conexión. Este tipo de backup también se denomina backup en frío. Es posible incluir solo archivos de datos y archivos de control en los backups sin conexión. Puede crear un backup sin conexión montado o apagado sin conexión.
@@ -99,6 +103,7 @@ El estado de la base de datos se modifica para alcanzar el estado deseado y pode
 
 
 
+[[how-snapcenter-discovers-oracle-databases]]
 == Cómo detecta SnapCenter las bases de datos de Oracle
 
 "Resources" son las bases de datos de Oracle en el host que mantiene SnapCenter. Es posible añadir estas bases de datos a grupos de recursos para realizar operaciones de protección de datos después de detectar las bases de datos disponibles. Debe tener en cuenta el proceso que sigue SnapCenter para detectar diferentes tipos y versiones de las bases de datos de Oracle.
@@ -169,6 +174,7 @@ NOTE: Si hay alguna entrada de base de datos de Oracle 12__c__R2 y 18__c__ en el
 
 
 
+[[preferred-nodes-in-rac-setup]]
 == Nodos preferidos en la configuración de RAC
 
 En una configuración de Real Application Clusters (RAC) de Oracle, es posible especificar los nodos preferidos para ejecutar la operación de backup. Si no se especifica un nodo preferido, SnapCenter asigna automáticamente un nodo como preferido y lo usa para crear el backup.
@@ -181,6 +187,7 @@ En una configuración de Flex ASM, los nodos de hoja no se mostrarán como nodos
 
 
 
+[[required-database-state]]
 === Estado de la base de datos necesario
 
 Las instancias de base de datos de RAC de los nodos preferidos deben tener el estado necesario para que el backup se ejecute correctamente:
@@ -192,6 +199,7 @@ Las instancias de base de datos de RAC de los nodos preferidos deben tener el es
 
 
 
+[[how-to-catalog-backups-with-oracle-recovery-manager]]
 == Cómo catalogar backups con Oracle Recovery Manager
 
 Es posible catalogar los backups de bases de datos de Oracle con Oracle RMAN para almacenar la información de backups en el repositorio de Oracle RMAN.
@@ -233,6 +241,7 @@ La información sobre los parámetros que se pueden utilizar con el comando y su
 
 
 
+[[backup-schedules]]
 == Programaciones de backup
 
 La frecuencia de los backups (tipo de programación) se especifica en las políticas; la programación de los backups se especifica en la configuración del grupo de recursos. El factor más crítico para determinar la frecuencia o la programación de los backups es la tasa de cambio del recurso y la importancia de los datos. Puede ser recomendable realizar el backup de un recurso muy utilizado una vez por hora, mientras que, en el caso de un recurso de poco uso, es suficiente hacerlo una vez por día. Otros factores son la importancia del recurso para la organización, el SLA y el RPO.
@@ -255,6 +264,7 @@ Las programaciones de los backups (el momento exacto en que se realizan los back
 
 
 
+[[backup-naming-conventions]]
 == Convenciones de nomenclatura de backups
 
 Es posible usar la convención de nomenclatura de Snapshot predeterminada o usar una convención de nomenclatura personalizada. la convención de nomenclatura de backups predeterminada añade la fecha/hora a los nombres de Snapshot, lo cual ayuda a identificar cuándo se crearon las copias.
@@ -280,6 +290,7 @@ Como alternativa, es posible especificar el formato del nombre de Snapshot y pro
 
 
 
+[[backup-retention-options]]
 == Opciones de retención de backups
 
 Es posible elegir la cantidad de días durante los cuales se retendrán las copias de backup o especificar la cantidad de copias de backup que se desean retener, con un máximo de 255 copias en ONTAP. Por ejemplo, una organización puede necesitar retener 10 días de copias de backup o 130 copias de backup.
@@ -295,6 +306,7 @@ NOTE: Para la retención a largo plazo de copias de backup, es conveniente usar 
 
 
 
+[[verify-backup-copy-using-the-primary-or-secondary-storage-volume]]
 == Verifique la copia de backup con un volumen de almacenamiento primario o secundario
 
 Es posible verificar las copias de backups en el volumen de almacenamiento principal o en el volumen de almacenamiento secundario de SnapMirror y SnapVault. La verificación con un volumen de almacenamiento secundario reduce la carga para el volumen de almacenamiento principal.

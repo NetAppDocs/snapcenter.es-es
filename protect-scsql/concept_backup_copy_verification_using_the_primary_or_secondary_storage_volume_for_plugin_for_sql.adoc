@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Backup copy verification 
 summary: Es posible verificar las copias de backups en el volumen de almacenamiento principal o en el volumen de almacenamiento secundario de SnapMirror y SnapVault. La verificación con un volumen de almacenamiento secundario reduce la carga para el volumen de almacenamiento principal. 
 ---
-= Verificación de copias de backup con un volumen de almacenamiento primario o secundario para el plugin para SQL Server
+= Verificación de copias de backup para el complemento SnapCenter Plug-in for SQL Server
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

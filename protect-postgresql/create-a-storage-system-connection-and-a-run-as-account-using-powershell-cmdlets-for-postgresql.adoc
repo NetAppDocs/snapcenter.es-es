@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for PostgreSQL 
 summary: 'Es necesario crear una conexión de máquina virtual de almacenamiento (SVM) y una credencial antes de usar cmdlets de PowerShell para realizar backup, restaurar o clonar clústeres PostgreSQL.' 
 ---
-= Cree una conexión del sistema de almacenamiento y una credencial mediante cmdlets de PowerShell para PostgreSQL
+= Crea una conexión de almacenamiento y una credencial con los cmdlets de PowerShell para SnapCenter PostgreSQL
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

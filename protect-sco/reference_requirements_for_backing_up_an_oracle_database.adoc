@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: requirements, prerequisites 
 summary: Antes de realizar el backup de una base de datos de Oracle, debe asegurarse de que se hayan completado los requisitos previos. 
 ---
-= Requisitos para realizar backups de una base de datos de Oracle
+= Requisitos para realizar una copia de seguridad de una base de datos Oracle con SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

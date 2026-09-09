@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for IBM Db2 
 summary: El tipo de backup especifica el tipo de backup que desea crear. SnapCenter admite el tipo de backup basado en copias de Snapshot para las bases de datos IBM DB2. 
 ---
-= Tipo de backups admitido
+= Tipos de copias de seguridad compatibles con el complemento SnapCenter para IBM Db2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,6 +15,7 @@ El tipo de backup especifica el tipo de backup que desea crear. SnapCenter admit
 
 
 
+[[snapshot-copy-based-backup]]
 == Backup basado en copia de Snapshot
 
 Los backups basados en copia de Snapshot aprovechan la tecnología de copia de Snapshot de NetApp para crear copias en línea y de solo lectura de los volúmenes en los cuales residen las bases de datos de IBM DB2.

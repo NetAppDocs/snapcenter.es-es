@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: credentials 
 summary: Los recursos son las bases de datos, las instancias de aplicaciones, los grupos de disponibilidad y los componentes similares que se mantienen mediante los plugins instalados. Es posible añadir esos recursos a grupos de recursos para ejecutar tareas de protección de datos, pero primero es necesario identificar qué recursos están disponibles. Identificar los recursos disponibles también permite verificar que el plugin se haya instalado correctamente. 
 ---
-= Determine si hay recursos disponibles para backup
+= Determina si hay recursos de SQL Server disponibles para la copia de seguridad en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

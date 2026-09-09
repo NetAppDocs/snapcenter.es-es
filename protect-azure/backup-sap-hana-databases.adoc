@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for SAP HANA Database, back up, databases, Azure NetApp Files 
 summary: Realice un backup del recurso desde la página Resources. 
 ---
-= Realizar un backup de las bases de datos SAP HANA que se ejecutan en Azure NetApp Files
+= Realiza copias de seguridad de las bases de datos de SAP HANA en Azure NetApp Files con SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

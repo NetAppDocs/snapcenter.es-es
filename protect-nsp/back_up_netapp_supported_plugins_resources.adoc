@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: backup 
 summary: El flujo de trabajo de backup incluye planificar, identificar los recursos para el backup, gestionar las políticas de backup, crear grupos de recursos y añadir políticas, crear backups y supervisar las operaciones. 
 ---
-= Realizar backup de los recursos de plugins compatibles con NetApp
+= Flujo de trabajo de copias de seguridad de SnapCenter para recursos de complementos compatibles con NetApp
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

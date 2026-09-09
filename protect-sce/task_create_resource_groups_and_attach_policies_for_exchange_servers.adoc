@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resource group 
 summary: Un grupo de recursos es necesario para cualquier trabajo de protección de datos. También deben añadir una o varias políticas al grupo de recursos para definir el tipo de trabajo de protección de datos que se quiere realizar y la programación de protección. 
 ---
-= Crear grupos de recursos y añadir políticas para Exchange Server
+= Crea grupos de recursos y asocia políticas a los servidores de Exchange en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

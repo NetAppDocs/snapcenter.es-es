@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ALM 
 summary: 'El plugin de SnapCenter para Microsoft SQL Server admite la detección en SQL Server 2012 y posterior, configuraciones de asignación de LUN asimétrica \(ALM\) para alta disponibilidad y grupos de disponibilidad para recuperación ante desastres. Al detectar recursos, SnapCenter detecta bases de datos en host locales y remotos en configuraciones de ALM.' 
 ---
-= Compatibilidad con asignación de LUN asimétrica en clústeres de Windows
+= SnapCenter compatibilidad con la asignación asimétrica de LUN en clústeres de Windows
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

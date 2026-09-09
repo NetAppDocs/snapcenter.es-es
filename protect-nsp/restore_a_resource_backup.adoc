@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: restore 
 summary: Es posible usar SnapCenter para restaurar recursos. Las capacidades de las operaciones de restauración dependen del plugin que se use. 
 ---
-= Restaurar un backup de recursos
+= Restaurar una copia de seguridad de un recurso en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

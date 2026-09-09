@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: dashboard 
 summary: 'En el panel de navegación de la izquierda de SnapCenter, Dashboard ofrece un primer vistazo sobre el estado del sistema, incluida la actividad de trabajos recientes, las alertas, el resumen de protección, la eficiencia y el uso del almacenamiento, el estado de los trabajos de SnapCenter \(backup, clonado, restauración\), el estado de la configuración para hosts de clústeres de Windows e independientes, Número de máquinas virtuales de almacenamiento (SVM) que gestiona SnapCenter y la capacidad de la licencia.' 
 ---
-= Información general de la consola
+= Descubre el panel de control de SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -19,6 +19,7 @@ En muchos casos, puede ver más información sobre una pantalla si pasa el rató
 
 
 
+[[recent-job-activities]]
 == Actividades laborales recientes
 
 El icono Recent Job Activities muestra la actividad de trabajos más reciente en cualquier trabajo de backup, restauración y clonado al que tenga acceso. Los trabajos en esta pantalla tienen uno de los siguientes estados: Completed, Warning, Failed, Running, Queued, Y cancelada.
@@ -29,6 +30,7 @@ Haga clic en *Ver todos* para ver un historial de todos los trabajos de SnapCent
 
 
 
+[[alerts]]
 == Alertas
 
 El icono Alertas muestra las alertas críticas y de advertencia más recientes sin resolver para los hosts y el servidor SnapCenter.
@@ -39,6 +41,7 @@ Al hacer clic en una alerta específica, se le redirigirá a la página Alertas 
 
 
 
+[[latest-protection-summary]]
 == Último resumen sobre protección
 
 El icono Resumen de protección más reciente brinda el estado de protección de todas las entidades a las que se tiene acceso. De forma predeterminada, la pantalla se establece para proporcionar el estado de todos los plugins. La información de estado se proporciona para los recursos respaldados por un backup en almacenamiento primario como copias Snapshot, y en almacenamiento secundario mediante las tecnologías SnapMirror y SnapVault. La información sobre el estado de protección para el almacenamiento secundario se basa en el tipo de plugin seleccionado.
@@ -98,6 +101,7 @@ NOTE: Si se utiliza SnapCenter Server 4.2 y una versión anterior del plugin (an
 
 
 
+[[jobs]]
 == Trabajos
 
 El icono Jobs brinda un resumen de los trabajos de backup, restauración y clonado a los que se puede acceder. Puede personalizar el lapso de tiempo para cualquier informe mediante el menú desplegable. Las opciones de lapso se corrigen en las últimas 24 horas, en los últimos 7 días y en los últimos 30 días. El informe predeterminado muestra los trabajos de protección de datos ejecutados en los últimos 7 días.
@@ -137,6 +141,7 @@ Recuento de trabajos que se están ejecutando actualmente.
 |===
 
 
+[[storage]]
 == Reducida
 
 El icono almacenamiento muestra el almacenamiento primario y secundario que consumen los trabajos de protección en un periodo de 90 días, muestra gráficamente las tendencias de consumo y calcula el ahorro en almacenamiento primario. La información de almacenamiento se actualiza una vez cada 24 horas a las 12:00 a.m.
@@ -152,6 +157,7 @@ NOTE: Si se utiliza SnapCenter Server 4.2 y una versión anterior del plugin (an
 
 
 
+[[configuration]]
 == Configuración
 
 El icono Configuración proporciona información de estado consolidada para todos los hosts activos independientes y de clústeres de Windows que SnapCenter gestiona, y a los que tiene acceso. Esto incluye la información de estado del plugin asociado con esos hosts.

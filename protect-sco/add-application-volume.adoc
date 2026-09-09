@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: application volume, overview, add, modify, delete, Oracle database 
 summary: Debe añadir manualmente los volúmenes de la aplicación. 
 ---
-= Añada volúmenes de la aplicación
+= Agrega volúmenes de aplicación para bases de datos Oracle en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -42,6 +42,7 @@ Puede agregar varias unidades de almacenamiento.
 
 
 
+[[modify-application-volume]]
 == Modifique el volumen de la aplicación
 
 Es posible modificar todos los valores especificados al añadir el volumen de aplicaciones si no se crean backups. Si se crea el backup, solo puede modificar los detalles del sistema de almacenamiento.
@@ -56,6 +57,7 @@ Es posible modificar todos los valores especificados al añadir el volumen de ap
 
 
 
+[[delete-application-volume]]
 == Elimine el volumen de la aplicación
 
 Cuando se elimina un volumen de aplicaciones, si hay backups asociados con el volumen de la aplicación, el volumen se pondrá en modo de mantenimiento y no se crearán backups nuevos y no se conservarán backups anteriores. Si no hay backups asociados, se eliminan todos los metadatos.

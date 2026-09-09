@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cancel backup 
 summary: Es posible cancelar las operaciones de backup que se encuentran en cola. 
 ---
-= Cancele las operaciones de backup
+= Cancelar las operaciones de copia de seguridad del sistema de archivos de Windows en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,8 +13,7 @@ summary: Es posible cancelar las operaciones de backup que se encuentran en cola
 [role="lead"]
 Es posible cancelar las operaciones de backup que se encuentran en cola.
 
-*Lo que necesitará*
-
+.Antes de empezar
 * Debe iniciar sesión como administrador de SnapCenter o propietario del trabajo para cancelar las operaciones.
 * Puede cancelar una operación de copia de seguridad desde la página *Monitor* o el panel *Activity*.
 * No es posible cancelar una operación de backup en ejecución.
@@ -23,8 +22,7 @@ Es posible cancelar las operaciones de backup que se encuentran en cola.
 * Si seleccionó *todos los miembros de esta función pueden ver y operar en otros objetos de miembros* en la página usuarios\grupos mientras crea una función, puede cancelar las operaciones de copia de seguridad en cola de otros miembros mientras utiliza esa función.
 
 
-* Pasos*
-
+.Pasos
 . Ejecute una de las siguientes acciones:
 +
 |===
@@ -34,8 +32,8 @@ Es posible cancelar las operaciones de backup que se encuentran en cola.
  a| 
 Página Monitor
  a| 
-.. En el panel de navegación izquierdo, haga clic en *Monitor* > *Jobs*.
-.. Seleccione la operación y, a continuación, haga clic en *Cancelar trabajo*.
+.. En el panel de navegación izquierdo, selecciona *Monitor* > *Trabajos*.
+.. Selecciona la operación y, a continuación, selecciona *Cancelar trabajo*.
 
 
 
@@ -43,9 +41,9 @@ Página Monitor
  a| 
 Panel de actividades
  a| 
-.. Tras iniciar la operación de copia de seguridad, haga clic en *image:../media/activity_pane_icon.gif["icono del panel actividad"]* en el panel Activity para ver las cinco operaciones más recientes.
+.. Después de iniciar la operación de copia de seguridad, selecciona *image:../media/activity_pane_icon.gif["icono del panel actividad"]* en el panel de actividad para ver las cinco operaciones más recientes.
 .. Seleccione la operación.
-.. En la página Detalles del trabajo, haga clic en *Cancelar trabajo*.
+.. En la página Detalles del trabajo, seleccione *Cancelar trabajo*.
 
 
 |===

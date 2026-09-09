@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter reports 
 summary: SnapCenter ofrece distintas opciones de generación de informes que permiten supervisar y gestionar el estado y el éxito operativo del sistema. 
 ---
-= Información general sobre las funcionalidades de generación de informes de SnapCenter
+= Descubre las capacidades de generación de informes de SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -55,6 +55,7 @@ Cualquier otro usuario que no sea el Administrador podrá ver o modificar la pla
 |===
 
 
+[[access-reports]]
 == Acceder a informes
 
 Puede usar la consola de SnapCenter para obtener una descripción rápida del estado del sistema. Desde la consola, podrá obtener información detallada. También puede acceder a los informes detallados directamente.
@@ -67,6 +68,7 @@ Puede acceder a los informes mediante uno de los siguientes métodos:
 
 
 
+[[filter-your-report]]
 == Filtre su informe
 
 Se recomienda filtrar los datos del informe de acuerdo con un rango de parámetros, según el nivel de detalles y el intervalo de tiempo de la información que se necesita.
@@ -91,6 +93,7 @@ Se recomienda filtrar los datos del informe de acuerdo con un rango de parámetr
 
 
 
+[[export-or-print-reports]]
 == Exportar o imprimir informes
 
 La exportación de los informes de SnapCenter permite ver los informes en diversos formatos alternativos. También es posible imprimir los informes.
@@ -110,6 +113,7 @@ La exportación de los informes de SnapCenter permite ver los informes en divers
 
 
 
+[[set-the-smtp-server-for-email-notifications]]
 == Establezca el servidor SMTP para las notificaciones por correo electrónico
 
 Es posible especificar el servidor SMTP que se utilizará para enviar informes de trabajos de protección de datos a usted mismo o a terceros. También es posible enviar un mensaje de correo electrónico para comprobar la configuración. Los ajustes se aplican globalmente en cualquier trabajo de SnapCenter para el que configure las notificaciones por correo electrónico.
@@ -126,6 +130,7 @@ Esta opción configura el servidor SMTP para enviar todos los informes de trabaj
 
 
 
+[[configure-the-option-to-email-reports]]
 == Configure la opción para enviar informes por correo electrónico
 
 Si desea enviar actualizaciones de trabajos de protección de datos de SnapCenter regulares a usted mismo o a terceros para poder supervisar esas actualizaciones, puede configurar la opción para enviar por correo electrónico los informes de SnapCenter cuando crea un grupo de recursos.

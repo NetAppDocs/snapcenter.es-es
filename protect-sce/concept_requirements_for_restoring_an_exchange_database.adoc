@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: restoring an Exchange database 
 summary: Para poder restaurar una base de datos de servidor de Exchange desde un backup del plugin de SnapCenter para Microsoft Exchange Server, se deben cumplir varios requisitos. 
 ---
-= Requisitos para restaurar una base de datos de Exchange
+= Requisitos de restauración para el complemento SnapCenter para Microsoft Exchange Server
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

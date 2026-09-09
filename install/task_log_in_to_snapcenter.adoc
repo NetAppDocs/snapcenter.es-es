@@ -92,6 +92,7 @@ A partir de la versión 6,0, se crea en el escritorio un acceso directo para Sna
 
 
 
+[[log-in-to-snapcenter-using-multi-factor-authentication-mfa]]
 == Inicie sesión en SnapCenter con la autenticación multifactor (MFA)
 
 El servidor de SnapCenter admite MFA para la cuenta de dominio, que forma parte del directorio activo.
@@ -125,6 +126,7 @@ La cuenta de usuario debe existir en Active Directory (AD).
 
 
 
+[[modify-the-snapcenter-default-gui-session-timeout]]
 == Modifique el tiempo de espera de sesión de interfaz gráfica de usuario predeterminada de SnapCenter
 
 Puede modificar el tiempo de espera de sesión de la interfaz gráfica de usuario de SnapCenter de modo que sea inferior o superior al tiempo de espera predeterminado de 20 minutos.
@@ -140,6 +142,7 @@ Como función de seguridad, después de un tiempo predeterminado de 15 minutos d
 
 
 
+[[secure-the-snapcenter-web-server-by-disabling-ssl-3-0]]
 == Proteja el servidor web de SnapCenter mediante la desactivación de SSL 3.0
 
 Por motivos de seguridad, debería deshabilitar el protocolo de capa de sockets seguros (SSL) 3.0 en Microsoft IIS si está activado en el servidor web de SnapCenter.

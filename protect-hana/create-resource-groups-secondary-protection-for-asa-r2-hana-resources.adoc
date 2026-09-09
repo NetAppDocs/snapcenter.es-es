@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: asa r2, secondary protection, consistency group, primary consistency group, secondary consistency group 
 summary: Un grupo de recursos es un contenedor donde se añaden recursos que se quieren proteger e incluir en un backup. Permite realizar un backup en simultáneo con todos los datos que están asociados con una determinada aplicación. 
 ---
-= Cree grupos de recursos y habilite la protección secundaria para recursos SAP HANA en sistemas ASA R2
+= Crea grupos de recursos de SnapCenter para la protección secundaria de SAP HANA en sistemas ASA r2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

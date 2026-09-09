@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resource groups, attach policies, snapcenter 
 summary: Un grupo de recursos es el contenedor al que debe añadir los recursos que desea proteger e incluir en un backup. 
 ---
-= Crear grupos de recursos y añadir políticas
+= Crear grupos de recursos y asociar políticas en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

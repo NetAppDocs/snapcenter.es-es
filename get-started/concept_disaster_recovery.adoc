@@ -17,6 +17,7 @@ En esta sección se explican los dos tipos de DR que hay en SnapCenter:
 
 
 
+[[snapcenter-server-dr]]
 == Recuperación ante desastres de servidores SnapCenter
 
 * Se realiza una copia de seguridad de los datos del servidor de SnapCenter y se pueden recuperar sin que se añada ningún plugin al servidor de SnapCenter ni se gestione.
@@ -28,6 +29,7 @@ En esta sección se explican los dos tipos de DR que hay en SnapCenter:
 
 
 
+[[snapcenter-plug-in-and-storage-dr]]
 == Complemento SnapCenter y recuperación ante desastres de almacenamiento
 
 La recuperación ante desastres solo está disponible para el plugin de SnapCenter para SQL Server. Si el plugin está inactivo, cambie a otro host de SQL y recupere los datos siguiendo unos pasos. Consulte link:../protect-scsql/task_disaster_recovery_scsql.html["Recuperación ante desastres del plugin de SnapCenter para SQL Server"].

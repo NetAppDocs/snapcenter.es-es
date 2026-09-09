@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recovery operations 
 summary: SnapCenter permite ejecutar diferentes tipos de operaciones de recuperación para PostgreSQL. 
 ---
-= Tipos de operaciones de recuperación compatibles con los clústeres PostgreSQL
+= Operaciones de recuperación para clústeres de PostgreSQL en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

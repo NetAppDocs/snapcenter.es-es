@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add, storage system, SVM, ASA r2 systems 
 summary: Debe configurar el sistema de almacenamiento que le dé acceso de SnapCenter al almacenamiento de ONTAP para realizar operaciones de protección de datos y aprovisionamiento. Puede añadir una SVM independiente o un clúster formado por varias SVM. 
 ---
-= Añadir sistemas de almacenamiento
+= Agrega sistemas de almacenamiento en SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

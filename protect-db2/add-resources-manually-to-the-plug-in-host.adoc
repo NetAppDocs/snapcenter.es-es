@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SnapCenter Plug-in for IBM Db2 
 summary: No se admite la detección automática en algunas instancias de DB2. Debe añadir estos recursos manualmente. 
 ---
-= Añada recursos manualmente al host del plugin
+= Agrega manualmente recursos de IBM Db2 al host del complemento SnapCenter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
