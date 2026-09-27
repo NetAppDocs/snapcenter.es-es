@@ -2,7 +2,7 @@
 permalink: protect-db2/define-a-backup-strategy-for-ibm-db2.html 
 sidebar: sidebar 
 keywords: SnapCenter Plug-in for IBM Db2 
-summary: 'Definir una estrategia de backup antes de crear las tareas de backup ayuda a garantizar que se cuente con todos los backups necesarios para restaurar o clonar correctamente los recursos. La estrategia de backup queda determinada principalmente por el acuerdo de nivel de servicio \(SLA\), el objetivo de tiempo de recuperación \(RPO\) y el objetivo de punto de recuperación \(RPO\).' 
+summary: Definir una estrategia de backup antes de crear las tareas de backup ayuda a garantizar que se cuente con todos los backups necesarios para restaurar o clonar correctamente los recursos. La estrategia de backup queda determinada principalmente por el SLA, el RTO y el RPO. 
 ---
 = Define una estrategia de copias de seguridad para IBM Db2 en SnapCenter
 :allow-uri-read: 

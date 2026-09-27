@@ -2,7 +2,7 @@
 permalink: protect-scsql/concept_backup_schedules_for_plugin_for_sql.html 
 sidebar: sidebar 
 keywords: Backup schedules 
-summary: 'La frecuencia de los backups \(tipo de programación\) se especifica en las políticas; la programación de los backups se especifica en la configuración del grupo de recursos.' 
+summary: 'La frecuencia de las copias de seguridad (tipo de programación) se especifica en las políticas, y la programación de las copias de seguridad se especifica en la configuración del grupo de recursos.' 
 ---
 = Programaciones de copias de seguridad para el complemento SnapCenter para SQL Server
 :allow-uri-read: 

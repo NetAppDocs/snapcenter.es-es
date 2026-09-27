@@ -2,7 +2,7 @@
 permalink: protect-nsp/define_a_backup_strategy.html 
 sidebar: sidebar 
 keywords: backup strategy 
-summary: 'Definir una estrategia de backup antes de crear las tareas de backup garantiza que se cuente con todos los backups necesarios para restaurar o clonar correctamente los recursos. La estrategia de backup queda determinada principalmente por el acuerdo de nivel de servicio \(SLA\), el objetivo de tiempo de recuperación \(RPO\) y el objetivo de punto de recuperación \(RPO\).' 
+summary: Definir una estrategia de backup antes de crear las tareas de backup garantiza que se cuente con todos los backups necesarios para restaurar o clonar correctamente los recursos. La estrategia de backup queda determinada principalmente por el SLA, el RTO y el RPO. 
 ---
 = Define una estrategia de copia de seguridad de SnapCenter
 :allow-uri-read: 

@@ -2,7 +2,7 @@
 permalink: admin/concept_manage_resources_of_untrusted_domains.html 
 sidebar: sidebar 
 keywords: Manage resources 
-summary: 'Además de administrar hosts en dominios de confianza de Active Directory \(AD\), SnapCenter también administra hosts de varios dominios de AD que no son de confianza. Los dominios AD que no son de confianza deben registrarse en el servidor SnapCenter. SnapCenter admite usuarios y grupos de varios dominios AD que no son de confianza.' 
+summary: 'Además de gestionar hosts en dominios de confianza de Active Directory (AD), SnapCenter también gestiona hosts en varios dominios de AD que no son de confianza. Los dominios AD que no son de confianza deben registrarse en el servidor SnapCenter. SnapCenter admite usuarios y grupos de varios dominios AD que no son de confianza.' 
 ---
 = Gestiona los recursos de SnapCenter en dominios no confiables
 :allow-uri-read: 

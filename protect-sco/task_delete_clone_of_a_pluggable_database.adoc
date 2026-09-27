@@ -2,7 +2,7 @@
 permalink: protect-sco/task_delete_clone_of_a_pluggable_database.html 
 sidebar: sidebar 
 keywords: delete, PDB, clone PDB 
-summary: 'Es posible eliminar el clon de una base de datos conectables \(PDB\) si ya no se necesita.' 
+summary: 'Es posible eliminar el clon de una base de datos conectables (PDB) si ya no se necesita.' 
 ---
 = Eliminar un clon de una base de datos conectable en SnapCenter
 :allow-uri-read: 

@@ -2,7 +2,7 @@
 permalink: admin/concept_overview_of_dashboard.html 
 sidebar: sidebar 
 keywords: dashboard 
-summary: 'En el panel de navegación de la izquierda de SnapCenter, Dashboard ofrece un primer vistazo sobre el estado del sistema, incluida la actividad de trabajos recientes, las alertas, el resumen de protección, la eficiencia y el uso del almacenamiento, el estado de los trabajos de SnapCenter \(backup, clonado, restauración\), el estado de la configuración para hosts de clústeres de Windows e independientes, Número de máquinas virtuales de almacenamiento (SVM) que gestiona SnapCenter y la capacidad de la licencia.' 
+summary: 'En el panel de navegación de la izquierda de SnapCenter, Dashboard ofrece un primer vistazo sobre el estado del sistema, incluidas la actividad de trabajos recientes, las alertas, el resumen de la protección, la eficiencia y el uso del almacenamiento, el estado de los trabajos de SnapCenter (backup, clonado, restauración), el estado de configuración para los hosts independientes y de clústeres de Windows, Número de máquinas virtuales de almacenamiento (SVM) gestionadas por SnapCenter y capacidad de licencia.' 
 ---
 = Descubre el panel de control de SnapCenter
 :allow-uri-read: 
