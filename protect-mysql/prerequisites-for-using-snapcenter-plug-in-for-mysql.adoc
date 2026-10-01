@@ -18,6 +18,10 @@ Antes de utilizar el plugin de SnapCenter para MySQL, el administrador de SnapCe
 * Configure el entorno de SnapCenter añadiendo conexiones con el sistema de almacenamiento y creando credenciales, si es necesario.
 * Instala Java 17 (Oracle Java, OpenJDK o SAP JDK) para SnapCenter 6.2.1 y versiones posteriores o Java 11 para SnapCenter 6.2 y versiones anteriores en tu host Linux o Windows.
 +
+
+NOTE: Los usuarios no root deben tener permisos de ejecución para ejecutar Java.
+
++
 Debe configurar la ruta de Java en la variable de rutas del entorno del equipo host.
 
 * Configure SnapMirror y SnapVault si quiere realizar una replicación de backup.

@@ -132,6 +132,10 @@ NOTE: GMSA se utilizará como cuenta de servicio de inicio de sesión solo en el
 Si no has marcado la casilla *Omitir comprobaciones previas*, se valida el host para verificar si cumple los requisitos para instalar el plug-in. Se valida que el espacio en disco, la RAM, la versión de PowerShell, la versión de .NET, la ubicación (para los plug-ins de Windows) y Java 17 (para SnapCenter 6.2.1 y posteriores) o Java 11 (para SnapCenter 6.2 y anteriores), tanto para los plug-ins de Windows como para los de Linux, cumplan los requisitos mínimos. Si no se cumplen los requisitos mínimos, se muestran los mensajes de error o advertencia correspondientes.
 
 +
+
+NOTE: Los usuarios no root deben tener permisos de ejecución para ejecutar Java.
+
++
 Si el error está relacionado con el espacio en disco o RAM, es posible actualizar el archivo web.config ubicado en C:\Program Files\NetApp\SnapCenter WebApp para modificar los valores predeterminados. Si el error está relacionado con otros parámetros, primero debe solucionar el problema.
 
 +

@@ -22,6 +22,10 @@ El sistema selecciona todos los complementos del paquete, pero actualiza solo lo
 Consulta el link:https://library.netapp.com/ecm/ecm_download_file/ECMLP3359467["SnapCenter software Notas de la versión"^] para conocer las últimas versiones certificadas de ASP.NET Core y PowerShell para tu versión específica de SnapCenter.
 
 * Asegúrate de que Java 17 (Oracle Java, OpenJDK o SAP JDK) para SnapCenter 6.2.1 y versiones posteriores, o Java 11 para SnapCenter 6.2 y anteriores, esté instalado en los hosts de plug-ins de Windows y Linux.
++
+
+NOTE: Los usuarios no root deben tener permisos de ejecución para ejecutar Java.
+
 * De forma predeterminada, SnapCenter detecta JAVA_HOME del entorno. Si desea utilizar UN JAVA_HOME fijo y si va a actualizar los plugins en un host Linux, debe añadir manualmente el parámetro SKIP_JAVAHOME_UPDATE en el archivo _spl.properties_ ubicado en _/var/opt/snapcenter/spl/etc/_ y establecer el valor en TRUE.
 +
 El valor de JAVA_HOME se actualiza cuando se actualiza el plugin o cuando se reinicia el servicio del cargador de plugins de SnapCenter (SPL). Antes de actualizar o reiniciar el SPL, si añade el parámetro SKIP_JAVAHOME_UPDATE y establece el valor en TRUE, el valor de JAVA_HOME no se actualiza.

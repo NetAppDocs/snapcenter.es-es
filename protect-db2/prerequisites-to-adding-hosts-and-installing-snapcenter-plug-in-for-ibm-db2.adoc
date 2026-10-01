@@ -16,7 +16,7 @@ Antes de añadir un host e instalar los paquetes de plugins, debe cumplir con to
 * Debes tener instalado Java 17 (Oracle Java, OpenJDK o SAP JDK) para SnapCenter 6.2.1 y posteriores, o Java 11 para SnapCenter 6.2 y anteriores en tu host.
 +
 
-NOTE: IBM Java no es compatible con el host Windows y Linux.
+NOTE: IBM Java no es compatible con hosts Windows y Linux.
 
 * Para Windows, el plugin Creator Service debe ejecutarse con el usuario de Windows '`LocalSystem`', que es el comportamiento predeterminado cuando el plugin para IBM DB2 se instala como administrador de dominio.
 * Al instalar un plugin en un host de Windows, si especifica una credencial que no está integrada o si el usuario pertenece a un usuario de grupo de trabajo local, debe deshabilitar UAC en el host. El plugin de SnapCenter para Microsoft Windows se implementará de forma predeterminada con el plugin IBM DB2 en hosts de Windows.
@@ -49,6 +49,10 @@ link:https://www.oracle.com/java/technologies/downloads/#java17["Descargar Java 
 
 +
 link:https://developer.ibm.com/languages/java/semeru-runtimes/downloads/?license=IBM["Descargar Java para AIX"^]
+
++
+
+NOTE: Los usuarios no root deben tener permisos de ejecución para ejecutar Java.
 
 * Para bases de datos IBM DB2 que se ejecutan en un host Linux, cuando se instala el plugin para IBM DB2, el plugin de SnapCenter para UNIX se instala automáticamente.
 * Debe tener *bash* como shell por defecto para la instalación del plug-in.
