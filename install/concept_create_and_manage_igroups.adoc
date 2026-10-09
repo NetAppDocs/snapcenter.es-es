@@ -13,6 +13,13 @@ summary: 'Es posible crear grupos de iniciadores (iGroup) para especificar los h
 [role="lead"]
 Es posible crear grupos de iniciadores (iGroup) para especificar los hosts que pueden acceder a un LUN determinado en el sistema de almacenamiento. Se puede usar SnapCenter para crear un igroup en un host de Windows, cambiar su nombre, modificarlo o eliminarlo.
 
+[NOTE]
+====
+* SnapCenter crea automáticamente un igroup si aún no existe ninguno al realizar operaciones de restauración o clonación de LUN. El igroup se crea con el siguiente formato de nombre: `snapcenter_<id>_igroup`
+* SnapCenter no elimina un igroup creado como parte de una operación de eliminación de clones. Se conserva para futuras operaciones de clonación o restauración.
+
+
+====
 
 
 [[create-an-igroup]]
